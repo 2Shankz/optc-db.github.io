@@ -5010,8 +5010,11 @@ window.families = {
     4396: [ ...Perona ],
     4397: [ ...Ulti ],
     4398: [ ...BoaHancock ],
-    //4399: [ ...BoaHancock ],
+    4399: [ ...BoaHancock ],
     4400: [ ...Carrot ],
+    4401: [ ...PortgasDAce ],
+    4402: [ ...MarshallDTeach ],
+    4404: [ ...Marco ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
