@@ -7932,7 +7932,7 @@
 			{
 				name: "Captain Shift Only",
 				targets: ["superSpecialCriteria"],
-				regex: /[^."]+?When character becomes [^."]+? during Captain Shift[^."]*?/i,
+				regex: /[^."]+?When character becomes [^,"]+? during Captain Shift[^."]*?/i,
 			},
 			{
 				name: "Super Swap Only",
