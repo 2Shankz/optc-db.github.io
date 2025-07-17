@@ -12,6 +12,10 @@ window.availableTags = [
     "category": 1
   },
   {
+    "name": "Alvida Pirates",
+    "category": 1
+  },
+  {
     "name": "Amazon Lily",
     "category": 4
   },
