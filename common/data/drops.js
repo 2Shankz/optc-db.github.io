@@ -3527,6 +3527,16 @@ window.drops = {
             gamewith: null,
             'Defeat Level Rewards': [ 4398 ],
         },
+
+        {
+            name: 'Big Mom',
+            dropID: 'pka27',
+            thumb: 4413,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4413 ],
+        },
     ],
 
 

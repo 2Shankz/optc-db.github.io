@@ -204,6 +204,10 @@ window.availableTags = [
     "category": 1
   },
   {
+    "name": "Holy Knights",
+    "category": 1
+  },
+  {
     "name": "Homies",
     "category": 2
   },

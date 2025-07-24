@@ -718,11 +718,12 @@ const PrinceGrus = [ "Prince Grus" ];
 const Kujaku = [ "Kujaku" ];
 const Hibari = [ "Hibari" ];
 const Doll = [ "Doll" ];
-const Saturn = [ "Saturn" ];
+const JaygarciaSaturn = [ "Saint Jaygarcia Saturn" ];
 const Bluegrass = [ "Bluegrass" ];
 const BuckinghamStussy = [ "Miss Buckingham Stussy" ];
 const MonkeyDDragon = [ "Monkey D. Dragon" ];
 const Ginny = [ "Ginny" ];
+const FigarlandGarling = [ "Saint Figarland Garling" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -4990,8 +4991,8 @@ window.families = {
     4376: [ ...Jinbe ],
     4377: [ ...SSnake ],
     4378: [ ...RoronoaZoro ],
-    4379: [ ...Saturn ],
-    4380: [ ...Saturn ],
+    4379: [ ...JaygarciaSaturn ],
+    4380: [ ...JaygarciaSaturn ],
     4381: [ ...JewelryBonney ],
     4382: [ ...Bluegrass ],
     4383: [ ...Doll ],
@@ -5019,6 +5020,12 @@ window.families = {
     4406: [ ...DonquixoteDoflamingo ],
     4407: [ ...Alvida, ...Coby ],
     4408: [ ...DraculeMihawk, ...Perona ],
+    4409: [ ...MonkeyDGarp ],
+    4410: [ ...FigarlandGarling ],
+    4411: [ ...EmporioIvankov ],
+    4412: [ ...BartholomewKuma, ...Ginny ],
+    4413: [ ...CharlotteLinlin ],
+    //4414: [ ...CharlotteLinlin ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
