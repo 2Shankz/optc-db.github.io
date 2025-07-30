@@ -3592,6 +3592,16 @@ window.drops = {
             'Grand Feast Sugo': [ 4373 ]
         },
 
+        {
+            name: 'Sentomaru',
+            dropID: 'coop6',
+            thumb: 4416,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Grand Feast Sugo': [ 4416 ]
+        },
+
     ],
 
 

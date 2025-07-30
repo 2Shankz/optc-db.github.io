@@ -80,6 +80,10 @@ window.availableTags = [
     "category": 1
   },
   {
+    "name": "CP8",
+    "category": 1
+  },
+  {
     "name": "CP9",
     "category": 1
   },
