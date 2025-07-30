@@ -7044,12 +7044,12 @@
 			},
 
 			{
-				name: "Blown Away",
+				name: "Blow Away",
 				targets: [
 					"special",
 				],
 				regex:
-					/(?:reduces|removes)[^."]+?Blown Away[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
+					/(?:reduces|removes)[^."]+?Blow Away[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
 					{
 						type: "number",
