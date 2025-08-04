@@ -3,27 +3,27 @@
    * Common data *
    ***************/
 
-  function denormalizeEffects(ability) {
-    if (!ability) return;
+  // function denormalizeEffects(ability) {
+  //   if (!ability) return;
 
-    let lastEffect = [];
-    let mergedEffect = [];
-    ability.forEach((ability, abilityIdx) => {
-      mergedEffect = [...lastEffect];
-      ability.effects.forEach((effect, effectIdx) => {
-        if (effect.effect) {
-          lastEffect[effectIdx] = effect;
-          mergedEffect[effectIdx] = effect;
-        } else if (effect.override) {
-          mergedEffect[effectIdx] = {
-            ...lastEffect[effectIdx],
-            ...effect.override,
-          };
-        }
-      });
-      ability.effects = mergedEffect;
-    });
-  }
+  //   let lastEffect = [];
+  //   let mergedEffect = [];
+  //   ability.forEach((ability, abilityIdx) => {
+  //     mergedEffect = [...lastEffect];
+  //     ability.effects.forEach((effect, effectIdx) => {
+  //       if (effect.effect) {
+  //         lastEffect[effectIdx] = effect;
+  //         mergedEffect[effectIdx] = effect;
+  //       } else if (effect.override) {
+  //         mergedEffect[effectIdx] = {
+  //           ...lastEffect[effectIdx],
+  //           ...effect.override,
+  //         };
+  //       }
+  //     });
+  //     ability.effects = mergedEffect;
+  //   });
+  // }
 
   /***************
    * Controllers *
@@ -332,62 +332,67 @@
       $scope.farmableVersions = CharUtils.getFarmableVersions(id);
       $scope.displayFamily = $scope.families ? $scope.families.join(" & ") : "";
 
-      $http(rumbleRequest)
-        .success(function (jsonData) {
-          var key = id;
-          $scope.rumble = jsonData.units.filter((unit) => {
-            return Math.floor(unit.id) == key;
-          })[0];
-          if ($scope.rumble)
-            if ($scope.rumble.basedOn) {
-              key = $scope.rumble.basedOn;
-              $scope.rumble = jsonData.units.filter(
-                (unit) => unit.id == key
-              )[0];
-            }
-          if ($scope.rumble === undefined) {
-            //console.log("Couldn't find unit with id " + id);
-            return;
-          }
-          // normalize the data here:
-          denormalizeEffects($scope.rumble.ability);
-          denormalizeEffects($scope.rumble.special);
-          if ($scope.rumble.llbability)
-            denormalizeEffects($scope.rumble.llbability);
-          if ($scope.rumble.llbspecial)
-            denormalizeEffects($scope.rumble.llbspecial);
-          if ($scope.rumble.gpspecial)
-            denormalizeEffects($scope.rumble.gpspecial);
-          if ($scope.rumble.gpability)
-            denormalizeEffects($scope.rumble.gpability);
-          if ($scope.rumble.llbgpspecial)
-            denormalizeEffects($scope.rumble.llbgpspecial);
-          if ($scope.rumble.llbgpability)
-            denormalizeEffects($scope.rumble.llbgpability);
+      if (window.rumble[id]) {
+        $scope.rumble = window.rumble[id].character1 ? window.rumble[id].character1 : window.rumble[id];
+        $scope.rumble2 = window.rumble[id].character2;
+      };
 
-            // Check for VS unit
-            if ( $scope.rumble.id != Math.floor($scope.rumble.id) ) {
-              key = Math.floor(key);
-              $scope.rumble2 = jsonData.units.filter(unit =>{
-                  return Math.floor(unit.id) == key;
-                })[1];
-              if ($scope.rumble2 === undefined ) {
-                console.log("Couldn't find unit with id " + id);
-                return;
-              }
-              denormalizeEffects($scope.rumble2.ability);
-              denormalizeEffects($scope.rumble2.special);
-                if ($scope.rumble2.llbability) denormalizeEffects($scope.rumble2.llbability);
-                if ($scope.rumble2.llbspecial) denormalizeEffects($scope.rumble2.llbspecial);
-                if ($scope.rumble2.gpspecial) denormalizeEffects($scope.rumble2.gpspecial);
-                if ($scope.rumble2.gpability) denormalizeEffects($scope.rumble2.gpability);
-                if ($scope.rumble2.llbgpspecial) denormalizeEffects($scope.rumble2.llbgpspecial);
-                if ($scope.rumble2.llbgpability) denormalizeEffects($scope.rumble2.llbgpability);
-            }
-        })
-        .error(function (out) {
-          console.log("Failure in loading or parsing json" + out);
-        });
+      // $http(rumbleRequest)
+      //   .success(function (jsonData) {
+      //     var key = id;
+      //     $scope.rumble = jsonData.units.filter((unit) => {
+      //       return Math.floor(unit.id) == key;
+      //     })[0];
+      //     if ($scope.rumble)
+      //       if ($scope.rumble.basedOn) {
+      //         key = $scope.rumble.basedOn;
+      //         $scope.rumble = jsonData.units.filter(
+      //           (unit) => unit.id == key
+      //         )[0];
+      //       }
+      //     if ($scope.rumble === undefined) {
+      //       //console.log("Couldn't find unit with id " + id);
+      //       return;
+      //     }
+      //     // normalize the data here:
+      //     denormalizeEffects($scope.rumble.ability);
+      //     denormalizeEffects($scope.rumble.special);
+      //     if ($scope.rumble.llbability)
+      //       denormalizeEffects($scope.rumble.llbability);
+      //     if ($scope.rumble.llbspecial)
+      //       denormalizeEffects($scope.rumble.llbspecial);
+      //     if ($scope.rumble.gpspecial)
+      //       denormalizeEffects($scope.rumble.gpspecial);
+      //     if ($scope.rumble.gpability)
+      //       denormalizeEffects($scope.rumble.gpability);
+      //     if ($scope.rumble.llbgpspecial)
+      //       denormalizeEffects($scope.rumble.llbgpspecial);
+      //     if ($scope.rumble.llbgpability)
+      //       denormalizeEffects($scope.rumble.llbgpability);
+
+      //       // Check for VS unit
+      //       if ( $scope.rumble.id != Math.floor($scope.rumble.id) ) {
+      //         key = Math.floor(key);
+      //         $scope.rumble2 = jsonData.units.filter(unit =>{
+      //             return Math.floor(unit.id) == key;
+      //           })[1];
+      //         if ($scope.rumble2 === undefined ) {
+      //           console.log("Couldn't find unit with id " + id);
+      //           return;
+      //         }
+      //         denormalizeEffects($scope.rumble2.ability);
+      //         denormalizeEffects($scope.rumble2.special);
+      //           if ($scope.rumble2.llbability) denormalizeEffects($scope.rumble2.llbability);
+      //           if ($scope.rumble2.llbspecial) denormalizeEffects($scope.rumble2.llbspecial);
+      //           if ($scope.rumble2.gpspecial) denormalizeEffects($scope.rumble2.gpspecial);
+      //           if ($scope.rumble2.gpability) denormalizeEffects($scope.rumble2.gpability);
+      //           if ($scope.rumble2.llbgpspecial) denormalizeEffects($scope.rumble2.llbgpspecial);
+      //           if ($scope.rumble2.llbgpability) denormalizeEffects($scope.rumble2.llbgpability);
+      //       }
+      //   })
+      //   .error(function (out) {
+      //     console.log("Failure in loading or parsing json" + out);
+      //   });
       $scope.customLevel = {};
       $scope.isArray = Array.isArray;
 
