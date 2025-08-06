@@ -250,23 +250,23 @@
                                     <tbody>
                                         <tr>
                                             <td><span ng-if="rumble2">Character 1</span></td>
-                                            <td>{{::rumble.stats.rumbleType | decorate}}</td>
-                                            <td ng-if="!compare">{{::rumble.stats.def | number}}</td>
-                                            <td ng-if="compare" comparison="positive">{{rumble.stats.def -
-                                                compare.rumble.stats.def | number}}</td>
-                                            <td ng-if="!compare">{{::rumble.stats.spd | number}}</td>
-                                            <td ng-if="compare" comparison="positive">{{rumble.stats.spd -
-                                                compare.rumble.stats.spd | number}}</td>
+                                            <td>{{::rumble.festStats.style | decorate}}</td>
+                                            <td ng-if="!compare">{{::rumble.festStats.def | number}}</td>
+                                            <td ng-if="compare" comparison="positive">{{rumble.festStats.def -
+                                                compare.rumble.festStats.def | number}}</td>
+                                            <td ng-if="!compare">{{::rumble.festStats.spd | number}}</td>
+                                            <td ng-if="compare" comparison="positive">{{rumble.festStats.spd -
+                                                compare.rumble.festStats.spd | number}}</td>
                                         </tr>
                                         <tr ng-if="rumble2">
                                             <td>Character 2</td>
-                                            <td>{{::rumble2.stats.rumbleType | decorate}}</td>
-                                            <td ng-if="!compare">{{::rumble2.stats.def | number}}</td>
-                                            <td ng-if="compare" comparison="positive">{{rumble2.stats.def -
-                                                compare.rumble2.stats.def | number}}</td>
-                                            <td ng-if="!compare">{{::rumble2.stats.spd | number}}</td>
-                                            <td ng-if="compare" comparison="positive">{{rumble2.stats.spd -
-                                                compare.rumble2.stats.spd | number}}</td>
+                                            <td>{{::rumble2.festStats.style | decorate}}</td>
+                                            <td ng-if="!compare">{{::rumble2.festStats.def | number}}</td>
+                                            <td ng-if="compare" comparison="positive">{{rumble2.festStats.def -
+                                                compare.rumble2.festStats.def | number}}</td>
+                                            <td ng-if="!compare">{{::rumble2.festStats.spd | number}}</td>
+                                            <td ng-if="compare" comparison="positive">{{rumble2.festStats.spd -
+                                                compare.rumble2.festStats.spd | number}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
