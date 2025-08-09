@@ -2862,6 +2862,11 @@
 					},
 					{
 						type: "separator",
+						description: "Affected Types:",
+					},
+					...createTypesSubmatchers([1]),
+					{
+						type: "separator",
 						description: "Affected Classes:",
 					},
 					...createClassesSubmatchers([1]),
