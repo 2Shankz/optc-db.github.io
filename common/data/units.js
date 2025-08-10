@@ -4416,7 +4416,7 @@ window.units = [
     [ "Alpha", "INT", ["Striker", "Driven"], 5, 30, 4, 4, 99, 4000000, 1840, 796, 129, 3679, 1591, 257, 1 ],
     [ "Sentomaru - Babysitting the Rowdy Girl", "DEX", ["Fighter", "Shooter"], 5, 40, 4, 4, 99, 5000000, 1953, 816, 78, 3906, 1632, 155, 1 ],
     [ "Sentomaru - Peaceful Dining", "DEX", ["Fighter", "Shooter"], "5+", 40, 4, 4, 99, 5000000, 2008, 845, 84, 4016, 1689, 168, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Boa Hancock from ONE PIECE magazine - User of the Rumble-Rumble Fruit", "QCK", ["Striker", "Powerhouse"], 6, 55, 4, 5, 99, 5000000, 2099, 916, 121, 4197, 1831, 241, 1 ],
     [ "Sabo - Core-Crushing Dragon Claw", "DEX", ["Cerebral", "Fighter"], 6, 55, 4, 5, 99, 5000000, 2112, 916, 118, 4224, 1832, 236, 1 ],
     [ "Koala - Tears of Relief", "DEX", ["Cerebral", "Fighter"], 5, 30, 4, 4, 99, 4000000, 1792, 796, 112, 3584, 1591, 223, 1 ],
     [ "Hack - Shocking News", "DEX", ["Fighter", "Cerebral"], 5, 30, 4, 4, 99, 4000000, 1895, 819, 87, 3789, 1638, 173, 1 ],

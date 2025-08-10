@@ -4416,7 +4416,7 @@ window.tags = [
 	["CP8", "World Government", "Egghead"],
 	["Egghead"],
 	["Egghead"],
-	[],
+	["Kuja Pirates", "Logia-type"],
 	["Revolutionary Army"],
 	["Revolutionary Army", "Egghead"],
 	["Revolutionary Army", "Fish-Man", "Egghead"],

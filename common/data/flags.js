@@ -4223,6 +4223,7 @@ window.flags = {
     4411: { rr: 1, rro: 1 },
     4412: { rr: 1, rro: 1 },
     4415: { rr: 1, rro: 1, lrr: 1, pflrr: 1 },
+    4418: { rr: 1, rro: 1, lrr: 1, annilrr: 1 },
     4419: { rr: 1, rro: 1, lrr: 1, tmlrr: 1 },
     4420: { rr: 1, rro: 1, lrr: 1, tmlrr: 1 },
     4421: { rr: 1, rro: 1, lrr: 1, tmlrr: 1 },

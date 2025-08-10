@@ -5030,6 +5030,7 @@ window.families = {
     4415: [ ...Alpha ],
     4416: [ ...Sentomaru ],
     4417: [ ...Sentomaru ],
+    4418: [ ...BoaHancock ],
     4419: [ ...Sabo ],
     4420: [ ...Koala ],
     4421: [ ...Hack ],
