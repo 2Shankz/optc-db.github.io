@@ -153,7 +153,7 @@
 	function createTypesSubmatchers(
 		groups,
 		includeUniversal = true,
-		universalRegex = "all|type"
+		universalRegex = "all|type(?!])"
 	) {
 		var result = [];
 		for (var [i, type] of types.entries()) {
@@ -370,13 +370,13 @@
 		return result;
 	}
 
-	function createUniversalSubmatcher(groups, universalRegex = "all|type") {
+	function createUniversalSubmatcher(groups, universalRegex = "all|type(?!])") {
 		var result = [];
 		result.push({
 			type: "option",
 			description: "Universal",
 			// interpret "Captain's Type", "Dominant Type", "each Type" as universal
-			regex: new RegExp(universalRegex || "all|type", "i"),
+			regex: new RegExp(universalRegex || "all|type(?!])", "i"),
 			groups: groups,
 		});
 		return result;
