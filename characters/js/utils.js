@@ -315,6 +315,9 @@ CharUtils.checkMatcher = function(matcher, id) {
     if (matcher.target == "rumbleAbility" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festAbility, window.rumble[id].character2.festAbility ]  : window.rumble[id].festAbility;
     };
+    if (matcher.target == "rumbleSpecial" && window.rumble[id]) {
+        targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festSpecial, window.rumble[id].character2.festSpecial ]  : window.rumble[id].festSpecial;
+    };
     if (matcher.target == "rumbleResistance" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festResistance, window.rumble[id].character2.festResistance ]  : window.rumble[id].festResistance;
     };

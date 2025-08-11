@@ -382,6 +382,35 @@
 		return result;
 	}
 
+	function createRangeSubmatcher(groups) {
+		var result = [];
+		const sizes = ["Small", "Medium", "Large"];
+		const directions = ["Forward", "Sideways", "Radial"];
+
+		sizes.forEach((size) => {
+			result.push({
+				type: "option",
+				description: size,
+				regex: new RegExp(size, "i"),
+				radioGroup: "size",
+				cssClasses: ["min-width-4"],
+				groups: groups,
+			});
+		});
+		directions.forEach((direction) => {
+			result.push({
+				type: "option",
+				description: direction,
+				regex: new RegExp(direction, "i"),
+				radioGroup: "direction",
+				cssClasses: ["min-width-4"],
+				groups: groups,
+			});
+		});		
+
+		return result;
+	}
+
 	/**
 	 * Convenience function to construct a RegExp object from an array of regexes,
 	 * allowing us to split a regex across lines and even add comments. Note that
@@ -1046,6 +1075,82 @@
 				targets: ["special"],
 				regex: /specialProportional/i,
 			},
+
+			// Prototype
+			{
+				name: "ATK",
+				targets: ["rumbleSpecial"],
+				regex: /Deals ([.\d]+)x ATK in damage( ignoring DEF)? to (\d)?(?=((?:[^e]+|e(?!nem))*))\4enem(?:y|ies)(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Amount:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [6],
+					},
+					{
+						type: "option",
+						description: "Ignoring DEF",
+						regex: /./,
+						groups: [2],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [3],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /( |all)/,
+						groups: [4],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([4]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([4]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
+
+			// {
+			// 	name: "Fixed",
+			// 	targets: ["rumbleSpecial"],
+			// 	regex: /Deals ([,\d]+) fixed damage/i,
+			// },
+
+			// {
+			// 	name: "Percentage",
+			// 	targets: ["rumbleSpecial"],
+			// 	regex: /([.\d]+)% HP cut/i,
+			// },
+
+			// {
+			// 	name: "Random",
+			// 	targets: ["rumbleSpecial"],
+			// 	regex: /Randomly deals between ([,\d]+)-([,\d]+) fixed damage/i,
+			// },
+
 		],
 		"Boost Damage and Stats": [
 			{
@@ -7708,7 +7813,6 @@
 
 		],
 
-
 		"Buffs": [
 			{
 				name: "Accuracy",
@@ -8186,6 +8290,75 @@
 					...createClassesSubmatchers([2]),
 				],
 			},
+		],
+
+		"Cleanse": [
+
+			{
+				name: "Stats Down",
+				targets: ["rumbleSpecial"],
+				regex:
+					/([\d]+)% chance to cleanse ([^.]+) down debuffs to ([^.]+)/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+					{
+						type: "separator",
+						description: "Stats:",
+					},
+					{
+						type: "option",
+						description: "All",
+						regex: /All/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "ATK",
+						regex: /(ATK|all)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "DEF",
+						regex: /(DEF|all)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "RCV",
+						regex: /(RCV|all)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "SPD",
+						regex: /(SPD|all)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "Special CT",
+						regex: /(Special CT|all)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					...createUniversalSubmatcher([3]),
+				],
+			},
+
 		],
 
 		"Resistances": [
