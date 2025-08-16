@@ -4,7 +4,7 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "Alabasta",
+    "name": "Alabasta Arc",
     "category": 4
   },
   {
@@ -16,7 +16,7 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "Amazon Lily",
+    "name": "Amazon Lily Arc",
     "category": 4
   },
   {
@@ -100,7 +100,7 @@ window.availableTags = [
     "category": 2
   },
   {
-    "name": "Davy Back Fight",
+    "name": "Davy Back Fight Arc",
     "category": 4
   },
   {
@@ -108,7 +108,7 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "Dressrosa",
+    "name": "Dressrosa Arc",
     "category": 4
   },
   {
@@ -120,15 +120,15 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "East Blue",
+    "name": "East Blue Arc",
     "category": 4
   },
   {
-    "name": "Egghead",
+    "name": "Egghead Arc",
     "category": 4
   },
   {
-    "name": "Enies Lobby",
+    "name": "Enies Lobby Arc",
     "category": 4
   },
   {
@@ -148,7 +148,7 @@ window.availableTags = [
     "category": 2
   },
   {
-    "name": "Fish-Man Island",
+    "name": "Fish-Man Island Arc",
     "category": 4
   },
   {
@@ -192,7 +192,7 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "Great Prison Impel Down",
+    "name": "Great Prison Impel Down Arc",
     "category": 4
   },
   {
@@ -252,7 +252,7 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "Land of Wano",
+    "name": "Land of Wano Arc",
     "category": 4
   },
   {
@@ -264,7 +264,7 @@ window.availableTags = [
     "category": 3
   },
   {
-    "name": "Marineford Paramount War",
+    "name": "Marineford Paramount War Arc",
     "category": 4
   },
   {
@@ -320,7 +320,7 @@ window.availableTags = [
     "category": 3
   },
   {
-    "name": "Punk Hazard",
+    "name": "Punk Hazard Arc",
     "category": 4
   },
   {
@@ -328,7 +328,7 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "Reverie",
+    "name": "Reverie Arc",
     "category": 4
   },
   {
@@ -364,7 +364,7 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "Sabaody Archipelago",
+    "name": "Sabaody Archipelago Arc",
     "category": 4
   },
   {
@@ -380,7 +380,7 @@ window.availableTags = [
     "category": 2
   },
   {
-    "name": "Skypiea",
+    "name": "Skypiea Arc",
     "category": 4
   },
   {
@@ -404,7 +404,7 @@ window.availableTags = [
     "category": 2
   },
   {
-    "name": "Thriller Bark",
+    "name": "Thriller Bark Arc",
     "category": 4
   },
   {
@@ -428,7 +428,7 @@ window.availableTags = [
     "category": 2
   },
   {
-    "name": "Water Seven",
+    "name": "Water Seven Arc",
     "category": 4
   },
   {
@@ -436,7 +436,7 @@ window.availableTags = [
     "category": 1
   },
   {
-    "name": "Whole Cake Island",
+    "name": "Whole Cake Island Arc",
     "category": 4
   },
   {
@@ -460,7 +460,7 @@ window.availableTags = [
     "category": 3
   },
   {
-    "name": "Zou",
+    "name": "Zou Arc",
     "category": 4
   }
 ];

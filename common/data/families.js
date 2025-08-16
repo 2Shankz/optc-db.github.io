@@ -725,6 +725,10 @@ const MonkeyDDragon = [ "Monkey D. Dragon" ];
 const Ginny = [ "Ginny" ];
 const FigarlandGarling = [ "Saint Figarland Garling" ];
 const Alpha = [ "Alpha" ];
+const Gyogyo = [ "Gyogyo" ];
+const Totts = [ "Totts" ];
+const Pert = [ "Pert" ];
+const Potato = [ "Potato" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5034,6 +5038,9 @@ window.families = {
     4419: [ ...Sabo ],
     4420: [ ...Koala ],
     4421: [ ...Hack ],
+    4422: [ ...JewelryBonney, ...Gyogyo, ...Totts, ...Pert, ...Potato ],
+    4423: [ ...Vegapunk ],
+    4424: [ ...Borsalino ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
