@@ -3537,6 +3537,17 @@ window.drops = {
             gamewith: null,
             'Defeat Level Rewards': [ 4413 ],
         },
+
+        {
+            name: 'Kizaru',
+            dropID: 'pka28',
+            thumb: 4429,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4429 ],
+        },
+
     ],
 
 

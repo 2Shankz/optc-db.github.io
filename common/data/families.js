@@ -5041,6 +5041,12 @@ window.families = {
     4422: [ ...JewelryBonney, ...Gyogyo, ...Totts, ...Pert, ...Potato ],
     4423: [ ...Vegapunk ],
     4424: [ ...Borsalino ],
+    4425: [ ...Franky ],
+    4426: [ ...Brook ],
+    4427: [ ...Lilith ],
+    4428: [ ...Atlas ],
+    4429: [ ...Borsalino ],
+    //4430: [ ...Borsalino ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
