@@ -5692,6 +5692,7 @@
 				targets: [
 					"captain",
 					"special",
+					"superSpecial",
 					"support",
 				],
 				// Reduces Special Cooldown of Ship by 3 turns
