@@ -1076,11 +1076,10 @@
 				regex: /specialProportional/i,
 			},
 
-			// Prototype
 			{
 				name: "ATK",
 				targets: ["rumbleSpecial"],
-				regex: /Deals ([.\d]+)x ATK in damage( ignoring DEF)? to (\d)?(?=((?:[^e]+|e(?!nem))*))\4enem(?:y|ies)(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
+				regex: /Deals ([.\d]+)x ATK in damage( ignoring DEF)? to (\d)?(?=((?:[^e]+|e(?!nem))*))\4enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
 				submatchers: [
 					{
 						type: "number",
@@ -1090,12 +1089,12 @@
 					{
 						type: "number",
 						description: "Repeat:",
-						groups: [6],
+						groups: [7],
 					},
 					{
 						type: "option",
 						description: "Ignoring DEF",
-						regex: /./,
+						regex: /./i,
 						groups: [2],
 						cssClasses: ["min-width-6"],
 					},
@@ -1111,7 +1110,7 @@
 					{
 						type: "option",
 						description: "Universal",
-						regex: /( |all)/,
+						regex: /all/i,
 						groups: [4],
 						cssClasses: ["min-width-6"],
 					},
@@ -1129,27 +1128,156 @@
 						type: "separator",
 						description: "Range:",
 					},
+					...createRangeSubmatcher([6]),
+				],
+			},
+
+			{
+				name: "Fixed",
+				targets: ["rumbleSpecial"],
+				regex: /Deals ([,\d]+) fixed damage to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Amount:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
 					...createRangeSubmatcher([5]),
 				],
 			},
 
-			// {
-			// 	name: "Fixed",
-			// 	targets: ["rumbleSpecial"],
-			// 	regex: /Deals ([,\d]+) fixed damage/i,
-			// },
+			{
+				name: "Percentage",
+				targets: ["rumbleSpecial"],
+				regex: /([.\d]+)% HP cut to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Amount:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
 
-			// {
-			// 	name: "Percentage",
-			// 	targets: ["rumbleSpecial"],
-			// 	regex: /([.\d]+)% HP cut/i,
-			// },
-
-			// {
-			// 	name: "Random",
-			// 	targets: ["rumbleSpecial"],
-			// 	regex: /Randomly deals between ([,\d]+)-([,\d]+) fixed damage/i,
-			// },
+			{
+				name: "Random",
+				targets: ["rumbleSpecial"],
+				regex: /Randomly deals between ([,\d]+)-([,\d]+) fixed damage to (\d)?(?=((?:[^e]+|e(?!nem))*))\4enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Amount:",
+						groups: [1, 2],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [3],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [4],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([4]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([4]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([6]),
+				],
+			},
 
 		],
 		"Boost Damage and Stats": [
@@ -8291,6 +8419,12 @@
 					...createClassesSubmatchers([2]),
 				],
 			},
+		],
+
+		"Hinderances": [
+
+
+
 		],
 
 		"Cleanse": [
