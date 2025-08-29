@@ -8423,7 +8423,490 @@
 
 		"Hinderances": [
 
+			{
+				name: "Action Bind",
+				targets: ["rumbleSpecial"],
+				regex:
+					/([.\d]+)% chance to inflict[^.]+Action Bind[^.]+to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
 
+			{
+				name: "Confusion",
+				targets: ["rumbleSpecial"],
+				regex:
+					/([.\d]+)% chance to inflict[^.]+Confusion[^.]+to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
+
+			{
+				name: "Forced Out",
+				targets: ["rumbleSpecial"],
+				regex:
+					/([.\d]+)% chance to inflict[^.]+Forced Out[^.]+to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
+
+			{
+				name: "Paralysis",
+				targets: ["rumbleSpecial"],
+				regex:
+					/([.\d]+)% chance to inflict[^.]+Paralysis[^.]+to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
+
+			{
+				name: "RCV Bind",
+				targets: ["rumbleSpecial"],
+				regex:
+					/([.\d]+)% chance to inflict[^.]+RCV Bind[^.]+to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
+
+			{
+				name: "Special Bind",
+				targets: ["rumbleSpecial"],
+				regex:
+					/([.\d]+)% chance to inflict[^.]+Special Bind[^.]+to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
+
+			{
+				name: "Half Stats",
+				targets: ["rumbleSpecial"],
+				regex:
+					/([.\d]+)% chance to inflict[^.]+Half([^.]+)to (\d)?(?=((?:[^e]+|e(?!nem))*))\4enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [7],
+					},
+					{
+						type: "option",
+						description: "All",
+						regex: /Stats/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "ATK",
+						regex: /(ATK|Stats)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "DEF",
+						regex: /(DEF|Stats)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "RCV",
+						regex: /(RCV|Stats)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "SPD",
+						regex: /(SPD|Stats)/i,
+						groups: [2],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [3],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [4],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([4]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([4]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([6]),
+				],
+			},
+
+			{
+				name: "Damage Over Time",
+				targets: ["rumbleSpecial"],
+				regex:
+					/Inflicts Lv. (\d+) Damage Over Time to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Level:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
+
+			{
+				name: "Special CT",
+				targets: ["rumbleSpecial"],
+				regex:
+					/Removes ([.\d]+)% of Special CT to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Amount:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
 
 		],
 
