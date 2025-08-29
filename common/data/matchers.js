@@ -1279,6 +1279,56 @@
 				],
 			},
 
+			{
+				name: "Damage Over Time",
+				targets: ["rumbleSpecial"],
+				regex:
+					/Inflicts Lv. (\d+) Damage Over Time to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Level:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [2],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [3],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([3]),
+					{
+						type: "separator",
+						description: "Range:",
+					},
+					...createRangeSubmatcher([5]),
+				],
+			},
+
 		],
 		"Boost Damage and Stats": [
 			{
@@ -8805,56 +8855,6 @@
 						description: "Range:",
 					},
 					...createRangeSubmatcher([6]),
-				],
-			},
-
-			{
-				name: "Damage Over Time",
-				targets: ["rumbleSpecial"],
-				regex:
-					/Inflicts Lv. (\d+) Damage Over Time to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)? for (\d+) seconds/i,
-				submatchers: [
-					{
-						type: "number",
-						description: "Level:",
-						groups: [1],
-					},
-					{
-						type: "number",
-						description: "Duration:",
-						groups: [6],
-					},
-					{
-						type: "separator",
-						description: "Targeting:",
-					},
-					{
-						type: "number",
-						description: "Count:",
-						groups: [2],
-					},
-					{
-						type: "option",
-						description: "Universal",
-						regex: /all/i,
-						groups: [3],
-						cssClasses: ["min-width-6"],
-					},
-					{
-						type: "separator",
-						description: "Types:",
-					},
-					...createTypesSubmatchers([3]),
-					{
-						type: "separator",
-						description: "Classes:",
-					},
-					...createClassesSubmatchers([3]),
-					{
-						type: "separator",
-						description: "Range:",
-					},
-					...createRangeSubmatcher([5]),
 				],
 			},
 
