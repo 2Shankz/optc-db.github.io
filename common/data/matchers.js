@@ -8989,6 +8989,11 @@
 						groups: [6],
 					},
 					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
+					},
+					{
 						type: "separator",
 						description: "Targeting:",
 					},
@@ -9037,6 +9042,11 @@
 						type: "number",
 						description: "Duration:",
 						groups: [6],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
 					},
 					{
 						type: "separator",
@@ -9089,6 +9099,11 @@
 						groups: [6],
 					},
 					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
+					},
+					{
 						type: "separator",
 						description: "Targeting:",
 					},
@@ -9137,6 +9152,11 @@
 						type: "number",
 						description: "Duration:",
 						groups: [6],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
 					},
 					{
 						type: "separator",
@@ -9189,6 +9209,11 @@
 						groups: [6],
 					},
 					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
+					},
+					{
 						type: "separator",
 						description: "Targeting:",
 					},
@@ -9237,6 +9262,11 @@
 						type: "number",
 						description: "Duration:",
 						groups: [6],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
 					},
 					{
 						type: "separator",
@@ -9289,6 +9319,11 @@
 						groups: [6],
 					},
 					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
+					},
+					{
 						type: "separator",
 						description: "Targeting:",
 					},
@@ -9337,6 +9372,11 @@
 						type: "number",
 						description: "Duration:",
 						groups: [6],
+					},
+					{
+						type: "number",
+						description: "Repeat:",
+						groups: [7],
 					},
 					{
 						type: "separator",
