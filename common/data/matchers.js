@@ -10933,6 +10933,7 @@
 			},
 
 			/* * * * * Rumble Special * * * * */
+
 			{
 				name: "Cooldown",
 				targets: ["rumbleSpecial"],
@@ -10945,6 +10946,12 @@
 						groups: [1],
 					}
 				],
+			},
+
+			{
+				name: "Has Super Special",
+				targets: ["rumbleSpecial"],
+				regex: /\^\$/i,
 			},
 
 			/* * * * * Rumble Resistance * * * * */

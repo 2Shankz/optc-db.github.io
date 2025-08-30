@@ -312,6 +312,9 @@ CharUtils.checkMatcher = function(matcher, id) {
         target = "VSCondition";
         targetString = window.details[id]["VSCondition"];
     }
+
+
+
     if (matcher.target == "rumbleAbility" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festAbility, window.rumble[id].character2.festAbility ]  : window.rumble[id].festAbility;
     };
@@ -321,6 +324,15 @@ CharUtils.checkMatcher = function(matcher, id) {
     if (matcher.target == "rumbleResistance" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festResistance, window.rumble[id].character2.festResistance ]  : window.rumble[id].festResistance;
     };
+
+
+    
+    if (matcher.name == "Has Super Special" && window.rumble[id]) {//Override for Seach by Rumble Super Special (To keep it with other Rumble Special filters)
+        if ((window.rumble[id].character1 && window.rumble[id].character1.festSuperSpecial) || window.rumble[id].festSuperSpecial) {
+            return true;
+        };
+    };
+
 
 
     if (matcher.name == "Has Level Limit Break" && window.details[id].lLimit) {//Override for Seach by Level Limit Break (To keep it with other Limit Break filters)
