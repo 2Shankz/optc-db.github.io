@@ -9605,7 +9605,7 @@
 				name: "Special CT",
 				targets: ["rumbleSpecial"],
 				regex:
-					/Reduces ([.\d]+)% of Special CT to (\d)?(self|(?=((?:[^c]+|c(?!rew))*))\4crew members?)(, excluding self,)?(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)?/i,
+					/Reduces ([.\d]+)% of Special CT to (\d)?(self|(?=((?:[^c]+|c(?!rew))*))\4crew members?)([. ])?(, excluding self,)?(?: ?with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: ?in a ([\w]+, [\w]+) range)?/i,
 				submatchers: [
 					{
 						type: "number",
@@ -9629,6 +9629,13 @@
 						cssClasses: ["min-width-12"],
 					},
 					{
+						type: "option",
+						description: "Includes Self",
+						regex: /./i,
+						groups: [5],
+						cssClasses: ["min-width-12"],
+					},
+					{
 						type: "separator",
 						description: "Types:",
 					},
@@ -9642,7 +9649,7 @@
 						type: "separator",
 						description: "Range:",
 					},
-					...createRangeSubmatcher([7]),
+					...createRangeSubmatcher([8]),
 				],
 			},
 
