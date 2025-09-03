@@ -303,44 +303,46 @@ CharUtils.saveToRegexCache = function(cacheKey, unitId, value) {
 CharUtils.checkMatcher = function(matcher, id) {
     var target = matcher.target;
     var targetString = window.details[id][matcher.target];
+
     // It is unlikely for VS units to get a super special, so combine them when matching
     if (matcher.target == "superSpecial" && window.details[id].VSSpecial) {
         target = "VSSpecial";
         targetString = window.details[id]["VSSpecial"];
     }
-    if (matcher.target == "superSpecialCriteria" && window.details[id].VSCondition) {
+    else if (matcher.target == "superSpecialCriteria" && window.details[id].VSCondition) {
         target = "VSCondition";
         targetString = window.details[id]["VSCondition"];
-    }
+    };
 
-
-
+    // Use rumble.js for rumble and grand party filters
     if (matcher.target == "rumbleAbility" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festAbility, window.rumble[id].character2.festAbility ]  : window.rumble[id].festAbility;
-    };
-    if (matcher.target == "rumbleSpecial" && window.rumble[id]) {
+    }
+    else if (matcher.target == "rumbleSpecial" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festSpecial, window.rumble[id].character2.festSpecial ]  : window.rumble[id].festSpecial;
-    };
-    if (matcher.target == "rumbleResistance" && window.rumble[id]) {
+    }
+    else if (matcher.target == "rumbleResistance" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festResistance, window.rumble[id].character2.festResistance ]  : window.rumble[id].festResistance;
+    }
+    else if (matcher.target == "gpAbility" && window.rumble[id]) {
+        targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festGPAbility, window.rumble[id].character2.festGPAbility ] : [ window.rumble[id].festGPAbility ];
+    }
+    else if (matcher.target == "gpSpecial" && window.rumble[id]) {
+        targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festGPSpecial, window.rumble[id].character2.festGPSpecial ] : [ window.rumble[id].festGPSpecial ];
     };
 
-
-    
-    if (matcher.name == "Has Super Special" && window.rumble[id]) {//Override for Seach by Rumble Super Special (To keep it with other Rumble Special filters)
+    // Overrides
+    if (matcher.name == "Has Level Limit Break" && window.details[id].lLimit) { // Override for Search by Level Limit Break (To keep it with other Limit Break filters)
+        return true;
+    }
+    else if (matcher.name == "Has No Level Limit Break" && !window.details[id].lLimit) { // Override for Search by Level Limit Break (To keep it with other Limit Break filters)
+        return true;
+    }
+    else if (matcher.name == "Has Super Special" && window.rumble[id]) { // Override for Search by Rumble Super Special (To keep it with other Rumble Special filters)
         if ((window.rumble[id].character1 && window.rumble[id].character1.festSuperSpecial) || window.rumble[id].festSuperSpecial) {
             return true;
         };
     };
-
-
-
-    if (matcher.name == "Has Level Limit Break" && window.details[id].lLimit) {//Override for Seach by Level Limit Break (To keep it with other Limit Break filters)
-        return true;
-    }
-    if (matcher.name == "Has No Level Limit Break" && !window.details[id].lLimit) {//Override for Seach by Level Limit Break (To keep it with other Limit Break filters)
-        return true;
-    }
 
     var name = target + '.' + matcher.group + '.' + matcher.name;
     var result = false;

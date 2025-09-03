@@ -7996,7 +7996,7 @@
 
 			{
 				name: "Accuracy",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+Accuracy[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8021,7 +8021,7 @@
 
 			{
 				name: "ATK",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+ATK[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8046,7 +8046,7 @@
 
 			{
 				name: "Blow Away",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+Blow Away[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8071,7 +8071,7 @@
 
 			{
 				name: "Critical Hit",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+Critical Hit[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8096,7 +8096,7 @@
 
 			{
 				name: "DEF",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+DEF[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8121,7 +8121,7 @@
 
 			{
 				name: "Guard",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+Guard[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8146,7 +8146,7 @@
 
 			{
 				name: "HP",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+HP[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8171,7 +8171,7 @@
 
 			{
 				name: "RCV",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+RCV[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8196,7 +8196,7 @@
 
 			{
 				name: "Shield",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+Shield[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8221,7 +8221,7 @@
 
 			{
 				name: "SPD",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+SPD[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8246,7 +8246,7 @@
 
 			{
 				name: "Special CT",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Applies Lv. ([\d]+)[^.]+Special CT[^.]+up buff to ([^.]+)/i,
 				submatchers: [
@@ -8774,7 +8774,7 @@
 		"Debuffs": [
 			{
 				name: "Accuracy",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Inflicts Lv. ([\d]+)[^.]+Accuracy[^.]+down debuff to ([^.]+)/i,
 				submatchers: [
@@ -8799,7 +8799,7 @@
 
 			{
 				name: "ATK",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Inflicts Lv. ([\d]+)[^.]+ATK[^.]+down debuff to ([^.]+)/i,
 				submatchers: [
@@ -8824,7 +8824,7 @@
 
 			{
 				name: "Critical Hit",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Inflicts Lv. ([\d]+)[^.]+Critical Hit[^.]+down debuff to ([^.]+)/i,
 				submatchers: [
@@ -8849,7 +8849,7 @@
 
 			{
 				name: "DEF",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Inflicts Lv. ([\d]+)[^.]+DEF[^.]+down debuff to ([^.]+)/i,
 				submatchers: [
@@ -8874,7 +8874,7 @@
 
 			{
 				name: "Guard",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Inflicts Lv. ([\d]+)[^.]+Guard[^.]+down debuff to ([^.]+)/i,
 				submatchers: [
@@ -8899,7 +8899,7 @@
 
 			{
 				name: "HP",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Inflicts Lv. ([\d]+)[^.]+HP[^.]+down debuff to ([^.]+)/i,
 				submatchers: [
@@ -8924,7 +8924,7 @@
 
 			{
 				name: "SPD",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Inflicts Lv. ([\d]+)[^.]+SPD[^.]+down debuff to ([^.]+)/i,
 				submatchers: [
@@ -8949,7 +8949,7 @@
 
 			{
 				name: "Special CT",
-				targets: ["rumbleAbility"],
+				targets: ["rumbleAbility", "gpAbility"],
 				regex:
 					/Inflicts Lv. ([\d]+)[^.]+Special CT[^.]+down debuff to ([^.]+)/i,
 				submatchers: [
