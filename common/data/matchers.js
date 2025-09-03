@@ -12022,6 +12022,22 @@
 					},
 				],
 			},
+
+			/* * * * * Grand Party Burst * * * * */
+
+			{
+				name: "Uses",
+				targets: ["gpSpecial"],
+				regex:
+					/["']uses["']:\s?(\d+)/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Amount:",
+						groups: [1],
+					}
+				],
+			},
 		],
 	};
 
