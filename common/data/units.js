@@ -4429,7 +4429,7 @@ window.units = [
     [ "Dr. Vegapunk \"Atlas the Violent\" - Leaving the Frontlines", "PSY", ["Cerebral", "Free Spirit"], 5, 30, 4, 4, 99, 4000000, 1865, 805, 97, 3729, 1609, 193, 1 ],
     [ "Kizaru - Difficult Mission", "PSY", ["Slasher", "Powerhouse"], 5, 40, 5, 4, 99, 5000000, 1518, 788, 110, 3036, 1575, 219, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Jinbe - Path-Clearing Fish-Man Karate", "PSY", ["Cerebral", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2227, 892, 94, 4454, 1784, 188, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],

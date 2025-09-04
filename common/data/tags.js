@@ -4429,7 +4429,7 @@ window.tags = [
 	["Vegapunk", "Scientist", "Egghead Arc"],
 	["Navy", "Navy Admiral", "Logia-type", "Egghead Arc"],
 	[],
-	[],
+	["Straw Hat Pirates", "Fish-Man", "Egghead Arc"],
 	[],
 	[],
 	[],

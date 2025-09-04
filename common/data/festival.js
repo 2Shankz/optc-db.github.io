@@ -4429,7 +4429,7 @@ window.festival = [
 	["ATK", 170, 159],
 	["SPT", 167, 182],
 	["", null, null],
-	["", null, null],
+	["SPT", 210, 151],
 	["", null, null],
 	["", null, null],
 	["", null, null],
