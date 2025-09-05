@@ -12380,10 +12380,9 @@
 		],
 
 		"Cleanse": [
-
 			{
 				name: "Stats Down",
-				targets: ["rumbleSpecial"],
+				targets: ["rumbleSpecial", "gpSpecial"],
 				regex:
 					/([\d]+)% chance to cleanse ([^.]+) down debuffs to ([^.]+)/i,
 				submatchers: [
@@ -12445,7 +12444,6 @@
 					...createUniversalSubmatcher([3]),
 				],
 			},
-
 		],
 
 		"Resistances": [
