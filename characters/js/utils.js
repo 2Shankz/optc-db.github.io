@@ -315,6 +315,9 @@ CharUtils.checkMatcher = function(matcher, id) {
     };
 
     // Use rumble.js for rumble and grand party filters
+    if (matcher.target == "rumbleCost" && window.rumble[id]) {
+        targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festCost, window.rumble[id].character2.festCost ]  : window.rumble[id].festCost;
+    }
     if (matcher.target == "rumbleAbility" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festAbility, window.rumble[id].character2.festAbility ]  : window.rumble[id].festAbility;
     }

@@ -245,6 +245,7 @@
                                             <th>Class</th>
                                             <th>DEF</th>
                                             <th>SPD</th>
+                                            <th>Cost</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -257,6 +258,9 @@
                                             <td ng-if="!compare">{{::rumble.festStats.spd | number}}</td>
                                             <td ng-if="compare" comparison="positive">{{rumble.festStats.spd -
                                                 compare.rumble.festStats.spd | number}}</td>
+                                            <td ng-if="!compare">{{::rumble.festCost | number}}</td>
+                                            <td ng-if="compare" comparison="positive">{{rumble.festCost -
+                                                compare.rumble.festCost | number}}</td>
                                         </tr>
                                         <tr ng-if="rumble2">
                                             <td>Character 2</td>
@@ -267,6 +271,9 @@
                                             <td ng-if="!compare">{{::rumble2.festStats.spd | number}}</td>
                                             <td ng-if="compare" comparison="positive">{{rumble2.festStats.spd -
                                                 compare.rumble2.festStats.spd | number}}</td>
+                                           <td ng-if="!compare">{{::rumble2.festCost | number}}</td>
+                                            <td ng-if="compare" comparison="positive">{{rumble2.festCost -
+                                                compare.rumble2.festCost | number}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
