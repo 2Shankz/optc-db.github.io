@@ -49,12 +49,12 @@
 	/* * * * * Unit control * * * * */
 
 	var parseUnit = function (element, n) {
-		var piratefest = window.festival[n];
+		var piratefest = window.rumble[n + 1];
 
 		// If multi-dimensional array (i.e. VS units), split into two
-		if (piratefest && Array.isArray(piratefest[0])) {
-			var piratefest2 = piratefest[1];
-			piratefest = piratefest[0];
+		if (piratefest && piratefest.character1) {
+			var piratefest2 = piratefest.character2;
+			piratefest = piratefest.character1;
 		}
 		if (element.length === 0) return [];
 		if (element[15] && element[15].constructor != Array)
@@ -347,20 +347,20 @@
 				specials: LLBspecial,
 			},
 			pirateFest: {
-				class: piratefest ? piratefest[0] : "",
-				DEF: piratefest ? piratefest[1] : null,
-				SPD: piratefest ? piratefest[2] : null,
-				minCP: piratefest ? piratefest[3] : null,
-				maxCP: piratefest ? piratefest[4] : null,
+				class: piratefest ? piratefest.festStats.style : "",
+				DEF: piratefest ? piratefest.festStats.def : null,
+				SPD: piratefest ? piratefest.festStats.spd : null,
+				minCP: null, // piratefest ? piratefest[3] : null,
+				maxCP: null, // piratefest ? piratefest[4] : null,
 			},
 			pirateFest2: !piratefest2
 				? null
 				: {
-						class: piratefest2 ? piratefest2[0] : "",
-						DEF: piratefest2 ? piratefest2[1] : null,
-						SPD: piratefest2 ? piratefest2[2] : null,
-						minCP: piratefest2 ? piratefest2[3] : null,
-						maxCP: piratefest2 ? piratefest2[4] : null,
+						class: piratefest2 ? piratefest2.festStats.style : "",
+						DEF: piratefest2 ? piratefest2.festStats.def : null,
+						SPD: piratefest2 ? piratefest2.festStats.spd : null,
+						minCP: null, // piratefest2 ? piratefest2[3] : null,
+						maxCP: null, // piratefest2 ? piratefest2[4] : null,
 				  },
 			aliases: window.aliases[n + 1] ? window.aliases[n + 1].join(" ") : "",
 			families:

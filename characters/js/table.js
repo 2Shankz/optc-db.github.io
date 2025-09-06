@@ -215,12 +215,43 @@
         }
       }
       //filter rumble style
-      if (filters.styleATK && unit.pirateFest.class !== "ATK") return false;
-      if (filters.styleDEF && unit.pirateFest.class !== "DEF") return false;
-      if (filters.styleRCV && unit.pirateFest.class !== "RCV") return false;
-      if (filters.styleSPT && unit.pirateFest.class !== "SPT") return false;
-      if (filters.styleDBF && unit.pirateFest.class !== "DBF") return false;
-      if (filters.styleBAL && unit.pirateFest.class !== "BAL") return false;
+      if (filters.styleATK) {
+        if (unit.pirateFest.class !== "ATK") {
+          if (unit.pirateFest2 === null) return false;
+          if (unit.pirateFest2.class !== "ATK") return false
+        };
+      };
+      if (filters.styleDEF) {
+        if (unit.pirateFest.class !== "DEF") {
+          if (unit.pirateFest2 === null) return false;
+          if (unit.pirateFest2.class !== "DEF") return false
+        };
+      };
+      if (filters.styleRCV) {
+        if (unit.pirateFest.class !== "RCV") {
+          if (unit.pirateFest2 === null) return false;
+          if (unit.pirateFest2.class !== "RCV") return false
+        };
+      };
+      if (filters.styleSPT) {
+        if (unit.pirateFest.class !== "SPT") {
+          if (unit.pirateFest2 === null) return false;
+          if (unit.pirateFest2.class !== "SPT") return false
+        };
+      };
+      if (filters.styleDBF) {
+        if (unit.pirateFest.class !== "DBF") {
+          if (unit.pirateFest2 === null) return false;
+          if (unit.pirateFest2.class !== "DBF") return false
+        };
+      };
+      if (filters.styleBAL) {
+        if (unit.pirateFest.class !== "BAL") {
+          if (unit.pirateFest2 === null) return false;
+          if (unit.pirateFest2.class !== "BAL") return false
+        };
+      };
+
       if (filters.tags && filters.tags.length) {
         const unitTagSet = window.tags[unit.number];
         if (!unitTagSet) return false;
