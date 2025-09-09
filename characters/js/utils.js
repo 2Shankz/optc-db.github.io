@@ -314,6 +314,14 @@ CharUtils.checkMatcher = function(matcher, id) {
         targetString = window.details[id]["VSCondition"];
     };
 
+    // 
+    if (matcher.target == "potential" && window.details[id].potential) {
+        if (window.details[id].lastTap) targetString.push(window.details[id].lastTap.description);
+        if (window.details[id].superTandem) targetString.push(window.details[id].superTandem.description);
+        if (window.details[id].rush) targetString.push(window.details[id].rush.stats);
+        if (window.details[id].superTandemBoost) targetString.push(window.details[id].superTandemBoost.description);
+    };
+
     // Use rumble.js for rumble and grand party filters
     if (matcher.target == "rumbleCost" && window.rumble[id]) {
         targetString = window.rumble[id].character1 ? [ window.rumble[id].character1.festCost, window.rumble[id].character2.festCost ]  : window.rumble[id].festCost;

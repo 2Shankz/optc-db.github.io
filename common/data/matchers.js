@@ -13381,7 +13381,30 @@
 			{
 				name: "Super Tandem",
 				targets: ["potential"],
-				regex: /Super Tandem(?! Boost)/i,
+				regex: /(?:Super Tandem(?! Boost)|Boosts Tandem ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([.\d]+)x for (\d+) turns?)/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Multiplier:",
+						groups: [2],
+					},
+					...createUniversalSubmatcher([1]),
+					{
+						type: "separator",
+						description: "Affected types:",
+					},
+					...createTypesSubmatchers([1]),
+					{
+						type: "separator",
+						description: "Affected classes:",
+					},
+					...createClassesSubmatchers([1]),
+					{
+						type: "separator",
+						description: "Affected positions:",
+					},
+					...createPositionsSubmatchers([1]),
+				]
 			},
 
 			{
