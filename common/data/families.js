@@ -5046,8 +5046,12 @@ window.families = {
     4427: [ ...Lilith ],
     4428: [ ...Atlas ],
     4429: [ ...Borsalino ],
-    //4430: [ ...Borsalino ],
+    4430: [ ...Borsalino ],
     4431: [ ...Jinbe ],
+    4432: [ ...MonkeyDLuffy ],
+    4433: [ ...BartholomewKuma ],
+    4434: [ ...JewelryBonney ],
+    4435: [ ...VinsmokeSanji ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
