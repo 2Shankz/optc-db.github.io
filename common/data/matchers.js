@@ -3694,6 +3694,13 @@
 					},
 					{
 						type: "option",
+						description: "Damage Nullification",
+						regex: /Damage Nullification/i,
+						groups: [1],
+						cssClasses: ["min-width-12"],
+					},
+					{
+						type: "option",
 						description: "EOT Damage",
 						regex: /End of Turn Damage/i,
 						groups: [1],
@@ -3812,6 +3819,13 @@
 						type: "option",
 						description: "Threshold Damage Reduction",
 						regex: /Threshold Damage Reduction/i,
+						groups: [1],
+						cssClasses: ["min-width-12"],
+					},
+					{
+						type: "option",
+						description: "Damage Nullification",
+						regex: /Damage Nullification/i,
 						groups: [1],
 						cssClasses: ["min-width-12"],
 					},
