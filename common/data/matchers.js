@@ -13469,13 +13469,13 @@
 			{
 				name: "Last Tap",
 				targets: ["potential"],
-				regex: /Last Tap/i,
+				regex: /Obtain Last Tap/i,
 			},
 
 			{
 				name: "Super Tandem",
 				targets: ["potential"],
-				regex: /(?:Super Tandem(?! Boost)|Boosts Tandem ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([.\d]+)x for (\d+) turns?)/i,
+				regex: /(?:Obtain Super Tandem(?! Boost)|Boosts Tandem ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([.\d]+)x for (\d+) turns?)/i,
 				submatchers: [
 					{
 						type: "number",
@@ -13504,13 +13504,13 @@
 			{
 				name: "Super Tandem Boost",
 				targets: ["potential"],
-				regex: /Super Tandem Boost/i,
+				regex: /Obtain Super Tandem Boost/i,
 			},
 
 			{
 				name: "Rush",
 				targets: ["potential"],
-				regex: /Rush/i,
+				regex: /Obtain Rush/i,
 			},
 
 			/* * * * * Super Special Criteria * * * * */
