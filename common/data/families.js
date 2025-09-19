@@ -264,7 +264,7 @@ const SaberCoporalNavy = [ "Saber Coporal Navy" ];
 const BazookaCoporalNavy = [ "Bazooka Coporal Navy" ];
 const KnuckleCoporalNavy = [ "Knuckle Coporal Navy" ];
 const Oimo = [ "Oimo" ];
-const Kashi = [ "Kashi" ];
+const Kashii = [ "Kashii" ];
 const WatchdogUnitOfTheLaw = [ "Watchdog Unit of the Law" ];
 const JustJuryman = [ "Just Juryman" ];
 const ThreeHeadedBaskerville = [ "Three-Headed Baskerville" ];
@@ -1364,7 +1364,7 @@ window.families = {
     699: [ ...BazookaCoporalNavy ],
     700: [ ...KnuckleCoporalNavy ],
     701: [ ...Oimo ],
-    702: [ ...Kashi ],
+    702: [ ...Kashii ],
     703: [ ...WatchdogUnitOfTheLaw ],
     704: [ ...JustJuryman ],
     705: [ ...ThreeHeadedBaskerville ],
@@ -5052,6 +5052,10 @@ window.families = {
     4433: [ ...BartholomewKuma ],
     4434: [ ...JewelryBonney ],
     4435: [ ...VinsmokeSanji ],
+    4436: [ ...Dorry, ...Broggy ],
+    4437: [ ...Kashii ],
+    4438: [ ...Oimo ],
+    4439: [ ...Nami, ...Usopp ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
@@ -5758,6 +5762,13 @@ const ghostFamilies = {
     686: [ ...DraculeMihawk, ...Perona ],
     687: [ ...DraculeMihawk, ...Perona ],
     688: [ ...DraculeMihawk, ...Perona ],
+    689: [ ...Dorry, ...Broggy ],
+    690: [ ...Dorry, ...Broggy ],
+    691: [ ...Dorry, ...Broggy ],
+    692: [ ...Nami, ...Usopp ],
+    693: [ ...Nami, ...Usopp ],
+    694: [ ...Nami, ...Usopp ],
+    695: [ ...Nami, ...Usopp ],
 }
 
 Object.keys(ghostFamilies).forEach(function (key) {

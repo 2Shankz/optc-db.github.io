@@ -4434,10 +4434,10 @@ window.units = [
     [ "Bartholomew Kuma - Daughter-Protecting Hero", "STR", ["Free Spirit", "Powerhouse"], 6, 55, 4, 5, 99, 5000000, 2032, 878, 144, 4064, 1755, 288, 1 ],
     [ "Jewelry Bonney - With Love and Gratitude", "STR", ["Fighter", "Powerhouse"], 5, 30, 4, 4, 99, 4000000, 1811, 801, 107, 3622, 1602, 213, 1 ],
     [ "Sanji - Love That Surpasses Light", "QCK", ["Fighter", "Powerhouse"], 5, 30, 4, 4, 99, 4000000, 1810, 818, 101, 3620, 1636, 202, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Dorry & Broggy - Landing on Egghead", ["QCK", "QCK"], [["Powerhouse", "Slasher"], ["Powerhouse", "Slasher"], ["Powerhouse", "Slasher"]], 6, 55, 4, 5, 99, 5000000, 2335, 930, 126, 4670, 1859, 252, 1 ],
+    [ "Kashii - Crewmate of the Giant Pirate Crew", "QCK", ["Powerhouse", "Slasher"], 5, 30, 4, 4, 99, 4000000, 1942, 775, 68, 3884, 1550, 136, 1 ],
+    [ "Oimo - Crewmate of the Giant Pirate Crew", "QCK", ["Powerhouse", "Striker"], 5, 1, 4, 4, 99, 4000000, 1926, 789, 66, 3852, 1578, 132, 1 ],
+    [ "Nami & Usopp - Unexpected Aid During the Incident", ["STR", "PSY"], [["Cerebral", "Free Spirit"], ["Cerebral", "Shooter"], ["Cerebral", "Shooter"]], "6+", 65, 4, 5, 99, 5000000, 1937, 1054, 202, 4284, 1746, 390, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -5216,6 +5216,13 @@ var ghostsUnits = [
     [ "⚐ Perona - Luck-Formed Mysterious Relationship", "PSY", ["Cerebral", "Driven"], "6+", 65, 4, 5, 99, 5000000, 1819, 986, 226, 3638, 1479, 451, 1 ],
     [ "⚐ Mihawk & Perona - Luck-Formed Mysterious Relationship", "STR", ["Cerebral", "Driven"], "6+", 65, 5, 5, 99, 5000000, 1872, 1132, 230, 3744, 1698, 460, 1 ],
     [ "⚐ Mihawk & Perona - Luck-Formed Mysterious Relationship", "PSY", ["Cerebral", "Driven"], "6+", 65, 5, 5, 99, 5000000, 1872, 1132, 230, 3744, 1698, 460, 1 ],
+    [ "⚐ Dorry - Landing on Egghead", "QCK", ["Powerhouse", "Slasher"], 6, 55, 4, 5, 99, 5000000, 2100, 908, 123, 4200, 1815, 245, 1 ],
+    [ "⚐ Broggy - Landing on Egghead", "QCK", ["Powerhouse", "Slasher"], 6, 55, 4, 5, 99, 5000000, 2121, 908, 119, 4242, 1815, 238, 1 ],
+    [ "⚐ Dorry & Broggy - Landing on Egghead", "QCK", ["Powerhouse", "Slasher"], 6, 55, 4, 5, 99, 5000000, 2335, 930, 126, 4670, 1859, 252, 1 ],
+    [ "⚐ Nami - Unexpected Aid During the Incident", "STR", ["Cerebral", "Free Spirit"], "6+", 65, 4, 5, 99, 5000000, 1844, 804, 194, 3688, 1608, 388, 1 ],
+    [ "⚐ Usopp - Unexpected Aid During the Incident", "PSY", ["Cerebral", "Shooter"], "6+", 65, 4, 5, 99, 5000000, 1935, 824, 175, 3919, 1648, 351, 1 ],
+    [ "⚐ Nami & Usopp - Unexpected Aid During the Incident", "STR", ["Cerebral", "Shooter"], "6+", 65, 4, 5, 99, 5000000, 1937, 1054, 202, 4284, 1746, 390, 1 ],
+    [ "⚐ Nami & Usopp - Unexpected Aid During the Incident", "PSY", ["Cerebral", "Shooter"], "6+", 65, 4, 5, 99, 5000000, 1937, 1054, 202, 4284, 1746, 390, 1 ],
 ];
 
 window.units = window.units.concat(ghostsUnits);
