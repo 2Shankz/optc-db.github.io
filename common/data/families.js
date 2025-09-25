@@ -729,6 +729,11 @@ const Gyogyo = [ "Gyogyo" ];
 const Totts = [ "Totts" ];
 const Pert = [ "Pert" ];
 const Potato = [ "Potato" ];
+const ShepherdJuPeter = [ "Saint Shepherd Ju Peter" ];
+const EthanbaronVNusjuro = [ "Saint Ethanbaron V. Nusjuro" ];
+const Hound = [ "Hound" ];
+const Urban = [ "Urban" ];
+const Pomsky = [ "Pomsky" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5056,6 +5061,15 @@ window.families = {
     4437: [ ...Kashii ],
     4438: [ ...Oimo ],
     4439: [ ...Nami, ...Usopp ],
+    4440: [ ...ShepherdJuPeter ],
+    4441: [ ...ShepherdJuPeter ],
+    4442: [ ...EthanbaronVNusjuro ],
+    4443: [ ...EthanbaronVNusjuro ],
+    4444: [ ...Hound ],
+    4445: [ ...Urban ],
+    4446: [ ...Pomsky ],
+    4447: [ ...MonkeyDLuffy ],
+    //4448: [ ...MonkeyDLuffy ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],

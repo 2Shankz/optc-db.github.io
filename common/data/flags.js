@@ -4243,6 +4243,13 @@ window.flags = {
     4437: { rr: 1, rro: 1, lrr: 1, kclrr: 1 },
     4438: { rr: 1, rro: 1, lrr: 1, slrr: 1 },
     4439: { rr: 1, rro: 1 },
+    4440: { rr: 1, rro: 1, lrr: 1, superlrr: 1 },
+    4441: { rr: 1, rro: 1, lrr: 1, superlrr: 1 },
+    4442: { rr: 1, rro: 1, lrr: 1, superlrr: 1 },
+    4443: { rr: 1, rro: 1, lrr: 1, superlrr: 1 },
+    4444: { rr: 1, rro: 1 },
+    4445: { rr: 1, rro: 1 },
+    4446: { rr: 1, rro: 1 },
     //break
     4986: { rr: 1, rro: 1, global: 1 },
     4987: { rr: 1, rro: 1, global: 1 },

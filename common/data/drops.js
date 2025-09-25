@@ -3548,6 +3548,16 @@ window.drops = {
             'Defeat Level Rewards': [ 4429 ],
         },
 
+        {
+            name: 'Dorry & Broggy',
+            dropID: 'pka29',
+            thumb: 4233,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4447 ],
+        },
+
     ],
 
 
