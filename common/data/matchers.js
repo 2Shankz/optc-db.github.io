@@ -13634,6 +13634,17 @@
 					},
 					{
 						type: "separator",
+						description: "Damage Types:",
+					},
+					{
+						type: "option",
+						description: "Ignoring DEF",
+						regex: /Damage Ignoring DEF/i,
+						groups: [2],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
 						description: "Types:",
 					},
 					...createTypesSubmatchers([2]),
