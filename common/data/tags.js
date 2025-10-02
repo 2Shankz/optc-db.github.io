@@ -4447,7 +4447,7 @@ window.tags = [
 	["Navy", "Navy Vice Admiral", "Zoan-type", "Egghead Arc"],
 	["Straw Hat Pirates", "Four Emperors", "Worst Generation", "Mythical Zoan-type", "Egghead Arc"],
 	[],
-	[],
+	["Seraphim", "Egghead Arc"],
 	[],
 	[],
 	[],

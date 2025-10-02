@@ -5070,6 +5070,7 @@ window.families = {
     4446: [ ...Pomsky ],
     4447: [ ...MonkeyDLuffy ],
     //4448: [ ...MonkeyDLuffy ],
+    4449: [ ...SSnake ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],

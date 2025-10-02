@@ -4447,7 +4447,7 @@ window.units = [
     [ "Pomsky", "INT", ["Striker", "Driven"], 5, 30, 4, 4, 99, 4000000, 1840, 804, 101, 3680, 1607, 201, 1 ],
     [ "Monkey D. Luffy - Laugh Echoing on the Battlefield", "STR", ["Free Spirit", "Powerhouse"], 5, 40, 4, 4, 99, 5000000, 1678, 778, 86, 3356, 1556, 172, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "S-Snake - Mesmerizing Wink", "QCK", ["Fighter", "Driven"], 6, 40, 4, 5, 99, 5000000, 1967, 914, 130, 3934, 1828, 260, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
