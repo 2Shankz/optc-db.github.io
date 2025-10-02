@@ -3495,7 +3495,7 @@
 				name: "Crew Damage Reduction to ATK",
 				targets: ["captain", "special", "superSpecial"],
 				regex:
-					/boosts Crew Damage Reduction to ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([?.\d]+)x-([?.\d]+)x, proportional to the strength of crew's Percent Damage Reduction buff, for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
+					/boosts Crew Damage Reduction to ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([?.\d]+)x-([?.\d]+)x, proportional to the strength of crew's Percent Damage Reduction buff([^,]*), for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
 				submatchers: [
 					{
 						type: "number",
@@ -3505,19 +3505,27 @@
 					{
 						type: "number",
 						description: "Turns:",
-						groups: [4, 5],
+						groups: [5, 6],
+					},
+					{
+						type: "option",
+						description: "Buff Clear Immune",
+						regex: /preventing buff clears/,
+						radioGroup: "targets",
+						groups: [4],
+						cssClasses: ["min-width-6"],
 					},
 					...createUniversalSubmatcher([1]),
-					// {
-					// 	type: "separator",
-					// 	description: "Affected types:",
-					// },
-					// ...createTypesSubmatchers([1]),
-					// {
-					// 	type: "separator",
-					// 	description: "Affected classes:",
-					// },
-					// ...createClassesSubmatchers([1]),
+					{
+						type: "separator",
+						description: "Affected Types:",
+					},
+					...createTypesSubmatchers([1]),
+					{
+						type: "separator",
+						description: "Affected Classes:",
+					},
+					...createClassesSubmatchers([1]),
 				],
 			},
 			{
@@ -4909,12 +4917,20 @@
 				name: "Healer: End-of-Turn",
 				targets: ["special", "superSpecial", "swap", "support"],
 				regex:
-					/Recovers[^."]+?HP at the end of (?:the|each) turn for ([?\d]+\+?)(?:-([?\d]+))? turns?(?:, for ([?\d]+\+?)(?:-([?\d]+))? turns?)?/i,
+					/Recovers[^."]+?HP at the end of (?:the|each) turn(?:, ([^,]+),)? for ([?\d]+\+?)(?:-([?\d]+))? turns?(?:, for ([?\d]+\+?)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
 					{
 						type: "number",
 						description: "Turns:",
-						groups: [1, 2, 3, 4],
+						groups: [2, 3, 4, 5],
+					},
+					{
+						type: "option",
+						description: "Buff Clear Immune",
+						regex: /preventing buff clears/,
+						radioGroup: "targets",
+						groups: [1],
+						cssClasses: ["min-width-6"],
 					},
 				],
 			},
