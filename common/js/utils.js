@@ -445,7 +445,7 @@
 		let whitespaceRegex = /\s+/g;
 		let aliasesRegex = /\s+\(.*?\)/g; // Denjiro (Kyoshiro)
 		let specialCharactersRegex = /[*+?^${}()|[\]\\]/g; //except dot, no need to escape
-		let costRegex = /characters with cost (\d+) or (less|higher)/i;
+		let costRegex = /characters with cost (\d+) or (less|more)/i;
 		let classRegex =
 			/(?:Fighter|Slasher|Striker|Shooter|Free Spirit|Powerhouse|Cerebral|Driven)/i;
 
