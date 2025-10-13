@@ -303,6 +303,7 @@
 			name: element[0],
 			type: element[1],
 			class: element[2],
+			tag: window.tags[n],
 			stars: element[3],
 			cost: element[4],
 			combo: element[5],
@@ -440,18 +441,16 @@
 		let families = [];
 		let types = [];
 		let classes = [];
+		let tags = [];
 		let matchers = [];
 		let params = { matchers: {} };
 		let whitespaceRegex = /\s+/g;
 		let aliasesRegex = /\s+\(.*?\)/g; // Denjiro (Kyoshiro)
 		let specialCharactersRegex = /[*+?^${}()|[\]\\]/g; //except dot, no need to escape
 		let costRegex = /characters with cost (\d+) or (less|more)/i;
-		let classRegex =
-			/(?:Fighter|Slasher|Striker|Shooter|Free Spirit|Powerhouse|Cerebral|Driven)/i;
-
-		// "[STR] Free Spirit", we can't just split all by spaces
-		// first group is type, second group is optional class
-		let typeRegex = /\[(.*?)\](?:\s+([\w ]+))?/i;
+		let typeRegex = /\[(STR|DEX|QCK|PSY|INT)\]/i;
+		let classRegex = /(?:Fighter|Slasher|Striker|Shooter|Free Spirit|Powerhouse|Cerebral|Driven)/i;
+		let tagRegex = /\[((?!STR]|DEX]|QCK]|PSY]|INT]).*)\]/i;
 
 		// may be "and" or ", and" or ", " even with extra whitespace
 		// if using .split(), you should use non-capturing groups (?:)
@@ -478,24 +477,25 @@
 					params.ranges["cost"][0] = value + 1;
 				} else if (op === ">=") {
 					params.ranges["cost"][0] = value;
-				}
-			}
+				};
+			};
 		} else {
 			criteria = criteria.replace(aliasesRegex, "");
 			let terms = criteria.split(separatorRegex);
 			for (let term of terms) {
 				let typeMatch = term.match(typeRegex);
-				if (typeMatch) {
-					types.push(typeMatch[1]);
-					if (typeMatch[2] && classRegex.test(typeMatch[2])) classes.push(typeMatch[2]);
-				} else if (classRegex.test(term)) {
-					classes.push(term);
+				let classMatch = term.match(classRegex);
+				let tagMatch = term.match(tagRegex);
+				
+				if (typeMatch || classMatch || tagMatch) {
+					if (typeMatch) types.push(typeMatch[1]);
+					if (classMatch) classes.push(classMatch[0]);
+					if (tagMatch) tags.push(tagMatch[1]);
 				} else {
-					// escape special characters before pushing (except dot)
-					families.push(term.replace(specialCharactersRegex, "\\$&"));
-				}
-			}
-		}
+					families.push(term.replace(specialCharactersRegex, "\\$&")); // escape special characters before pushing (except dot)
+				};
+			};
+		};
 
 		// Create matchers
 		if (families.length > 0) {
@@ -503,23 +503,27 @@
 			params.matchers.family =
 				"^(" + families.join("|").replace(whitespaceRegex, "_") + ")$";
 			matchers.push("family:" + params.matchers.family);
-		}
+		};
 		if (types.length > 0) {
 			params.matchers.type = types.join("|").replace(whitespaceRegex, "_");
 			matchers.push("type:" + params.matchers.type);
-		}
+		};
 		if (classes.length > 0) {
 			// check if supported characters require both classes
 			let split = criteria.split(classRegex);
 			if (split.length === 3 && split[1] === "/") params.matchers.class = classes.join(",").replace(whitespaceRegex, "_");
 			else params.matchers.class = classes.join("|").replace(whitespaceRegex, "_");
 			matchers.push("class:" + params.matchers.class);
-		}
+		};
+		if (tags.length > 0) {
+			params.matchers.tag = tags.join("|").replace(whitespaceRegex, "_");
+			matchers.push("tag:" + params.matchers.tag);
+		};
 		if (supportingFamilies && supportingFamilies.length > 0) {
 			params.matchers.notfamily =
 				utils.generateFamilyExclusionQuery(supportingFamilies);
 			matchers.push(params.matchers.notfamily);
-		}
+		};
 
 		if (returnParamsObject) {
 			if (params.matchers.notfamily)
@@ -535,7 +539,7 @@
 			return params;
 		} else {
 			return matchers.join(" ");
-		}
+		};
 	};
 
 	/**
@@ -3203,7 +3207,7 @@
 				"maxCD",
 			];
 		var regex = new RegExp(
-			"^((type|class|family|notfamily|supports|units):(.+)|(" +
+			"^((type|class|tag|family|notfamily|supports|units):(.+)|(" +
 				params.join("|") +
 				")(>|<|>=|<=|=)([-?\\d.]+))$",
 			"i"
