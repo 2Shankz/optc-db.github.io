@@ -4454,9 +4454,9 @@ window.units = [
     [ "St. Marcus Mars - Godhead of Environment of the Five Elders, the Highest Authority of the World Government", "STR", ["Driven", "Shooter"], 6, 99, 4, 5, 99, 5000000, 2724, 1209, 143, 5448, 2418, 286, 1 ],
     [ "Tosa", "INT", ["Powerhouse", "Driven"], 5, 30, 4, 4, 99, 4000000, 1918, 787, 93, 3836, 1574, 186, 1 ],
     [ "Guillotine", "PSY", ["Driven", "Slasher"], 5, 30, 4, 4, 99, 4000000, 1666, 802, 130, 3332, 1604, 260, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Vasco Shot - Unleashed Blaze on Pirate Island", "INT", ["Powerhouse", "Driven"], 6, 55, 4, 5, 99, 5000000, 2075, 889, 133, 4150, 1778, 266, 1 ],
+    [ "Avalo Pizarro - Island-Man Stopping the Destruction", "INT", ["Driven", "Powerhouse"], 5, 30, 4, 4, 99, 4000000, 2003, 777, 58, 4006, 1553, 115, 1 ],
+    [ "Blackbeard - Absolute Almighty Powers", ["INT", "INT"], [["Driven", "Powerhouse"], ["Driven", "Powerhouse"], ["Driven", "Powerhouse"]], "6+", 65, 4, 5, 99, 5000000, 2214, 1200, 156, 4428, 1800, 312, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -5223,6 +5223,9 @@ var ghostsUnits = [
     [ "⚐ Usopp - Unexpected Aid During the Incident", "PSY", ["Cerebral", "Shooter"], "6+", 65, 4, 5, 99, 5000000, 1935, 824, 175, 3919, 1648, 351, 1 ],
     [ "⚐ Nami & Usopp - Unexpected Aid During the Incident", "STR", ["Cerebral", "Shooter"], "6+", 65, 4, 5, 99, 5000000, 1937, 1054, 202, 4284, 1746, 390, 1 ],
     [ "⚐ Nami & Usopp - Unexpected Aid During the Incident", "PSY", ["Cerebral", "Shooter"], "6+", 65, 4, 5, 99, 5000000, 1937, 1054, 202, 4284, 1746, 390, 1 ],
+    [ "⚐ Blackbeard - Destructive Powers of the Tremor", "INT", ["Driven", "Powerhouse"], "6+", 65, 4, 5, 99, 5000000, 2138, 1131, 136, 4275, 1697, 272, 1 ],
+    [ "⚐ Blackbeard - All-Consuming Powers of the Darkness", "INT", ["Driven", "Powerhouse"], "6+", 65, 4, 5, 99, 5000000, 2138, 1108, 142, 4275, 1662, 283, 1 ],
+    [ "⚐ Blackbeard - Absolute Almighty Powers", "INT", ["Driven", "Powerhouse"], "6+", 65, 4, 5, 99, 5000000, 2214, 1200, 156, 4428, 1800, 312, 1 ],
 ];
 
 window.units = window.units.concat(ghostsUnits);
