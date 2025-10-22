@@ -8099,7 +8099,7 @@
 
 			{
 				name: "Increased Defense",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
 					/(?:reduces|removes) enemies'[^."]+?Increased Defense[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
@@ -8119,14 +8119,19 @@
 
 			{
 				name: "Percent Damage Reduction",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
-					/(?:reduces|removes) enemies'[^."]+?Percent Damage Reduction[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
+					/(?:reduces|removes) enemies'[^."]+?Percent Damage Reduction[^."]+?(?:duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?|effect (?:by (\d+)%(?:-(\d+)%)?)(?:, by (\d+)%(?:-(\d+)%)?)?)/i,
 				submatchers: [
 					{
 						type: "number",
 						description: "Turns:",
 						groups: [1, 2, 3, 4, 5],
+					},
+					{
+						type: "number",
+						description: "Percentage:",
+						groups: [6, 7, 8, 9],
 					},
 				],
 			},
@@ -8139,14 +8144,19 @@
 
 			{
 				name: "Damage Nullification",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
-					/(?:reduces|removes) enemies'[^."]+?Damage Nullification[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
+					/(?:reduces|removes) enemies'[^."]+?Damage Nullification[^."]+?(?:duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?|effect (?:by (\d+)%(?:-(\d+)%)?)(?:, by (\d+)%(?:-(\d+)%)?)?)/i,
 				submatchers: [
 					{
 						type: "number",
 						description: "Turns:",
 						groups: [1, 2, 3, 4, 5],
+					},
+					{
+						type: "number",
+						description: "Percentage:",
+						groups: [6, 7, 8, 9],
 					},
 				],
 			},
@@ -8159,14 +8169,19 @@
 
 			{
 				name: "Threshold Damage Reduction",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
-					/(?:reduces|removes) enemies'[^."]+?Threshold Damage Reduction[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
+					/(?:reduces|removes) enemies'[^."]+?Threshold Damage Reduction[^."]+?(?:duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?|effect (?:by (\d+)%(?:-(\d+)%)?)(?:, by (\d+)%(?:-(\d+)%)?)?)/i,
 				submatchers: [
 					{
 						type: "number",
 						description: "Turns:",
 						groups: [1, 2, 3, 4, 5],
+					},
+					{
+						type: "number",
+						description: "Percentage:",
+						groups: [6, 7, 8, 9],
 					},
 				],
 			},
@@ -8193,7 +8208,7 @@
 
 			{
 				name: "Barrier",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
 					/(?:reduces|removes) enemies'[^."]+?Barrier[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
@@ -8213,7 +8228,7 @@
 
 			{
 				name: "Resilience",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
 					/(?:reduces|removes) enemies'[^."]+?Resilience[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
