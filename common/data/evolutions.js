@@ -6067,6 +6067,10 @@ window.evolutions = {
         evolution: 4458,
         evolvers: [ "4458-skull", "4458-skull", "4458-skull", "skullINT", "skullINT" ]
     },
+    3118: {
+        evolution: 4465,
+        evolvers: [ "4465-skull", "4465-skull", "4465-skull", "4465-skull", "4465-skull" ]
+    },
     // break
     4988: {
         evolution: 4989,

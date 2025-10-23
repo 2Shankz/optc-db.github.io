@@ -88,6 +88,10 @@ window.availableTags = [
     "category": 1
   },
   {
+    "name": "Caribou Pirates",
+    "category": 1
+  },
+  {
     "name": "Celestial Dragon",
     "category": 2
   },
