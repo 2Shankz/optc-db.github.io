@@ -2428,7 +2428,7 @@
 				name: "Status ATK Boost: Delay",
 				targets: ["captain"],
 				regex:
-					/Boosts (?:ATK|([^."]*?)characters?' ATK) against[^."]+?delayed enemies[^."]+?by ([?.\d]+)x(?:-([?.\d]+)x)?(?:, by ([?.\d]+)x(?:-([?.\d]+)x)?)?/i,
+					/Boosts (?:ATK|([^."]*?)characters? ATK) against[^."]+?delayed enemies[^."]+?by ([?.\d]+)x(?:-([?.\d]+)x)?(?:, by ([?.\d]+)x(?:-([?.\d]+)x)?)?/i,
 				submatchers: [
 					{
 						type: "number",
@@ -3300,7 +3300,7 @@
 
 			{
 				name: "Set Target",
-				targets: ["special", "superSpecial"],
+				targets: ["captain", "special", "superSpecial"],
 				regex:
 					/Inflicts all (?:the )?enemies with Set Target, increasing damage taken from (?=((?:[^c."]+|c(?!har))*))\1characters? by ([?.\d]+)x(?:-([?.\d]+)x)? and reducing special cooldown of (?=((?:[^c."]+|c(?!har))*))\4characters?(?: by ([?\d]+\+?)(?:-([?\d]+))? turns?)(?:\D+,) for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
 				submatchers: [
