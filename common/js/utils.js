@@ -2923,6 +2923,12 @@
 			case (ghostPoint + 698).toString():
 				return relPathToRoot + "/api/images/thumbnail/jap/4/400/4458-INT.png";
 				break;
+			case (ghostPoint + 699).toString():
+				return relPathToRoot + "/api/images/thumbnail/jap/4/400/4469-1.png";
+				break;
+			case (ghostPoint + 700).toString():
+				return relPathToRoot + "/api/images/thumbnail/jap/4/400/4469-2.png";
+				break;
 			default:
 				break;
 		}

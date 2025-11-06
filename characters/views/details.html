@@ -434,18 +434,38 @@
                                                 Sailor</span>
                                             <div ng-show="details.sailor.level2"
                                                 ng-bind-html="details.sailor.level2 | decorate"></div>
-                                            <span class="badge badge-character1"
-                                                ng-show="details.sailor.character1">Character 1 Sailor</span>
-                                            <div ng-show="details.sailor.character1"
-                                                ng-bind-html="details.sailor.character1 | decorate"></div>
-                                            <span class="badge badge-character2"
-                                                ng-show="details.sailor.character2">Character 2 Sailor</span>
-                                            <div ng-show="details.sailor.character2"
-                                                ng-bind-html="details.sailor.character2 | decorate"></div>
                                             <span class="badge badge-combined" ng-show="details.sailor.combined">Dual
                                                 Character Sailor</span>
                                             <div ng-show="details.sailor.combined"
                                                 ng-bind-html="details.sailor.combined | decorate"></div>
+                                            <div ng-if="details.sailor.character1">
+                                                <div ng-if="details.sailor.character1.constructor.name === 'String'">
+                                                    <span class="badge badge-character1" ng-show="details.sailor.character1">Character 1 Sailor</span>
+                                                    <span ng-show="details.sailor.character1" ng-bind-html="details.sailor.character1 | decorate"></span>
+                                                </div>
+                                                <div ng-if="details.sailor.character1.base">
+                                                    <span class="badge badge-character1" ng-show="details.sailor.character1">Character 1 Sailor</span>
+                                                    <span ng-show="details.sailor.character1" ng-bind-html="details.sailor.character1.base | decorate"></span>
+                                                </div>
+                                                <div ng-if="details.sailor.character1.base2">
+                                                    <span class="badge badge-character1" ng-show="details.sailor.character1">Character 1 Sailor</span>
+                                                    <span ng-show="details.sailor.character1" ng-bind-html="details.sailor.character1.base2 | decorate"></span>
+                                                </div>
+                                            </div>
+                                            <div ng-if="details.sailor.character2">
+                                                <div ng-if="details.sailor.character2.constructor.name === 'String'">
+                                                    <span class="badge badge-character2" ng-show="details.sailor.character2">Character 2 Sailor</span>
+                                                    <span ng-show="details.sailor.character2" ng-bind-html="details.sailor.character2 | decorate"></span>
+                                                </div>
+                                                <div ng-if="details.sailor.character2.base">
+                                                    <span class="badge badge-character2" ng-show="details.sailor.character2">Character 2 Sailor</span>
+                                                    <span ng-show="details.sailor.character2" ng-bind-html="details.sailor.character2.base | decorate"></span>
+                                                </div>
+                                                <div ng-if="details.sailor.character2.base2">
+                                                    <span class="badge badge-character2" ng-show="details.sailor.character2">Character 2 Sailor</span>
+                                                    <span ng-show="details.sailor.character2" ng-bind-html="details.sailor.character2.base2 | decorate"></span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <span class="notes" ng-if="details.sailorNotes"
                                             ng-bind-html="details.sailorNotes | notes | decorate"></span>

@@ -4462,14 +4462,14 @@ window.units = [
     [ "Caribou - Lifelong Wish", "QCK", ["Powerhouse", "Shooter"], 5, 30, 4, 4, 99, 4000000, 1853, 762, 113, 3706, 1523, 225, 1 ],
     [ "Kuzan - Chocolat Town Intruder", "INT", ["Shooter", "Powerhouse"], 5, 30, 4, 4, 99, 4000000, 1808, 810, 104, 3616, 1620, 208, 1 ],
     [ "Charlotte Pudding - Abducted 35th Daughter", "QCK", ["Driven", "Shooter"], 5, 40, 4, 4, 99, 5000000, 1428, 793, 123, 2856, 1586, 246, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Charlotte Pudding - Imprisoned 35th Daughter", "QCK", ["Driven", "Shooter"], "5+", 40, 4, 4, 99, 5000000, 1493, 802, 134, 2986, 1604, 268, 1 ],
     [ "Shanks: Moon Knight Emperor - Happy Scary Halloween!", "INT", ["Cerebral", "Slasher"], "6+", 65, 4, 5, 99, 5000000, 2082, 1228, 171, 4164, 1842, 342, 1 ],
     [ "San Juan Wolf - Awakening Great Battleship", "INT", ["Powerhouse", "Fighter"], 6, 55, 4, 5, 99, 5000000, 2375, 826, 104, 4750, 1652, 208, 1 ],
     [ "Bonney - Ninth Birthday", "INT", ["Free Spirit", "Cerebral"], 5, 40, 4, 4, 99, 5000000, 1855, 771, 109, 3710, 1542, 218, 1 ],
     [ "Bonney - Picturing the Ideal Future", "INT", ["Free Spirit", "Cerebral"], "5+", 40, 4, 4, 99, 5000000, 1915, 794, 117, 3830, 1587, 233, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Zoro VS Lucci - Battling Swords and Hand Pistols", ["INT", "STR"], [["Slasher", "Free Spirit"], ["Driven", "Cerebral"]], 6, 55, 4, 5, 99, 5000000, 2357, 933, 142, 4715, 1866, 284, 1 ],
+    [ "Sanji - Kicking the Highest Authority", "STR", ["Free Spirit", "Cerebral"], 5, 30, 4, 4, 99, 4000000, 1973, 802, 80, 3945, 1603, 159, 1 ],
+    [ "Jinbe - Escaping with the Swordsman", "INT", ["Free Spirit", "Cerebral"], 5, 30, 4, 4, 99, 4000000, 2001, 789, 81, 4002, 1578, 162, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -5226,6 +5226,8 @@ var ghostsUnits = [
     [ "⚐ Blackbeard - Destructive Powers of the Tremor", "INT", ["Driven", "Powerhouse"], "6+", 65, 4, 5, 99, 5000000, 2138, 1131, 136, 4275, 1697, 272, 1 ],
     [ "⚐ Blackbeard - All-Consuming Powers of the Darkness", "INT", ["Driven", "Powerhouse"], "6+", 65, 4, 5, 99, 5000000, 2138, 1108, 142, 4275, 1662, 283, 1 ],
     [ "⚐ Blackbeard - Absolute Almighty Powers", "INT", ["Driven", "Powerhouse"], "6+", 65, 4, 5, 99, 5000000, 2214, 1200, 156, 4428, 1800, 312, 1 ],
+    [ "⚔ Roronoa Zoro - Battling Swords and Hand Pistols", "INT", ["Slasher", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2267, 923, 140, 4533, 1845, 280, 1 ],
+    [ "⚔ Rob Lucci - Battling Swords and Hand Pistols", "STR", ["Driven", "Cerebral"], 6, 55, 4, 5, 99, 5000000, 2327, 902, 137, 4654, 1804, 273, 1 ],
 ];
 
 window.units = window.units.concat(ghostsUnits);

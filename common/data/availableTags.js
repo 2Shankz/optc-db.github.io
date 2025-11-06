@@ -1,5 +1,9 @@
 window.availableTags = [
   {
+    "name": "A.O. Pirates",
+    "category": 1
+  },
+  {
     "name": "Akazaya Nine",
     "category": 1
   },
@@ -112,6 +116,10 @@ window.availableTags = [
     "category": 1
   },
   {
+    "name": "Drake Pirates",
+    "category": 1
+  },
+  {
     "name": "Dressrosa Arc",
     "category": 4
   },
@@ -130,6 +138,10 @@ window.availableTags = [
   {
     "name": "Egghead Arc",
     "category": 4
+  },
+  {
+    "name": "Elegia Kingdom",
+    "category": 1
   },
   {
     "name": "Enies Lobby Arc",
@@ -221,6 +233,10 @@ window.availableTags = [
   },
   {
     "name": "Impel Down",
+    "category": 1
+  },
+  {
+    "name": "Impostor Straw Hat Pirates",
     "category": 1
   },
   {
@@ -384,6 +400,10 @@ window.availableTags = [
     "category": 2
   },
   {
+    "name": "Shandian Warrior",
+    "category": 2
+  },
+  {
     "name": "Skypiea Arc",
     "category": 4
   },
@@ -428,6 +448,10 @@ window.availableTags = [
     "category": 1
   },
   {
+    "name": "Usopp Pirates",
+    "category": 1
+  },
+  {
     "name": "Vegapunk",
     "category": 2
   },
@@ -453,6 +477,10 @@ window.availableTags = [
   },
   {
     "name": "World Government",
+    "category": 1
+  },
+  {
+    "name": "World Pirates",
     "category": 1
   },
   {
