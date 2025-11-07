@@ -8099,7 +8099,7 @@
 
 			{
 				name: "Increased Defense",
-				targets: ["captain", "special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support", "sailor"],
 				regex:
 					/(?:reduces|removes) enemies'[^."]+?Increased Defense[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
@@ -8119,7 +8119,7 @@
 
 			{
 				name: "Percent Damage Reduction",
-				targets: ["captain", "special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support", "sailor"],
 				regex:
 					/(?:reduces|removes) enemies'[^."]+?Percent Damage Reduction[^."]+?(?:duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?|effect (?:by (\d+)%(?:-(\d+)%)?)(?:, by (\d+)%(?:-(\d+)%)?)?)/i,
 				submatchers: [
@@ -8169,7 +8169,7 @@
 
 			{
 				name: "Threshold Damage Reduction",
-				targets: ["captain", "special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support", "sailor"],
 				regex:
 					/(?:reduces|removes) enemies'[^."]+?Threshold Damage Reduction[^."]+?(?:duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?|effect (?:by (\d+)%(?:-(\d+)%)?)(?:, by (\d+)%(?:-(\d+)%)?)?)/i,
 				submatchers: [
