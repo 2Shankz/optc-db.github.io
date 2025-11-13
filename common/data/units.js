@@ -4470,10 +4470,10 @@ window.units = [
     [ "Zoro VS Lucci - Battling Swords and Hand Pistols", ["INT", "STR"], [["Slasher", "Free Spirit"], ["Driven", "Cerebral"]], 6, 55, 4, 5, 99, 5000000, 2357, 933, 142, 4715, 1866, 284, 1 ],
     [ "Sanji - Kicking the Highest Authority", "STR", ["Free Spirit", "Cerebral"], 5, 30, 4, 4, 99, 4000000, 1973, 802, 80, 3945, 1603, 159, 1 ],
     [ "Jinbe - Escaping with the Swordsman", "INT", ["Free Spirit", "Cerebral"], 5, 30, 4, 4, 99, 4000000, 2001, 789, 81, 4002, 1578, 162, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Donquixote Pirates", "QCK", ["Cerebral", "Driven"], 6, 55, 4, 5, 99, 5000000, 2145, 861, 118, 4290, 1722, 236, 1 ],
+    [ "Corazon - Revealing His Objectives", "QCK", ["Cerebral", "Driven"], 5, 30, 4, 4, 99, 4000000, 1890, 774, 92, 3780, 1548, 184, 1 ],      
+    [ "Bellamy - The Last Brawl", "QCK", ["Driven", "Fighter"], 5, 1, 4, 4, 99, 4000000, 1624, 712, 142, 3248, 1424, 284, 1 ],
+    [ "Luffy & Law - Miraculous Worst Generation", ["DEX", "QCK"], [["Fighter", "Free Spirit"], ["Slasher", "Cerebral"], ["Fighter", "Slasher"]], "6+", 65, 4, 5, 99, 5000000, 1896, 1156, 220, 3792, 1734, 440, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -5228,6 +5228,10 @@ var ghostsUnits = [
     [ "⚐ Blackbeard - Absolute Almighty Powers", "INT", ["Driven", "Powerhouse"], "6+", 65, 4, 5, 99, 5000000, 2214, 1200, 156, 4428, 1800, 312, 1 ],
     [ "⚔ Roronoa Zoro - Battling Swords and Hand Pistols", "INT", ["Slasher", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2267, 923, 140, 4533, 1845, 280, 1 ],
     [ "⚔ Rob Lucci - Battling Swords and Hand Pistols", "STR", ["Driven", "Cerebral"], 6, 55, 4, 5, 99, 5000000, 2327, 902, 137, 4654, 1804, 273, 1 ],
+    [ "⚐ Monkey D. Luffy - Miraculous Worst Generation", "DEX", ["Fighter", "Free Spirit"], "6+", 65, 4, 5, 99, 5000000, 1871, 1133, 180, 3742, 1700, 360, 1 ],
+    [ "⚐ Trafalgar Law - Miraculous Worst Generation", "QCK", ["Slasher", "Cerebral"], "6+", 65, 4, 5, 99, 5000000, 1791, 1096, 203, 3581, 1644, 405, 1 ],
+    [ "⚐ Luffy & Law - Miraculous Worst Generation", "DEX", ["Fighter", "Slasher"], "6+", 65, 4, 5, 99, 5000000, 1896, 1156, 220, 3792, 1734, 440, 1 ],
+    [ "⚐ Luffy & Law - Miraculous Worst Generation", "QCK", ["Fighter", "Slasher"], "6+", 65, 4, 5, 99, 5000000, 1896, 1156, 220, 3792, 1734, 440, 1 ],
 ];
 
 window.units = window.units.concat(ghostsUnits);

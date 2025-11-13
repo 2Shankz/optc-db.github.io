@@ -8480,6 +8480,16 @@ window.drops = {
             'Kizuna Exchange': [ "4458-skull" ]
         },
 
+        {
+            name: 'Luffy & Law',
+            dropID: 'kizuna74',
+            thumb: 4475,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Kizuna Exchange': [ "4468-skull", "4475-skull" ]
+        },
+
     ],
 
 
