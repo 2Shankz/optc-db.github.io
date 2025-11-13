@@ -290,7 +290,7 @@
 								var keys = Object.entries(window.details[n + 1].lLimit[x].special);
 								keys.forEach(([key, value]) => {
 									window.details[n + 1].special["llb" + key] = value;
-									LLBsailors++;
+									LLBspecials++;
 								})
 							}
 						}

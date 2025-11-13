@@ -527,7 +527,7 @@
                                 </tr>
                                 <tr>
                                     <td width="5%">Special</td>
-                                    <td colspan="{{details.special.llbbase ? 1 : 2}}">
+                                    <td colspan="{{details.special.llbbase || details.special.llbcharacter1 ? 1 : 2}}">
                                         <strong class="specialName"
                                             ng-if="details.specialName">{{::details.specialName}}</strong>
                                         <!-- same special, no stages -->
@@ -599,7 +599,7 @@
                                         <span class="notes" ng-if="details.specialNotes"
                                             ng-bind-html="details.specialNotes | notes | decorate"></span>
                                     </td>
-                                    <td ng-if="details.special.llbbase">
+                                    <td ng-if="details.special.llbbase || details.special.llbcharacter1">
                                         <strong class="specialName"
                                             ng-if="details.specialName">{{::details.specialName}}</strong>
                                         <!-- different specials -->
