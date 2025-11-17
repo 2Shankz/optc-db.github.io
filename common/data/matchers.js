@@ -3493,7 +3493,7 @@
 
 			{
 				name: "Crew Damage Reduction to ATK",
-				targets: ["captain", "special", "superSpecial"],
+				targets: ["captain", "special", "superSpecial", "support"],
 				regex:
 					/boosts Crew Damage Reduction to ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([?.\d]+)x-([?.\d]+)x, proportional to the strength of crew's Percent Damage Reduction buff([^,]*), for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
 				submatchers: [
@@ -3679,6 +3679,13 @@
 						type: "option",
 						description: "Chain Tap Timing",
 						regex: /Chain Tap Timing/i,
+						groups: [1],
+						cssClasses: ["min-width-12"],
+					},
+					{
+						type: "option",
+						description: "Crew Damage Reduction to ATK",
+						regex: /Crew Damage Reduction to ATK/i,
 						groups: [1],
 						cssClasses: ["min-width-12"],
 					},
@@ -3969,6 +3976,7 @@
 					"captain",
 					"special",
 					"superSpecial",
+					"support"
 				],
 				regex:
 					/enables ([^."]+?) to be enhanced up to 2 times/i,
