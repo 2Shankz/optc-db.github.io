@@ -13552,6 +13552,32 @@
 				regex: /Obtain Rush/i,
 			},
 
+			{
+				name: "Damage Limit Break: Class",
+				targets: ["potential"],
+				regex: /Boosts Damage Limit Break effect based on number of (?!\[)(?=((?:[^c."]+|c(?!har))*))\1characters? on the crew/i,
+				submatchers: [
+					{
+						type: "separator",
+						description: "Affected classes:",
+					},
+					...createClassesSubmatchers([1]),
+				]
+			},
+
+			{
+				name: "Damage Limit Break: Type",
+				targets: ["potential"],
+				regex: /Boosts Damage Limit Break effect based on number of (?=\[)(?=((?:[^c."]+|c(?!har))*))\1characters? on the crew/i,
+				submatchers: [
+					{
+						type: "separator",
+						description: "Affected types:",
+					},
+					...createTypesSubmatchers([1]),
+				]
+			},
+
 			/* * * * * Super Special Criteria * * * * */
 			{
 				name: "Top Row Only",
