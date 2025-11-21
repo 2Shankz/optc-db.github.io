@@ -3568,6 +3568,16 @@ window.drops = {
             'Defeat Level Rewards': [ 4463 ],
         },
 
+        {
+            name: 'Kid',
+            dropID: 'pka31',
+            thumb: 4480,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4480 ],
+        },
+
     ],
 
 
