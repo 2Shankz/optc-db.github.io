@@ -3045,7 +3045,7 @@
 
 			{
 				name: "Chain Boost: Tap Timing",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
 					/increases Chain Tap Timing Bonus of ([^."]+?)characters? to \+([?.\d]+)x(?:-([?.\d]+)x)?(?:, ([^,]+),)? for (\d) turns? depending on Tap Timing/i,
 				submatchers: [
@@ -3444,7 +3444,7 @@
 
 			{
 				name: "Advantageous Class Effect",
-				targets: ["special", "superSpecial", "support"],
+				targets: ["captain", "special", "superSpecial", "support"],
 				regex:
 					/Boosts Advantageous Class Effect of (?=((?:[^c."]+|c(?!har))*))\1characters? by(?: up to)? ([?.\d]+)x(?:-([?.\d]+)x)? for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
 				submatchers: [
@@ -5513,7 +5513,7 @@
 
 			{
 				name: "Orb lockers",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				// "locks orbs for free spirit characters", "...all orbs"
 				// not "locks the chain multiplier"
 				// TODO: submatchers for group 1
