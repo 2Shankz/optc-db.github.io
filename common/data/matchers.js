@@ -13227,6 +13227,20 @@
 			},
 
 			{
+				name: "Confusion",
+				targets: ["rumbleResistance"],
+				regex:
+					/([\d]+)% chance to resist Confusion./i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+				],
+			},
+
+			{
 				name: "Damage Over Time",
 				targets: ["rumbleResistance"],
 				regex:
