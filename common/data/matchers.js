@@ -13674,6 +13674,12 @@
 			},
 
 			{
+				name: "Has Assault Rumble Abilities",
+				targets: ["rumbleAbility", "rumbleSpecial"],
+				regex: /During Assault Rumble/i,
+			},
+
+			{
 				name: "Has Super Special",
 				targets: ["rumbleSpecial"],
 				regex: /\^\$/i,
