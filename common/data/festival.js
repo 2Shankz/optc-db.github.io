@@ -4480,7 +4480,7 @@ window.festival = [
 	["DBF", 165, 143],
 	["ATK", 153, 173],
 	["", null, null],
-	["", null, null],
+	["DBF", 191, 147],
 	["", null, null],
 	["", null, null],
 	["", null, null],

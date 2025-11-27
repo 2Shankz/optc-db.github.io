@@ -4480,7 +4480,7 @@ window.tags = [
 	["Big Mom Pirates", "Paramythia-type", "Land of Wano Arc"],
 	["Kid Pirates", "Worst Generation", "Paramythia-type", "Land of Wano Arc"],
 	[],
-	[],
+	["Scientist", "Logia-type", "Punk Hazard Arc"],
 	[],
 	[],
 	[],

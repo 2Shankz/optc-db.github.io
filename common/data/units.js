@@ -4480,7 +4480,7 @@ window.units = [
     [ "Charlotte Perospero - Payback for the Right Arm", "INT", ["Striker", "Powerhouse"], 5, 30, 5, 4, 99, 4000000, 1654, 805, 132, 3307, 1609, 263, 1 ],
     [ "Eustass Kid - Pointing the Finger at the Traitor", "STR", ["Striker", "Slasher"], 5, 40, 4, 4, 99, 5000000, 1451, 801, 117, 2901, 1601, 233, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Master Caesar Clown - Scientist Wreathed in Toxic Gas", "DEX", ["Cerebral", "Driven"], 6, 55, 5, 5, 99, 5000000, 2067, 809, 161, 4134, 1617, 322, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],

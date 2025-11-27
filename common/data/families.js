@@ -5107,6 +5107,7 @@ window.families = {
     4479: [ ...CharlottePerospero ],
     4480: [ ...EustassKid ],
     //4481: [ ...EustassKid ],
+    4482: [ ...CaesarClown ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
