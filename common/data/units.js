@@ -4479,12 +4479,12 @@ window.units = [
     [ "King - Unleashing Tension", "DEX", ["Slasher", "Powerhouse"], 5, 30, 4, 4, 99, 4000000, 2012, 813, 69, 4024, 1625, 138, 1 ],
     [ "Charlotte Perospero - Payback for the Right Arm", "INT", ["Striker", "Powerhouse"], 5, 30, 5, 4, 99, 4000000, 1654, 805, 132, 3307, 1609, 263, 1 ],
     [ "Eustass Kid - Pointing the Finger at the Traitor", "STR", ["Striker", "Slasher"], 5, 40, 4, 4, 99, 5000000, 1451, 801, 117, 2901, 1601, 233, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Eustass \"Captain\" Kid - Trump Card to Take Down an Emperor", "STR", ["Striker", "Slasher"], "5+", 40, 4, 4, 99, 5000000, 1511, 833, 121, 3022, 1666, 241, 1 ],
     [ "Master Caesar Clown - Scientist Wreathed in Toxic Gas", "DEX", ["Cerebral", "Driven"], 6, 55, 5, 5, 99, 5000000, 2067, 809, 161, 4134, 1617, 322, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Sanji & Reiju - Loved Ones Left by Their Mother", ["PSY", "INT"], [["Powerhouse", "Free Spirit"], ["Powerhouse", "Free Spirit"], ["Powerhouse", "Free Spirit"]], 6, 55, 4, 5, 99, 5000000, 2081, 913, 174, 4162, 1826, 348, 1 ],
+    [ "Vinsmoke Ichiji - Evil Warriors Led by Garuda", "STR", ["Powerhouse", "Fighter"], 5, 30, 4, 4, 99, 4000000, 1833, 826, 95, 3666, 1651, 189, 1 ],
+    [ "Vinsmoke Niji - Evil Warriors Led by Garuda", "QCK", ["Powerhouse", "Fighter"], 5, 30, 4, 4, 99, 4000000, 1917, 761, 102, 3834, 1522, 204, 1 ],
+    [ "Vinsmoke Yonji - Evil Warriors Led by Garuda", "DEX", ["Powerhouse", "Fighter"], 5, 30, 4, 4, 99, 4000000, 1871, 789, 101, 3742, 1578, 201, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -5240,6 +5240,10 @@ var ghostsUnits = [
     [ "⚐ Big Mom - Roaring Emperors of Destruction", "QCK", ["Powerhouse", "Slasher"], 6, 55, 4, 5, 99, 5000000, 2054, 831, 156, 4108, 1661, 312, 1 ],
     [ "⚐ Kaido & Big Mom - Roaring Emperors of Destruction", "STR", ["Striker", "Slasher"], 6, 55, 4, 5, 99, 5000000, 2123, 909, 169, 4246, 1817, 337, 1 ],
     [ "⚐ Kaido & Big Mom - Roaring Emperors of Destruction", "QCK", ["Striker", "Slasher"], 6, 55, 4, 5, 99, 5000000, 2123, 909, 169, 4246, 1817, 337, 1 ],
+    [ "⚐ Vinsmoke Sanji - Loved Ones Left by Their Mother", "PSY", ["Powerhouse", "Free Spirit"], 6, 55, 6, 5, 99, 5000000, 1979, 903, 145, 3958, 1805, 289, 1 ],
+    [ "⚐ Vinsmoke Reiju - Loved Ones Left by Their Mother", "INT", ["Powerhouse", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2033, 829, 160, 4066, 1658, 320, 1 ],
+    [ "⚐ Sanji & Reiju - Loved Ones Left by Their Mother", "PSY", ["Powerhouse", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2081, 913, 174, 4162, 1826, 348, 1 ],
+    [ "⚐ Sanji & Reiju - Loved Ones Left by Their Mother", "INT", ["Powerhouse", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2081, 913, 174, 4162, 1826, 348, 1 ],
 ];
 
 window.units = window.units.concat(ghostsUnits);

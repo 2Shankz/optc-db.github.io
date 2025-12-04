@@ -5106,8 +5106,12 @@ window.families = {
     4478: [ ...King ],
     4479: [ ...CharlottePerospero ],
     4480: [ ...EustassKid ],
-    //4481: [ ...EustassKid ],
+    4481: [ ...EustassKid ],
     4482: [ ...CaesarClown ],
+    4483: [ ...VinsmokeSanji, ...VinsmokeReiju ],
+    4484: [ ...VinsmokeIchiji ],
+    4485: [ ...VinsmokeNiji ],
+    4486: [ ...VinsmokeYonji ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
@@ -5838,6 +5842,10 @@ const ghostFamilies = {
     710: [ ...Kaido, ...CharlotteLinlin ],
     711: [ ...Kaido, ...CharlotteLinlin ],
     712: [ ...Kaido, ...CharlotteLinlin ],
+    713: [ ...VinsmokeSanji, ...VinsmokeReiju ],
+    714: [ ...VinsmokeSanji, ...VinsmokeReiju ],
+    715: [ ...VinsmokeSanji, ...VinsmokeReiju ],
+    716: [ ...VinsmokeSanji, ...VinsmokeReiju ],
 }
 
 Object.keys(ghostFamilies).forEach(function (key) {
