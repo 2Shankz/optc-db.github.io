@@ -6236,6 +6236,20 @@
 					...createPositionsSubmatchers([1]),
 				],
 			},
+
+			{
+				name: "Status ATK Boost Stack",
+				targets: ["special", "superSpecial"],
+				regex: /allows crew to stack 2 different Status ATK Boost buffs for ([?\d]+)(?:-([?\d]+))? turns?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Turns:",
+						groups: [1, 2],
+					},
+				],
+			},
+
 		],
 		"Bad Team Effects": [
 			{
