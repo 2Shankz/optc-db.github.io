@@ -3976,7 +3976,8 @@
 					"captain",
 					"special",
 					"superSpecial",
-					"support"
+					"support",
+					"swap"
 				],
 				regex:
 					/enables ([^."]+?) to be enhanced up to 2 times/i,
@@ -7708,7 +7709,7 @@
 				name: "Poisoners",
 				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
-					/(ignores? (?:Defense Reduction )?Debuff Protection and )?(strongly poisons|poisons|Inflicts Toxic)/i,
+					/(ignores? (?:Defense Reduction )?Debuff Protection and )?(poisons|strongly poisons|inflicts all enemies with Reiju Poison|inflicts Toxic)/i,
 				submatchers: [
 					{
 						type: "option",
@@ -7734,11 +7735,19 @@
 					},
 					{
 						type: "option",
-						description: "Toxic",
-						regex: /^i/i,
+						description: "Reiju Poison",
+						regex: /inflicts all enemies with Reiju Poison/i,
 						radioGroup: "1",
 						groups: [2],
-						cssClasses: ["min-width-12"],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Toxic",
+						regex: /inflicts Toxic/i,
+						radioGroup: "1",
+						groups: [2],
+						cssClasses: ["min-width-6"],
 					},
 				],
 			},
