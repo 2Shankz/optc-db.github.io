@@ -8009,6 +8009,7 @@
 					},
 				],
 			},
+
 			{
 				name: "Marked",
 				targets: ["special", "superSpecial"],
@@ -8037,6 +8038,85 @@
 						type: "number",
 						description: "Turns:",
 						groups: [3, 4],
+					},
+				],
+			},
+
+			{
+				name: "Allow Ignore Debuff Protection",
+				targets: ["captain"],
+				regex:
+					/allows effects that inflict (?=((?:[^i]+|i(?!gnore))*))\1ignore Debuff Protection/i,
+				submatchers: [
+					{
+						type: "option",
+						description: "ATK Down",
+						regex: /ATK Down/i,
+						groups: [1],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Burn",
+						regex: /Burn/i,
+						groups: [1],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Delay",
+						regex: /Delay/i,
+						groups: [1],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Melo-Melo",
+						regex: /Melo-Melo/i,
+						groups: [1],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Negative",
+						regex: /Negative/i,
+						groups: [1],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Paralysis",
+						regex: /Paralysis/i,
+						groups: [1],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Poison",
+						regex: /Poison/i,
+						groups: [1],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Weaken",
+						regex: /Weaken/i,
+						groups: [1],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Defense Reduction",
+						regex: /Defense Reduction/i,
+						groups: [1],
+						cssClasses: ["min-width-12"],
+					},
+					{
+						type: "option",
+						description: "Increase Damage Taken",
+						regex: /Increase Damage Taken/i,
+						groups: [1],
+						cssClasses: ["min-width-12"],
 					},
 				],
 			},
