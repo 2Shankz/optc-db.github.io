@@ -4065,6 +4065,24 @@
 					},
 				],
 			},
+
+			{
+				name: "Stackable: ATK Boost",
+				targets: ["captain", "special"],
+				regex: /converts ATK Up into a Stackable ATK Up/i,
+			},
+
+			{
+				name: "Stackable: Orb Boost",
+				targets: ["captain", "special"],
+				regex: /converts Orb Amplification into a Stackable Orb Amplification/i,
+			},
+
+			{
+				name: "Stackable: Color Affinity",
+				targets: ["captain", "special"],
+				regex: /converts Color Affinity into a Stackable Color Affinity/i,
+			},
 		],
 		"Ability Requirements": [
 			{
