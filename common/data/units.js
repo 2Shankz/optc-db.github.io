@@ -4485,9 +4485,9 @@ window.units = [
     [ "Vinsmoke Ichiji - Evil Warriors Led by Garuda", "STR", ["Powerhouse", "Fighter"], 5, 30, 4, 4, 99, 4000000, 1833, 826, 95, 3666, 1651, 189, 1 ],
     [ "Vinsmoke Niji - Evil Warriors Led by Garuda", "QCK", ["Powerhouse", "Fighter"], 5, 30, 4, 4, 99, 4000000, 1917, 761, 102, 3834, 1522, 204, 1 ],
     [ "Vinsmoke Yonji - Evil Warriors Led by Garuda", "DEX", ["Powerhouse", "Fighter"], 5, 30, 4, 4, 99, 4000000, 1871, 789, 101, 3742, 1578, 201, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Dr. Vegapunk \"Atlas the Violent\" - Entrusted Satellite Engaging", "STR", ["Cerebral", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2081, 893, 131, 4162, 1786, 261, 1 ],
+    [ "Dr. Vegapunk \"Lilith the Evil\" - Solution-Calculating Satellite", "STR", ["Cerebral", "Free Spirit"], 5, 30, 5, 4, 99, 4000000, 1679, 814, 99, 3358, 1628, 198, 1 ],
+    [ "Shirahoshi & Mansherry - Happily Savored Christmas Cake", ["QCK", "PSY"], [["Cerebral", "Striker"], ["Cerebral", "Striker"], ["Cerebral", "Striker"]], "6+", 65, 4, 5, 99, 5000000, 1467, 974, 337, 2934, 1461, 674, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -5244,6 +5244,10 @@ var ghostsUnits = [
     [ "⚐ Vinsmoke Reiju - Loved Ones Left by Their Mother", "INT", ["Powerhouse", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2033, 829, 160, 4066, 1658, 320, 1 ],
     [ "⚐ Sanji & Reiju - Loved Ones Left by Their Mother", "PSY", ["Powerhouse", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2081, 913, 174, 4162, 1826, 348, 1 ],
     [ "⚐ Sanji & Reiju - Loved Ones Left by Their Mother", "INT", ["Powerhouse", "Free Spirit"], 6, 55, 4, 5, 99, 5000000, 2081, 913, 174, 4162, 1826, 348, 1 ],
+    [ "⚐ Shirahoshi - Happily Savored Christmas Cake", "QCK", ["Cerebral", "Striker"], "6+", 65, 5, 5, 99, 5000000, 1451, 949, 296, 2902, 1424, 592, 1 ],
+    [ "⚐ Mansherry - Happily Savored Christmas Cake", "PSY", ["Cerebral", "Striker"], "6+", 65, 4, 5, 99, 5000000, 1451, 901, 308, 2902, 1352, 616, 1 ],
+    [ "⚐ Shirahoshi & Mansherry - Happily Savored Christmas Cake", "QCK", ["Cerebral", "Striker"], "6+", 65, 4, 5, 99, 5000000, 1467, 974, 337, 2934, 1461, 674, 1 ],
+    [ "⚐ Shirahoshi & Mansherry - Happily Savored Christmas Cake", "PSY", ["Cerebral", "Striker"], "6+", 65, 4, 5, 99, 5000000, 1467, 974, 337, 2934, 1461, 674, 1 ],
 ];
 
 window.units = window.units.concat(ghostsUnits);
