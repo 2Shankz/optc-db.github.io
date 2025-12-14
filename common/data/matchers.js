@@ -4068,19 +4068,19 @@
 
 			{
 				name: "Stackable: ATK Boost",
-				targets: ["captain", "special"],
+				targets: ["captain", "special", "superSpecial"],
 				regex: /converts ATK Up into a Stackable ATK Up/i,
 			},
 
 			{
 				name: "Stackable: Orb Boost",
-				targets: ["captain", "special"],
+				targets: ["captain", "special", "superSpecial"],
 				regex: /converts Orb Amplification into a Stackable Orb Amplification/i,
 			},
 
 			{
 				name: "Stackable: Color Affinity",
-				targets: ["captain", "special"],
+				targets: ["captain", "special", "superSpecial"],
 				regex: /converts Color Affinity into a Stackable Color Affinity/i,
 			},
 		],
