@@ -632,120 +632,90 @@
 										? data[matcher.target]
 										: JSON.stringify(data[matcher.target]);
 
-								// captain effects
-								if (
-									matcher.target == "captain" &&
-									matcher.regex.test(targetString)
-								) {
+								// captain
+								if (matcher.target == "captain" && matcher.regex.test(targetString)) {
 									name = matcher.name;
-									if (/Class$/.test(name)) name = "Captain: " + name;
+									if (/Class$/.test(name)) 
+										name = "Captain: " + name;
 									else if (!/captains$/.test(name))
 										name = "Captain: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend +=
-										'<span class="tag captain">' + name + "</span>";
+									htmlToAppend += '<span class="tag captain">' + name + "</span>";
 								}
-								// sailor effects
-								if (
-									matcher.target.indexOf("sailor") === 0 &&
-									!(data[matcher.target] === undefined)
-								) {
-									if (data[matcher.target].base) {
-										for (var sailor in data[matcher.target]) {
-											if (matcher.regex.test(data[matcher.target][sailor])) {
-												name = matcher.name;
-												if (!/sailor$/.test(name))
-													name = "Sailor: " + name.replace(/ers$/, "ing");
-												else name = name.replace(/s$/, "");
-												name = name.replace(/iing/, "ying");
-												if (name != "Has Sailor Ability sailor") {
-													htmlToAppend +=
-														'<span class="tag sailor">' + name + "</span>";
-												}
-											}
-										}
-									} else {
-										if (matcher.regex.test(data[matcher.target])) {
-											name = matcher.name;
-											if (!/sailor$/.test(name))
-												name = "Sailor: " + name.replace(/ers$/, "ing");
-											else name = name.replace(/s$/, "");
-											name = name.replace(/iing/, "ying");
-											htmlToAppend +=
-												'<span class="tag sailor">' + name + "</span>";
-										}
-									}
-								}
-								// specials
-								if (
-									matcher.target.indexOf("special") === 0 &&
-									matcher.regex.test(targetString)
-								) {
+
+								// special
+								if (matcher.target.indexOf("special") === 0 && matcher.regex.test(targetString)) {
 									name = matcher.name;
 									if (!/specials$/.test(name))
 										name = "Special: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend +=
-										'<span class="tag special">' + name + "</span>";
+									htmlToAppend += '<span class="tag special">' + name + "</span>";
 								}
+
+								// super special
+								if (matcher.target === "superSpecial" && matcher.regex.test(targetString)) {
+									name = matcher.name;
+									if (!/specials$/.test(name))
+										name = "Super Special: " + name.replace(/ers$/, "ing");
+									else name = name.replace(/s$/, "").replace(/special/i, "Super Special");
+									name = name.replace(/iing/, "ying");
+									htmlToAppend += '<span class="tag superSpecial">' + name + "</span>";
+								}
+
+								// swap
+								if (matcher.target.indexOf("swap") === 0 && matcher.regex.test(targetString)) {
+									name = matcher.name;
+									if (!/swaps$/.test(name))
+										name = "Swap: " + name.replace(/ers$/, "ing");
+									else name = name.replace(/s$/, "");
+									name = name.replace(/iing/, "ying");
+									htmlToAppend += '<span class="tag swap">' + name + "</span>";
+								}
+
+								// sailor
+								if (matcher.target.indexOf("sailor") === 0 && !(data[matcher.target] === undefined)) {
+									if (matcher.regex.test(targetString)) {
+										name = matcher.name;
+										if (!/sailor$/.test(name)) 
+											name = "Sailor: " + name.replace(/ers$/, "ing");
+										else name = name.replace(/s$/, "");
+										name = name.replace(/iing/, "ying");
+										if (name != "Has Sailor Ability sailor")
+											htmlToAppend += '<span class="tag sailor">' + name + "</span>";
+									}
+								}
+
 								// limit
-								if (
-									matcher.target.indexOf("limit") === 0 &&
-									matcher.regex.test(targetString)
-								) {
+								if (matcher.target.indexOf("limit") === 0 && matcher.regex.test(targetString)) {
 									name = matcher.name;
 									if (!/limit$/.test(name))
 										name = "Limit Break: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									if (name != "Has Limit Break limit") {
-										htmlToAppend +=
-											'<span class="tag limit">' + name + "</span>";
-									}
+									if (name != "Has Limit Break limit")
+										htmlToAppend += '<span class="tag limit">' + name + "</span>";
 								}
-								// potentials
-								if (
-									matcher.target.indexOf("potential") === 0 &&
-									matcher.regex.test(targetString)
-								) {
+
+								// potential
+								if (matcher.target.indexOf("potential") === 0 && matcher.regex.test(targetString)) {
 									name = matcher.name;
 									if (!/potential$/.test(name))
 										name = "Potential Ability: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend +=
-										'<span class="tag potential">' + name + "</span>";
+									htmlToAppend += '<span class="tag potential">' + name + "</span>";
 								}
-								// super specials
-								if (
-									matcher.target === "superSpecial" &&
-									matcher.regex.test(targetString)
-								) {
-									name = matcher.name;
-									if (!/specials$/.test(name))
-										name = "Super Special: " + name.replace(/ers$/, "ing");
-									else
-										name = name
-											.replace(/s$/, "")
-											.replace(/special/i, "Super Special");
-									name = name.replace(/iing/, "ying");
-									htmlToAppend +=
-										'<span class="tag superSpecial">' + name + "</span>";
-								}
+
 								// support
-								if (
-									matcher.target === "support" &&
-									matcher.regex.test(targetString)
-								) {
+								if (matcher.target === "support" && matcher.regex.test(targetString)) {
 									name = matcher.name;
 									if (!/support$/.test(name))
 										name = "Support: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend +=
-										'<span class="tag support">' + name + "</span>";
+									htmlToAppend += '<span class="tag support">' + name + "</span>";
 								}
 							}
 						}
