@@ -738,6 +738,7 @@ const TopmanWarcury = [ "Saint Topman Warcury" ];
 const MarcusMars = [ "Saint Marcus Mars" ];
 const Tosa = [ "Tosa" ];
 const Guillotine = [ "Guillotine" ];
+const Emet = [ "Emet" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5115,6 +5116,15 @@ window.families = {
     4487: [ ...Atlas ],
     4488: [ ...Lilith ],
     4489: [ ...Shirahoshi, ...Mansherry ],
+    4490: [ ...MonkeyDLuffy, ...JewelryBonney ],
+    4491: [ ...JaygarciaSaturn ],
+    4492: [ ...BartholomewKuma ],
+    4493: [ ...Emet ],
+    4494: [ ...Dorry ],
+    4495: [ ...Broggy ],
+    4496: [ ...Doll, ...Bluegrass ],
+    //4497: [ ...Doll, ...Bluegrass ],
+    4498: [ ...Stussy ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],

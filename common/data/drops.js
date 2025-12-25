@@ -3578,6 +3578,16 @@ window.drops = {
             'Defeat Level Rewards': [ 4480 ],
         },
 
+        {
+            name: 'Doll & Bluegrass',
+            dropID: 'pka32',
+            thumb: 4496,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4496 ],
+        },
+
     ],
 
 
@@ -9712,6 +9722,13 @@ window.drops = {
         {
             name: 'VS The Strongest Form of Humanity Blitz Battle!',
             thumb: 4109,
+            global: true,
+            nakama: null,
+        },
+
+        {
+            name: 'VS Five Elders Blitz Battle!',
+            thumb: 4491,
             global: true,
             nakama: null,
         },
