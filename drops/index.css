@@ -1,0 +1,210 @@
+body {
+    padding: 50px 0 0 0;
+    background-color: #2F2B33;
+}
+
+#main {
+    width: 1000px;
+    margin: auto;
+    color: #F4F1E6;
+}
+
+h2, h3 {
+    margin: 5px 0 5px 0;
+    padding-bottom: 2px;
+}
+
+h3 > div, td {
+    vertical-align: middle !important;
+}
+
+.island {
+    margin-left: 25px;
+}
+
+.island.collapsed > h3 {
+    border-bottom: 1px solid rgb(69, 69, 69);
+}
+
+td:first-child {
+    width: 80px;
+    white-space: nowrap;
+}
+
+.island:not(.collapsed) > h3 > .fa-chevron-right,
+.island.collapsed > h3 > .fa-chevron-down,
+.type.collapsed > h2 > .fa-chevron-down,
+.type:not(.collapsed) > h2 > .fa-chevron-right {
+    display: none;
+}
+
+@media (hover) {
+    h2:hover > span, h3:hover > span {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+h1 > label {
+    font-size: 14px;
+    position: relative;
+    bottom: 5px;
+    margin-left: 15px;
+}
+
+h1 > input {
+    font-size: 14px;
+    position: relative;
+    top: 13px;
+}
+
+h1 > label > input {
+    position: relative;
+    top: 2px;
+    right: 2px;
+}
+
+#bonus-table {
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+}
+
+#bonus-table th, #bonus-table td {
+    padding: 3px;
+}
+
+#bonus-table td ~ td, #bonus-table th ~ th {
+    border-left: 1px solid #626262;
+    text-align: center;
+}
+
+#bonus-table td:first-child, #bonus-table th:first-child {
+    width: 20%;
+}
+
+#bonus-table td.stamina { background: rgba(133,193,245,0.2); }
+#bonus-table td.drop    { background: rgba(233,109,99,0.2);  }
+#bonus-table td.beli    { background: rgba(127,202,159,0.2); }
+#bonus-table td.exp     { background: rgba(244,186,112,0.2); }
+
+#bonus-table tr:hover td.stamina      { background: rgb(48, 148, 234); }
+#bonus-table tr:hover td.drop         { background: rgb(227, 48, 35);  }
+#bonus-table tr:hover td.beli         { background: rgb(32, 208, 108); }
+#bonus-table tr:hover td.exp          { background: rgb(211, 136, 38); }
+
+#bonus-table .active {
+    border-left: 1px solid darkred;
+    border-right: 1px solid darkred;
+}
+
+@media (hover) {
+    #bonus-table tr:hover td {
+        border-top: 1px solid darkred;
+        border-bottom: 1px solid darkred;
+    }
+
+    #bonus-table tr:hover td:first-child {
+        background: #27232a !important;
+    }
+}
+
+.table > thead > tr > th.active {
+    background-color: #1e1b22;
+}
+.table > tbody > tr > td.active {
+    background-color: #3c3741;
+}
+
+.tooltip-inner {
+    white-space: pre-wrap;
+}
+
+/*******************
+ * SLOT THUMBNAILS *
+ *******************/
+
+.slot {
+    display: inline-block;
+}
+
+.slot:hover {
+    outline: 1px solid red;
+}
+
+.slot.small {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    margin: 1px;
+}
+
+/***********
+ * BONUSES *
+ ***********/
+
+ .bonus:after {
+    padding: 1px 4px 1px 0;
+    border-radius: 0 10px 10px 0;
+    font-size: 10px;
+    margin-right: 5px;
+    position: relative;
+    bottom: 4px;
+}
+
+ .bonus:before {
+    padding: 1px 0 1px 4px;
+    border-radius: 10px 0 0 10px;
+    font-size: 10px;
+    margin-left: 5px;
+    position: relative;
+    bottom: 4px;
+}
+
+.day-label {
+    padding: 2px 5px 2px 5px;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-right: 5px;
+    position: relative;
+    bottom: 4px;
+    border: 1px solid black;
+}
+
+.day-label.active {
+    background: plum;
+}
+
+.bonus.drop:after, .bonus.drop:before {
+    background: #7bc8a4;
+    content: "2x drop";
+}
+
+.bonus.stamina:after, .bonus.stamina:before {
+    background: skyblue;
+    content: "0.5x stamina";
+}
+
+.bonus.beli:after, .bonus.beli:before {
+    background: #ffc65d;
+    content: "2x beli";
+}
+
+.bonus.exp:after, .bonus.exp:before {
+    background: #f16745;
+    content: "2x EXP";
+}
+
+.bonus.GL:before {
+    content: "GL: ";
+}
+
+.bonus.JP:before {
+    content: "JP: ";
+}
+#times {
+    text-align: center;
+}
+
+#timesNote {
+    text-align: center;
+}
