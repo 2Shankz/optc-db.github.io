@@ -3446,17 +3446,25 @@
 				name: "Advantageous Class Effect",
 				targets: ["captain", "special", "superSpecial", "support"],
 				regex:
-					/Boosts Advantageous Class Effect of (?=((?:[^c."]+|c(?!har))*))\1characters? by(?: up to)? ([?.\d]+)x(?:-([?.\d]+)x)? for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
+					/Boosts Advantageous Class Effect of (?=((?:[^c."]+|c(?!har))*))\1characters? by(?: up to)? ([?.\d]+)x(?:-([?.\d]+)x)?(?:, ([^,]+),)? for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
 				submatchers: [
 					{
 						type: "number",
 						description: "Advantageous Class Effect Boost Turns:",
-						groups: [4, 5],
+						groups: [5, 6],
 					},
 					{
 						type: "number",
 						description: "Advantageous Class Effect Boost Amount:",
 						groups: [2, 3],
+					},
+					{
+						type: "option",
+						description: "Allowing Override",
+						regex: /allowing override/,
+						radioGroup: "targets",
+						groups: [4],
+						cssClasses: ["min-width-6"],
 					},
 					{
 						type: "separator",
@@ -5624,14 +5632,22 @@
 			},
 			{
 				name: "STND Expansion",
-				targets: ["special", "superSpecial", "support"],
+				targets: ["captain", "special", "superSpecial", "support"],
 				regex:
-					/allows crew to perform Super Tandem with ([^".]+?)orbs for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
+					/allows crew to perform Super Tandem with ([^".]+?)orbs(?:, ([^,]+),)? for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
 				submatchers: [
 					{
 						type: "number",
 						description: "Turns:",
-						groups: [2, 3],
+						groups: [3, 4],
+					},
+					{
+						type: "option",
+						description: "Buff Clear Immune",
+						regex: /preventing buff clears/,
+						radioGroup: "targets",
+						groups: [2],
+						cssClasses: ["min-width-6"],
 					},
 					{
 						type: "separator",
@@ -8371,7 +8387,7 @@
 
 			{
 				name: "Positive Buff",
-				targets: ["special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
 					/(?:reduces|removes) enemies'[^."]+?positive buff[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [

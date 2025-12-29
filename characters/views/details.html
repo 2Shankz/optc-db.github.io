@@ -720,8 +720,8 @@
                     </div>
                     <add-super-special-query criteria="details.superSpecialCriteria"
                         excluded-families="families"></add-super-special-query>
-                    <span class="notes" ng-if="details.superSpecialCriteriaNotes"
-                        ng-bind-html="details.superSpecialCriteriaNotes | notes | decorate"></span>
+                    <div class="notes" ng-if="details.superSpecialCriteriaNotes"
+                        ng-bind-html="details.superSpecialCriteriaNotes | notes | decorate"></div>
                     </td>
                     </tr>
                     <tr ng-if="details.superSpecial">
