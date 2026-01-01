@@ -5699,6 +5699,25 @@
 					),
 				],
 			},
+			{
+				name: "PERFECTs Consume RCV/SEMLA Orbs",
+				targets: ["captain"],
+				regex:
+					/makes PERFECTs consume ([^.,]+) orbs/i,
+				submatchers: [
+					{
+						type: "separator",
+						description: "Orbs:",
+					},
+					...createOrbsSubmatchers(
+						[
+							"RCV",
+							"SEMLA",
+						],
+						[1]
+					),
+				],
+			},
 		],
 		"Slot Change": [
 			{
