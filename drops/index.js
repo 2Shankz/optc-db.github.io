@@ -39,9 +39,6 @@ app.controller('MainCtrl',function($scope, $rootScope, $timeout, $controller) {
     if(searchQuery!=""){
         $scope.query = Utils.getRegex(decodeURI(searchQuery.replace(/%20Fortnight|%20Raid/g,"").replace(/\?/,"\\?")));
     }
-
-    $controller('DismissalCtrl');
-
 });
 
 app.directive('decorateSlot',function() {
