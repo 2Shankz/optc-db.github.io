@@ -74,12 +74,12 @@
                                     <td ng-if="!hybrid">{{::unit.class}}</td>
                                     <td ng-if="hybrid && !dualunit">{{::unit.class[0]}}</td>
                                     <td ng-if="hybrid && !dualunit">{{::unit.class[1]}}</td>
-                                    <td ng-if="hybrid && dualunit">{{::unit.class[2][0] | decorate}}</td>
-                                    <td ng-if="hybrid && dualunit">{{::unit.class[2][1] | decorate}}</td>
-                                    <td ng-if="!dualunit" class="ng-binding" ng-bind-html="unit.type | decorate"></td>
-                                    <td ng-if="dualunit"><span class="ng-binding"
-                                            ng-bind-html="unit.type[0] | decorate"></span>/<span class="ng-binding"
-                                            ng-bind-html="unit.type[1] | decorate"></span></td>
+                                    <td ng-if="hybrid && dualunit">{{::unit.class[2][0]}}</td>
+                                    <td ng-if="hybrid && dualunit">{{::unit.class[2][1]}}</td>
+                                    <td ng-if="!dualunit" ng-bind-html="::unit.type | decorate"></td>
+                                    <td ng-if="dualunit" 
+                                        ng-bind-html="::unit.type[0] | decorate"> / 
+                                        <span ng-bind-html="::unit.type[1] | decorate"></span></td>
                                     <td ng-if="!compare">{{::unit.stars}}</td>
                                     <td ng-if="compare" comparison="positive">{{unit.stars - compare.stars}}</td>
                                     <td ng-if="!compare">{{::unit.cost}}</td>
