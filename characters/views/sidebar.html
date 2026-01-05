@@ -123,15 +123,6 @@
     </div>
 </div>
 
-<!-- Cost -->
-<div class="filter-container expandable" id="cost-container" ng-class="{ expanded: filters.costEnabled }">
-    <span class="filter-header" ng-click="filters.costEnabled = !filters.costEnabled">
-        Cost
-        <i class="pull-right fa fa-{{filters.costEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <input type="text" id="cost-slider" name="cost-slider" value="" cost-slider></input>
-</div>
-
 <!-- Drop -->
 <div class="filter-container expandable" id="drop-filter" ng-class="{ expanded: filters.dropEnabled }">
     <span class="filter-header" ng-click="filters.dropEnabled = !filters.dropEnabled">
@@ -273,9 +264,24 @@
         ng-click="filters.noEvos = !filters.noEvos">Hide Boosters and Evolvers</span>
 </div>
 
+<!-- Limit Break -->
+<div class="filter-container" id="limit-container">
+    <animate-collapse class="filter-header">Limit Break</animate-collapse>
+    <add-custom-filters target="limit" filter-data="filterData" filters="filters" class="collapse"></add-custom-filters>
+</div>
+
+<!-- Cost -->
+<div class="filter-container expandable" id="cost-container" ng-class="{ expanded: filters.costEnabled }">
+    <span class="filter-header filter-header-pve" ng-click="filters.costEnabled = !filters.costEnabled">
+        Cost
+        <i class="pull-right fa fa-{{filters.costEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
+    </span>
+    <input type="text" id="cost-slider" name="cost-slider" value="" cost-slider></input>
+</div>
+
 <!-- Specific Captain -->
 <div class="filter-container expandable" id="specCapt-filter" ng-class="{ expanded: filters.specCaptEnabled }">
-    <span class="filter-header" ng-click="filters.specCaptEnabled = !filters.specCaptEnabled">
+    <span class="filter-header filter-header-pve" ng-click="filters.specCaptEnabled = !filters.specCaptEnabled">
         Specific Captain
         <i class="pull-right fa fa-{{filters.specCaptEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
@@ -330,60 +336,55 @@
 </div>
 
 <div class="filter-container" id="captain-container">
-    <animate-collapse class="filter-header">Captain Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Captain Ability</animate-collapse>
     <add-custom-filters id="captainFilters" target="captain" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="special-container">
-    <animate-collapse class="filter-header">Special Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Special Ability</animate-collapse>
     <add-custom-filters target="special" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="super-criteria-container">
-    <animate-collapse class="filter-header">VS/Super Special Criteria</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">VS/Super Special Criteria</animate-collapse>
     <add-custom-filters target="superSpecialCriteria" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="super-container">
-    <animate-collapse class="filter-header">VS/Super Special Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">VS/Super Special Ability</animate-collapse>
     <add-custom-filters target="superSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="swap-container">
-    <animate-collapse class="filter-header">Swap Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Swap Ability</animate-collapse>
     <add-custom-filters target="swap" filter-data="filterData" filters="filters" class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="sailor-container">
-    <animate-collapse class="filter-header">Sailor Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Sailor Ability</animate-collapse>
     <add-custom-filters target="sailor" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
-<div class="filter-container" id="limit-container">
-    <animate-collapse class="filter-header">Limit Break</animate-collapse>
-    <add-custom-filters target="limit" filter-data="filterData" filters="filters" class="collapse"></add-custom-filters>
-</div>
-
 <div class="filter-container" id="potential-container">
-    <animate-collapse class="filter-header">Potential Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Potential Ability</animate-collapse>
     <add-custom-filters target="potential" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="support-container">
-    <animate-collapse class="filter-header">Support Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Support Ability</animate-collapse>
     <add-custom-filters target="support" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <!-- Rumble Style -->
 <div class="filter-container expandable" id="rumble-style-filter" ng-class="{ expanded: filters.rumbleStyleEnabled }">
-    <span class="filter-header" ng-click="filters.rumbleStyleEnabled = !filters.rumbleStyleEnabled">
+    <span class="filter-header filter-header-pvp" ng-click="filters.rumbleStyleEnabled = !filters.rumbleStyleEnabled">
         Rumble Style
         <i class="pull-right fa fa-{{filters.rumbleStyleEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
@@ -405,37 +406,37 @@
 
 
 <div class="filter-container" id="rumble-cost-container">
-    <animate-collapse class="filter-header">Rumble Cost</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Cost</animate-collapse>
     <add-custom-filters target="rumbleCost" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="rumble-ability-container">
-    <animate-collapse class="filter-header">Rumble Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Ability</animate-collapse>
     <add-custom-filters target="rumbleAbility" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="rumble-special-container">
-    <animate-collapse class="filter-header">Rumble Special</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Special</animate-collapse>
     <add-custom-filters target="rumbleSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="rumble-resistance-container">
-    <animate-collapse class="filter-header">Rumble Resistance</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Resistance</animate-collapse>
     <add-custom-filters target="rumbleResistance" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="gp-ability-container">
-    <animate-collapse class="filter-header">Grand Party Leader</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Grand Party Leader</animate-collapse>
     <add-custom-filters target="gpAbility" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="gp-special-container">
-    <animate-collapse class="filter-header">Grand Party Burst</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Grand Party Burst</animate-collapse>
     <add-custom-filters target="gpSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>

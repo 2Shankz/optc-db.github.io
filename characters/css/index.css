@@ -231,11 +231,24 @@ input#burgerMenuState {
     display: block;
     padding: 5px;
     text-align: center;
-    background: rgb(50,50,50);
+    background: #202020;
     color: white;
     font-weight: bold;
     cursor: default;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.filter-header-general {
+    background: hsla(286, 80%, 15%, .4) !important;
+}
+
+.filter-header-pve {
+    background: hsla(230, 70%, 10%, .4) !important;
+}
+
+.filter-header-pvp {
+    background: hsla(0, 70%, 10%, .4) !important;
 }
 
 .filter-header > i {
