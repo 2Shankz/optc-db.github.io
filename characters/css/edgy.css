@@ -64,14 +64,6 @@ html, body,
     }
 }
 
-/* .filter-header:not(#clear-button, #toggle-button, #filter-subheader, .filter-group-header) {
-    background: #202020 !important;
-    border-color: #333;
-} */
-
-.conditional > .filter-header {
-    background: #333366 !important;
-}
 
 a { color: #8acccf; }
 @media (hover) {

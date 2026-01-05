@@ -363,7 +363,6 @@ input#burgerMenuState {
 
 .type.filter.active, .orb-controllers > .active {
     font-weight: bold;
-    text-decoration: underline;
 }
 
 #class-filters {
@@ -730,10 +729,6 @@ input#burgerMenuState {
 #column-picker .btn {
     width: 100%;
     padding: 3px 6px;
-}
-
-.conditional .filter-header {
-    background: darkslateblue;
 }
 
 .popup .panel.padded {

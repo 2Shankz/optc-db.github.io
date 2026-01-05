@@ -118,131 +118,127 @@
 
 <!-- Drop -->
 <div class="filter-container" id="drop-filter">
-    <animate-collapse class="filter-header">Drop</animate-collapse>
-    <div class="collapse">
-        <span ng-repeat="type in [ 'Farmable', 'Non-farmable' ]" class="filter width-6 drop" ng-model="filters.drop"
-            ng-class="{ active: filters.drop == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
-        <span ng-repeat="type in [ 'Global units', 'Japan exclusives' ]" class="filter width-6 drop"
-            ng-model="filters.server" ng-class="{ active: filters.server == type }"
-            ng-click="onFilterClick($event,type)">{{::type}}</span>
-        <span ng-repeat="type in [ 'In RR pool', 'Not in RR pool' ]" class="filter width-6 drop" ng-model="filters.rr"
-            ng-class="{ active: filters.rr == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
-        <span ng-repeat="type in [ 'Farmable Sockets', 'No Farmable Sockets' ]" class="filter width-6 drop"
-            ng-model="filters.socket" ng-class="{ active: filters.socket == type }"
-            ng-click="onFilterClick($event,type)">{{::type}}</span>
-        <span ng-repeat="type in [ 'Inkable', 'Not Inkable' ]" class="filter width-6 drop" ng-model="filters.inkable"
-            ng-class="{ active: filters.inkable == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
-    </div>
+   <animate-collapse class="filter-header">Drop</animate-collapse>
+   <div class="collapse">
+      <span ng-repeat="type in [ 'Farmable', 'Non-farmable' ]" class="filter width-6 drop" ng-model="filters.drop"
+         ng-class="{ active: filters.drop == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
+      <span ng-repeat="type in [ 'Global units', 'Japan exclusives' ]" class="filter width-6 drop"
+         ng-model="filters.server" ng-class="{ active: filters.server == type }"
+         ng-click="onFilterClick($event,type)">{{::type}}</span>
+      <span ng-repeat="type in [ 'In RR pool', 'Not in RR pool' ]" class="filter width-6 drop" ng-model="filters.rr"
+         ng-class="{ active: filters.rr == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
+      <span ng-repeat="type in [ 'Farmable Sockets', 'No Farmable Sockets' ]" class="filter width-6 drop"
+         ng-model="filters.socket" ng-class="{ active: filters.socket == type }"
+         ng-click="onFilterClick($event,type)">{{::type}}</span>
+      <span ng-repeat="type in [ 'Inkable', 'Not Inkable' ]" class="filter width-6 drop" ng-model="filters.inkable"
+         ng-class="{ active: filters.inkable == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
+      <!-- Farmable nested inside Drop -->
+      <div class="filter-container" id="farmable-filter">
+         <animate-collapse class="filter-header">Farmable</animate-collapse>
+         <div class="collapse">
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Story }" ng-model="filters.farmable.Story"
+               ng-click="onDropFilterClick($event,true)">Story-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Story === false }"
+               ng-model="filters.farmable.Story" ng-click="onDropFilterClick($event,false)">Hide Story-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Fortnight }"
+               ng-model="filters.farmable.Fortnight" ng-click="onDropFilterClick($event,true)">Fortnight-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Fortnight === false }"
+               ng-model="filters.farmable.Fortnight" ng-click="onDropFilterClick($event,false)">Hide Fortnight-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Pirateking }"
+               ng-model="filters.farmable.Pirateking" ng-click="onDropFilterClick($event,true)">Pirate King-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Pirateking === false }"
+               ng-model="filters.farmable.Pirateking" ng-click="onDropFilterClick($event,false)">Hide Pirate King-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Coop }" ng-model="filters.farmable.Coop"
+               ng-click="onDropFilterClick($event,true)">Co-Op-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Coop === false }"
+               ng-model="filters.farmable.Coop" ng-click="onDropFilterClick($event,false)">Hide Co-Op-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Raid }" ng-model="filters.farmable.Raid"
+               ng-click="onDropFilterClick($event,true)">Raid-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Raid === false }"
+               ng-model="filters.farmable.Raid" ng-click="onDropFilterClick($event,false)">Hide Raid-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Coliseum }"
+               ng-model="filters.farmable.Coliseum" ng-click="onDropFilterClick($event,true)">Coliseum-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Coliseum === false }"
+               ng-model="filters.farmable.Coliseum" ng-click="onDropFilterClick($event,false)">Hide Clssm-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Arena }" ng-model="filters.farmable.Arena"
+               ng-click="onDropFilterClick($event,true)">Arena-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Arena === false }"
+               ng-model="filters.farmable.Arena" ng-click="onDropFilterClick($event,false)">Hide Arena-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Ambush }" ng-model="filters.farmable.Ambush"
+               ng-click="onDropFilterClick($event,true)">Ambush-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Ambush === false }"
+               ng-model="filters.farmable.Ambush" ng-click="onDropFilterClick($event,false)">Hide Ambush-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Treasuremap }"
+               ng-model="filters.farmable.Treasuremap" ng-click="onDropFilterClick($event,true)">Treasure Map-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Treasuremap === false }"
+               ng-model="filters.farmable.Treasuremap" ng-click="onDropFilterClick($event,false)">Hide TreasMap-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Kizuna }" ng-model="filters.farmable.Kizuna"
+               ng-click="onDropFilterClick($event,true)">Kizuna Clash-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Kizuna === false }"
+               ng-model="filters.farmable.Kizuna" ng-click="onDropFilterClick($event,false)">Hide KizuClash-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Piraterumble }"
+               ng-model="filters.farmable.Piraterumble" ng-click="onDropFilterClick($event,true)">Pirate Rumble-only</span><!--
+               --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Piraterumble === false }"
+               ng-model="filters.farmable.Piraterumble" ng-click="onDropFilterClick($event,false)">Hide PiRumble-only</span>
+         </div>
+      </div>
+      <!-- Non-farmable nested inside Drop -->
+      <div class="filter-container" id="farmable-filter">
+         <animate-collapse class="filter-header">Non-farmable</animate-collapse>
+         <div class="collapse">
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.lrr }" ng-model="filters.nonFarmable.lrr"
+               ng-click="onDropFilterClick($event,true)">Limited RR-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.lrr === false }"
+               ng-model="filters.nonFarmable.lrr" ng-click="onDropFilterClick($event,false)">Hide lim. RR-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.tmlrr }"
+               ng-model="filters.nonFarmable.tmlrr" ng-click="onDropFilterClick($event,true)">TM Limited RR-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.tmlrr === false }"
+               ng-model="filters.nonFarmable.tmlrr" ng-click="onDropFilterClick($event,false)">Hide TM lim. RR-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.kclrr }"
+               ng-model="filters.nonFarmable.kclrr" ng-click="onDropFilterClick($event,true)">KC Limited RR-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.kclrr === false }"
+               ng-model="filters.nonFarmable.kclrr" ng-click="onDropFilterClick($event,false)">Hide KC lim. RR-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.pflrr }"
+               ng-model="filters.nonFarmable.pflrr" ng-click="onDropFilterClick($event,true)">PF Limited RR-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.pflrr === false }"
+               ng-model="filters.nonFarmable.pflrr" ng-click="onDropFilterClick($event,false)">Hide PF lim. RR-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.slrr }"
+               ng-model="filters.nonFarmable.slrr" ng-click="onDropFilterClick($event,true)">Support Limited RR-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.slrr === false }"
+               ng-model="filters.nonFarmable.slrr" ng-click="onDropFilterClick($event,false)">Hide Support lim. RR-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.superlrr }"
+               ng-model="filters.nonFarmable.superlrr" ng-click="onDropFilterClick($event,true)">Super Limited RR-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.superlrr === false }"
+               ng-model="filters.nonFarmable.superlrr" ng-click="onDropFilterClick($event,false)">Hide Super lim.
+            RR-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.annilrr }"
+               ng-model="filters.nonFarmable.annilrr" ng-click="onDropFilterClick($event,true)">Anniversary Limited
+            RR-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.annilrr === false }"
+               ng-model="filters.nonFarmable.annilrr" ng-click="onDropFilterClick($event,false)">Hide Anniversary lim.
+            RR-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.promo }"
+               ng-model="filters.nonFarmable.promo" ng-click="onDropFilterClick($event,true)">Promo-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.promo === false }"
+               ng-model="filters.nonFarmable.promo" ng-click="onDropFilterClick($event,false)">Hide promo-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.special }"
+               ng-model="filters.nonFarmable.special" ng-click="onDropFilterClick($event,true)">Login Bonus-only</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.special === false }"
+               ng-model="filters.nonFarmable.special" ng-click="onDropFilterClick($event,false)">Hide Login-only</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.shop }"
+               ng-model="filters.nonFarmable.shop" ng-click="onDropFilterClick($event,true)">Ray Shop Unit</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.shop === false }"
+               ng-model="filters.nonFarmable.shop" ng-click="onDropFilterClick($event,false)">Hide Ray Shop Unit</span>
+            <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.tmshop }"
+               ng-model="filters.nonFarmable.tmshop" ng-click="onDropFilterClick($event,true)">Trade Port Unit</span><!--
+               --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.tmshop === false }"
+               ng-model="filters.nonFarmable.tmshop" ng-click="onDropFilterClick($event,false)">Hide Trade Port Unit</span>
+         </div>
+      </div>
+   </div>
 </div>
 
-<!-- Farmable -->
-<div class="filter-container expandable conditional" id="farmable-filter" ng-show="filters.dropEnabled"
-    ng-class="{ expanded: filters.farmEnabled }">
-    <span id="filter-subheader" class="filter-header" ng-click="filters.farmEnabled = !filters.farmEnabled">
-        Farmable
-        <i class="pull-right fa fa-{{filters.farmEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Story }" ng-model="filters.farmable.Story"
-        ng-click="onDropFilterClick($event,true)">Story-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Story === false }"
-        ng-model="filters.farmable.Story" ng-click="onDropFilterClick($event,false)">Hide Story-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Fortnight }"
-        ng-model="filters.farmable.Fortnight" ng-click="onDropFilterClick($event,true)">Fortnight-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Fortnight === false }"
-        ng-model="filters.farmable.Fortnight" ng-click="onDropFilterClick($event,false)">Hide Fortnight-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Pirateking }"
-        ng-model="filters.farmable.Pirateking" ng-click="onDropFilterClick($event,true)">Pirate King-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Pirateking === false }"
-        ng-model="filters.farmable.Pirateking" ng-click="onDropFilterClick($event,false)">Hide Pirate King-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Coop }" ng-model="filters.farmable.Coop"
-        ng-click="onDropFilterClick($event,true)">Co-Op-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Coop === false }"
-        ng-model="filters.farmable.Coop" ng-click="onDropFilterClick($event,false)">Hide Co-Op-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Raid }" ng-model="filters.farmable.Raid"
-        ng-click="onDropFilterClick($event,true)">Raid-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Raid === false }"
-        ng-model="filters.farmable.Raid" ng-click="onDropFilterClick($event,false)">Hide Raid-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Coliseum }"
-        ng-model="filters.farmable.Coliseum" ng-click="onDropFilterClick($event,true)">Coliseum-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Coliseum === false }"
-        ng-model="filters.farmable.Coliseum" ng-click="onDropFilterClick($event,false)">Hide Clssm-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Arena }" ng-model="filters.farmable.Arena"
-        ng-click="onDropFilterClick($event,true)">Arena-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Arena === false }"
-        ng-model="filters.farmable.Arena" ng-click="onDropFilterClick($event,false)">Hide Arena-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Ambush }" ng-model="filters.farmable.Ambush"
-        ng-click="onDropFilterClick($event,true)">Ambush-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Ambush === false }"
-        ng-model="filters.farmable.Ambush" ng-click="onDropFilterClick($event,false)">Hide Ambush-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Treasuremap }"
-        ng-model="filters.farmable.Treasuremap" ng-click="onDropFilterClick($event,true)">Treasure Map-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Treasuremap === false }"
-        ng-model="filters.farmable.Treasuremap" ng-click="onDropFilterClick($event,false)">Hide TreasMap-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Kizuna }" ng-model="filters.farmable.Kizuna"
-        ng-click="onDropFilterClick($event,true)">Kizuna Clash-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Kizuna === false }"
-        ng-model="filters.farmable.Kizuna" ng-click="onDropFilterClick($event,false)">Hide KizuClash-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Piraterumble }"
-        ng-model="filters.farmable.Piraterumble" ng-click="onDropFilterClick($event,true)">Pirate Rumble-only</span><!--
- --><span class="filter width-6 exc" ng-class="{ active: filters.farmable.Piraterumble === false }"
-        ng-model="filters.farmable.Piraterumble" ng-click="onDropFilterClick($event,false)">Hide PiRumble-only</span>
-</div>
-
-<div class="filter-container expandable conditional" id="farmable-filter" ng-show="filters.dropEnabled"
-    ng-class="{ expanded: filters.nonfarmEnabled }">
-    <span id="filter-subheader" class="filter-header" ng-click="filters.nonfarmEnabled = !filters.nonfarmEnabled">
-        Non-farmable
-        <i class="pull-right fa fa-{{filters.nonfarmEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.lrr }" ng-model="filters.nonFarmable.lrr"
-        ng-click="onDropFilterClick($event,true)">Limited RR-only</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.lrr === false }"
-        ng-model="filters.nonFarmable.lrr" ng-click="onDropFilterClick($event,false)">Hide lim. RR-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.tmlrr }"
-        ng-model="filters.nonFarmable.tmlrr" ng-click="onDropFilterClick($event,true)">TM Limited RR-only</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.tmlrr === false }"
-        ng-model="filters.nonFarmable.tmlrr" ng-click="onDropFilterClick($event,false)">Hide TM lim. RR-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.kclrr }"
-        ng-model="filters.nonFarmable.kclrr" ng-click="onDropFilterClick($event,true)">KC Limited RR-only</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.kclrr === false }"
-        ng-model="filters.nonFarmable.kclrr" ng-click="onDropFilterClick($event,false)">Hide KC lim. RR-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.pflrr }"
-        ng-model="filters.nonFarmable.pflrr" ng-click="onDropFilterClick($event,true)">PF Limited RR-only</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.pflrr === false }"
-        ng-model="filters.nonFarmable.pflrr" ng-click="onDropFilterClick($event,false)">Hide PF lim. RR-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.slrr }"
-        ng-model="filters.nonFarmable.slrr" ng-click="onDropFilterClick($event,true)">Support Limited RR-only</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.slrr === false }"
-        ng-model="filters.nonFarmable.slrr" ng-click="onDropFilterClick($event,false)">Hide Support lim. RR-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.superlrr }"
-        ng-model="filters.nonFarmable.superlrr" ng-click="onDropFilterClick($event,true)">Super Limited RR-only</span><!--
---><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.superlrr === false }"
-        ng-model="filters.nonFarmable.superlrr" ng-click="onDropFilterClick($event,false)">Hide Super lim.
-        RR-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.annilrr }"
-        ng-model="filters.nonFarmable.annilrr" ng-click="onDropFilterClick($event,true)">Anniversary Limited
-        RR-only</span><!--
---><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.annilrr === false }"
-        ng-model="filters.nonFarmable.annilrr" ng-click="onDropFilterClick($event,false)">Hide Anniversary lim.
-        RR-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.promo }"
-        ng-model="filters.nonFarmable.promo" ng-click="onDropFilterClick($event,true)">Promo-only</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.promo === false }"
-        ng-model="filters.nonFarmable.promo" ng-click="onDropFilterClick($event,false)">Hide promo-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.special }"
-        ng-model="filters.nonFarmable.special" ng-click="onDropFilterClick($event,true)">Login Bonus-only</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.special === false }"
-        ng-model="filters.nonFarmable.special" ng-click="onDropFilterClick($event,false)">Hide Login-only</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.shop }"
-        ng-model="filters.nonFarmable.shop" ng-click="onDropFilterClick($event,true)">Ray Shop Unit</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.shop === false }"
-        ng-model="filters.nonFarmable.shop" ng-click="onDropFilterClick($event,false)">Hide Ray Shop Unit</span>
-    <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.tmshop }"
-        ng-model="filters.nonFarmable.tmshop" ng-click="onDropFilterClick($event,true)">Trade Port Unit</span><!--
- --><span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.tmshop === false }"
-        ng-model="filters.nonFarmable.tmshop" ng-click="onDropFilterClick($event,false)">Hide Trade Port Unit</span>
-</div>
-
+<!-- Exclusion Filters -->
 <div class="filter-container" id="exclusion-filter">
     <animate-collapse class="filter-header">Exclusion Filters</animate-collapse>
     <div class="collapse">
@@ -270,59 +266,56 @@
 </div>
 
 <!-- Specific Captain -->
-<div class="filter-container expandable" id="specCapt-filter" ng-class="{ expanded: filters.specCaptEnabled }">
-    <span class="filter-header filter-header-pve" ng-click="filters.specCaptEnabled = !filters.specCaptEnabled">
-        Specific Captain
-        <i class="pull-right fa fa-{{filters.specCaptEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span class="filter width-6 exc" ng-model="filters.katakuri" ng-class="{ active: filters.katakuri }"
-        ng-click="filters.katakuri = !filters.katakuri">Double Boosted Katakuri Units</span><!--
- --><span class="filter width-6 exc" ng-model="filters.katakuriplus" ng-class="{ active: filters.katakuriplus }"
-        ng-click="filters.katakuriplus = !filters.katakuriplus">Double Boosted Katakuri+ Units</span><!--
- --><span class="filter width-12 exc" ng-model="filters.katakuriv2" ng-class="{ active: filters.katakuriv2 }"
-        ng-click="filters.katakuriv2 = !filters.katakuriv2">Double Boosted Katakuri V2 Units</span><!--
- --><!--span class="filter width-6 exc" >Reserved for V2 Katakuri+ <br></span--><!--
- --><span class="filter width-12 exc" ng-model="filters.TMlaw" ng-class="{ active: filters.TMlaw }"
-        ng-click="filters.TMlaw = !filters.TMlaw">Double Boosted TM Law Units</span><!--
- --><span class="filter width-12 exc" ng-model="filters.carrotwanda" ng-class="{ active: filters.carrotwanda }"
-        ng-click="filters.carrotwanda = !filters.carrotwanda">Double Boosted Sulong Carrot & Wanda Units</span><!--
- -->
+<div class="filter-container" id="specCapt-filter">
+    <animate-collapse class="filter-header filter-header-pve">Specific Captain</animate-collapse>
+    <div class="collapse">
+        <span class="filter width-6 exc" ng-model="filters.katakuri" ng-class="{ active: filters.katakuri }"
+            ng-click="filters.katakuri = !filters.katakuri">Double Boosted Katakuri Units</span><!--
+     --><span class="filter width-6 exc" ng-model="filters.katakuriplus" ng-class="{ active: filters.katakuriplus }"
+            ng-click="filters.katakuriplus = !filters.katakuriplus">Double Boosted Katakuri+ Units</span><!--
+     --><span class="filter width-12 exc" ng-model="filters.katakuriv2" ng-class="{ active: filters.katakuriv2 }"
+            ng-click="filters.katakuriv2 = !filters.katakuriv2">Double Boosted Katakuri V2 Units</span><!--
+     --><!--span class="filter width-6 exc" >Reserved for V2 Katakuri+ <br></span--><!--
+     --><span class="filter width-12 exc" ng-model="filters.TMlaw" ng-class="{ active: filters.TMlaw }"
+            ng-click="filters.TMlaw = !filters.TMlaw">Double Boosted TM Law Units</span><!--
+     --><span class="filter width-12 exc" ng-model="filters.carrotwanda" ng-class="{ active: filters.carrotwanda }"
+            ng-click="filters.carrotwanda = !filters.carrotwanda">Double Boosted Sulong Carrot & Wanda Units</span><!--
+     -->
+    </div>
 </div>
 
-<div class="filter-container expandable" id="temporary-filter" ng-class="{ expanded: filters.temporaryEnabled }"
-    ng-show="false">
-    <span class="filter-header" ng-click="filters.temporaryEnabled = !filters.temporaryEnabled">
-        Temporary filters
-        <i class="pull-right fa fa-{{filters.temporaryEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <!--span class="filter width-12 exc" ng-model="filters.wapolAssault" ng-class="{ active: filters.wapolAssault }"
-        ng-click="filters.wapolAssault = !filters.wapolAssault">Show Wapol's Assault Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.yonkoBlitz" ng-class="{ active: filters.yonkoBlitz }"
-        ng-click="filters.yonkoBlitz = !filters.yonkoBlitz">Show Yonko Blitz Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.summerGirlsBlitz" ng-class="{ active: filters.summerGirlsBlitz }"
-        ng-click="filters.summerGirlsBlitz = !filters.summerGirlsBlitz">Show Summer Girls Blitz Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.summerGirlsBlitz2" ng-class="{ active: filters.summerGirlsBlitz2 }"
-        ng-click="filters.summerGirlsBlitz2 = !filters.summerGirlsBlitz2">Show Summer Girls Blitz 2 Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.beastBlitz" ng-class="{ active: filters.beastBlitz }"
-        ng-click="filters.beastBlitz = !filters.beastBlitz">Show Beast Pirates Blitz</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.doffyBlitz" ng-class="{ active: filters.doffyBlitz }"
-        ng-click="filters.doffyBlitz = !filters.doffyBlitz">Show 3.375x Doflamingo Blitz Battle Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.worldClash" ng-class="{ active: filters.worldClash }"
-        ng-click="filters.worldClash = !filters.worldClash">Show World Clash Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.swordOrdeal" ng-class="{ active: filters.swordOrdeal }"
-        ng-click="filters.swordOrdeal = !filters.swordOrdeal">Show Ordeal of the Blade Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.luffyvkatakuri" ng-class="{ active: filters.luffyvkatakuri }"
-        ng-click="filters.luffyvkatakuri = !filters.luffyvkatakuri">Show Luffy v Katakuri Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.faceoffAA" ng-class="{ active: filters.faceoffAA }"
-        ng-click="filters.faceoffAA = !filters.faceoffAA">Show Akainu v Aokiji Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.warlordBlitz" ng-class="{ active: filters.warlordBlitz }"
-        ng-click="filters.warlordBlitz = !filters.warlordBlitz">Show Warlord Face Off Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.summerGirlsBlitz3" ng-class="{ active: filters.summerGirlsBlitz3 }"
-        ng-click="filters.summerGirlsBlitz3 = !filters.summerGirlsBlitz3">Show Summer Party Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.garpFN" ng-class="{ active: filters.garpFN }"
-        ng-click="filters.garpFN = !filters.garpFN">Show Drill Crushing Fist Boosters</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.navyBlitz" ng-class="{ active: filters.navyBlitz }"
-        ng-click="filters.navyBlitz = !filters.navyBlitz">Show VS Navy Blitz Battle Boosters</span-->
+<div class="filter-container expandable" id="temporary-filter" ng-show="false">
+    <animate-collapse class="filter-header">Temporary filters</animate-collapse>
+    <div class="collapse">
+        <!--span class="filter width-12 exc" ng-model="filters.wapolAssault" ng-class="{ active: filters.wapolAssault }"
+            ng-click="filters.wapolAssault = !filters.wapolAssault">Show Wapol's Assault Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.yonkoBlitz" ng-class="{ active: filters.yonkoBlitz }"
+            ng-click="filters.yonkoBlitz = !filters.yonkoBlitz">Show Yonko Blitz Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.summerGirlsBlitz" ng-class="{ active: filters.summerGirlsBlitz }"
+            ng-click="filters.summerGirlsBlitz = !filters.summerGirlsBlitz">Show Summer Girls Blitz Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.summerGirlsBlitz2" ng-class="{ active: filters.summerGirlsBlitz2 }"
+            ng-click="filters.summerGirlsBlitz2 = !filters.summerGirlsBlitz2">Show Summer Girls Blitz 2 Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.beastBlitz" ng-class="{ active: filters.beastBlitz }"
+            ng-click="filters.beastBlitz = !filters.beastBlitz">Show Beast Pirates Blitz</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.doffyBlitz" ng-class="{ active: filters.doffyBlitz }"
+            ng-click="filters.doffyBlitz = !filters.doffyBlitz">Show 3.375x Doflamingo Blitz Battle Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.worldClash" ng-class="{ active: filters.worldClash }"
+            ng-click="filters.worldClash = !filters.worldClash">Show World Clash Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.swordOrdeal" ng-class="{ active: filters.swordOrdeal }"
+            ng-click="filters.swordOrdeal = !filters.swordOrdeal">Show Ordeal of the Blade Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.luffyvkatakuri" ng-class="{ active: filters.luffyvkatakuri }"
+            ng-click="filters.luffyvkatakuri = !filters.luffyvkatakuri">Show Luffy v Katakuri Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.faceoffAA" ng-class="{ active: filters.faceoffAA }"
+            ng-click="filters.faceoffAA = !filters.faceoffAA">Show Akainu v Aokiji Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.warlordBlitz" ng-class="{ active: filters.warlordBlitz }"
+            ng-click="filters.warlordBlitz = !filters.warlordBlitz">Show Warlord Face Off Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.summerGirlsBlitz3" ng-class="{ active: filters.summerGirlsBlitz3 }"
+            ng-click="filters.summerGirlsBlitz3 = !filters.summerGirlsBlitz3">Show Summer Party Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.garpFN" ng-class="{ active: filters.garpFN }"
+            ng-click="filters.garpFN = !filters.garpFN">Show Drill Crushing Fist Boosters</span-->
+        <!--span class="filter width-12 exc" ng-model="filters.navyBlitz" ng-class="{ active: filters.navyBlitz }"
+            ng-click="filters.navyBlitz = !filters.navyBlitz">Show VS Navy Blitz Battle Boosters</span-->
+    </div>
 </div>
 
 <div class="filter-container" id="captain-container">
@@ -373,25 +366,24 @@
 </div>
 
 <!-- Rumble Style -->
-<div class="filter-container expandable" id="rumble-style-filter" ng-class="{ expanded: filters.rumbleStyleEnabled }">
-    <span class="filter-header filter-header-pvp" ng-click="filters.rumbleStyleEnabled = !filters.rumbleStyleEnabled">
-        Rumble Style
-        <i class="pull-right fa fa-{{filters.rumbleStyleEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-<div style="display: flex;" ng-hide="!filters.rumbleStyleEnabled">
-    <span class="filter exc" style="flex: 1;" ng-model="filters.styleATK" ng-class="{ active: filters.styleATK }"
-        ng-click="filters.styleATK = !filters.styleATK">ATK</span>
-    <span class="filter exc" style="flex: 1;" ng-model="filters.styleDEF" ng-class="{ active: filters.styleDEF }"
-        ng-click="filters.styleDEF = !filters.styleDEF">DEF</span>
-    <span class="filter exc" style="flex: 1;" ng-model="filters.styleRCV" ng-class="{ active: filters.styleRCV }"
-        ng-click="filters.styleRCV = !filters.styleRCV">RCV</span>
-    <span class="filter exc" style="flex: 1;" ng-model="filters.styleSPT" ng-class="{ active: filters.styleSPT }"
-        ng-click="filters.styleSPT = !filters.styleSPT">SPT</span>
-    <span class="filter exc" style="flex: 1;" ng-model="filters.styleDBF" ng-class="{ active: filters.styleDBF }"
-        ng-click="filters.styleDBF = !filters.styleDBF">DBF</span>
-    <span class="filter exc" style="flex: 1;" ng-model="filters.styleBAL" ng-class="{ active: filters.styleBAL }"
-        ng-click="filters.styleBAL = !filters.styleBAL">BAL</span>
-</div>
+<div class="filter-container" id="rumble-style-filter">
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Style</animate-collapse>
+    <div class="collapse">
+        <div style="display: flex;">
+            <span class="filter exc" style="flex: 1;" ng-model="filters.styleATK" ng-class="{ active: filters.styleATK }"
+                ng-click="filters.styleATK = !filters.styleATK">ATK</span>
+            <span class="filter exc" style="flex: 1;" ng-model="filters.styleDEF" ng-class="{ active: filters.styleDEF }"
+                ng-click="filters.styleDEF = !filters.styleDEF">DEF</span>
+            <span class="filter exc" style="flex: 1;" ng-model="filters.styleRCV" ng-class="{ active: filters.styleRCV }"
+                ng-click="filters.styleRCV = !filters.styleRCV">RCV</span>
+            <span class="filter exc" style="flex: 1;" ng-model="filters.styleSPT" ng-class="{ active: filters.styleSPT }"
+                ng-click="filters.styleSPT = !filters.styleSPT">SPT</span>
+            <span class="filter exc" style="flex: 1;" ng-model="filters.styleDBF" ng-class="{ active: filters.styleDBF }"
+                ng-click="filters.styleDBF = !filters.styleDBF">DBF</span>
+            <span class="filter exc" style="flex: 1;" ng-model="filters.styleBAL" ng-class="{ active: filters.styleBAL }"
+                ng-click="filters.styleBAL = !filters.styleBAL">BAL</span>
+        </div>
+    </div>
 </div>
 
 
@@ -431,14 +423,12 @@
         class="collapse"></add-custom-filters>
 </div>
 
-<div class="filter-container expandable" id="charLog-container" ng-if="showLogFilters"
-    ng-class="{ expanded: filters.charLogEnabled }">
-    <span class="filter-header" ng-click="filters.charLogEnabled = !filters.charLogEnabled">
-        Character Log filters
-        <i class="pull-right fa fa-{{filters.charLogEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span class="filter width-12 custom" ng-model="filters.noLog" ng-class="{ active: filters.noLog }"
-        ng-click="filters.noLog = !filters.noLog">Hide units in Character Log</span>
-    <span class="filter width-12 custom" ng-model="filters.noMissing" ng-class="{ active: filters.noMissing }"
-        ng-click="filters.noMissing = !filters.noMissing">Hide units not in Character Log</span>
+<div class="filter-container expandable" id="charLog-container" ng-if="showLogFilters">
+    <animate-collapse class="filter-header">Character Log filters</animate-collapse>
+    <div class="collapse">
+        <span class="filter width-12 custom" ng-model="filters.noLog" ng-class="{ active: filters.noLog }"
+            ng-click="filters.noLog = !filters.noLog">Hide units in Character Log</span>
+        <span class="filter width-12 custom" ng-model="filters.noMissing" ng-class="{ active: filters.noMissing }"
+            ng-click="filters.noMissing = !filters.noMissing">Hide units not in Character Log</span>
+    </div>
 </div>
