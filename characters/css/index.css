@@ -595,6 +595,13 @@ input#burgerMenuState {
 .min-width-4 { min-width: 33.33%; }
 .min-width-3 { min-width: 25%; }
 
+.type-buttons {
+    display: flex;
+}
+.type-buttons .filter {
+    flex: 1;
+}
+
 .help-link {
     float: right;
     margin-right: 10px;
@@ -653,24 +660,24 @@ input#burgerMenuState {
 }
 
 #clear-button {
+    background: #202020;
     cursor: pointer;
-    background: salmon;
-    color: white;
+    color: salmon;
 }
 
 #toggle-button {
+    background: #202020;
     cursor: pointer;
-    background: darkorchid;
-    color: white;
-}
+    color: salmon;
+    }
 
 @media (hover) {
     #clear-button:hover {
-        background: orangered;
+        background: rgba(255, 68, 0, 0.439);
     }
 
     #toggle-button:hover {
-        background: darkviolet;
+        background: rgba(255, 68, 0, 0.439);
     }
 }
 

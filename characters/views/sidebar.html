@@ -1,16 +1,38 @@
-<div id="clear-button" class="filter-header" ng-click="clearFilters()">Clear filters</div>
-<div id="toggle-button" class="filter-header" ng-click="toggleFilters()">Toggle Collapse Sections</div>
-
-<div class="filter-container expandable" id="type-filter" ng-class="{ expanded: !filters.typeEnabled }">
-    <span class="filter-header" ng-click="filters.typeEnabled = !filters.typeEnabled">
-        Type filters
-        <i class="pull-right fa fa-{{filters.typeEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span ng-model="filters.type" ng-repeat="(n,type) in [ 'STR', 'QCK', 'DEX', 'PSY', 'INT' ]"
-        class="filter {{::n < 3 ? 'width-4' : 'width-6'}} type {{::type}}"
-        ng-class="{ active: filters.types.indexOf(type) > -1 }" ng-click="onTypeClick($event,type)">{{::type}}</span>
+<div style="display: flex;">
+    <div id="clear-button" class="filter-header" style="flex: 1;" ng-click="clearFilters()">Clear All</div>
+    <div id="toggle-button" class="filter-header" style="flex: 1;" ng-click="toggleFilters()">Toggle All</div>
 </div>
 
+<!-- Event Boosters -->
+<div class="filter-container expandable" id="tmkc-filter" ng-class="{ expanded: filters.tmkcEnabled }">
+    <span class="filter-header" ng-click="filters.tmkcEnabled = !filters.tmkcEnabled">
+        Event Boosters
+        <i class="pull-right fa fa-{{filters.tmkcEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
+    </span>
+    <span class="filter width-12 exc" ng-model="filters.globalTM" ng-class="{ active: filters.globalTM }"
+        ng-click="filters.globalTM = !filters.globalTM">Treasure Map Boosters [Kid]</span>
+    <span class="filter width-12 exc" ng-model="filters.globalKC" ng-class="{ active: filters.globalKC }"
+        ng-click="filters.globalKC = !filters.globalKC">Kizuna Clash Boosters [Shirahoshi & Mansherry ]</span>
+    <span class="filter width-12 exc" ng-model="filters.globalPKA" ng-class="{ active: filters.globalPKA }"
+        ng-click="filters.globalPKA = !filters.globalPKA">Pirate King Adventure Boosters [Doll & Bluegrass]</span>
+    <span class="filter width-12 exc" ng-model="filters.comodorevsempress" ng-class="{ active: filters.comodorevsempress }"
+        ng-click="filters.comodorevsempress = !filters.comodorevsempress">Blitz Battle Boosters [VS Five Elders]</span>
+</div>
+
+<!-- Types -->
+<div class="filter-container expandable" id="type-filter" ng-class="{ expanded: !filters.typeEnabled }">
+    <span class="filter-header" ng-click="filters.typeEnabled = !filters.typeEnabled">
+        Type
+        <i class="pull-right fa fa-{{!filters.typeEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
+    </span>
+    <span class="type-buttons">
+    <span ng-model="filters.type" ng-repeat="(n,type) in [ 'STR', 'QCK', 'DEX', 'PSY', 'INT' ]"
+        class="filter type {{::type}}"
+        ng-class="{ active: filters.types.indexOf(type) > -1 }" ng-click="onTypeClick($event,type)">{{::type}}</span>
+    </span>
+</div>
+
+<!-- Dev -->
 <div class="filter-container" ng-show="false">
     <span class="filter-header">Dev. filters</span>
     <span class="filter width-12 exc" ng-model="filters.noLB" ng-class="{ active: filters.noLB }"
@@ -33,23 +55,11 @@
         ng-click="filters.nodualUnits = !filters.nodualUnits">Hide Dual Character Units</span>
 </div>
 
-<div class="filter-container expandable" id="character-filter" ng-class="{ expanded: !filters.characterEnabled }">
-    <span class="filter-header" ng-click="filters.characterEnabled = !filters.characterEnabled">
-        Character filters
-        <i class="pull-right fa fa-{{filters.characterEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span class="filter width-12 exc" ng-model="filters.dualUnits" ng-class="{ active: filters.dualUnits }"
-        ng-click="filters.dualUnits = !filters.dualUnits">Show Dual Character Units</span>
-    <span class="filter width-12 exc" ng-model="filters.vsUnits" ng-class="{ active: filters.vsUnits }"
-        ng-click="filters.vsUnits = !filters.vsUnits">Show VS Character Units</span>
-    <span class="filter width-12 exc" ng-model="filters.superTypeUnits" ng-class="{ active: filters.superTypeUnits }"
-        ng-click="filters.superTypeUnits = !filters.superTypeUnits">Show Super Type/Class Character Units</span>
-</div>
-
+<!-- Class -->
 <div class="filter-container expandable" id="class-filter" ng-class="{ expanded: !filters.classEnabled }">
     <span class="filter-header" ng-click="filters.classEnabled = !filters.classEnabled">
-        Class filters
-        <i class="pull-right fa fa-{{filters.classEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
+        Class
+        <i class="pull-right fa fa-{{!filters.classEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
     <span ng-repeat="class in availableClasses" class="filter width-6 class" ng-click="onClassClick($event,class)"
         ng-class="{ active: filters.classes.indexOf(class) > -1 }">{{::class}}</span>
@@ -61,10 +71,45 @@
         Characters</span>
 </div>
 
-<div class="filter-container expandable" id="tag-filter" ng-class="{ expanded: !filters.tagEnabled }">
+<!-- Rarity -->
+<div class="filter-container expandable" id="rarity-filter" ng-class="{ expanded: !filters.rarityEnabled }">
+    <span class="filter-header" ng-click="filters.rarityEnabled = !filters.rarityEnabled">
+        Rarity
+        <i class="pull-right fa fa-{{!filters.rarityEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
+    </span>
+    <span ng-hide="!filters.rarityEnabled" style="display: flex; width: 100%;">
+        <span ng-repeat="star in [ 1, 2, 3, 4, '4+', 5, '5+', 6, '6+' ]" style="flex: 1; text-align: center; display: block;" class="filter"
+            ng-click="onStarsClick($event,star)"
+            ng-class="{ active: filters.stars.indexOf(star) > -1 }">{{::star}}</span>
+    </span>
+</div>
+
+<!-- Character -->
+<div class="filter-container expandable" id="character-filter" ng-class="{ expanded: !filters.characterEnabled }">
+    <span class="filter-header" ng-click="filters.characterEnabled = !filters.characterEnabled">
+        Character Style
+        <i class="pull-right fa fa-{{!filters.characterEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
+    </span>    
+<span ng-hide="!filters.characterEnabled" style="display: flex; width: 100%;">
+    <span class="filter exc" style="flex: 1; text-align: center;" 
+          ng-model="filters.dualUnits" 
+          ng-class="{ active: filters.dualUnits }"
+          ng-click="filters.dualUnits = !filters.dualUnits">Dual</span>
+    <span class="filter exc" style="flex: 1; text-align: center;"
+          ng-model="filters.vsUnits" 
+          ng-class="{ active: filters.vsUnits }"    
+          ng-click="filters.vsUnits = !filters.vsUnits">VS</span>
+    <span class="filter exc" style="flex: 3; text-align: center;"
+          ng-class="{ active: filters.superTypeUnits }"    
+          ng-click="filters.superTypeUnits = !filters.superTypeUnits">Super Class/Type</span>
+</span>
+</div>
+
+<!-- Tags -->
+<div class="filter-container expandable" id="tag-filter" ng-class="{ expanded: filters.tagEnabled }">
     <span class="filter-header" ng-click="filters.tagEnabled = !filters.tagEnabled">
-        Tags filters
-        <i class="pull-right fa fa-{{filters.tagEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
+        Tags
+        <i class="pull-right fa fa-{{!filters.tagEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
 
     <label class="filter width-12 tags">
@@ -78,48 +123,19 @@
     </div>
 </div>
 
-<div class="filter-container expandable" id="rumble-style-filter" ng-class="{ expanded: filters.rumbleStyleEnabled }">
-    <span class="filter-header" ng-click="filters.rumbleStyleEnabled = !filters.rumbleStyleEnabled">
-        Rumble style filters
-        <i class="pull-right fa fa-{{filters.rumbleStyleEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span class="filter width-12 exc" ng-model="filters.styleATK" ng-class="{ active: filters.styleATK }"
-        ng-click="filters.styleATK = !filters.styleATK">ATK</span>
-    <span class="filter width-12 exc" ng-model="filters.styleDEF" ng-class="{ active: filters.styleDEF }"
-        ng-click="filters.styleDEF = !filters.styleDEF">DEF</span>
-    <span class="filter width-12 exc" ng-model="filters.styleRCV" ng-class="{ active: filters.styleRCV }"
-        ng-click="filters.styleRCV = !filters.styleRCV">RCV</span>
-    <span class="filter width-12 exc" ng-model="filters.styleSPT" ng-class="{ active: filters.styleSPT }"
-        ng-click="filters.styleSPT = !filters.styleSPT">SPT</span>
-    <span class="filter width-12 exc" ng-model="filters.styleDBF" ng-class="{ active: filters.styleDBF }"
-        ng-click="filters.styleDBF = !filters.styleDBF">DBF</span>
-    <span class="filter width-12 exc" ng-model="filters.styleBAL" ng-class="{ active: filters.styleBAL }"
-        ng-click="filters.styleBAL = !filters.styleBAL">BAL</span>
-</div>
-
-<div class="filter-container expandable" id="rarity-filter" ng-class="{ expanded: filters.rarityEnabled }">
-    <span class="filter-header" ng-click="filters.rarityEnabled = !filters.rarityEnabled">
-        Rarity filters
-        <i class="pull-right fa fa-{{filters.rarityEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span ng-repeat="(n,stars) in [ 1, 2, 3, 4, 5, 6 ]" class="filter stars width-4 stars-{{::stars}}"
-        ng-click="onStarsClick($event,stars)" ng-class="{ active: filters.stars.indexOf(stars) > -1 }"></span>
-    <span ng-repeat="(n,stars) in [ 4, 5, 6 ]" class="filter stars width-4 stars-{{::stars}}+"
-        ng-click="onStarsClick($event,stars + '+')"
-        ng-class="{ active: filters.stars.indexOf(stars + '+') > -1 }"></span>
-</div>
-
+<!-- Cost -->
 <div class="filter-container expandable" id="cost-container" ng-class="{ expanded: filters.costEnabled }">
     <span class="filter-header" ng-click="filters.costEnabled = !filters.costEnabled">
-        Cost filter
+        Cost
         <i class="pull-right fa fa-{{filters.costEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
     <input type="text" id="cost-slider" name="cost-slider" value="" cost-slider></input>
 </div>
 
+<!-- Drop -->
 <div class="filter-container expandable" id="drop-filter" ng-class="{ expanded: filters.dropEnabled }">
     <span class="filter-header" ng-click="filters.dropEnabled = !filters.dropEnabled">
-        Drop filters
+        Drop
         <i class="pull-right fa fa-{{filters.dropEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
     <span ng-repeat="type in [ 'Farmable', 'Non-farmable' ]" class="filter width-6 drop" ng-model="filters.drop"
@@ -136,10 +152,11 @@
         ng-class="{ active: filters.inkable == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
 </div>
 
+<!-- Farmable -->
 <div class="filter-container expandable conditional" id="farmable-filter" ng-show="filters.dropEnabled"
     ng-class="{ expanded: filters.farmEnabled }">
     <span id="filter-subheader" class="filter-header" ng-click="filters.farmEnabled = !filters.farmEnabled">
-        Farmable filters
+        Farmable
         <i class="pull-right fa fa-{{filters.farmEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
     <span class="filter width-6 drop" ng-class="{ active: filters.farmable.Story }" ng-model="filters.farmable.Story"
@@ -191,7 +208,7 @@
 <div class="filter-container expandable conditional" id="farmable-filter" ng-show="filters.dropEnabled"
     ng-class="{ expanded: filters.nonfarmEnabled }">
     <span id="filter-subheader" class="filter-header" ng-click="filters.nonfarmEnabled = !filters.nonfarmEnabled">
-        Non-farmable filters
+        Non-farmable
         <i class="pull-right fa fa-{{filters.nonfarmEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
     <span class="filter width-6 drop" ng-class="{ active: filters.nonFarmable.lrr }" ng-model="filters.nonFarmable.lrr"
@@ -245,7 +262,7 @@
 
 <div class="filter-container expandable" id="exclusion-filter" ng-class="{ expanded: filters.exclusionEnabled }">
     <span class="filter-header" ng-click="filters.exclusionEnabled = !filters.exclusionEnabled">
-        Exclusion filters
+        Exclusion Filters
         <i class="pull-right fa fa-{{filters.exclusionEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
     <span class="filter width-6 exc" ng-model="filters.noBase" ng-class="{ active: filters.noBase }"
@@ -256,30 +273,10 @@
         ng-click="filters.noEvos = !filters.noEvos">Hide Boosters and Evolvers</span>
 </div>
 
-<div class="filter-container expandable" id="tmkc-filter" ng-class="{ expanded: filters.tmkcEnabled }">
-    <span class="filter-header" ng-click="filters.tmkcEnabled = !filters.tmkcEnabled">
-        Booster filters
-        <i class="pull-right fa fa-{{filters.tmkcEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
-    </span>
-    <span class="filter width-12 exc" ng-model="filters.globalTM" ng-class="{ active: filters.globalTM }"
-        ng-click="filters.globalTM = !filters.globalTM">Treasure Map Boosters [Kid]</span>
-    <!--span class="filter width-6 exc" ng-model="filters.japanTM" ng-class="{ active: filters.japanTM }"
-        ng-click="filters.japanTM = !filters.japanTM">Show Japan TM Boosters [Hyogoro the Flower]</span-->
-    <span class="filter width-12 exc" ng-model="filters.globalKC" ng-class="{ active: filters.globalKC }"
-        ng-click="filters.globalKC = !filters.globalKC">Kizuna Clash Boosters [Shirahoshi & Mansherry ]</span>
-    <span class="filter width-12 exc" ng-model="filters.globalPKA" ng-class="{ active: filters.globalPKA }"
-        ng-click="filters.globalPKA = !filters.globalPKA">Pirate King Adventure Boosters [Doll & Bluegrass]</span>
-    <span class="filter width-12 exc" ng-model="filters.comodorevsempress" ng-class="{ active: filters.comodorevsempress }"
-        ng-click="filters.comodorevsempress = !filters.comodorevsempress">Blitz Battle Boosters [VS Five Elders]</span>
-    <!--span class="filter width-6 exc" ng-model="filters.japanKC" ng-class="{ active: filters.japanKC }"
-        ng-click="filters.japanKC = !filters.japanKC">Show Japan KC Boosters [Basil Hawkins]</span-->
-    <!--span class="filter width-12 exc" ng-model="filters.odenKaidoBlitz" ng-class="{ active: filters.odenKaidoBlitz }"
-        ng-click="filters.odenKaidoBlitz = !filters.odenKaidoBlitz">Samurai VS Dragon Blitz Battle Boosters</span-->
-</div>
-
+<!-- Specific Captain -->
 <div class="filter-container expandable" id="specCapt-filter" ng-class="{ expanded: filters.specCaptEnabled }">
     <span class="filter-header" ng-click="filters.specCaptEnabled = !filters.specCaptEnabled">
-        Specific Captain filters
+        Specific Captain
         <i class="pull-right fa fa-{{filters.specCaptEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
     </span>
     <span class="filter width-6 exc" ng-model="filters.katakuri" ng-class="{ active: filters.katakuri }"
@@ -333,134 +330,115 @@
 </div>
 
 <div class="filter-container" id="captain-container">
-    <animate-collapse class="filter-header">Captain ability filters</animate-collapse>
+    <animate-collapse class="filter-header">Captain Ability</animate-collapse>
     <add-custom-filters id="captainFilters" target="captain" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="special-container">
-    <animate-collapse class="filter-header">Special ability filters</animate-collapse>
+    <animate-collapse class="filter-header">Special Ability</animate-collapse>
     <add-custom-filters target="special" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="super-criteria-container">
-    <animate-collapse class="filter-header">VS/Super Special criteria filters</animate-collapse>
+    <animate-collapse class="filter-header">VS/Super Special Criteria</animate-collapse>
     <add-custom-filters target="superSpecialCriteria" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="super-container">
-    <animate-collapse class="filter-header">VS/Super Special ability filters</animate-collapse>
+    <animate-collapse class="filter-header">VS/Super Special Ability</animate-collapse>
     <add-custom-filters target="superSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="swap-container">
-    <animate-collapse class="filter-header">Swap ability filters</animate-collapse>
+    <animate-collapse class="filter-header">Swap Ability</animate-collapse>
     <add-custom-filters target="swap" filter-data="filterData" filters="filters" class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="sailor-container">
-    <animate-collapse class="filter-header">Sailor ability filters</animate-collapse>
+    <animate-collapse class="filter-header">Sailor Ability</animate-collapse>
     <add-custom-filters target="sailor" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="limit-container">
-    <animate-collapse class="filter-header">Limit Break filters</animate-collapse>
+    <animate-collapse class="filter-header">Limit Break</animate-collapse>
     <add-custom-filters target="limit" filter-data="filterData" filters="filters" class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="potential-container">
-    <animate-collapse class="filter-header">Potential Ability filters</animate-collapse>
+    <animate-collapse class="filter-header">Potential Ability</animate-collapse>
     <add-custom-filters target="potential" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="support-container">
-    <animate-collapse class="filter-header">Support ability filters</animate-collapse>
+    <animate-collapse class="filter-header">Support Ability</animate-collapse>
     <add-custom-filters target="support" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
+<!-- Rumble Style -->
+<div class="filter-container expandable" id="rumble-style-filter" ng-class="{ expanded: filters.rumbleStyleEnabled }">
+    <span class="filter-header" ng-click="filters.rumbleStyleEnabled = !filters.rumbleStyleEnabled">
+        Rumble Style
+        <i class="pull-right fa fa-{{filters.rumbleStyleEnabled ? 'chevron-up' : 'chevron-down'}}"></i>
+    </span>
+<div style="display: flex;" ng-hide="!filters.rumbleStyleEnabled">
+    <span class="filter exc" style="flex: 1;" ng-model="filters.styleATK" ng-class="{ active: filters.styleATK }"
+        ng-click="filters.styleATK = !filters.styleATK">ATK</span>
+    <span class="filter exc" style="flex: 1;" ng-model="filters.styleDEF" ng-class="{ active: filters.styleDEF }"
+        ng-click="filters.styleDEF = !filters.styleDEF">DEF</span>
+    <span class="filter exc" style="flex: 1;" ng-model="filters.styleRCV" ng-class="{ active: filters.styleRCV }"
+        ng-click="filters.styleRCV = !filters.styleRCV">RCV</span>
+    <span class="filter exc" style="flex: 1;" ng-model="filters.styleSPT" ng-class="{ active: filters.styleSPT }"
+        ng-click="filters.styleSPT = !filters.styleSPT">SPT</span>
+    <span class="filter exc" style="flex: 1;" ng-model="filters.styleDBF" ng-class="{ active: filters.styleDBF }"
+        ng-click="filters.styleDBF = !filters.styleDBF">DBF</span>
+    <span class="filter exc" style="flex: 1;" ng-model="filters.styleBAL" ng-class="{ active: filters.styleBAL }"
+        ng-click="filters.styleBAL = !filters.styleBAL">BAL</span>
+</div>
+</div>
+
+
 <div class="filter-container" id="rumble-cost-container">
-    <animate-collapse class="filter-header">Rumble Cost Filter</animate-collapse>
+    <animate-collapse class="filter-header">Rumble Cost</animate-collapse>
     <add-custom-filters target="rumbleCost" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="rumble-ability-container">
-    <animate-collapse class="filter-header">Rumble Ability Filters</animate-collapse>
+    <animate-collapse class="filter-header">Rumble Ability</animate-collapse>
     <add-custom-filters target="rumbleAbility" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="rumble-special-container">
-    <animate-collapse class="filter-header">Rumble Special Filters</animate-collapse>
+    <animate-collapse class="filter-header">Rumble Special</animate-collapse>
     <add-custom-filters target="rumbleSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="rumble-resistance-container">
-    <animate-collapse class="filter-header">Rumble Resistance Filters</animate-collapse>
+    <animate-collapse class="filter-header">Rumble Resistance</animate-collapse>
     <add-custom-filters target="rumbleResistance" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="gp-ability-container">
-    <animate-collapse class="filter-header">Grand Party Leader Filters</animate-collapse>
+    <animate-collapse class="filter-header">Grand Party Leader</animate-collapse>
     <add-custom-filters target="gpAbility" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="gp-special-container">
-    <animate-collapse class="filter-header">Grand Party Burst Filters</animate-collapse>
+    <animate-collapse class="filter-header">Grand Party Burst</animate-collapse>
     <add-custom-filters target="gpSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
-
-<!--div class="filter-container">
-    <span class="filter-header">Captain ability filters</span>
-    <span class="filter width-12 custom" ng-repeat="(n,filter) in filterData" ng-if="filter.target == 'captain'"
-        ng-model="filters.custom[n]" ng-class="{ active: filters.custom[n] }" add-captain-options
-        ng-click="filters.custom[n] = !filters.custom[n]">{{filter.name}}</span>
-</div>
-
-<div class="filter-container">
-    <span class="filter-header">Special filters</span>
-    <span class="filter width-12 custom" ng-repeat="(n,filter) in filterData" ng-if="filter.target.indexOf('special') == 0"
-        ng-model="filters.custom[n]" ng-class="{ active: filters.custom[n] }" add-orb-options add-special-options
-        ng-click="filters.custom[n] = !filters.custom[n]">{{filter.name}}</span>
-</div>
-
-<div class="filter-container">
-    <span class="filter-header">Swap ability filters</span>
-    <span class="filter width-12 custom" ng-repeat="(n,filter) in filterData" ng-if="filter.target.indexOf('swap') == 0"
-        ng-model="filters.custom[n]" ng-class="{ active: filters.custom[n] }"
-        ng-click="filters.custom[n] = !filters.custom[n]">{{filter.name}}</span>
-</div>
-
-<div class="filter-container">
-    <span class="filter-header">Sailor ability filters</span>
-    <span class="filter width-12 custom" ng-repeat="(n,filter) in filterData" ng-if="filter.target.indexOf('sailor') == 0"
-        ng-model="filters.custom[n]" ng-class="{ active: filters.custom[n] }" add-sailor-options
-        ng-click="filters.custom[n] = !filters.custom[n]">{{filter.name}}</span>
-</div>
-
-<div class="filter-container">
-    <span class="filter-header">Limit Break filters</span>
-    <span class="filter width-12 custom" ng-repeat="(n,filter) in filterData" ng-if="filter.target.indexOf('limit') == 0"
-        ng-model="filters.custom[n]" ng-class="{ active: filters.custom[n] }"
-        ng-click="filters.custom[n] = !filters.custom[n]">{{filter.name}}</span>
-</div>
-
-<div class="filter-container">
-    <span class="filter-header">Support filters</span>
-    <span class="filter width-12 custom" ng-repeat="(n,filter) in filterData" ng-if="filter.target.indexOf('support') == 0"
-        ng-model="filters.custom[n]" ng-class="{ active: filters.custom[n] }" add-support-options
-        ng-click="filters.custom[n] = !filters.custom[n]">{{filter.name}}</span>
-</div-->
 
 <div class="filter-container expandable" id="charLog-container" ng-if="showLogFilters"
     ng-class="{ expanded: filters.charLogEnabled }">
