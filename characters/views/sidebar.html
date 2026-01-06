@@ -348,12 +348,12 @@
         class="collapse"></add-custom-filters>
 </div>
 
-<div class="filter-container expandable" id="charLog-container" ng-if="showLogFilters">
-    <animate-collapse class="filter-header">Character Log filters</animate-collapse>
+<div class="filter-container" id="charLog-container" ng-if="showLogFilters">
+    <animate-collapse class="filter-header filter-header-log">Character Log filters</animate-collapse>
     <div class="collapse">
-        <span class="filter width-12 custom" ng-model="filters.noLog" ng-class="{ active: filters.noLog }"
+        <span class="filter width-12" ng-model="filters.noLog" ng-class="{ active: filters.noLog }"
             ng-click="filters.noLog = !filters.noLog">Hide units in Character Log</span>
-        <span class="filter width-12 custom" ng-model="filters.noMissing" ng-class="{ active: filters.noMissing }"
+        <span class="filter width-12" ng-model="filters.noMissing" ng-class="{ active: filters.noMissing }"
             ng-click="filters.noMissing = !filters.noMissing">Hide units not in Character Log</span>
     </div>
 </div>

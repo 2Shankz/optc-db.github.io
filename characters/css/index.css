@@ -239,8 +239,8 @@ input#burgerMenuState {
     border-bottom: 1px solid #333;
 }
 
-.filter-header-general {
-    background: hsla(286, 80%, 15%, .4) !important;
+.filter-header-log {
+    background: hsla(157, 79%, 15%, 0.4) !important;
 }
 
 .filter-header-pve {
