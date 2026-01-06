@@ -1066,6 +1066,66 @@
                     </div>
                     
                     <!-- Pirate Rumble -->
+                    <!-- If rumble.js is not available, then use details.js if available -->
+                    <h3 id="rumbleSection" class="page-header" ng-hide="hidden.abilities" ng-if="!rumble && (details.festAttackPattern || details.festAttackTarget || details.festResistance || details.festAbility || details.festSpecial || details.festSuperSpecial)">Pirate Rumble</h3>
+                    <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="!rumble && (details.festAttackPattern || details.festAttackTarget || details.festResistance || details.festAbility || details.festSpecial || details.festSuperSpecial)">
+                        <table class="table table-striped-column abilities" ng-if="details.festAttackPattern || details.festAttackTarget || details.festResistance || details.festAbility || details.festSpecial">
+                            <tbody>
+                                <tr ng-if="details.festAttackPattern">
+                                    <td width="5%">Attack Pattern</td>
+                                    <td colspan="2"><div ng-repeat="item in details.festAttackPattern track by $index"><span ng-bind-html="item | decorate"></span></div></td>
+                                </tr>
+                                <tr ng-if="details.festAttackTarget">
+                                    <td width="5%">Attack Target</td>
+                                    <td colspan="2"><span ng-bind-html="details.festAttackTarget | decorate"></span></td>
+                                </tr>
+                                <tr ng-if="details.festResistance.hasOwnProperty('base') || details.festAbility.hasOwnProperty('base') || details.festSpecial.hasOwnProperty('base')">
+                                    <td width="5%"></td>
+                                    <td style="width: 47.5%"><strong>Base</strong></td>
+                                    <td style="width: 50%"><strong>Level Limit Break</strong></td>
+                                </tr>
+                                <tr ng-if="details.festResistance">
+                                    <td width="5%">Resistance</td>
+                                    <td ng-if="!details.festResistance.hasOwnProperty('base')"><span ng-bind-html="details.festResistance | decorate"></span></td>
+                                    <td ng-if="details.festResistance.hasOwnProperty('base')"><span ng-bind-html="details.festResistance.base | decorate"></span></td>
+                                    <td ng-if="details.festResistance.hasOwnProperty('llbbase')"><span ng-bind-html="details.festResistance.llbbase | decorate"></span></td>
+                                </tr>
+                                <tr ng-if="details.festAbility">
+                                    <td width="5%">Rumble Ability</td>
+                                    <td ng-if="!details.festAbility.hasOwnProperty('base')"><div ng-repeat="item in details.festAbility track by $index"><strong>Level {{$index + 1}}: </strong><span ng-bind-html="item | decorate"></span><br></div></td>
+                                    <td ng-if="details.festAbility.hasOwnProperty('base')"><div ng-repeat="item in details.festAbility.base track by $index"><strong>Level {{$index + 1}}: </strong><span ng-bind-html="item | decorate"></span><br></div></td>
+                                    <td ng-if="details.festAbility.hasOwnProperty('llbbase')"><div ng-repeat="item in details.festAbility.llbbase track by $index"><strong>Level {{$index + 1}}: </strong><span ng-bind-html="item | decorate"></span><br></div></td>
+                                </tr>
+                                <tr ng-if="details.festSpecial">
+                                    <td width="5%">Rumble Special</td>
+                                    <td ng-if="!details.festSpecial.hasOwnProperty('base')"><div ng-repeat="item in details.festSpecial track by $index"><strong>Level {{$index + 1}}: [{{item.cooldown}} seconds] </strong><span ng-bind-html="item.description | decorate"></span><br></div></td>
+                                    <td ng-if="details.festSpecial.hasOwnProperty('base')"><div ng-repeat="item in details.festSpecial.base track by $index"><strong>Level {{$index + 1}}: [{{item.cooldown}} seconds] </strong><span ng-bind-html="item.description | decorate"></span><br></div></td>
+                                    <td ng-if="details.festSpecial.hasOwnProperty('llbbase')"><div ng-repeat="item in details.festSpecial.llbbase track by $index"><strong>Level {{$index + 1}}: [{{item.cooldown}} seconds] </strong><span ng-bind-html="item.description | decorate"></span><br></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-striped-column abilities" ng-if="details.festSuperSpecial">
+                            <tbody>
+                                <tr ng-if="!details.festResistance.hasOwnProperty('base') || !details.festAbility.hasOwnProperty('base') || !details.festSpecial.hasOwnProperty('base')">
+                                    <td width="5%"></td>
+                                    <td style="width: 47.5%"><strong>Base</strong></td>
+                                    <td style="width: 50%"><strong>Level Limit Break</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Super Special Condition</td>
+                                    <td style="width: 47.5%"><span ng-bind-html="details.festSuperSpecial.base.condition | decorate"></span></td>
+                                    <td style="width: 50%"><span ng-bind-html="details.festSuperSpecial.llbbase.condition | decorate"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Rumble Super Special</td>
+                                    <td><span ng-bind-html="details.festSuperSpecial.base.description | decorate"></span></td>
+                                    <td><span ng-bind-html="details.festSuperSpecial.llbbase.description | decorate"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Use rumble.js if available -->
                     <h3 id="rumbleSection" class="page-header" ng-hide="hidden.abilities" ng-if="rumble">Pirate Rumble</h3>
                     <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="rumble">
                         <table class="table table-striped-column abilities">
@@ -1197,6 +1257,40 @@
                         </table>
                     </div>
 
+                    <!-- Grand Party -->
+                    <!-- If rumble.js is not available, then use details.js if available -->
+                    <h3 id="rumbleSection" class="page-header" ng-hide="hidden.abilities" ng-if="!rumble.gpability && !rumble.gpcondition && !rumble.gpspecial && (details.festAbilityGP || details.festAbilityGPCondition)">Grand Party</h3>
+                    <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="!rumble.gpability && !rumble.gpcondition && !rumble.gpspecial && (details.festAbilityGP || details.festAbilityGPCondition)">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
+                                <tr ng-if="details.festAbilityGP.hasOwnProperty('base') || details.festAbilityGPCondition.hasOwnProperty('base')">
+                                    <td width="5%"></td>
+                                    <td style="width: 47.5%"><strong>Base</strong></td>
+                                    <td style="width: 50%"><strong>Level Limit Break</strong><td>
+                                </tr>
+                                <tr ng-if="details.festAbilityGP">
+                                    <td width="5%">Leader Skill</td>
+                                    <td ng-if="!details.festAbilityGP.hasOwnProperty('base')"><div ng-repeat="item in details.festAbilityGP track by $index"><strong>Level {{$index + 1}}: </strong><span ng-bind-html="item.festGPAbility | decorate"></span><br></div></td>
+                                    <td ng-if="details.festAbilityGP.hasOwnProperty('base')"><div ng-repeat="item in details.festAbilityGP.base track by $index"><strong>Level {{$index + 1}}: </strong><span ng-bind-html="item.festGPAbility | decorate"></span><br></div></td>
+                                    <td ng-if="details.festAbilityGP.hasOwnProperty('llbbase')"><div ng-repeat="item in details.festAbilityGP.llbbase track by $index"><strong>Level {{$index + 1}}: </strong><span ng-bind-html="item.festGPAbility | decorate"></span><br></div></td>
+                                </tr>
+                                <tr ng-if="details.festAbilityGPCondition">
+                                    <td width="5%">Burst Condition</td>
+                                    <td ng-if="!details.festAbilityGPCondition.hasOwnProperty('base')"><span ng-bind-html="details.festAbilityGPCondition | decorate"></span></td>
+                                    <td ng-if="details.festAbilityGPCondition.hasOwnProperty('base')"><span ng-bind-html="details.festAbilityGPCondition.base | decorate"></span></td>
+                                    <td ng-if="details.festAbilityGPCondition.hasOwnProperty('llbbase')"><span ng-bind-html="details.festAbilityGPCondition.llbbase | decorate"></span></td>
+                                </tr>
+                                <tr ng-if="details.festAbilityGP">
+                                    <td width="5%">Burst</td>
+                                    <td ng-if="!details.festAbilityGP.hasOwnProperty('base')"><div ng-repeat="item in details.festAbilityGP track by $index"><strong>Level {{$index + 1}}: [{{item.uses}} use{{"" ? item.uses == 1 : "s"}}] </strong><span ng-bind-html="item.festGPSpecial | decorate"></span><br></div></td>
+                                    <td ng-if="details.festAbilityGP.hasOwnProperty('base')"><div ng-repeat="item in details.festAbilityGP.base track by $index"><strong>Level {{$index + 1}}: [{{item.uses}} use{{"" ? item.uses == 1 : "s"}}] </strong><span ng-bind-html="item.festGPSpecial | decorate"></span><br></div></td>
+                                    <td ng-if="details.festAbilityGP.hasOwnProperty('llbbase')"><div ng-repeat="item in details.festAbilityGP.llbbase track by $index"><strong>Level {{$index + 1}}: [{{item.uses}} use{{"" ? item.uses == 1 : "s"}}] </strong><span ng-bind-html="item.festGPSpecial | decorate"></span><br></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Use rumble.js if available -->
                     <!-- Grand Party -->
                     <h3 id="rumbleSection" class="page-header" ng-hide="hidden.abilities" ng-if="rumble.festGPAbility || rumble.festGPSpecial">Grand Party</h3>
                     <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="rumble.festGPAbility || rumble.festGPSpecial">
