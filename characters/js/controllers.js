@@ -334,6 +334,12 @@
       if (window.rumble[id]) {
         $scope.rumble = window.rumble[id].character1 ? window.rumble[id].character1 : window.rumble[id];
         $scope.rumble2 = window.rumble[id].character2;
+      }
+
+      $scope.showAllRumbleLevels = false;
+
+      $scope.hasRumbleLLB = function(data) {
+        return data && (data.festResistance?.llbbase || data.festAbility?.llbbase || data.festSpecial?.llbbase);
       };
 
       // $http(rumbleRequest)
