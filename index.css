@@ -35,39 +35,6 @@ body {
     transform: translate3d(0,-50%,0);
 }
 
-#changelog {
-    position: fixed;
-    padding: 35px;
-    float: right;
-    bottom: 10;
-    right: 10;
-/*    z-index: -1;*/
-}
-
-#changelog > p {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    
-}
-
-#changelog > ul {
-    list-style-type: none;
-    text-align: left;
-    margin: auto;
-    padding-left: 0;
-}
-
-#update {
-    font-size: 20;    
-}
-
-@media only screen and (max-width: 1000px) { 
-  #changelog { 
-    display: none; 
-  } 
-}
-
 .button {
     display: block;
     width: 250px;

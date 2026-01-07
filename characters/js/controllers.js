@@ -84,8 +84,6 @@
         }
       });
 
-      $controller("DismissalCtrl");
-
       $scope.getRandChar = function () {
         var range = parseInt($rootScope.table.data.length) + 1;
         return $rootScope.table.data[Math.floor(Math.random() * range)][0];
@@ -102,6 +100,8 @@
     function ($scope, $rootScope, $stateParams, $timeout) {
       $scope.availableClasses = window.availableClasses;
       $scope.availableTags = window.availableTags;
+      $scope.farmableOptions = window.farmableOptions;
+      $scope.nonFarmableOptions = window.nonFarmableOptions;
 
       $timeout(function () {
         $scope.$watch(
@@ -146,6 +146,8 @@
           rarityEnabled: false,
           farmEnabled: false,
           nonfarmEnabled: false,
+          farmable: {},
+          nonFarmable: {},
         };
 
         // no idea why both local `filters` and `$rootScope.filters` exist
@@ -264,10 +266,7 @@
           );
       };
 
-      $scope.onDropFilterClick = function (e, value) {
-        var tokens = e.target.getAttribute("ng-model").split(/\./).slice(1);
-        var type = tokens[0],
-          key = tokens[1];
+      $scope.onDropFilterClick = function (e, type, key, value) {
         if (!$rootScope.filters.hasOwnProperty(type))
           $rootScope.filters[type] = {};
         $rootScope.filters[type][key] =
