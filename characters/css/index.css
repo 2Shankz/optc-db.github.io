@@ -1345,3 +1345,36 @@ unit > a {
 .tag-category-2 { background-color: rgb(87,131,27); color: white; }
 .tag-category-3 { background-color: rgb(194,47,135); color: white; }
 .tag-category-4 { background-color: rgb(4,151,138); color: white; }
+
+/* Dual Unit Color Coding */
+.dual-unit-group-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #adadad;
+  font-weight: bold;
+}
+
+/* Character 1 */
+.dual-unit-character-header:nth-child(2),
+.dual-unit-character-tags:nth-child(3) {
+    background-color: #f7f6f6;
+    border-left: 4px solid #FAD1FF;
+}
+.dual-unit-character-tags:nth-child(3) {
+    border-bottom: 2px solid #adadad;
+}
+
+/* Character 2 */
+.dual-unit-character-header:nth-child(4),
+.dual-unit-character-tags:nth-child(5) {
+  background-color: #fcfcfc;
+  border-left: 4px solid #D1F4FF;
+}
+
+.dual-unit-character-header td {
+  padding: 8px;
+}
+
+.dual-unit-character-tags .tags-row {
+  padding: 8px;
+  border-radius: 4px;
+}
