@@ -726,6 +726,113 @@
 		};
 	};
 
+	directives.addLinks = function ($stateParams) {
+		return {
+			restrict: "E",
+			replace: true,
+			template: '<div class="link-container"></div>',
+			link: function (scope, element, attrs) {
+				var id = parseInt($stateParams.id, 10),
+					data = details[id];
+				if (!units[id - 1]) return;
+				var incomplete = units[id - 1].incomplete;
+				var ul = $("<ul></ul>");
+				if (!incomplete && window.flags[id] && window.flags[id].global) {
+					var link =
+						"http://onepiece-treasurecruise.com/en/" +
+						(id == "5"
+							? "roronoa-zoro"
+							: id == 1254
+							? "maelstrom-spider-squard-whitebeard-pirates-family"
+							: id == "1923"
+							? "c-5009"
+							: id == "1924"
+							? "c-5010"
+							: id == "2200"
+							? "c-5011"
+							: id == "2201"
+							? "c-5012"
+							: "c-" + id); //CHANGE THIS FOR DOFFY V2 IDS
+					ul.append(
+						$(
+							'<li><a href="' +
+								link +
+								'" target="_blank">Official Guide (English)</a></li>'
+						)
+					);
+				}
+				if (!incomplete) {
+					if (id == 1478) {
+						ul.append(
+							$(
+								'<li><a href="http://onepiece-treasurecruise.com/カリブー-カリブー海賊団船長/" target="_blank">' +
+									"Official Guide (Japanese)</a></li>"
+							)
+						);
+					} else if (id == 1892) {
+						ul.append(
+							$(
+								'<li><a href="http://onepiece-treasurecruise.com/ジュラキュール・ミホーク-シッケアール王国　跡/" target="_blank">' +
+									"Official Guide (Japanese)</a></li>"
+							)
+						);
+					} else if (
+						[
+							2049, 2050, 2072, 2079, 2080, 2081, 2082, 2083, 2084, 2085, 2086,
+							2087, 2088, 2089, 2090, 2091, 2097, 2104, 2105, 2106, 2107, 2108,
+							2109, 2110, 2111, 2114, 2116, 2119, 2120, 2121, 2146, 2162, 2163,
+							2168, 2169, 2170, 2171, 2172, 2173, 2175, 2180, 2181, 2182, 2183,
+							2184, 2185, 2186, 2187, 2188, 2189, 2190, 2191, 2192, 2193, 2212,
+							2213, 2214, 2215, 2216, 2216, 2218, 2219, 2240, 2241, 2242, 2243,
+							2244, 2248, 2249, 2255,
+						].indexOf(id) != -1
+					) {
+						ul.append(
+							$(
+								'<li><a href="http://onepiece-treasurecruise.com/c%E2%80%90' +
+									id +
+									'/" target="_blank">' +
+									"Official Guide (Japanese)</a></li>"
+							)
+						);
+					} else if ([2176, 2177, 2178, 2179].indexOf(id) != -1) {
+						ul.append(
+							$(
+								'<li><a href="http://onepiece-treasurecruise.com/%EF%BD%83%E2%80%90' +
+									id +
+									'/" target="_blank">' +
+									"Official Guide (Japanese)</a></li>"
+							)
+						);
+					} else {
+						ul.append(
+							$(
+								'<li><a href="http://onepiece-treasurecruise.com/c-' +
+									id +
+									'" target="_blank">' +
+									"Official Guide (Japanese)</a></li>"
+							)
+						);
+					}
+				}
+				if (gw[id - 1] != null) {
+					ul.append(
+						$(
+							'<li><a href="http://xn--pck6bvfc.gamewith.jp/article/show/' +
+								gw[id - 1] +
+								'" target="_blank">' +
+								'GameWith Page (Japanese)</a> | <a href="http://translate.google.com/translate?sl=ja&tl=en&u=http://xn--pck6bvfc.gamewith.jp/article/show/' +
+								gw[id - 1] +
+								'" target="_blank">' +
+								"Google Translate</a></li>"
+						)
+					);
+				}
+				if (ul.children().length > 0) element.append(ul);
+			},
+		};
+	};
+
 	directives.costSlider = function ($timeout) {
 		return {
 			restrict: "A",
