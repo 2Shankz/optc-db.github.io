@@ -9,16 +9,8 @@ transform: scale(1, -1);
 }
 */
 
-@font-face {
-	font-family: 'icomoon';
-	src:url('../../res/icomoon.eot?xewvs9');
-	src:url('../../res/icomoon.eot?xewvs9#iefix') format('embedded-opentype'),
-		url('../../res/icomoon.ttf?xewvs9') format('truetype'),
-		url('../../res/icomoon.woff?xewvs9') format('woff'),
-		url('../../res/icomoon.svg?xewvs9#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+@import url('../../common/css/orb-colors.css');
+@import url('../../common/css/bonuses.css');
 
 body, html {
     height: 100%;
@@ -167,13 +159,6 @@ input#burgerMenuState {
 
     #queryContainer > button > i {
         display: none;
-    }
-
-    .slot.medium {
-        width: 80px;
-        height: 80px;
-        background-size: 80px 80px;
-        margin: 2px;
     }
 
     .arrow {
@@ -376,31 +361,6 @@ input#burgerMenuState {
     border-bottom: 1px solid #aaa;
 }
 
-.STR        { background: salmon; }
-.QCK        { background: lightskyblue; }
-.DEX        { background: lightgreen; }
-.PSY        { background: gold; }
-.INT        { background: orchid; }
-.RCV        { background: sandybrown; }
-.TND        { background: peru; }
-.BLOCK      { background: darkslateblue; }
-.SUPERBLOCK { background: darkslateblue; color: #ffe97d; }
-.BOMB       { background: maroon; }
-.SEMLA      { background: saddlebrown; }
-.WANO       { background: firebrick; }
-.RAINBOW    { background: linear-gradient(90deg,#fa8072,#ffd700,#90ee90,#87cefa, #da70d6); color: #333333; }
-/*.SUPERBOMB { background: linear-gradient(90deg, #ff2600, #debb2f, #ff2600); }*/
-.SUPERBOMB  { background: maroon; color: #ffe97d; }
-.PARALYSIS  { background: #af5210; color: gold; }
-.G          { background: orange; }
-.EMPTY      { background: #777; }
-
-.cell-STR { font-weight: bold; color: red; }
-.cell-QCK { font-weight: bold; color: blue; }
-.cell-DEX { font-weight: bold; color: green; }
-.cell-PSY { font-weight: bold; color: goldenrod; }
-.cell-INT { font-weight: bold; color: darkorchid; }
-
 .badge-japan, .badge-global {
     float: left;
     position: relative;
@@ -549,23 +509,6 @@ input#burgerMenuState {
 
 *[class~="stars-6+"]:before { color: #ff1493; content: '\2605\2605\2605\2605\2605\2605\002B'; }
 
-
-.block-icon:before, .tnd-icon:before {
-    font-style: normal;
-    font-weight: normal;
-    font-family: icomoon;
-    font-size: 11px;
-    position: relative;
-    top: 1px;
-}
-
-.block-icon:before {
-    content: "\e902";
-}
-
-.tnd-icon:before {
-    content: "\e903";
-}
 
 .class.filter.active, .custom.filter.active, .drop.filter.active, .exc.filter.active, .submatcher-option.active {
     background: red;
@@ -834,57 +777,6 @@ input#burgerMenuState {
 
 .withPlus:before {
     content: '+';
-}
-
-/***********
- * BONUSES *
- ***********/
-
- .bonus:after {
-    padding: 1px 4px 1px 0;
-    border-radius: 0 10px 10px 0;
-    font-size: 10px;
-    margin-right: 5px;
-}
-
- .bonus:before {
-    padding: 1px 0 1px 4px;
-    border-radius: 10px 0 0 10px;
-    font-size: 10px;
-    margin-left: 5px;
-}
-
-.bonus.drop:after, .bonus.drop:before {
-    background: #7bc8a4;
-    content: "2x drop";
-}
-
-.bonus.stamina:after, .bonus.stamina:before {
-    background: skyblue;
-    content: "0.5x stamina";
-}
-
-.bonus.beli:after, .bonus.beli:before {
-    background: #ffc65d;
-    content: "2x beli";
-}
-
-.bonus.exp:after, .bonus.exp:before {
-    background: #f16745;
-    content: "2x EXP";
-}
-
-.bonus.today:after, .bonus.today:before {
-    background: orchid;
-    content: "today";
-}
-
-.bonus.GL:before {
-    content: "GL: ";
-}
-
-.bonus.JP:before {
-    content: "JP: ";
 }
 
 /**********
@@ -1257,51 +1149,6 @@ unit > a {
     max-height: 338px !important;
 }
 
-/*******************
- * SLOT THUMBNAILS *
- *******************/
-
-.slot {
-    display: inline-block;
-}
-
-.slot.huge {
-    width: 320px;
-    height: 256px;
-    background-size: 320px 256px;
-    margin: 10px;
-}
-
-.slot.responsive {
-    height: 384px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 10px;
-    display: flex;
-}
-
-.slot.big {
-    width: 112px;
-    height: 112px;
-    background-size: 112px 112px;
-    margin: 4px;
-}
-
-.slot.medium {
-    width: 40px;
-    height: 40px;
-    background-size: 40px 40px;
-    margin: 1px;
-}
-
-.slot.small {
-    width: 40px;
-    height: 40px;
-    background-size: 40px 40px;
-    margin: 1px;
-}
-
 /**********
  * MOBILE *
  **********/
@@ -1392,4 +1239,29 @@ unit > a {
 .dual-unit-character-tags .tags-row {
   padding: 8px;
   border-radius: 4px;
+}
+
+/* Global scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #969696;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5a5a5a;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #5a5a5a #969696;
 }
