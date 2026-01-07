@@ -1,0 +1,99 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../../res/icomoon.eot?xewvs9');
+	src:url('../../res/icomoon.eot?xewvs9#iefix') format('embedded-opentype'),
+		url('../../res/icomoon.ttf?xewvs9') format('truetype'),
+		url('../../res/icomoon.woff?xewvs9') format('woff'),
+		url('../../res/icomoon.svg?xewvs9#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.slot {
+    display: inline-block;
+}
+
+.slot.huge {
+    width: 320px;
+    height: 256px;
+    background-size: 320px 256px;
+    margin: 10px;
+}
+
+.slot.responsive {
+    height: 384px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10px;
+    display: flex;
+}
+
+.slot.big {
+    width: 112px;
+    height: 112px;
+    background-size: 112px 112px;
+    margin: 4px;
+}
+
+.slot.medium {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    margin: 1px;
+}
+
+.slot.small {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    margin: 1px;
+}
+
+.block-icon:before, .tnd-icon:before {
+	font-style: normal;
+	font-weight: normal;
+	font-family: icomoon;
+	font-size: 11px;
+	position: relative;
+	top: 1px;
+}
+
+.block-icon:before {
+	content: "\e902";
+}
+
+.tnd-icon:before {
+	content: "\e903";
+}
+
+.STR        { background: salmon; }
+.QCK        { background: lightskyblue; }
+.DEX        { background: lightgreen; }
+.PSY        { background: gold; }
+.INT        { background: orchid; }
+.RCV        { background: sandybrown; }
+.TND        { background: peru; }
+.BLOCK      { background: darkslateblue; }
+.SUPERBLOCK { background: darkslateblue; color: #ffe97d; }
+.BOMB       { background: maroon; }
+.SEMLA      { background: saddlebrown; }
+.WANO       { background: firebrick; }
+.RAINBOW    { background: linear-gradient(90deg,#fa8072,#ffd700,#90ee90,#87cefa, #da70d6); color: #333333; }
+.SUPERBOMB  { background: maroon; color: #ffe97d; }
+.PARALYSIS  { background: #af5210; color: gold; }
+.G          { background: orange; }
+.EMPTY      { background: #777; }
+
+.cell-STR { font-weight: bold; color: red; }
+.cell-QCK { font-weight: bold; color: blue; }
+.cell-DEX { font-weight: bold; color: green; }
+.cell-PSY { font-weight: bold; color: goldenrod; }
+.cell-INT { font-weight: bold; color: darkorchid; }
