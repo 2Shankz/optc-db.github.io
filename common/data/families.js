@@ -739,6 +739,7 @@ const MarcusMars = [ "Saint Marcus Mars" ];
 const Tosa = [ "Tosa" ];
 const Guillotine = [ "Guillotine" ];
 const Emet = [ "Emet" ];
+const ClouDClover = [ "Clou D. Clover" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5123,8 +5124,11 @@ window.families = {
     4494: [ ...Dorry ],
     4495: [ ...Broggy ],
     4496: [ ...Doll, ...Bluegrass ],
-    //4497: [ ...Doll, ...Bluegrass ],
+    4497: [ ...Doll, ...Bluegrass ],
     4498: [ ...Stussy ],
+    4499: [ ...Vegapunk ],
+    4500: [ ...ClouDClover ],
+    4501: [ ...CaesarClown ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
