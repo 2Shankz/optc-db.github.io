@@ -4597,7 +4597,7 @@ window.units = [
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ]
 ];
 
 var calcGhostStartID = { "start": 5000 };
