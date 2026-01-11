@@ -5,140 +5,82 @@
     </div>
 
     <div class="icons">
-        
-        <div class="rotater" id="link-home" title="Home">
+
+        <div class="rotater" id="link-home">
             <a class="btn btn-icon" href="/">
                 <i class="fa fa-home"></i>
+                <span class="tip">Front Page</span>
             </a>
-            <a class="tip">Front Page</a>
         </div>
-        
-        <div class="rotater" id="link-planner" title="Voyage Log">
+
+        <div class="rotater" id="link-voyage">
             <a class="btn btn-icon" target="_blank" href="https://lukforce.bitbucket.io/">
                 <i class="fa fa-map-marker"></i>
+                <span class="tip">Voyage Log</span>
             </a>
-            <a class="tip">Voyage Log</a>
         </div>
-        
-        <div class="rotater" id="link-nakama" title="Nakama Network">
-            <a class="btn btn-icon" target="_blank" href="https://www.nakama.network/">
-                <i class="fa fa-comments"></i>
-            </a>
-            <a class="tip">Nakama Network</a>
-        </div>
-        
-        <div class="rotater" id="link-supports" title="Support Database">
+
+        <div class="rotater" id="link-supports">
             <a class="btn btn-icon" target="_blank" href="https://thepiebandit.github.io/optc-supports/">
                 <i class="fa fa-handshake"></i>
+                <span class="tip">Support Database</span>
             </a>
-            <a class="tip">Support Database</a>
         </div>
-        
-        <div class="rotater" id="link-ship" title="Pirate Rumble Database">
+
+        <div class="rotater" id="link-rumble">
             <a class="btn btn-icon" target="_blank" href="https://thepiebandit.github.io/optc-pirate-rumble-db/">
                 <i class="fa fa-flag"></i>
+                <span class="tip">Rumble Database</span>
             </a>
-            <a class="tip">Rumble Database</a>
         </div>
-        
-        <div class="rotater" id="link-ship" title="Ship Database">
-            <!--a class="btn btn-icon" target="_blank" href="https://optcreddit.github.io/ships/#/search/">
-                <i class="fa fa-ship"></i>
-            </a-->
+
+        <div class="rotater" id="link-ship">
             <a class="btn btn-icon" target="_blank" href="https://optc-ships.vercel.app">
                 <i class="fa fa-ship"></i>
+                <span class="tip">Ship Database</span>
             </a>
-            <a class="tip">Ship Database</a>
-        </div>
-        
-        <div class="rotater" id="link-prob" title="Probability" ng-if="exclude != 'prob'">
-            <a class="btn btn-icon" href="../probability">
-                <i class="fa fa-arrow-up"></i>
-            </a>
-            <a class="tip">Probabilities</a>
         </div>
 
-        <div class="rotater" id="link-drops" title="Drop table" ng-if="exclude != 'drops'">
+        <div class="rotater" id="link-drops" ng-if="exclude != 'drops'">
             <a class="btn btn-icon" target="_blank" href="../drops">
                 <i class="fa fa-arrow-down"></i>
+                <span class="tip">Drop table</span>
             </a>
-            <a class="tip">Drop table</a>
         </div>
 
-        <div class="rotater" id="link-characters" title="Character Table" ng-if="exclude != 'characters'">
+        <div class="rotater" id="link-characters" ng-if="exclude != 'characters'">
             <a class="btn btn-icon" target="_blank" href="../characters">
                 <i class="fa fa-book"></i>
-                <a class="tip">Character table</a>
+                <span class="tip">Character table</span>
             </a>
         </div>
 
-        <div class="rotater" id="link-damage" title="Damage Calculator" ng-if="exclude != 'calculator'">
+        <div class="rotater" id="link-damage" ng-if="exclude != 'calculator'">
             <a class="btn btn-icon" target="_blank" href="../damage">
                 <i class="fa fa-calculator"></i>
+                <span class="tip">Damage calculator</span>
             </a>
-            <a class="tip">Damage calculator</a>
         </div>
 
-        <div class="rotater" id="link-tally" title="Materials Tally" ng-if="exclude != 'tally'">
-            <a class="btn btn-icon" target="_blank" href="../mats">
-                <i class="fa fa-list-ul"></i>
+        <div class="rotater" id="link-reddit">
+            <a class="btn btn-icon" target="_blank" href="https://www.reddit.com/r/OnePieceTC/" style="background: #FF4500 url('https://redditinc.com/hs-fs/hubfs/Reddit%20Inc/Content/Brand%20Page/Reddit_Logo.png?width=400&height=400&name=Reddit_Logo.png') no-repeat center; background-size: 100%;">
+                <i class="fa fa-reddit-alien"></i>
+                <span class="tip">r/OnePiecTC</span>
             </a>
-            <a class="tip">Materials Tally</a>
         </div>
 
-        <div class="rotater" id="link-slots" title="Slot Planner" ng-if="exclude != 'slots'">
-            <a class="btn btn-icon" target="_blank" href="../slots">
-                <i class="fa fa-dot-circle"></i>
+        <div class="rotater" id="link-github">
+            <a class="btn btn-icon" target="_blank" href="https://github.com/2Shankz/optc-db.github.io" style="background: #333 url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png') no-repeat center; background-size: 100%;">
+                <i class="fa fa-github"></i>
+                <span class="tip">OPTC-DB Repo</span>
             </a>
-            <a class="tip">Ability Slot Planner</a>
-        </div>
-        
-        <!--div class="rotater" id="link-turtles" title="Turtle Times" ng-if="exclude != 'turtles'">
-            <a class="btn btn-icon" target="_blank" href="../turtles">
-                <i class="fa fa-clock-o"></i>
-            </a>
-            <a class="tip">Turtle Times</a>
-        </div-->
-        
-        <!--div class="rotater" id="link-es" title="Spanish DB">
-            <a class="btn btn-icon" target="_blank" href="https://optces.github.io/">
-                <i class="fa fa-database"></i>
-            </a>
-            <a class="tip top">Spanish DB</a>
-        </div-->
-        
-        <div class="rotater" id="link-fr" title="French Community">
-            <a class="btn btn-icon" target="_blank" href="http://onepiecetreasurecruise.fr/">
-                <i class="fa fa-database"></i>
-            </a>
-            <a class="tip top">French Community</a>
-        </div>
-        
-        <div class="rotater" id="link-de" title="German Community">
-            <a class="btn btn-icon" target="_blank" href="http://opcommunity.de/">
-                <i class="fa fa-database"></i>
-            </a>
-            <a class="tip top">German Community</a>
-        </div>
-        
-        <div class="rotater" id="link-ko" title="gall.dcinside(kor)">
-            <a class="btn btn-icon" target="_blank" href="https://gall.dcinside.com/mgallery/board/lists/?id=onepiecetc"></a>
-            <a class="tip top">gall.dcinside</a>
-        </div>
-        
-        <div class="rotater" id="link-reddit" title="r/OnePiecTC">
-            <a class="btn btn-icon" target="_blank" href="https://www.reddit.com/r/OnePieceTC/"></a>
-            <a class="tip top">r/OnePiecTC</a>
-        </div>
-        
-        <div class="rotater" id="link-github" title="OPTC-DB Repo">
-            <a class="btn btn-icon" target="_blank" href="https://github.com/optc-db/optc-db.github.io/"></a>
-            <a class="tip top">OPTC-DB Repo</a>
         </div>
 
-        <div class="rotater" id="link-discord" title="Discord">
-            <a class="btn btn-icon" target="_blank" href="https://discord.gg/MRhRrbF"></a>
-            <a class="tip top">Bug Report Discord</a>
+        <div class="rotater" id="link-discord">
+            <a class="btn btn-icon" target="_blank" href="https://discord.gg/MRhRrbF" style="background: #5865F2 url('https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png') no-repeat center; background-size: 100%;">
+                <i class="fa fa-discord"></i>
+                <span class="tip">Bug Report Discord</span>
+            </a>
         </div>
 
     </div>

@@ -23,7 +23,7 @@
     <animate-collapse class="filter-header">Type</animate-collapse>
     <div class="collapse in">
         <span class="type-buttons">
-            <span ng-model="filters.type" ng-repeat="(n,type) in [ 'STR', 'QCK', 'DEX', 'PSY', 'INT' ]"
+            <span ng-model="filters.type" ng-repeat="(n,type) in [ 'STR', 'DEX', 'QCK', 'PSY', 'INT' ]"
                 class="filter type {{::type}}"
                 ng-class="{ active: filters.types.indexOf(type) > -1 }" ng-click="onTypeClick($event,type)">{{::type}}</span>
         </span>

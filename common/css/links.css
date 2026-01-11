@@ -53,7 +53,7 @@
         color: rgba(0, 0, 0, 0.7);
     }
 
-    .rotater:hover i, .rotater:hover i {
+    .rotater:hover i {
         color: white !important;
     }
 }
@@ -70,50 +70,6 @@
         -ms-transform: scale(1.2);
         transform: scale(1.2);
     }
-
-    #links-button .btn.trigger:hover .line {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    #links-button .btn.trigger:hover .line:before, #links-button .btn.trigger:hover .line:after {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-}
-
-#links-button .btn.trigger .line {
-    width: 60%;
-    height: 6px;
-    background: #000;
-    border-radius: 6px;
-    -webkit-transition: background-color 0.3s, height 0.3s, top 0.3s;
-    transition: background-color 0.3s, height 0.3s, top 0.3s;
-}
-
-#links-button .btn.trigger .line:before, #links-button .btn.trigger .line:after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: #000;
-    border-radius: 6px;
-    -webkit-transition: background-color 0.3s, -webkit-transform 0.3s;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-#links-button .btn.trigger .line:before {
-    top: -12px;
-    -webkit-transform-origin: 15% 100%;
-    -ms-transform-origin: 15% 100%;
-    transform-origin: 15% 100%;
-}
-
-#links-button .btn.trigger .line:after {
-    top: 12px;
-    -webkit-transform-origin: 25% 30%;
-    -ms-transform-origin: 25% 30%;
-    transform-origin: 25% 30%;
 }
 
 #links-button .rotater {
@@ -132,9 +88,8 @@
     z-index: 50;
 }
 
-#links-button.active .trigger .line {
-    height: 0px;
-    top: 45%;
+#links-button.active .trigger {
+    background: rgba(230, 230, 230, 1);
 }
 
 #links-button.active .rotater:nth-child(1) > a {
@@ -242,27 +197,16 @@
 #link-damage > .btn { background: #85C1F5; }
 #link-characters > .btn { background: #7FCA9F; }
 #link-drops > .btn { background: #F4BA70; }
-#link-tally > .btn { background: #E96D63; }
-#link-report > .btn { background: orchid; }
-#link-slots > .btn { background: #99cc66; }
-#links-home > .btn { background: #939393; }
-#link-prob > .btn { background: #DEA5A4; }
+#link-home > .btn { background: #888; }
 #link-ship > .btn { background: #9932CC; }
-#link-planner > .btn { background: #DAAD13; }
-#link-nakama > .btn { background: #3c6ee0; }
 #link-supports > .btn { background: #2ECC71; }
-#link-turtles > .btn { background: #ce4500; }
-#link-es > .btn { background: linear-gradient(#ff0000 30%, #ffff00 30%, #ffff00 70%, #ff0000 30%); }
-#link-fr > .btn { background: url("https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"); background-size: 100%; background-position: center; }
-#link-de > .btn { background: url("https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg"); background-size: 200%; background-position: center; }
-#link-ko > .btn { background: url("https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg"); background-size: 120%; background-position: center; }
-#link-reddit > .btn { background: url("https://www.redditinc.com/assets/images/site/reddit-logo.png"); background-size: 100%; }
-#link-github > .btn { background: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"); background-size: 100%; }
-#link-discord > .btn { background: url("https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png"); background-size: 120%; background-position: center; }
+#link-rumble > .btn { background: #DA70D6; }
+#link-voyage > .btn { background: #F4A460; }
+#link-reddit > .btn { background: #FF4500; }
+#link-github > .btn { background: #333; }
+#link-discord > .btn { background: #5865F2; }
 
-.tip { color: black; }
-
-#links-button:not(.active) .tip{
+#links-button:not(.active) .tip {
     display: none;
 }
 
@@ -272,18 +216,31 @@
     }
 }
 
-.tip {
-    position: absolute;
-    top: -3em;
-    left: 0;
-    width: 130px;
-    margin-left: -50px;
-    text-align: center;
-    text-decoration: none !important;
+#links-button .btn-icon {
+    position: relative;
 }
 
-.top {
-    top: -1em;
-    left: -6em;
-    text-align: right;
+#links-button .btn-icon .tip {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #333;
+    background: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#links-button .btn-icon .tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #fff;
 }
