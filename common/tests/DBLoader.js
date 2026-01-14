@@ -1,6 +1,4 @@
 globalThis.window = {}
-import '../js/unitUtils'
-globalThis.UnitUtils = globalThis.window.UnitUtils
 import '../data/aliases'
 import '../data/cooldowns'
 import '../data/evolutions'
@@ -14,10 +12,6 @@ import '../data/drops'
 import '../data/gw'
 import '../data/specials'
 import PirateRumble from '../data/rumble.json'
-
-if (Array.isArray(window.units[0])) {
-  window.Utils.parseUnits(false)
-}
 
 Array.prototype.subcontains = function (data) {
   return this.join('!').indexOf(data.join('!')) != -1;
