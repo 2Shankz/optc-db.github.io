@@ -11,11 +11,11 @@ var loadValue = function(key,def) {
         value.team = value.team.map(function(x,n) {
             if (!x || !x.hasOwnProperty('unit') || x.unit === undefined) x.unit = null;
             if (x && x.unit !== null && x.unit !== undefined && x.unit.constructor == Number) {
-                x.unit = window.units[x.unit];
+                x.unit = window.units[String(x.unit)];
                 // captain warnings
-                if (n < 2 && x.unit && x.unit.number && captains[x.unit.number + 1] && captains[x.unit.number + 1].warning) {
+                if (n < 2 && x.unit && x.unit.id && captains[x.unit.id] && captains[x.unit.id].warning) {
                     noty({
-                        text: captains[x.unit.number + 1].warning.replace(/%name%/g, window.units[x.unit.number].name),
+                        text: captains[x.unit.id].warning.replace(/%name%/g, window.units[x.unit.id].name),
                         type: 'warning',
                         layout: 'topRight',
                         theme: 'relax',
@@ -44,7 +44,7 @@ var save = function(key,object) {
         object = JSON.parse(JSON.stringify(object));
         object.team = object.team.map(function(x) {
             if (x && x.unit && x.unit.constructor == Object)
-                x.unit = x.unit.number; // whole unit object is too large, so save only the unit number
+                x.unit = x.unit.id; // whole unit object is too large, so save only the unit id
             return x;
         }).slice(0,6);
     }
