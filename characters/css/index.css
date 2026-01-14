@@ -401,16 +401,6 @@ input#burgerMenuState {
     float: left;
     position: relative;
     top: 2px;
-    width: 80px;
-    text-align: center;
-    margin-right: 5px;
-}
-
-.badge-sbase2 {
-    float: left;
-    position: relative;
-    top: 2px;
-    width: 87px;
     text-align: center;
     margin-right: 5px;
 }
@@ -423,7 +413,7 @@ input#burgerMenuState {
     margin-right: 5px;
 }
 
-.badge-slevel1, .badge-slevel2 {
+.badge-slevel {
     float: left;
     position: relative;
     top: 2px;
@@ -431,7 +421,7 @@ input#burgerMenuState {
     margin-right: 5px;
 }
 
-.badge-character1, .badge-character2 {
+.badge-character{
     float: left;
     position: relative;
     top: 2px;
@@ -447,10 +437,6 @@ input#burgerMenuState {
     margin-right: 5px;
 }
 
-.badge-japan + div, .badge-global + div, .badge-swap + div, .badge-superswap + div, .badge-base + div, .badge-level1 + div, .badge-level2 + div, .badge-level3 + div, .badge-level4 + div, .badge-level5 + div, .badge-level6 + div, .badge-sbase + div, .badge-slevel1 + div, .badge-slevel2 + div, .badge-character1 + div, .badge-character2 + div,.badge-combined + div {
-    margin-bottom: 2px;
-}
-
 .badge-japan { background: mediumvioletred; }
 .badge-global { background: rebeccapurple; }
 .badge-swap { background: rebeccapurple; }
@@ -462,13 +448,10 @@ input#burgerMenuState {
 .badge-level4 { background: rgb(255,70,70); }
 .badge-level5 { background: rgb(255,50,50); }
 .badge-level6 { background: rgb(255,30,30); }
-.badge-character1 { background: rebeccapurple; }
-.badge-character2 { background: rebeccapurple; }
+.badge-character { background: rebeccapurple; }
 .badge-combined { background: mediumvioletred; }
 .badge-sbase { background: darkred; }
-.badge-sbase2 { background: darkred; }
-.badge-slevel1 { background: red; }
-.badge-slevel2 { background: red; }
+.badge-slevel { background: red; }
 
 .stars:before, .stars:after {
     font-weight: bold;
@@ -1141,14 +1124,6 @@ unit > a {
     padding-top: 20px;
 }
 
-.chart-container {
-    max-height: 320px;
-}
-
-.chart-line {
-    max-height: 338px !important;
-}
-
 /**********
  * MOBILE *
  **********/
@@ -1215,21 +1190,21 @@ unit > a {
   font-weight: bold;
 }
 
-/* Character 1 */
-.dual-unit-character-header:nth-child(2),
-.dual-unit-character-tags:nth-child(3) {
-    background-color: #f7f6f6;
-    border-left: 4px solid #FAD1FF;
+/* Character 1 - Header and Tags */
+.dual-unit-character-header:nth-child(1),
+.dual-unit-character-tags:nth-child(2) {
+    background-color: #f8f9fa;
 }
+
+/* Character 1 - Tags row has divider below */
 .dual-unit-character-tags:nth-child(3) {
     border-bottom: 2px solid #adadad;
 }
 
-/* Character 2 */
+/* Character 2 - Header and Tags (same color as Character 1) */
 .dual-unit-character-header:nth-child(4),
 .dual-unit-character-tags:nth-child(5) {
-  background-color: #fcfcfc;
-  border-left: 4px solid #D1F4FF;
+  background-color: #f8f9fa;
 }
 
 .dual-unit-character-header td {

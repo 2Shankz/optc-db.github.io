@@ -2,9 +2,7 @@
 
 (function() {
 
-var app = angular.module('optc', [ 'ui.router', 'ui.bootstrap', 'ngSanitize', 'chart.js', 'ngDialog' ]);
-
-Utils.parseUnits(false);
+var app = angular.module('optc', [ 'ui.router', 'ui.bootstrap', 'ngSanitize', 'ngDialog' ]);
 
 /********************
  * GA Configuration *
@@ -14,12 +12,11 @@ app
     .run(function($rootScope, $location, $window, $state, $stateParams) {
         $rootScope.$on('$stateChangeSuccess',function(e) {
             $rootScope.currentState = $state.current.name;
-            if (ga) ga('send', 'pageview', '/characters');
+            if (typeof ga === 'function') ga('send', 'pageview', '/characters');
             var title = 'One Piece Treasure Cruise Character Table';
             if ($state.current.name == 'main.search.view') {
-                var unit = window.units[parseInt($stateParams.id,10) - 1];
+                var unit = window.units[String($stateParams.id)];
                 title = (unit.name || '?') + ' | ' + title;
-                if (unit.preview) title = '(Preview) ' + title;
             }
             window.document.title = title;
         });
