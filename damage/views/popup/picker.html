@@ -17,8 +17,8 @@
                         ng-model="query" ng-model-options="{ debounce: 500 }" auto-focus class="modal-filter">
 
                     <div id="pickerUnits" class="modal-div">
-                        <div class="slot medium" ng-repeat="unit in units" ng-click="pickUnit(unit.number)"
-                            decorate-slot="static" uid="unit.number + 1" flag="true">
+                        <div class="slot medium" ng-repeat="unit in units" ng-click="pickUnit(unit.id)"
+                            decorate-slot="static" uid="unit.id" flag="true">
                         </div> 
                     </div>
 

@@ -197,15 +197,15 @@ var ImportCtrl = function($scope, $rootScope, $state, $stateParams) {
             let tokiState = Boolean(Number(values[7]));
 
             // validate values
-            if (id < 1 || id > window.units.length || window.units[id - 1].length === 0) break;
-            if (level < 1 || level > window.units[id - 1].maxLevel) break;
+            if (id < 1 || !window.units[String(id)] || window.units[String(id)] === undefined) break;
+            if (level < 1 || level > window.units[String(id)].maxLevel) break;
             if (atk > 500 || hp > 500 || rcv > 500) break;
             if (limit < 0 || limit > 50) break;
 
             team.push({
                 // you may add properties, but may NOT change the order,
                 // due to the way the export link is implemented
-                unit: window.units[id-1],
+                unit: window.units[String(id)],
                 level: level,
                 candies: { hp: hp, atk: atk, rcv: rcv },
                 limit: limit,
@@ -235,7 +235,7 @@ var ExportCtrl = function($scope) {
             var unit = data.team[i], candies = unit.candies;
             if (unit.unit === null) tokens.push('!');
             else {
-                var temp = (unit.unit.number + 1) + ':' + unit.level;
+                var temp = (unit.unit.id) + ':' + unit.level;
                 temp += ':' + [ candies.atk, candies.hp, candies.rcv ].join(':');
                 temp += ':' + unit.limit;
                 temp += ':' + Number(unit.sugarToy);
