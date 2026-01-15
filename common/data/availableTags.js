@@ -284,6 +284,10 @@ window.availableTags = [
     "category": 3
   },
   {
+    "name": "Longarm Tribe",
+    "category": 2
+  },
+  {
     "name": "Marineford Paramount War Arc",
     "category": 4
   },

@@ -4500,10 +4500,10 @@ window.units = [
     [ "Dr. Vegapunk - Unmeasurable Good and Evil of the Past", "STR", ["Cerebral", "Free Spirit"], 6, 55, 5, 5, 99, 5000000, 2010, 856, 155, 4020, 1711, 310, 1 ],
     [ "Clou D. Clover - Erased Histories", "STR", ["Cerebral", "Free Spirit"], 5, 30, 4, 4, 99, 4000000, 1781, 801, 112, 3562, 1601, 223, 1 ],
     [ "Caesar Clown - Laughing at Slaughter", "STR", ["Cerebral", "Driven"], 5, 30, 4, 4, 99, 4000000, 1847, 843, 87, 3694, 1685, 173, 1 ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
-    [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ "Drake & Apoo - Reluctant Cooperation", ["STR", "DEX"], [["Slasher", "Striker"], ["Shooter", "Striker"], ["Slasher", "Striker"]], 6, 55, 4, 5, 99, 5000000, 2303, 917, 138, 4606, 1834, 276, 1 ],
+    [ "Basil Hawkins - Playtime with the Misfortunate One", "DEX", ["Slasher", "Striker"], 5, 30, 4, 4, 99, 4000000, 1852, 790, 78, 3704, 1580, 156, 1 ],
+    [ "Guernica & Maha & Joseph", "DEX", ["Fighter", "Striker"], 5, 1, 4, 4, 99, 4000000, 1910, 734, 87, 3820, 1468, 174, 1 ],
+    [ "Kaido - Devastating Dragon Twister", "DEX", ["Powerhouse", "Striker"], "6+", 65, 4, 5, 99, 5000000, 2398, 1176, 82, 4796, 1764, 163, 1 ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
     [ "", "Type", ["Class1", "Class2"], null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -5347,6 +5347,10 @@ var ghostsUnits = [
     [ "⚐ Mansherry - Happily Savored Christmas Cake", "PSY", ["Cerebral", "Striker"], "6+", 65, 4, 5, 99, 5000000, 1451, 901, 308, 2902, 1352, 616, 1 ],
     [ "⚐ Shirahoshi & Mansherry - Happily Savored Christmas Cake", "QCK", ["Cerebral", "Striker"], "6+", 65, 4, 5, 99, 5000000, 1467, 974, 337, 2934, 1461, 674, 1 ],
     [ "⚐ Shirahoshi & Mansherry - Happily Savored Christmas Cake", "PSY", ["Cerebral", "Striker"], "6+", 65, 4, 5, 99, 5000000, 1467, 974, 337, 2934, 1461, 674, 1 ],
+    [ "⚐ X Drake - Reluctant Cooperation", "STR", ["Slasher", "Striker"], 6, 55, 5, 5, 99, 5000000, 2161, 883, 123, 4322, 1766, 246, 1 ],
+    [ "⚐ Scratchmen Apoo - Reluctant Cooperation", "DEX", ["Shooter", "Striker"], 6, 55, 4, 5, 99, 5000000, 2115, 894, 127, 4230, 1788, 254, 1 ],
+    [ "⚐ Drake & Apoo - Reluctant Cooperation", "STR", ["Slasher", "Striker"], 6, 55, 4, 5, 99, 5000000, 2303, 917, 138, 4606, 1834, 276, 1 ],
+    [ "⚐ Drake & Apoo - Reluctant Cooperation", "DEX", ["Slasher", "Striker"], 6, 55, 4, 5, 99, 5000000, 2303, 917, 138, 4606, 1834, 276, 1 ],
 ];
 
 window.units = window.units.concat(ghostsUnits);

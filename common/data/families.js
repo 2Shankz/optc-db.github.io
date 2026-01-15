@@ -740,6 +740,8 @@ const Tosa = [ "Tosa" ];
 const Guillotine = [ "Guillotine" ];
 const Emet = [ "Emet" ];
 const ClouDClover = [ "Clou D. Clover" ];
+const Guernica = [ "Guernica" ];
+const Joseph = [ "Joseph" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5129,6 +5131,10 @@ window.families = {
     4499: [ ...Vegapunk ],
     4500: [ ...ClouDClover ],
     4501: [ ...CaesarClown ],
+    4502: [ ...XDrake, ...ScratchmenApoo ],
+    4503: [ ...BasilHawkins ],
+    4504: [ ...Guernica, ...Maha, ...Joseph ],
+    4505: [ ...Kaido ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
@@ -5867,6 +5873,10 @@ const ghostFamilies = {
     718: [ ...Shirahoshi, ...Mansherry ],
     719: [ ...Shirahoshi, ...Mansherry ],
     720: [ ...Shirahoshi, ...Mansherry ],
+    721: [ ...XDrake, ...ScratchmenApoo ],
+    722: [ ...XDrake, ...ScratchmenApoo ],
+    723: [ ...XDrake, ...ScratchmenApoo ],
+    724: [ ...XDrake, ...ScratchmenApoo ],
 }
 
 Object.keys(ghostFamilies).forEach(function (key) {
