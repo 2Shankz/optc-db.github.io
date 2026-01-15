@@ -1240,3 +1240,30 @@ unit > a {
     scrollbar-width: thin;
     scrollbar-color: #5a5a5a #969696;
 }
+
+
+
+/* Cost Slider - minimal spacing only */
+#cost-slider {
+    margin: 8px 0;
+}
+
+#cost-slider {
+    padding: 0 16px;
+}
+
+.cost-value-display {
+    color: white;
+    text-align: center;
+}
+
+/* Rumble Cost Slider */
+#rumble-cost-slider {
+    margin: 8px 0;
+    padding: 0 16px;
+}
+
+.rumble-cost-value-display {
+    color: white;
+    text-align: center;
+}
