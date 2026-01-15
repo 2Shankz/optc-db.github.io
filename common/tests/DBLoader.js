@@ -9,7 +9,6 @@ import '../data/units'
 import '../js/utils'
 import '../data/details'
 import '../data/drops'
-import '../data/gw'
 import '../data/specials'
 import PirateRumble from '../data/rumble.json'
 
@@ -42,6 +41,5 @@ export const DBfamily = window.families
 export const DBunit = window.units
 export const DBdrop = window.drops
 export const DBalias = window.aliases
-export const DBgamewith = window.gw
 export const DBSpecial = window.specials
 export const DBRumble = PirateRumble

@@ -416,6 +416,15 @@
       // filter by cost
       if (unit.cost < filters.cost[0] || unit.cost > filters.cost[1])
         return false;
+      // filter by rumble cost
+      var rumble = window.rumble[id];
+      if (rumble) {
+        var rumbleCost = rumble.character1 ? rumble.character1.festCost : rumble.festCost;
+        if (filters.rumbleCost && filters.rumbleCost.length === 2) {
+          if (rumbleCost < filters.rumbleCost[0] || rumbleCost > filters.rumbleCost[1])
+            return false;
+        }
+      }
       // filter by drop
       //if(id == 2) console.log(filters);
       if (filters.nonFarmable && Object.keys(filters.nonFarmable).length > 0) {
