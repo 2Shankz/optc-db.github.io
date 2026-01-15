@@ -25,25 +25,18 @@
 
         <link rel="stylesheet" type="text/css" href="../common/libs/css/animate.css" />
         <link rel="stylesheet" type="text/css" href="../common/libs/css/bootstrap.min.css" />
-        <!--<link rel="stylesheet" type="text/css" href="../common/libs/css/font-awesome.min.css" />-->
         <link rel="stylesheet" type="text/css" href="../common/libs/css/fontawesome/all.css" />
         <script src="https://kit.fontawesome.com/ef0695d0bc.js" crossorigin="anonymous"></script>
-        <!-- link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/js/all.js" -->
-        <!-- link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/js/v4-shims.js" -->
-        <link rel="stylesheet" type="text/css" href="../common/libs/css/ngDialog.min.css" />
-        <link rel="stylesheet" type="text/css" href="../common/libs/css/ngDialog-theme-default.min.css" />
 
         <link rel="stylesheet" type="text/css" href="../common/css/links.css" />
 
         <link rel="stylesheet" type="text/css" href="index.css" />
 
-        <script src="../common/libs/js/es5-shim.min.js"></script>
         <script src="../common/libs/js/jquery.min.js"></script>
         <script src="../common/libs/js/angular.min.js"></script>
         <script src="../common/libs/js/bootstrap.min.js"></script>
         <script src="../common/libs/js/ui-bootstrap-tpls.min.js"></script>
         <script src="../common/libs/js/angular-sanitize.min.js"></script>
-        <script src="../common/libs/js/ngDialog.min.js"></script>
 
         <script src="../common/data/units.js"></script>
         <script src="../common/data/aliases.js"></script>
@@ -57,8 +50,6 @@
         <script src="index.js"></script>
 
         <script src="../common/js/directives.js"></script>
-        <!--<script src="../common/js/error.js"></script>-->
-        <script src="../common/js/dismissal.js"></script>
 
         <script src="../characters/js/utils.js"></script>
         
@@ -80,10 +71,6 @@
                     <span>{{island.name}}</span>
                     <i class="fa fa-globe-americas" ng-show="island.global" title="Available On Global"></i>
                     <i class="fa fa-star" ng-show="island.challenge" title="Challenge Available"></i>
-                    <!-- Flag next to the FN/Raid name if its permanent on either/both. Messes up the character view making it like its trying to get a tag or something
-                    <i class="far fa-flag" ng-show="island.permglobal" title="Permanent on Global"></i>
-                    <i class="fas fa-flag" ng-show="island.permjapan" title="Permanent on Japan"></i>
-                    <i class="fas fa-flag-checkered" ng-show="island.permboth" title="Permanent on Japan and Global"></i>-->
                     <bonus-list ng-if="type == 'Story Island'" y="$index"></bonus-list>
                     <day-label ng-if="type == 'Rookie Mission'"></day-label>
                 </h3>

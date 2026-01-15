@@ -1,6 +1,6 @@
 (function() {
 
-var app = angular.module('optc', [ 'ui.bootstrap', 'ngDialog' ]);
+var app = angular.module('optc', [ 'ui.bootstrap' ]);
 
 var addImages = function(target) {
     target.find('> table [data], h3 [data]').each(function(n,x) {
