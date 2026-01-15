@@ -1,8 +1,6 @@
 (function() {
 
-var app = angular.module('optc', [ 'ui.bootstrap', 'ngDialog' ]);
-
-Utils.parseUnits(false);
+var app = angular.module('optc', [ 'ui.bootstrap' ]);
 
 var addImages = function(target) {
     target.find('> table [data], h3 [data]').each(function(n,x) {
@@ -28,9 +26,10 @@ app.controller('MainCtrl',function($scope, $rootScope, $timeout, $controller) {
 
     $scope.changeFilters = function() {
         $scope.hiddenUnits = [ ];
-        for (var i=0;i<units.length;++i) {
-            $scope.hiddenUnits[i+1] = ($scope.noFodder && Utils.isFodder(window.units[i])) ||
-                ($scope.noEvolverBooster && Utils.isEvolverBooster(window.units[i]));
+        var unitValues = Object.values(window.units);
+        for (var i=0;i<unitValues.length;++i) {
+            $scope.hiddenUnits[i+1] = ($scope.noFodder && Utils.isFodder(unitValues[i])) ||
+                ($scope.noEvolverBooster && Utils.isEvolverBooster(unitValues[i]));
         }
         if (!$scope.$$phase) $scope.$apply();
     };
@@ -46,11 +45,24 @@ app.directive('decorateSlot',function() {
         restrict: 'A',
         scope: { uid: '=', big: '@', delay: '@' },
         link: function(scope, element, attrs) {
-            var url = scope.big ? Utils.getBigThumbnailUrl(scope.uid) : Utils.getThumbnailUrl(scope.uid, '..');
-            //var url2 = scope.big ? Utils.getBigThumbnailUrl(scope.uid) : Utils.getGlobalThumbnailUrl(scope.uid);
-            if (scope.delay) element[0].setAttribute('data',url);
-            else element[0].style.backgroundImage = 'url(' + url + ')';
-            //else element[0].style.backgroundImage = 'url(' + url2 + '), url(' + url + ')';
+            var paths = scope.big ? { glo: Utils.getBigThumbnailUrl(scope.uid), jap: Utils.getBigThumbnailUrl(scope.uid) } : Utils.getThumbnailUrl(scope.uid, '..');
+            var noimagePath = '../api/images/common/noimage.png';
+            if (scope.delay) {
+                var url = paths.jap;
+                if (url) element[0].setAttribute('data', url);
+            } else {
+                element[0].style.backgroundImage = 'url(' + paths.jap + ')';
+                element[0].onerror = function() {
+                    if (paths.glo && paths.glo !== paths.jap) {
+                        element[0].style.backgroundImage = 'url(' + paths.glo + ')';
+                        element[0].onerror = function() {
+                            element[0].style.backgroundImage = 'url(' + noimagePath + ')';
+                        };
+                    } else {
+                        element[0].style.backgroundImage = 'url(' + noimagePath + ')';
+                    }
+                };
+            }
         }
     };
 });
@@ -71,16 +83,16 @@ app.directive('island',function() {
         replace: true,
         templateUrl: 'island.html',
         link: function(scope, element, attrs) {
-            scope.isTooltipEnabled = function(id) { return !!cooldowns[id - 1]; };
+            scope.isTooltipEnabled = function(id) { return !!window.cooldowns[String(id)]; };
             scope.getTooltipText = function(id) {
-                var cooldown = cooldowns[id - 1], unit = units[id - 1];
-                if (!cooldown && (!unit || !unit.name || !unit.incomplete)) return;
+                var cooldown = window.cooldowns[String(id)], unit = window.units[String(id)];
+                if (!cooldown && (!unit || !unit.name)) return;
                 if (cooldown) {
-                    if (cooldown.constructor == Array) cooldown = cooldown[0] + ' \u2192 ' + cooldown[1] + ' turns';
+                    if (Array.isArray(cooldown)) cooldown = cooldown[0] + ' \u2192 ' + cooldown[1] + ' turns';
                     else cooldown = cooldown + ' \u2192 ? turns';
                 }
                 var result = 'CD: ' + cooldown;
-                if (unit.incomplete && unit.name) result = unit.name + '\n' + result;
+                if (unit && unit.name) result = unit.name + '\n' + result;
                 return result;
             };
         }
@@ -217,7 +229,7 @@ app.filter('smartSort',function($rootScope) {
     var getId = function(id) {
         //if(typeof id == "string"){ console.log(id.charCodeAt(0)); return id.charCodeAt(0); }
         id = Math.abs(id);
-        return [ 'STR', 'DEX', 'QCK', 'PSY', 'INT' ].indexOf(window.units[id-1].type || 'INT') * 1000 + id;
+        return [ 'STR', 'DEX', 'QCK', 'PSY', 'INT' ].indexOf(window.units[String(id)].type || 'INT') * 1000 + id;
     };
     return function(array) {
         if (!$rootScope.sortByType) {

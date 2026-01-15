@@ -173,7 +173,7 @@ CharUtils.getFarmableVersions = function (id) {
     for (let id of farmableVersionsIds) {
         if (!CharUtils.isFarmable(id) || Utils.searchBaseForms(id))
             continue;
-        let name = units[id - 1].name;
+        let name = window.units[String(id)].name;
         if (name.length > 25)
             name = name.slice(0,22) + '...';
         CharUtils.searchDropLocations(id).forEach(function(location) {
@@ -187,15 +187,6 @@ CharUtils.getFarmableVersions = function (id) {
 
     return farmableVersions;
 }
-
-CharUtils.searchTandems = function(id) {
-    var result = [ ];
-    for (var i=0;i<tandems.length;++i) {
-        if (tandems[i].units.indexOf(id) > -1)
-            result.push(tandems[i]);
-    }
-    return result;
-};
 
 CharUtils.isFarmable = function(id, type) {
     if (reverseDropMap === null) generateReverseDropMap();
@@ -216,34 +207,6 @@ CharUtils.checkFarmable = function(id, locations) {
         } else if ((exclude & mark) == exclude) return false;
     }
     return (!included || include === 0);
-};
-
-CharUtils.searchSameSpecials = function(id) {
-    if (!details[id]) return [ ];
-    var result = [ ];
-    for (var key in details) {
-        if (key == id || !details[key].special) continue;
-        if (details[key].specialName == details[id].specialName && details[key].special == details[id].special)
-            result.push(parseInt(key, 10));
-        if (Array.isArray(details[id].special) && Array.isArray(details[key].special))
-            if (details[key].specialName == details[id].specialName && details[key].special[0].description == details[id].special[0].description)
-                result.push(parseInt(key, 10));
-        if (details[id].special){
-            if (details[id].special.character1 && details[key].special.character1)
-                if (details[key].specialName == details[id].specialName && details[id].special.character1 == details[key].special.character1)
-                    result.push(parseInt(key, 10));
-            if (details[id].special.base && details[key].special.base)
-                if (details[key].specialName == details[id].specialName && details[id].special.base == details[key].special.base)
-                    result.push(parseInt(key, 10));
-            if ((details[id].special.character1 && !details[key].special.character1) || (!details[id].special.character1 && details[key].special.character1)){
-                    if(details[id].special.character1) if (details[key].specialName == details[id].specialName && (details[id].special.character1 == details[key].special || details[id].special.character2 == details[key].special))
-                        result.push(parseInt(key, 10));
-                    if(details[key].special.character1) if (details[key].specialName == details[id].specialName && (details[key].special.character1 == details[id].special || details[key].special.character2 == details[id].special))
-                        result.push(parseInt(key, 10));
-            }
-        }
-    }
-    return [...new Set(result)];
 };
 
 CharUtils.getDayOfWeek = function(japan, ignore) {
@@ -274,13 +237,6 @@ CharUtils.getIslandBonuses = function(y, day) {
     return result;
 };
 
-CharUtils.getStatOfUnit = function(unit, stat, level) {
-    var maxLevel = (unit.maxLevel == 1 ? 1 : unit.maxLevel -1);
-    var growth = unit.growth[stat] || 1;
-    var minStat = 'min' + stat.toUpperCase(), maxStat = 'max' + stat.toUpperCase();
-    var result = unit[minStat] + (unit[maxStat] - unit[minStat]) * Math.pow((level-1) / maxLevel, growth);
-    return Math.floor(result);
-};
 
 /***********
  * Caching *
@@ -528,7 +484,7 @@ CharUtils.checkSubmatcher = function(target, submatcher, matchObj, cacheKey, id)
 
 CharUtils.hasFarmableSocket = function(id) {
     //return false if unit has no Sockets
-    var unit = window.units[id];
+    var unit = window.units[String(id)];
     if (unit.slots<1 || !unit.families)
         return false;
 

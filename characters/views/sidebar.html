@@ -186,7 +186,10 @@
 <div class="filter-container" id="cost-container">
     <animate-collapse class="filter-header filter-header-pve">Cost</animate-collapse>
     <div class="collapse">
-        <input type="text" id="cost-slider" name="cost-slider" value="" cost-slider></input>
+        <div class="cost-value-display">
+            <span id="cost-min">1</span> - <span id="cost-max">99</span>
+        </div>
+        <div id="cost-slider" cost-slider></div>
     </div>
 </div>
 
@@ -314,8 +317,12 @@
 
 <div class="filter-container" id="rumble-cost-container">
     <animate-collapse class="filter-header filter-header-pvp">Rumble Cost</animate-collapse>
-    <add-custom-filters target="rumbleCost" filter-data="filterData" filters="filters"
-        class="collapse"></add-custom-filters>
+    <div class="collapse">
+        <div class="rumble-cost-value-display">
+            <span id="rumble-cost-min">1</span> - <span id="rumble-cost-max">55</span>
+        </div>
+        <div id="rumble-cost-slider" rumble-cost-slider></div>
+    </div>
 </div>
 
 <div class="filter-container" id="rumble-ability-container">

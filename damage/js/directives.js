@@ -25,14 +25,36 @@ directives.decorateSlot = function($rootScope) {
         link: function(scope, element, attrs) {
             var update = function() {
                 var target = element[0];
+                var noimagePath = '../api/images/common/noimage.png';
                 if (scope.uid == null && scope.udata == null) {
-                    target.style.backgroundImage = 'url(' + Utils.getThumbnailUrl(null, '..') + ')';
+                    var paths = Utils.getThumbnailUrl(null, '..');
+                    target.style.backgroundImage = 'url(' + paths.jap + ')';
+                    target.onerror = function() {
+                        if (paths.glo && paths.glo !== paths.jap) {
+                            target.style.backgroundImage = 'url(' + paths.glo + ')';
+                            target.onerror = function() {
+                                target.style.backgroundImage = 'url(' + noimagePath + ')';
+                            };
+                        } else {
+                            target.style.backgroundImage = 'url(' + noimagePath + ')';
+                        }
+                    };
                     target.removeAttribute('title');
                 } else {
-                    if (scope.uid != 1 || scope.flag || (scope.udata && scope.udata.name == 'Monkey D. Luffy'))
-                        target.style.backgroundImage = 'url(' + Utils.getThumbnailUrl(scope.uid, '..') + ')';
-                        //target.style.backgroundImage = 'url(' + Utils.getGlobalThumbnailUrl(scope.uid) + '), url(' + Utils.getThumbnailUrl(scope.uid, '..') + ')';
-                    else
+                    if (scope.uid != 1 || scope.flag || (scope.udata && scope.udata.name == 'Monkey D. Luffy')) {
+                        var paths = Utils.getThumbnailUrl(scope.uid, '..');
+                        target.style.backgroundImage = 'url(' + paths.jap + ')';
+                        target.onerror = function() {
+                            if (paths.glo && paths.glo !== paths.jap) {
+                                target.style.backgroundImage = 'url(' + paths.glo + ')';
+                                target.onerror = function() {
+                                    target.style.backgroundImage = 'url(' + noimagePath + ')';
+                                };
+                            } else {
+                                target.style.backgroundImage = 'url(' + noimagePath + ')';
+                            }
+                        };
+                    } else
                         target.style.backgroundImage = null;
                     if (attrs.decorateSlot.indexOf('notitle') == -1)
                         target.setAttribute('title', Utils.getThumbnailTitle(scope.udata || (scope.uid - 1)));
@@ -190,7 +212,7 @@ directives.shipManager = function() {
             );
             var updateBackground = function(perc) {
                 if (perc === undefined || perc === null) return;
-                if (perc.constructor == Array) perc = perc[1] / 10;
+                if (Array.isArray(perc)) perc = perc[1] / 10;
                 perc = Math.min(1,perc);
                 background.style.width = Math.min(Math.round(perc * 100),100)  + '%';
                 background.style.background =
@@ -271,7 +293,7 @@ directives.quickPick = function() {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
-            var fuse = new Fuse(window.units, { keys: [ 'name' ], id: 'number', threshold: 0.3, distance: 200 });
+            var fuse = new Fuse(Object.values(window.units), { keys: [ 'name' ], id: 'number', threshold: 0.3, distance: 200 });
             element.textcomplete([{
                 match: /^(\w{2,})$/m,
                 index: 1,
@@ -282,13 +304,11 @@ directives.quickPick = function() {
                     callback(result.slice(0,7).filter(function(x) { return x > 0; }));
                 },
                 template: function (value) {
-                    var thumb = Utils.getThumbnailUrl(value + 1, '..');
-                    return '<span><img class="quickpick-icon" src="' + thumb + '"> ' + window.units[value].name + '</span>';
-                    //var thumb2 = Utils.getGlobalThumbnailUrl(value + 1);
-                    //return '<span><img class="quickpick-icon" src="' + thumb2 + '" onerror="this.onerror=null;this.src=\'' + thumb + '\';"> ' + window.units[value].name + '</span>';
+                    var paths = Utils.getThumbnailUrl(value, '..');
+                    return '<span><img class="quickpick-icon" src="' + paths.glo + '" onerror="this.onerror=null;this.src=\'' + paths.jap + '\';"> ' + window.units[String(value)].name + '</span>';
                 },
                 replace: function(value) {
-                    return window.units[value].name;
+                    return window.units[String(value)].name;
                 },
             }]);
         }
@@ -350,7 +370,7 @@ directives.slot = function() {
         link: function(scope, element, attrs) {
             scope.slot = element.index();
             if(scope.data.team[scope.slot].unit != null){
-                var id = scope.data.team[scope.slot].unit.number + 1;
+                var id = scope.data.team[scope.slot].unit.id;
                 scope.sailors = window.sailors[id] ? JSON.parse(JSON.stringify(window.sailors[id])) : null;
             }
             scope.onDrop = function(i, j) {
@@ -1235,7 +1255,7 @@ directives.unitSailor = function() {
         link: function(scope, element, attrs) {
             scope.hasSailor = false;
             scope.$watch('data.team[slot].unit',function(unit) {
-                scope.hasSailor = unit && window.sailors.hasOwnProperty(unit.number+1);
+                scope.hasSailor = unit && window.sailors.hasOwnProperty(unit.id);
             });
         }
     };
@@ -1259,9 +1279,9 @@ directives.special = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
-                if (enabled && window.specials[unit.number+1].warning) {
+                if (enabled && window.specials[unit.id].warning) {
                     scope.notify({
-                        text: window.specials[unit.number+1].warning.replace(/%name%/g, window.units[unit.number].name),
+                        text: window.specials[unit.id].warning.replace(/%name%/g, window.units[unit.id].name),
                         type: 'warning'
                     });
                 }
@@ -1269,7 +1289,7 @@ directives.special = function($rootScope) {
             scope.$watch('data.team[slot].unit',function(unit) {
                 removeType();
                 if (scope.tdata.team[scope.slot].special) element.addClass(unit.type);
-                scope.hasSpecial = unit && window.specials.hasOwnProperty(unit.number+1);
+                scope.hasSpecial = unit && window.specials.hasOwnProperty(unit.id);
             });
             element.click(function(e) {
                 isSelected = !isSelected;
@@ -1298,9 +1318,9 @@ directives.altspecial = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
-                if (enabled && window.altspecials[unit.number+1].warning) {
+                if (enabled && window.altspecials[unit.id].warning) {
                     scope.notify({
-                        text: window.altspecials[unit.number+1].warning.replace(/%name%/g, window.units[unit.number].name),
+                        text: window.altspecials[unit.id].warning.replace(/%name%/g, window.units[unit.id].name),
                         type: 'warning'
                     });
                 }
@@ -1308,7 +1328,7 @@ directives.altspecial = function($rootScope) {
             scope.$watch('data.team[slot].unit',function(unit) {
                 removeType();
                 if (scope.tdata.team[scope.slot].altspecial) element.addClass(unit.type);
-                scope.hasAltSpecial = unit && window.altspecials.hasOwnProperty(unit.number+1);
+                scope.hasAltSpecial = unit && window.altspecials.hasOwnProperty(unit.id);
             });
             element.click(function(e) {
                 isSelected = !isSelected;
@@ -1337,9 +1357,9 @@ directives.capspecial = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
-                if (enabled && window.capspecials[unit.number+1].warning) {
+                if (enabled && window.capspecials[unit.id].warning) {
                     scope.notify({
-                        text: window.capspecials[unit.number+1].warning.replace(/%name%/g, window.units[unit.number].name),
+                        text: window.capspecials[unit.id].warning.replace(/%name%/g, window.units[unit.id].name),
                         type: 'warning'
                     });
                 }
@@ -1347,7 +1367,7 @@ directives.capspecial = function($rootScope) {
             scope.$watch('data.team[slot].unit',function(unit) {
                 removeType();
                 if (scope.tdata.team[scope.slot].capspecial) element.addClass(unit.type);
-                scope.hasCapSpecial = unit && window.capspecials.hasOwnProperty(unit.number+1);
+                scope.hasCapSpecial = unit && window.capspecials.hasOwnProperty(unit.id);
             });
             element.click(function(e) {
                 isSelected = !isSelected;
