@@ -633,23 +633,77 @@
 		};
 	};
 
-	directives.costSlider = function ($timeout) {
+	directives.costSlider = function ($rootScope) {
 		return {
 			restrict: "A",
 			link: function (scope, element, attrs) {
-				element.ionRangeSlider({
-					grid: true,
-					type: "double",
-					min: scope.filters.cost[0],
-					max: scope.filters.cost[1],
-					from: scope.filters.cost[0],
-					to: scope.filters.cost[1],
-					postfix: " cost",
-					onFinish: function (data) {
-						scope.filters.cost[0] = data.from;
-						scope.filters.cost[1] = data.to;
-						if (!scope.$$phase) scope.$apply();
-					},
+				var slider = element[0];
+				var costMinDisplay = document.getElementById('cost-min');
+				var costMaxDisplay = document.getElementById('cost-max');
+				
+				if (!$rootScope.filters) {
+					$rootScope.filters = { cost: [1, 99] };
+				}
+				
+				var cost = $rootScope.filters.cost || [1, 99];
+
+				noUiSlider.create(slider, {
+					start: [cost[0], cost[1]],
+					connect: true,
+					range: { min: 1, max: 99 },
+					step: 1,
+					animate: false
+				});
+
+				slider.noUiSlider.on('update', function(values) {
+					var minVal = Math.round(values[0]);
+					var maxVal = Math.round(values[1]);
+					$rootScope.filters.cost[0] = minVal;
+					$rootScope.filters.cost[1] = maxVal;
+					if (!$rootScope.$$phase) {
+						$rootScope.$apply();
+					}
+					if (costMinDisplay) costMinDisplay.textContent = minVal;
+					if (costMaxDisplay) costMaxDisplay.textContent = maxVal;
+				});
+			},
+		};
+	};
+
+			directives.rumbleCostSlider = function ($rootScope) {
+		return {
+			restrict: "A",
+			link: function (scope, element, attrs) {
+				var slider = element[0];
+				var rumbleCostMinDisplay = document.getElementById('rumble-cost-min');
+				var rumbleCostMaxDisplay = document.getElementById('rumble-cost-max');
+				
+				if (!$rootScope.filters) {
+					$rootScope.filters = {};
+				}
+				
+				if (!$rootScope.filters.rumbleCost) {
+					$rootScope.filters.rumbleCost = [1, 55];
+				}
+
+				noUiSlider.create(slider, {
+					start: [$rootScope.filters.rumbleCost[0], $rootScope.filters.rumbleCost[1]],
+					connect: true,
+					range: { min: 1, max: 55 },
+					step: 1,
+					animate: false
+				});
+
+				slider.noUiSlider.on('update', function(values) {
+					var minVal = Math.round(values[0]);
+					var maxVal = Math.round(values[1]);
+					$rootScope.filters.rumbleCost[0] = minVal;
+					$rootScope.filters.rumbleCost[1] = maxVal;
+					if (!$rootScope.$$phase) {
+						$rootScope.$apply();
+					}
+					if (rumbleCostMinDisplay) rumbleCostMinDisplay.textContent = minVal;
+					if (rumbleCostMaxDisplay) rumbleCostMaxDisplay.textContent = maxVal;
 				});
 			},
 		};
