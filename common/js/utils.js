@@ -450,7 +450,7 @@
 		let costRegex = /characters with cost (\d+) or (less|more)/i;
 		let typeRegex = /\[(STR|DEX|QCK|PSY|INT)\]/i;
 		let classRegex = /(?:Fighter|Slasher|Striker|Shooter|Free Spirit|Powerhouse|Cerebral|Driven)/i;
-		let tagRegex = /\[((?!STR]|DEX]|QCK]|PSY]|INT]).*)\]/i;
+		let tagRegex = /\[((?!STR]|DEX]|QCK]|PSY]|INT])[^\]]+)\]/i;
 
 		// may be "and" or ", and" or ", " even with extra whitespace
 		// if using .split(), you should use non-capturing groups (?:)
@@ -517,7 +517,8 @@
 		};
 		if (tags.length > 0) {
 			params.matchers.tag = tags.join("|").replace(whitespaceRegex, "_");
-			matchers.push("tag:" + params.matchers.tag);
+			if (families.length > 0) matchers.push("|tag:" + params.matchers.tag);
+			else matchers.push("tag:" + params.matchers.tag);
 		};
 		if (supportingFamilies && supportingFamilies.length > 0) {
 			params.matchers.notfamily =

@@ -6797,7 +6797,7 @@
 			},
 
 			{
-				name: "Old Silence/Special Bind reducers",
+				name: "Old Special Bind reducers",
 				targets: [
 					"captain",
 					"special",
@@ -6810,7 +6810,6 @@
 			},
 
 			{
-				//name: "Silence (IGN: Special Bind)",
 				name: "Special Bind",
 				targets: [
 					"captain",
@@ -6856,9 +6855,8 @@
 			},
 
 			{
-				//name: "Active Ability Silence (IGN: Silence)",
 				name: "Silence (Active Ability Silence)",
-				targets: ["captain", "special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support", "sailor"],
 				regex:
 					/(?:reduces|removes)[^."]+?silence[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?: on ([^."]+?)characters?)?(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
