@@ -130,18 +130,18 @@ var SharedRootCtrl = function($scope, $rootScope, $timeout) {
     };
 
     $rootScope.options = {
-        gOrbsEnabled: 0,
-        strOrbsEnabled: 0,
-        dexOrbsEnabled: 0,
-        qckOrbsEnabled: 0,
-        psyOrbsEnabled: 0,
-        intOrbsEnabled: 0,
-        rainbowOrbsEnabled: 0,
-        meatOrbsEnabled: 0,
-        tndOrbsEnabled: 0,
-        wanoOrbsEnabled: 0,
-        emptyOrbsEnabled: 0,
-        superBombOrbsEnabled: 0,
+        gOrbsEnabled: 1,
+        strOrbsEnabled: 1,
+        dexOrbsEnabled: 1,
+        qckOrbsEnabled: 1,
+        psyOrbsEnabled: 1,
+        intOrbsEnabled: 1,
+        rainbowOrbsEnabled: 1,
+        meatOrbsEnabled: 1,
+        tndOrbsEnabled: 1,
+        wanoOrbsEnabled: 1,
+        emptyOrbsEnabled: 1,
+        superBombOrbsEnabled: 1,
         sugarToysEnabled: 0,
         vegapunkOptionsEnabled: 0,
         tokiStateEnabled: 0,
@@ -163,7 +163,7 @@ var SharedRootCtrl = function($scope, $rootScope, $timeout) {
             $rootScope.$emit('capspecialToggled', n, false);
         // toggle events if any
         if ($scope.data.team[n].unit) {
-            var uid = $scope.data.team[n].unit.number + 1;
+            var uid = parseInt($scope.data.team[n].unit.id);
             if (window.events.hasOwnProperty(uid) && window.events[uid].hasOwnProperty('onRemoval'))
                 window.events[uid].onRemoval($rootScope);
         }
@@ -248,7 +248,7 @@ var SharedRootCtrl = function($scope, $rootScope, $timeout) {
     // to be invoked every time a new unit is set in a slot so the insertion events can be triggered
     $scope.slotChanged = function(n) {
         if (!$scope.data.team[n].unit) return;
-        var uid = $scope.data.team[n].unit.number + 1;
+        var uid = parseInt($scope.data.team[n].unit.id);
         if (window.events.hasOwnProperty(uid) && window.events[uid].hasOwnProperty('onInsertion'))
             window.events[uid].onInsertion($rootScope);
     };
@@ -625,7 +625,8 @@ app
             var state = $state.current.name;
             $rootScope.isPopupVisible = (state != 'main');
             $rootScope.picking = (state == 'main.candy');
-            if (ga) ga('send', 'pageview', '/damage');
+            if (typeof ga !== 'undefined') ga('send', 'pageview', '/damage');
+            else if (typeof gtag !== 'undefined') gtag('event', 'pageview', { page_path: '/damage' });
         });
     });
 

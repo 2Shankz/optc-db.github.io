@@ -293,7 +293,7 @@ directives.quickPick = function() {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
-            var fuse = new Fuse(Object.values(window.units), { keys: [ 'name' ], id: 'number', threshold: 0.3, distance: 200 });
+            var fuse = new Fuse(Object.values(window.units), { keys: [ 'name' ], id: 'id', threshold: 0.3, distance: 200 });
             element.textcomplete([{
                 match: /^(\w{2,})$/m,
                 index: 1,
@@ -1279,9 +1279,10 @@ directives.special = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
-                if (enabled && window.specials[unit.id].warning) {
+                var abilityId = unit.id;
+                if (enabled && window.specials[abilityId].warning) {
                     scope.notify({
-                        text: window.specials[unit.id].warning.replace(/%name%/g, window.units[unit.id].name),
+                        text: window.specials[abilityId].warning.replace(/%name%/g, window.units[unit.id].name),
                         type: 'warning'
                     });
                 }
@@ -1318,9 +1319,10 @@ directives.altspecial = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
-                if (enabled && window.altspecials[unit.id].warning) {
+                var abilityId = unit.id;
+                if (enabled && window.altspecials[abilityId].warning) {
                     scope.notify({
-                        text: window.altspecials[unit.id].warning.replace(/%name%/g, window.units[unit.id].name),
+                        text: window.altspecials[abilityId].warning.replace(/%name%/g, window.units[unit.id].name),
                         type: 'warning'
                     });
                 }
@@ -1357,9 +1359,10 @@ directives.capspecial = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
-                if (enabled && window.capspecials[unit.id].warning) {
+                var abilityId = unit.id;
+                if (enabled && window.capspecials[abilityId].warning) {
                     scope.notify({
-                        text: window.capspecials[unit.id].warning.replace(/%name%/g, window.units[unit.id].name),
+                        text: window.capspecials[abilityId].warning.replace(/%name%/g, window.units[unit.id].name),
                         type: 'warning'
                     });
                 }
