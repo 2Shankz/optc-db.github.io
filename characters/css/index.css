@@ -361,20 +361,10 @@ input#burgerMenuState {
     border-bottom: 1px solid #aaa;
 }
 
-.badge-japan, .badge-global {
-    float: left;
-    position: relative;
-    top: 2px;
-    width: 50px;
-    text-align: center;
-    margin-right: 5px;
-}
-
 .badge-base {
     float: left;
     position: relative;
     top: 2px;
-    width: 130px;
     text-align: center;
     margin-right: 5px;
 }
@@ -383,7 +373,6 @@ input#burgerMenuState {
     float: left;
     position: relative;
     top: 2px;
-    width: 80px;
     text-align: center;
     margin-right: 5px;
 }
@@ -392,7 +381,6 @@ input#burgerMenuState {
     float: left;
     position: relative;
     top: 2px;
-    width: 140px;
     text-align: center;
     margin-right: 5px;
 }
@@ -438,7 +426,6 @@ input#burgerMenuState {
 }
 
 .badge-japan { background: mediumvioletred; }
-.badge-global { background: rebeccapurple; }
 .badge-swap { background: rebeccapurple; }
 .badge-superswap { background: rebeccapurple; }
 .badge-base { background: rgb(255,150,150); }

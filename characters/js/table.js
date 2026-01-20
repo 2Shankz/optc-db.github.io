@@ -87,10 +87,13 @@
 
     var tableFilter = function (settings, data, index) {
       if (!tableData.parameters) return true;
-      var id = parseInt(data[0], 10),
-        unit = window.units[String(id)];
-      if (!unit) return true;
-      var flags = window.flags[unit.id] || {};
+var id = parseInt(data[0], 10),
+  unit = window.units[String(id)];
+if (!unit) {
+  console.warn('[TableFilter] Missing unit for ID:', id, '- Row excluded from filtered results');
+  return false;
+}
+var flags = window.flags[unit.id] || {};
 
       /* Helper to get class array for VS units (when unit.class is null) */
       function getVsUnitClasses() {
@@ -137,9 +140,6 @@
       // filter by class
       if (!Array.isArray(unit.class) && unit.class !== null && filters.noSingleClass) return false;
       // VS units pass the noSingleClass check (they have classes in variants)
-      if (unit.class === null && filters.noSingleClass) {
-        // VS units have classes in variants, so they pass this check
-      }
       if (filters.classes && filters.classes.length) {
         // Define filter variables BEFORE using them (available for both VS and regular units)
         var inclusive = !filters.classInclusive;
@@ -483,52 +483,6 @@
           if (id != 1 && isFarmable) return false;
         }
       }
-      /* if (filters.drop && false) {
-            if (id ==2) console.log(filters);
-            var isFarmable = CharUtils.isFarmable(id);
-            if (filters.drop == 'Farmable') {
-                if (id == 1 || !isFarmable) return false;
-                if (farmableLocations !== null) {
-                    var farmable = CharUtils.checkFarmable(id, farmableLocations);
-                    if (!farmable) return false;
-                }
-            }
-            if (filters.drop != 'Farmable') {
-                if (id != 1 && isFarmable) return false;
-                if (filters.nonFarmable) {
-                    // RR
-                    if (filters.nonFarmable.rro && !flags.rro) return false;
-                    if (filters.nonFarmable.rro === false && flags.rro) return false;
-                    // limited RR
-                    if (filters.nonFarmable.lrr && !flags.lrr) return false;
-                    if (filters.nonFarmable.lrr === false && flags.lrr) return false;
-                    // promo
-                    if (filters.nonFarmable.promo && !flags.promo) return false;
-                    if (filters.nonFarmable.promo === false && flags.promo) return false;
-                    // special
-                    if (filters.nonFarmable.special && !flags.special) return false;
-                    if (filters.nonFarmable.special === false && flags.special) return false;
-                    // rayleigh shop
-                    if (filters.nonFarmable.shop && !flags.shop) return false;
-                    if (filters.nonFarmable.shop === false && flags.shop) return false;
-                    // trade port
-                    if (filters.nonFarmable.tmshop && !flags.tmshop) return false;
-                    if (filters.nonFarmable.tmshop === false && flags.tmshop) return false;
-                    // TM RR
-                    if (filters.nonFarmable.tmlrr && !flags.tmlrr) return false;
-                    if (filters.nonFarmable.tmlrr === false && flags.tmlrr) return false;
-                    // KC RR
-                    if (filters.nonFarmable.kclrr && !flags.kclrr) return false;
-                    if (filters.nonFarmable.kclrr === false && flags.kclrr) return false;
-                    // PF RR
-                    if (filters.nonFarmable.pflrr && !flags.pflrr) return false;
-                    if (filters.nonFarmable.pflrr === false && flags.pflrr) return false;
-                    // Support RR
-                    if (filters.nonFarmable.slrr && !flags.slrr) return false;
-                    if (filters.nonFarmable.slrr === false && flags.slrr) return false;
-                }
-            }
-        } */
       // exclusion filters
       if (filters.noBase && evolutions[id] && evolutions[id].evolution)
         return false;
@@ -547,7 +501,7 @@
         if ("limit" in window.details[id]) {
           for (x in window.details[id].limit) {
             if (
-              window.details[id].limit[x].description.includes(
+              window.details[id].limit[x].includes(
                 "LOCKED WITH KEY"
               )
             )
@@ -558,7 +512,7 @@
         if ("limit" in window.details[id]) {
           for (x in window.details[id].limit) {
             if (
-              window.details[id].limit[x].description.includes(
+              window.details[id].limit[x].includes(
                 "Acquire new Captain Ability"
               )
             )
@@ -1658,18 +1612,6 @@
 
     $rootScope.$on("table.refresh", function () {
       fused = null;
-      /*var types = {
-        'STR' : '<span class="cell-STR">STR</span>',
-        'DEX' : '<span class="cell-DEX">DEX</span>',
-        'QCK' : '<span class="cell-QCK">QCK</span>',
-        'PSY' : '<span class="cell-PSY">PSY</span>',
-        'INT' : '<span class="cell-INT">INT</span>'};
-        $.each(types,function(i,type1){
-            $.each(types,function(j,type2){
-            if(i == j) return;
-            $('.cell-'+i+'\\/'+j).html(type1 +'/'+type2);
-          });
-        });*/
     });
 
     $rootScope.checkLog = function () {
