@@ -59,8 +59,6 @@ var MainCtrl = function($scope, $rootScope, $controller, $filter, $storage) {
                 text: 'Maximum tankable damage: ' + $filter('number')(zombie[1]) + ' HP per turn',});
     });
 
-    $scope.showGatherButton = Object.values(window.units).some(function(x) { return x.growth && x.growth.atk === 0; });
-
     /* * * * * Notifications * * * * */
 
     var notifications = { };
