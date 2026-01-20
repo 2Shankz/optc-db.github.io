@@ -49,7 +49,14 @@
 	/* * * * * Unit control * * * * */
 
 	var parseUnit = function (element, id) {
-		var piratefest = window.rumble[id];
+		// Handle variant IDs (e.g., "1984-QCK", "3787-1") by extracting base numeric ID
+		var numericId = parseInt(id);
+
+		// Guard: if rumble data doesn't exist or is malformed, use null
+		var piratefest = null;
+		if (typeof window !== 'undefined' && window.rumble && window.rumble[numericId]) {
+			piratefest = window.rumble[numericId];
+		}
 
 		// If multi-dimensional array (i.e. VS units), split into two
 		if (piratefest && piratefest.character1) {
@@ -85,53 +92,53 @@
 			LBsailors = 0,
 			LBcaptains = 0;
 
-		if (window.details && window.details[id] && window.details[id].limit) {
-			var unitDetails = window.details[id];
+		if (typeof window !== 'undefined' && window.details && window.details[numericId] && window.details[numericId].limit) {
+			var unitDetails = window.details[numericId];
 			keylevel = Object.keys(unitDetails.limit).length;
 			for (var x in unitDetails.limit) {
-				if (unitDetails.limit[x].description.includes("LOCKED WITH KEY")) {
+				if (unitDetails.limit[x].includes("LOCKED WITH KEY")) {
 					keylevel = x;
 				}
 			}
 
 			for (var x in unitDetails.limit) {
 				if (parseInt(x) < keylevel) {
-					if (unitDetails.limit[x].description.includes("Boosts base HP by ")) {
-						limitHealth += parseInt(unitDetails.limit[x].description.substring(18), 10);
+					if (unitDetails.limit[x].includes("Boosts base HP by ")) {
+						limitHealth += parseInt(unitDetails.limit[x].substring(18), 10);
 					}
-					if (unitDetails.limit[x].description.includes("Boosts base ATK by ")) {
-						limitAttack += parseInt(unitDetails.limit[x].description.substring(19), 10);
+					if (unitDetails.limit[x].includes("Boosts base ATK by ")) {
+						limitAttack += parseInt(unitDetails.limit[x].substring(19), 10);
 					}
-					if (unitDetails.limit[x].description.includes("Boosts base RCV by ")) {
-						limitRecovery += parseInt(unitDetails.limit[x].description.substring(19), 10);
+					if (unitDetails.limit[x].includes("Boosts base RCV by ")) {
+						limitRecovery += parseInt(unitDetails.limit[x].substring(19), 10);
 					}
-					if (unitDetails.limit[x].description.includes("Reduce base Special Cooldown by ")) {
-						limitCooldown += parseInt(unitDetails.limit[x].description.substring(32, 33), 10);
+					if (unitDetails.limit[x].includes("Reduce base Special Cooldown by ")) {
+						limitCooldown += parseInt(unitDetails.limit[x].substring(32, 33), 10);
 					}
-					if (unitDetails.limit[x].description.includes("additional Socket slot")) {
-						limitSockets += parseInt(unitDetails.limit[x].description.substring(8, 9), 10);
+					if (unitDetails.limit[x].includes("additional Socket slot")) {
+						limitSockets += parseInt(unitDetails.limit[x].substring(8, 9), 10);
 					}
 				}
 
-				if (unitDetails.limit[x].description.includes("Boosts base HP by ")) {
-					limitexHealth += parseInt(unitDetails.limit[x].description.substring(18), 10);
-					LBhptotal += parseInt(unitDetails.limit[x].description.substring(18), 10);
+				if (unitDetails.limit[x].includes("Boosts base HP by ")) {
+					limitexHealth += parseInt(unitDetails.limit[x].substring(18), 10);
+					LBhptotal += parseInt(unitDetails.limit[x].substring(18), 10);
 				}
-				if (unitDetails.limit[x].description.includes("Boosts base ATK by ")) {
-					limitexAttack += parseInt(unitDetails.limit[x].description.substring(19), 10);
-					LBatktotal += parseInt(unitDetails.limit[x].description.substring(19), 10);
+				if (unitDetails.limit[x].includes("Boosts base ATK by ")) {
+					limitexAttack += parseInt(unitDetails.limit[x].substring(19), 10);
+					LBatktotal += parseInt(unitDetails.limit[x].substring(19), 10);
 				}
-				if (unitDetails.limit[x].description.includes("Boosts base RCV by ")) {
-					limitexRecovery += parseInt(unitDetails.limit[x].description.substring(19), 10);
-					LBrcvtotal += parseInt(unitDetails.limit[x].description.substring(19), 10);
+				if (unitDetails.limit[x].includes("Boosts base RCV by ")) {
+					limitexRecovery += parseInt(unitDetails.limit[x].substring(19), 10);
+					LBrcvtotal += parseInt(unitDetails.limit[x].substring(19), 10);
 				}
-				if (unitDetails.limit[x].description.includes("Reduce base Special Cooldown by ")) {
-					limitexCooldown += parseInt(unitDetails.limit[x].description.substring(32, 33), 10);
+				if (unitDetails.limit[x].includes("Reduce base Special Cooldown by ")) {
+					limitexCooldown += parseInt(unitDetails.limit[x].substring(32, 33), 10);
 				}
-				if (unitDetails.limit[x].description.includes("additional Socket slot")) {
-					limitexSockets += parseInt(unitDetails.limit[x].description.substring(8, 9), 10);
+				if (unitDetails.limit[x].includes("additional Socket slot")) {
+					limitexSockets += parseInt(unitDetails.limit[x].substring(8, 9), 10);
 				}
-				if (unitDetails.limit[x].description.includes("Acquire Sailor Ability")) {
+				if (unitDetails.limit[x].includes("Acquire Sailor Ability")) {
 					LBsailors++;
 					if (!unitDetails.sailor) unitDetails.sailor = {};
 					if (unitDetails.sailor.constructor == String) {
@@ -139,16 +146,16 @@
 					}
 					unitDetails.sailor["level" + LBsailors.toString()] =
 						unitDetails.sailor["level" + LBsailors.toString()] ||
-						unitDetails.limit[x].description.substring(26);
+						unitDetails.limit[x].substring(26);
 				}
-				if (unitDetails.limit[x].description.includes("Acquire new Captain Ability")) {
+				if (unitDetails.limit[x].includes("Acquire new Captain Ability")) {
 					LBcaptains++;
 					if (unitDetails.captain.constructor == String) {
 						unitDetails.captain = { base: unitDetails.captain };
 					}
 					unitDetails.captain["level" + LBcaptains.toString()] =
 						unitDetails.captain["level" + LBcaptains.toString()] ||
-						unitDetails.limit[x].description.substring(29);
+						unitDetails.limit[x].substring(29);
 				}
 				LBhp.push(LBhptotal);
 				LBatk.push(LBatktotal);
@@ -158,8 +165,8 @@
 			}
 		}
 
-		if (window.details && window.details[id] && window.details[id].lLimit) {
-			var unitDetails = window.details[id];
+		if (typeof window !== 'undefined' && window.details && window.details[numericId] && window.details[numericId].lLimit) {
+			var unitDetails = window.details[numericId];
 			for (var x in unitDetails.lLimit) {
 				if (unitDetails.lLimit[x]) {
 					if (unitDetails.lLimit[x].captain) {
@@ -199,23 +206,12 @@
 			}
 		}
 
-		var growthHP = 1, growthATK = 1, growthRCV = 1;
-		if (typeof element.growth === 'number') {
-			growthHP = element.growth;
-			growthATK = element.growth;
-			growthRCV = element.growth;
-		} else if (element.growth && typeof element.growth === 'object') {
-			growthHP = element.growth.hp || 1;
-			growthATK = element.growth.atk || 1;
-			growthRCV = element.growth.rcv || 1;
-		}
-
 		var result = {
 			id: element.id,
 			name: element.name,
 			type: element.type,
 			class: element.class,
-			tag: window.tags[element.id],
+			tag: (typeof window !== 'undefined' && window.tags && window.tags[numericId]) || [],
 			stars: element.stars,
 			cost: element.cost,
 			combo: element.combo,
@@ -241,11 +237,6 @@
 			limitexRCV: limitexRecovery,
 			limitexSocket: limitexSockets,
 			limitexCD: limitexCooldown,
-			growth: {
-				hp: growthHP,
-				atk: growthATK,
-				rcv: growthRCV,
-			},
 			number: id,
 			limitStats: {
 				hp: LBhp,
@@ -275,7 +266,7 @@
 			},
 			aliases: window.aliases && window.aliases[id] ? window.aliases[id].join(" ") : "",
 			families: (window.families && window.families[id] && window.families[id].map(utils.normalizeText)) || null,
-			support: (window.details && window.details[id] && window.details[id].support) || null,
+			support: (typeof window !== 'undefined' && window.details && window.details[numericId] && window.details[numericId].support) || null,
 		};
 		return result;
 	};
@@ -632,6 +623,17 @@
 				};
 			}
 
+			// VS unit variants (e.g., "3787-1", "3787-2")
+			var vsVariantMatch = n.match(/^(\d+)-(\d)$/);
+			if (vsVariantMatch) {
+				var baseId = parseInt(vsVariantMatch[1], 10);
+				var folder = Math.trunc(baseId / 1000) + "/" + Math.trunc((baseId % 1000) / 100) + "00";
+				return {
+					jap: basePath + "jap/" + folder + "/" + n + ".png",
+					glo: basePath + "glo/" + folder + "/" + n + ".png"
+				};
+			}
+
 			var variantMatch = n.match(/^(\d+)-(STR|QCK|PSY|DEX|INT)$/);
 			if (variantMatch) {
 				var unitId = parseInt(variantMatch[1], 10);
@@ -677,13 +679,14 @@
 			].join("\n");
 		}
 		var unit = arg.constructor == Object ? arg : window.units[String(arg)];
+		if (!unit) return '';
 		return [
-			unit.name,
-			"HP: " + unit.maxHP,
-			"ATK: " + unit.maxATK,
-			"RCV: " + unit.maxRCV,
-			"CMB: " + unit.combo,
-			"Cost: " + unit.cost,
+			unit.name || '',
+			"HP: " + (unit.maxHP || 0),
+			"ATK: " + (unit.maxATK || 0),
+			"RCV: " + (unit.maxRCV || 0),
+			"CMB: " + (unit.combo || 0),
+			"Cost: " + (unit.cost || 0),
 		].join("\n");
 	};
 
