@@ -83,19 +83,19 @@ window.effects = {
         thumb: 583,
         id: 9, // don't change this
         atk: function(p) {
-            var id = p.number + 1,
+            var id = p.unit.id,
                 matching = ((id > 463 && id < 497) || (id > 539 && id < 547 ) ||
                     [ 313, 314, 503, 504, 581, 582, 583, 584, 780, 781 ].indexOf(id) != -1);
             return !matching ? 0.8 : 1;
         },
         hp: function(p) {
-            var id = p.number + 1,
+            var id = p.unit.id,
                 matching = ((id > 463 && id < 497) || (id > 539 && id < 547 ) ||
                     [ 313, 314, 503, 504, 581, 582, 583, 584 ].indexOf(id) != -1);
             return !matching ? 0.8 : 1;
         },
         rcv: function(p) {
-            var id = p.number + 1,
+            var id = p.unit.id,
                 matching = ((id > 463 && id < 497) || (id > 539 && id < 547 ) ||
                     [ 313, 314, 503, 504, 581, 582, 583, 584 ].indexOf(id) != -1);
             return !matching ? 0.8 : 1;
@@ -409,7 +409,7 @@ window.effects = {
         id: 43, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 4133, 4134, 4135, 4127, 4108, 4122, 4124, 4128, 5578, 5579, 5580, 5581, 5586, 5587, 5588, 5589 ].indexOf(id) != -1) boost = 2.5;
             if([ 4125, 4126, 4132, 4119, 4120, 4118, 5571, 5572, 5573, 4089, 4068, 4067, 1853, 2000, 2583, 2659, 2995, 3197, 3297, 3491, 3527, 3758, 2977, 5012, 5013, 5014, 5015, 3364, 3462, 3483, 3523, 3543, 3563, 3641, 3735, 3775, 3861, 3933, 4003, 4050, 4071, 5393, 5394, 5395, 5396, 5516, 5517, 5518, 5519, 5551, 5552, 5553, 5554, 3688, 3687, 3686, 4004, 4005, 4111, 4112, 4113, 4094, 4093, 4092 ].indexOf(id) != -1) boost = 1.25;
             if([ 2936, 2938, 2940, 2942, 2944, 2946, 2948, 2950, 2952, 3884, 3886, 603, 836, 1830, 1879, 2015, 5012, 2197, 2394, 3143, 3399, 1630, 1733, 2111, 2611, 3110, 3189, 3269, 3293, 3361, 3580, 4129, 5024, 887, 951, 765, 2056, 2088, 852, 2517, 1169, 5054, 5055, 5056, 5057 ].indexOf(id) != -1) boost = 1.2;
@@ -417,7 +417,7 @@ window.effects = {
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 4133, 4134, 4135, 4127, 4108, 4122, 4124, 4128, 5578, 5579, 5580, 5581, 5586, 5587, 5588, 5589 ].indexOf(id) != -1) boost = 2.5;
             if([ 4125, 4126, 4132, 4119, 4120, 4118, 5571, 5572, 5573, 4089, 4068, 4067, 1853, 2000, 2583, 2659, 2995, 3197, 3297, 3491, 3527, 3758, 2977, 5012, 5013, 5014, 5015, 3364, 3462, 3483, 3523, 3543, 3563, 3641, 3735, 3775, 3861, 3933, 4003, 4050, 4071, 5393, 5394, 5395, 5396, 5516, 5517, 5518, 5519, 5551, 5552, 5553, 5554, 3688, 3687, 3686, 4004, 4005, 4111, 4112, 4113, 4094, 4093, 4092 ].indexOf(id) != -1) boost = 1.25;
             if([ 2936, 2938, 2940, 2942, 2944, 2946, 2948, 2950, 2952, 3884, 3886, 603, 836, 1830, 1879, 2015, 5012, 2197, 2394, 3143, 3399, 1630, 1733, 2111, 2611, 3110, 3189, 3269, 3293, 3361, 3580, 4129, 5024, 887, 951, 765, 2056, 2088, 852, 2517, 1169, 5054, 5055, 5056, 5057 ].indexOf(id) != -1) boost = 1.2;
@@ -425,7 +425,7 @@ window.effects = {
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 4133, 4134, 4135, 4127, 4108, 4122, 4124, 4128, 5578, 5579, 5580, 5581, 5586, 5587, 5588, 5589 ].indexOf(id) != -1) boost = 2.5;
             if([ 4125, 4126, 4132, 4119, 4120, 4118, 5571, 5572, 5573, 4089, 4068, 4067, 1853, 2000, 2583, 2659, 2995, 3197, 3297, 3491, 3527, 3758, 2977, 5012, 5013, 5014, 5015, 3364, 3462, 3483, 3523, 3543, 3563, 3641, 3735, 3775, 3861, 3933, 4003, 4050, 4071, 5393, 5394, 5395, 5396, 5516, 5517, 5518, 5519, 5551, 5552, 5553, 5554, 3688, 3687, 3686, 4004, 4005, 4111, 4112, 4113, 4094, 4093, 4092 ].indexOf(id) != -1) boost = 1.25;
             if([ 2936, 2938, 2940, 2942, 2944, 2946, 2948, 2950, 2952, 3884, 3886, 603, 836, 1830, 1879, 2015, 5012, 2197, 2394, 3143, 3399, 1630, 1733, 2111, 2611, 3110, 3189, 3269, 3293, 3361, 3580, 4129, 5024, 887, 951, 765, 2056, 2088, 852, 2517, 1169, 5054, 5055, 5056, 5057 ].indexOf(id) != -1) boost = 1.2;
@@ -439,19 +439,19 @@ window.effects = {
         id: 44, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 4000, 4010, 4022, 4023, 4020, 4011, 4012 ].indexOf(id) != -1) boost = 1.2;
             return boost;
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 4000, 4010, 4022, 4023, 4020, 4011, 4012 ].indexOf(id) != -1) boost = 1.2;
             return boost;
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 4000, 4010, 4022, 4023, 4020, 4011, 4012 ].indexOf(id) != -1) boost = 1.2;
             return boost;
         },
@@ -484,7 +484,7 @@ window.effects = {
         id: 46, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             //if([  ].indexOf(id) != -1) boost = 2.5;
             if([ 4137, 4138, 4122, 4124, 4125, 4126, 4132, 4133, 4134, 4135, 4128, 3307, 4139, 5578, 5579, 5580, 5581, 5586, 5587, 5588, 5589 ].indexOf(id) != -1) boost = 2;
             if([ 4115, 4116, 3886, 2936, 2938, 2940, 2942, 2944, 2946, 2948, 2950, 2952, 3884, 4127, 2729, 2583, 2792, 2977, 2023, 2025, 4082, 4054, 3780, 4084, 3917, 3590, 3646, 3692, 3738, 4035, 3302, 3445, 3803, 4034, 3427, 3861, 4012, 4037, 3957, 3956, 3607, 3515, 4129, 4100, 4102, 4111, 3625, 3592, 5488, 5489, 5490, 5491, 5385, 5386, 5387, 5388 ].indexOf(id) != -1) boost = 1.5;
@@ -493,7 +493,7 @@ window.effects = {
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             //if([  ].indexOf(id) != -1) boost = 2.5;
             if([ 4137, 4138, 4122, 4124, 4125, 4126, 4132, 4133, 4134, 4135, 4128, 3307, 4139, 5578, 5579, 5580, 5581, 5586, 5587, 5588, 5589 ].indexOf(id) != -1) boost = 2;
             if([ 4115, 4116, 3886, 2936, 2938, 2940, 2942, 2944, 2946, 2948, 2950, 2952, 3884, 4127, 2729, 2583, 2792, 2977, 2023, 2025, 4082, 4054, 3780, 4084, 3917, 3590, 3646, 3692, 3738, 4035, 3302, 3445, 3803, 4034, 3427, 3861, 4012, 4037, 3957, 3956, 3607, 3515, 4129, 4100, 4102, 4111, 3625, 3592, 5488, 5489, 5490, 5491, 5385, 5386, 5387, 5388 ].indexOf(id) != -1) boost = 1.5;
@@ -502,7 +502,7 @@ window.effects = {
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             //if([  ].indexOf(id) != -1) boost = 2.5;
             if([ 4137, 4138, 4122, 4124, 4125, 4126, 4132, 4133, 4134, 4135, 4128, 3307, 4139, 5578, 5579, 5580, 5581, 5586, 5587, 5588, 5589 ].indexOf(id) != -1) boost = 2;
             if([ 4115, 4116, 3886, 2936, 2938, 2940, 2942, 2944, 2946, 2948, 2950, 2952, 3884, 4127, 2729, 2583, 2792, 2977, 2023, 2025, 4082, 4054, 3780, 4084, 3917, 3590, 3646, 3692, 3738, 4035, 3302, 3445, 3803, 4034, 3427, 3861, 4012, 4037, 3957, 3956, 3607, 3515, 4129, 4100, 4102, 4111, 3625, 3592, 5488, 5489, 5490, 5491, 5385, 5386, 5387, 5388 ].indexOf(id) != -1) boost = 1.5;
@@ -510,7 +510,7 @@ window.effects = {
             return boost;
         },
         rainbow: function(p) {
-            var id = p.unit.number + 1;
+            var id = parseInt(window.Utils.getBaseId(p.unit.id), 10);
             if([ 4137, 4138 ].indexOf(id) != -1) return true;
         },
 	},
@@ -778,21 +778,21 @@ window.effects = {
         id: 63, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2401, 2403, 2405 ].indexOf(id) != -1) boost = 1.5;
             if([ 253, 1041, 255, 257, 259, 979, 980, 983, 453, 455, 457, 946, 947, 948, 1182, 1528, 1186, 1188, 1190, 1270, 1509, 1510, 1511, 1606, 451, 981, 1184, 1272, 1512, 1607, 1222, 1276, 1278, 1602, 1608, 1700, 1798, 1989, 2037, 1047, 1492, 1972, 447, 1268, 575, 2025, 978, 2034, 1298, 2023, 1380, 2007, 1846, 1416, 1847, 2066, 408, 1927, 1345, 1593, 649, 1251, 1991, 1387 ].indexOf(id) != -1) boost = 1.3;
             return boost;
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2401, 2403, 2405 ].indexOf(id) != -1) boost = 1.5;
             if([ 253, 1041, 255, 257, 259, 979, 980, 983, 453, 455, 457, 946, 947, 948, 1182, 1528, 1186, 1188, 1190, 1270, 1509, 1510, 1511, 1606, 451, 981, 1184, 1272, 1512, 1607, 1222, 1276, 1278, 1602, 1608, 1700, 1798, 1989, 2037, 1047, 1492, 1972, 447, 1268, 575, 2025, 978, 2034, 1298, 2023, 1380, 2007, 1846, 1416, 1847, 2066, 408, 1927, 1345, 1593, 649, 1251, 1991, 1387 ].indexOf(id) != -1) boost = 1.3;
             return boost;
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2401, 2403, 2405 ].indexOf(id) != -1) boost = 1.5;
             if([ 253, 1041, 255, 257, 259, 979, 980, 983, 453, 455, 457, 946, 947, 948, 1182, 1528, 1186, 1188, 1190, 1270, 1509, 1510, 1511, 1606, 451, 981, 1184, 1272, 1512, 1607, 1222, 1276, 1278, 1602, 1608, 1700, 1798, 1989, 2037, 1047, 1492, 1972, 447, 1268, 575, 2025, 978, 2034, 1298, 2023, 1380, 2007, 1846, 1416, 1847, 2066, 408, 1927, 1345, 1593, 649, 1251, 1991, 1387 ].indexOf(id) != -1) boost = 1.3;
             return boost;
@@ -867,17 +867,17 @@ window.effects = {
         thumb: 2475,
         id: 69, // don't change this
         atk: function(p) {
-            var id = p.number + 1,
+            var id = p.unit.id,
                 matching = ([ 77, 255, 308, 449, 455, 530, 639, 645, 677, 750, 914, 1033, 1081, 1125, 1129, 1173, 1182, 1186, 1188, 1175, 1230, 1234, 1236, 1238, 1276, 1278, 1322, 1324, 1410, 1436, 1481, 1534, 1536, 1573, 1575, 1577, 1654, 1614, 1796, 1753, 1800, 1759, 1881, 2505, 1873, 1875, 1877, 1921, 1989, 2001, 2242, 2306, 2031, 2034, 2080, 2082, 2332, 2185, 2189, 2117, 2119, 2107, 2336, 2338, 2346, 2372, 2338, 2371, 2418, 2465, 2475, 2477, 2479, 2481, 2483, 2485, 2496, 2498 ].indexOf(id) != -1);
             return !matching ? 1 : 1.25;
         },
         hp: function(p) {
-            var id = p.number + 1,
+            var id = p.unit.id,
                 matching = ([ 77, 255, 308, 449, 455, 530, 639, 645, 677, 750, 914, 1033, 1081, 1125, 1129, 1173, 1182, 1186, 1188, 1175, 1230, 1234, 1236, 1238, 1276, 1278, 1322, 1324, 1410, 1436, 1481, 1534, 1536, 1573, 1575, 1577, 1654, 1614, 1796, 1753, 1800, 1759, 1881, 2505, 1873, 1875, 1877, 1921, 1989, 2001, 2242, 2306, 2031, 2034, 2080, 2082, 2332, 2185, 2189, 2117, 2119, 2107, 2336, 2338, 2346, 2372, 2338, 2371, 2418, 2465, 2475, 2477, 2479, 2481, 2483, 2485, 2496, 2498 ].indexOf(id) != -1);
             return !matching ? 1 : 1.25;
         },
         rcv: function(p) {
-            var id = p.number + 1,
+            var id = p.unit.id,
                 matching = ([ 77, 255, 308, 449, 455, 530, 639, 645, 677, 750, 914, 1033, 1081, 1125, 1129, 1173, 1182, 1186, 1188, 1175, 1230, 1234, 1236, 1238, 1276, 1278, 1322, 1324, 1410, 1436, 1481, 1534, 1536, 1573, 1575, 1577, 1654, 1614, 1796, 1753, 1800, 1759, 1881, 2505, 1873, 1875, 1877, 1921, 1989, 2001, 2242, 2306, 2031, 2034, 2080, 2082, 2332, 2185, 2189, 2117, 2119, 2107, 2336, 2338, 2346, 2372, 2338, 2371, 2418, 2465, 2475, 2477, 2479, 2481, 2483, 2485, 2496, 2498 ].indexOf(id) != -1);
             return !matching ? 1 : 1.25;
         },
@@ -895,7 +895,7 @@ window.effects = {
         thumb: 2363,
         id: 71, // don't change this
         atk: function(p) {
-            var id = p.number + 1;
+            var id = p.unit.id;
             var evolved = !(id in window.evolutions);
             var character = window.families[p.number+1];
             if(character) if(character.length == 2) var matching = [ "Capone Bege", "Charlotte Linlin", "Carrot", "Jinbe", "Vinsmoke Judge", "Vito", "Gotti", "Charlotte Smoothie", "Charlotte Daifuku", "Tamago", "Charlotte Amande", "Caesar Clown", "Aladdin", "Charlotte Praline", "Charlotte Perospero", "Charlotte Pudding", "Bobbin", "Charlotte Opera", "Charlotte Chiffon", "Wadatsumi", "Charlotte Cracker", "Pekoms", "Charlotte Brûlée", "Charlotte Oven", "Pedro" ].indexOf(character[0]) != -1 || [ "Capone Bege", "Charlotte Linlin", "Carrot", "Jinbe", "Vinsmoke Judge", "Vito", "Gotti", "Charlotte Smoothie", "Charlotte Daifuku", "Tamago", "Charlotte Amande", "Caesar Clown", "Aladdin", "Charlotte Praline", "Charlotte Perospero", "Charlotte Pudding", "Bobbin", "Charlotte Opera", "Charlotte Chiffon", "Wadatsumi", "Charlotte Cracker", "Pekoms", "Charlotte Brûlée", "Charlotte Oven", "Pedro" ].indexOf(character[1]) != -1;
@@ -910,7 +910,7 @@ window.effects = {
             return 1;
         },
         hp: function(p) {
-            var id = p.number + 1;
+            var id = p.unit.id;
             var evolved = !(id in window.evolutions);
             var character = window.families[p.number+1];
             if(character) if(character.length == 2) var matching = [ "Capone Bege", "Charlotte Linlin", "Carrot", "Jinbe", "Vinsmoke Judge", "Vito", "Gotti", "Charlotte Smoothie", "Charlotte Daifuku", "Tamago", "Charlotte Amande", "Caesar Clown", "Aladdin", "Charlotte Praline", "Charlotte Perospero", "Charlotte Pudding", "Bobbin", "Charlotte Opera", "Charlotte Chiffon", "Wadatsumi", "Charlotte Cracker", "Pekoms", "Charlotte Brûlée", "Charlotte Oven", "Pedro" ].indexOf(character[0]) != -1 || [ "Capone Bege", "Charlotte Linlin", "Carrot", "Jinbe", "Vinsmoke Judge", "Vito", "Gotti", "Charlotte Smoothie", "Charlotte Daifuku", "Tamago", "Charlotte Amande", "Caesar Clown", "Aladdin", "Charlotte Praline", "Charlotte Perospero", "Charlotte Pudding", "Bobbin", "Charlotte Opera", "Charlotte Chiffon", "Wadatsumi", "Charlotte Cracker", "Pekoms", "Charlotte Brûlée", "Charlotte Oven", "Pedro" ].indexOf(character[1]) != -1;
@@ -925,7 +925,7 @@ window.effects = {
             return 1;
         },
         rcv: function(p) {
-            var id = p.number + 1;
+            var id = p.unit.id;
             var evolved = !(id in window.evolutions);
             var character = window.families[p.number+1];
             if(character) if(character.length == 2) var matching = [ "Capone Bege", "Charlotte Linlin", "Carrot", "Jinbe", "Vinsmoke Judge", "Vito", "Gotti", "Charlotte Smoothie", "Charlotte Daifuku", "Tamago", "Charlotte Amande", "Caesar Clown", "Aladdin", "Charlotte Praline", "Charlotte Perospero", "Charlotte Pudding", "Bobbin", "Charlotte Opera", "Charlotte Chiffon", "Wadatsumi", "Charlotte Cracker", "Pekoms", "Charlotte Brûlée", "Charlotte Oven", "Pedro" ].indexOf(character[0]) != -1 || [ "Capone Bege", "Charlotte Linlin", "Carrot", "Jinbe", "Vinsmoke Judge", "Vito", "Gotti", "Charlotte Smoothie", "Charlotte Daifuku", "Tamago", "Charlotte Amande", "Caesar Clown", "Aladdin", "Charlotte Praline", "Charlotte Perospero", "Charlotte Pudding", "Bobbin", "Charlotte Opera", "Charlotte Chiffon", "Wadatsumi", "Charlotte Cracker", "Pekoms", "Charlotte Brûlée", "Charlotte Oven", "Pedro" ].indexOf(character[1]) != -1;
@@ -988,7 +988,7 @@ window.effects = {
         thumb: 2769,
         id: 76, // don't change this
         atk: function(p) {
-            var id = p.number + 1;
+            var id = p.unit.id;
             var matching = 1;
             matching = ([ 2771, 2769 ].indexOf(id) != -1) ? 1.75 : matching;
             matching = ([ 595, 1298, 1314, 1192, 1280, 1283, 1665, 1669, 1713, 1826, 1849, 1764, 2023, 2025, 2405 ].indexOf(id) != -1) ? 1.5 : matching;
@@ -997,7 +997,7 @@ window.effects = {
             return matching;
         },
         hp: function(p) {
-            var id = p.number + 1;
+            var id = p.unit.id;
             var matching = 1;
             matching = ([ 2771, 2769 ].indexOf(id) != -1) ? 1.75 : matching;
             matching = ([ 595, 1298, 1314, 1192, 1280, 1283, 1665, 1669, 1713, 1826, 1849, 1764, 2023, 2025, 2405 ].indexOf(id) != -1) ? 1.5 : matching;
@@ -1006,7 +1006,7 @@ window.effects = {
             return matching;
         },
         rcv: function(p) {
-            var id = p.number + 1;
+            var id = p.unit.id;
             var matching = 1;
             matching = ([ 2771, 2769 ].indexOf(id) != -1) ? 1.75 : matching;
             matching = ([ 595, 1298, 1314, 1192, 1280, 1283, 1665, 1669, 1713, 1826, 1849, 1764, 2023, 2025, 2405 ].indexOf(id) != -1) ? 1.5 : matching;
@@ -1022,7 +1022,7 @@ window.effects = {
         id: 77, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             //if([ 3149, 3151, 3152 ].indexOf(id) != -1) boost = 2.5;
             if([ 3234, 3212, 3211, 3210, 3209, 3208, 3207, 3188, 3187, 3186, 3185, 3183, 3181, 3179, 3177, 3175, 3153 ].indexOf(id) != -1) boost = 2;
             if([ 3205, 3204, 3152, 3151, 3149, 3097, 3051 ].indexOf(id) != -1) boost = 1.5;
@@ -1031,7 +1031,7 @@ window.effects = {
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             //if([ 3149, 3151, 3152 ].indexOf(id) != -1) boost = 2.5;
             if([ 3234, 3212, 3211, 3210, 3209, 3208, 3207, 3188, 3187, 3186, 3185, 3183, 3181, 3179, 3177, 3175, 3153 ].indexOf(id) != -1) boost = 2;
             if([ 3205, 3204, 3152, 3151, 3149, 3097, 3051 ].indexOf(id) != -1) boost = 1.5;
@@ -1040,7 +1040,7 @@ window.effects = {
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             //if([ 3149, 3151, 3152 ].indexOf(id) != -1) boost = 2.5;
             if([ 3234, 3212, 3211, 3210, 3209, 3208, 3207, 3188, 3187, 3186, 3185, 3183, 3181, 3179, 3177, 3175, 3153 ].indexOf(id) != -1) boost = 2;
             if([ 3205, 3204, 3152, 3151, 3149, 3097, 3051 ].indexOf(id) != -1) boost = 1.5;
@@ -1062,7 +1062,7 @@ window.effects = {
         id: 79, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 3038 ].indexOf(id) != -1) boost = 2;
             if([ 3040, 3042, 3044 ].indexOf(id) != -1) boost = 1.75;
             if([ 3045, 3046, 3050 ].indexOf(id) != -1) boost = 1.55;
@@ -1071,7 +1071,7 @@ window.effects = {
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 3038 ].indexOf(id) != -1) boost = 2;
             if([ 3040, 3042, 3044 ].indexOf(id) != -1) boost = 1.75;
             if([ 3045, 3046, 3050 ].indexOf(id) != -1) boost = 1.55;
@@ -1080,7 +1080,7 @@ window.effects = {
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 3038 ].indexOf(id) != -1) boost = 2;
             if([ 3040, 3042, 3044 ].indexOf(id) != -1) boost = 1.75;
             if([ 3045, 3046, 3050 ].indexOf(id) != -1) boost = 1.55;
@@ -1095,7 +1095,7 @@ window.effects = {
         id: 80, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2840, 2802, 5195, 5196, 5197, 5198 ].indexOf(id) != -1) boost = 2;
             if([ 2812 ].indexOf(id) != -1) boost = 1.5;
             if([ 2810, 2808, 2806, 2792, 2789, 2787, 2780, 2778, 2776, 2774, 2709, 2707, 2782, 2785, 2815, 2813, 2904, 2905, 2906, 2907 ].indexOf(id) != -1) boost = 1.3;
@@ -1103,7 +1103,7 @@ window.effects = {
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2840, 2802, 5195, 5196, 5197, 5198 ].indexOf(id) != -1) boost = 2;
             if([ 2812 ].indexOf(id) != -1) boost = 1.5;
             if([ 2810, 2808, 2806, 2792, 2789, 2787, 2780, 2778, 2776, 2774, 2709, 2707, 2782, 2785, 2815, 2813, 2904, 2905, 2906, 2907 ].indexOf(id) != -1) boost = 1.3;
@@ -1111,7 +1111,7 @@ window.effects = {
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2840, 2802, 5195, 5196, 5197, 5198 ].indexOf(id) != -1) boost = 2;
             if([ 2812 ].indexOf(id) != -1) boost = 1.5;
             if([ 2810, 2808, 2806, 2792, 2789, 2787, 2780, 2778, 2776, 2774, 2709, 2707, 2782, 2785, 2815, 2813, 2904, 2905, 2906, 2907 ].indexOf(id) != -1) boost = 1.3;
@@ -1140,7 +1140,7 @@ window.effects = {
         id: 83, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2883 ].indexOf(id) != -1) boost = 2;
             if([ 2881, 2882 ].indexOf(id) != -1) boost = 1.75;
             if([ 2684, 2682, 2681, 2672, 2670, 2659, 2649 ].indexOf(id) != -1) boost = 1.25;
@@ -1148,7 +1148,7 @@ window.effects = {
         },    
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2883 ].indexOf(id) != -1) boost = 2;
             if([ 2881, 2882 ].indexOf(id) != -1) boost = 1.75;
             if([ 2684, 2682, 2681, 2672, 2670, 2659, 2649 ].indexOf(id) != -1) boost = 1.25;
@@ -1156,7 +1156,7 @@ window.effects = {
         },    
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2883 ].indexOf(id) != -1) boost = 2;
             if([ 2881, 2882 ].indexOf(id) != -1) boost = 1.75;
             if([ 2684, 2682, 2681, 2672, 2670, 2659, 2649 ].indexOf(id) != -1) boost = 1.25;
@@ -1170,7 +1170,7 @@ window.effects = {
         id: 84, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2734 ].indexOf(id) != -1) boost = 2;
             if([ 2736, 2735, 2738 ].indexOf(id) != -1) boost = 1.75;
             if([ 2557, 5140, 5141, 5142, 5143, 2347, 2019, 2007, 1707, 1380, 2536, 5093, 5094, 5095, 2500, 2473, 2381, 2109, 2700, 2387, 2690, 2197, 1268, 2302, 2504, 1980, 1016, 365, 2477, 1921, 2097, 2525, 2707, 2534, 5086, 5087, 5088, 5089, 1922, 2001, 1751, 2709, 2336, 1581, 2672, 1985, 5008, 5009, 5010, 5011, 1916, 2087, 2519, 2245, 2148, 2919, 5180, 5181, 5182, 5183, 1961, 2459, 2523, 314, 781, 1865, 312, 1043, 2609, 1982, 359, 882, 361, 1091, 1857, 1855, 310, 2729, 1867, 831, 357, 2111, 1690, 2152, 1963, 2457 ].indexOf(id) != -1) boost = 1.5;
@@ -1178,7 +1178,7 @@ window.effects = {
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2734 ].indexOf(id) != -1) boost = 2;
             if([ 2736, 2735, 2738 ].indexOf(id) != -1) boost = 1.75;
             if([ 2557, 5140, 5141, 5142, 5143, 2347, 2019, 2007, 1707, 1380, 2536, 5093, 5094, 5095, 2500, 2473, 2381, 2109, 2700, 2387, 2690, 2197, 1268, 2302, 2504, 1980, 1016, 365, 2477, 1921, 2097, 2525, 2707, 2534, 5086, 5087, 5088, 5089, 1922, 2001, 1751, 2709, 2336, 1581, 2672, 1985, 5008, 5009, 5010, 5011, 1916, 2087, 2519, 2245, 2148, 2919, 5180, 5181, 5182, 5183, 1961, 2459, 2523, 314, 781, 1865, 312, 1043, 2609, 1982, 359, 882, 361, 1091, 1857, 1855, 310, 2729, 1867, 831, 357, 2111, 1690, 2152, 1963, 2457 ].indexOf(id) != -1) boost = 1.5;
@@ -1186,7 +1186,7 @@ window.effects = {
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 2734 ].indexOf(id) != -1) boost = 2;
             if([ 2736, 2735, 2738 ].indexOf(id) != -1) boost = 1.75;
             if([ 2557, 5140, 5141, 5142, 5143, 2347, 2019, 2007, 1707, 1380, 2536, 5093, 5094, 5095, 2500, 2473, 2381, 2109, 2700, 2387, 2690, 2197, 1268, 2302, 2504, 1980, 1016, 365, 2477, 1921, 2097, 2525, 2707, 2534, 5086, 5087, 5088, 5089, 1922, 2001, 1751, 2709, 2336, 1581, 2672, 1985, 5008, 5009, 5010, 5011, 1916, 2087, 2519, 2245, 2148, 2919, 5180, 5181, 5182, 5183, 1961, 2459, 2523, 314, 781, 1865, 312, 1043, 2609, 1982, 359, 882, 361, 1091, 1857, 1855, 310, 2729, 1867, 831, 357, 2111, 1690, 2152, 1963, 2457 ].indexOf(id) != -1) boost = 1.5;
@@ -1200,7 +1200,7 @@ window.effects = {
         id: 85, // don't change this
         atk: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 3246, 3248, 3249 ].indexOf(id) != -1) boost = 2;
             if([ 3247 ].indexOf(id) != -1) boost = 1.75;
             if([ 227, 306, 750, 752, 754, 756, 760, 804, 806, 860, 865, 978, 1230, 1232, 1234, 1236, 1238, 1298, 1316, 1318, 1320, 1322, 1324, 1595, 1614, 1808, 1846, 1926, 1983, 5000, 5001, 5002, 5003, 5004, 1991, 1993, 2015, 2027, 2029, 2031, 2068, 2183, 2185, 2187, 2189, 2283, 2483, 2510, 2538, 2542, 2552, 5084, 5085, 5086, 5087, 5100, 5101, 5102, 5103, 5124, 5125, 5126, 5127, 2583, 2605, 2618, 5168, 5169, 5170, 5171, 2632, 2659, 2668, 2670, 2795, 5172, 5173, 5174, 5175, 2819, 5188, 5189, 5190, 5191, 2841, 2867, 5237, 5238, 5239, 2882, 2895, 5244, 5245, 5246, 5247, 2966, 2975, 3007, 3038, 3052, 3097, 3098, 5268, 5269, 5270, 5271, 3100, 3104, 3106, 3157, 3171, 3172, 3186, 1445, 1663, 1847, 1881, 2034, 2434, 2505, 2578, 2954, 2991, 3240, 2682, 2064, 1778, 3197 ].indexOf(id) != -1) boost = 1.5;
@@ -1208,7 +1208,7 @@ window.effects = {
         },
         hp: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 3246, 3248, 3249 ].indexOf(id) != -1) boost = 2;
             if([ 3247 ].indexOf(id) != -1) boost = 1.75;
             if([ 227, 306, 750, 752, 754, 756, 760, 804, 806, 860, 865, 978, 1230, 1232, 1234, 1236, 1238, 1298, 1316, 1318, 1320, 1322, 1324, 1595, 1614, 1808, 1846, 1926, 1983, 5000, 5001, 5002, 5003, 5004, 1991, 1993, 2015, 2027, 2029, 2031, 2068, 2183, 2185, 2187, 2189, 2283, 2483, 2510, 2538, 2542, 2552, 5084, 5085, 5086, 5087, 5100, 5101, 5102, 5103, 5124, 5125, 5126, 5127, 2583, 2605, 2618, 5168, 5169, 5170, 5171, 2632, 2659, 2668, 2670, 2795, 5172, 5173, 5174, 5175, 2819, 5188, 5189, 5190, 5191, 2841, 2867, 5237, 5238, 5239, 2882, 2895, 5244, 5245, 5246, 5247, 2966, 2975, 3007, 3038, 3052, 3097, 3098, 5268, 5269, 5270, 5271, 3100, 3104, 3106, 3157, 3171, 3172, 3186, 1445, 1663, 1847, 1881, 2034, 2434, 2505, 2578, 2954, 2991, 3240, 2682, 2064, 1778, 3197 ].indexOf(id) != -1) boost = 1.5;
@@ -1216,7 +1216,7 @@ window.effects = {
         },
         rcv: function(p) {
             var boost = 1;
-            var id = p.number + 1;
+            var id = p.unit.id;
             if([ 3246, 3248, 3249 ].indexOf(id) != -1) boost = 2;
             if([ 3247 ].indexOf(id) != -1) boost = 1.75;
             if([ 227, 306, 750, 752, 754, 756, 760, 804, 806, 860, 865, 978, 1230, 1232, 1234, 1236, 1238, 1298, 1316, 1318, 1320, 1322, 1324, 1595, 1614, 1808, 1846, 1926, 1983, 5000, 5001, 5002, 5003, 5004, 1991, 1993, 2015, 2027, 2029, 2031, 2068, 2183, 2185, 2187, 2189, 2283, 2483, 2510, 2538, 2542, 2552, 5084, 5085, 5086, 5087, 5100, 5101, 5102, 5103, 5124, 5125, 5126, 5127, 2583, 2605, 2618, 5168, 5169, 5170, 5171, 2632, 2659, 2668, 2670, 2795, 5172, 5173, 5174, 5175, 2819, 5188, 5189, 5190, 5191, 2841, 2867, 5237, 5238, 5239, 2882, 2895, 5244, 5245, 5246, 5247, 2966, 2975, 3007, 3038, 3052, 3097, 3098, 5268, 5269, 5270, 5271, 3100, 3104, 3106, 3157, 3171, 3172, 3186, 1445, 1663, 1847, 1881, 2034, 2434, 2505, 2578, 2954, 2991, 3240, 2682, 2064, 1778, 3197 ].indexOf(id) != -1) boost = 1.5;
