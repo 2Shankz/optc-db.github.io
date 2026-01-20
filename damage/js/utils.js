@@ -4,6 +4,71 @@
 
 var MODIFIERS = [ 'Miss', 'Good', 'Great', 'Perfect' ];
 
+window.Utils = window.Utils || {};
+
+/**
+ * Extract base ID from variant ID
+ * Examples:
+ *   "1983-1" -> "1983"
+ *   "1983-INT" -> "1983"
+ *   "1983" -> "1983"
+ */
+window.Utils.getBaseId = function(id) {
+    return String(id).split('-')[0];
+};
+
+/**
+ * Check if ID is a variant (has - in it)
+ */
+window.Utils.isVariant = function(id) {
+    return String(id).includes('-');
+};
+
+/**
+ * Get variant suffix from ID
+ * Examples:
+ *   "1983-1" -> "1"
+ *   "1983-INT" -> "INT"
+ *   "1983" -> null
+ */
+window.Utils.getVariantSuffix = function(id) {
+    var parts = String(id).split('-');
+    return parts.length > 1 ? parts[1] : null;
+};
+
+/**
+ * Check if unit is a base unit (type: null)
+ */
+window.Utils.isBaseUnit = function(unit) {
+    return unit && unit.type === null;
+};
+
+/**
+ * Get the display name for a unit in the picker
+ * Shows variant suffix for clarity (e.g., "Smoker & Tashigi (INT)")
+ */
+window.Utils.getDisplayName = function(unit) {
+    if (!unit) return '';
+    if (unit.type === null) return unit.name;
+    var suffix = window.Utils.getVariantSuffix(unit.id);
+    if (suffix) {
+        return unit.name + ' (' + suffix + ')';
+    }
+    return unit.name;
+};
+
+/**
+ * Compare two unit IDs by their base ID
+ * Useful for sorting and grouping
+ */
+window.Utils.compareBaseIds = function(id1, id2) {
+    var base1 = parseInt(window.Utils.getBaseId(id1), 10);
+    var base2 = parseInt(window.Utils.getBaseId(id2), 10);
+    if (base1 < base2) return -1;
+    if (base1 > base2) return 1;
+    return 0;
+};
+
 window.CrunchUtils = { };
 
 window.CrunchUtils.okamaCheck = function(array, modifiers, data) {
@@ -212,171 +277,56 @@ window.CrunchUtils.getOrbMultiplier = function(orb, type, uclass, baseMultiplier
     }); */
 
     boostedMultiplier = parseFloat(params.customBuffs.orb) != 1 ? parseFloat(params.customBuffs.orb) : boostedMultiplier;
-    
-    if(effectName == 'STR Orbs Beneficial'){
-        if (orb == 'str') return boostedMultiplier;
-        if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-    }
-    if(window.specials[1221].turnedOn || window.specials[1222].turnedOn || window.specials[2235].turnedOn || window.specials[2236].turnedOn || window.specials[2363].turnedOn || window.specials[2370].turnedOn || window.specials[2371].turnedOn){
-        if (orb == 'str') return boostedMultiplier;
-        if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-    }
-    if(window.specials[3957].turnedOn){
-        if (orb == 'meat') return boostedMultiplier;
-    }
-    if(window.specials[1940].turnedOn || window.specials[1941].turnedOn){
-        if(type == 'STR' || type == 'PSY' || type == 'QCK'){
-            if (orb == 'str') return boostedMultiplier;
-            if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-        }
-    }
-    if(window.specials[1323].turnedOn || window.specials[1324].turnedOn){
-        if(uclass.has("Driven") || uclass.has("Slasher")){
-            if (orb == 'str') return boostedMultiplier;
-            if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-            if (orb == 'dex') return boostedMultiplier;
-            if (orb == 0.5 && type == 'QCK') return boostedMultiplier;
-        }
-    }
-    if(window.specials[1593].turnedOn.has(true)){
-        if(uclass.has("Fighter") || uclass.has("Free Spirit")){
-            if (orb == 'str') return boostedMultiplier;
-            if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-        }
-    }
-    if(window.specials[1259].turnedOn || window.specials[1260].turnedOn || window.specials[2425].turnedOn || window.specials[2426].turnedOn){
-        if(uclass.has("Driven")){
-            if (orb == 'str') return boostedMultiplier;
-            if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-        }
-    }
-    if(window.specials[1640].turnedOn || window.specials[1746].turnedOn || window.specials[1747].turnedOn || window.specials[2309].turnedOn || window.specials[2310].turnedOn || window.specials[2324].turnedOn || window.specials[2325].turnedOn){
-        if(uclass.has("Shooter")){
-            if (orb == 'str') return boostedMultiplier;
-            if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-        }
-    }
-    if(window.specials[1651].turnedOn || window.specials[1652].turnedOn || window.specials[2373].turnedOn || window.specials[2470].turnedOn || window.specials[2471].turnedOn){
-        if(uclass.has("Striker")){
-            if (orb == 'str') return boostedMultiplier;
-            if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-        }
-    }
-    if(window.specials[1528].turnedOn || window.specials[2318].turnedOn || window.specials[2470].turnedOn || window.specials[2471].turnedOn){
-        if(uclass.has("Powerhouse")){
-            if (orb == 'str') return boostedMultiplier;
-            if (orb == 0.5 && type == 'DEX') return boostedMultiplier;
-            if (orb == 'dex') return boostedMultiplier;
-            if (orb == 0.5 && type == 'QCK') return boostedMultiplier;
-        }
-    }
-    if(window.specials[2236].turnedOn || window.specials[2235].turnedOn){
-        if (orb == 'dex' || orb == 'int') return boostedMultiplier;
-        if ((orb == 0.5 && type == 'PSY') || (orb == 0.5 && type == 'QCK')) return boostedMultiplier;
-    }
-    if(window.specials[2249].turnedOn){
-        if (orb == 'int') return boostedMultiplier;
-        if (orb == 0.5 && type == 'PSY') return boostedMultiplier;
-    }
-    if(window.specials[2374].turnedOn || window.specials[2375].turnedOn){
-        if(uclass.has("Slasher") || uclass.has("Powerhouse")){
-            if (orb == 'dex' || orb == 'int') return boostedMultiplier;
-            if ((orb == 0.5 && type == 'PSY') || (orb == 0.5 && type == 'QCK')) return boostedMultiplier;
-        }
-    }
-    if(window.specials[1977].turnedOn || window.specials[1978].turnedOn){
-        if(uclass.has("Free Spirit")){
-            if (orb == 'dex' || orb == 'int') return boostedMultiplier;
-            if ((orb == 0.5 && type == 'PSY') || (orb == 0.5 && type == 'QCK')) return boostedMultiplier;
-        }
-    }
-    if(window.specials[1515].turnedOn || window.specials[1516].turnedOn){
-        if (orb == 'meat') return boostedMultiplier;
-    }
-    if(window.specials[1593].turnedOn.has(true)){
-        if(uclass.has("Fighter")){
-            if (orb == 'meat') return boostedMultiplier;
-        }
-    }
-    if(window.specials[1181].turnedOn || window.specials[1182].turnedOn){
-        if(uclass.has("Slasher")){
-            if (orb == 'meat') return boostedMultiplier;
-        }
-    }
-    if(window.specials[1379].turnedOn || window.specials[1380].turnedOn){
-        if(uclass.has("Cerebral") || uclass.has("Free Spirit")){
-            if (orb == 'meat') return boostedMultiplier;
-        }
-    }
-    if(window.specials[2128].turnedOn){
-        if(uclass.has("Slasher") || uclass.has("Striker")){
-            if (orb == 'meat') return boostedMultiplier;
-            if (orb == 'dex') return boostedMultiplier;
-            if (orb == 0.5 && type == 'QCK') return boostedMultiplier;
-        }
-    }
-    if(window.specials[3740].turnedOn || window.specials[3741].turnedOn){
-        if (orb == 'empty') return boostedMultiplier;
-    }
-    if(window.specials[5430].turnedOn || window.specials[5432].turnedOn || window.altspecials[5432].turnedOn || window.altspecials[5432].turnedOn){
-        if (orb == 'tnd') return boostedMultiplier;
-    }
-    if(window.specials[1269].turnedOn || window.specials[1270].turnedOn || window.specials[1330].turnedOn || window.specials[1546].turnedOn || window.specials[1547].turnedOn || window.specials[1557].turnedOn || window.specials[1890].turnedOn || window.specials[1891].turnedOn || window.specials[2227].turnedOn || window.specials[2478].turnedOn || window.specials[2479].turnedOn){
-        if (orb == 0.5) return baseMultiplier;
-    }
+
     for(temp = 0; temp < 2; temp++){
         if(captains[temp] != null){
-            if([1610, 1609, 1532, 1531, 2232, 2233, 2234, 2500, 2300, 2803, 2804, 5052, 5054, 5055, 5057, 2957, 2957, 3306, 3307, 3814, 3888, 3889, 3904, 3905, 3947, 3948, 5453, 5454, 5455, 5456, 5457, 5548, 5459, 5460, 3955, 3956, 3957, 3966, 3967, 5547, 5548, 5549, 5550, 5551, 5552, 5553, 5554, 4028, 4029, 4139].includes(captains[temp].number + 1)){
+            var captainBaseId = window.Utils.getBaseId(captains[temp].id);
+            if([1610, 1609, 1532, 1531, 2232, 2233, 2234, 2500, 2300, 2803, 2804, "2516-INT",  "2517-1", "2517-2", "2517-QCK", 2957, 2957, 3306, 3307, 3814, 3888, 3889, 3904, 3905, 3947, 3948, "3877-1", "3877-2", "3877-STR", "3877-DEX", "3878-1", "3878-2", "3878-STR", "3878-DEX", 3955, 3956, 3957, 3966, 3967, "4002-1", "4002-2", "4002-STR", "4002-QCK", "4003-1", "4003-1", "4003-STR", "4003-QCK", 4028, 4029, 4139].includes(parseInt(captainBaseId))){
                 if (orb == 'meat'){
                     return boostedMultiplier;
                 }
             }
-            if([5453, 5454, 5455, 5456, 5457, 5548, 5459, 5460, 5539, 5540, 5541, 5542, 5543, 5544, 5545, 5546, 4028, 4029, 4050].includes(captains[temp].number + 1)){
+            if(["3877-1", "3877-2", "3877-STR", "3877-DEX", "3878-1", "3878-2", "3878-STR", "3878-DEX",  "3994-1",  "3994-2",  "3994-INT",  "3994-PSY", "3995-1", "3995-2", "3995-INT", "3995-PSY", 4028, 4029, 4050].includes(parseInt(captainBaseId))){
                 if (orb == 'tnd'){
                     return boostedMultiplier;
                 }
             }
-            if([2012, 2013].includes(captains[temp].number + 1) && uclass.has("Free Spirit")){
+            if([2012, 2013].includes(parseInt(captainBaseId)) && uclass.has("Free Spirit")){
                 if (orb == 'meat'){
                     return boostedMultiplier;
                 }
             }
-            /*if([2374, 2375].includes(captains[temp].number + 1) && (uclass.has("Driven") || uclass.has("Powerhouse"))){
-                if (orb == 'meat'){
-                    return boostedMultiplier;
-                }
-            }*/
-            if([2022, 2023].includes(captains[temp].number + 1) && type == 'INT'){
+            if([2022, 2023].includes(parseInt(captainBaseId)) && type == 'INT'){
                 if (orb == 'str'){
                     return boostedMultiplier;
                 }
             }
-            if([2306].includes(captains[temp].number + 1) && (uclass.has("Slasher") || uclass.has("Cerebral"))){
+            if([2306].includes(parseInt(captainBaseId)) && (uclass.has("Slasher") || uclass.has("Cerebral"))){
                 if (orb == 'str' || (type == 'DEX' && orb == 0.5)){
                     return boostedMultiplier;
                 }
             }
-            if([5036, 5037, 5038, 5039, 5040, 5041, 5042, 5043].includes(captains[temp].number + 1) && (uclass.has("Driven"))){
+            if(["2445-1", "2445-2", "2445-PSY", "2446-1", "2446-2", "2446-PSY", "2468-1", "2468-2"].includes(parseInt(captainBaseId)) && (uclass.has("Driven"))){
                 if (orb == 'str' || (type == 'DEX' && orb == 0.5)){
                     return boostedMultiplier;
                 }
             }
-            if([2137].includes(captains[temp].number + 1)){
+            if([2137].includes(parseInt(captainBaseId))){
                 if (orb == 'str' || (type == 'DEX' && orb == 0.5)){
                     return boostedMultiplier;
                 }
             }
-            if([5026, 5027].includes(captains[temp].number + 1) && type == 'DEX'){
+            if(["2399-DEX", "2399-STR"].includes(parseInt(captainBaseId)) && type == 'DEX'){
                 if (orb == 0.5){
                     return boostedMultiplier;
                 }
             }
-            if([2476, 2477].includes(captains[temp].number + 1) && (uclass.has("Slasher"))){
+            if([2476, 2477].includes(parseInt(captainBaseId)) && (uclass.has("Slasher"))){
                 if ((orb == 'dex' || orb == 'int') || (orb == 0.5  && (type == 'QCK' || type == 'PSY'))){
                     return boostedMultiplier;
                 }
             }
-            if([4050].includes(captains[temp].number + 1)){
+            if([4050].includes(parseInt(captainBaseId))){
                 if ((orb == 'dex') || (orb == 2  && type == 'DEX')){
                     return boostedMultiplier;
                 }
