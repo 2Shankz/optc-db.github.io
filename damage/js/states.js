@@ -92,18 +92,6 @@ angular.module('optc').config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        
-        .state('main.gather',{
-            url: 'gather',
-            views: {
-                popup: {
-                    templateUrl: 'views/popup/gather.html',
-                    controller: function($scope) {
-                        $scope.units = Object.values(window.units).filter(function(x) { return x.growth && x.growth.atk === 0; });
-                    }
-                }
-            }
-        })
 
         .state('main.candy',{
             url: 'candies',
