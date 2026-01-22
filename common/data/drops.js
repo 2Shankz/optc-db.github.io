@@ -3588,6 +3588,16 @@ window.drops = {
             'Defeat Level Rewards': [ 4496 ],
         },
 
+        {
+            name: 'Doll & Bluegrass',
+            dropID: 'pka33',
+            thumb: 4510,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4510 ],
+        },
+
     ],
 
 
