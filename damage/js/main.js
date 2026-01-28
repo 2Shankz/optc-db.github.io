@@ -2,9 +2,6 @@
 
 /* * * * * Bootstrapping * * * * */
 
-if (window.hasOwnProperty('units')) Utils.parseUnits(true);
-else window.addEventListener('load',function() { Utils.parseUnits(true); },false);
-
 /************
  * MainCtrl *
  ************/
@@ -61,8 +58,6 @@ var MainCtrl = function($scope, $rootScope, $controller, $filter, $storage) {
             zombieNoty = $scope.notify({ timeout: 0, type: 'information',
                 text: 'Maximum tankable damage: ' + $filter('number')(zombie[1]) + ' HP per turn',});
     });
-
-    $scope.showGatherButton = window.units.some(function(x) { return !x.incomplete && x.growth && x.growth.atk === 0; });
 
     /* * * * * Notifications * * * * */
 

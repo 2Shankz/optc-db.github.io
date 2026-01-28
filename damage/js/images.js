@@ -140,16 +140,17 @@ app.controller('ImageGeneratorCtrl', function($scope, $filter, $timeout) {
                         x: baseX + 40, y: baseY + 18, color: 'gold', stroke: 'black', strokeWidth: 3 });
                 }
 
-                if (n >= 2 && window.sailors.hasOwnProperty(unit.number +1)) {
+                if (n >= 2 && window.sailors.hasOwnProperty(parseInt(unit.id))) {
                     awesome(context, { text: 'f13d',
                         x: baseX + 3, y: baseY + 105, color: 'gold', stroke: 'black', strokeWidth: 3 });
                 }
             };
-            image.src = Utils.getThumbnailUrl(unit.number + 1, '..');
-            //image.src = Utils.getGlobalThumbnailUrl(unit.number + 1);
-            //image.onerror = function(){
-            //    image.src = Utils.getThumbnailUrl(unit.number + 1, '..');
-            //}
+            var paths = Utils.getThumbnailUrl(unit.id, '..');
+            image.src = paths.glo;
+            image.onerror = function() {
+                this.onerror = null;
+                this.src = paths.jap;
+            };
         });
     },true);
 

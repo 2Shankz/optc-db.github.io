@@ -7,24 +7,23 @@
     var additionalColumns = $storage.get("charColumns", []);
 
     var padding =
-      Math.floor(Math.log(window.units.length + 2) / Math.log(10)) + 1;
+      Math.floor(Math.log(Object.keys(window.units).length + 2) / Math.log(10)) + 1;
     var table = null;
 
     var addImage = function (data, type, row, meta) {
       if (type == "display") {
-        // return '<img class="slot small" data-original="' + Utils.getThumbnailUrl(row[0], '..') + '"> ' +
-        //     //return '<img class="slot small" data-original="' + Utils.getGlobalThumbnailUrl(row[0]) + '" onerror="this.onerror=null;this.src=\'' + Utils.getThumbnailUrl(row[0], '..') + '\';"> ' +
-        //     '<a ui-sref="main.search.view({ id: ' + parseInt(row[0],10) + '})">' + data + '</a>';
-
+        var id = parseInt(row[0], 10);
+        var paths = Utils.getThumbnailUrl(id, "..");
+        var noimage = "../api/images/common/noimage.png";
         return (
           '<img class="slot small" data-original="' +
-          Utils.getThumbnailUrl(row[0], "..") +
+          paths.glo +
           '" ' +
           "onerror=\"this.onerror=null; this.src='" +
-          Utils.getGlobalThumbnailUrl(row[0], "..") +
-          "'\">" +
+          paths.jap +
+          "'; this.onerror=function(){this.src='" + noimage + "'};\">" +
           '<a ui-sref="main.search.view({ id: ' +
-          parseInt(row[0], 10) +
+          id +
           '})">' +
           data +
           "</a>"
@@ -33,7 +32,7 @@
       return data; // only the Name string for filtering, sorting, etc.
     };
 
-    var fuse = new Fuse(window.units, {
+    var fuse = new Fuse(Object.values(window.units), {
       keys: ["name", "aliases"],
       id: "number",
       threshold: 0.3,
@@ -63,7 +62,7 @@
         { title: "ATK" },
         { title: "RCV" },
         { title: "Cost" },
-        { title: "Slots" },
+        { title: "Sockets" },
         { title: "Stars" },
         { title: "CL", orderable: false },
       ];
@@ -88,9 +87,25 @@
 
     var tableFilter = function (settings, data, index) {
       if (!tableData.parameters) return true;
-      var id = parseInt(data[0], 10),
-        unit = window.units[id - 1];
-      var flags = window.flags[unit.number + 1] || {};
+var id = parseInt(data[0], 10),
+  unit = window.units[String(id)];
+if (!unit) {
+  console.warn('[TableFilter] Missing unit for ID:', id, '- Row excluded from filtered results');
+  return false;
+}
+var flags = window.flags[unit.id] || {};
+
+      /* Helper to get class array for VS units (when unit.class is null) */
+      function getVsUnitClasses() {
+        if (unit.class !== null) return null;
+        var baseId = unit.id;
+        var variant1 = window.units[baseId + '-1'];
+        var variant2 = window.units[baseId + '-2'];
+        var result = [];
+        if (variant1 && variant1.class) result.push(variant1.class);
+        if (variant2 && variant2.class) result.push(variant2.class);
+        return result.length > 0 ? result : null;
+      }
 
       /* * * * * Query filters * * * * */
 
@@ -101,7 +116,7 @@
 
         if (tableData.parameters.query) {
           if (fused === null) fused = fuse.search(tableData.parameters.query);
-          if (fused.indexOf(id - 1) == -1) return false;
+          if (fused.indexOf(id) == -1) return false;
         }
       }
 
@@ -123,8 +138,10 @@
             return false;
       }
       // filter by class
-      if (!Array.isArray(unit.class) && filters.noSingleClass) return false;
+      if (!Array.isArray(unit.class) && unit.class !== null && filters.noSingleClass) return false;
+      // VS units pass the noSingleClass check (they have classes in variants)
       if (filters.classes && filters.classes.length) {
+        // Define filter variables BEFORE using them (available for both VS and regular units)
         var inclusive = !filters.classInclusive;
         var singleQuery = filters.classes.length == 1,
           singleClass = !Array.isArray(unit.class),
@@ -141,76 +158,177 @@
                 ? true
                 : false
               : false;
-        if (!inclusive) {
-          if (singleClass) {
-            if (singleQuery) if (filters.classes[0] != unit.class) return false;
-            if (!singleQuery)
+
+        var vsClasses = getVsUnitClasses();
+        // Handle VS units (unit.class === null)
+        if (vsClasses) {
+          var vsMatch = false;
+          // Check each variant - include if at least one variant matches the filter
+          for (var v = 0; v < vsClasses.length; v++) {
+            var variantClasses = vsClasses[v];
+            var vSingleClass = !Array.isArray(variantClasses);
+            var vDoubleClass = Array.isArray(variantClasses) && variantClasses.length == 2 && !Array.isArray(variantClasses[0]);
+            var vDualCharacter = Array.isArray(variantClasses) && variantClasses.length == 3;
+            var vVsCharacter = Array.isArray(variantClasses) && variantClasses.length == 2 && Array.isArray(variantClasses[0]);
+
+            var vMatch = false;
+            if (!inclusive) {
+              if (vSingleClass) {
+                if (singleQuery) {
+                  if (filters.classes[0] == variantClasses) vMatch = true;
+                } else {
+                  if (filters.classes.includes(variantClasses)) vMatch = true;
+                }
+              } else if (vDoubleClass) {
+                if (singleQuery) {
+                  // For single query with double class, check if the single class matches either
+                  if (filters.classes[0] == variantClasses[0] || filters.classes[0] == variantClasses[1]) vMatch = true;
+                } else {
+                  if (filters.classes.includes(variantClasses[0]) && filters.classes.includes(variantClasses[1])) {
+                    vMatch = true;
+                  }
+                }
+              } else {
+                // Dual character or VS character format
+                if (singleQuery) {
+                  var vt1 = false, vt2 = false, vt3 = false;
+                  if (variantClasses[0].length != 2) {
+                    if (filters.classes[0] == variantClasses[0]) vt1 = true;
+                  }
+                  if (variantClasses[1].length != 2) {
+                    if (filters.classes[0] == variantClasses[1]) vt2 = true;
+                  }
+                  if (vDualCharacter) {
+                    if (variantClasses[2] && variantClasses[2].length != 2) {
+                      if (filters.classes[0] == variantClasses[2]) vt3 = true;
+                    }
+                  }
+                  if (vt1 || vt2 || vt3) vMatch = true;
+                } else {
+                  // Multi-query - need ALL selected classes present in at least one variant's classes
+                  var vAllClassesPresent = true;
+                  for (var fc = 0; fc < filters.classes.length; fc++) {
+                    var foundClass = false;
+                    for (var c = 0; c < variantClasses.length; c++) {
+                      if (Array.isArray(variantClasses[c])) {
+                        // Check both classes in the pair
+                        if (variantClasses[c].includes(filters.classes[fc])) {
+                          foundClass = true;
+                          break;
+                        }
+                      } else {
+                        if (variantClasses[c] == filters.classes[fc]) {
+                          foundClass = true;
+                          break;
+                        }
+                      }
+                    }
+                    if (!foundClass) {
+                      vAllClassesPresent = false;
+                      break;
+                    }
+                  }
+                  if (vAllClassesPresent) vMatch = true;
+                }
+              }
+            } else {
+              // Inclusive mode - include if ANY selected class is present in any variant
+              for (var fc = 0; fc < filters.classes.length; fc++) {
+                for (var c = 0; c < variantClasses.length; c++) {
+                  if (Array.isArray(variantClasses[c])) {
+                    if (variantClasses[c].includes(filters.classes[fc])) {
+                      vMatch = true;
+                      break;
+                    }
+                  } else {
+                    if (variantClasses[c] == filters.classes[fc]) {
+                      vMatch = true;
+                      break;
+                    }
+                  }
+                }
+                if (vMatch) break;
+              }
+            }
+            if (vMatch) {
+              vsMatch = true;
+              break;
+            }
+          }
+          if (!vsMatch) return false;
+        } else {
+          // Regular unit handling (unit.class is not null)
+          if (!inclusive) {
+            if (singleClass) {
+              if (singleQuery) if (filters.classes[0] != unit.class) return false;
+              if (!singleQuery)
+                if (!filters.classes.includes(unit.class)) return false;
+            } else if (doubleClass) {
+              if (singleQuery) return false;
+              if (!singleQuery)
+                if (
+                  !filters.classes.includes(unit.class[0]) ||
+                  !filters.classes.includes(unit.class[1])
+                )
+                  return false;
+            } else {
+              if (singleQuery) {
+                var temp1 = false;
+                var temp2 = false;
+                var temp3 = false;
+                if (unit.class[0].length != 2) {
+                  if (filters.classes[0] == unit.class[0]) temp1 = true;
+                }
+                if (unit.class[1].length != 2) {
+                  if (filters.classes[0] == unit.class[1]) temp2 = true;
+                }
+                if (dualCharacter)
+                  if (unit.class[2].length != 2) {
+                    if (filters.classes[0] == unit.class[2]) temp3 = true;
+                  }
+                if (!(temp1 || temp2 || temp3)) return false;
+              }
+              if (!singleQuery) {
+                if (dualCharacter)
+                  if (
+                    (!filters.classes.includes(unit.class[0][0]) ||
+                      !filters.classes.includes(unit.class[0][1])) &&
+                    (!filters.classes.includes(unit.class[1][0]) ||
+                      !filters.classes.includes(unit.class[1][1])) &&
+                    (!filters.classes.includes(unit.class[2][0]) ||
+                      !filters.classes.includes(unit.class[2][1]))
+                  )
+                    return false;
+                if (vsCharacter)
+                  if (
+                    (!filters.classes.includes(unit.class[0][0]) ||
+                      !filters.classes.includes(unit.class[0][1])) &&
+                    (!filters.classes.includes(unit.class[1][0]) ||
+                      !filters.classes.includes(unit.class[1][1]))
+                  )
+                    return false;
+              }
+            }
+          } else {
+            if (singleClass)
               if (!filters.classes.includes(unit.class)) return false;
-          } else if (doubleClass) {
-            if (singleQuery) return false;
-            if (!singleQuery)
+            if (doubleClass)
               if (
-                !filters.classes.includes(unit.class[0]) ||
+                !filters.classes.includes(unit.class[0]) &&
                 !filters.classes.includes(unit.class[1])
               )
                 return false;
-          } else {
-            if (singleQuery) {
-              var temp1 = false;
-              var temp2 = false;
-              var temp3 = false;
-              if (unit.class[0].length != 2) {
-                if (filters.classes[0] == unit.class[0]) temp1 = true;
+            if (dualCharacter || vsCharacter) {
+              var uclasses = [];
+              for (i = 0; i < unit.class.length; i++) {
+                uclasses.push(unit.class[i][0]);
+                uclasses.push(unit.class[i][1]);
               }
-              if (unit.class[1].length != 2) {
-                if (filters.classes[0] == unit.class[1]) temp2 = true;
-              }
-              if (dualCharacter)
-                if (unit.class[2].length != 2) {
-                  if (filters.classes[0] == unit.class[2]) temp3 = true;
-                }
-              if (!(temp1 || temp2 || temp3)) return false;
+              var temp = false;
+              for (i = 0; i < uclasses.length; i++)
+                if (temp || filters.classes.includes(uclasses[i])) temp = true;
+              if (!temp) return false;
             }
-            if (!singleQuery) {
-              if (dualCharacter)
-                if (
-                  (!filters.classes.includes(unit.class[0][0]) ||
-                    !filters.classes.includes(unit.class[0][1])) &&
-                  (!filters.classes.includes(unit.class[1][0]) ||
-                    !filters.classes.includes(unit.class[1][1])) &&
-                  (!filters.classes.includes(unit.class[2][0]) ||
-                    !filters.classes.includes(unit.class[2][1]))
-                )
-                  return false;
-              if (vsCharacter)
-                if (
-                  (!filters.classes.includes(unit.class[0][0]) ||
-                    !filters.classes.includes(unit.class[0][1])) &&
-                  (!filters.classes.includes(unit.class[1][0]) ||
-                    !filters.classes.includes(unit.class[1][1]))
-                )
-                  return false;
-            }
-          }
-        } else {
-          if (singleClass)
-            if (!filters.classes.includes(unit.class)) return false;
-          if (doubleClass)
-            if (
-              !filters.classes.includes(unit.class[0]) &&
-              !filters.classes.includes(unit.class[1])
-            )
-              return false;
-          if (dualCharacter || vsCharacter) {
-            var uclasses = [];
-            for (i = 0; i < unit.class.length; i++) {
-              uclasses.push(unit.class[i][0]);
-              uclasses.push(unit.class[i][1]);
-            }
-            var temp = false;
-            for (i = 0; i < uclasses.length; i++)
-              if (temp || filters.classes.includes(uclasses[i])) temp = true;
-            if (!temp) return false;
           }
         }
       }
@@ -253,7 +371,7 @@
       };
 
       if (filters.tags && filters.tags.length) {
-        const unitTagSet = window.tags[unit.number];
+        const unitTagSet = window.tags[unit.id];
         if (!unitTagSet) return false;
 
         const isVsOrDual = Array.isArray(unitTagSet[0]);
@@ -298,6 +416,15 @@
       // filter by cost
       if (unit.cost < filters.cost[0] || unit.cost > filters.cost[1])
         return false;
+      // filter by rumble cost
+      var rumble = window.rumble[id];
+      if (rumble) {
+        var rumbleCost = rumble.character1 ? rumble.character1.festCost : rumble.festCost;
+        if (filters.rumbleCost && filters.rumbleCost.length === 2) {
+          if (rumbleCost < filters.rumbleCost[0] || rumbleCost > filters.rumbleCost[1])
+            return false;
+        }
+      }
       // filter by drop
       //if(id == 2) console.log(filters);
       if (filters.nonFarmable && Object.keys(filters.nonFarmable).length > 0) {
@@ -356,52 +483,6 @@
           if (id != 1 && isFarmable) return false;
         }
       }
-      /* if (filters.drop && false) {
-            if (id ==2) console.log(filters);
-            var isFarmable = CharUtils.isFarmable(id);
-            if (filters.drop == 'Farmable') {
-                if (id == 1 || !isFarmable) return false;
-                if (farmableLocations !== null) {
-                    var farmable = CharUtils.checkFarmable(id, farmableLocations);
-                    if (!farmable) return false;
-                }
-            }
-            if (filters.drop != 'Farmable') {
-                if (id != 1 && isFarmable) return false;
-                if (filters.nonFarmable) {
-                    // RR
-                    if (filters.nonFarmable.rro && !flags.rro) return false;
-                    if (filters.nonFarmable.rro === false && flags.rro) return false;
-                    // limited RR
-                    if (filters.nonFarmable.lrr && !flags.lrr) return false;
-                    if (filters.nonFarmable.lrr === false && flags.lrr) return false;
-                    // promo
-                    if (filters.nonFarmable.promo && !flags.promo) return false;
-                    if (filters.nonFarmable.promo === false && flags.promo) return false;
-                    // special
-                    if (filters.nonFarmable.special && !flags.special) return false;
-                    if (filters.nonFarmable.special === false && flags.special) return false;
-                    // rayleigh shop
-                    if (filters.nonFarmable.shop && !flags.shop) return false;
-                    if (filters.nonFarmable.shop === false && flags.shop) return false;
-                    // trade port
-                    if (filters.nonFarmable.tmshop && !flags.tmshop) return false;
-                    if (filters.nonFarmable.tmshop === false && flags.tmshop) return false;
-                    // TM RR
-                    if (filters.nonFarmable.tmlrr && !flags.tmlrr) return false;
-                    if (filters.nonFarmable.tmlrr === false && flags.tmlrr) return false;
-                    // KC RR
-                    if (filters.nonFarmable.kclrr && !flags.kclrr) return false;
-                    if (filters.nonFarmable.kclrr === false && flags.kclrr) return false;
-                    // PF RR
-                    if (filters.nonFarmable.pflrr && !flags.pflrr) return false;
-                    if (filters.nonFarmable.pflrr === false && flags.pflrr) return false;
-                    // Support RR
-                    if (filters.nonFarmable.slrr && !flags.slrr) return false;
-                    if (filters.nonFarmable.slrr === false && flags.slrr) return false;
-                }
-            }
-        } */
       // exclusion filters
       if (filters.noBase && evolutions[id] && evolutions[id].evolution)
         return false;
@@ -420,7 +501,7 @@
         if ("limit" in window.details[id]) {
           for (x in window.details[id].limit) {
             if (
-              window.details[id].limit[x].description.includes(
+              window.details[id].limit[x].includes(
                 "LOCKED WITH KEY"
               )
             )
@@ -431,7 +512,7 @@
         if ("limit" in window.details[id]) {
           for (x in window.details[id].limit) {
             if (
-              window.details[id].limit[x].description.includes(
+              window.details[id].limit[x].includes(
                 "Acquire new Captain Ability"
               )
             )
@@ -757,27 +838,28 @@
             return false;
         if (allClass.indexOf(unit.class) != -1) return false;
       }
+      var unitNum = parseInt(unit.id, 10);
       if (filters.dualUnits) {
         //if (unit.class.length != 3) return false;
-        if (window.details[unit.number + 1]) {
-          if (!Object.keys(window.details[unit.number + 1]).includes("swap"))
+        if (window.details[unitNum]) {
+          if (!Object.keys(window.details[unitNum]).includes("swap"))
             return false;
         } else return false;
       }
       if (filters.vsUnits) {
         //if (unit.class.length != 2 || unit.type.length != 2)  return false;
-        if (window.details[unit.number + 1]) {
+        if (window.details[unitNum]) {
           if (
-            !Object.keys(window.details[unit.number + 1]).includes("VSSpecial")
+            !Object.keys(window.details[unitNum]).includes("VSSpecial")
           )
             return false;
         } else return false;
       }
       if (filters.superTypeUnits) {
         //if (unit.class.length != 2 || unit.type.length != 2)  return false;
-        if (window.details[unit.number + 1]) {
+        if (window.details[unitNum]) {
           if (
-            !Object.keys(window.details[unit.number + 1]).includes(
+            !Object.keys(window.details[unitNum]).includes(
               "superSpecial"
             )
           )
@@ -789,7 +871,7 @@
       }
       if (filters.luffyvkatakuri) {
         var evolved = !(id in window.evolutions);
-        var character = window.families[unit.number + 1];
+        var character = window.families[unitNum];
         if (character)
           if (character.length == 2)
             var matching =
@@ -909,7 +991,7 @@
           return false;
       }
       if (filters.doffyBlitz) {
-        var character = window.families[unit.number + 1];
+        var character = window.families[unitNum];
         var matching =
           [
             "Monkey D. Luffy",
@@ -958,10 +1040,6 @@
         else if (!matching) return false;
       }
       if (filters.katakuri) {
-        var Katacount = 0;
-        var Katacount1 = 0;
-        var Katacount2 = 0;
-        var Katacount3 = 0;
         var Kataclass = [
           "Fighter",
           "Striker",
@@ -969,37 +1047,56 @@
           "Cerebral",
           "Powerhouse",
         ];
-        if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+        var vsClasses = getVsUnitClasses();
+        if (vsClasses) {
+          // VS unit - check if at least one variant has 2 matching classes
+          var vsMatch = false;
+          for (var v = 0; v < vsClasses.length; v++) {
+            var vKatacount = 0;
+            var vClasses = vsClasses[v];
+            for (var i = 0; i < Kataclass.length; i++) {
+              if (vClasses.indexOf(Kataclass[i]) != -1) vKatacount++;
+            }
+            if (vKatacount === 2) {
+              vsMatch = true;
+              break;
+            }
+          }
+          if (!vsMatch) return false;
         } else {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[0].indexOf(Kataclass[i]) != -1) {
-              Katacount1++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[1].indexOf(Kataclass[i]) != -1) {
-              Katacount2++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[2])
-              if (unit.class[2].indexOf(Kataclass[i]) != -1) {
-                Katacount3++;
+          // Regular unit
+          var Katacount = 0;
+          var Katacount1 = 0;
+          var Katacount2 = 0;
+          var Katacount3 = 0;
+          if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+          } else {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[0].indexOf(Kataclass[i]) != -1) {
+                Katacount1++;
               }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[1].indexOf(Kataclass[i]) != -1) {
+                Katacount2++;
+              }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[2])
+                if (unit.class[2].indexOf(Kataclass[i]) != -1) {
+                  Katacount3++;
+                }
+          }
+          if (
+            Katacount !== 2 &&
+            Katacount1 !== 2 &&
+            Katacount2 !== 2 &&
+            Katacount3 !== 2
+          )
+            return false;
         }
-        if (
-          Katacount !== 2 &&
-          Katacount1 !== 2 &&
-          Katacount2 !== 2 &&
-          Katacount3 !== 2
-        )
-          return false;
       }
       if (filters.katakuriplus) {
-        var Katacount = 0;
-        var Katacount1 = 0;
-        var Katacount2 = 0;
-        var Katacount3 = 0;
         var Kataclass = [
           "Slasher",
           "Striker",
@@ -1007,37 +1104,56 @@
           "Cerebral",
           "Powerhouse",
         ];
-        if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+        var vsClasses = getVsUnitClasses();
+        if (vsClasses) {
+          // VS unit - check if at least one variant has 2 matching classes
+          var vsMatch = false;
+          for (var v = 0; v < vsClasses.length; v++) {
+            var vKatacount = 0;
+            var vClasses = vsClasses[v];
+            for (var i = 0; i < Kataclass.length; i++) {
+              if (vClasses.indexOf(Kataclass[i]) != -1) vKatacount++;
+            }
+            if (vKatacount === 2) {
+              vsMatch = true;
+              break;
+            }
+          }
+          if (!vsMatch) return false;
         } else {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[0].indexOf(Kataclass[i]) != -1) {
-              Katacount1++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[1].indexOf(Kataclass[i]) != -1) {
-              Katacount2++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[2])
-              if (unit.class[2].indexOf(Kataclass[i]) != -1) {
-                Katacount3++;
+          // Regular unit
+          var Katacount = 0;
+          var Katacount1 = 0;
+          var Katacount2 = 0;
+          var Katacount3 = 0;
+          if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+          } else {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[0].indexOf(Kataclass[i]) != -1) {
+                Katacount1++;
               }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[1].indexOf(Kataclass[i]) != -1) {
+                Katacount2++;
+              }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[2])
+                if (unit.class[2].indexOf(Kataclass[i]) != -1) {
+                  Katacount3++;
+                }
+          }
+          if (
+            Katacount !== 2 &&
+            Katacount1 !== 2 &&
+            Katacount2 !== 2 &&
+            Katacount3 !== 2
+          )
+            return false;
         }
-        if (
-          Katacount !== 2 &&
-          Katacount1 !== 2 &&
-          Katacount2 !== 2 &&
-          Katacount3 !== 2
-        )
-          return false;
       }
       if (filters.katakuriv2) {
-        var Katacount = 0;
-        var Katacount1 = 0;
-        var Katacount2 = 0;
-        var Katacount3 = 0;
         var Kataclass = [
           "Fighter",
           "Slasher",
@@ -1045,69 +1161,107 @@
           "Driven",
           "Powerhouse",
         ];
-        if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+        var vsClasses = getVsUnitClasses();
+        if (vsClasses) {
+          // VS unit - check if at least one variant has 2 matching classes
+          var vsMatch = false;
+          for (var v = 0; v < vsClasses.length; v++) {
+            var vKatacount = 0;
+            var vClasses = vsClasses[v];
+            for (var i = 0; i < Kataclass.length; i++) {
+              if (vClasses.indexOf(Kataclass[i]) != -1) vKatacount++;
+            }
+            if (vKatacount === 2) {
+              vsMatch = true;
+              break;
+            }
+          }
+          if (!vsMatch) return false;
         } else {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[0].indexOf(Kataclass[i]) != -1) {
-              Katacount1++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[1].indexOf(Kataclass[i]) != -1) {
-              Katacount2++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[2])
-              if (unit.class[2].indexOf(Kataclass[i]) != -1) {
-                Katacount3++;
+          // Regular unit
+          var Katacount = 0;
+          var Katacount1 = 0;
+          var Katacount2 = 0;
+          var Katacount3 = 0;
+          if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+          } else {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[0].indexOf(Kataclass[i]) != -1) {
+                Katacount1++;
               }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[1].indexOf(Kataclass[i]) != -1) {
+                Katacount2++;
+              }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[2])
+                if (unit.class[2].indexOf(Kataclass[i]) != -1) {
+                  Katacount3++;
+                }
+          }
+          if (
+            Katacount !== 2 &&
+            Katacount1 !== 2 &&
+            Katacount2 !== 2 &&
+            Katacount3 !== 2
+          )
+            return false;
         }
-        if (
-          Katacount !== 2 &&
-          Katacount1 !== 2 &&
-          Katacount2 !== 2 &&
-          Katacount3 !== 2
-        )
-          return false;
       }
       if (filters.TMlaw) {
-        var Katacount = 0;
-        var Katacount1 = 0;
-        var Katacount2 = 0;
-        var Katacount3 = 0;
         var Kataclass = ["Fighter", "Slasher", "Cerebral", "Free Spirit"];
-        if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+        var vsClasses = getVsUnitClasses();
+        if (vsClasses) {
+          // VS unit - check if at least one variant has 2 matching classes
+          var vsMatch = false;
+          for (var v = 0; v < vsClasses.length; v++) {
+            var vKatacount = 0;
+            var vClasses = vsClasses[v];
+            for (var i = 0; i < Kataclass.length; i++) {
+              if (vClasses.indexOf(Kataclass[i]) != -1) vKatacount++;
+            }
+            if (vKatacount === 2) {
+              vsMatch = true;
+              break;
+            }
+          }
+          if (!vsMatch) return false;
         } else {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[0].indexOf(Kataclass[i]) != -1) {
-              Katacount1++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[1].indexOf(Kataclass[i]) != -1) {
-              Katacount2++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[2])
-              if (unit.class[2].indexOf(Kataclass[i]) != -1) {
-                Katacount3++;
+          // Regular unit
+          var Katacount = 0;
+          var Katacount1 = 0;
+          var Katacount2 = 0;
+          var Katacount3 = 0;
+          if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+          } else {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[0].indexOf(Kataclass[i]) != -1) {
+                Katacount1++;
               }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[1].indexOf(Kataclass[i]) != -1) {
+                Katacount2++;
+              }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[2])
+                if (unit.class[2].indexOf(Kataclass[i]) != -1) {
+                  Katacount3++;
+                }
+          }
+          if (
+            Katacount !== 2 &&
+            Katacount1 !== 2 &&
+            Katacount2 !== 2 &&
+            Katacount3 !== 2
+          )
+            return false;
         }
-        if (
-          Katacount !== 2 &&
-          Katacount1 !== 2 &&
-          Katacount2 !== 2 &&
-          Katacount3 !== 2
-        )
-          return false;
       }
       if (filters.sulongCarrot) {
-        var Katacount = 0;
-        var Katacount1 = 0;
-        var Katacount2 = 0;
-        var Katacount3 = 0;
         var Kataclass = [
           "Fighter",
           "Slasher",
@@ -1115,37 +1269,56 @@
           "Shooter",
           "Cerebral",
         ];
-        if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+        var vsClasses = getVsUnitClasses();
+        if (vsClasses) {
+          // VS unit - check if at least one variant has 2 matching classes
+          var vsMatch = false;
+          for (var v = 0; v < vsClasses.length; v++) {
+            var vKatacount = 0;
+            var vClasses = vsClasses[v];
+            for (var i = 0; i < Kataclass.length; i++) {
+              if (vClasses.indexOf(Kataclass[i]) != -1) vKatacount++;
+            }
+            if (vKatacount === 2) {
+              vsMatch = true;
+              break;
+            }
+          }
+          if (!vsMatch) return false;
         } else {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[0].indexOf(Kataclass[i]) != -1) {
-              Katacount1++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[1].indexOf(Kataclass[i]) != -1) {
-              Katacount2++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[2])
-              if (unit.class[2].indexOf(Kataclass[i]) != -1) {
-                Katacount3++;
+          // Regular unit
+          var Katacount = 0;
+          var Katacount1 = 0;
+          var Katacount2 = 0;
+          var Katacount3 = 0;
+          if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+          } else {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[0].indexOf(Kataclass[i]) != -1) {
+                Katacount1++;
               }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[1].indexOf(Kataclass[i]) != -1) {
+                Katacount2++;
+              }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[2])
+                if (unit.class[2].indexOf(Kataclass[i]) != -1) {
+                  Katacount3++;
+                }
+          }
+          if (
+            Katacount !== 2 &&
+            Katacount1 !== 2 &&
+            Katacount2 !== 2 &&
+            Katacount3 !== 2
+          )
+            return false;
         }
-        if (
-          Katacount !== 2 &&
-          Katacount1 !== 2 &&
-          Katacount2 !== 2 &&
-          Katacount3 !== 2
-        )
-          return false;
       }
       if (filters.carrotwanda) {
-        var Katacount = 0;
-        var Katacount1 = 0;
-        var Katacount2 = 0;
-        var Katacount3 = 0;
         var Kataclass = [
           "Fighter",
           "Slasher",
@@ -1153,31 +1326,54 @@
           "Cerebral",
           "Powerhouse",
         ];
-        if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+        var vsClasses = getVsUnitClasses();
+        if (vsClasses) {
+          // VS unit - check if at least one variant has 2 matching classes
+          var vsMatch = false;
+          for (var v = 0; v < vsClasses.length; v++) {
+            var vKatacount = 0;
+            var vClasses = vsClasses[v];
+            for (var i = 0; i < Kataclass.length; i++) {
+              if (vClasses.indexOf(Kataclass[i]) != -1) vKatacount++;
+            }
+            if (vKatacount === 2) {
+              vsMatch = true;
+              break;
+            }
+          }
+          if (!vsMatch) return false;
         } else {
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[0].indexOf(Kataclass[i]) != -1) {
-              Katacount1++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[1].indexOf(Kataclass[i]) != -1) {
-              Katacount2++;
-            }
-          for (var i = 0; i < Kataclass.length; i++)
-            if (unit.class[2])
-              if (unit.class[2].indexOf(Kataclass[i]) != -1) {
-                Katacount3++;
+          // Regular unit
+          var Katacount = 0;
+          var Katacount1 = 0;
+          var Katacount2 = 0;
+          var Katacount3 = 0;
+          if (Object.prototype.toString.call(unit.class[0]) != "[object Array]") {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class.indexOf(Kataclass[i]) != -1) Katacount++;
+          } else {
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[0].indexOf(Kataclass[i]) != -1) {
+                Katacount1++;
               }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[1].indexOf(Kataclass[i]) != -1) {
+                Katacount2++;
+              }
+            for (var i = 0; i < Kataclass.length; i++)
+              if (unit.class[2])
+                if (unit.class[2].indexOf(Kataclass[i]) != -1) {
+                  Katacount3++;
+                }
+          }
+          if (
+            Katacount !== 2 &&
+            Katacount1 !== 2 &&
+            Katacount2 !== 2 &&
+            Katacount3 !== 2
+          )
+            return false;
         }
-        if (
-          Katacount !== 2 &&
-          Katacount1 !== 2 &&
-          Katacount2 !== 2 &&
-          Katacount3 !== 2
-        )
-          return false;
       }
       if (filters.noFodder && Utils.isFodder(unit)) return false;
       if (filters.noFortnights && flags.fnonly) return false;
@@ -1200,7 +1396,7 @@
         return false;
       //filter by farmable Sockets
       if (filters.socket) {
-        var farmableSocket = CharUtils.hasFarmableSocket(unit.number);
+        var farmableSocket = CharUtils.hasFarmableSocket(unitNum);
         if (
           (filters.socket === "No Farmable Sockets" && farmableSocket) ||
           (filters.socket === "Farmable Sockets" && !farmableSocket)
@@ -1247,41 +1443,61 @@
      * Table configuration *
      ***********************/
 
-    var data = window.units
+    var data = Object.values(window.units)
       .filter(function (x) {
-        return x.name && !x.name.includes("⚔") && !x.name.includes("⚐");
+        return x.name && !x.id.includes("-");
       })
       .map(function (x, n) {
+        var combinedType = x.type;
+        var combinedClass = x.class;
+        var combinedHp = x.maxHP;
+        var combinedAtk = x.maxATK;
+        var combinedRcv = x.maxRCV;
+        var combinedCombo = x.combo;
+        if (!x.type && x.id) {
+          var variant1 = window.units[x.id + "-1"];
+          var variant2 = window.units[x.id + "-2"];
+          if (variant1 && variant1.type) {
+            combinedType = variant2 && variant2.type
+              ? variant1.type + "," + variant2.type
+              : variant1.type;
+            if (!combinedClass) combinedClass = variant1.class;
+            if (!combinedHp) combinedHp = variant1.maxHP;
+            if (!combinedAtk) combinedAtk = variant1.maxATK;
+            if (!combinedRcv) combinedRcv = variant1.maxRCV;
+            if (!combinedCombo) combinedCombo = variant1.combo;
+          }
+        }
         var result = [
-          ("000" + (x.number + 1)).slice(-padding),
+          ("000" + parseInt(x.id, 10)).slice(-padding),
           x.name,
-          x.type,
+          combinedType,
 
-          x.class.constructor == Array ? x.class.join(", ") : x.class,
-          x.maxHP,
-          x.maxATK,
-          x.maxRCV,
-          x.cost,
-          x.slots,
-          x.stars,
+          combinedClass && Array.isArray(combinedClass) ? combinedClass.join(", ") : (combinedClass || ""),
+          combinedHp || 0,
+          combinedAtk || 0,
+          combinedRcv || 0,
+          x.cost || 0,
+          x.sockets || 0,
+          x.stars || 0,
           "",
-          x.number,
+          parseInt(x.id, 10),
         ];
         additionalColumns.forEach(function (c, n) {
           var temp = 0;
           if (c == "HP/ATK")
-            temp = Math.round((x.maxHP / x.maxATK) * 100) / 100;
+            temp = Math.round((combinedHp / combinedAtk) * 100) / 100;
           else if (c == "HP/RCV")
-            temp = Math.round((x.maxHP / x.maxRCV) * 100) / 100;
+            temp = Math.round((combinedHp / combinedRcv) * 100) / 100;
           else if (c == "ATK/RCV")
-            temp = Math.round((x.maxATK / x.maxRCV) * 100) / 100;
+            temp = Math.round((combinedAtk / combinedRcv) * 100) / 100;
           else if (c == "ATK/CMB")
-            temp = Math.round((x.maxATK / x.combo) * 100) / 100;
+            temp = Math.round((combinedAtk / combinedCombo) * 100) / 100;
           else if (c == "ATK/cost")
-            temp = Math.round((x.maxATK / x.cost) * 100) / 100;
+            temp = Math.round((combinedAtk / x.cost) * 100) / 100;
           else if (c == "HP/cost")
-            temp = Math.round((x.maxHP / x.cost) * 100) / 100;
-          else if (c == "CMB") temp = x.combo;
+            temp = Math.round((combinedHp / x.cost) * 100) / 100;
+          else if (c == "CMB") temp = combinedCombo;
           else if (c == "MAX EXP") temp = x.maxEXP;
           else if (c == "Limit Break HP") temp = x.limitHP;
           else if (c == "Limit Break ATK") temp = x.limitATK;
@@ -1289,43 +1505,43 @@
           else if (c == "Limit Break: Expansion HP") temp = x.limitexHP;
           else if (c == "Limit Break: Expansion ATK") temp = x.limitexATK;
           else if (c == "Limit Break: Expansion RCV") temp = x.limitexRCV;
-          else if (c == "Limit Break Slots") temp = x.limitSlot;
-          else if (c == "Minimum cooldown" || c == "Initial cooldown") {
-            var d = cooldowns[x.number];
+          else if (c == "Limit Break Sockets") temp = x.limitSocket;
+        else if (c == "Minimum cooldown" || c == "Initial cooldown") {
+            var d = window.cooldowns[x.id];
             if (!d) temp = "N/A";
-            else if (c == "Minimum cooldown" && d.constructor == Array)
+            else if (c == "Minimum cooldown" && Array.isArray(d))
               temp = d[1];
             else if (c == "Initial cooldown")
-              temp = d.constructor == Array ? d[0] : d;
+              temp = Array.isArray(d) ? d[0] : d;
             else temp = "Unknown";
           } else if (
             c == "Minimum Limit Break cooldown" ||
             c == "Initial Limit Break cooldown"
           ) {
-            var d = cooldowns[x.number];
+            var d = window.cooldowns[x.id];
             if (!d) temp = "N/A";
             else if (
               c == "Minimum Limit Break cooldown" &&
-              d.constructor == Array
+              Array.isArray(d)
             )
               temp = d[1] - x.limitCD;
             else if (c == "Initial Limit Break cooldown")
-              temp = d.constructor == Array ? d[0] - x.limitCD : d - x.limitCD;
+              temp = Array.isArray(d) ? d[0] - x.limitCD : d - x.limitCD;
             else temp = "Unknown";
           } else if (
             c == "Minimum Limit Break Expansion cooldown" ||
             c == "Initial Limit Break Expansion cooldown"
           ) {
-            var d = cooldowns[x.number];
+            var d = window.cooldowns[x.id];
             if (!d) temp = "N/A";
             else if (
               c == "Minimum Limit Break Expansion cooldown" &&
-              d.constructor == Array
+              Array.isArray(d)
             )
               temp = d[1] - x.limitexCD;
             else if (c == "Initial Limit Break Expansion cooldown")
               temp =
-                d.constructor == Array ? d[0] - x.limitexCD : d - x.limitexCD;
+                Array.isArray(d) ? d[0] - x.limitexCD : d - x.limitexCD;
             else temp = "Unknown";
           }
           if (
@@ -1396,18 +1612,6 @@
 
     $rootScope.$on("table.refresh", function () {
       fused = null;
-      /*var types = {
-        'STR' : '<span class="cell-STR">STR</span>',
-        'DEX' : '<span class="cell-DEX">DEX</span>',
-        'QCK' : '<span class="cell-QCK">QCK</span>',
-        'PSY' : '<span class="cell-PSY">PSY</span>',
-        'INT' : '<span class="cell-INT">INT</span>'};
-        $.each(types,function(i,type1){
-            $.each(types,function(j,type2){
-            if(i == j) return;
-            $('.cell-'+i+'\\/'+j).html(type1 +'/'+type2);
-          });
-        });*/
     });
 
     $rootScope.checkLog = function () {

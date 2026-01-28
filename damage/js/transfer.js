@@ -182,9 +182,10 @@ var ImportCtrl = function($scope, $rootScope, $state, $stateParams) {
             }
 
             // the values are in order, according to how they are stored in $scope.data.team (damage/js/app.js)
+            // Format: id:level:candies...
+            // id can be either numeric (old format) or variant ID string (new format)
             let values = unitValues.split(':');
-            // if index is out of range, you will get NaN (falsy)
-            let id = Number(values[0]) || 0;
+            let id = values[0];
             let level = Number(values[1]) || 0;
             let atk = Number(values[2]) || 0;
             let hp = Number(values[3]) || 0;
@@ -192,20 +193,19 @@ var ImportCtrl = function($scope, $rootScope, $state, $stateParams) {
             let limit = Number(values[5]) || 0;
 
             // unnecessary boolean conversion, but makes for more readable information
-            // can't cast to boolean directly from strings, as they are truthy unless empty
             let sugarToy = Boolean(Number(values[6]));
             let tokiState = Boolean(Number(values[7]));
 
-            // validate values
-            if (id < 1 || id > window.units.length || window.units[id - 1].length === 0) break;
-            if (level < 1 || level > window.units[id - 1].maxLevel) break;
+            // validate values - support both old numeric IDs and new variant IDs
+            if (!id || !window.units[id] || window.units[id] === undefined) break;
+            if (level < 1 || level > window.units[id].maxLevel) break;
             if (atk > 500 || hp > 500 || rcv > 500) break;
             if (limit < 0 || limit > 50) break;
 
             team.push({
                 // you may add properties, but may NOT change the order,
                 // due to the way the export link is implemented
-                unit: window.units[id-1],
+                unit: window.units[id],
                 level: level,
                 candies: { hp: hp, atk: atk, rcv: rcv },
                 limit: limit,
@@ -235,7 +235,7 @@ var ExportCtrl = function($scope) {
             var unit = data.team[i], candies = unit.candies;
             if (unit.unit === null) tokens.push('!');
             else {
-                var temp = (unit.unit.number + 1) + ':' + unit.level;
+                var temp = (unit.unit.id) + ':' + unit.level;
                 temp += ':' + [ candies.atk, candies.hp, candies.rcv ].join(':');
                 temp += ':' + unit.limit;
                 temp += ':' + Number(unit.sugarToy);

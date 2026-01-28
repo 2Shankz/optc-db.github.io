@@ -36,7 +36,7 @@
 							x.removeAttribute("data-original");
 						});
 						// character log checkbox
-						var id = data[data.length - 1] + 1;
+						var id = parseInt(data[0], 10);
 						var checkbox = $(
 							'<label><input type="checkbox" ng-change="checkLog(' +
 								id +
@@ -50,8 +50,8 @@
 						var classBox = row.cells[3];
 						var type = typeBox.textContent;
 						var classes = classBox.textContent;
-						if (type.indexOf(",") > -1) {
-							type = type.replace(",", "/");
+						if (type.indexOf(",") > -1 || type.indexOf("/") > -1) {
+							type = type.replace(/[,/]/g, "/");
 							var types = type.split("/");
 							var typeHtml =
 								'<span class="cell-' +
@@ -88,9 +88,6 @@
 						row.cells[n].textContent = "";
 						// compile
 						$compile($(row).contents())($rootScope);
-						if (window.units[id - 1].preview) $(row).addClass("preview");
-						else if (window.units[id - 1].incomplete)
-							$(row).addClass("incomplete");
 						row.setAttribute("loaded", "true");
 					},
 					headerCallback: function (header) {
@@ -153,18 +150,34 @@
 		};
 	};
 
-	directives.decorateSlot = function () {
+		directives.decorateSlot = function () {
 		return {
 			restrict: "A",
 			scope: { uid: "=", big: "@" },
 			link: function (scope, element, attrs) {
-				if (scope.big)
-					element[0].style.backgroundImage =
-						"url(" + Utils.getBigThumbnailUrl(scope.uid, "..") + ")";
-				else
-					element[0].style.backgroundImage =
-						"url(" + Utils.getThumbnailUrl(scope.uid, "..") + ")";
-				//element[0].style.backgroundImage = 'url(' + Utils.getGlobalThumbnailUrl(scope.uid) + '), url(' + Utils.getThumbnailUrl(scope.uid, '..') + ')';
+				var noimagePath = "../api/images/common/noimage.png";
+				if (scope.big) {
+					var bigUrl = Utils.getBigThumbnailUrl(scope.uid, "..");
+					var img = new Image();
+					img.onload = function() { element[0].style.backgroundImage = "url(" + bigUrl + ")"; };
+					img.onerror = function() { element[0].style.backgroundImage = "url(" + noimagePath + ")"; };
+					img.src = bigUrl;
+				} else {
+					var paths = Utils.getThumbnailUrl(scope.uid, "..");
+					var img = new Image();
+					img.onload = function() { element[0].style.backgroundImage = "url(" + paths.glo + ")"; };
+					img.onerror = function() {
+						if (paths.jap && paths.jap !== paths.glo) {
+							var img2 = new Image();
+							img2.onload = function() { element[0].style.backgroundImage = "url(" + paths.jap + ")"; };
+							img2.onerror = function() { element[0].style.backgroundImage = "url(" + noimagePath + ")"; };
+							img2.src = paths.jap;
+						} else {
+							element[0].style.backgroundImage = "url(" + noimagePath + ")";
+						}
+					};
+					img.src = paths.glo;
+				}
 			},
 		};
 	};
@@ -330,112 +343,6 @@
 					var previous = $stateParams.previous.concat([$stateParams.id]);
 					$state.go("main.search.view", { id: id, previous: previous });
 				};
-			},
-		};
-	};
-
-	directives.compare = function () {
-		var fuse = new Fuse(window.units, { keys: ["name"], id: "number" });
-		return {
-			restrict: "A",
-			link: function (scope, element, attrs) {
-				var target = element.typeahead(
-					{ minLength: 3, highlight: true },
-					{
-						source: function (query, callback) {
-							callback(fuse.search(query));
-						},
-						templates: {
-							suggestion: function (id) {
-								if (Number.isInteger(id)) {
-									var name = units[id].name,
-										url = Utils.getThumbnailUrl(id + 1, "..");
-									//var name = units[id].name, url = Utils.getThumbnailUrl(id+1, '..'), url2 = Utils.getGlobalThumbnailUrl(id+1);
-									if (name.length > 63) name = name.slice(0, 60) + "...";
-									var thumb =
-										'<div class="slot small" style="background-image: url(' +
-										url +
-										')"></div>';
-									//var thumb = '<div class="slot small" style="background-image: url(' + url2 + '), url(' + url + ')"></div>';
-
-									return (
-										'<div><div class="suggestion-container">' +
-										thumb +
-										"<span>" +
-										name +
-										"</span></div></div>"
-									);
-								} else {
-									var name = "material",
-										url = Utils.getThumbnailUrl(id, "..");
-									var thumb =
-										'<div class="slot small" style="background-image: url(' +
-										url +
-										')"></div>';
-									return (
-										'<div><div class="suggestion-container">' +
-										thumb +
-										"<span>" +
-										name +
-										"</span></div></div>"
-									);
-								}
-							},
-						},
-						display: function (id) {
-							return units[id].name;
-						},
-					}
-				);
-
-				target.bind("typeahead:select", function (e, suggestion) {
-					$(e.currentTarget).prop("disabled", true);
-					scope.compare = window.units[suggestion];
-					scope.compareDetails = window.details[suggestion + 1];
-					scope.compareCooldown = window.cooldowns[suggestion];
-					scope.isCompareCaptainHybrid =
-						scope.compareDetails &&
-						scope.compareDetails.captain &&
-						scope.compareDetails.captain.global;
-					scope.isCompareSailorHybrid =
-						scope.compareDetails &&
-						scope.compareDetails.sailor &&
-						scope.compareDetails.sailor.global;
-					scope.isCompareSpecialHybrid =
-						scope.compareDetails &&
-						scope.compareDetails.special &&
-						scope.compareDetails.special.global;
-					scope.isCompareSpecialStaged =
-						scope.compareDetails &&
-						scope.compareDetails.special &&
-						scope.compareDetails.special.constructor == Array;
-					if (!scope.$$phase) scope.$apply();
-				});
-
-				element[0].style.backgroundColor = null;
-			},
-		};
-	};
-
-	directives.comparison = function () {
-		return {
-			restrict: "A",
-			link: function (scope, element, attrs) {
-				var positive = attrs.comparison == "positive";
-				var watch = scope.$watch(
-					function () {
-						return element.html();
-					},
-					function () {
-						var isNegative = parseFloat(element.text(), 10) < 0;
-						element.removeClass("positive negative withPlus");
-						if ((positive && !isNegative) || (!positive && isNegative))
-							element.addClass("positive");
-						else element.addClass("negative");
-						if (!isNegative) element.addClass("withPlus");
-					}
-				);
-				scope.$on("$destroy", watch);
 			},
 		};
 	};
@@ -726,23 +633,77 @@
 		};
 	};
 
-	directives.costSlider = function ($timeout) {
+	directives.costSlider = function ($rootScope) {
 		return {
 			restrict: "A",
 			link: function (scope, element, attrs) {
-				element.ionRangeSlider({
-					grid: true,
-					type: "double",
-					min: scope.filters.cost[0],
-					max: scope.filters.cost[1],
-					from: scope.filters.cost[0],
-					to: scope.filters.cost[1],
-					postfix: " cost",
-					onFinish: function (data) {
-						scope.filters.cost[0] = data.from;
-						scope.filters.cost[1] = data.to;
-						if (!scope.$$phase) scope.$apply();
-					},
+				var slider = element[0];
+				var costMinDisplay = document.getElementById('cost-min');
+				var costMaxDisplay = document.getElementById('cost-max');
+				
+				if (!$rootScope.filters) {
+					$rootScope.filters = { cost: [1, 99] };
+				}
+				
+				var cost = $rootScope.filters.cost || [1, 99];
+
+				noUiSlider.create(slider, {
+					start: [cost[0], cost[1]],
+					connect: true,
+					range: { min: 1, max: 99 },
+					step: 1,
+					animate: false
+				});
+
+				slider.noUiSlider.on('update', function(values) {
+					var minVal = Math.round(values[0]);
+					var maxVal = Math.round(values[1]);
+					$rootScope.filters.cost[0] = minVal;
+					$rootScope.filters.cost[1] = maxVal;
+					if (!$rootScope.$$phase) {
+						$rootScope.$apply();
+					}
+					if (costMinDisplay) costMinDisplay.textContent = minVal;
+					if (costMaxDisplay) costMaxDisplay.textContent = maxVal;
+				});
+			},
+		};
+	};
+
+			directives.rumbleCostSlider = function ($rootScope) {
+		return {
+			restrict: "A",
+			link: function (scope, element, attrs) {
+				var slider = element[0];
+				var rumbleCostMinDisplay = document.getElementById('rumble-cost-min');
+				var rumbleCostMaxDisplay = document.getElementById('rumble-cost-max');
+				
+				if (!$rootScope.filters) {
+					$rootScope.filters = {};
+				}
+				
+				if (!$rootScope.filters.rumbleCost) {
+					$rootScope.filters.rumbleCost = [1, 55];
+				}
+
+				noUiSlider.create(slider, {
+					start: [$rootScope.filters.rumbleCost[0], $rootScope.filters.rumbleCost[1]],
+					connect: true,
+					range: { min: 1, max: 55 },
+					step: 1,
+					animate: false
+				});
+
+				slider.noUiSlider.on('update', function(values) {
+					var minVal = Math.round(values[0]);
+					var maxVal = Math.round(values[1]);
+					$rootScope.filters.rumbleCost[0] = minVal;
+					$rootScope.filters.rumbleCost[1] = maxVal;
+					if (!$rootScope.$$phase) {
+						$rootScope.$apply();
+					}
+					if (rumbleCostMinDisplay) rumbleCostMinDisplay.textContent = minVal;
+					if (rumbleCostMaxDisplay) rumbleCostMaxDisplay.textContent = maxVal;
 				});
 			},
 		};

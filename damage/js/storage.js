@@ -1,6 +1,5 @@
 (function() {
 
-var doAlert = false;
 var storage = null;
 
 /* * * * * Storage methods * * * * */
@@ -10,17 +9,17 @@ var loadValue = function(key,def) {
     if (key == 'data' && value && value.team) {
         value.team = value.team.map(function(x,n) {
             if (!x || !x.hasOwnProperty('unit') || x.unit === undefined) x.unit = null;
-            if (x && x.unit !== null && x.unit !== undefined && x.unit.constructor == Number) {
-                x.unit = window.units[x.unit];
-                // captain warnings
-                if (n < 2 && x.unit && x.unit.number && captains[x.unit.number + 1] && captains[x.unit.number + 1].warning) {
-                    noty({
-                        text: captains[x.unit.number + 1].warning.replace(/%name%/g, window.units[x.unit.number].name),
-                        type: 'warning',
-                        layout: 'topRight',
-                        theme: 'relax',
-                        timeout: 5000
-                    });
+            if (x && x.unit !== null && x.unit !== undefined) {
+                if (x.unit.constructor == Object) {
+                    // Already loaded unit object
+                } else {
+                    // Numeric or string ID - load from window.units
+                    var unitId = String(x.unit);
+                    if (window.units[unitId]) {
+                        x.unit = window.units[unitId];
+                    } else {
+                        x.unit = null;
+                    }
                 }
             }
             let defaultTeamUnit = {
@@ -30,8 +29,9 @@ var loadValue = function(key,def) {
                 limit: 0,
                 sugarToy: false,
                 tokiState: false,
+                clone: false,
             };
-            return {...defaultTeamUnit, ...x}; // override defaults instead of returning only x, so no properties go missing in case of updates to the structure of `team`
+            return {...defaultTeamUnit, ...x};
         }).slice(0,6);
         if (isNaN(value.defense)) value.defense = 0;
     }
@@ -44,7 +44,7 @@ var save = function(key,object) {
         object = JSON.parse(JSON.stringify(object));
         object.team = object.team.map(function(x) {
             if (x && x.unit && x.unit.constructor == Object)
-                x.unit = x.unit.number; // whole unit object is too large, so save only the unit number
+                x.unit = x.unit.id; // save unit ID (can be variant ID like "1983-1")
             return x;
         }).slice(0,6);
     }
@@ -89,14 +89,6 @@ var StorageCtrl = function($scope, $storage) {
             $scope.slotChanged(i);
     }
 
-    /* * * * * Version control * * * * */
-
-    var version = $storage.get('version', 12);
-    if (version < 12) {
-        doAlert = true;
-        $storage.set('version', 12);
-    }
-
     /* * * * * Save on changes * * * * */
 
     $scope.$watch('data',function() {
@@ -118,14 +110,6 @@ var StorageCtrl = function($scope, $storage) {
         if (mode === undefined || mode === null) return;
         if (!mode) save('data',$scope.data);
     });
-
-    if (doAlert) {
-        $scope.notify({
-            text: 'Some stuff changed. Refreshing the page and/or clearing your browser\'s cache may be a smart idea.',
-            timeout: 10000,
-            type: 'error'
-        });
-    }
 
 };
 

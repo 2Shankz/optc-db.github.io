@@ -41,16 +41,16 @@ controllers.PickerCtrl = function($scope, $state, $stateParams, $storage) {
 
     /* * * * * Scope functions * * * * */
 
-    $scope.pickUnit = function(unitNumber) {
+    $scope.pickUnit = function(unitId) {
         $scope.resetSlot($stateParams.slot);
-        $scope.data.team[$stateParams.slot].unit = units[unitNumber];
-        $scope.data.team[$stateParams.slot].level = units[unitNumber].maxLevel;
+        $scope.data.team[$stateParams.slot].unit = window.units[unitId];
+        $scope.data.team[$stateParams.slot].level = window.units[unitId].maxLevel;
         $scope.slotChanged($stateParams.slot);
-        updateRecent(unitNumber);
-        // captain warning
-        if ($stateParams.slot < 2 && captains[unitNumber+1] && captains[unitNumber+1].warning) {
+        updateRecent(unitId);
+        // captain warning - use exact ID for ability lookup
+        if ($stateParams.slot < 2 && captains[unitId] && captains[unitId].warning) {
             noty({
-                text: captains[unitNumber+1].warning.replace(/\%name\%/g, window.units[unitNumber].name),
+                text: captains[unitId].warning.replace(/\%name\%/g, window.units[unitId].name),
                 type: 'warning',
                 layout: 'topRight',
                 theme: 'relax',
@@ -67,11 +67,11 @@ controllers.PickerCtrl = function($scope, $state, $stateParams, $storage) {
         var result, parameters = Utils.generateSearchParameters($scope.query);
         if (parameters === null) return;
 
-        result = window.units.filter(function(x) {
-            // some units don't exist or have no functions for their abilities, like turtles.
-            if (x === null || x === undefined || !x.hasOwnProperty('number'))
+        result = Object.values(window.units).filter(function(x) {
+            if (x === null || x === undefined || !x.hasOwnProperty('id'))
                 return false;
-            // do not allow dual/vs units. Their "ghost" forms (which only have one type) can be added though
+            if (x.type === null)
+                return false;
             if (Array.isArray(x.type))
                 return false;
             if (!Utils.checkUnitMatchSearchParameters(x, parameters))
@@ -141,7 +141,7 @@ controllers.SlotsCtrl = function($scope, $state, $stateParams, $storage) {
                 if (x !== null) {
                     // override default properties so old teams will always have complete properties
                     // override unit property with the whole unit data (was stored as number)
-                    Object.assign($scope.data.team[n], x, {unit: units[x.unit]});
+                    Object.assign($scope.data.team[n], x, {unit: window.units[String(x.unit)]});
                 };
                 $scope.slotChanged(n);
             });
@@ -160,7 +160,7 @@ controllers.SlotsCtrl = function($scope, $state, $stateParams, $storage) {
     $scope.saveTeam = function() {
         $scope.$broadcast('$validate');
         var team = $scope.data.team.map(function(x) {
-            return !x.unit ? null : {...x, ...{unit: x.unit.number}}; // save only the unit number to save space
+            return !x.unit ? null : {...x, ...{unit: x.unit.id}}; // save only the unit id to save space
         });
         var result = { name: $scope.lastSlot, team: team };
         if ($scope.saveShip) result.ship = $scope.data.ship;
@@ -192,7 +192,10 @@ controllers.ShipCtrl = function($scope, $state) {
     });
 
     $scope.getThumbnail = function(ship) {
-        if (!ship.thumb) return 'background-image: url(' + Utils.getThumbnailUrl(null, '..') + ')';
+        if (!ship.thumb) {
+            var paths = Utils.getThumbnailUrl(null, '..');
+            return 'background-image: url(' + paths.jap + ')';
+        }
         return 'background-image: url(https://onepiece-treasurecruise.com/wp-content/uploads/' + ship.thumb + ')';
     };
 
@@ -261,52 +264,93 @@ controllers.EffectsCtrl = function($scope, $state) {
 
 controllers.PopoverCtrl = function($scope) {
     if (!$scope.data.team[$scope.slot].unit) return;
-    var id = $scope.data.team[$scope.slot].unit.number + 1;
-    $scope.details = window.details[id] ? JSON.parse(JSON.stringify(window.details[id])) : null;
-    $scope.cooldown = window.cooldowns[id - 1];
-    if (!$scope.details || !$scope.details.special) return;
-    if ($scope.details.special){
-        if ($scope.details.special.japan)
-            $scope.details.special = $scope.details.special.japan;
-        if ($scope.details.special.llbbase)
+    var id = $scope.data.team[$scope.slot].unit.id;
+    
+    // Extract base ID from variant ID (e.g., "4475-1" -> "4475", "4475-INT" -> "4475")
+    var baseId = String(id).split('-')[0];
+    var variantSuffix = String(id).split('-')[1] || null;
+    
+    // Look up details using base ID (variant IDs don't exist in window.details)
+    $scope.details = window.details[baseId] ? JSON.parse(JSON.stringify(window.details[baseId])) : null;
+    $scope.cooldown = window.cooldowns[baseId] || window.cooldowns[id] || null;
+    
+    // Set char1 and char2 for dual/VS units
+    $scope.char1 = window.units[baseId + '-1'] || null;
+    $scope.char2 = window.units[baseId + '-2'] || null;
+    
+    // Determine variant type: '1' = character1, '2' = character2, null = base dual/VS
+    $scope.variantType = null;
+    if (variantSuffix === '1' || variantSuffix === 'STR' || variantSuffix === 'DEX' || variantSuffix === 'QCK' || variantSuffix === 'INT' || variantSuffix === 'PSY') {
+        $scope.variantType = 'character1';
+    } else if (variantSuffix === '2') {
+        $scope.variantType = 'character2';
+    }
+    
+    if (!$scope.details) return;
+    
+    // Handle special - for variant units, keep the object structure with character1/character2
+    if ($scope.details.special) {
+        // For variant units (-1 or -2), don't simplify - keep the object for template to handle
+        if (!$scope.variantType && $scope.details.special.llbbase) {
             $scope.details.special = $scope.details.special.llbbase;
-    }
-    if ($scope.details.captain){
-        if ($scope.details.captain.combined){
-            $scope.details.captain = $scope.details.captain.combined;
         }
-        else if ($scope.details.captain.level6){
-            $scope.details.captain = $scope.details.captain.level6;
-        }
-        else if ($scope.details.captain.level5){
-            $scope.details.captain = $scope.details.captain.level5;
-        }
-        else if ($scope.details.captain.level4){
-            $scope.details.captain = $scope.details.captain.level4;
-        }
-        else if ($scope.details.captain.level3){
-            $scope.details.captain = $scope.details.captain.level3;
-        }
-        else if ($scope.details.captain.level2){
-            $scope.details.captain = $scope.details.captain.level2;
-        }
-        else if ($scope.details.captain.llblevel1){
-            $scope.details.captain = $scope.details.captain.llblevel1;
-        }
-        else if ($scope.details.captain.level1){
-            $scope.details.captain = $scope.details.captain.level1;
-        }
-        else if ($scope.details.captain.llbbase){
-            $scope.details.captain = $scope.details.captain.llbbase;
-        }
-        else if ($scope.details.captain.base){
-            $scope.details.captain = $scope.details.captain.base;
+        // For variant units with arrays, extract last stage
+        if (Array.isArray($scope.details.special)) {
+            var lastStage = $scope.details.special.slice(-1)[0];
+            $scope.cooldown = lastStage.cooldown;
+            $scope.details.special = lastStage.description;
         }
     }
-    if ($scope.details.special.constructor == Array) {
-        var lastStage = $scope.details.special.slice(-1)[0];
-        $scope.cooldown = lastStage.cooldown;
-        $scope.details.special = lastStage.description;
+    
+    // Handle captain - for variant units, keep object structure
+    if ($scope.details.captain && typeof $scope.details.captain === 'object') {
+        // Only simplify for base dual/VS units (not variant -1/-2)
+        if (!$scope.variantType) {
+            if ($scope.details.captain.combined) {
+                $scope.details.captain = $scope.details.captain.combined;
+            } else if ($scope.details.captain.level6) {
+                $scope.details.captain = $scope.details.captain.level6;
+            } else if ($scope.details.captain.level5) {
+                $scope.details.captain = $scope.details.captain.level5;
+            } else if ($scope.details.captain.level4) {
+                $scope.details.captain = $scope.details.captain.level4;
+            } else if ($scope.details.captain.level3) {
+                $scope.details.captain = $scope.details.captain.level3;
+            } else if ($scope.details.captain.level2) {
+                $scope.details.captain = $scope.details.captain.level2;
+            } else if ($scope.details.captain.llblevel1) {
+                $scope.details.captain = $scope.details.captain.llblevel1;
+            } else if ($scope.details.captain.level1) {
+                $scope.details.captain = $scope.details.captain.level1;
+            } else if ($scope.details.captain.llbbase) {
+                $scope.details.captain = $scope.details.captain.llbbase;
+            } else if ($scope.details.captain.base) {
+                $scope.details.captain = $scope.details.captain.base;
+            }
+        }
+    }
+    
+    // Handle sailor - for variant units, keep object structure
+    if ($scope.details.sailor && typeof $scope.details.sailor === 'object') {
+        // Only simplify for base dual/VS units
+        if (!$scope.variantType) {
+            if ($scope.details.sailor.llbbase) {
+                $scope.details.sailor = $scope.details.sailor.llbbase;
+            }
+        }
+    }
+    
+    // Handle swap - for variant units, keep object structure
+    if ($scope.details.swap && typeof $scope.details.swap === 'object') {
+        // Only simplify for base dual/VS units
+        if (!$scope.variantType && $scope.details.swap.base) {
+            $scope.details.swap = $scope.details.swap.base;
+        }
+    }
+    
+    // Handle superSpecial
+    if ($scope.details.superSpecial && typeof $scope.details.superSpecial === 'object') {
+        // Keep object structure for variant units
     }
 };
 
@@ -316,21 +360,12 @@ controllers.PopoverCtrl = function($scope) {
 
 controllers.QuickPickCtrl = function($scope, $state) {
 
-    var pickUnit = function(slotNumber, unitNumber) {
+    var pickUnit = function(slotNumber, unitId) {
         $scope.resetSlot(slotNumber);
-        if (unitNumber) {
-            $scope.data.team[slotNumber].unit = units[unitNumber - 1];
-            $scope.data.team[slotNumber].level = units[unitNumber - 1].maxLevel;
+        if (unitId) {
+            $scope.data.team[slotNumber].unit = window.units[unitId];
+            $scope.data.team[slotNumber].level = window.units[unitId].maxLevel;
             $scope.slotChanged(slotNumber);
-        }
-        if (slotNumber < 2 && captains[unitNumber] && captains[unitNumber].warning) {
-            noty({
-                text: captains[unitNumber].warning.replace(/\%name\%/g, window.units[unitNumber].name),
-                type: 'warning',
-                layout: 'topRight',
-                theme: 'relax',
-                timeout: 5000
-            });
         }
     };
 
@@ -340,13 +375,14 @@ controllers.QuickPickCtrl = function($scope, $state) {
             .filter(function(x) { return x && x.trim().length > 0; })
             .map(function(x) { return x.trim(); });
 
-        window.units.forEach(function(unit) {
+        // Support both numeric IDs and variant IDs (e.g., "1983" or "1983-INT")
+        Object.values(window.units).forEach(function(unit) {
             while (data.indexOf(unit.name) >= 0)
-                data.splice(data.indexOf(unit.name), 1, unit.number);
+                data.splice(data.indexOf(unit.name), 1, unit.id);
         });
 
         data = data.map(function(x) {
-            if (x && !isNaN(x) && x >= 0 && x < units.length) return x + 1;
+            if (x && window.units[x]) return x;
             return null;
         });
 

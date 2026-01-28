@@ -52,6 +52,28 @@ const SPECIAL = 'special';
 const ALTSPECIAL = 'altspecial';
 const CAPSPECIAL = 'capspecial';
 
+// Helper function to check if unit's base ID is in an array
+// Extracts base ID from variant IDs (e.g., "3522-INT" -> 3522) before checking
+function hasUnitId(unitOrId, idArray) {
+    var id = typeof unitOrId === 'string' ? unitOrId : String(unitOrId);
+    var baseId = parseInt(id.split('-')[0]);
+    return idArray.some(function(targetId) {
+        if (typeof targetId === 'number') return baseId === targetId;
+        if (typeof targetId === 'string') {
+            var targetBase = parseInt(targetId.split('-')[0]);
+            return baseId === targetBase;
+        }
+        return false;
+    });
+}
+
+// Polyfill for Array.prototype.has() if not present
+if (!Array.prototype.has) {
+    Array.prototype.has = function(element) {
+        return this.includes(element);
+    };
+}
+
 /****************
  * CruncherCtrl *
  ****************/
@@ -114,23 +136,32 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
 
     /* * * * * Events * * * * */
 
-    $rootScope.$on('specialToggled', function(e, slot, enabled) {
+    var unbind_specialToggled = $rootScope.$on('specialToggled', function(e, slot, enabled) {
 
         var unit = $scope.data.team[slot].unit;
         if (!unit) return;
-        var id = unit.number + 1;
+        var id = unit.id;
 
         // provide specialType to get the cached parameters on deactivation
         var params = getParameters(slot, undefined, slot, SPECIAL);
 
         if (!specials.hasOwnProperty(id)) return;
         if (enabled) {
+            // Enable special - cache params first, then apply
             cacheParameters(params, slot, SPECIAL);
             if (specials[id].hasOwnProperty('onActivation')) {
                 specials[id].onActivation(params);
             }
             applyEnemyEffectsFromSpecial(specials[id], params, true);
         } else {
+            // Disable special - ensure we have cached params
+            if (!params.cached) {
+                // No cache exists (e.g., special was already active on load)
+                // Generate fresh params and cache them before disabling
+                var freshParams = getParameters(slot, undefined, slot, SPECIAL);
+                cacheParameters(freshParams, slot, SPECIAL);
+                params = freshParams;
+            }
             applyEnemyEffectsFromSpecial(specials[id], params, false);
             if (specials[id].hasOwnProperty('onDeactivation')) {
                 specials[id].onDeactivation(params);
@@ -138,10 +169,10 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         }
     });
     
-    $rootScope.$on('altspecialToggled', function(e, slot, enabled) {
+    var unbind_altspecialToggled = $rootScope.$on('altspecialToggled', function(e, slot, enabled) {
         var unit = $scope.data.team[slot].unit;
         if (!unit) return;
-        var id = unit.number + 1;
+        var id = unit.id;
 
         // provide specialType to get the cached parameters on deactivation
         var params = getParameters(slot, undefined, slot, ALTSPECIAL);
@@ -153,6 +184,12 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             }
             applyEnemyEffectsFromSpecial(altspecials[id], params, true);
         } else {
+            // Disable special - ensure we have cached params
+            if (!params.cached) {
+                var freshParams = getParameters(slot, undefined, slot, ALTSPECIAL);
+                cacheParameters(freshParams, slot, ALTSPECIAL);
+                params = freshParams;
+            }
             applyEnemyEffectsFromSpecial(altspecials[id], params, false);
             if (altspecials[id].hasOwnProperty('onDeactivation')) {
                 altspecials[id].onDeactivation(params);
@@ -160,10 +197,10 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         }
     });
     
-    $rootScope.$on('capspecialToggled', function(e, slot, enabled) {
+    var unbind_capspecialToggled = $rootScope.$on('capspecialToggled', function(e, slot, enabled) {
         var unit = $scope.data.team[slot].unit;
         if (!unit) return;
-        var id = unit.number + 1;
+        var id = unit.id;
 
         // provide specialType to get the cached parameters on deactivation
         var params = getParameters(slot, undefined, slot, CAPSPECIAL);
@@ -175,11 +212,23 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             }
             applyEnemyEffectsFromSpecial(capspecials[id], params, true);
         } else {
+            // Disable special - ensure we have cached params
+            if (!params.cached) {
+                var freshParams = getParameters(slot, undefined, slot, CAPSPECIAL);
+                cacheParameters(freshParams, slot, CAPSPECIAL);
+                params = freshParams;
+            }
             applyEnemyEffectsFromSpecial(capspecials[id], params, false);
             if (capspecials[id].hasOwnProperty('onDeactivation')) {
                 capspecials[id].onDeactivation(params);
             }
         }
+    });
+
+    $scope.$on('$destroy', function() {
+        unbind_specialToggled();
+        unbind_altspecialToggled();
+        unbind_capspecialToggled();
     });
 
     $scope.$watch('data',crunch,true);
@@ -267,7 +316,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         for(var key in overallDamage.damage){
             if(parseInt(key)){
                 console.log(overallDamage.damage[key].position);
-                if((overallDamage.damage[key].unit.unit.number == 2232 || overallDamage.damage[key].unit.unit.number == 2233) && overallDamage.damage[key].position < 2 && $scope.tdata.semlaCounter.value >= 3 && parseInt(key) != 5){
+                if((overallDamage.damage[key].unit.unit.id == 2232 || overallDamage.damage[key].unit.unit.id == 2233) && overallDamage.damage[key].position < 2 && $scope.tdata.semlaCounter.value >= 3 && parseInt(key) != 5){
                     var temp = overallDamage.damage[key];
                     var m = parseInt(key);
                     while(m < 5){
@@ -300,10 +349,10 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             var friendCaptain = team[0].unit;
             var captain = team[1].unit;
             var unitTemp = Object.assign({},x.unit);
-            if(n == 0 && $scope.data.cloneCheck1 && [3522, 3523].includes(unitTemp.number+1)) cloneReplace(unitTemp, 0);
-            else if(n != 0 && $scope.data.cloneCheck2 && [3522, 3523].includes(unitTemp.number+1)) cloneReplace(unitTemp, n);
-            if(friendCaptain && $scope.data.cloneCheck1 && [3522, 3523].includes(friendCaptain.number+1)) cloneReplace(friendCaptain, 0);
-            if(captain && $scope.data.cloneCheck2 && [3522, 3523].includes(captain.number+1)) cloneReplace(captain, 1);
+            if(n == 0 && $scope.data.cloneCheck1 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, 0);
+            else if(n != 0 && $scope.data.cloneCheck2 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, n);
+            if(friendCaptain && $scope.data.cloneCheck1 && hasUnitId(friendCaptain.id, [3522, 3523])) cloneReplace(friendCaptain, 0);
+            if(captain && $scope.data.cloneCheck2 && hasUnitId(captain.id, [3522, 3523])) cloneReplace(captain, 1);
             
             if($scope.data.classOverrideEnabled) {
                 classOverrideReplace(unitTemp, n);
@@ -314,46 +363,49 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             
             x.unit = unitTemp; //Override for custom unit Type/Classes
 
+            // Safe class accessor for orb checks
+            var unitClass = x.unit.class || { has: function() { return false; } };
+
             var orb = $scope.tdata.team[n].orb;
             var atk = getStatOfUnit(x,'atk',n); // basic attack (scales with level);
             var ship = getShipBonus('atk',false,x.unit,n,team[1].unit,n,shipParam), againstType = type;//Same problem as above, so yeah
             var multipliers = [ ];
             if (orb == 0.5 && x.unit.type == 'DEX') orb = (window.specials[1221].turnedOn || window.specials[1222].turnedOn || window.specials[2235].turnedOn || window.specials[2236].turnedOn || window.specials[2363].turnedOn || window.specials[2370].turnedOn || window.specials[2371].turnedOn) ? 2 : 0.5;
-            if (orb == 0.5 && x.unit.type == 'DEX' && x.unit.class.has("Driven")) orb = (window.specials[1259].turnedOn || window.specials[1260].turnedOn || window.specials[1323].turnedOn || window.specials[1324].turnedOn || window.specials[2425].turnedOn || window.specials[2426].turnedOn) ? 2 : 0.5;
-            if (orb == 0.5 && x.unit.type == 'DEX' && x.unit.class.has("Slasher")) orb = (window.specials[1323].turnedOn || window.specials[1324].turnedOn) ? 2 : 0.5;
-            if (orb == 0.5 && x.unit.type == 'DEX' && x.unit.class.has("Fighter")) orb = (window.specials[1593].turnedOn.has(true) || window.specials[1463]. turnedOn || window.specials[1462]. turnedOn) ? 2 : 0.5;
-            if (orb == 0.5 && x.unit.type == 'DEX' && x.unit.class.has("Powerhouse")) orb = (window.specials[1528].turnedOn || window.specials[2318].turnedOn || window.specials[2470].turnedOn || window.specials[2471].turnedOn) ? 2 : 0.5;
-            if (orb == 0.5 && x.unit.type == 'DEX' && x.unit.class.has("Free Spirit")) orb = (window.specials[1593].turnedOn.has(true)) ? 2 : 0.5;
-            if (orb == 0.5 && x.unit.type == 'DEX' && x.unit.class.has("Shooter")) orb = (window.specials[1640].turnedOn || window.specials[1746].turnedOn || window.specials[1747].turnedOn || window.specials[2309].turnedOn || window.specials[2310].turnedOn || window.specials[2324].turnedOn || window.specials[2325].turnedOn) ? 2 : 0.5;
-            if (orb == 0.5 && x.unit.type == 'DEX' && x.unit.class.has("Striker")) orb = (window.specials[1651].turnedOn || window.specials[1652].turnedOn || window.specials[2373].turnedOn || window.specials[2470].turnedOn || window.specials[2471].turnedOn) ? 2 : 0.5;
+            if (orb == 0.5 && x.unit.type == 'DEX' && unitClass.has("Driven")) orb = (window.specials[1259].turnedOn || window.specials[1260].turnedOn || window.specials[1323].turnedOn || window.specials[1324].turnedOn || window.specials[2425].turnedOn || window.specials[2426].turnedOn) ? 2 : 0.5;
+            if (orb == 0.5 && x.unit.type == 'DEX' && unitClass.has("Slasher")) orb = (window.specials[1323].turnedOn || window.specials[1324].turnedOn) ? 2 : 0.5;
+            if (orb == 0.5 && x.unit.type == 'DEX' && unitClass.has("Fighter")) orb = (window.specials[1593].turnedOn.has(true) || window.specials[1463]. turnedOn || window.specials[1462]. turnedOn) ? 2 : 0.5;
+            if (orb == 0.5 && x.unit.type == 'DEX' && unitClass.has("Powerhouse")) orb = (window.specials[1528].turnedOn || window.specials[2318].turnedOn || window.specials[2470].turnedOn || window.specials[2471].turnedOn) ? 2 : 0.5;
+            if (orb == 0.5 && x.unit.type == 'DEX' && unitClass.has("Free Spirit")) orb = (window.specials[1593].turnedOn.has(true)) ? 2 : 0.5;
+            if (orb == 0.5 && x.unit.type == 'DEX' && unitClass.has("Shooter")) orb = (window.specials[1640].turnedOn || window.specials[1746].turnedOn || window.specials[1747].turnedOn || window.specials[2309].turnedOn || window.specials[2310].turnedOn || window.specials[2324].turnedOn || window.specials[2325].turnedOn) ? 2 : 0.5;
+            if (orb == 0.5 && x.unit.type == 'DEX' && unitClass.has("Striker")) orb = (window.specials[1651].turnedOn || window.specials[1652].turnedOn || window.specials[2373].turnedOn || window.specials[2470].turnedOn || window.specials[2471].turnedOn) ? 2 : 0.5;
             if (orb == 0.5 && x.unit.type == 'PSY') orb = (window.specials[2235].turnedOn || window.specials[2236].turnedOn || window.specials[2249].turnedOn 
-                                     || ((window.specials[2374].turnedOn || window.specials[2375].turnedOn) && (x.unit.class.has("Slasher") || x.unit.class.has("Powerhouse")))
-                                     || ((window.specials[1977].turnedOn || window.specials[1978].turnedOn) && (x.unit.class.has("Free Spirit")))) ? 2 : 0.5;
+                                     || ((window.specials[2374].turnedOn || window.specials[2375].turnedOn) && (unitClass.has("Slasher") || unitClass.has("Powerhouse")))
+                                     || ((window.specials[1977].turnedOn || window.specials[1978].turnedOn) && (unitClass.has("Free Spirit")))) ? 2 : 0.5;
             if (orb == 0.5 && x.unit.type == 'QCK') orb = (window.specials[2235].turnedOn || window.specials[2236].turnedOn 
-                                     || ((window.specials[2374].turnedOn || window.specials[2375].turnedOn) && (x.unit.class.has("Slasher") || x.unit.class.has("Powerhouse")))
-                                     || ((window.specials[1323].turnedOn || window.specials[1324].turnedOn) && (x.unit.class.has("Slasher") || x.unit.class.has("Driven")))
-                                     || ((window.specials[1977].turnedOn || window.specials[1978].turnedOn) && (x.unit.class.has("Free Spirit")))
-                                     || ((window.specials[1528].turnedOn) && (x.unit.class.has("Powerhouse")))
-                                     || (window.specials[2128].turnedOn && (x.unit.class.has("Striker") || x.unit.class.has("Slasher")))) ? 2 : 0.5;
+                                     || ((window.specials[2374].turnedOn || window.specials[2375].turnedOn) && (unitClass.has("Slasher") || unitClass.has("Powerhouse")))
+                                     || ((window.specials[1323].turnedOn || window.specials[1324].turnedOn) && (unitClass.has("Slasher") || unitClass.has("Driven")))
+                                     || ((window.specials[1977].turnedOn || window.specials[1978].turnedOn) && (unitClass.has("Free Spirit")))
+                                     || ((window.specials[1528].turnedOn) && (unitClass.has("Powerhouse")))
+                                     || (window.specials[2128].turnedOn && (unitClass.has("Striker") || unitClass.has("Slasher")))) ? 2 : 0.5;
             if (orb == 'str') orb = (window.specials[1221].turnedOn || window.specials[1222].turnedOn || window.specials[2235].turnedOn || window.specials[2236].turnedOn  || window.specials[2553].turnedOn 
-                                     || ((window.specials[1259].turnedOn || window.specials[1260].turnedOn || window.specials[2425].turnedOn || window.specials[2426].turnedOn) && x.unit.class.has("Driven"))
-                                     || ((window.specials[1323].turnedOn || window.specials[1324].turnedOn) && (x.unit.class.has("Driven") || x.unit.class.has("Slasher")))
-                                     || ((window.specials[1528].turnedOn || window.specials[2318].turnedOn) && x.unit.class.has("Powerhouse"))
-                                     || ((window.specials[2470].turnedOn || window.specials[2471].turnedOn) && (x.unit.class.has("Striker") || x.unit.class.has("Powerhouse")))
-                                     || (window.specials[1593].turnedOn.has(true) && (x.unit.class.has("Fighter") || x.unit.class.has("Free Spirit")))
-                                     || ((window.specials[1651].turnedOn || window.specials[1652].turnedOn) && x.unit.class.has("Striker"))
-                                     || ((window.specials[1640].turnedOn || window.specials[1746].turnedOn|| window.specials[1747].turnedOn || window.specials[2309].turnedOn || window.specials[2310].turnedOn || window.specials[2324].turnedOn || window.specials[2325].turnedOn) && x.unit.class.has("Shooter"))
+                                     || ((window.specials[1259].turnedOn || window.specials[1260].turnedOn || window.specials[2425].turnedOn || window.specials[2426].turnedOn) && unitClass.has("Driven"))
+                                     || ((window.specials[1323].turnedOn || window.specials[1324].turnedOn) && (unitClass.has("Driven") || unitClass.has("Slasher")))
+                                     || ((window.specials[1528].turnedOn || window.specials[2318].turnedOn) && unitClass.has("Powerhouse"))
+                                     || ((window.specials[2470].turnedOn || window.specials[2471].turnedOn) && (unitClass.has("Striker") || unitClass.has("Powerhouse")))
+                                     || (window.specials[1593].turnedOn.has(true) && (unitClass.has("Fighter") || unitClass.has("Free Spirit")))
+                                     || ((window.specials[1651].turnedOn || window.specials[1652].turnedOn) && unitClass.has("Striker"))
+                                     || ((window.specials[1640].turnedOn || window.specials[1746].turnedOn|| window.specials[1747].turnedOn || window.specials[2309].turnedOn || window.specials[2310].turnedOn || window.specials[2324].turnedOn || window.specials[2325].turnedOn) && unitClass.has("Shooter"))
                                      || ((window.specials[1940].turnedOn|| window.specials[1941].turnedOn) && (x.unit.type == "STR" || x.unit.type == "QCK" || x.unit.type == "PSY"))
                                      || ((window.specials[2264].turnedOn|| window.specials[2265].turnedOn) && (x.unit.type == "STR" || x.unit.type == "DEX" || x.unit.type == "PSY"))) ? 2 : 'str';
             if (orb == 'dex') orb = (window.specials[2235].turnedOn || window.specials[2236].turnedOn 
-                                     || ((window.specials[2374].turnedOn || window.specials[2375].turnedOn) && (x.unit.class.has("Slasher") || x.unit.class.has("Powerhouse")))
-                                     || ((window.specials[1323].turnedOn || window.specials[1324].turnedOn) && (x.unit.class.has("Slasher") || x.unit.class.has("Driven")))
-                                     || ((window.specials[1977].turnedOn || window.specials[1978].turnedOn) && (x.unit.class.has("Free Spirit")))
-                                     || ((window.specials[1528].turnedOn) && (x.unit.class.has("Powerhouse")))
-                                     || (window.specials[2128].turnedOn && (x.unit.class.has("Striker") || x.unit.class.has("Slasher")))) ? 2 : 'dex';
+                                     || ((window.specials[2374].turnedOn || window.specials[2375].turnedOn) && (unitClass.has("Slasher") || unitClass.has("Powerhouse")))
+                                     || ((window.specials[1323].turnedOn || window.specials[1324].turnedOn) && (unitClass.has("Slasher") || unitClass.has("Driven")))
+                                     || ((window.specials[1977].turnedOn || window.specials[1978].turnedOn) && (unitClass.has("Free Spirit")))
+                                     || ((window.specials[1528].turnedOn) && (unitClass.has("Powerhouse")))
+                                     || (window.specials[2128].turnedOn && (unitClass.has("Striker") || unitClass.has("Slasher")))) ? 2 : 'dex';
             if (orb == 'int') orb = (window.specials[2235].turnedOn || window.specials[2236].turnedOn || window.specials[2249].turnedOn || window.specials[2527].turnedOn
-                                     || ((window.specials[2374].turnedOn || window.specials[2375].turnedOn) && (x.unit.class.has("Slasher") || x.unit.class.has("Powerhouse")))
-                                     || ((window.specials[1977].turnedOn || window.specials[1978].turnedOn) && (x.unit.class.has("Free Spirit")))) ? 2 : 'int';
+                                     || ((window.specials[2374].turnedOn || window.specials[2375].turnedOn) && (unitClass.has("Slasher") || unitClass.has("Powerhouse")))
+                                     || ((window.specials[1977].turnedOn || window.specials[1978].turnedOn) && (unitClass.has("Free Spirit")))) ? 2 : 'int';
             if (orb == 'empty') orb = (window.specials[3740].turnedOn || window.specials[3741].turnedOn || window.specials[4099].turnedOn.has(true) || window.specials[4100].turnedOn.has(true)) ? 2.25 : 'empty';
             if (orb == 'rainbow') orb = (window.specials[3943].turnedOn || window.specials[3944].turnedOn) ? 2.75 : (window.specials[2631].turnedOn) ? 2.25 : 'rainbow';
             
@@ -363,31 +415,25 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             if (orb =='meat'){
                 for (temp = 0; temp < 2; temp++){
                     if (team[temp].unit != null){
-                        if ([ 1610, 1609, 1532, 1531, 2232, 2233, 2234, 2500, 2300, 2803, 2804, 5052, 5054, 5055, 5057, 2957, 2957, 3306, 3307, 3814, 3888, 3889, 3904, 3905, 3947, 3948, 5453, 5454, 5455, 5456, 5457, 5548, 5459, 5460, 3955, 3956, 3957, 3966, 3967, 5547, 5548, 5549, 5550, 5551, 5552, 5553, 5554, 4028, 4029, 4139 ].includes(team[temp].unit.number + 1)){
+                        if (hasUnitId(team[temp].unit.id, [1610, 1609, 1532, 1531, 2232, 2233, 2234, 2500, 2300, 2803, 2804, "2516-INT", "2517-1", "2517-2", "2517-QCK", 2957, 3306, 3307, 3814, 3888, 3889, 3904, 3905, 3947, 3948, "3877-1", "3877-2", "3877-STR", "3877-DEX", "3878-1", "4002-2", "3878-STR", "3878-DEX", 3955, 3956, 3957, 3966, 3967, "4002-1", "4002-2", "4002-STR", "4002-QCK", "4003-1", "4003-2", "4003-STR", "4003-QCK", 4028, 4029, 4139])){
                             orb = 2;
                         }
-                        if ([ 2012, 2013 ].includes(team[temp].unit.number + 1) && x.unit.class.has("Free Spirit")){
+                        if (hasUnitId(team[temp].unit.id, [2012, 2013]) && unitClass.has("Free Spirit")){
                             orb = 2;
                         }
-                        if ([ 3890, 3891 ].includes(team[temp].unit.number + 1) && (x.unit.class.has("Driven") || x.unit.class.has("Cerebral"))){
+                        if (hasUnitId(team[temp].unit.id, [3890, 3891]) && (unitClass.has("Driven") || unitClass.has("Cerebral"))){
                             orb = 2;
                         }
-                        if ([ 2462, 2463 ].includes(team[temp].unit.number + 1) && x.unit.class.has("Powerhouse")){
+                        if (hasUnitId(team[temp].unit.id, [2462, 2463]) && unitClass.has("Powerhouse")){
                             orb = 2;
                         }
                     }
                 }
-                if (window.specials[3957].turnedOn || window.altspecials[4084].turnedOn) orb = 2.75
-                if (window.altspecials[3956].turnedOn) orb = 3
             }
             if (orb =='tnd'){
-                orb = (window.specials[4028].turnedOn == 2 || window.specials[4029].turnedOn == 2 || window.specials[4114].turnedOn || window.specials[4115].turnedOn) ? 2.75 : 
-                    (window.altspecials[3895].turnedOn.includes(true) || window.altspecials[3896].turnedOn.includes(true)) ? 2.5 : 
-                    (window.altspecials[5430].turnedOn || window.altspecials[5432].turnedOn || window.specials[4028].turnedOn == 1 || window.specials[4029].turnedOn == 1) ? 2.25 :
-                    (window.specials[5430].turnedOn || window.specials[5432].turnedOn) ? 2 : orb;
                 for (temp = 0; temp < 2; temp++){
                     if (team[temp].unit != null){
-                        if ([ 3904, 3905, 3947, 3948, 3966, 3967, 5430, 5432, 5453, 5454, 5455, 5456, 5457, 5548, 5459, 5460, 5539, 5540, 5541, 5542, 5543, 5544, 5545, 5546, 5547, 5548, 5549, 5550, 5551, 5552, 5553, 5554, 4028, 4029, 4050 ].includes(team[temp].unit.number + 1)){
+                        if (hasUnitId(team[temp].unit.id, [3904, 3905, 3947, 3948, 3966, 3967, "3787-2", "3788-2", "3877-1", "3877-2", "3877-STR", "3877-DEX", "3878-1", "4002-2", "3878-STR", "3878-DEX", "3994-1", "3994-2", "3994-INT", "3994-PSY", "3995-1", "3995-2", "3995-PSY", "3995-INT", "4002-1", "4002-2", "4002-STR", "4002-QCK", "4003-1", "4003-2", "4003-STR", "4003-QCK", 4028, 4029, 4050])){
                             orb = orb == 'tnd' ? 2 : Math.max(orb,2);
                         }
                     }
@@ -396,53 +442,51 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             for (temp = 0; temp < 2; temp++){
                 if (team[temp].unit != null){
                     if (orb == 'str'){
-                        if ([ 2137 ].includes(team[temp].unit.number + 1)){
+                        if (hasUnitId(team[temp].unit.id, [2137])){
                             orb = 2;
                         }
-                        if ([ 2022, 2023 ].includes(team[temp].unit.number + 1) && x.unit.type == 'INT'){
+                        if (hasUnitId(team[temp].unit.id, [2022, 2023]) && x.unit.type == 'INT'){
                             orb = 2;
                         }
-                        if ([ 2306 ].includes(team[temp].unit.number + 1) && (x.unit.class.has("Slasher") || x.unit.class.has("Cerebral"))){
+                        if (hasUnitId(team[temp].unit.id, [2306]) && (unitClass.has("Slasher") || unitClass.has("Cerebral"))){
                             orb = 2;
                         }
-                        if ([ 5152, 5154, 5155, 5156, 5158, 5159 ].includes(team[temp].unit.number + 1) && (x.unit.class.has("Striker") || x.unit.class.has("Cerebral"))){
+                        if (hasUnitId(team[temp].unit.id, ["2600-1", "2600-DEX", "2600-STR", "2601-1", "2601-DEX", "2601-STR"]) && (unitClass.has("Striker") || unitClass.has("Cerebral"))){
                             orb = 2;
                         }
-                        if ([ 5036, 5037, 5038, 5039, 5040, 5041, 5042, 5043 ].includes(team[temp].unit.number + 1) && x.unit.class.has("Driven")){
+                        if (hasUnitId(team[temp].unit.id, ["2445-1", "2445-2", "2445-PSY", "2446-1", "2446-2", "2446-PSY", "2468-1", "2468-2"]) && unitClass.has("Driven")){
                             orb = 2;
                         }
                     }
                     if (orb == 'superbomb'){
-                        if ([ 2979, 2980, 5594, 5595, 5596, 5597, 5598, 5599, 5600, 5601 ].includes(team[temp].unit.number + 1)){
-                            //orb = 2;
-                            orb = (window.specials[5596].turnedOn || window.capspecials[5597].turnedOn || window.capspecials[5600].turnedOn || window.capspecials[5601].turnedOn) ? 2.5 : 
-                                (window.specials[3762].turnedOn || window.capspecials[5595].turnedOn || window.capspecials[5599].turnedOn) ? 2.25 : 2;
+                        if (hasUnitId(team[temp].unit.id, [2979, 2980, "4141-1", "4141-2", "4141-INT", "4141-DEX", "4141-1", "4141-2", "4141-INT", "4141-DEX", "4142-1", "4142-2", "4142-INT", "4142-DEX"])){
+                            orb = 2;
                         }
                     }
                     if (orb == 'dex'){
-                        if ([ 2476, 2477 ].includes(team[temp].unit.number + 1) && (x.unit.class.has("Slasher"))){
+                        if (hasUnitId(team[temp].unit.id, [2476, 2477]) && (unitClass.has("Slasher"))){
                             orb = 2;
                         }
                     }
                     if (orb == 'int'){
-                        if ([ 2476, 2477 ].includes(team[temp].unit.number + 1) && (x.unit.class.has("Slasher"))){
+                        if (hasUnitId(team[temp].unit.id, [2476, 2477]) && (unitClass.has("Slasher"))){
                             orb = 2;
                         }
                     }
                     if (orb == 0.5){
-                        if ([ 2137 ].includes(team[temp].unit.number + 1) && x.unit.type == 'DEX'){
+                        if (hasUnitId(team[temp].unit.id, [2137]) && x.unit.type == 'DEX'){
                             orb = 2;
                         }
-                        if ([ 5026, 5027 ].includes(team[temp].unit.number + 1) && x.unit.type == 'DEX'){
+                        if (hasUnitId(team[temp].unit.id, ["2399-DEX", "2399-STR"]) && x.unit.type == 'DEX'){
                             orb = 2;
                         }
-                        if ([ 2306 ].includes(team[temp].unit.number + 1) && (x.unit.class.has("Slasher") || x.unit.class.has("Cerebral")) && x.unit.type == 'DEX'){
+                        if (hasUnitId(team[temp].unit.id, [2306]) && (unitClass.has("Slasher") || unitClass.has("Cerebral")) && x.unit.type == 'DEX'){
                             orb = 2;
                         }
-                        if ([ 5036, 5037, 5038, 5039, 5040, 5041, 5042, 5043 ].includes(team[temp].unit.number + 1) && x.unit.class.has("Driven") && x.unit.type == 'DEX'){
+                        if (hasUnitId(team[temp].unit.id, ["2445-1", "2445-2", "2445-PSY", "2446-1", "2446-2", "2446-PSY", "2468-1", "2468-2"]) && unitClass.has("Driven") && x.unit.type == 'DEX'){
                             orb = 2;
                         }
-                        if ([ 2476, 2477 ].includes(team[temp].unit.number + 1) && (x.unit.class.has("Slasher")) && (x.unit.type == 'PSY' || x.unit.type == 'QCK')){
+                        if (hasUnitId(team[temp].unit.id, [2476, 2477]) && (unitClass.has("Slasher")) && (x.unit.type == 'PSY' || x.unit.type == 'QCK')){
                             orb = 2;
                         }
                     }
@@ -451,33 +495,24 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             if (orb =='dex' || (orb == 2 && x.unit.type == "DEX")){
                 for (temp = 0; temp < 2; temp++){
                     if (team[temp].unit != null){
-                        if ([ 4050 ].includes(team[temp].unit.number + 1)){
+                        if (hasUnitId(team[temp].unit.id, [4050])){
                             orb = 2;
                         }
                     }
                 }
-                if (window.specials[4050].turnedOn) orb = 2.5;
             }
             if (orb == 0.5 && x.unit.type == 'DEX' && $scope.data.effect == 'STR Orbs Beneficial') orb = 2;
             if (orb == 'str' && $scope.data.effect == 'STR Orbs Beneficial') orb = 2;
-            if (orb == 'meat') orb = 
-                (window.specials[4114].turnedOn || window.specials[4115].turnedOn) ? 2.75 : 
-                ((window.specials[1515].turnedOn || window.specials[1516].turnedOn || (window.specials[1593].turnedOn.has(true)) && x.unit.class.has("Fighter")) || 
-                ((window.specials[1181].turnedOn || window.specials[1182].turnedOn) && x.unit.class.has("Slasher")) || 
-                ((window.specials[1380].turnedOn || window.specials[1379].turnedOn) && (x.unit.class.has("Cerebral") || x.unit.class.has("Free Spirit")))) || 
-                ((window.specials[2128].turnedOn) && (x.unit.class.has("Slasher") || x.unit.class.has("Striker"))) ? 2 : 1;
+            if (orb == 'meat') orb = 2;
             if (orb == 'rainbow') orb = 2;
             if (orb == 'empty') orb = 1;
-            if (orb == 'tnd') orb = 1;
-            if (orb == 'wano') orb = window.specials[4114].turnedOn || window.specials[4115].turnedOn ? 2.75 : 2.5;
+            if (orb == 'tnd') orb = 2;
+            if (orb == 'wano') orb = 2.5;
             if (orb == 'g'){
                 orb = 1.5;
-                if (Math.max(window.altspecials[5547].turnedOn, window.altspecials[5548].turnedOn, window.altspecials[5549].turnedOn, window.altspecials[5550].turnedOn, window.altspecials[5551].turnedOn, window.altspecials[5552].turnedOn, window.altspecials[5553].turnedOn, window.altspecials[5554].turnedOn) > -1) orb = [2, 2.25][Math.max(window.altspecials[5547].turnedOn, window.altspecials[5548].turnedOn, window.altspecials[5549].turnedOn, window.altspecials[5550].turnedOn, window.altspecials[5551].turnedOn, window.altspecials[5552].turnedOn, window.altspecials[5553].turnedOn, window.altspecials[5554].turnedOn)];
             }
             if (orb == 'superbomb'){
                 orb = 1.5;
-                orb = window.altspecials[4038].turnedOn || window.altspecials[4039].turnedOn ? 2.5 : 
-                window.specials[3762].turnedOn ? 2.25 : orb;
             }
             if (orb == 'str' && x.type == 'DEX') orb = 0.5;
             if (orb == 'dex' && x.type == 'QCK') orb = 0.5;
@@ -579,15 +614,14 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         var superClassBoost = 1;
         var birdBoost = 1;
         var maxLevel = (data.unit.maxLevel == 1 ? 1 : data.unit.maxLevel -1);
-        var growth = data.unit.growth[stat] || 1;
         var minStat = 'min' + stat.toUpperCase(), maxStat = 'max' + stat.toUpperCase();
 
         data.level = Math.min(data.level, data.unit.maxLevel + [0, 6, 11, 21, 31, 51][data.llimit ? data.llimit : 0]); //fix for an error when changing a 150/150 unit's LLB to a lower level
-        var result = data.level < 100 ? (data.unit[minStat] + (data.unit[maxStat] - data.unit[minStat]) * Math.pow((data.level-1) / maxLevel, growth)) : data.unit[maxStat]*(1+ 0.5*((1-(150-data.level)/51)));
+        var result = data.level < 100 ? (data.unit[minStat] + (data.unit[maxStat] - data.unit[minStat]) * (data.level / maxLevel)) : data.unit[maxStat]*(1+ 0.5*((1-(150-data.level)/51)));
         var candyBonus = (data.candies && data.candies[stat] ? data.candies[stat] * { hp: 5, atk: 2, rcv: 1 }[stat] : 0);
 
         var sugarSuperEnabled = 0;
-        enabledSpecials.forEach(function(special){ if(params.team[special.sourceSlot].unit.number + 1 == 3805 && special.specialType == "special") {
+        enabledSpecials.forEach(function(special){ if(parseInt(params.team[special.sourceSlot].unit.id) == 3805 && special.specialType == "special") {
             sugarSuperEnabled = $scope.data.team[special.sourceSlot].llimit == 5 ? 2 : 1;
         }});
         
@@ -630,7 +664,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             }
         });
         if (Array.isArray(data.unit.class)) { superClassBoost *= ($scope.data["superClass" + data.unit.class[0].replace(" ","")]) ? superClassBuffs[data.unit.class[0]] : 1; superClassBoost *= ($scope.data["superClass" + data.unit.class[1].replace(" ","")]) ? superClassBuffs[data.unit.class[1]] : 1; }
-        else superClassBoost = ($scope.data["superClass" + data.unit.class.replace(" ","")]) ? superClassBuffs[data.unit.class] : 1;
+        else if (data.unit.class) superClassBoost = ($scope.data["superClass" + data.unit.class.replace(" ","")]) ? superClassBuffs[data.unit.class] : 1;
         
         birdBoost = $scope.data.birdBuff ? 1.5 : 1;
 
@@ -792,9 +826,9 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         if (attackerType == 'QCK' && attackedType == 'DEX') typeMult = getAffinity('weak', attackerType, unit, teamSlot);
         if (attackerType == 'DEX' && attackedType == 'STR') typeMult = getAffinity('weak', attackerType, unit, teamSlot);
         
-        if ([2650, 2651, 2681].indexOf(unit.unit.number + 1) != -1 && teamSlot < 2) typeMult = getAffinity('strong', attackerType);
-        if ([3070, 3071, 3369, 3847, 3848].indexOf(unit.unit.number + 1) != -1 && teamSlot == 1 && $scope.data.actionright) typeMult = getAffinity('strong', attackerType);
-        if ([3398].indexOf(unit.unit.number + 1) != -1 && teamSlot < 2 && $scope.hp.perc > 99) typeMult = getAffinity('strong', attackerType);
+        if ([2650, 2651, 2681].indexOf(unit.unit.id) != -1 && teamSlot < 2) typeMult = getAffinity('strong', attackerType);
+        if ([3070, 3071, 3369, 3847, 3848].indexOf(unit.unit.id) != -1 && teamSlot == 1 && $scope.data.actionright) typeMult = getAffinity('strong', attackerType);
+        if ([3398].indexOf(unit.unit.id) != -1 && teamSlot < 2 && $scope.hp.perc > 99) typeMult = getAffinity('strong', attackerType);
         
         if (effects[$scope.data.effect] && effects[$scope.data.effect].hasOwnProperty('rainbow')){
             var params = getParameters(teamSlot)
@@ -895,7 +929,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             //console.log(enabledSpecials[0] ? enabledSpecials[0].sourceSlot : 1);
 
             var sugarSuperEnabled = false;
-            enabledSpecials.forEach(function(special){ if(params.team[special.sourceSlot].unit.number + 1 == 3805 && special.specialType == "special") sugarSuperEnabled = true; });
+            enabledSpecials.forEach(function(special){ if(parseInt(params.team[special.sourceSlot].unit.id) == 3805 && special.specialType == "special") sugarSuperEnabled = true; });
             
             var hobbyBuff = (params.scope.tdata.sugarToysSpecialEnabled && hitModifiers[i] == 'Perfect' && params.team[damage[i].position].sugarToy) ? sugarSuperEnabled ? 0.5 : 0.4 : 0; //0.7 For each HOBBY-HOBBY Hit (0.8 with Super Evolution), but trying to consolidate it with tapTiming buffs, so subtract the 0.3x already inherited from Perfects
             var tapTimingBuff = tapTimingSpecial && !(params.scope.tdata.sugarToysSpecialEnabled && params.team[damage[i].position].sugarToy) ? tapTimingSpecial.tapTiming(params2)[hitModifiers[i]] : 0;
@@ -1098,7 +1132,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
                     if(special.chainLimiter(params[n]) == Infinity) chainOverride = 0;
                     chainMultiplier = Math.min(chainOverride == 0 ? special.chainLimiter(params[n]) + chainUpgrade : chainOverride, chainMultiplier);
                 }
-                if($scope.tdata.semlaCounter.value >= 3 && (x.unit.unit.number == 2232 || x.unit.unit.number == 2233 || x.unit.unit.number == 2499) && x.position < 2){
+                if($scope.tdata.semlaCounter.value >= 3 && (x.unit.unit.id == 2232 || x.unit.unit.id == 2233 || x.unit.unit.id == 2499) && x.position < 2){
                     chainMultiplier = 1.0;
                 }
                 // add or update chain multiplier to multiplier list
@@ -1435,9 +1469,9 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
                     }
                 }
             }
-            if (([2650, 2651, 2681].indexOf(unit.number + 1) != -1 && teamSlot < 2) || 
-                ([3070, 3071, 3369, 3847, 3848].indexOf(unit.number + 1) != -1 && teamSlot == 1 && $scope.data.actionright) ||
-                ([3398].indexOf(unit.number + 1) != -1 && teamSlot < 2 && $scope.hp.perc > 99) ||
+            if (([2650, 2651, 2681].indexOf(unit.id) != -1 && teamSlot < 2) || 
+                ([3070, 3071, 3369, 3847, 3848].indexOf(unit.id) != -1 && teamSlot == 1 && $scope.data.actionright) ||
+                ([3398].indexOf(unit.id) != -1 && teamSlot < 2 && $scope.hp.perc > 99) ||
                 (effects[$scope.data.effect] && effects[$scope.data.effect].hasOwnProperty('rainbow') && effects[$scope.data.effect].rainbow(unitParams))){
                     //pass so that the affinityMultiplier is whatever it should be instead of 1
             }
@@ -1467,7 +1501,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
                     params.cached = getCachedParameters(slot, enabledSpecials[y].specialType);
                     //console.log(params);
                     if (enabledSpecials[y].staticMult(params) >= multSpecial){
-                        specialid = team[slot].unit.number + 1;
+                        specialid = team[slot].unit.id;
                         multSpecial = enabledSpecials[y].staticMult(params);
                         baseDamage = getStatOfUnit(team[slot],'atk', slot);
                         enabledEffects.forEach(function(x) {
@@ -1578,7 +1612,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         // "sourceSlot": slot of the unit the special belongs to
         $scope.tdata.team.forEach(function(x,n) {
             if (!team[n].unit || n > 5) return;
-            var id = team[n].unit.number + 1;
+            var id = team[n].unit.id;
             if (x.special && specials.hasOwnProperty(id)) {
                 if (specials[id].hasOwnProperty('orb') && enabledSpecials[0] && enabledSpecials[0].permanent){
                     conflictWarning = true;
@@ -1619,29 +1653,29 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
                     enabledSpecials.push(jQuery.extend({ sourceSlot: n, specialType: CAPSPECIAL },capspecials[id]));
             }
             // activate counters if necessary
-            if (n < 2 && [794, 795, 1124, 1125, 1191, 1192, 1219, 1220, 1288, 1289, 1361, 1362, 1525, 1557, 1558, 1559, 1560, 1561, 1562, 1712, 1713, 1716, 1764, 1907, 1908, 1921, 2015, 2049, 2050, 2198,2199, 2214, 2215, 2299, 2337, 2338, 2421, 2422, 2423, 2424, 2440, 2441, 3552, 3553, 5074, 5534, 5535, 2669, 2670, 2683, 2684, 3047, 3072, 3073, 3108, 3393, 3770, 3831, 3832 ].has(id))
+            if (n < 2 && hasUnitId(id, [794, 795, 1124, 1125, 1191, 1192, 1219, 1220, 1288, 1289, 1361, 1362, 1525, 1557, 1558, 1559, 1560, 1561, 1562, 1712, 1713, 1716, 1764, 1907, 1908, 1921, 2015, 2049, 2050, 2198, 2199, 2214, 2215, 2299, 2337, 2338, 2421, 2422, 2423, 2424, 2440, 2441, 3552, 3553, "2535-1", "2535-2", "2535-INT", 2669, 2670, 2683, 2684, 3047, 3072, 3073, 3108, 3393, 3770, 3831, 3832]))
                 $scope.tdata.turnCounter.enabled = true;
-            if ([3789, 3790, 5469, 5470, 5471 ].has(id))
+            if (hasUnitId(id, [3789, 3790, "3902-1", "3902-2", "3902-INT"]))
                 $scope.tdata.turnCounter.enabled = true;
             if(shipBonus.bonus.name=="Shark Superb")
                 $scope.tdata.turnCounter.enabled = true;
-            if (n < 2 && [1609, 1610, 2232, 3037, 3038].has(id))
+            if (n < 2 && hasUnitId(id, [1609, 1610, 2232, 3037, 3038]))
                 $scope.tdata.healCounter.enabled = true;
-            if ([5512, 5513, 5514, 5515, 5516, 5517, 5518, 5519, 3935].has(id))
+            if (hasUnitId(id, ["3932-1", "3932-2", "3932-INT", "3932-DEX", "3933-1", "3933-2", "3933-INT", "3933-DEX", 3935]))
                 $scope.tdata.healCounter.enabled = true;
-            if ([2364, 2365, 2981, 2982, 3224, 3225, 3473, 3474, 3751, 3752, 3851, 3852, 5449, 5450, 5451, 5452, 3962, 3963, 3964].has(id))
+            if (hasUnitId(id, [2364, 2365, 2981, 2982, 3224, 3225, 3473, 3474, 3751, 3752, 3851, 3852, "3868-1", "3868-2", "3868-DEX", "3868-QCK", 3962, 3963, 3964]))
                 $scope.tdata.damageCounter.enabled = true;
-            if (n < 2 && [2233, 2234, 2500].has(id))
+            if (n < 2 && hasUnitId(id, [2233, 2234, 2500]))
                 $scope.tdata.semlaCounter.enabled = true;
-            if ([3333, 3334].has(id))
+            if (hasUnitId(id, [3333, 3334]))
                 $scope.tdata.rcvCounter.enabled = true;
-            if ([3461, 3462].has(id))
+            if (hasUnitId(id, [3461, 3462]))
                 $scope.tdata.basehpCounter.enabled = true;
-            if ([5430, 5432, 5449, 5450, 5451, 5452, 3990, 3991, 4116].has(id))
+            if (hasUnitId(id, ["3787-2", "3788-2", "3868-1", "3868-2", "3868-DEX", "3868-QCK", 3990, 3991, 4116]))
                 $scope.tdata.dmgreductionCounter.enabled = true;
-            if ([3829, 3830].has(id))
+            if (hasUnitId(id, [3829, 3830]))
                 $scope.tdata.carrychainCounter.enabled = true;
-            if ([5574, 5575, 5576, 5577, 5578, 5579, 5580, 5581, 5582, 5583, 5584, 5585, 5586, 5587, 5588, 5589, 5590, 5591, 5592, 5593].has(id))
+            if (hasUnitId(id, ["4121-1", "4121-2", "4121-QCK", "4121-INT", "4122-1", "4122-2", "4122-QCK", "4122-INT", "4123-1", "4123-2", "4123-INT", "4123-QCK", "4124-1", "4124-2", "4124-INT", "4124-QCK", "4140-1", "4140-2", "4140-INT", "4140-DEX"]))
                 $scope.tdata.debuffCounter.enabled = true;
         });
         if (conflictWarning) 
@@ -1654,7 +1688,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         
         for (var i=2;i<6;i++) {
             if (team[i].unit === null) continue;
-            var id = team[i].unit.number + 1;
+            var id = team[i].unit.id;
             if (!window.sailors.hasOwnProperty(id)) continue;
             var effect = jQuery.extend({ },window.sailors[id]);
             effect.sourceSlot = i;
@@ -1665,7 +1699,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         
         for (var i=0;i<2;++i) {
             if (team[i].unit === null) continue;
-            var id = team[i].unit.number + 1;
+            var id = team[i].unit.id;
             if (!window.captains.hasOwnProperty(id)) continue;
             var effect = jQuery.extend({ },window.captains[id]),
                 locked = ($scope.tdata.team[i].lock > 0), silenced = ($scope.tdata.team[i].silence > 0);
@@ -1789,7 +1823,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         // Make it bypass immunity for now
         for(var i = 0; i < 2; i++){
             if(team[i].unit !== null){
-                var id = team[i].unit.number + 1;
+                var id = parseInt(team[i].unit.id);
                 if (id == 2112 || id == 2113 || id == 2739 || id == 3492 || id == 3734 || id == 3735)
                     enemyEffects.delay += 1;
             }
@@ -1806,13 +1840,13 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         for(var z=0;z<team.length;z++){
             if(team[z].unit){
                 var unitTemp = Object.assign({},team[z].unit);
-                if(z == 0 && $scope.data.cloneCheck1 && [3522, 3523].includes(unitTemp.number)) cloneReplace(unitTemp, 0);
-                else if(z != 0 && $scope.data.cloneCheck2 && [3522, 3523].includes(unitTemp.number)) cloneReplace(unitTemp, z);
-                if(unitTemp.class.length==2){
+                if(z == 0 && $scope.data.cloneCheck1 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, 0);
+                else if(z != 0 && $scope.data.cloneCheck2 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, z);
+                if(unitTemp.class && unitTemp.class.length==2){
                     classes[unitTemp.class[0].split(" ").join("")]++;
                     classes[unitTemp.class[1].split(" ").join("")]++;
                 }
-                else
+                else if(unitTemp.class)
                     classes[unitTemp.class.split(" ").join("")]++;
             }
         }
@@ -1838,9 +1872,9 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         for(var z=0;z<team.length;z++){
             if(team[z].unit){
                 var unitTemp = Object.assign({},team[z].unit);
-                if(z == 0 && $scope.data.cloneCheck1 && [3522, 3523].includes(unitTemp.number)) cloneReplace(unitTemp, 0);
-                else if(z != 0 && $scope.data.cloneCheck2 && [3522, 3523].includes(unitTemp.number)) cloneReplace(unitTemp, z);
-                if(unitTemp.class.length == 2){
+                if(z == 0 && $scope.data.cloneCheck1 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, 0);
+                else if(z != 0 && $scope.data.cloneCheck2 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, z);
+                if(unitTemp.class && unitTemp.class.length == 2){
                     if(['Fighter', 'Slasher', 'Shooter', 'Striker'].includes(unitTemp.class[0]) || ['Fighter', 'Slasher', 'Shooter', 'Striker'].includes(unitTemp.class[1])){
                         classes['Primary']++;
                     }
@@ -1848,7 +1882,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
                         classes['Secondary']++;
                     }
                 }
-                else{
+                else if(unitTemp.class){
                     if(['Fighter', 'Slasher', 'Shooter', 'Striker'].includes(unitTemp.class)){
                         classes['Primary']++;
                     }
@@ -1866,9 +1900,9 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         for(var z=0;z<team.length;z++){
             if(team[z].unit){
                 var unitTemp = Object.assign({},team[z].unit);
-                if(z == 0 && $scope.data.cloneCheck1 && [3522, 3523].includes(unitTemp.number)) cloneReplace(unitTemp, 0);
-                else if(z != 0 && $scope.data.cloneCheck2 && [3522, 3523].includes(unitTemp.number)) cloneReplace(unitTemp, z);
-                if(unitTemp.class.length==2){
+                if(z == 0 && $scope.data.cloneCheck1 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, 0);
+                else if(z != 0 && $scope.data.cloneCheck2 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, z);
+                if(unitTemp.class && unitTemp.class.length==2){
                     if(['Fighter', 'Slasher', 'Shooter', 'Striker'].includes(unitTemp.class[0])){
                         classes[z] = unitTemp.class[0];
                     }
@@ -1876,7 +1910,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
                         classes[z] = unitTemp.class[1];
                     }
                 }
-                else{
+                else if(unitTemp.class){
                     if(['Fighter', 'Slasher', 'Shooter', 'Striker'].includes(unitTemp.class)){
                         classes[z] = unitTemp.class;
                     }
@@ -1896,12 +1930,12 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
         for(var z=0;z<team.length;z++){
             if(team[z].unit){
                 var unitTemp = Object.assign({},team[z].unit);
-                if(z == 0 && $scope.data.cloneCheck1 && [3522, 3523].includes(unitTemp.number)) cloneReplace(unitTemp, 0);
-                else if(z != 0 && $scope.data.cloneCheck2 && [3522, 3523].includes(unitTemp.number)) cloneReplace(unitTemp, z);
-                if(z == 0 && $scope.data.cloneCheck1 && [3522, 3523].includes(unitTemp.number)){
+                if(z == 0 && $scope.data.cloneCheck1 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, 0);
+                else if(z != 0 && $scope.data.cloneCheck2 && hasUnitId(unitTemp.id, [3522, 3523])) cloneReplace(unitTemp, z);
+                if(z == 0 && $scope.data.cloneCheck1 && hasUnitId(unitTemp.id, [3522, 3523])){
                     colors[unitTemp.type]++;
                 }
-                else if(z != 0 && $scope.data.cloneCheck2 && [3522, 3523].includes(unitTemp.number)){
+                else if(z != 0 && $scope.data.cloneCheck2 && hasUnitId(unitTemp.id, [3522, 3523])){
                     colors[unitTemp.type]++;
                 }
                 else colors[unitTemp.type]++;
@@ -2052,21 +2086,21 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             unitTemp.maxLevel += [ 0, 6, 11, 21, 31, 51 ][$scope.data.team[slotNumber].llimit]
         }
         if ($scope.tdata.sugarToysSpecialEnabled){
-            if (team[slotNumber].unit) unitTemp.cost = $scope.data.team[slotNumber].sugarToy ? 40 : window.units[team[slotNumber].unit.number].cost;
+            if (team[slotNumber].unit) unitTemp.cost = $scope.data.team[slotNumber].sugarToy ? 40 : window.units[team[slotNumber].unit.id].cost;
         }
         if($scope.data.cloneCheck1 && team[0].unit){
-            if(slotNumber == 0 && [3522, 3523].includes(team[slotNumber].unit.number)){
+            if(slotNumber == 0 && [3522, 3523].includes(team[slotNumber].unit.id)){
                 cloneReplace(unitTemp, slotNumber)
             }
-            if(team[0].unit && [3522, 3523].includes(team[0].unit.number)){
+            if(team[0].unit && [3522, 3523].includes(team[0].unit.id)){
                 cloneReplace(friendCaptainTemp, 0)
             }
         }
         else if($scope.data.cloneCheck2 && slotNumber != 0){
-            if(team[slotNumber].unit && [3522, 3523].includes(team[slotNumber].unit.number)){
+            if(team[slotNumber].unit && [3522, 3523].includes(team[slotNumber].unit.id)){
                 cloneReplace(unitTemp, slotNumber)
             }
-            if(team[1].unit && [3522, 3523].includes(team[1].unit.number)){
+            if(team[1].unit && [3522, 3523].includes(team[1].unit.id)){
                 cloneReplace(captainTemp, 1)
             }
         }
@@ -2173,7 +2207,7 @@ var CruncherCtrl = function($scope, $rootScope, $timeout) {
             rcvtemp = 0;
             rcvmulttemp = 1;
             if (!team[i].unit) continue;
-            var id = team[i].unit.number + 1, zombie = window.zombies[id];
+            var id = parseInt(team[i].unit.id), zombie = window.zombies[id];
             if (!zombie) continue;
             if (zombie.type == 'healer') {
                 if (zombie.hasOwnProperty('amount')) 

@@ -92,18 +92,6 @@ angular.module('optc').config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        
-        .state('main.gather',{
-            url: 'gather',
-            views: {
-                popup: {
-                    templateUrl: 'views/popup/gather.html',
-                    controller: function($scope) {
-                        $scope.units = window.units.filter(function(x) { return x.growth && x.growth.atk === 0; });
-                    }
-                }
-            }
-        })
 
         .state('main.candy',{
             url: 'candies',
@@ -158,9 +146,9 @@ angular.module('optc').config(function($stateProvider, $urlRouterProvider) {
                 popup: {
                     templateUrl: 'views/popup/specials.html',
                     controller: function($scope) {
-                        $scope.units = window.units.filter(function(x,n) {
-                            return details[x.number + 1] && details[x.number + 1].hasOwnProperty('special') &&
-                                (!cooldowns[x.number] || cooldowns[x.number].constructor != Array);
+                        $scope.units = Object.values(window.units).filter(function(x,n) {
+                            return details[x.id] && details[x.id].hasOwnProperty('special') &&
+                                (!cooldowns[x.id] || cooldowns[x.id].constructor != Array);
                         });
                     }
                 }
