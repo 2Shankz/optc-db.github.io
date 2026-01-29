@@ -4303,6 +4303,7 @@ window.flags = {
     4507: { rr: 1, rro: 1 },
     4508: { rr: 1, rro: 1 },
     4509: { rr: 1, rro: 1 },
+    4512: { rr: 1, rro: 1, lrr: 1, pflrr: 1 },
     //break
     4986: { rr: 1, rro: 1, global: 1 },
     4987: { rr: 1, rro: 1, global: 1 },
