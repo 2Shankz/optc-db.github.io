@@ -73,7 +73,7 @@
     <animate-collapse class="filter-header">Rarity</animate-collapse>
     <div class="collapse">
         <span style="display: flex; width: 100%;">
-            <span ng-repeat="star in [ 1, 2, 3, 4, '4+', 5, '5+', 6, '6+' ]" style="flex: 1; text-align: center; display: block;" class="filter"
+            <span ng-repeat="star in [ '1', '2', '3', '4', '4+', '5', '5+', '6', '6+' ]" style="flex: 1; text-align: center; display: block;" class="filter"
                 ng-click="onStarsClick($event,star)"
                 ng-class="{ active: filters.stars.indexOf(star) > -1 }">{{::star}}</span>
         </span>
