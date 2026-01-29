@@ -683,13 +683,13 @@
 				}
 				
 				if (!$rootScope.filters.rumbleCost) {
-					$rootScope.filters.rumbleCost = [1, 55];
+					$rootScope.filters.rumbleCost = [1, 99];
 				}
 
 				noUiSlider.create(slider, {
 					start: [$rootScope.filters.rumbleCost[0], $rootScope.filters.rumbleCost[1]],
 					connect: true,
-					range: { min: 1, max: 55 },
+					range: { min: 1, max: 99 },
 					step: 1,
 					animate: false
 				});
