@@ -95,16 +95,97 @@ if (!unit) {
 }
 var flags = window.flags[unit.id] || {};
 
-      /* Helper to get class array for VS units (when unit.class is null) */
-      function getVsUnitClasses() {
-        if (unit.class !== null) return null;
-        var baseId = unit.id;
-        var variant1 = window.units[baseId + '-1'];
-        var variant2 = window.units[baseId + '-2'];
-        var result = [];
-        if (variant1 && variant1.class) result.push(variant1.class);
-        if (variant2 && variant2.class) result.push(variant2.class);
-        return result.length > 0 ? result : null;
+/* Helper to get all variants of a unit (base, -1, -2) that have classes/types */
+      function getUnitVariants(unit) {
+        var variants = [];
+        
+        // Add base unit if it has classes
+        if (unit.class && unit.class.length > 0) {
+          variants.push(unit);
+        }
+        
+        // Add variant -1 if it exists and has classes
+        var variant1 = window.units[unit.id + '-1'];
+        if (variant1 && variant1.class && variant1.class.length > 0) {
+          variants.push(variant1);
+        }
+        
+        // Add variant -2 if it exists and has classes  
+        var variant2 = window.units[unit.id + '-2'];
+        if (variant2 && variant2.class && variant2.class.length > 0) {
+          variants.push(variant2);
+        }
+        
+        return variants;
+      }
+
+      /* Helper to get all variants of a unit that have types */
+      function getUnitVariantsWithTypes(unit) {
+        var variants = [];
+        
+        // Add base unit if it has type
+        if (unit.type) {
+          variants.push(unit);
+        }
+        
+        // Add variant -1 if it exists and has type
+        var variant1 = window.units[unit.id + '-1'];
+        if (variant1 && variant1.type) {
+          variants.push(variant1);
+        }
+        
+        // Add variant -2 if it exists and has type  
+        var variant2 = window.units[unit.id + '-2'];
+        if (variant2 && variant2.type) {
+          variants.push(variant2);
+        }
+        
+        return variants;
+      }
+
+      /* Helper to extract all classes from a variant (handle nested arrays) */
+      function extractVariantClasses(variant) {
+        var variantClasses = [];
+        
+        if (Array.isArray(variant.class)) {
+          for (var c = 0; c < variant.class.length; c++) {
+            if (Array.isArray(variant.class[c])) {
+              variantClasses = variantClasses.concat(variant.class[c]);
+            } else {
+              variantClasses.push(variant.class[c]);
+            }
+          }
+        } else if (variant.class) {
+          variantClasses = [variant.class];
+        }
+        
+        return variantClasses;
+      }
+
+      /* Helper to extract all types from a variant (handle arrays) */
+      function extractVariantTypes(variant) {
+        var variantTypes = [];
+        
+        if (Array.isArray(variant.type)) {
+          variantTypes = variantTypes.concat(variant.type);
+        } else if (variant.type) {
+          variantTypes = [variant.type];
+        }
+        
+        return variantTypes;
+      }
+
+      /* Helper to check if unit has only single classes across all variants */
+      function hasOnlySingleClasses(unit) {
+        var variants = getUnitVariants(unit);
+        for (var v = 0; v < variants.length; v++) {
+          var variant = variants[v];
+          var variantClasses = extractVariantClasses(variant);
+          if (variantClasses.length > 1) {
+            return false; // Found a variant with multiple classes
+          }
+        }
+        return true; // All variants have single class
       }
 
       /* * * * * Query filters * * * * */
@@ -122,215 +203,81 @@ var flags = window.flags[unit.id] || {};
 
       if (!Utils.checkUnitMatchSearchParameters(unit, tempParams)) return false;
 
-      /* * * * * Sidebar filters * * * * */
+/* * * * * Sidebar filters * * * * */
       if (!tableData.parameters.filters) return true;
       var filters = tableData.parameters.filters;
-      // filter by type
-      //if (filters.type && unit.type !== filters.type) return false;
-      if (filters.types && filters.types.length) {
-        if (!Array.isArray(unit.type))
-          if (!filters.types.includes(unit.type)) return false;
-        if (Array.isArray(unit.type))
-          if (
-            !filters.types.includes(unit.type[0]) &&
-            !filters.types.includes(unit.type[1])
-          )
-            return false;
+
+      // Handle Exclude Single Class Characters filter (independent of class selection)
+      if (filters.noSingleClass && hasOnlySingleClasses(unit)) {
+        return false;
       }
-      // filter by class
-      if (!Array.isArray(unit.class) && unit.class !== null && filters.noSingleClass) return false;
-      // VS units pass the noSingleClass check (they have classes in variants)
-      if (filters.classes && filters.classes.length) {
-        // Define filter variables BEFORE using them (available for both VS and regular units)
-        var inclusive = !filters.classInclusive;
-        var singleQuery = filters.classes.length == 1,
-          singleClass = !Array.isArray(unit.class),
-          doubleClass =
-            Array.isArray(unit.class) && unit.class.length == 2
-              ? Array.isArray(unit.class[0])
-                ? false
-                : true
-              : false,
-          dualCharacter = Array.isArray(unit.class) && unit.class.length == 3,
-          vsCharacter =
-            Array.isArray(unit.class) && unit.class.length == 2
-              ? Array.isArray(unit.class[0])
-                ? true
-                : false
-              : false;
-
-        var vsClasses = getVsUnitClasses();
-        // Handle VS units (unit.class === null)
-        if (vsClasses) {
-          var vsMatch = false;
-          // Check each variant - include if at least one variant matches the filter
-          for (var v = 0; v < vsClasses.length; v++) {
-            var variantClasses = vsClasses[v];
-            var vSingleClass = !Array.isArray(variantClasses);
-            var vDoubleClass = Array.isArray(variantClasses) && variantClasses.length == 2 && !Array.isArray(variantClasses[0]);
-            var vDualCharacter = Array.isArray(variantClasses) && variantClasses.length == 3;
-            var vVsCharacter = Array.isArray(variantClasses) && variantClasses.length == 2 && Array.isArray(variantClasses[0]);
-
-            var vMatch = false;
-            if (!inclusive) {
-              if (vSingleClass) {
-                if (singleQuery) {
-                  if (filters.classes[0] == variantClasses) vMatch = true;
-                } else {
-                  if (filters.classes.includes(variantClasses)) vMatch = true;
-                }
-              } else if (vDoubleClass) {
-                if (singleQuery) {
-                  // For single query with double class, check if the single class matches either
-                  if (filters.classes[0] == variantClasses[0] || filters.classes[0] == variantClasses[1]) vMatch = true;
-                } else {
-                  if (filters.classes.includes(variantClasses[0]) && filters.classes.includes(variantClasses[1])) {
-                    vMatch = true;
-                  }
-                }
-              } else {
-                // Dual character or VS character format
-                if (singleQuery) {
-                  var vt1 = false, vt2 = false, vt3 = false;
-                  if (variantClasses[0].length != 2) {
-                    if (filters.classes[0] == variantClasses[0]) vt1 = true;
-                  }
-                  if (variantClasses[1].length != 2) {
-                    if (filters.classes[0] == variantClasses[1]) vt2 = true;
-                  }
-                  if (vDualCharacter) {
-                    if (variantClasses[2] && variantClasses[2].length != 2) {
-                      if (filters.classes[0] == variantClasses[2]) vt3 = true;
-                    }
-                  }
-                  if (vt1 || vt2 || vt3) vMatch = true;
-                } else {
-                  // Multi-query - need ALL selected classes present in at least one variant's classes
-                  var vAllClassesPresent = true;
-                  for (var fc = 0; fc < filters.classes.length; fc++) {
-                    var foundClass = false;
-                    for (var c = 0; c < variantClasses.length; c++) {
-                      if (Array.isArray(variantClasses[c])) {
-                        // Check both classes in the pair
-                        if (variantClasses[c].includes(filters.classes[fc])) {
-                          foundClass = true;
-                          break;
-                        }
-                      } else {
-                        if (variantClasses[c] == filters.classes[fc]) {
-                          foundClass = true;
-                          break;
-                        }
-                      }
-                    }
-                    if (!foundClass) {
-                      vAllClassesPresent = false;
-                      break;
-                    }
-                  }
-                  if (vAllClassesPresent) vMatch = true;
-                }
-              }
-            } else {
-              // Inclusive mode - include if ANY selected class is present in any variant
-              for (var fc = 0; fc < filters.classes.length; fc++) {
-                for (var c = 0; c < variantClasses.length; c++) {
-                  if (Array.isArray(variantClasses[c])) {
-                    if (variantClasses[c].includes(filters.classes[fc])) {
-                      vMatch = true;
-                      break;
-                    }
-                  } else {
-                    if (variantClasses[c] == filters.classes[fc]) {
-                      vMatch = true;
-                      break;
-                    }
-                  }
-                }
-                if (vMatch) break;
-              }
-            }
-            if (vMatch) {
-              vsMatch = true;
+// filter by type
+      if (filters.types && filters.types.length) {
+        var typeVariants = getUnitVariantsWithTypes(unit);
+        var anyVariantMatches = false;
+        
+        // Evaluate each variant individually
+        for (var v = 0; v < typeVariants.length; v++) {
+          var variant = typeVariants[v];
+          var variantTypes = extractVariantTypes(variant);
+          
+          // Check if this variant matches any of the selected types
+          var variantMatches = false;
+          for (var i = 0; i < variantTypes.length; i++) {
+            if (filters.types.includes(variantTypes[i])) {
+              variantMatches = true;
               break;
             }
           }
-          if (!vsMatch) return false;
-        } else {
-          // Regular unit handling (unit.class is not null)
-          if (!inclusive) {
-            if (singleClass) {
-              if (singleQuery) if (filters.classes[0] != unit.class) return false;
-              if (!singleQuery)
-                if (!filters.classes.includes(unit.class)) return false;
-            } else if (doubleClass) {
-              if (singleQuery) return false;
-              if (!singleQuery)
-                if (
-                  !filters.classes.includes(unit.class[0]) ||
-                  !filters.classes.includes(unit.class[1])
-                )
-                  return false;
-            } else {
-              if (singleQuery) {
-                var temp1 = false;
-                var temp2 = false;
-                var temp3 = false;
-                if (unit.class[0].length != 2) {
-                  if (filters.classes[0] == unit.class[0]) temp1 = true;
-                }
-                if (unit.class[1].length != 2) {
-                  if (filters.classes[0] == unit.class[1]) temp2 = true;
-                }
-                if (dualCharacter)
-                  if (unit.class[2].length != 2) {
-                    if (filters.classes[0] == unit.class[2]) temp3 = true;
-                  }
-                if (!(temp1 || temp2 || temp3)) return false;
-              }
-              if (!singleQuery) {
-                if (dualCharacter)
-                  if (
-                    (!filters.classes.includes(unit.class[0][0]) ||
-                      !filters.classes.includes(unit.class[0][1])) &&
-                    (!filters.classes.includes(unit.class[1][0]) ||
-                      !filters.classes.includes(unit.class[1][1])) &&
-                    (!filters.classes.includes(unit.class[2][0]) ||
-                      !filters.classes.includes(unit.class[2][1]))
-                  )
-                    return false;
-                if (vsCharacter)
-                  if (
-                    (!filters.classes.includes(unit.class[0][0]) ||
-                      !filters.classes.includes(unit.class[0][1])) &&
-                    (!filters.classes.includes(unit.class[1][0]) ||
-                      !filters.classes.includes(unit.class[1][1]))
-                  )
-                    return false;
-              }
-            }
-          } else {
-            if (singleClass)
-              if (!filters.classes.includes(unit.class)) return false;
-            if (doubleClass)
-              if (
-                !filters.classes.includes(unit.class[0]) &&
-                !filters.classes.includes(unit.class[1])
-              )
-                return false;
-            if (dualCharacter || vsCharacter) {
-              var uclasses = [];
-              for (i = 0; i < unit.class.length; i++) {
-                uclasses.push(unit.class[i][0]);
-                uclasses.push(unit.class[i][1]);
-              }
-              var temp = false;
-              for (i = 0; i < uclasses.length; i++)
-                if (temp || filters.classes.includes(uclasses[i])) temp = true;
-              if (!temp) return false;
-            }
+          
+          if (variantMatches) {
+            anyVariantMatches = true;
+            break; // Found a matching variant, no need to check others
           }
         }
+        
+        if (!anyVariantMatches) return false;
+      }
+// filter by class
+      if (filters.classes && filters.classes.length) {
+        var variants = getUnitVariants(unit);
+        var anyVariantMatches = false;
+        
+        // Evaluate each variant individually
+        for (var v = 0; v < variants.length; v++) {
+          var variant = variants[v];
+          var variantClasses = extractVariantClasses(variant);
+          
+          var variantMatches = true;
+          var inclusive = !filters.classInclusive;
+          
+          if (inclusive) {
+            // ANY selected class must be present in this variant
+            var hasAnyClass = false;
+            for (var i = 0; i < filters.classes.length; i++) {
+              if (variantClasses.includes(filters.classes[i])) {
+                hasAnyClass = true;
+                break;
+              }
+            }
+            variantMatches = hasAnyClass;
+          } else {
+            // Exclusive mode: variant must have ALL selected classes
+            for (var i = 0; i < filters.classes.length; i++) {
+              if (!variantClasses.includes(filters.classes[i])) {
+                variantMatches = false;
+                break;
+              }
+            }
+          }
+          
+          if (variantMatches) {
+            anyVariantMatches = true;
+            break; // Found a matching variant, no need to check others
+          }
+        }
+        
+        if (!anyVariantMatches) return false;
       }
       //filter rumble style
       if (filters.styleATK) {
