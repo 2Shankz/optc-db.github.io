@@ -93,7 +93,7 @@
           types: [],
           stars: [],
           cost: [1, 99],
-          rumbleCost: [1, 55],
+          rumbleCost: [1, 99],
           toggle: true,
           typeEnabled: false,
           characterEnabled: false,
