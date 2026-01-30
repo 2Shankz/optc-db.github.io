@@ -48,7 +48,7 @@
                 var type1 = v1.type;
                 var type2 = v2.type;
 
-                var isDualUnit = unit.maxHP !== null && unit.maxATK !== null;
+                var isDualUnit = unit.type !== null;
 
                 if (isDualUnit) {
                     if (type1) {
