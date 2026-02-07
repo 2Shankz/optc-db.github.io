@@ -7685,7 +7685,7 @@
 			},
 			{
 				name: "Pain",
-				targets: ["captain", "special", "sailor"],
+				targets: ["captain", "special", "sailor", "support"],
 				regex:
 				/(?:reduces|removes)[^."]+?(?:Pain|selected debuffs?)[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
