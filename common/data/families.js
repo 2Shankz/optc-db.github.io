@@ -5147,6 +5147,9 @@ window.families = {
     4515: [ ...Rebecca ],
     4516: [ ...Viola ],
     4517: [ ...Mansherry ],
+    4518: [ ...Shinobu, ...Tama ],
+    4519: [ ...Yamato ],
+    4520: [ ...Ulti, ...PageOne ],
     //break
     4986: [ ...MonkeyDLuffy ],
     4987: [ ...MonkeyDLuffy ],
