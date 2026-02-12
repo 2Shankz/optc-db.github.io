@@ -210,7 +210,7 @@
 
 
                     <!-- Captain -->
-                    <h3 id="captainSection" class="page-header" ng-hide="hidden.abilities">Captain</h3>
+                    <h3 id="captainSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.captain">Captain</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -302,7 +302,7 @@
                     </div>
 
                     <!-- Special -->
-                    <h3 id="specialSection" class="page-header" ng-hide="hidden.abilities">Special</h3>
+                    <h3 id="specialSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.special">Special</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -485,7 +485,7 @@
                     </div>
 
                     <!-- Super Special -->
-                    <h3 id="superSpecialSection" class="page-header" ng-hide="hidden.abilities">Super Special</h3>
+                    <h3 id="superSpecialSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.superSpecial">Super Special</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -549,7 +549,7 @@
                     </div>
 
                     <!-- VS Special -->
-                    <h3 id="vsSpecialSection" class="page-header" ng-hide="hidden.abilities">VS Special</h3>
+                    <h3 id="vsSpecialSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.VSSpecial">VS Special</h3>
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
                             <tbody>
@@ -603,7 +603,7 @@
                     </div>
 
                     <!-- Sailor -->
-                    <h3 id="sailorSection" class="page-header" ng-hide="hidden.abilities">Sailor</h3>
+                    <h3 id="sailorSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.sailor">Sailor</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -703,7 +703,7 @@
                     </div>
 
                     <!-- Swap -->
-                    <h3 id="swapSection" class="page-header" ng-hide="hidden.abilities">Swap</h3>
+                    <h3 id="swapSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.swap">Swap</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -730,7 +730,7 @@
                         </table>
                     </div>
 
-            <h3 id="supportSection" class="page-header" ng-hide="hidden.abilities">Support</h3>
+            <h3 id="supportSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.support">Support</h3>
 
             <div class="panel panel-default" ng-hide="hidden.abilities">
                 <table class="table table-striped-column abilities">
@@ -793,7 +793,7 @@
                     </div>
 
                     <!-- Potential Abilities -->
-                    <h3 id="potentialSection" class="page-header" ng-hide="hidden.abilities">Potential Abilities</h3>
+                    <h3 id="potentialSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.potential">Potential Abilities</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -825,7 +825,7 @@
                     </div>
 
                     <!-- Last Tap -->
-                    <h3 id="lastTapSection" class="page-header" ng-hide="hidden.abilities">Last Tap</h3>
+                    <h3 id="lastTapSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.lastTap">Last Tap</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -843,7 +843,7 @@
                     </div>
 
                     <!-- Super Tandem -->
-                    <h3 id="superTandemSection" class="page-header" ng-hide="hidden.abilities">Super Tandem</h3>
+                    <h3 id="superTandemSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.superTandem">Super Tandem</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -862,7 +862,7 @@
                     </div>
 
                     <!-- Super Tandem Boost -->
-                    <h3 id="superTandemBoostSection" class="page-header" ng-hide="hidden.abilities">Super Tandem Boost</h3>
+                    <h3 id="superTandemBoostSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.superTandemBoost">Super Tandem Boost</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -881,7 +881,7 @@
                     </div>
 
                     <!-- Rush -->
-                    <h3 id="rushSection" class="page-header" ng-hide="hidden.abilities">Rush</h3>
+                    <h3 id="rushSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.rush">Rush</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -1294,8 +1294,7 @@
 </table>
 
 <!-- Evolves from -->
-<h3 id="evolutionFromSection" class="page-header" ng-if="evolvesFrom.length > 0" ng-hide="hidden.evolutionFrom">Evolves
-    From</h3>
+<h3 id="evolutionFromSection" class="page-header" ng-if="evolvesFrom.length > 0" ng-hide="hidden.evolutionFrom">Evolves From</h3>
 
 <table class="table table-striped table-centered table-bordered table-textless" ng-if="evolvesFrom.length > 0"
     ng-hide="hidden.evolutionFrom">
