@@ -1,4 +1,4 @@
-@import url('../common/css/orb-colors.css');
+@import url('../../common/css/orb-colors.css');
 
 /***************
  * MAIN LAYOUT *
@@ -296,12 +296,6 @@ body, html {
     margin-bottom: 0 !important;
 }
 
-.damage.STR, li.STR, [current-type="STR"] > div { background: salmon; }
-.damage.QCK, li.QCK, [current-type="QCK"] > div { background: lightskyblue; }
-.damage.DEX, li.DEX, [current-type="DEX"] > div { background: lightgreen; }
-.damage.PSY, li.PSY, [current-type="PSY"] > div { background: gold; }
-.damage.INT, li.INT, [current-type="INT"] > div { background: orchid; }
-
 .damageLabel {
     font-size: 75%;
 }
@@ -448,6 +442,52 @@ body, html {
     }
 }
 
+/***********
+ * SIDEBAR *
+ ***********/
+
+#menu {
+    position: fixed;
+    top: 0px;
+    left: -20.9em;
+    width: 20.9em;
+    height: 100%;
+    transition: left .1s linear;
+    margin-bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#menu.open {
+    left: 0em;
+}
+
+#defense {
+    width: 60px;
+    margin-left: 10px;
+    position: relative;
+    bottom: 1px;
+}
+
+#sliderToggle[status="0"]:after { content: "Level sliders: enabled"; }
+#sliderToggle[status="1"]:after { content: "Level sliders: disabled"; }
+
+nav.panel {
+    position: fixed;
+    left: -16.625em;
+    width: 16.625em;
+    background: #2C3E50;
+}
+
+#menu li > div {
+    display: block;
+    padding: 0.8em;
+    color: white;
+    text-align: left;
+    font-size: 11pt;
+    transition: background 0.1s linear;
+}
+
 ul { padding-left: 0; }
 
 #menu li {
@@ -481,10 +521,6 @@ input {
     background: #cdd8e4;
     color: black !important;
     cursor: default;
-}
-
-li.STR > div, li.QCK > div, li.DEX > div, li.PSY > div, li.INT > div {
-    color: black !important;
 }
 
 #supertypeContainer {
@@ -743,17 +779,8 @@ nav > li > div {
     border-radius: 0;
 }
 
-.modal-header {
-    background-color: #428bca;
-    color: white;
-}
-
-.modal-header a {
-    color: white;
-}
-
-.modal-footer {
-    background-color: rgb(235,235,235);
+.modal-content {
+    border-radius: 0;
 }
 
 .animated {

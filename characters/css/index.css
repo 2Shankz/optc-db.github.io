@@ -1239,7 +1239,6 @@ unit > a {
     text-align: center;
 }
 
-/* Dark theme styles (merged from edgy.css) */
 html, body,
 .pagination a {
     background: #404040 !important;

@@ -209,8 +209,8 @@
                             </div>
 
 
-                    <!-- Abilities -->
-                    <h3 id="abilitiesSection" class="page-header" ng-hide="hidden.abilities">Abilities</h3>
+                    <!-- Captain -->
+                    <h3 id="captainSection" class="page-header" ng-hide="hidden.abilities">Captain</h3>
 
                     <div class="panel panel-default" ng-hide="hidden.abilities">
                         <table class="table table-striped-column abilities">
@@ -221,7 +221,6 @@
                                     <td style="width: 50%"><strong>Level Limit Break</strong></td>
                                 </tr>
                                 <tr>
-                                    <td width="5%">Captain</td>
                                     <td colspan="{{details.captain.llbbase || details.captain.llbcharacter1 ? 1 : 2}}">
                                         <!-- same captain ability -->
                                         <div ng-if="!isCaptainHybrid" ng-bind-html="details.captain | decorate"></div>
@@ -298,8 +297,17 @@
                                             ng-bind-html="details.captainNotes | notes | decorate"></span>
                                     </td>
                                 </tr>
-                                                                <tr>
-                                    <td width="5%">Special</td>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Special -->
+                    <h3 id="specialSection" class="page-header" ng-hide="hidden.abilities">Special</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
+                                <tr>
                                     <td colspan="{{details.special.llbbase || details.special.llbcharacter1 ? 1 : 2}}">
                                         <strong class="specialName"
                                             ng-if="details.specialName">{{::details.specialName}}</strong>
@@ -414,7 +422,7 @@
                                     </td>
                                 </tr>
                                 <tr ng-if="cooldown && !isSpecialStaged && !isCooldownHybrid">
-                                    <td>Cooldown<span ng-if="unit.limitCD != 0"><br>CD + LB</span><span
+                                    <td width="5%">Cooldown <span ng-if="unit.limitCD != 0"><br>CD + LB</span><span
                                             ng-if="unit.limitexCD != 0 && unit.limitCD != unit.limitexCD"><br>CD +
                                             LB+</span></td>
                                     <td colspan="{{details.special.llbbase ? 2 : 1}}">
@@ -472,107 +480,135 @@
                                             turns' : ''}}</span>
                                     </td>
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Super Special -->
+                    <h3 id="superSpecialSection" class="page-header" ng-hide="hidden.abilities">Super Special</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
+                                <tr ng-if="details.superSpecial">
+                                    <td>
+                                        <strong class="specialName"
+                                            ng-if="details.superSpecialName">{{::details.superSpecialName}}</strong>
+                                        <!-- same special, no stages -->
+                                        <div ng-if="!isSuperSpecialHybrid && !isSuperSpecialStaged"
+                                            ng-bind-html="details.superSpecial | decorate"></div>
+                                        <!-- same special, with stages -->
+                                        <div ng-if="!isSuperSpecialHybrid && isSuperSpecialStaged">
+                                            <div ng-repeat="stage in details.superSpecial track by $index">
+                                                <strong>Stage {{::$index + 1}}</strong>
+                                                ({{::stage.cooldown.length ? stage.cooldown[0] :
+                                                stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + stage.cooldown[1] : ''}}
+                                                turns) <span ng-if="unit.limitCD != 0"><strong>➤</strong>
+                                                    ({{::stage.cooldown.length ? stage.cooldown[0] - unit.limitCD :
+                                                    stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + (stage.cooldown[1] -
+                                                    unit.limitCD) : ''}} turns):</span><span
+                                                    ng-if="unit.limitexCD != 0 && unit.limitexCD != unit.limitCD"><strong>➤</strong>
+                                                    ({{::stage.cooldown.length ? stage.cooldown[0] - unit.limitexCD :
+                                                    stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + (stage.cooldown[1] -
+                                                    unit.limitexCD) : ''}} turns):</span>
+                                                <span ng-bind-html="stage.description | decorate"></span>
+                                            </div>
+                                        </div>
+                                        <!-- different specials -->
+                                        <div ng-if="isSuperSpecialHybrid">
+                                            <span class="badge badge-character" ng-show="details.superSpecial.character1">{{::char1.name}}</span>
+                                            <div ng-show="details.superSpecial.character1"
+                                                ng-bind-html="details.superSpecial.character1 | decorate"></div>
+                                            <span class="badge badge-character" ng-show="details.superSpecial.character2">{{::char2.name}}</span>
+                                            <div ng-show="details.superSpecial.character2"
+                                                ng-bind-html="details.superSpecial.character2 | decorate"></div>
+                                        </div>
+                                        <span class="notes" ng-if="details.superSpecialNotes"
+                                            ng-bind-html="details.superSpecialNotes | notes | decorate"></span>
+                                    </td>
+                                </tr>
                                 <tr ng-if="details.superSpecialCriteria">
-                                    <td>Super Special Criteria</td>
-                                    <td colspan="2">
+                                    <td>
                                         <div>
+                                            <strong>Criteria</strong><br>
                                             <span ng-bind-html="details.superSpecialCriteria | decorate"></span>
                                         </div>
+                                    </td>
+                                </tr>
+                                <tr ng-if="details.superSpecialCriteria">
+                                    <td>
+                                        <add-super-special-query criteria="details.superSpecialCriteria"
+                                            excluded-families="families"></add-super-special-query>
+                                        <div class="notes" ng-if="details.superSpecialCriteriaNotes"
+                                            ng-bind-html="details.superSpecialCriteriaNotes | notes | decorate"></div>
+                                    </td>
+                                </tr>
+                    </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <add-super-special-query criteria="details.superSpecialCriteria"
-                        excluded-families="families"></add-super-special-query>
-                    <div class="notes" ng-if="details.superSpecialCriteriaNotes"
-                        ng-bind-html="details.superSpecialCriteriaNotes | notes | decorate"></div>
-                    </td>
-                    </tr>
-                    <tr ng-if="details.superSpecial">
-                        <td>Super Special</td>
-                        <td colspan="2">
-                            <strong class="specialName"
-                                ng-if="details.superSpecialName">{{::details.superSpecialName}}</strong>
-                            <!-- same special, no stages -->
-                            <div ng-if="!isSuperSpecialHybrid && !isSuperSpecialStaged"
-                                ng-bind-html="details.superSpecial | decorate"></div>
-                            <!-- same special, with stages -->
-                            <div ng-if="!isSuperSpecialHybrid && isSuperSpecialStaged">
-                                <div ng-repeat="stage in details.superSpecial track by $index">
-                                    <strong>Stage {{::$index + 1}}</strong>
-                                    ({{::stage.cooldown.length ? stage.cooldown[0] :
-                                    stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + stage.cooldown[1] : ''}}
-                                    turns) <span ng-if="unit.limitCD != 0"><strong>➤</strong>
-                                        ({{::stage.cooldown.length ? stage.cooldown[0] - unit.limitCD :
-                                        stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + (stage.cooldown[1] -
-                                        unit.limitCD) : ''}} turns):</span><span
-                                        ng-if="unit.limitexCD != 0 && unit.limitexCD != unit.limitCD"><strong>➤</strong>
-                                        ({{::stage.cooldown.length ? stage.cooldown[0] - unit.limitexCD :
-                                        stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + (stage.cooldown[1] -
-                                        unit.limitexCD) : ''}} turns):</span>
-                                    <span ng-bind-html="stage.description | decorate"></span>
-                                </div>
-                            </div>
-                            <!-- different specials -->
-                            <div ng-if="isSuperSpecialHybrid">
-                                <span class="badge badge-character" ng-show="details.superSpecial.character1">{{::char1.name}}</span>
-                                <div ng-show="details.superSpecial.character1"
-                                    ng-bind-html="details.superSpecial.character1 | decorate"></div>
-                                <span class="badge badge-character" ng-show="details.superSpecial.character2">{{::char2.name}}</span>
-                                <div ng-show="details.superSpecial.character2"
-                                    ng-bind-html="details.superSpecial.character2 | decorate"></div>
-                            </div>
-                            <span class="notes" ng-if="details.superSpecialNotes"
-                                ng-bind-html="details.superSpecialNotes | notes | decorate"></span>
-                        </td>
-                    </tr>
-                    <tr ng-if="details.VSCondition">
-                        <td>VS Gauge Condition</td>
-                        <td>
-                            <div>
-                                <span ng-bind-html="details.VSCondition | decorate"></span>
-                            </div>
-                </div>
-                <span class="notes" ng-if="details.VSConditionNotes"
-                    ng-bind-html="details.VSConditionNotes | notes | decorate"></span>
-                </td>
-                </tr>
-                <tr ng-if="details.VSSpecial">
-                    <td>VS Special</td>
-                    <td>
+
+                    <!-- VS Special -->
+                    <h3 id="vsSpecialSection" class="page-header" ng-hide="hidden.abilities">VS Special</h3>
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
+                                <tr ng-if="details.VSSpecial">
+                                    <td>
                         <!-- same special, no stages -->
                         <div ng-if="!isVSSpecialHybrid && !isVSSpecialStaged"
-                            ng-bind-html="details.superSpecial | decorate"></div>
+                        ng-bind-html="details.superSpecial | decorate"></div>
                         <!-- same special, with stages -->
                         <div ng-if="!isVSSpecialHybrid && isVSSpecialStaged">
                             <div ng-repeat="stage in details.VSSpecial track by $index">
                                 <strong>Stage {{::$index + 1}}</strong>
                                 ({{::stage.cooldown.length ? stage.cooldown[0] :
-                                stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + stage.cooldown[1] : ''}} turns)
-                                <span ng-if="unit.limitCD != 0"><strong>➤</strong>
-                                    ({{::stage.cooldown.length ? stage.cooldown[0] - unit.limitCD :
-                                    stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + (stage.cooldown[1] -
-                                    unit.limitCD) : ''}} turns):</span><span
-                                    ng-if="unit.limitexCD != 0 && unit.limitexCD != unit.limitCD"><strong>➤</strong>
-                                    ({{::stage.cooldown.length ? stage.cooldown[0] - unit.limitexCD :
-                                    stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + (stage.cooldown[1] -
-                                    unit.limitexCD) : ''}} turns):</span>
-                                <span ng-bind-html="stage.description | decorate"></span>
-                            </div>
-                        </div>
-                        <!-- different specials -->
-                        <div ng-if="isVSSpecialHybrid">
-                            <span class="badge badge-character" ng-show="details.VSSpecial.character1">{{::char1.name}}</span>
-                            <div ng-show="details.VSSpecial.character1"
-                                ng-bind-html="details.VSSpecial.character1 | decorate"></div>
-                            <span class="badge badge-character" ng-show="details.VSSpecial.character2">{{::char2.name}}</span>
-                            <div ng-show="details.VSSpecial.character2"
-                                ng-bind-html="details.VSSpecial.character2 | decorate"></div>
-                        </div>
-                        <span class="notes" ng-if="details.VSSpecialNotes"
-                            ng-bind-html="details.VSSpecialNotes | notes | decorate"></span>
-                    </td>
-                </tr>
+                                    stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + stage.cooldown[1] : ''}} turns)
+                                    <span ng-if="unit.limitCD != 0"><strong>➤</strong>
+                                        ({{::stage.cooldown.length ? stage.cooldown[0] - unit.limitCD :
+                                            stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + (stage.cooldown[1] -
+                                            unit.limitCD) : ''}} turns):</span><span
+                                            ng-if="unit.limitexCD != 0 && unit.limitexCD != unit.limitCD"><strong>➤</strong>
+                                            ({{::stage.cooldown.length ? stage.cooldown[0] - unit.limitexCD :
+                                                stage.cooldown}}{{::stage.cooldown.length ? ' \u2192 ' + (stage.cooldown[1] -
+                                                unit.limitexCD) : ''}} turns):</span>
+                                                <span ng-bind-html="stage.description | decorate"></span>
+                                            </div>
+                                        </div>
+                                        <!-- different specials -->
+                                        <div ng-if="isVSSpecialHybrid">
+                                            <span class="badge badge-character" ng-show="details.VSSpecial.character1">{{::char1.name}}</span>
+                                            <div ng-show="details.VSSpecial.character1"
+                                            ng-bind-html="details.VSSpecial.character1 | decorate"></div>
+                                            <span class="badge badge-character" ng-show="details.VSSpecial.character2">{{::char2.name}}</span>
+                                            <div ng-show="details.VSSpecial.character2"
+                                            ng-bind-html="details.VSSpecial.character2 | decorate"></div>
+                                        </div>
+                                        <span class="notes" ng-if="details.VSSpecialNotes"
+                                        ng-bind-html="details.VSSpecialNotes | notes | decorate"></span>
+                                    </td>
+                                </tr>
+                                <tr ng-if="details.VSCondition">
+                                    <td>
+                                        <div><strong>Condition</strong><br>
+                                            <span ng-bind-html="details.VSCondition | decorate"></span>
+                                        </div>
+                                    </td>
+                                        <span class="notes" ng-if="details.VSConditionNotes"
+                                            ng-bind-html="details.VSConditionNotes | notes | decorate"></span>
+                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
+                    <!-- Sailor -->
+                    <h3 id="sailorSection" class="page-header" ng-hide="hidden.abilities">Sailor</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
                                 <tr ng-if="details.sailor">
-                                    <td width="5%">Sailor</td>
                                     <td
                                         colspan="{{details.sailor.llbbase || details.sailor.llbcharacter1 || details.sailor.llbcharacter2 || details.sailor.llbcombined || details.sailor.llblevel1 || details.sailor.llblevel2 ? 1 : 2}}">
                                         <!-- same sailor ability -->
@@ -662,9 +698,18 @@
                                             ng-bind-html="details.sailorNotes | notes | decorate"></span>
                                     </td>
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Swap -->
+                    <h3 id="swapSection" class="page-header" ng-hide="hidden.abilities">Swap</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
                                 <tr ng-if="details.swap">
-                                    <td>Swap</td>
-                                    <td colspan="2">
+                                    <td>
                                         <!-- same sailor ability -->
                                         <div ng-if="!isSwapHybrid" ng-bind-html="details.swap | decorate"></div>
                                         <!-- different sailor abilities -->
@@ -681,9 +726,9 @@
                                             ng-bind-html="details.swapNotes | notes | decorate"></span>
                                     </td>
                                 </tr>
-                </tbody>
-                </table>
-            </div>
+                            </tbody>
+                        </table>
+                    </div>
 
             <h3 id="supportSection" class="page-header" ng-hide="hidden.abilities">Support</h3>
 
@@ -693,7 +738,6 @@
                     <!--------------    isSupportHybrid is not used since JPN and Global all match so far, leaving in for future cases    -------------->
                     <tbody>
                         <tr ng-if="details.support">
-                            <td>Support</td>
                             <td>
                                 <div ng-if="!isSupportHybrid && isSupportStaged">
                                     <div ng-repeat="stage in details.support track by $index">
@@ -712,7 +756,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Attachable Supports</td>
                             <td>
                                 <add-supporters-query uid="unit.id"></add-supporters-query>
                             </td>
@@ -728,7 +771,6 @@
                 <table class="table table-striped-column abilities">
                     <tbody>
                         <tr ng-if="details.limit">
-                            <td>Limit Break</td>
                             <td>
                                 <!-- same limit break (differences across versions) -->
                                 <div ng-if="!isLimitHybrid && !isLimitStaged" ng-bind-html="details.limit | decorate">
@@ -746,8 +788,17 @@
                                     ng-bind-html="details.limitNotes | notes | decorate"></span>
                             </td>
                         </tr>
-                        <tr ng-if="details.potential">
-                            <td>Potential Abilities</td>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Potential Abilities -->
+                    <h3 id="potentialSection" class="page-header" ng-hide="hidden.abilities">Potential Abilities</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
+                                <tr ng-if="details.potential">
                             <td>
                                 <!-- same potential break (differences across versions) -->
                                 <div ng-if="!isPotentialHybrid && !isPotentialStaged"
@@ -769,37 +820,73 @@
                                 <span class="notes" ng-if="details.potentialNotes" ng-bind-html="details.potentialNotes | notes | decorate"></span>
                             </td>
                         </tr>
-                        <tr ng-if="details.lastTap">
-                            <td>Last Tap</td>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Last Tap -->
+                    <h3 id="lastTapSection" class="page-header" ng-hide="hidden.abilities">Last Tap</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
+                                <tr ng-if="details.lastTap">
                             <td>
                                 <strong>Condition:</strong> <span ng-bind-html="details.lastTap.condition | decorate"></span>
                                         <div ng-repeat="item in details.lastTap.description track by $index"><strong>Level {{::$index + 1}}:</strong>
                                         <span ng-bind-html="item | decorate"></span><br></div>
-                                        <span class="notes" ng-if="details.lastTapNotes" ng-bind-html="details.lastTapNotes | notes | decorate"></span>
-                                    </td>
-                                </tr>
+                                <span class="notes" ng-if="details.lastTapNotes" ng-bind-html="details.lastTapNotes | notes | decorate"></span>
+                            </td>
+                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Super Tandem -->
+                    <h3 id="superTandemSection" class="page-header" ng-hide="hidden.abilities">Super Tandem</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
                                 <tr ng-if="details.superTandem">
-                                    <td>Super Tandem</td>
                                     <td>
                                         <span ng-if="details.superTandem.condition"><strong>Condition:</strong> <span ng-bind-html="details.superTandem.condition | decorate"></span></span>
                                         <div ng-repeat="item in details.superTandem.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandem.characterCondition[$index] | decorate"></span>):</strong>
                                         <span ng-bind-html="item | decorate"></span><br></div>
                                         <span class="notes" ng-if="details.superTandemNotes" ng-bind-html="details.superTandemNotes | notes | decorate"></span>
-                                        <add-super-tandem-query criteria="details.superTandem.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
-                                    </td>
-                                </tr>
+                                <add-super-tandem-query criteria="details.superTandem.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
+                            </td>
+                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Super Tandem Boost -->
+                    <h3 id="superTandemBoostSection" class="page-header" ng-hide="hidden.abilities">Super Tandem Boost</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
                                 <tr ng-if="details.superTandemBoost">
-                                    <td>Super Tandem Boost</td>
                                     <td>
                                         <span ng-if="details.superTandemBoost.condition"><strong>Condition:</strong> <span ng-bind-html="details.superTandemBoost.condition | decorate"></span></span>
                                         <div ng-repeat="item in details.superTandemBoost.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.characterCondition[$index] | decorate"></span>):</strong>
                                         <span ng-bind-html="item | decorate"></span><br></div>
                                         <span class="notes" ng-if="details.superTandemBoostNotes" ng-bind-html="details.superTandemBoostNotes | notes | decorate"></span>
-                                        <add-super-tandem-query criteria="details.superTandemBoost.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
-                                    </td>
-                                </tr>
+                                <add-super-tandem-query criteria="details.superTandemBoost.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
+                            </td>
+                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Rush -->
+                    <h3 id="rushSection" class="page-header" ng-hide="hidden.abilities">Rush</h3>
+
+                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                        <table class="table table-striped-column abilities">
+                            <tbody>
                                 <tr ng-if="details.rush">
-                                    <td>Rush</td>
                                     <td border-spacing="0px">
                                         <div ng-if="details.rush.condition"><strong>Condition:</strong> <div ng-bind-html="details.rush.condition | decorate"></div></div>
                                         <table class="table table-striped-column abilities rush">
@@ -815,17 +902,20 @@
                                             </tbody>
                                         </table>
                                         <span class="notes" ng-if="details.rushNotes" ng-bind-html="details.rushNotes | notes | decorate"></span>
-                                        <add-super-tandem-query criteria="details.rush.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
-                                    </td>
-                                </tr>
+                                <add-super-tandem-query criteria="details.rush.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
+                            </td>
+                        </tr>
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- Level Limit Break -->
+                    <h3 id="levelLimitBreakSection" class="page-header" ng-hide="hidden.abilities">Level Limit Break</h3>
+
                     <div class="panel panel-default" ng-hide="hidden.abilities"  ng-if="unit.maxLevel == 99">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr>
-                                    <td width="10%">Level Limit Break</td>
                                     <td>
                                         <div ng-repeat="stage in details.lLimit track by $index" ng-if="details.lLimit">
                                             <div><strong>Level {{::$index + 1}}:</strong> Increase Max Level to {{::[105, 110, 120, 130, 150][$index]}}</div>

@@ -8,19 +8,7 @@
 
 var MainCtrl = function($scope, $rootScope, $controller, $filter, $storage) {
 
-    /* * * * * Theme * * * * */
-
-    var edgyMode = $storage.get('edgy', true);
-    $('#edgy')[0].disabled = !edgyMode;
-
-    $(document.body).dblclick(function(e) {
-        if (e.target.id != 'main' && e.target.nodeName != 'BODY') return;
-        edgyMode = !edgyMode;
-        $storage.set('edgy', edgyMode);
-        $('#edgy')[0].disabled = !edgyMode;
-    });
-
-    /* * * * * Alerts * * * * */
+/* * * * * Alerts * * * * */
 
     $scope.conflictingSpecials = false;
 
