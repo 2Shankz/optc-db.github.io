@@ -17,13 +17,6 @@
       $controller
     ) {
 
-      if (!$rootScope.hasOwnProperty("nightMode")) {
-        $rootScope.nightMode = $storage.get("chars.night", false);
-        $rootScope.$watch("nightMode", function (night) {
-          $storage.set("chars.night", night);
-        });
-      }
-
       $scope.query = $state.params.query;
 
       $scope.$watch("query", function (query) {

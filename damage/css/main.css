@@ -1,13 +1,4 @@
-@font-face {
-    font-family: 'icomoon';
-    src:url('../../res/icomoon.eot?xewvs9');
-    src:url('../../res/icomoon.eot?xewvs9#iefix') format('embedded-opentype'),
-        url('../../res/icomoon.ttf?xewvs9') format('truetype'),
-        url('../../res/icomoon.woff?xewvs9') format('woff'),
-        url('../../res/icomoon.svg?xewvs9#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('../common/css/orb-colors.css');
 
 /***************
  * MAIN LAYOUT *
@@ -17,8 +8,6 @@ body, html {
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     position: relative;
     overflow: hidden;
     cursor: default !important;
@@ -100,7 +89,6 @@ body, html {
 
 .animated {
     animation-duration: 0.5s !important;
-    -webkit-animation-duration: 0.5s !important;
 }
 
 #instructions {
@@ -234,7 +222,6 @@ body, html {
 .unitContainer.gray > .unitOrb, .ghostContainer.gray > .unitOrb,
 .slide .unitPortrait {
     filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
     opacity: 0.5;
 }
 
@@ -453,102 +440,6 @@ body, html {
     transition: height 0.25s linear;
 }
 
-#urlContainer.visible {
-    height: 40px;
-}
-
-#urlContainer > input {
-    width: 350px;
-}
-
-#abilitySummary {
-    cursor: help;
-}
-
-/*******************
- * SLOT THUMBNAILS *
- *******************/
-
-.slot {
-    display: inline-block;
-    cursor: pointer;
-}
-
-@media (hover) {
-    .slot:not(.nohover):hover {
-        outline: 1px solid red;
-    }
-}
-
-.slot.big {
-    width: 112px;
-    height: 112px;
-    background-size: 112px 112px;
-    margin: 4px;
-}
-
-.slot.medium {
-    width: 80px;
-    height: 80px;
-    background-size: 80px 80px;
-    margin: 2px;
-}
-
-.slot.small {
-    width: 40px;
-    height: 40px;
-    background-size: 40px 40px;
-    margin: 1px;
-}
-
-/***********
- * SIDEBAR *
- ***********/
-
-#menu {
-    position: fixed;
-    top: 0px;
-    left: -20.9em;
-    width: 20.9em;
-    height: 100%;
-    transition: left .1s linear;
-    margin-bottom: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-#menu.open {
-    left: 0em;
-}
-
-#defense {
-    width: 60px;
-    margin-left: 10px;
-    position: relative;
-    bottom: 1px;
-}
-
-#sliderToggle[status="0"]:after { content: "Level sliders: enabled"; }
-#sliderToggle[status="1"]:after { content: "Level sliders: disabled"; }
-
-nav.panel {
-    position: fixed;
-    left: -16.625em;
-    width: 16.625em;
-    background: #2C3E50;
-}
-
-#menu li > div {
-    display: block;
-    padding: 0.8em;
-    color: white;
-    text-align: left;
-    font-size: 11pt;
-    -webkit-transition: background 0.1s linear;
-       -moz-transition: background 0.1s linear;
-            transition: background 0.1s linear;
-}
-
 @media (hover) {
     #menu li > div:not(.menuIcon):not(#specialDivider):not(#supertypeContainer):not(#superclassContainer):hover {
         background: #688aac;
@@ -762,14 +653,8 @@ nav > li > div {
     top: 8px;
     width: 75px;
     z-index: 7;
-    /* wizardry */
-    -webkit-box-shadow : 0px 0px 3px rgba(0,0,0,0.3);
-    -moz-box-shadow    : 0px 0px 3px rgba(0,0,0,0.3);
-    box-shadow         : 0px 0px 3px rgba(0,0,0,0.3);
-    -moz-transform     : rotate(45deg);
-    -ms-transform      : rotate(45deg);
-    -o-transform       : rotate(45deg);
-    -webkit-transform  : rotate(45deg);
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    transform: rotate(45deg);
 }
 
 .corner-ribbon:before, .corner-ribbon:after {
@@ -873,7 +758,6 @@ nav > li > div {
 
 .animated {
     animation-duration: 0.2s;
-    -webkit-animation-duration: 0.2s;
 }
 
 .modal-filter {
@@ -1316,5 +1200,112 @@ body > .popover .popover-content {
         height: 10px !important;
     }
 
+}
+
+/* Dark theme styles (merged from edgy.css) */
+html, body {
+    background-color: #2b303b;
+}
+
+#hp-rcv, .tip, #turnLabel, #healLabel, #semlaLabel, #damageLabel, #rcvLabel, #basehpLabel, #dmgreductionLabel, #carrychainLabel {
+    color: white;
+}
+
+.damage.STR, li.STR, #gather {
+    background-color: #bf616a;
+}
+
+.damage.QCK, li.QCK {
+    background-color: #96b5b4;
+}
+
+.damage.DEX, li.DEX {
+    background-color: #a3be8c;
+}
+
+.damage.PSY, li.PSY {
+    background-color: #ebcb8b;
+}
+
+.damage.INT, li.INT {
+    background-color: #b48ead;
+}
+
+li.STR > div, li.QCK > div, li.DEX > div, li.PSY > div, li.INT > div {
+    color: #2d2d2d !important;
+}
+
+.popover {
+    background-color: #4d4d4d;
+}
+.popover-title {
+    background-color: #4d4d4d !important;
+    color: #eeeeee;
+}
+.popover-data .information {
+    background-color: #4d4d4d !important;
+    color: #eeeeee;
+}
+.popover-data .header {
+    background-color: #3c3c3c !important;
+    color: #eeeeee;
+}
+
+.noUi-target {
+    border: none;
+}
+
+.panel {
+    background-color: #4f5b66;
+}
+
+#menu li {
+    border-bottom: 2px solid #343d46;
+}
+
+.unit {
+    border-color: white;
+    color: white;
+}
+
+@media (hover) {
+    .unit:hover {
+        border-color: white;
+        color: white;
+    }
+}
+
+.modal-header {
+    background-color: #65737e;
+}
+
+.modal-body , .floatThead-table tr > th {
+    background-color: #eff1f5;
+}
+
+.modal-footer {
+    background-color: #dfe1e8;
+}
+
+.unitLevel {
+    color: black;
+}
+
+.btn.trigger > i {
+    color: white;
+}
+
+@media (hover) {
+    .btn.trigger > i:hover {
+        color: black;
+    }
+
+    .rotater:hover .fa {
+        color: white !important;
+    }
+}
+
+.fa-spin {
+    color: black !important;
 }
 
