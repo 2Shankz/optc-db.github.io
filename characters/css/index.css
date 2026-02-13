@@ -909,7 +909,7 @@ tr.preview td:nth-child(2) > a:after {
 }
 
 .modal-dialog {
-    background: rgb(124, 124, 124);
+    background: rgba(124, 124, 124,0);
     border-radius: 10px;
     overflow: hidden;
 }
