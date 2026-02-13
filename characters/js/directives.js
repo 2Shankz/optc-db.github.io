@@ -286,7 +286,7 @@
 		};
 	};
 
-	directives.goBack = function ($state) {
+directives.goBack = function ($state) {
 		return {
 			restrict: "A",
 			link: function (scope, element, attrs) {
@@ -294,6 +294,7 @@
 					if (!e.target || e.target.className.indexOf("inner-container") == -1)
 						return;
 					element.find(".modal-content").addClass("rollOut");
+					$(".quick-nav").addClass("closing");
 					$(".backdrop").addClass("closing");
 					setTimeout(function () {
 						$state.go("^");
