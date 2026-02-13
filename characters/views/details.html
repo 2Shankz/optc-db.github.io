@@ -787,11 +787,10 @@
                                 <!-- different potential abilities -->
                                 <div ng-if="!isPotentialHybrid && isPotentialStaged">
                                     <div ng-repeat="stage in details.potential track by $index">
-                                        <strong>Potential Ability {{::$index + 1}}: </strong>
-                                            <span ng-if="details.potential[index]" ng-bind-html="stage.Name | decorate"></span>
+                                        <strong>{{$index + 1}}: {{stage.Name}}: </strong>
                                         <br>
                                         <div ng-repeat="item in stage.description track by $index"
-                                            style="margin-left: 2em"><strong>Level {{::$index + 1}}:</strong>
+                                            style="margin-left: 2em"><strong>Lv {{::$index + 1}}:</strong>
                                             <span ng-bind-html="item | decorate"></span><br>
                                         </div>
                                     </div>
