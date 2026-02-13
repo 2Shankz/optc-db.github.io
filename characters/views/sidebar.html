@@ -59,13 +59,28 @@
     <div class="collapse in">
         <span ng-repeat="class in availableClasses" class="filter width-6 class" ng-click="onClassClick($event,class)"
             ng-class="{ active: filters.classes.indexOf(class) > -1 }">{{::class}}</span>
+            <div style="display: flex; width: 100%;">
+                <span class="filter exc" style="flex: 1; text-align: center;" 
+                ng-model="filters.dualUnits" 
+                ng-class="{ active: filters.dualUnits }"
+                ng-click="filters.dualUnits = !filters.dualUnits">Dual</span>
+                <span class="filter exc" style="flex: 1; text-align: center;"
+                ng-model="filters.vsUnits" 
+                ng-class="{ active: filters.vsUnits }"    
+                ng-click="filters.vsUnits = !filters.vsUnits">VS</span>
+                <span class="filter exc" style="flex: 3; text-align: center;"
+                ng-class="{ active: filters.superTypeUnits }"    
+                ng-click="filters.superTypeUnits = !filters.superTypeUnits">Super Class/Type</span>
+            </div>
         <span class="filter width-12 exc" ng-class="{ active: filters.classInclusive === true }"
             ng-model="filters.classInclusive" ng-click="filters.classInclusive = !filters.classInclusive">Exclude Characters
             with other Classes</span>
         <span class="filter width-12 exc" ng-class="{ active: filters.noSingleClass === true }"
             ng-model="filters.noSingleClass" ng-click="filters.noSingleClass = !filters.noSingleClass">Exclude Single Class
             Characters</span>
+
     </div>
+
 </div>
 
 <!-- Rarity -->
@@ -77,26 +92,6 @@
                 ng-click="onStarsClick($event,star)"
                 ng-class="{ active: filters.stars.indexOf(star) > -1 }">{{::star}}</span>
         </span>
-    </div>
-</div>
-
-<!-- Character -->
-<div class="filter-container" id="character-filter">
-    <animate-collapse class="filter-header">Character Style</animate-collapse>
-    <div class="collapse">
-        <div style="display: flex; width: 100%;">
-            <span class="filter exc" style="flex: 1; text-align: center;" 
-                  ng-model="filters.dualUnits" 
-                  ng-class="{ active: filters.dualUnits }"
-                  ng-click="filters.dualUnits = !filters.dualUnits">Dual</span>
-            <span class="filter exc" style="flex: 1; text-align: center;"
-                  ng-model="filters.vsUnits" 
-                  ng-class="{ active: filters.vsUnits }"    
-                  ng-click="filters.vsUnits = !filters.vsUnits">VS</span>
-            <span class="filter exc" style="flex: 3; text-align: center;"
-                  ng-class="{ active: filters.superTypeUnits }"    
-                  ng-click="filters.superTypeUnits = !filters.superTypeUnits">Super Class/Type</span>
-        </div>
     </div>
 </div>
 
