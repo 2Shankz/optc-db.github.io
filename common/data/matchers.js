@@ -7683,6 +7683,7 @@
 					},
 				],
 			},
+
 			{
 				name: "Pain",
 				targets: ["captain", "special", "sailor", "support"],
@@ -7712,6 +7713,21 @@
 					},
 				],
 			},
+
+			{
+				name: "Target Lock",
+				targets: ["captain", "special", "sailor", "support"],
+				regex:
+				/(?:reduces|removes)[^."]+?(?:Target Lock|selected debuffs?)[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Turns:",
+						groups: [1, 2, 3, 4, 5],
+					},
+				],
+			},
+
 		],
 		"Apply Enemy Effects": [
 			{
@@ -8093,11 +8109,11 @@
 				name: "Marked",
 				targets: ["special", "superSpecial"],
 				regex:
-					/Marks all enemies (?:with ([?.,\d]+) or more MAX HP)/i,
+					/Marks all enemies (?:with ([?.,\d]+) or more HP)/i,
 				submatchers: [
 					{
 						type: "number",
-						description: "Enemy's Minimum MAX HP:",
+						description: "Enemy's Minimum HP:",
 						groups: [1],
 					},
 				],
