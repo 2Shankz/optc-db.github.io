@@ -1,22 +1,23 @@
 <div class="backdrop" ui-sref="^"></div>
 
 <div class="inner-container" go-back>
-    <div class="custom-modal">
-    <div class="modal-dialog">
-      <div class="modal-content animated rollIn">
-        <div class="modal-header" style="text-align: center">
-          <div
-            class="btn btn-default back-button"
-            ng-if="withButton"
-            ng-click="onBackClick()"
-          >
-            <i class="fas fa-arrow-left"></i>
-          </div>
-          {{::unit.name}}
-        </div>
+    <div class="modal-wrapper">
+        <div class="custom-modal">
+        <div class="modal-dialog">
+          <div class="modal-content animated rollIn">
+            <div class="modal-header" style="text-align: center">
+              <div
+                class="btn btn-default back-button"
+                ng-if="withButton"
+                ng-click="onBackClick()"
+              >
+                <i class="fas fa-arrow-left"></i>
+              </div>
+              {{::unit.name}}
+            </div>
 
-        <div class="modal-body">
-
+<div class="modal-body">
+            
             <div
             ng-click="openBigThumbTab(unit.id)"
             class="slot responsive"
@@ -1608,11 +1609,7 @@
         </tr>
     </tbody>
 </table>
-</details-card>
-
 <!-- Evolves from -->
-<details-card title="Evolves From" section-id="evolutionFrom" ng-if="evolvesFrom.length > 0" ng-hide="hidden.evolutionFrom">
-
 <table class="table table-striped table-centered table-bordered table-textless" ng-if="evolvesFrom.length > 0">
     <tbody>
         <tr ng-repeat="data in evolvesFrom">
@@ -1769,30 +1766,88 @@
     <add-tags></add-tags>
 </div>
 </details-card>
-<div class="modal-footer">
-    <div class="btn-group">
-        <button class="btn btn-default" title="Details" scroll-to-section="card-details"><i
-                class="fas fa-book"></i></button>
-        <button class="btn btn-default" title="Abilities" scroll-to-section="card-captain"
-            ng-hide="hidden.abilities"><i class="fas fa-bolt"></i></button>
-        <button class="btn btn-default" title="Support" scroll-to-section="card-support" ng-hide="hidden.abilities"><i
-                class="fas fa-handshake"></i></button>
-        <button class="btn btn-default" title="Limit Break" scroll-to-section="card-limitBreak"
-            ng-hide="hidden.abilities" ng-if="details.limit || details.potential"><i class="fas fa-atom"></i></button>
-        <button class="btn btn-default" title="Rumble" scroll-to-section="card-rumble" ng-hide="hidden.abilities"
-            ng-if="rumble.ability"><i class="fas fa-rumble"></i></button>
-        <button class="btn btn-default" title="Evolution" scroll-to-section="card-evolution"
-            ng-if="evolution.evolution" ng-hide="hidden.evolution"><i class="fas fa-seedling"></i></button>
-        <button class="btn btn-default" title="Evolution" scroll-to-section="card-evolutionFrom"
-            ng-if="evolvesFrom.length > 0 && !evolution.evolution" ng-hide="hidden.evolutionFrom"><i
-                class="fas fa-seedling"></i></button>
-        <button class="btn btn-default" title="Tags" scroll-to-section="card-tags"><i class="fas fa-tag"></i></button>
-    </div>
+</div>
+</div>
+
+<div class="quick-nav">
+    <button class="btn btn-default" title="Details" scroll-to-section="card-details">
+    TOP
+    </button>
+    <button class="btn btn-default" title="Stats" scroll-to-section="card-stats" ng-hide="hidden.stats">
+    STATS
+    </button>
+    <button class="btn btn-default" title="Captain" scroll-to-section="card-captain" ng-hide="hidden.abilities" ng-if="details.captain">
+    CPT
+    </button>
+    <button class="btn btn-default" title="Special" scroll-to-section="card-special" ng-hide="hidden.abilities" ng-if="details.special">
+    SP
+    </button>
+    <button class="btn btn-default" title="Super Special" scroll-to-section="card-superSpecial" ng-hide="hidden.abilities" ng-if="details.superSpecial">
+    SSP
+    </button>
+    <button class="btn btn-default" title="VS Special" scroll-to-section="card-vsSpecial" ng-hide="hidden.abilities" ng-if="details.VSSpecial">
+    VS
+    </button>
+    <button class="btn btn-default" title="Sailor" scroll-to-section="card-sailor" ng-hide="hidden.abilities" ng-if="details.sailor">
+    SAIL
+    </button>
+    <button class="btn btn-default" title="Swap" scroll-to-section="card-swap" ng-hide="hidden.abilities" ng-if="details.swap">
+    SWAP
+    </button>
+    <button class="btn btn-default" title="Support" scroll-to-section="card-support" ng-hide="hidden.abilities" ng-if="details.support">
+    SUP
+    </button>
+    <button class="btn btn-default" title="Limit Break" scroll-to-section="card-limitBreak" ng-hide="hidden.abilities" ng-if="details.limit || details.potential || unit.maxLevel == 99">
+    LB
+    </button>
+    <button class="btn btn-default" title="Potential Abilities" scroll-to-section="card-potential" ng-hide="hidden.abilities" ng-if="details.potential">
+    POT
+    </button>
+    <button class="btn btn-default" title="Last Tap" scroll-to-section="card-lastTap" ng-hide="hidden.abilities" ng-if="details.lastTap">
+    LTAP
+    </button>
+    <button class="btn btn-default" title="Super Tandem" scroll-to-section="card-superTandem" ng-hide="hidden.abilities" ng-if="details.superTandem">
+    STND
+    </button>
+    <button class="btn btn-default" title="Super Tandem Boost" scroll-to-section="card-superTandemBoost" ng-hide="hidden.abilities" ng-if="details.superTandemBoost">
+    STNDB
+    </button>
+    <button class="btn btn-default" title="Rush" scroll-to-section="card-rush" ng-hide="hidden.abilities" ng-if="details.rush">
+    RUSH
+    </button>
+    <button class="btn btn-default" title="Level Limit Break" scroll-to-section="card-levelLimitBreak" ng-hide="hidden.abilities">
+    LLB
+    </button>
+    <button class="btn btn-default" title="Pirate Rumble" scroll-to-section="card-rumble" ng-hide="hidden.abilities" ng-if="rumble || (!rumble && (details.festAttackPattern || details.festAttackTarget || details.festResistance || details.festAbility || details.festSpecial || details.festSuperSpecial))">
+    PVP
+    </button>
+    <button class="btn btn-default" title="Grand Party" scroll-to-section="card-grandParty" ng-hide="hidden.abilities" ng-if="rumble.festGPAbility || rumble.festGPSpecial || (!rumble.gpability && !rumble.gpcondition && !rumble.gpspecial && (details.festAbilityGP || details.festAbilityGPCondition))">
+    GP
+    </button>
+    <button class="btn btn-default" title="Evolutions" scroll-to-section="card-evolution" ng-if="evolution.evolution" ng-hide="hidden.evolution">
+    EVO
+    </button>
+    <button class="btn btn-default" title="Used By" scroll-to-section="card-usedBy" ng-if="sizeOf(usedBy) > 0" ng-hide="hidden.required">
+    UBY
+    </button>
+    <button class="btn btn-default" title="Drop Locations" scroll-to-section="card-drops" ng-if="drops.length > 0">
+    DRP
+    </button>
+    <button class="btn btn-default" title="Manual Locations" scroll-to-section="card-manuals" ng-if="manuals.length > 0">
+    MAN
+    </button>
+    <button class="btn btn-default" title="Family" scroll-to-section="card-family" ng-if="displayFamily">
+    FAM
+    </button>
+    <button class="btn btn-default" title="Tags" scroll-to-section="card-tags">
+    TAG
+    </button>
+</div>
+
 </div>
 
 </div>
 </div>
 
 </div>
-
 </div>
