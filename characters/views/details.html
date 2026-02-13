@@ -4,7 +4,7 @@
     <div class="custom-modal">
     <div class="modal-dialog">
       <div class="modal-content animated rollIn">
-        <div class="modal-header">
+        <div class="modal-header" style="text-align: center">
           <div
             class="btn btn-default back-button"
             ng-if="withButton"
@@ -24,89 +24,89 @@
             big="true"
             uid="unit.id"
           ></div>
+            <div style="margin: 15px 0 5px 0; text-align: center;">
+              <label>
+                <input
+                  type="checkbox"
+                  ng-model="characterLog[id]"
+                  ng-change="checkLog()"
+                />
+                In Character Log
+              </label>
+            </div>
 
-          <h3 id="detailsSection" class="page-header">
-            Details
-            <label>
-              <input
-                type="checkbox"
-                ng-model="characterLog[id]"
-                ng-change="checkLog()"
-              />
-              In Character Log
-            </label>
-          </h3>
-
-          <div class="panel panel-default stats-pane panel-x-scroll">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th ng-if="dualunit">Unit</th>
-                  <th>Type</th>
-                  <th>Class</th>
-                  <th>Combo</th>
-                  <th>Sockets</th>
-                  <th>Cost</th>
-                  <th>Level</th>
-                  <th>Max EXP</th>
-                  <th>Stars</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Dual Unit: Combined Row -->
-                <tr ng-if="dualunit" class="dual-unit-group-header">
-                  <td><strong>{{ details.VSSpecial ? 'Shared Stats' : 'Dual Form' }}</strong></td>
-                  <td ng-if="!details.VSSpecial">
-                    <span ng-bind-html="char1.type | decorate"></span>
-                    <span ng-if="char1.type !== char2.type"> / <span ng-bind-html="char2.type | decorate"></span>
-                    </span>
-                </td>
-                <td ng-if="details.VSSpecial" colspan="3"></td>
-                <td ng-if="!details.VSSpecial">{{::unit.class[0]}}/{{::unit.class[1]}}</td>
-                  <td ng-if="!details.VSSpecial">{{::unit.combo}}</td>
-                  <td>{{::unit.sockets}}<span ng-if="unit.sockets!==unit.limitexSocket">→{{::unit.limitexSocket}}</span></td>
-                  <td>{{::unit.cost}}</td>
-                  <td>{{::unit.maxLevel}}</td>
-                  <td>{{::unit.maxEXP}}</td>
-                  <td>{{::unit.stars}}</td>
-                </tr>
-                <!-- Dual Unit Variants -->
-                <tr class="dual-unit-character-header" ng-if="dualunit" ng-repeat-start="char in [char1, char2] track by $index">
-                <td><strong>{{::char.name}}</strong></td>
-                <td><span ng-bind-html="char.type | decorate"></span></td>
-                <td>{{::char.class[0]}}/{{::char.class[1]}}</td>
-                <td>{{::char.combo}}</td>   
-                <td colspan="5" class="text-muted"></td>
-                </tr>
-                <tr ng-repeat-end class="dual-unit-character-tags" ng-if="dualunit">
-                <td colspan="9" class="tags-row">Tags:
-                    <span class="badge" style="margin-right: 2px" ng-repeat="tag in getTagsForUnit(char)" ng-class="getCategoryClass(tag)">{{::tag}}</span>
-                </td>
-                </tr>                
-
-                <!-- Single Unit: Content Row -->
-                <tr ng-if="!dualunit">
-                  <td><span ng-bind-html="unit.type | decorate"></span></td>
-                  <td>{{::!hybrid ? unit.class : unit.class[0] + '/' + unit.class[1]}}</td>
-                  <td>{{::unit.combo}}</td>
-                  <td>{{::unit.sockets}}<span ng-if="unit.sockets!=unit.limitexSocket">→{{::unit.limitexSocket}}</span></td>
-                  <td>{{::unit.cost}}</td>
-                  <td>{{::unit.maxLevel}}</td>
-                  <td>{{::unit.maxEXP}}</td>
-                  <td>{{::unit.stars}}</td>
-                </tr>
-
-                <!-- Single Unit: Tags Row -->
-                <tr ng-if="!dualunit">
-                  <td colspan="8" class="tags-row">Tags:
-                    <span class="badge" style="margin-right: 2px" ng-repeat="tag in getTagsForUnit(unit)" ng-class="getCategoryClass(tag)">{{::tag}}</span>
+          <details-card title="Details" section-id="details">
+            <div class="panel panel-default stats-pane panel-x-scroll">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th ng-if="dualunit">Unit</th>
+                    <th>Type</th>
+                    <th>Class</th>
+                    <th>Combo</th>
+                    <th>Sockets</th>
+                    <th>Cost</th>
+                    <th>Level</th>
+                    <th>Max EXP</th>
+                    <th>Stars</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Dual Unit: Combined Row -->
+                  <tr ng-if="dualunit" class="dual-unit-group-header">
+                    <td><strong>{{ details.VSSpecial ? 'Shared Stats' : 'Dual Form' }}</strong></td>
+                    <td ng-if="!details.VSSpecial">
+                      <span ng-bind-html="char1.type | decorate"></span>
+                      <span ng-if="char1.type !== char2.type"> / <span ng-bind-html="char2.type | decorate"></span>
+                      </span>
                   </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                  <td ng-if="details.VSSpecial" colspan="3"></td>
+                  <td ng-if="!details.VSSpecial">{{::unit.class[0]}}/{{::unit.class[1]}}</td>
+                    <td ng-if="!details.VSSpecial">{{::unit.combo}}</td>
+                    <td>{{::unit.sockets}}<span ng-if="unit.sockets!==unit.limitexSocket">→{{::unit.limitexSocket}}</span></td>
+                    <td>{{::unit.cost}}</td>
+                    <td>{{::unit.maxLevel}}</td>
+                    <td>{{::unit.maxEXP}}</td>
+                    <td>{{::unit.stars}}</td>
+                  </tr>
+                  <!-- Dual Unit Variants -->
+                  <tr class="dual-unit-character-header" ng-if="dualunit" ng-repeat-start="char in [char1, char2] track by $index">
+                  <td><strong>{{::char.name}}</strong></td>
+                  <td><span ng-bind-html="char.type | decorate"></span></td>
+                  <td>{{::char.class[0]}}/{{::char.class[1]}}</td>
+                  <td>{{::char.combo}}</td>   
+                  <td colspan="5" class="text-muted"></td>
+                  </tr>
+                  <tr ng-repeat-end class="dual-unit-character-tags" ng-if="dualunit">
+                  <td colspan="9" class="tags-row">Tags:
+                      <span class="badge" style="margin-right: 2px" ng-repeat="tag in getTagsForUnit(char)" ng-class="getCategoryClass(tag)">{{::tag}}</span>
+                  </td>
+                  </tr>                
 
-                    <h3 class="page-header" ng-hide="hidden.stats">Stats</h3>
+                  <!-- Single Unit: Content Row -->
+                  <tr ng-if="!dualunit">
+                    <td><span ng-bind-html="unit.type | decorate"></span></td>
+                    <td>{{::!hybrid ? unit.class : unit.class[0] + '/' + unit.class[1]}}</td>
+                    <td>{{::unit.combo}}</td>
+                    <td>{{::unit.sockets}}<span ng-if="unit.sockets!=unit.limitexSocket">→{{::unit.limitexSocket}}</span></td>
+                    <td>{{::unit.cost}}</td>
+                    <td>{{::unit.maxLevel}}</td>
+                    <td>{{::unit.maxEXP}}</td>
+                    <td>{{::unit.stars}}</td>
+                  </tr>
+
+                  <!-- Single Unit: Tags Row -->
+                  <tr ng-if="!dualunit">
+                    <td colspan="8" class="tags-row">Tags:
+                      <span class="badge" style="margin-right: 2px" ng-repeat="tag in getTagsForUnit(unit)" ng-class="getCategoryClass(tag)">{{::tag}}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details-card>
+
+                      <details-card title="Stats" section-id="stats" ng-hide="hidden.stats">
 
                             <div class="panel panel-default panel-x-scroll">
                                 <table class="table table-striped table-bordered">
@@ -207,17 +207,16 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </details-card>
 
 
                     <!-- Captain -->
-                    <h3 id="captainSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.captain">Captain</h3>
-
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+<details-card title="Captain" section-id="captain" ng-hide="hidden.abilities" ng-if="details.captain">
+                      <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.lLimit">
-                                    <td width="5%"></td>
-                                    <td style="width: 47.5%"><strong>Base</strong></td>
+                                    <td style="width: 50%"><strong>Base</strong></td>
                                     <td style="width: 50%"><strong>Level Limit Break</strong></td>
                                 </tr>
                                 <tr>
@@ -300,13 +299,17 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Special -->
-                    <h3 id="specialSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.special">Special</h3>
-
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+<details-card title="Special" section-id="special" ng-hide="hidden.abilities" ng-if="details.special">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
+                                <tr ng-if="details.lLimit">
+                                    <td style="width: 50%"><strong>Base</strong></td>
+                                    <td style="width: 50%"><strong>Level Limit Break</strong></td>
+                                </tr>
                                 <tr>
                                     <td colspan="{{details.special.llbbase || details.special.llbcharacter1 ? 1 : 2}}">
                                         <strong class="specialName"
@@ -483,11 +486,11 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Super Special -->
-                    <h3 id="superSpecialSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.superSpecial">Super Special</h3>
-
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+<details-card title="Super Special" section-id="superSpecial" ng-hide="hidden.abilities" ng-if="details.superSpecial">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.superSpecial">
@@ -547,10 +550,11 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- VS Special -->
-                    <h3 id="vsSpecialSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.VSSpecial">VS Special</h3>
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+<details-card title="VS Special" section-id="vsSpecial" ng-hide="hidden.abilities" ng-if="details.VSSpecial">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.VSSpecial">
@@ -596,16 +600,17 @@
                                     </td>
                                         <span class="notes" ng-if="details.VSConditionNotes"
                                             ng-bind-html="details.VSConditionNotes | notes | decorate"></span>
-                                     </td>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Sailor -->
-                    <h3 id="sailorSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.sailor">Sailor</h3>
+<details-card title="Sailor" section-id="sailor" ng-hide="hidden.abilities" ng-if="details.sailor">
 
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.sailor">
@@ -701,11 +706,12 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Swap -->
-                    <h3 id="swapSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.swap">Swap</h3>
+<details-card title="Swap" section-id="swap" ng-hide="hidden.abilities" ng-if="details.swap">
 
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.swap">
@@ -729,10 +735,11 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
-            <h3 id="supportSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.support">Support</h3>
+<details-card title="Support" section-id="support" ng-hide="hidden.abilities" ng-if="details.support">
 
-            <div class="panel panel-default" ng-hide="hidden.abilities">
+            <div class="panel panel-default">
                 <table class="table table-striped-column abilities">
                     <!--------------    Support Abilities    -------------->
                     <!--------------    isSupportHybrid is not used since JPN and Global all match so far, leaving in for future cases    -------------->
@@ -763,9 +770,10 @@
                     </tbody>
                 </table>
             </div>
+        </details-card>
 
-            <h3 id="limitBreakSection" class="page-header" ng-hide="hidden.abilities"
-                ng-if="details.limit || details.potential || unit.maxLevel == 99">Limit Break</h3>
+<details-card title="Limit Break" section-id="limitBreak" ng-hide="hidden.abilities"
+                ng-if="details.limit || details.potential || unit.maxLevel == 99">
 
             <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="details.limit || details.potential">
                 <table class="table table-striped-column abilities">
@@ -791,11 +799,12 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Potential Abilities -->
-                    <h3 id="potentialSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.potential">Potential Abilities</h3>
+<details-card title="Potential Abilities" section-id="potential" ng-hide="hidden.abilities" ng-if="details.potential">
 
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.potential">
@@ -823,11 +832,12 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Last Tap -->
-                    <h3 id="lastTapSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.lastTap">Last Tap</h3>
+<details-card title="Last Tap" section-id="lastTap" ng-hide="hidden.abilities" ng-if="details.lastTap">
 
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.lastTap">
@@ -841,11 +851,12 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Super Tandem -->
-                    <h3 id="superTandemSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.superTandem">Super Tandem</h3>
+<details-card title="Super Tandem" section-id="superTandem" ng-hide="hidden.abilities" ng-if="details.superTandem">
 
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.superTandem">
@@ -860,11 +871,12 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Super Tandem Boost -->
-                    <h3 id="superTandemBoostSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.superTandemBoost">Super Tandem Boost</h3>
+<details-card title="Super Tandem Boost" section-id="superTandemBoost" ng-hide="hidden.abilities" ng-if="details.superTandemBoost">
 
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.superTandemBoost">
@@ -879,11 +891,12 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Rush -->
-                    <h3 id="rushSection" class="page-header" ng-hide="hidden.abilities" ng-if="details.rush">Rush</h3>
+<details-card title="Rush" section-id="rush" ng-hide="hidden.abilities" ng-if="details.rush">
 
-                    <div class="panel panel-default" ng-hide="hidden.abilities">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.rush">
@@ -908,11 +921,12 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Level Limit Break -->
-                    <h3 id="levelLimitBreakSection" class="page-header" ng-hide="hidden.abilities">Level Limit Break</h3>
+                    <details-card title="Level Limit Break" section-id="levelLimitBreak" ng-hide="hidden.abilities">
 
-                    <div class="panel panel-default" ng-hide="hidden.abilities"  ng-if="unit.maxLevel == 99">
+                    <div class="panel panel-default" ng-if="unit.maxLevel == 99">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr>
@@ -964,11 +978,12 @@
                             </tbody>
                         </table>
                     </div>
-                    
+                </details-card>
+
                     <!-- Pirate Rumble -->
                     <!-- If rumble.js is not available, then use details.js if available -->
-                    <h3 id="rumbleSection" class="page-header" ng-hide="hidden.abilities" ng-if="!rumble && (details.festAttackPattern || details.festAttackTarget || details.festResistance || details.festAbility || details.festSpecial || details.festSuperSpecial)">Pirate Rumble</h3>
-                    <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="!rumble && (details.festAttackPattern || details.festAttackTarget || details.festResistance || details.festAbility || details.festSpecial || details.festSuperSpecial)">
+<details-card title="Pirate Rumble" section-id="rumble" ng-hide="hidden.abilities" ng-if="!rumble && (details.festAttackPattern || details.festAttackTarget || details.festResistance || details.festAbility || details.festSpecial || details.festSuperSpecial)">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities" ng-if="details.festAttackPattern || details.festAttackTarget || details.festResistance || details.festAbility || details.festSpecial">
                             <tbody>
                                 <tr ng-if="details.festAttackPattern">
@@ -1024,10 +1039,11 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
-                    <!-- Use rumble.js if available -->
-                    <h3 id="rumbleSection" class="page-header" ng-hide="hidden.abilities" ng-if="rumble">Pirate Rumble</h3>
-                    <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="rumble">
+                    <!-- Use rumble.js is not available, then use details.js if available -->
+<details-card title="Pirate Rumble" section-id="rumble" ng-hide="hidden.abilities" ng-if="rumble">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="rumble2"><th colspan="2">{{::char1.name}}</th></tr>
@@ -1156,11 +1172,12 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
                     <!-- Grand Party -->
                     <!-- If rumble.js is not available, then use details.js if available -->
-                    <h3 id="rumbleSection" class="page-header" ng-hide="hidden.abilities" ng-if="!rumble.gpability && !rumble.gpcondition && !rumble.gpspecial && (details.festAbilityGP || details.festAbilityGPCondition)">Grand Party</h3>
-                    <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="!rumble.gpability && !rumble.gpcondition && !rumble.gpspecial && (details.festAbilityGP || details.festAbilityGPCondition)">
+<details-card title="Grand Party" section-id="grandParty" ng-hide="hidden.abilities" ng-if="!rumble.gpability && !rumble.gpcondition && !rumble.gpspecial && (details.festAbilityGP || details.festAbilityGPCondition)">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="details.festAbilityGP.hasOwnProperty('base') || details.festAbilityGPCondition.hasOwnProperty('base')">
@@ -1189,11 +1206,11 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
-                    <!-- Use rumble.js if available -->
-                    <!-- Grand Party -->
-                    <h3 id="rumbleSection" class="page-header" ng-hide="hidden.abilities" ng-if="rumble.festGPAbility || rumble.festGPSpecial">Grand Party</h3>
-                    <div class="panel panel-default" ng-hide="hidden.abilities" ng-if="rumble.festGPAbility || rumble.festGPSpecial">
+                    <!-- Use rumble.js if available, then use details.js if available -->
+<details-card title="Grand Party" section-id="grandParty" ng-hide="hidden.abilities" ng-if="rumble.festGPAbility || rumble.festGPSpecial">
+                    <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
                                 <tr ng-if="rumble2"><th colspan="2">{{::char1.name}}</th></tr>
@@ -1265,12 +1282,13 @@
                             </tbody>
                         </table>
                     </div>
+                </details-card>
 
 <!-- Evolutions -->
-<h3 id="evolutionSection" class="page-header" ng-if="evolution.evolution" ng-hide="hidden.evolution">Evolutions</h3>
+<details-card title="Evolutions" section-id="evolution" ng-if="evolution.evolution" ng-hide="hidden.evolution">
 
 <table class="table table-striped table-centered table-bordered table-textless"
-    ng-if="evolution.evolution && !evolution.evolution.length" ng-hide="hidden.evolution">
+    ng-if="evolution.evolution && !evolution.evolution.length">
     <tbody>
         <tr>
             <td>
@@ -1282,7 +1300,7 @@
 </table>
 
 <table class="table table-striped table-centered table-bordered table-textless"
-    ng-if="evolution.evolution && evolution.evolution.length" ng-hide="hidden.evolution">
+    ng-if="evolution.evolution && evolution.evolution.length">
     <tbody>
         <tr ng-repeat="evolverSet in evolution.evolvers">
             <td>
@@ -1292,12 +1310,12 @@
         </tr>
     </tbody>
 </table>
+</details-card>
 
 <!-- Evolves from -->
-<h3 id="evolutionFromSection" class="page-header" ng-if="evolvesFrom.length > 0" ng-hide="hidden.evolutionFrom">Evolves From</h3>
+<details-card title="Evolves From" section-id="evolutionFrom" ng-if="evolvesFrom.length > 0" ng-hide="hidden.evolutionFrom">
 
-<table class="table table-striped table-centered table-bordered table-textless" ng-if="evolvesFrom.length > 0"
-    ng-hide="hidden.evolutionFrom">
+<table class="table table-striped table-centered table-bordered table-textless" ng-if="evolvesFrom.length > 0">
     <tbody>
         <tr ng-repeat="data in evolvesFrom">
             <td>
@@ -1307,12 +1325,12 @@
         </tr>
     </tbody>
 </table>
+</details-card>
 
 <!-- Used by -->
-<h3 class="page-header" ng-if="sizeOf(usedBy) > 0" ng-hide="hidden.required">Evolutions Requiring This Unit</h3>
+<details-card title="Evolutions Requiring This Unit" section-id="usedBy" ng-if="sizeOf(usedBy) > 0" ng-hide="hidden.required">
 
-<table ng-if="sizeOf(usedBy) > 0" class="table table-striped table-centered table-bordered table-textless"
-    ng-hide="hidden.required">
+<table ng-if="sizeOf(usedBy) > 0" class="table table-striped table-centered table-bordered table-textless">
     <tbody>
         <tr ng-if="collapsed.used && sizeOf(usedBy) > 3">
             <td><button class="btn btn-info collapse-button" ng-click="collapsed.used = false">Click to show</button>
@@ -1328,9 +1346,10 @@
         </tr>
     </tbody>
 </table>
+</details-card>
 
 <!-- Drops -->
-<h3 class="page-header" ng-if="drops.length > 0">Drop Locations</h3>
+<details-card title="Drop Locations" section-id="drops" ng-if="drops.length > 0">
 
 <span ng-show="!collapsed.drops" class="drop-warning">
     <strong>Note:</strong>
@@ -1369,9 +1388,10 @@
         </tbody>
     </table>
 </div>
+</details-card>
 
 <!-- Manuals -->
-<h3 class="page-header" ng-if="manuals.length > 0">Manual Locations</h3>
+<details-card title="Manual Locations" section-id="manuals" ng-if="manuals.length > 0">
 
 <table ng-if="collapsed.manuals && manuals.length > 3"
     class="table table-striped table-centered table-bordered table-textless">
@@ -1402,10 +1422,10 @@
         </tbody>
     </table>
 </div>
+</details-card>
 
 <!-- Family -->
-
-<h3 class="page-header" ng-if="displayFamily">Family: {{::displayFamily}}</h3>
+<details-card title="Family: {{::displayFamily}}" section-id="family" ng-if="displayFamily">
 
 <table ng-if="collapsed.families && farmableVersions.length > 3"
     class="table table-striped table-centered table-bordered table-textless">
@@ -1438,34 +1458,35 @@
         </tbody>
     </table>
 </div>
+</details-card>
 
 <!-- Other Names
 <h3 class="page-header">Other Names</h3>
 <add-names></add-names> -->
 
 <!-- Tags -->
-<h3 id="tagsSection" class="page-header">Tags</h3>
+<details-card title="Tags" section-id="tags">
 
 <add-tags></add-tags>
-    </div>
+</details-card>
 <div class="modal-footer">
     <div class="btn-group">
-        <button class="btn btn-default" title="Details" scroll-to-section="detailsSection"><i
+        <button class="btn btn-default" title="Details" scroll-to-section="card-details"><i
                 class="fas fa-book"></i></button>
-        <button class="btn btn-default" title="Abilities" scroll-to-section="abilitiesSection"
+        <button class="btn btn-default" title="Abilities" scroll-to-section="card-captain"
             ng-hide="hidden.abilities"><i class="fas fa-bolt"></i></button>
-        <button class="btn btn-default" title="Support" scroll-to-section="supportSection" ng-hide="hidden.abilities"><i
+        <button class="btn btn-default" title="Support" scroll-to-section="card-support" ng-hide="hidden.abilities"><i
                 class="fas fa-handshake"></i></button>
-        <button class="btn btn-default" title="Limit Break" scroll-to-section="limitBreakSection"
+        <button class="btn btn-default" title="Limit Break" scroll-to-section="card-limitBreak"
             ng-hide="hidden.abilities" ng-if="details.limit || details.potential"><i class="fas fa-atom"></i></button>
-        <button class="btn btn-default" title="Rumble" scroll-to-section="rumbleSection" ng-hide="hidden.abilities"
+        <button class="btn btn-default" title="Rumble" scroll-to-section="card-rumble" ng-hide="hidden.abilities"
             ng-if="rumble.ability"><i class="fas fa-rumble"></i></button>
-        <button class="btn btn-default" title="Evolution" scroll-to-section="evolutionSection"
+        <button class="btn btn-default" title="Evolution" scroll-to-section="card-evolution"
             ng-if="evolution.evolution" ng-hide="hidden.evolution"><i class="fas fa-seedling"></i></button>
-        <button class="btn btn-default" title="Evolution" scroll-to-section="evolutionFromSection"
+        <button class="btn btn-default" title="Evolution" scroll-to-section="card-evolutionFrom"
             ng-if="evolvesFrom.length > 0 && !evolution.evolution" ng-hide="hidden.evolutionFrom"><i
                 class="fas fa-seedling"></i></button>
-        <button class="btn btn-default" title="Tags" scroll-to-section="tagsSection"><i class="fas fa-tag"></i></button>
+        <button class="btn btn-default" title="Tags" scroll-to-section="card-tags"><i class="fas fa-tag"></i></button>
     </div>
 </div>
 
