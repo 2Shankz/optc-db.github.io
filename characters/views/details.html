@@ -608,8 +608,8 @@
                                             <span class="badge badge-combined" ng-show="details.sailor.combined">Dual Character</span>
                                             <div ng-show="details.sailor.combined"
                                                 ng-bind-html="details.sailor.combined | decorate"></div>
-                                            <div ng-if="details.sailor.character1">
-                                                <div ng-if="details.sailor.character1.constructor.name === 'String'">
+<div ng-if="details.sailor.character1">
+                                                <div ng-if="isString(details.sailor.character1)">
                                                     <span class="badge badge-character" ng-show="details.sailor.character1">{{::char1.name}}</span>
                                                     <span ng-show="details.sailor.character1" ng-bind-html="details.sailor.character1 | decorate"></span>
                                                 </div>
@@ -623,7 +623,7 @@
                                                 </div>
                                             </div>
                                             <div ng-if="details.sailor.character2">
-                                                <div ng-if="details.sailor.character2.constructor.name === 'String'">
+                                                <div ng-if="isString(details.sailor.character2)">
                                                     <span class="badge badge-character" ng-show="details.sailor.character2">{{::char2.name}}</span>
                                                     <span ng-show="details.sailor.character2" ng-bind-html="details.sailor.character2 | decorate"></span>
                                                 </div>
@@ -1098,7 +1098,7 @@
                             </table>
                             
                             <!-- Character 2 Stats (Dual Unit) - Primary -->
-                            <table class="table table-striped-column abilities" ng-if="rumble && rumble2">
+                            <table class="table table-striped-column abilities" style="border-top: 1px solid #000" ng-if="rumble && rumble2">
                                 <tbody>
                                     <tr>
                                         <th><span>{{::char2.name}}</span></th>
