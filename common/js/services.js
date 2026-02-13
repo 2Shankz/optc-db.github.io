@@ -3,53 +3,24 @@
 var app = angular.module('optc');
 var services = { };
 
-/************
- * Services *
- ************/
-
 services.$storage = function() {
-
-    var storage = null;
-    try { storage = localStorage; }
-    catch (e) { console.warn('localStorage not supported, data will not be persisted.'); }
-
     return {
-    
         get: function(key, defaultValue) {
-            if (storage === null) return defaultValue;
             try {
-                return JSON.parse(storage.getItem(key)) || defaultValue;
+                var value = localStorage.getItem(key);
+                if (value === null) return defaultValue;
+                var parsed = JSON.parse(value);
+                return parsed === undefined ? defaultValue : parsed;
             } catch (e) { return defaultValue; }
         },
-
         set: function(key, value) {
-            if (storage === null) return;
-            try {
-                storage.setItem(key, JSON.stringify(value));
-            } catch(e) { }
+            try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { }
         },
-
-        has: function(key) {
-            if (storage === null) return false;
-            try {
-                return storage.hasOwnProperty(key);
-            } catch(e) { return false; }
-        },
-
         remove: function(key) {
-            if (storage === null) return;
-            try {
-                storage.removeItem(key);
-            } catch(e) { }
+            try { localStorage.removeItem(key); } catch (e) { }
         }
-
     };
-
 };
-
-/******************
- * Initialization *
- ******************/
 
 for (var service in services)
     app.factory(service, services[service]);
