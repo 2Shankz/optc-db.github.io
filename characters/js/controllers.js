@@ -306,6 +306,10 @@
         return data && (data.festResistance?.llbbase || data.festAbility?.llbbase || data.festSpecial?.llbbase);
       };
 
+      $scope.hasGrandPartyLLB = function(data) {
+        return data && (data.festGPAbility?.llbbase || data.festGPSpecial?.llbbase);
+      };
+
       $scope.isArray = Array.isArray;
 
       // derived data

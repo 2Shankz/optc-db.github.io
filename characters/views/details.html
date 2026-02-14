@@ -1378,7 +1378,7 @@
                                     <tr ng-if="rumble2"><th colspan="2">{{::char1.name}}</th></tr>
                                     
                                     <!-- LLB Header -->
-                                    <tr ng-if="hasRumbleLLB(rumble)">
+                                    <tr ng-if="hasGrandPartyLLB(rumble)">
                                         <td width="5%"></td>
                                         <td style="width: 47.5%"><strong>Base</strong></td>
                                         <td style="width: 50%"><strong>Level Limit Break</strong></td>
@@ -1392,13 +1392,13 @@
                                                 <input type="checkbox" ng-model="showAllRumbleLevels"> All Levels
                                             </label>
                                         </td>
-                                        <td ng-style="!hasRumbleLLB(rumble) ? {'width': '100%'} : {}">
+                                        <td ng-style="!hasGrandPartyLLB(rumble) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festGPAbility.base : [rumble.festGPAbility.base[rumble.festGPAbility.base.length - 1]]) track by $index">
                                                 <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festGPAbility.base.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
-                                        <td ng-if="hasRumbleLLB(rumble)">
+                                        <td ng-if="hasGrandPartyLLB(rumble)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festGPAbility.llbbase : [rumble.festGPAbility.llbbase[rumble.festGPAbility.llbbase.length - 1]]) track by $index">
                                                 <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festGPAbility.llbbase.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
@@ -1409,7 +1409,7 @@
                                     <!-- Burst Condition -->
                                     <tr ng-if="rumble.festGPSpecial">
                                         <td width="5%">Burst Condition</td>
-                                        <td ng-style="!hasRumbleLLB(rumble) ? {'width': '100%'} : {}">
+                                        <td ng-style="!hasGrandPartyLLB(rumble) ? {'width': '100%'} : {}">
                                             <span ng-bind-html="rumble.festGPSpecial.base.condition | decorate"></span>
                                         </td>
                                         <td ng-if="rumble.festGPSpecial.llbbase.condition">
@@ -1425,13 +1425,13 @@
                                                 <input type="checkbox" ng-model="showAllRumbleLevels"> All Levels
                                             </label>
                                         </td>
-                                        <td ng-style="!hasRumbleLLB(rumble) ? {'width': '100%'} : {}">
+                                        <td ng-style="!hasGrandPartyLLB(rumble) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festGPSpecial.base.descriptions : [rumble.festGPSpecial.base.descriptions[rumble.festGPSpecial.base.descriptions.length - 1]]) track by $index">
                                                 <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festGPSpecial.base.descriptions.length}}: [{{rumble.festGPSpecial.base.uses}} use{{rumble.festGPSpecial.base.uses == 1 ? "" : "s"}}]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
-                                        <td ng-if="hasRumbleLLB(rumble)">
+                                        <td ng-if="hasGrandPartyLLB(rumble)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festGPSpecial.llbbase.descriptions : [rumble.festGPSpecial.llbbase.descriptions[rumble.festGPSpecial.llbbase.descriptions.length - 1]]) track by $index">
                                                 <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festGPSpecial.llbbase.descriptions.length}}: [{{rumble.festGPSpecial.llbbase.uses}} use{{rumble.festGPSpecial.llbbase.uses == 1 ? "" : "s"}}]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
@@ -1447,7 +1447,7 @@
                                     <tr><th colspan="2">{{::char2.name}}</th></tr>
                                     
                                     <!-- LLB Header -->
-                                    <tr ng-if="hasRumbleLLB(rumble2)">
+                                    <tr ng-if="hasGrandPartyLLB(rumble2)">
                                         <td width="5%"></td>
                                         <td style="width: 47.5%"><strong>Base</strong></td>
                                         <td style="width: 50%"><strong>Level Limit Break</strong></td>
@@ -1461,13 +1461,13 @@
                                                 <input type="checkbox" ng-model="showAllRumbleLevels"> All Levels
                                             </label>
                                         </td>
-                                        <td ng-style="!hasRumbleLLB(rumble2) ? {'width': '100%'} : {}">
+                                        <td ng-style="!hasGrandPartyLLB(rumble2) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festGPAbility.base : [rumble2.festGPAbility.base[rumble2.festGPAbility.base.length - 1]]) track by $index">
                                                 <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festGPAbility.base.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
-                                        <td ng-if="hasRumbleLLB(rumble2)">
+                                        <td ng-if="hasGrandPartyLLB(rumble2)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festGPAbility.llbbase : [rumble2.festGPAbility.llbbase[rumble2.festGPAbility.llbbase.length - 1]]) track by $index">
                                                 <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festGPAbility.llbbase.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
@@ -1478,7 +1478,7 @@
                                     <!-- Burst Condition -->
                                     <tr ng-if="rumble2.festGPSpecial">
                                         <td width="5%">Burst Condition</td>
-                                        <td ng-style="!hasRumbleLLB(rumble2) ? {'width': '100%'} : {}">
+                                        <td ng-style="!hasGrandPartyLLB(rumble2) ? {'width': '100%'} : {}">
                                             <span ng-bind-html="rumble2.festGPSpecial.base.condition | decorate"></span>
                                         </td>
                                         <td ng-if="rumble2.festGPSpecial.llbbase.condition">
@@ -1494,13 +1494,13 @@
                                                 <input type="checkbox" ng-model="showAllRumbleLevels"> All Levels
                                             </label>
                                         </td>
-                                        <td ng-style="!hasRumbleLLB(rumble2) ? {'width': '100%'} : {}">
+                                        <td ng-style="!hasGrandPartyLLB(rumble2) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festGPSpecial.base.descriptions : [rumble2.festGPSpecial.base.descriptions[rumble2.festGPSpecial.base.descriptions.length - 1]]) track by $index">
                                                 <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festGPSpecial.base.descriptions.length}}: [{{rumble2.festGPSpecial.base.uses}} use{{rumble2.festGPSpecial.base.uses == 1 ? "" : "s"}}]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
-                                        <td ng-if="hasRumbleLLB(rumble2)">
+                                        <td ng-if="hasGrandPartyLLB(rumble2)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festGPSpecial.llbbase.descriptions : [rumble2.festGPSpecial.llbbase.descriptions[rumble2.festGPSpecial.llbbase.descriptions.length - 1]]) track by $index">
                                                 <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festGPSpecial.llbbase.descriptions.length}}: [{{rumble2.festGPSpecial.llbbase.uses}} use{{rumble2.festGPSpecial.llbbase.uses == 1 ? "" : "s"}}]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
