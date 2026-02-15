@@ -12188,10 +12188,10 @@
 			},
 
 			{
-				name: "Special CT",
+				name: "Special CT Delay",
 				targets: ["rumbleAbility", "rumbleSpecial"],
 				regex:
-					/Removes ([.\d]+)% of Special CT to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
+					/([.\d]+)% Special CT Delay to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: in a ([\w]+, [\w]+) range)?(?: (\d+) times?)?/i,
 				submatchers: [
 					{
 						type: "number",
@@ -12238,10 +12238,10 @@
 			},
 
 			{
-				name: "Special CT",
+				name: "Special CT Delay",
 				targets: ["gpSpecial"],
 				regex:
-					/Removes ([.\d]+)% of Special CT to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: (\d+) times?)?/i,
+					/([.\d]+)% Special CT Delay to (\d)?(?=((?:[^e]+|e(?!nem))*))\3enem(?:y|ies)(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: (\d+) times?)?/i,
 				submatchers: [
 					{
 						type: "number",
@@ -13157,10 +13157,10 @@
 			},
 
 			{
-				name: "Special CT",
+				name: "Special CT Delay",
 				targets: ["rumbleSpecial"],
 				regex:
-					/([.\d]+)% chance to evade[^.]+Special CT[^.]+to (self|(?=((?:[^c]+|c(?!rew))*))\3crew members?)(?:, excluding self,)?(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: for (\d+) seconds)?/i,
+					/([.\d]+)% chance to evade[^.]+Special CT Delay[^.]+to (self|(?=((?:[^c]+|c(?!rew))*))\3crew members?)(?:, excluding self,)?(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: for (\d+) seconds)?/i,
 				submatchers: [
 					{
 						type: "number",
@@ -13197,10 +13197,10 @@
 			},
 
 			{
-				name: "Special CT",
+				name: "Special CT Delay",
 				targets: ["gpSpecial"],
 				regex:
-					/([.\d]+)% chance to evade[^.]+Special CT[^.]+to (?=((?:[^c]+|c(?!rew))*))\2crew members?(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: for (\d+) seconds)?/i,
+					/([.\d]+)% chance to evade[^.]+Special CT Delay[^.]+to (?=((?:[^c]+|c(?!rew))*))\2crew members?(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: for (\d+) seconds)?/i,
 				submatchers: [
 					{
 						type: "number",
