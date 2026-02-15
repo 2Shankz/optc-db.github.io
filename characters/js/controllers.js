@@ -17,13 +17,6 @@
       $controller
     ) {
 
-      if (!$rootScope.hasOwnProperty("nightMode")) {
-        $rootScope.nightMode = $storage.get("chars.night", false);
-        $rootScope.$watch("nightMode", function (night) {
-          $storage.set("chars.night", night);
-        });
-      }
-
       $scope.query = $state.params.query;
 
       $scope.$watch("query", function (query) {
@@ -313,6 +306,10 @@
         return data && (data.festResistance?.llbbase || data.festAbility?.llbbase || data.festSpecial?.llbbase);
       };
 
+      $scope.hasGrandPartyLLB = function(data) {
+        return data && (data.festGPAbility?.llbbase || data.festGPSpecial?.llbbase);
+      };
+
       $scope.isArray = Array.isArray;
 
       // derived data
@@ -381,13 +378,16 @@
           $scope.details.captain.base ||
           $scope.details.captain.combined ||
           $scope.details.captain.character1);
-      $scope.isSailorHybrid =
+$scope.isSailorHybrid =
         $scope.details &&
         $scope.details.sailor &&
         ($scope.details.sailor.global ||
           $scope.details.sailor.level1 ||
           $scope.details.sailor.combined ||
           $scope.details.sailor.character1);
+      $scope.isString = function(value) {
+        return typeof value === 'string';
+      };
       $scope.isSpecialHybrid =
         $scope.details &&
         $scope.details.special &&

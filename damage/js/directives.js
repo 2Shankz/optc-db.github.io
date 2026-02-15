@@ -1279,6 +1279,7 @@ directives.special = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
+                if (!unit) return;
                 var abilityId = unit.id;
                 if (enabled && window.specials[abilityId].warning) {
                     scope.notify({
@@ -1319,6 +1320,7 @@ directives.altspecial = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
+                if (!unit) return;
                 var abilityId = unit.id;
                 if (enabled && window.altspecials[abilityId].warning) {
                     scope.notify({
@@ -1359,6 +1361,7 @@ directives.capspecial = function($rootScope) {
                 if (enabled) element.addClass(unit.type);
                 type = (unit ? unit.type : null);
                 isSelected = enabled;
+                if (!unit) return;
                 var abilityId = unit.id;
                 if (enabled && window.capspecials[abilityId].warning) {
                     scope.notify({

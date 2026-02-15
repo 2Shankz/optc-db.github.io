@@ -118,17 +118,6 @@
 				);
 				$compile(pick)(scope);
 				pick.insertAfter($(".dataTables_length"));
-				// night toggle
-				var nightToggle = $(
-					'<label class="night-toggle"><input type="checkbox">Light mode</input></label>'
-				);
-				nightToggle.find("input").change(function (e) {
-					$rootScope.nightMode = e.target.checked;
-					if (!$rootScope.$$phase) $rootScope.$apply();
-				});
-				if ($rootScope.nightMode)
-					nightToggle.find("input").attr("checked", "checked");
-				nightToggle.insertBefore($(".dataTables_length"));
 				// fuzzy toggle
 				var fuzzyToggle = $(
 					'<label class="fuzzy-toggle"><input type="checkbox">Enable fuzzy search</input></label>'
@@ -297,7 +286,7 @@
 		};
 	};
 
-	directives.goBack = function ($state) {
+directives.goBack = function ($state) {
 		return {
 			restrict: "A",
 			link: function (scope, element, attrs) {
@@ -305,6 +294,7 @@
 					if (!e.target || e.target.className.indexOf("inner-container") == -1)
 						return;
 					element.find(".modal-content").addClass("rollOut");
+					$(".quick-nav").addClass("closing");
 					$(".backdrop").addClass("closing");
 					setTimeout(function () {
 						$state.go("^");
@@ -630,6 +620,36 @@
 				}
 				element.append(htmlToAppend);
 			},
+		};
+	};
+
+	directives.detailsCard = function ($storage) {
+		return {
+			restrict: "E",
+			transclude: true,
+			replace: true,
+			template: '<div class="details-card" id="card-{{sectionId}}">' +
+				'<div class="details-card-header" ng-click="toggle()">' +
+				'<i class="fas fa-chevron-right details-card-chevron" ng-class="{\'details-card-collapsed\': !isOpen}"></i>' +
+				'<span class="details-card-title">{{title}}</span>' +
+				'</div>' +
+				'<div class="details-card-content" ng-transclude ng-show="isOpen"></div>' +
+				'</div>',
+			scope: {
+				title: "@",
+				sectionId: "@",
+				defaultOpen: "@?"
+			},
+			link: function (scope, element, attrs) {
+				var storageKey = "detailsCard_" + scope.sectionId;
+				var stored = $storage.get(storageKey, null);
+				scope.isOpen = stored !== null ? stored : (scope.defaultOpen !== "false");
+
+				scope.toggle = function () {
+					scope.isOpen = !scope.isOpen;
+					$storage.set(storageKey, scope.isOpen);
+				};
+			}
 		};
 	};
 

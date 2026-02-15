@@ -11,8 +11,6 @@
     height: 60px;
     z-index: 1;
     user-select: none;
-    -moz-user-select: none; 
-    -webkit-user-select: none; 
 }
 
 .damage.STR { top: 0px; }
