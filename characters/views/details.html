@@ -16,7 +16,7 @@
               {{::unit.name}}
             </div>
 
-<div class="modal-body">
+<div class="modal-body" id="modal-body-top">
             
             <div
             ng-click="openBigThumbTab(unit.id)"
@@ -1769,8 +1769,11 @@
 </div>
 
 <div class="quick-nav">
+    <button class="btn btn-default" title="Details" scroll-to-section="modal-body-top">
+    <i class="fa fa-arrow-up"></i>
+    </button>
     <button class="btn btn-default" title="Details" scroll-to-section="card-details">
-    TOP
+    DET
     </button>
     <button class="btn btn-default" title="Stats" scroll-to-section="card-stats" ng-hide="hidden.stats">
     STATS
