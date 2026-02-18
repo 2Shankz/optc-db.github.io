@@ -399,9 +399,12 @@ directives.goBack = function ($state) {
 			restrict: "A",
 			link: function (scope, element, attrs) {
 				element.click(function (e) {
-					document
-						.getElementById(attrs.scrollToSection)
-						.scrollIntoView({ behavior: "smooth" });
+					var target = document.getElementById(attrs.scrollToSection);
+					if (target.classList.contains('modal-body')) {
+						target.scrollTo({ top: 0, behavior: "smooth" });
+					} else {
+						target.scrollIntoView({ behavior: "smooth" });
+					}
 				});
 			},
 		};

@@ -16,7 +16,7 @@
               {{::unit.name}}
             </div>
 
-<div class="modal-body">
+<div class="modal-body" id="modal-body-top">
             
             <div
             ng-click="openBigThumbTab(unit.id)"
@@ -1583,7 +1583,7 @@
                     </details-card>
 
 <!-- Evolutions -->
-<details-card title="Evolutions" section-id="evolution" ng-if="evolution.evolution" ng-hide="hidden.evolution">
+<details-card title="Evolutions" section-id="evolution" ng-if="evolution.evolution || evolvesFrom.length > 0" ng-hide="hidden.evolution">
 
 <table class="table table-striped table-centered table-bordered table-textless"
     ng-if="evolution.evolution && !evolution.evolution.length">
@@ -1769,8 +1769,11 @@
 </div>
 
 <div class="quick-nav">
+    <button class="btn btn-default" title="Details" scroll-to-section="modal-body-top">
+    <i class="fa fa-arrow-up"></i>
+    </button>
     <button class="btn btn-default" title="Details" scroll-to-section="card-details">
-    TOP
+    DET
     </button>
     <button class="btn btn-default" title="Stats" scroll-to-section="card-stats" ng-hide="hidden.stats">
     STATS
@@ -1823,7 +1826,7 @@
     <button class="btn btn-default" title="Grand Party" scroll-to-section="card-grandParty" ng-hide="hidden.abilities" ng-if="rumble.festGPAbility || rumble.festGPSpecial || (!rumble.gpability && !rumble.gpcondition && !rumble.gpspecial && (details.festAbilityGP || details.festAbilityGPCondition))">
     GP
     </button>
-    <button class="btn btn-default" title="Evolutions" scroll-to-section="card-evolution" ng-if="evolution.evolution" ng-hide="hidden.evolution">
+    <button class="btn btn-default" title="Evolutions" scroll-to-section="card-evolution" ng-if="evolution.evolution || evolvesFrom.length > 0" ng-hide="hidden.evolution">
     EVO
     </button>
     <button class="btn btn-default" title="Used By" scroll-to-section="card-usedBy" ng-if="sizeOf(usedBy) > 0" ng-hide="hidden.required">
