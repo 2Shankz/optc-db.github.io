@@ -644,6 +644,7 @@ directives.goBack = function ($state) {
 				defaultOpen: "@?"
 			},
 			link: function (scope, element, attrs) {
+				element.removeAttr("title");
 				var storageKey = "detailsCard_" + scope.sectionId;
 				var stored = $storage.get(storageKey, null);
 				scope.isOpen = stored !== null ? stored : (scope.defaultOpen !== "false");
