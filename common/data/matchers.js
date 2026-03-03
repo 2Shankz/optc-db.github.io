@@ -434,6 +434,130 @@
 
 	// Structure will be changed to window.matchers[target][matcherGroup]
 	let matchers = {
+		"Auto+": [
+
+			{
+				name: "Activates: Special",
+				targets: ["support"],
+				regex:
+					/When you reach the (\d+)\w{2} stage, activates supported character's Special/i,
+				submatchers: [
+					{
+						type: "option",
+						description: "1st",
+						regex: /1/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "2nd",
+						regex: /2/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "3rd",
+						regex: /3/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "4th",
+						regex: /4/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+				],
+			},
+			{
+				name: "Activates: Super Effect",
+				targets: ["support"],
+				regex:
+					/When you reach the (\d+)\w{2} stage, activates supported character's Super Effect/i,
+				submatchers: [
+					{
+						type: "option",
+						description: "1st",
+						regex: /1/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "2nd",
+						regex: /2/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "3rd",
+						regex: /3/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "4th",
+						regex: /4/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+				],
+			},
+			{
+				name: "Activates: Switch Effect",
+				targets: ["support"],
+				regex:
+					/When you reach the (\d+)\w{2} stage, activates supported character's Switch Effect/i,
+				submatchers: [
+					{
+						type: "option",
+						description: "1st",
+						regex: /1/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "2nd",
+						regex: /2/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "3rd",
+						regex: /3/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "4th",
+						regex: /4/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+				],
+			},
+		],
+
 		Damage: [
 			{
 				name: "Old Damage dealer",
@@ -4120,6 +4244,8 @@
 				regex: /converts Color Affinity into a Stackable Color Affinity/i,
 			},
 		],
+
+		
 		"Ability Requirements": [
 			{
 				name: "Turn Limited Effects",
@@ -11454,12 +11580,12 @@
 				name: "Sub Switch",
 				targets: ["rumbleSpecial"],
 				regex:
-					/Switches (self) with (1st|2nd|3rd) sub character./i,
+					/Switches (self) with (\d+)\w{2} sub character./i,
 				submatchers: [
 					{
 						type: "option",
 						description: "1st",
-						regex: /1st/i,
+						regex: /1/i,
 						radioGroup: "sub",
 						groups: [2],
 						cssClasses: ["min-width-3"],
@@ -11467,7 +11593,7 @@
 					{
 						type: "option",
 						description: "2nd",
-						regex: /2nd/i,
+						regex: /2/i,
 						radioGroup: "sub",
 						groups: [2],
 						cssClasses: ["min-width-3"],
@@ -11475,7 +11601,7 @@
 					{
 						type: "option",
 						description: "3rd",
-						regex: /3rd/i,
+						regex: /3/i,
 						radioGroup: "sub",
 						groups: [2],
 						cssClasses: ["min-width-3"],
