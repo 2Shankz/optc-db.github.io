@@ -8370,10 +8370,10 @@
 			},
 
 			{
-				name: "End of Turn Damage/Percent Cut",
+				name: "End of Turn Damage",
 				targets: ["special", "superSpecial", "swap", "support"],
 				regex:
-					/(?:reduces|removes) enemies[^."]+?End of Turn Damage\/Percent Cut[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
+					/(?:reduces|removes) enemies[^."]+?End of Turn Damage(?:\/Percent Cut)?[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
 					{
 						type: "number",
