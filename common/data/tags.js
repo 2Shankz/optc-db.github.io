@@ -4493,6 +4493,7 @@ window.tags = {
 	"4524": ["SWORD","Navy","Egghead Arc"],
 	"4525": ["Navy","Navy Vice Admiral","Egghead Arc"],
 	"4526": ["Blackbeard Pirates","Paramythia-type","Egghead Arc"],
+	"4528": ["SWORD","Navy","Paramythia-type","Egghead Arc"],
 	"5013": [],
 	"5014": [],
 	"5029": [],
