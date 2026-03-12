@@ -1,0 +1,296 @@
+/* common/css/themes.css */
+/* Consolidated theme variables for all modules */
+
+/* Default = Dark Mode (based on characters) */
+:root {
+    /* Backgrounds */
+    --bg-primary: #404040;
+    --bg-secondary: #202020;
+    --bg-tertiary: #505050;
+    --bg-input: #404040;
+    --bg-hover: #606060;
+    
+    /* Text */
+    --text-primary: #f6f3e8;
+    --text-secondary: #cccccc;
+    
+    /* Borders */
+    --border-color: #333333;
+    
+    /* Accents */
+    --accent-red: #dd6060;
+    --accent-hover: #ff9090;
+    --accent-blue: #88c0d0;
+    
+    /* Type Colors - Dark Mode */
+    --type-str: #bf616a;
+    --type-qck: #96b5b4;
+    --type-dex: #a3be8c;
+    --type-psy: #ebcb8b;
+    --type-int: #b48ead;
+    
+    /* Type Colors - Hover/Active (saturated) */
+    --type-str-active: #ff6655;
+    --type-qck-active: #66b0ff;
+    --type-dex-active: #66cc77;
+    --type-psy-active: #ffcc44;
+    --type-int-active: #dd77dd;
+    
+    /* UI Elements */
+    --panel-bg: #505050;
+    --modal-header: #65737e;
+    --modal-body: #ffffff;
+    --modal-footer: #505050;
+    --popover-bg: #404040;
+    
+    /* Links */
+    --link-color: #8acccf;
+    --link-hover: #53dccd;
+    
+    /* Filter Headers */
+    --filter-header-log: hsla(157, 79%, 15%, 0.4);
+    --filter-header-pve: hsla(230, 70%, 10%, 0.4);
+    --filter-header-pvp: hsla(0, 70%, 10%, 0.4);
+    
+    /* Table */
+    --table-stripe-odd: #494949;
+    --table-stripe-even: #404040;
+    
+    /* Scrollbars */
+    --scrollbar-track: #969696;
+    --scrollbar-thumb: #5a5a5a;
+
+    /* Buttons - Landing page */
+    --btn-green: #7FCA9F;
+    --btn-green-hover: #6EB98E;
+    --btn-blue: #85C1F5;
+    --btn-blue-hover: #74B0E4;
+    --btn-red: #E96D63;
+    --btn-red-hover: #D85C52;
+    --btn-purple: #DA70D6;
+    --btn-purple-hover: #C96995;
+    --btn-yellow: #F4BA70;
+    --btn-yellow-hover: #E3A969;
+    --btn-pink: #DEA5A4;
+    --btn-pink-hover: #A57777;
+    --btn-brown: #993300;
+    --btn-brown-hover: #662200;
+    --btn-darkpurple: #7D3C98;
+    --btn-darkpurple-hover: #5B2C6F;
+    --btn-gold: #B38F15;
+    --btn-gold-hover: #947713;
+    --btn-darkblue: #183578;
+    --btn-darkblue-hover: #092056;
+    --btn-limegreen: #32CD32;
+    --btn-limegreen-hover: #228B22;
+    --btn-darkorange: #CF5300;
+    --btn-darkorange-hover: #B54C05;
+
+    /* Bonuses */
+    --bonus-drop: #7bc8a4;
+    --bonus-stamina: skyblue;
+    --bonus-beli: #ffc65d;
+    --bonus-exp: #f16745;
+    --bonus-today: orchid;
+
+    /* Damage calc sliders */
+    --slider-turn: orchid;
+    --slider-heal: green;
+    --slider-rcv: rgb(216, 85, 14);
+    --slider-basehp: green;
+    --slider-semla: lemonchiffon;
+    --slider-damage: darkred;
+
+    /* Filter active states */
+    --filter-active: red;
+    --filter-active-hover: darkred;
+    --filter-subclass-active: orchid;
+
+    /* Stars */
+    --star-1: #40a3da;
+    --star-2: #acc523;
+    --star-3: #f7c118;
+    --star-4: #f28e00;
+    --star-5: #ff0000;
+    --star-5plus: #990000;
+    --star-6: #9932cc;
+    --star-6plus: #ff1493;
+
+    /* Tags */
+    --tag-flag: rgba(133,193,245,0.5);
+    --tag-captain: rgba(127,202,159,0.5);
+    --tag-special: rgba(244,186,112,0.5);
+    --tag-superSpecial: rgba(233,109,99,0.5);
+    --tag-swap: rgba(155, 112, 212,0.5);
+    --tag-sailor: rgba(181,160,75,0.5);
+    --tag-limit: rgba(6,151,154,0.5);
+    --tag-potential: rgba(189,109,10,0.5);
+    --tag-support: rgba(133,193,245,0.5);
+
+    /* Tag categories */
+    --tag-cat-1: rgb(211,125,6);
+    --tag-cat-2: rgb(87,131,27);
+    --tag-cat-3: rgb(194,47,135);
+    --tag-cat-4: rgb(4,151,138);
+
+    /* Dual unit */
+    --dual-header-bg: #ffffff;
+    --dual-border: #adadad;
+
+    /* Damage calculator */
+    --btn-settings: #555;
+    --btn-settings-hover: #444;
+    --btn-orchid: orchid;
+    --btn-orchid-hover: mediumorchid;
+
+    /* Misc UI */
+    --ribbon-red: #e43;
+    --ribbon-orange: #e82;
+}
+
+/* Light Mode */
+.light-mode {
+    /* Backgrounds */
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e0e0e0;
+    --bg-input: #ffffff;
+    --bg-hover: #d0d0d0;
+    
+    /* Text */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    
+    /* Borders */
+    --border-color: #dddddd;
+    
+    /* Accents */
+    --accent-red: #dd6060;
+    --accent-hover: #ff9090;
+    --accent-blue: #88c0d0;
+    
+    /* Type Colors - Light Mode (more saturated) */
+    --type-str: #e55545;
+    --type-qck: #4a9fe8;
+    --type-dex: #4ab85a;
+    --type-psy: #e8c22a;
+    --type-int: #c45ab8;
+    
+    /* Type Colors - Hover/Active (even more saturated) */
+    --type-str-active: #ff6655;
+    --type-qck-active: #66b0ff;
+    --type-dex-active: #66cc77;
+    --type-psy-active: #ffcc44;
+    --type-int-active: #dd77dd;
+    
+    /* UI Elements */
+    --panel-bg: #e0e0e0;
+    --modal-header: #888888;
+    --modal-body: #ffffff;
+    --modal-footer: #e0e0e0;
+    --popover-bg: #ffffff;
+    
+    /* Links */
+    --link-color: #2a7a7a;
+    --link-hover: #1a5a5a;
+    
+    /* Filter Headers - lighter versions */
+    --filter-header-log: hsla(157, 90%, 92%, 0.5);
+    --filter-header-pve: hsla(220, 85%, 60%, 0.5);
+    --filter-header-pvp: hsl(0, 85%, 60%, 0.5);
+    
+    /* Table */
+    --table-stripe-odd: #ffffff;
+    --table-stripe-even: #f5f5f5;
+    
+    /* Scrollbars */
+    --scrollbar-track: #e0e0e0;
+    --scrollbar-thumb: #aaaaaa;
+
+    /* Buttons - Landing page */
+    --btn-green: #7FCA9F;
+    --btn-green-hover: #6EB98E;
+    --btn-blue: #85C1F5;
+    --btn-blue-hover: #74B0E4;
+    --btn-red: #E96D63;
+    --btn-red-hover: #D85C52;
+    --btn-purple: #DA70D6;
+    --btn-purple-hover: #C96995;
+    --btn-yellow: #F4BA70;
+    --btn-yellow-hover: #E3A969;
+    --btn-pink: #DEA5A4;
+    --btn-pink-hover: #A57777;
+    --btn-brown: #993300;
+    --btn-brown-hover: #662200;
+    --btn-darkpurple: #7D3C98;
+    --btn-darkpurple-hover: #5B2C6F;
+    --btn-gold: #B38F15;
+    --btn-gold-hover: #947713;
+    --btn-darkblue: #183578;
+    --btn-darkblue-hover: #092056;
+    --btn-limegreen: #32CD32;
+    --btn-limegreen-hover: #228B22;
+    --btn-darkorange: #CF5300;
+    --btn-darkorange-hover: #B54C05;
+
+    /* Bonuses */
+    --bonus-drop: #7bc8a4;
+    --bonus-stamina: skyblue;
+    --bonus-beli: #ffc65d;
+    --bonus-exp: #f16745;
+    --bonus-today: orchid;
+
+    /* Damage calc sliders */
+    --slider-turn: orchid;
+    --slider-heal: green;
+    --slider-rcv: rgb(216, 85, 14);
+    --slider-basehp: green;
+    --slider-semla: lemonchiffon;
+    --slider-damage: darkred;
+
+    /* Filter active states */
+    --filter-active: #ff4444;
+    --filter-active-hover: #cc0000;
+    --filter-subclass-active: #da70d6;
+
+    /* Stars - slightly brighter in light mode */
+    --star-1: #40a3da;
+    --star-2: #acc523;
+    --star-3: #f7c118;
+    --star-4: #f28e00;
+    --star-5: #ee0000;
+    --star-5plus: #aa0000;
+    --star-6: #9932cc;
+    --star-6plus: #ff1493;
+
+    /* Tags - slightly more opaque in light mode */
+    --tag-flag: rgba(133,193,245,0.7);
+    --tag-captain: rgba(127,202,159,0.7);
+    --tag-special: rgba(244,186,112,0.7);
+    --tag-superSpecial: rgba(233,109,99,0.7);
+    --tag-swap: rgba(155, 112, 212,0.7);
+    --tag-sailor: rgba(181,160,75,0.7);
+    --tag-limit: rgba(6,151,154,0.7);
+    --tag-potential: rgba(189,109,10,0.7);
+    --tag-support: rgba(133,193,245,0.7);
+
+    /* Tag categories */
+    --tag-cat-1: rgb(211,125,6);
+    --tag-cat-2: rgb(87,131,27);
+    --tag-cat-3: rgb(194,47,135);
+    --tag-cat-4: rgb(4,151,138);
+
+    /* Dual unit */
+    --dual-header-bg: #f5f5f5;
+    --dual-border: #cccccc;
+
+    /* Damage calculator */
+    --btn-settings: #888;
+    --btn-settings-hover: #666;
+    --btn-orchid: orchid;
+    --btn-orchid-hover: mediumorchid;
+
+    /* Misc UI */
+    --ribbon-red: #ee3333;
+    --ribbon-orange: #ee7722;
+}

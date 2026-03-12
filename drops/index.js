@@ -9,7 +9,17 @@ var addImages = function(target) {
     });
 };
 
-app.controller('MainCtrl',function($scope, $rootScope, $timeout, $controller) {
+app.controller('MainCtrl',function($scope, $rootScope, $timeout, $controller, $storage) {
+
+    // Theme toggle
+    $scope.theme = $storage.get('optc-theme', 'dark');
+    document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
+
+    $scope.toggleTheme = function() {
+        $scope.theme = $scope.theme === 'dark' ? 'light' : 'dark';
+        $storage.set('optc-theme', $scope.theme);
+        document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
+    };
 
     // variables
     $rootScope.onlyGlobal = false;

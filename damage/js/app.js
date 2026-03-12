@@ -6,7 +6,17 @@ var app = angular.module('optc', [ 'ui.router', 'ui.bootstrap', 'ngSanitize' ]);
  * SharedRootCtrl *
  ******************/
 
-var SharedRootCtrl = function($scope, $rootScope, $timeout) {
+var SharedRootCtrl = function($scope, $rootScope, $timeout, $storage) {
+
+    // Theme toggle
+    $scope.theme = $storage.get('optc-theme', 'dark');
+    document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
+
+    $scope.toggleTheme = function() {
+        $scope.theme = $scope.theme === 'dark' ? 'light' : 'dark';
+        $storage.set('optc-theme', $scope.theme);
+        document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
+    };
 
     $rootScope.data = {
         //setting default values

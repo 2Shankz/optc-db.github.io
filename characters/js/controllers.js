@@ -40,12 +40,12 @@
       });
 
       $scope.theme = $storage.get('optc-theme', 'dark');
-      document.body.classList.toggle('light-mode', $scope.theme === 'light');
+      document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
 
       $scope.toggleTheme = function() {
         $scope.theme = $scope.theme === 'dark' ? 'light' : 'dark';
         $storage.set('optc-theme', $scope.theme);
-        document.body.classList.toggle('light-mode', $scope.theme === 'light');
+        document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
       };
 
       $scope.getRandChar = function () {
