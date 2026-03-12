@@ -850,15 +850,27 @@
                     <div class="panel panel-default">
                         <table class="table table-striped-column abilities">
                             <tbody>
-                                <tr ng-if="details.superTandemBoost">
-                                    <td>
-                                        <span ng-if="details.superTandemBoost.condition"><strong>Condition:</strong> <span ng-bind-html="details.superTandemBoost.condition | decorate"></span></span>
-                                        <div ng-repeat="item in details.superTandemBoost.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.characterCondition[$index] | decorate"></span>):</strong>
-                                        <span ng-bind-html="item | decorate"></span><br></div>
+                                <tr ng-if="details.superTandemBoost.characterCondition">
+                                    <td >
+                                        <div ng-repeat="item in details.superTandemBoost.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
                                         <span class="notes" ng-if="details.superTandemBoostNotes" ng-bind-html="details.superTandemBoostNotes | notes | decorate"></span>
-                                <add-super-tandem-query criteria="details.superTandemBoost.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
-                            </td>
-                        </tr>
+                                        <add-super-tandem-query criteria="details.superTandemBoost.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
+                                    </td>
+                                </tr>
+                                <tr ng-if="details.superTandemBoost.character1">
+                                    <th><span>{{::char1.name}}</span></th>
+                                    <td>
+                                        <div ng-repeat="item in details.superTandemBoost.character1.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.character1.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
+                                        <add-super-tandem-query criteria="details.superTandemBoost.character1.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
+                                    </td>
+                                </tr>
+                                <tr ng-if="details.superTandemBoost.character2">
+                                    <th><span>{{::char2.name}}</span></th>
+                                    <td>
+                                        <div ng-repeat="item in details.superTandemBoost.character2.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.character2.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
+                                        <add-super-tandem-query criteria="details.superTandemBoost.character2.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

@@ -5156,8 +5156,11 @@ window.families = {
     4524: [ ...Helmeppo ],
     4525: [ ...Doll ],
     4526: [ ...Shiryu ],
-    //4527: [ ...Shiryu ],
+    4527: [ ...Shiryu ],
     4528: [ ...PrinceGrus ],
+    4529: [ ...RoronoaZoro, ...EthanbaronVNusjuro ],
+    4530: [ ...Jinbe ],
+    4531: [ ...Nami ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
