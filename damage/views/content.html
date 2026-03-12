@@ -46,6 +46,10 @@
                 uib-tooltip="Instructions" tooltip-append-to-body="true">
             <i class="fa fa-question-circle"></i>
         </button>
+        <button type="button" class="btn" ng-click="toggleTheme()" title="Toggle Theme" style="padding: 4px 12px; cursor: pointer; white-space: nowrap; font-size: 14px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">
+            <span ng-bind="theme === 'dark' ? '🌙' : '☀️'"></span>
+            <span ng-bind="theme === 'dark' ? 'Neko' : 'Inu'"></span>
+        </button>
     </div>
 
     <url-container></url-container>
