@@ -76,7 +76,7 @@ input#burgerMenuState {
         left: 0;
         right: 0;
         z-index: 3;
-        background: white;
+        background: var(--bg-primary);
         transition: transform 0.2s;
     }
 
@@ -933,7 +933,8 @@ tr.preview td:nth-child(2) > a:after {
     overflow-y: auto;
     overflow-x: hidden;
     min-height: 0;
-    background-color: var(--modal-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 .quick-nav {
@@ -1217,18 +1218,18 @@ unit > a {
 
 /* Dual Unit Color Coding */
 .dual-unit-group-header {
-  background-color: #ffffff;
-  border-bottom: 2px solid #adadad;
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--dual-border);
   font-weight: bold;
 }
 
 .dual-unit-character-header,
 .dual-unit-character-tags {
-  background-color: #fff;
+  background-color: var(--bg-secondary);
 }
 
 .dual-unit-character-tags {
-  border-bottom: 2px solid #adadad;
+  border-bottom: 2px solid var(--dual-border);
 }
 
 .dual-unit-character-header td {
@@ -1370,6 +1371,13 @@ a { color: var(--link-color); }
 }
 
 .dataTables_length select {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
+}
+
+.dataTables_length select option {
+    background-color: var(--bg-primary);
     color: var(--text-primary);
 }
 
@@ -1514,6 +1522,52 @@ a { color: var(--link-color); }
     box-shadow: none;
     border: none;
     border-radius: 0;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.details-card-content .panel td {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.details-card-content .panel th {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.details-card-content .panel thead td {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.details-card-content .table-striped-column > * > tr > td {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.details-card-content .table-striped-column > * > tr:nth-child(odd) > td {
+    background-color: var(--table-stripe-odd);
+}
+
+.details-card-content .table-striped-column > * > tr:nth-child(even) > td {
+    background-color: var(--table-stripe-even);
+}
+
+/* Detail view form elements */
+.details-card-content input,
+.details-card-content select,
+.details-card-content textarea {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.details-card-content label {
+    color: var(--text-primary);
 }
 
 .quick-nav .btn {

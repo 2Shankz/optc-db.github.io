@@ -78,8 +78,8 @@ body, html {
 
 @media (hover) {
     #transient:hover {
-        background-color: #FF9E9E;
-        border-color: #EC92A0;
+        background-color: var(--accent-red);
+        border-color: var(--accent-hover);
     }
 }
 
@@ -171,15 +171,16 @@ body, html {
     font-size: 70%;
     font-weight: bold;
     padding: 1px;
-    outline: 1px solid black;
-    background-color: white;
+    outline: 1px solid var(--text-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     cursor: pointer;
     z-index: 4;
 }
 
 @media (hover) {
     .unitLevel:hover {
-        background: lightcoral;
+        background: var(--accent-hover);
     }
 }
 
@@ -523,14 +524,14 @@ input {
 #specialDivider {
     padding: 5px !important;
     text-align: center;
-    background: #cdd8e4;
-    color: black !important;
+    background: var(--bg-tertiary);
+    color: var(--text-primary) !important;
     cursor: default;
 }
 
 #supertypeContainer {
     padding: 0em !important;
-    background-color: white;
+    background-color: var(--bg-secondary);
 }
 
 #supertypeContainer > input {
@@ -551,7 +552,7 @@ input {
 
 #superclassContainer {
     padding: 0em !important;
-    background-color: white;
+    background-color: var(--bg-secondary);
 }
 
 #superclassContainer > input {
@@ -656,8 +657,8 @@ li > div > a {
 }
 
 li input {
-    color: black;
-    background: white;
+    color: var(--text-primary);
+    background: var(--bg-primary);
 }
 
 nav > li > div {
@@ -900,7 +901,7 @@ nav > li > div {
 }
 
 .floatThead-table tr > th {
-    background: white;
+    background: var(--bg-secondary);
 }
 
 #saveslot .alert {
