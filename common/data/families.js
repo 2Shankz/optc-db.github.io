@@ -742,7 +742,7 @@ const Emet = [ "Emet" ];
 const ClouDClover = [ "Clou D. Clover" ];
 const Guernica = [ "Guernica" ];
 const Joseph = [ "Joseph" ];
-const Strongheart = [ "Strongheart" ];
+const Strongheart = [ "Strongheart", "Stronger" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
