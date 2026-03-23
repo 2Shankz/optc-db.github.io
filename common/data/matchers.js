@@ -8246,7 +8246,7 @@
 			},
 			{
 				name: "Percent Damage Reduction",
-				targets: ["special", "superSpecial"],
+				targets: ["special", "superSpecial", "support"],
 				regex:
 					/(ignores? (?:Percent Damage Reduction )?Debuff Protection and )?(?:Reduces|Removes) enemies' damage received by ([?\d]+)%(?:-([?\d]+)%)? for ([?\d]+)(?:-([?\d]+))? turns?/i,
 				submatchers: [
