@@ -440,7 +440,7 @@
 				name: "Activates: Special",
 				targets: ["support"],
 				regex:
-					/When you reach the (\d+)\w{2} stage, activates supported character's Special/i,
+					/When you reach the ([\w]+) stage, activates supported character's Special/i,
 				submatchers: [
 					{
 						type: "option",
@@ -473,6 +473,22 @@
 						groups: [1],
 						radioGroup: "sub",
 						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "5th",
+						regex: /5/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "Final",
+						regex: /final/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-6"],
 					},
 				],
 			},
@@ -480,7 +496,7 @@
 				name: "Activates: Super Effect",
 				targets: ["support"],
 				regex:
-					/When you reach the (\d+)\w{2} stage, activates supported character's Super Effect/i,
+					/When you reach the ([\w]+) stage, activates supported character's Super Effect/i,
 				submatchers: [
 					{
 						type: "option",
@@ -513,6 +529,22 @@
 						groups: [1],
 						radioGroup: "sub",
 						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "5th",
+						regex: /5/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "Final",
+						regex: /final/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-6"],
 					},
 				],
 			},
@@ -520,7 +552,7 @@
 				name: "Activates: Switch Effect",
 				targets: ["support"],
 				regex:
-					/When you reach the (\d+)\w{2} stage, activates supported character's Switch Effect/i,
+					/When you reach the ([\w]+) stage, activates supported character's Switch Effect/i,
 				submatchers: [
 					{
 						type: "option",
@@ -553,6 +585,22 @@
 						groups: [1],
 						radioGroup: "sub",
 						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "5th",
+						regex: /5/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-3"],
+					},
+					{
+						type: "option",
+						description: "Final",
+						regex: /final/i,
+						groups: [1],
+						radioGroup: "sub",
+						cssClasses: ["min-width-6"],
 					},
 				],
 			},
