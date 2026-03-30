@@ -8210,7 +8210,7 @@
 				name: "Weaken",
 				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
-					/(Ignores (?:Weakened )?Debuff Protection and )?Inflicts (?:all enemies) with Weaken by ([?.\d]+)x(?:-([?.\d]+)x)?, by ([?.\d]+)x(?:-([?.\d]+)x)? if enemies are inflicted with Increase Damage Taken, for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
+					/(Ignores (?:Weakened )?Debuff Protection and )?Inflicts (?:all enemies) with Weaken by ([?.\d]+)x(?:-([?.\d]+)x)?, by ([?.\d]+)x(?:-([?.\d]+)x)? instead if enemies are inflicted with Increase Damage Taken, for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
 				submatchers: [
 					{
 						type: "number",
