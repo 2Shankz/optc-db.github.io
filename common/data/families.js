@@ -5172,6 +5172,7 @@ window.families = {
     4539: [ ...Kashii ],
     4540: [ ...RobLucci ],
     //4541: [ ...RobLucci ],
+    4543: [ ...Kaku ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],

@@ -4507,6 +4507,7 @@ window.tags = {
 	"4538": ["Giant Pirate Crew","Giant","Egghead Arc"],
 	"4539": ["Giant Pirate Crew","Giant","Egghead Arc"],
 	"4540": ["CP0","World Government","Zoan-type","Egghead Arc"],
+	"4543": ["CP0","World Government","Zoan-type","Egghead Arc"],
 	"5013": [],
 	"5014": [],
 	"5029": [],
