@@ -1733,19 +1733,18 @@
 <!-- Family -->
 <details-card title="Family: {{::displayFamily}}" section-id="family" ng-if="displayFamily">
 
-<table ng-if="collapsed.families && farmableVersions.length > 3"
+<table ng-if="collapsed.families && farmableVersions.length > 5"
     class="table table-striped table-centered table-bordered table-textless">
     <tbody>
-        <tr ng-if="collapsed.families && farmableVersions.length > 3">
-            <td><button class="btn btn-info collapse-button" ng-click="collapsed.families = false">Click to show
-                    farmable versions</button></td>
+        <tr ng-if="collapsed.families && farmableVersions.length > 5">
+            <td><button class="btn btn-info collapse-button" ng-click="collapsed.families = false">Click to show farmable versions</button></td>
         </tr>
     </tbody>
 </table>
 
 <div ng-if="farmableVersions.length > 0" class="panel panel-default panel-x-scroll">
     <table class="table table-striped drop-table">
-        <thead ng-show="!collapsed.families || farmableVersions.length < 4">
+        <thead ng-show="!collapsed.families || farmableVersions.length < 6">
             <tr>
                 <th>Variant</th>
                 <th>Farm Location</th>
@@ -1753,7 +1752,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-if="!collapsed.families || farmableVersions.length < 4" ng-repeat="data in farmableVersions">
+            <tr ng-if="!collapsed.families || farmableVersions.length < 6" ng-repeat="data in farmableVersions">
                 <td>
                     <div class="slot small" decorate-slot uid="data.uid"></div>
                     <a ui-sref="main.search.view({ id: data.uid, previous: getPrevious() })">{{::data.name}}</a>

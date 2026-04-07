@@ -991,6 +991,38 @@
 		return reverseEvoMap[id];
 	};
 
+	// Returns the full evolution tree of a unit
+	utils.searchEvolutionTree = function (id) {
+		var queue = [Number(id)];
+		var visited = [];
+		
+		while (queue.length !== 0) {
+			node = queue.shift();
+			visited.push(node);
+
+			let neighbors = [];
+
+			let parents = utils.searchBaseForms(node);
+			if (parents) {
+				parents = Object.keys(parents).map(Number);
+				neighbors = neighbors.concat(parents);
+			}
+
+			let childs = evolutions[node];
+			if (childs) {
+				childs = childs.evolution;
+				if (!Array.isArray(childs)) childs = [childs];
+				neighbors = neighbors.concat(childs);
+			}
+
+			neighbors.forEach(neighbor => {
+				if (!visited.includes(neighbor) && !queue.includes(neighbor)) queue.push(neighbor);
+			});
+		}
+		visited.sort((a, b) => a - b)
+		return visited;
+	};
+
 	var updateEvoMap = function (from, to, via) {
 		if (!reverseEvoMap[to]) reverseEvoMap[to] = {};
 		if (!reverseEvoMap[to][from]) reverseEvoMap[to][from] = [];

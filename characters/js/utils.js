@@ -153,29 +153,15 @@ CharUtils.searchDropLocations = function(id) {
  * @returns {Object[]|null} Array of objects of farmable versions of the unit
  * with the structure {id: number, name: string, location: object}
  */
-CharUtils.getFarmableVersions = function (id) {
-    id = Number(id);
-    let families = window.families[id];
-    if (!families)
-        return null;
-
+CharUtils.getFarmableVersions = function (ids) {
     let farmableVersions = [];
-    let farmableVersionsIds = new Set(); // prevent dupes
 
-    for (let family of families) {
-        let unitIds = Utils.getUnitsInFamily(family);
-        if (unitIds) {
-            unitIds.forEach(id => farmableVersionsIds.add(id));
-        }
-    };
-    farmableVersionsIds.delete(id); // don't include given unit
+    for (let id of ids) {
+        if (!CharUtils.isFarmable(id)) continue;
 
-    for (let id of farmableVersionsIds) {
-        if (!CharUtils.isFarmable(id) || Utils.searchBaseForms(id))
-            continue;
         let name = window.units[String(id)].name;
-        if (name.length > 25)
-            name = name.slice(0,22) + '...';
+        if (name.length > 25) name = name.slice(0,22) + '...';
+        
         CharUtils.searchDropLocations(id).forEach(function(location) {
             farmableVersions.push({
                 uid: id,
