@@ -113,49 +113,55 @@
 
 <!-- Drop -->
 <div class="filter-container" id="drop-filter">
-   <animate-collapse class="filter-header">Drop</animate-collapse>
-   <div class="collapse">
-      <span ng-repeat="type in [ 'Farmable', 'Non-farmable' ]" class="filter width-6 drop" ng-model="filters.drop"
-         ng-class="{ active: filters.drop == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
-      <span ng-repeat="type in [ 'Global units', 'Japan exclusives' ]" class="filter width-6 drop"
-         ng-model="filters.server" ng-class="{ active: filters.server == type }"
-         ng-click="onFilterClick($event,type)">{{::type}}</span>
-      <span ng-repeat="type in [ 'In RR pool', 'Not in RR pool' ]" class="filter width-6 drop" ng-model="filters.rr"
-         ng-class="{ active: filters.rr == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
-      <span ng-repeat="type in [ 'Farmable Sockets', 'No Farmable Sockets' ]" class="filter width-6 drop"
-         ng-model="filters.socket" ng-class="{ active: filters.socket == type }"
-         ng-click="onFilterClick($event,type)">{{::type}}</span>
-      <span ng-repeat="type in [ 'Inkable', 'Not Inkable' ]" class="filter width-6 drop" ng-model="filters.inkable"
-         ng-class="{ active: filters.inkable == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
-       <!-- Farmable nested inside Drop -->
-       <div class="filter-container" id="farmable-filter">
-          <animate-collapse class="filter-header">Farmable</animate-collapse>
-          <div class="collapse">
-             <span ng-repeat="opt in farmableOptions" class="filter width-6 drop"
-                ng-class="{ active: filters.farmable[opt.key] }"
-                data-key="{{opt.key}}"
-                ng-click="onDropFilterClick($event, 'farmable', opt.key, true)">{{::opt.label}}</span><!--
-             --><span ng-repeat="opt in farmableOptions" class="filter width-6 exc"
-                ng-class="{ active: filters.farmable[opt.key] === false }"
-                data-key="{{opt.key}}"
-                ng-click="onDropFilterClick($event, 'farmable', opt.key, false)">{{::opt.hideLabel}}</span>
-          </div>
-       </div>
-       <!-- Non-farmable nested inside Drop -->
-       <div class="filter-container" id="non-farmable-filter">
-          <animate-collapse class="filter-header">Non-farmable</animate-collapse>
-          <div class="collapse">
-             <span ng-repeat="opt in nonFarmableOptions" class="filter width-6 drop"
-                ng-class="{ active: filters.nonFarmable[opt.key] }"
-                data-key="{{opt.key}}"
-                ng-click="onDropFilterClick($event, 'nonFarmable', opt.key, true)">{{::opt.label}}</span><!--
-             --><span ng-repeat="opt in nonFarmableOptions" class="filter width-6 drop"
-                ng-class="{ active: filters.nonFarmable[opt.key] === false }"
-                data-key="{{opt.key}}"
-                ng-click="onDropFilterClick($event, 'nonFarmable', opt.key, false)">{{::opt.hideLabel}}</span>
-          </div>
-       </div>
-   </div>
+    <animate-collapse class="filter-header">Drop</animate-collapse>
+    <div class="collapse">
+        <span ng-repeat="type in [ 'Farmable', 'Non-farmable' ]" class="filter width-6 drop" ng-model="filters.drop"
+            ng-class="{ active: filters.drop == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
+        <span ng-repeat="type in [ 'Global units', 'Japan exclusives' ]" class="filter width-6 drop"
+            ng-model="filters.server" ng-class="{ active: filters.server == type }"
+            ng-click="onFilterClick($event,type)">{{::type}}</span>
+        <span ng-repeat="type in [ 'In RR pool', 'Not in RR pool' ]" class="filter width-6 drop" ng-model="filters.rr"
+            ng-class="{ active: filters.rr == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
+        <span ng-repeat="type in [ 'Farmable Sockets', 'No Farmable Sockets' ]" class="filter width-6 drop"
+            ng-model="filters.socket" ng-class="{ active: filters.socket == type }"
+            ng-click="onFilterClick($event,type)">{{::type}}</span>
+        <span ng-repeat="type in [ 'Inkable', 'Not Inkable' ]" class="filter width-6 drop" ng-model="filters.inkable"
+            ng-class="{ active: filters.inkable == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
+
+        <!-- Farmable nested inside Drop -->
+        <div id="farmable-filter">
+            <animate-collapse class="filter-header">Farmable</animate-collapse>
+            <div class="collapse">
+                <div ng-repeat="opt in farmableOptions">
+                    <span class="filter width-6 drop"
+                        ng-class="{ active: filters.farmable[opt.key] }"
+                        data-key="{{opt.key}}"
+                        ng-click="onDropFilterClick($event, 'farmable', opt.key, true)">{{::opt.label}}</span><!--
+                    --><span class="filter width-6 exc"
+                        ng-class="{ active: filters.farmable[opt.key] === false }"
+                        data-key="{{opt.key}}"
+                        ng-click="onDropFilterClick($event, 'farmable', opt.key, false)">{{::opt.hideLabel}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Non-farmable nested inside Drop -->
+        <div id="non-farmable-filter">
+            <animate-collapse class="filter-header">Non-farmable</animate-collapse>
+            <div class="collapse">
+                <div ng-repeat="opt in nonFarmableOptions">
+                    <span class="filter width-6 drop"
+                        ng-class="{ active: filters.nonFarmable[opt.key] }"
+                        data-key="{{opt.key}}"
+                        ng-click="onDropFilterClick($event, 'nonFarmable', opt.key, true)">{{::opt.label}}</span><!--
+                    --><span class="filter width-6 exc"
+                        ng-class="{ active: filters.nonFarmable[opt.key] === false }"
+                        data-key="{{opt.key}}"
+                        ng-click="onDropFilterClick($event, 'nonFarmable', opt.key, false)">{{::opt.hideLabel}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Exclusion Filters -->
