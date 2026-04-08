@@ -520,6 +520,13 @@ directives.goBack = function ($state) {
 						'<span class="tag flag">Story mode & raid only</span>';
 				if (CharUtils.checkFarmable(id, { Raid: true, Fortnight: true }))
 					htmlToAppend += '<span class="tag flag">Raid & fortnight only</span>';
+
+				// Shops
+				Object.entries(window.shops).forEach(([key, value]) => {
+					if (Object.values(value).includes(Number(id)))
+						htmlToAppend += '<span class="tag flag">' + key + ' Shop</span>';
+				});
+				
 				// matchers
 				if (data) {
 					for (const target in window.matchers) {

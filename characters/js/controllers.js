@@ -66,6 +66,7 @@
       $scope.availableTags = window.availableTags;
       $scope.farmableOptions = window.farmableOptions;
       $scope.nonFarmableOptions = window.nonFarmableOptions;
+      $scope.shops = window.shops;
 
       $timeout(function () {
         $scope.$watch(

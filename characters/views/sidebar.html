@@ -128,6 +128,15 @@
         <span ng-repeat="type in [ 'Inkable', 'Not Inkable' ]" class="filter width-6 drop" ng-model="filters.inkable"
             ng-class="{ active: filters.inkable == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
 
+        <!-- Current Shops nested inside Drop -->
+        <div id="shops-filter">
+            <animate-collapse class="filter-header">Current Shops</animate-collapse>
+            <div class="collapse">
+                <span ng-repeat="(key, value) in shops" class="filter width-6 drop" ng-model="filters.shop"
+                    ng-class="{ active: filters.shop == value }" ng-click="onFilterClick($event, value)">{{::key}}</span>
+            </div>
+        </div>
+
         <!-- Farmable nested inside Drop -->
         <div id="farmable-filter">
             <animate-collapse class="filter-header">Farmable</animate-collapse>
