@@ -26,26 +26,20 @@
 							title: col.title,
 							field: "col" + index,
 							headerSort: col.orderable !== false,
+							vertAlign: "middle",
 						};
 						
 						if (index === 0) {
 							tabCol.width = 60;
-							tabCol.minWidth = 50;
 						} else if (index === 1) {
 							tabCol.widthGrow = 1;
-							tabCol.minWidth = 200;
-						} else if (index >= 4 && index <= 7) {
-							tabCol.width = 70;
-							tabCol.minWidth = 60;
-						} else if (index === 8) {
+							tabCol.formatter = "textarea";
+						} else if (index === 2 || index === 3 || index === 8 || index === 10) {
 							tabCol.width = 80;
-							tabCol.minWidth = 70;
+						} else if (index >= 4 && index <= 7) {
+							tabCol.width = 60;
 						} else if (index === 9) {
 							tabCol.width = 100;
-							tabCol.minWidth = 80;
-						} else if (index === 10) {
-							tabCol.width = 60;
-							tabCol.minWidth = 50;
 						}
 						
 						if (col.render && typeof col.render === 'function') {
@@ -116,7 +110,7 @@
 								if (cls && cls.indexOf(',') > -1) {
 									var classes = cls.split(',');
 									var lastTwo = classes.slice(-2);
-									return '<span class="cell-' + lastTwo[0].trim() + '">' + lastTwo[0].trim() + '</span>, <span class="cell-' + lastTwo[1].trim() + '">' + lastTwo[1].trim() + '</span>';
+									return '<span class="cell-' + lastTwo[0].trim() + '">' + lastTwo[0].trim() + '</span><br><span class="cell-' + lastTwo[1].trim() + '">' + lastTwo[1].trim() + '</span>';
 								}
 								return cls || '';
 							};
@@ -139,9 +133,9 @@
 				
 				window.charTable = new Tabulator("#tabulator-table", {
 					data: transformData(scope.table.data),
-					layout: "fitData",
+					layout: "fitColumns",
 					maxHeight: "100%",
-					persistentLayout: true,
+					persistentLayout: false,
 					persistentSort: true,
 					movableColumns: true,
 					columns: convertColumns(scope.table.columns),

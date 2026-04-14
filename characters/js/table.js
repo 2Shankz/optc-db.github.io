@@ -1421,7 +1421,7 @@ var flags = window.flags[unit.id] || {};
           x.name,
           combinedType,
 
-          combinedClass && Array.isArray(combinedClass) ? combinedClass.join(", ") : (combinedClass || ""),
+          combinedClass && Array.isArray(combinedClass) ? combinedClass.join("\n") : (combinedClass || ""),
           combinedHp || 0,
           combinedAtk || 0,
           combinedRcv || 0,

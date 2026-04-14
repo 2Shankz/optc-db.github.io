@@ -147,6 +147,7 @@ body, html {
 
 /* Table Container - Flex column layout */
 #tableContainer {
+    position: relative;
     overflow: hidden;
     padding: 0 15px 10px 15px;
     display: flex;
@@ -158,23 +159,22 @@ body, html {
 
 /* Tabulator Table Container */
 #tabulator-table {
-    flex: 1;
-    min-height: 0;
-    overflow-x: hidden !important;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
 }
 
 /* Tabulator overrides for theme - must override library defaults */
 .tabulator {
+    width: 100% !important;
     background: var(--bg-primary) !important;
     border: none !important;
     font-family: 'PT Sans', sans-serif !important;
     font-size: 14px !important;
-    overflow-x: hidden !important;
     color: var(--text-primary) !important;
 }
 
 .tabulator .tabulator-table {
-    overflow-x: hidden !important;
+    overflow-x: visible !important;
 }
 
 .tabulator .tabulator-tableholder .tabulator-table {
