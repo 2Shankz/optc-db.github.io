@@ -1130,7 +1130,6 @@ body > .popover .popover-content {
 .block-icon:before, .tnd-icon:before {
     font-style: normal;
     font-weight: normal;
-    font-family: icomoon;
     font-size: 11px;
     position: relative;
     top: 1px;

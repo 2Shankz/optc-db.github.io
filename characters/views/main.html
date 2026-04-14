@@ -5,30 +5,41 @@
 </div>
 
 <div id="queryContainer">
-    <label for="burgerMenuState" id="burgerMenu" class="fa fa-bars fa-lg"></label>
+    <label for="burgerMenuState" id="burgerMenu" class="bi bi-list" title="Toggle Menu"></label>
     
     <input type="text" id="picker" placeholder="type to filter"
         ng-model="query" ng-model-options="{ updateOn: 'change blur' }" auto-focus>
 
-    <button ng-if="query" ng-click="clearQuery()" title="clear">
-        <i class="fa fa-times"></i>
+    <button type="button" ng-if="query" ng-click="clearQuery()" title="Clear search">
+        <i class="bi bi-times"></i>
         <span>Clear</span>
     </button>
 
-    <button ng-click="query = getRandChar();" title="random">
-        <i class="fa fa-random"></i>
-        <span>Random</span>
+    <button type="button" ng-click="query = getRandChar();" title="Random character">
+        <i class="bi bi-shuffle"></i>
     </button>
 
-    <button popover-trigger="mouseenter" popover-placement="bottom"
-        uib-popover-template="'operators.html'" popover-append-to-body="'true'" title="operators">
-        <i class="fa fa-info-circle"></i>
-        <span>Operators</span>
+    <button type="button" popover-trigger="mouseenter" popover-placement="bottom"
+        uib-popover-template="'operators.html'" popover-append-to-body="'true'" title="Filter operators">
+        <i class="bi bi-filter"></i>
     </button>
+    
+    <label class="fuzzy-toggle" title="Fuzzy Search: will display non-exact matches to the search keywords">
+        <i class="bi bi-magic"></i>
+        <input type="checkbox" ng-model="table.fuzzy" ng-change="saveFuzzy()">
+    </label>
+    
+    <a id="pick-link" popover-placement="bottom" popover-trigger="click" popover-title="Additional Columns"
+    uib-popover-template="'views/pick.html'" popover-append-to-body="'true'" title="Show/hide columns">
+        <i class="bi bi-layout-three-columns"></i>
+    </a>
 
-    <button id="theme-toggle" ng-click="toggleTheme()" title="toggle theme" style="padding: 4px 12px; cursor: pointer; white-space: nowrap; font-size: 14px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">
-        <span ng-bind="theme === 'dark' ? '🌙' : '☀️'"></span>
-        <span ng-bind="theme === 'dark' ? 'Neko' : 'Inu'"></span>
+    <a href="https://discord.gg/xhKT87vKX7" target="_blank" title="Join Discord">
+        <i class="bi bi-discord"></i>
+    </a>
+
+    <button type="button" id="theme-toggle" ng-click="toggleTheme()" title="Toggle light/dark theme">
+        <span ng-bind="theme === 'dark' ? '🌙🐱' : '☀️🐶'"></span>
     </button>
 </div>
 

@@ -21,11 +21,112 @@ body, html {
     flex: 1;
 }
 
-#queryContainer > button {
-    padding: 8px;
+#queryContainer > button,
+#queryContainer > label,
+#queryContainer > a {
+    padding: 4px 6px;
     font-weight: bold;
-    background: none;
-    border: none;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 4px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    min-height: 28px;
+}
+
+#queryContainer > button:hover,
+#queryContainer > label:hover,
+#queryContainer > a:hover {
+    background: var(--bg-hover);
+    border-color: var(--text-primary);
+}
+
+#queryContainer > button:active,
+#queryContainer > label:active,
+#queryContainer > a:active {
+    background: var(--bg-tertiary);
+}
+
+#queryContainer > button > i,
+#queryContainer > label > i,
+#queryContainer > a > i,
+#queryContainer #theme-toggle > span {
+    display: inline-block;
+    font-size: 16px;
+}
+
+#theme-toggle {
+    padding: 4px 6px;
+    font-weight: bold;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 4px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+#theme-toggle:hover {
+    background: var(--bg-hover);
+    border-color: var(--text-primary);
+}
+
+.toolbar-sep {
+    width: 1px;
+    height: 28px;
+    background: var(--border-color);
+    margin: 0 8px;
+}
+
+.fuzzy-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 13px;
+    padding: 4px 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin: 0 4px;
+}
+
+.fuzzy-toggle input {
+    cursor: pointer;
+}
+
+#pick-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    color: #a893cc;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 4px 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin: 0 4px;
+    text-decoration: none;
+}
+
+#pick-link:hover {
+    background: var(--bg-hover);
 }
 
 @media (hover) {
@@ -40,16 +141,253 @@ body, html {
     overflow-y: auto;
 }
 
+/* Table Container - Flex column layout */
 #tableContainer {
     overflow: hidden;
     padding: 0 15px 10px 15px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    min-height: 0;
 }
 
-#mainTable_wrapper {
-    display: grid;
-    height: 100%;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 100%;
+/* Tabulator Table Container */
+#tabulator-table {
+    flex: 1;
+    min-height: 0;
+    overflow-x: hidden !important;
+}
+
+/* Tabulator overrides for theme - must override library defaults */
+.tabulator {
+    background: var(--bg-primary) !important;
+    border: none !important;
+    font-family: 'PT Sans', sans-serif !important;
+    font-size: 14px !important;
+    overflow-x: hidden !important;
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-table {
+    overflow-x: hidden !important;
+}
+
+.tabulator .tabulator-tableholder .tabulator-table {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-header {
+    background: var(--bg-secondary) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    overflow-x: hidden !important;
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-header .tabulator-col {
+    background: var(--bg-secondary) !important;
+    border-right: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    font-weight: bold !important;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-header .tabulator-col:hover {
+    background: var(--bg-hover) !important;
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="none"] .tabulator-col-content .tabulator-col-sorter {
+    color: var(--text-secondary) !important;
+}
+
+.tabulator .tabulator-body {
+    background: var(--bg-primary) !important;
+    overflow-x: hidden !important;
+}
+
+.tabulator .tabulator-row {
+    background: var(--bg-primary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.tabulator .tabulator-row .tabulator-cell {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    border-right: 1px solid var(--border-color) !important;
+}
+
+.tabulator .tabulator-row:hover {
+    background: var(--bg-hover) !important;
+}
+
+.tabulator .tabulator-row:hover .tabulator-cell {
+    background: transparent !important;
+}
+
+.tabulator .tabulator-row.tabulator-row-moving {
+    background: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.tabulator .tabulator-footer {
+    background: var(--bg-primary) !important;
+    border-top: 1px solid var(--border-color) !important;
+    padding: 10px !important;
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-footer .tabulator-paginator {
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-page {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    margin: 0 2px !important;
+    padding: 4px 8px !important;
+}
+
+.tabulator .tabulator-page.active {
+    background: var(--accent-blue) !important;
+    color: #ffffff !important;
+}
+
+.tabulator .tabulator-page:hover {
+    background: var(--bg-hover) !important;
+}
+
+.tabulator .tabulator-page:disabled {
+    color: var(--text-secondary) !important;
+    opacity: 0.5;
+}
+
+.tabulator .tabulator-page-counter {
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-calcs-holder {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+
+.tabulator .tabulator-calcs-holder .tabulator-row {
+    background: var(--bg-secondary) !important;
+}
+
+.tabulator .tabulator-placeholder .tabulator-placeholder-contents {
+    color: var(--text-secondary) !important;
+}
+
+.tabulator .tabulator-alert {
+    background: rgba(0,0,0,0.4) !important;
+}
+
+.tabulator .tabulator-alert .tabulator-alert-msg {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-edit-list .tabulator-edit-list-item {
+    color: var(--text-primary) !important;
+    background: var(--bg-primary) !important;
+}
+
+.tabulator .tabulator-edit-list .tabulator-edit-list-item.active {
+    background: var(--accent-blue) !important;
+    color: #ffffff !important;
+}
+
+.tabulator .tabulator-popup-container {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.tabulator .tabulator-menu .tabulator-menu-item {
+    color: var(--text-primary) !important;
+    background: var(--bg-primary) !important;
+}
+
+.tabulator .tabulator-menu .tabulator-menu-item:hover {
+    background: var(--bg-hover) !important;
+}
+
+.tabulator .tabulator-tooltip {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.tabulator .tabulator-responsive-collapse {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+#mainTable_wrapper .dataTables_scrollHead table {
+    margin-bottom: 0;
+}
+
+#mainTable_wrapper .dataTables_scrollHead th {
+    position: relative;
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Body - Scrollable area, independent */
+#mainTable_wrapper .dataTables_scrollBody {
+    flex: 1;
+    overflow: auto;
+    min-height: 0;
+    position: relative;
+}
+
+#mainTable_wrapper .dataTables_scrollBody table {
+    margin-bottom: 0;
+}
+
+/* Footer - Fixed at bottom, independent of scroll */
+#mainTable_wrapper .dataTables_wrapper {
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 8px;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    min-height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#mainTable_wrapper .dataTables_length {
+    float: none !important;
+    display: inline-block;
+    margin: 0;
+}
+
+#mainTable_wrapper .dataTables_length label {
+    font-size: 14px;
+    margin: 0;
+}
+
+#mainTable_wrapper .dataTables_info {
+    float: none !important;
+    padding: 5px 10px;
+    margin: 0;
+}
+
+#mainTable_wrapper .dataTables_paginate {
+    float: none !important;
+    padding: 5px 0;
+    margin: 0;
 }
 
 input#burgerMenuState {
@@ -58,8 +396,29 @@ input#burgerMenuState {
 }
 
 #burgerMenu {
-    margin: 5px 10px 5px 5px;
+    margin: 0 4px;
     cursor: pointer;
+    padding: 6px 10px;
+    font-weight: bold;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 16px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 36px;
+}
+
+#burgerMenu:hover {
+    background: var(--bg-hover);
+    border-color: var(--text-primary);
+}
+
+#burgerMenu:active {
+    background: var(--bg-tertiary);
 }
 
 @media (max-width: 768px) {
@@ -67,6 +426,7 @@ input#burgerMenuState {
         display: flex;
         flex-direction: column;
         height: 100%;
+        overflow-x: hidden;
     }
 
     #leftContainer {
@@ -88,55 +448,35 @@ input#burgerMenuState {
         transform: translateX(0);
     }
 
-    #queryContainer > button > span {
-        display: none;
+    #burgerMenu {
+        display: inline-flex;
     }
 
-    #tableContainer {
-	flex: 1;
+    #queryContainer > button > i {
+        display: inline-block;
     }
 
-    .abilities tr {
+    #mainTable {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    #mainTable td,
+    #mainTable th {
+        white-space: nowrap;
+    }
+
+    .dataTables_wrapper {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
     }
 
-    .abilities td {
-        width: 100%;
-    }
-
-    .popover {
-        top: initial !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        overflow: auto;
-        max-height: 60vh;
-        max-width: none;
-        margin: auto;
-    }
-
-    .quick-nav {
-        display: none !important;
-        width: 0 !important;
-        right: 0 !important;
-    }
-
-    .backdrop {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        left: 0 !important;
-        right: 0 !important;
-    }
-
-    #mainContainer {
-        overflow-x: hidden !important;
-        max-width: 100vw !important;
-    }
-
-    #tableContainer {
-        overflow-x: hidden !important;
-        max-width: 100vw !important;
+    #queryContainer > .toolbar-sep {
+        display: none;
     }
 
     .inner-container {
@@ -192,6 +532,7 @@ input#burgerMenuState {
             / 275px 1fr;
         ;
         height: 100%;
+        overflow-x: hidden;
     }
 
     #leftContainer {
@@ -207,7 +548,7 @@ input#burgerMenuState {
     }
 
     #burgerMenu {
-        display: none;
+        display: none !important;
     }
 
     #tableContainer {
@@ -215,7 +556,7 @@ input#burgerMenuState {
     }
 
     #queryContainer > button > i {
-        display: none;
+        display: inline-block;
     }
 
     .arrow {
@@ -447,7 +788,6 @@ input#burgerMenuState {
 
 .stars:before, .stars:after {
     font-weight: bold;
-    font-family: icomoon;
     font-size: 13px;
 }
 
@@ -461,53 +801,53 @@ input#burgerMenuState {
     }
 }
 
-.stars-1:before { color: #40a3da; content: '\2605'; }
-.stars-1:after  { color: #cccccc; content: '\2605\2605\2605\2605\2605'; }
+.stars-1:before { color: var(--star-1); content: '\2605'; }
+.stars-1:after  { color: var(--text-secondary); content: '\2605\2605\2605\2605\2605'; }
 
-.stars-2:before { color: #acc523; content: '\2605\2605'; }
-.stars-2:after  { color: #cccccc; content: '\2605\2605\2605\2605'; }
+.stars-2:before { color: var(--star-2); content: '\2605\2605'; }
+.stars-2:after  { color: var(--text-secondary); content: '\2605\2605\2605\2605'; }
 
-.stars-3:before { color: #f7c118; content: '\2605\2605\2605'; }
-.stars-3:after  { color: #cccccc; content: '\2605\2605\2605'; }
+.stars-3:before { color: var(--star-3); content: '\2605\2605\2605'; }
+.stars-3:after  { color: var(--text-secondary); content: '\2605\2605\2605'; }
 
-.stars-4:before { color: #f28e00; content: '\2605\2605\2605\2605'; }
-.stars-4:after  { color: #cccccc; content: '\2605\2605'; }
+.stars-4:before { color: var(--star-4); content: '\2605\2605\2605\2605'; }
+.stars-4:after  { color: var(--text-secondary); content: '\2605\2605'; }
 
-*[class~="stars-4+"]:before { color: #AC6500; content: '\2605\2605\2605\2605\002B'; }
+*[class~="stars-4+"]:before { color: var(--star-4plus); content: '\2605\2605\2605\2605\002B'; }
 
-.stars-5:before { color: #ff0000; content: '\2605\2605\2605\2605\2605'; }
-.stars-5:after  { color: #cccccc; content: '\2605'; }
+.stars-5:before { color: var(--star-5); content: '\2605\2605\2605\2605\2605'; }
+.stars-5:after  { color: var(--text-secondary); content: '\2605'; }
 
-*[class~="stars-5+"]:before { color: #990000; content: '\2605\2605\2605\2605\2605\002B'; }
+*[class~="stars-5+"]:before { color: var(--star-5plus); content: '\2605\2605\2605\2605\2605\002B'; }
 
-.stars-6:before { color: #9932cc; content: '\2605\2605\2605\2605\2605\2605'; }
+.stars-6:before { color: var(--star-6); content: '\2605\2605\2605\2605\2605\2605'; }
 
-*[class~="stars-6+"]:before { color: #ff1493; content: '\2605\2605\2605\2605\2605\2605\002B'; }
+*[class~="stars-6+"]:before { color: var(--star-6plus); content: '\2605\2605\2605\2605\2605\2605\002B'; }
 
 
 .class.filter.active, .custom.filter.active, .drop.filter.active, .exc.filter.active, .submatcher-option.active {
-    background: red;
+    background: var(--filter-active);
     color: white;
     font-weight: bold;
 }
 
 .subclass.filter.active {
-    background: orchid;
+    background: var(--filter-subclass-active);
     color: white;
     font-weight: bold;
 }
 
 .stars.filter.active {
-    box-shadow: inset 0 0 0 1px #7777ff;
+    box-shadow: inset 0 0 0 1px var(--accent-blue);
 }
 
 @media (hover) {
     .custom.filter:not(.orb-controllers) > div:first-child:hover, .class.filter:hover, .drop.filter:hover, .exc.filter:hover, .submatcher-option:hover {
-        background-color: rgb(230,230,230);
+        background-color: var(--bg-hover);
     }
 
     .custom.filter.active > div:first-child:hover, .class.filter.active:hover, .drop.filter.active:hover, .exc.filter.active:hover, .filter .submatchers .submatcher-option.active:hover {
-        background-color: darkred !important;
+        background-color: var(--filter-active-hover) !important;
     }
 }
 
@@ -530,36 +870,6 @@ input#burgerMenuState {
 }
 .type-buttons .filter {
     flex: 1;
-}
-
-.help-link {
-    float: right;
-    margin-right: 10px;
-    position: relative;
-    top: 3px;
-    color: red;
-}
-
-#pick-link {
-    float: right;
-    cursor: pointer;
-    margin-right: 10px;
-    position: relative;
-    top: 3px;
-    color: darkorchid;
-    font-weight: bold;
-}
-
-.fuzzy-toggle {
-    float: left;
-    position: relative;
-    top: 1px;
-}
-
-.fuzzy-toggle > input {
-    margin-right: 5px;
-    position: relative;
-    top: 2px;
 }
 
 .filter-container {
@@ -610,6 +920,83 @@ input#burgerMenuState {
 .dataTables_info, .dataTables_paginate {
     text-align: left !important;
     white-space: normal !important;
+}
+
+.dataTables_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 8px;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    min-height: 50px;
+    width: 100%;
+}
+
+.dataTables_length {
+    float: none !important;
+    display: inline-block;
+    margin: 0;
+}
+
+.dataTables_length label {
+    font-size: 14px;
+    margin: 0;
+}
+
+.dataTables_info {
+    padding: 5px 10px;
+    float: none !important;
+    margin: 0;
+}
+
+.dataTables_paginate {
+    padding: 5px 0;
+    float: none !important;
+    margin: 0;
+}
+
+.dataTables_length {
+    float: none !important;
+    display: inline-block;
+    margin: 0;
+}
+
+.dataTables_length label {
+    font-size: 14px;
+    margin: 0;
+}
+
+.dataTables_info {
+    padding: 5px 10px;
+    float: none !important;
+    margin: 0;
+}
+
+.dataTables_paginate {
+    padding: 5px 0;
+    float: none !important;
+    margin: 0;
+}
+
+.bottom-length {
+    float: none !important;
+    display: inline-block;
+}
+
+.dataTables_scrollHead {
+    position: relative;
+    background: var(--bg-primary);
+}
+
+.dataTables_scrollHead th {
+    position: relative;
+    background: var(--bg-secondary);
+}
+
+#tableContainer {
+    overflow: auto;
 }
 
 .orb-controllers {
@@ -737,12 +1124,12 @@ input#burgerMenuState {
 }
 
 .positive, .positive.withPlus:before {
-    color: green;
+    color: var(--positive);
     font-weight: bold;
 }
 
 .negative, .negative.withPlus:before {
-    color: red;
+    color: var(--negative);
     font-weight: bold;
 }
 
@@ -756,6 +1143,9 @@ input#burgerMenuState {
 
 #mainTable th {
     cursor: pointer;
+    position: relative;
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
 }
 
 #mainTable td {
@@ -790,7 +1180,13 @@ input#burgerMenuState {
 }
 
 .dataTables_length {
-    float: right !important;
+    float: none !important;
+}
+
+.bottom-length {
+    float: none !important;
+    clear: both;
+    padding: 10px 0 5px;
 }
 
 tr.incomplete td:nth-child(2) > a:after {
@@ -1363,8 +1759,6 @@ a { color: var(--link-color); }
 @media (hover) {
     a:hover { color: var(--link-hover); }
 }
-.help-link { color: #cc9393; }
-#pick-link { color: #a893cc; }
 
 .fuzzy-toggle, #mainTable, #queryContainer > button, #burgerMenu, .dataTables_length > label {
     color: var(--text-primary);
@@ -1381,11 +1775,29 @@ a { color: var(--link-color); }
     color: var(--text-primary);
 }
 
-.cell-STR { color: var(--type-str) !important; }
-.cell-QCK { color: var(--type-qck) !important; }
-.cell-DEX { color: var(--type-dex) !important; }
-.cell-PSY { color: var(--type-psy) !important; }
-.cell-INT { color: var(--type-int) !important; }
+/* Type color classes - must override Tabulator default colors with !important */
+.tabulator .tabulator-cell .cell-STR,
+.tabulator .tabulator-cell .cell-Str,
+.tabulator .tabulator-cell .cell-str { color: var(--type-str) !important; }
+.tabulator .tabulator-cell .cell-QCK,
+.tabulator .tabulator-cell .cell-Qck,
+.tabulator .tabulator-cell .cell-qck { color: var(--type-qck) !important; }
+.tabulator .tabulator-cell .cell-DEX,
+.tabulator .tabulator-cell .cell-Dex,
+.tabulator .tabulator-cell .cell-dex { color: var(--type-dex) !important; }
+.tabulator .tabulator-cell .cell-PSY,
+.tabulator .tabulator-cell .cell-Psy,
+.tabulator .tabulator-cell .cell-psy { color: var(--type-psy) !important; }
+.tabulator .tabulator-cell .cell-INT,
+.tabulator .tabulator-cell .cell-Int,
+.tabulator .tabulator-cell .cell-int { color: var(--type-int) !important; }
+
+/* Legacy selectors */
+.cell-STR, .cell-Str { color: var(--type-str) !important; }
+.cell-QCK, .cell-Qck { color: var(--type-qck) !important; }
+.cell-DEX, .cell-Dex { color: var(--type-dex) !important; }
+.cell-PSY, .cell-Psy { color: var(--type-psy) !important; }
+.cell-INT, .cell-Int { color: var(--type-int) !important; }
 
 .dataTables_info, .dataTables_wrapper .dataTables_paginate .paginate_button {
     color: var(--text-primary) !important;
