@@ -394,7 +394,7 @@ directives.slot = function() {
 directives.removeZone = function() {
     return {
         restrict: 'E',
-        template: '<div class="unit empty fa fa-trash-o" id="removeZone" dropzone style="display: none"></div>',
+        template: '<div class="unit empty bi bi-trash" id="removeZone" dropzone style="display: none"></div>',
         scope: true,
         replace: true,
         link: function(scope, element, attrs) {
@@ -1206,7 +1206,7 @@ directives.unitRemoved = function() {
         restrict: 'E',
         replace: true,
         scope: true,
-        template: '<div class="unitRemoved" ng-class="{ active: tdata.team[slot].removed > 0 }"><i class="fa fa-times"></i></div>',
+        template: '<div class="unitRemoved" ng-class="{ active: tdata.team[slot].removed > 0 }"><i class="bi bi-times"></i></div>',
         link: function(scope, element, attrs) {
             var parent = element.parent();
             scope.$watch('tdata.team[slot].removed',function(removed) {
@@ -1251,7 +1251,7 @@ directives.unitSailor = function() {
         restrict: 'E',
         replace: true,
         scope: true,
-        template: '<div class="unitSailor" ng-show="hasSailor"><i class="fa fa-anchor"></div>',
+        template: '<div class="unitSailor" ng-show="hasSailor"><i class="bi bi-anchor"></div>',
         link: function(scope, element, attrs) {
             scope.hasSailor = false;
             scope.$watch('data.team[slot].unit',function(unit) {

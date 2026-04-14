@@ -5,7 +5,7 @@
 :root {
     /* Backgrounds */
     --bg-primary: #404040;
-    --bg-secondary: #202020;
+    --bg-secondary: #383838;
     --bg-tertiary: #505050;
     --bg-input: #404040;
     --bg-hover: #606060;
@@ -23,11 +23,19 @@
     --accent-blue: #88c0d0;
     
     /* Type Colors - Dark Mode */
-    --type-str: #bf616a;
-    --type-qck: #96b5b4;
-    --type-dex: #a3be8c;
-    --type-psy: #ebcb8b;
-    --type-int: #b48ead;
+    --type-str: #e07070;
+    --type-qck: #5a9a9a;
+    --type-dex: #90c070;
+    --type-psy: #d9b860;
+    --type-int: #c070c0;
+    
+    /* Positive/Negative stats */
+    --positive: #70c070;
+    --negative: #d05050;
+    
+    /* Filter active states */
+    --filter-active: #dd4040;
+    --filter-active-hover: #ff6060;
     
     /* Type Colors - Hover/Active (saturated) */
     --type-str-active: #ff6655;
@@ -152,7 +160,7 @@
 .light-mode {
     /* Backgrounds */
     --bg-primary: #f5f5f5;
-    --bg-secondary: #ffffff;
+    --bg-secondary: #fafafa;
     --bg-tertiary: #e0e0e0;
     --bg-input: #ffffff;
     --bg-hover: #d0d0d0;
@@ -170,11 +178,11 @@
     --accent-blue: #88c0d0;
     
     /* Type Colors - Light Mode (more saturated) */
-    --type-str: #e55545;
-    --type-qck: #4a9fe8;
-    --type-dex: #4ab85a;
-    --type-psy: #e8c22a;
-    --type-int: #c45ab8;
+    --type-str: #d94535;
+    --type-qck: #2a7ab8;
+    --type-dex: #2ab848;
+    --type-psy: #b89220;
+    --type-int: #a84898;
     
     /* Type Colors - Hover/Active (even more saturated) */
     --type-str-active: #ff6655;
@@ -252,6 +260,10 @@
     --filter-active: #ff4444;
     --filter-active-hover: #cc0000;
     --filter-subclass-active: #da70d6;
+    
+    /* Positive/Negative stats */
+    --positive: #2ab832;
+    --negative: #d93535;
 
     /* Stars - slightly brighter in light mode */
     --star-1: #40a3da;

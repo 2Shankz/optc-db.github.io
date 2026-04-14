@@ -4,15 +4,15 @@
 
         <li ui-sref=".effects">
             <div id="profileContainer" ng-class="{ profiled: data.effect }">
-                <i class="fa fa-book"></i>
+                <i class="bi bi-book"></i>
                 <a>{{data.effect || 'No active map effect'}}</a>
             </div>
         </li>
 
         <li>
             <div id="ship" status="{{data.ship[1]}}" ship-manager>
-                <i class="fa fa-level-up comodity" ui-sref="main.ship"></i>
-                <i class="fa fa-ship"></i>
+                <i class="bi bi-arrow-up-long" ui-sref="main.ship"></i>
+                <i class="bi bi-ship"></i>
                 <span>{{ships[data.ship[0]].name}} (lv. {{data.ship[1]}})</span>
                 <div id="ship-background"></div>
             </div>
@@ -20,7 +20,7 @@
         
         <li>
             <div id="buffs">
-                <i class="fa fa-fist-raised"></i> Custom Universal (for now) Buffs:<br>
+                <i class="bi bi-hand-fist"></i> Custom Universal (for now) Buffs:<br>
                  ATK: <input type="number" size="4" min="1" max="10" step="0.1" id="customATK" to-int ng-model="data.customATK"></input><br>
                  Orb: <input type="number" size="4" min="1" max="10" step="0.1" id="customOrb" to-int ng-model="data.customOrb"></input><br>
                  Affinity: <input type="number" size="4" min="1" max="10" step="0.1" id="customAffinity" to-int ng-model="data.customAffinity"></input><br>
@@ -32,22 +32,22 @@
 
         <li>
             <div id="customRainbow">
-                <i class="fa fa-fist-raised"></i> Custom Rainbow Damage:<br>
+                <i class="bi bi-hand-fist"></i> Custom Rainbow Damage:<br>
                 <span ng-repeat="n in ::[].constructor(6) track by $index"><label>Crew {{$index+1}}: <input type="checkbox" class="wheelable" name="rainbowDamage{{$index}}" ng-model="data.rainbowDamage[$index]"></label><br ng-if="$index % 2 == 1"> </span>
             </div>
         </li>
         
         <li>
             <div id="heal">
-                <i class="fa fa-heart"></i>
+                <i class="bi bi-heart"></i>
                 Heal Socket Level: <input type="number" size="2" min="0" max="5" id="healLevel" to-int ng-model="data.healLevel"></input>
             </div>
         </li>
 
         <li>
             <div id="defenseContainer" title="Middle-click or CTRL-click for details" defense-on-click>
-                <i class="fa fa-level-up comodity" ui-sref="main.defense"></i>
-                <i class="fa fa-shield"></i>
+                <i class="bi bi-arrow-up-long" ui-sref="main.defense"></i>
+                <i class="bi bi-shield"></i>
                 Enemy Defense: <input type="number" id="defense" min = 0 to-int ng-model="data.defense"></input>
             </div>
         </li>
@@ -60,7 +60,7 @@
 
         <li>
             <div id="enemyImmunities">
-                <i class="fa fa-shield"></i>Enemy Immunities:<br>
+                <i class="bi bi-shield"></i>Enemy Immunities:<br>
                 <label><input type="checkbox" class="wheelable" name="enemyImmunities.all" ng-model="data.enemyImmunities.all" ng-change="toggleEnemyImmunity(true)"> All</label><br>
                 <label><input type="checkbox" class="wheelable" name="enemyImmunities.burn" ng-model="data.enemyImmunities.burn" ng-change="toggleEnemyImmunity(false)"> Burn</label><br>
                 <label><input type="checkbox" class="wheelable" name="enemyImmunities.def" ng-model="data.enemyImmunities.def" ng-change="toggleEnemyImmunity(false)"> Defense Reduction</label><br>
@@ -73,14 +73,14 @@
 
         <li>
             <div id="enemyBuffs">
-                <i class="fa fa-fist-raised"></i>Other Enemy Buffs<br>
+                <i class="bi bi-hand-fist"></i>Other Enemy Buffs<br>
                 <label><input type="checkbox" class="wheelable" name="enemyBuffs.barrier" ng-model="data.enemyBuffs.barrier"> Barrier</label><br>
             </div>
         </li>
 
         <li>
             <div id="shieldContainer">
-                <i class="fa fa-shield"></i>
+                <i class="bi bi-shield"></i>
                 Barrier: <input min="0" style="color: black; width:40px" type="number" id="comboShield" to-int ng-model="data.comboShield">
                                                                       <select style="color: black" id="comboType" ng-model="data.comboType">
                                                                         <option value="" selected>Hits</option>
@@ -93,14 +93,14 @@
 
         <li ui-sref=".candy">
             <div id="candyContainer">
-                <i class="fa fa-sliders"></i>
+                <i class="bi bi-sliders"></i>
                 <a>Cotton Candies</a>
             </div>
         </li>
         
         <li>
             <div id="action">
-                <i class="fa fa-check-square"></i>
+                <i class="bi bi-square-check"></i>
                 Boosted Abilities: <br><input type="checkbox" name="friend" value="left" ng-model="data.actionleft">Friend/Guest Captain<br><input type="checkbox" name="captain" value="right" ng-model="data.actionright">Captain
                 <!--br>Gear Levels: <br>Friend/Guest Captain: <select style="color: black" id="gearLevelLeft" ng-model="data.gearLevelLeft">
                                                                         <option value=0 selected>Gear 2</option>
@@ -119,7 +119,7 @@
         
         <li>
             <div id="limit">
-                <i class="fa fa-angle-double-up"></i>
+                <i class="bi bi-angles-up"></i>
                 Limit Break Level:  <button type="button" ng-click="toggleLimitBreakLevels()">Toggle MAX</button> <br>
                 <span ng-repeat="n in ::[].constructor(6) track by $index"><input type="number" size="4" id="limitLevel" class="wheelable" name="limit{{$index}}" min=0 max="{{data.team[$index].unit.limitStats.atk.length ? data.team[$index].unit.limitStats.atk.length : 0}}" ng-model="data.team[$index].limit"><br ng-if="$index % 2 == 1"></span>
             </div>
@@ -127,7 +127,7 @@
         
         <li>
             <div id="llimit">
-                <i class="fa fa-angle-double-up"></i>
+                <i class="bi bi-angles-up"></i>
                 Level Limit Break Level:  <button type="button" ng-click="toggleLLimitBreakLevels()">Toggle MAX</button> <br>
                 <span ng-repeat="n in ::[].constructor(6) track by $index"><input type="number" size="4" id="llimitLevel" class="wheelable" name="llimit{{$index}}" min=0 max="{{data.team[$index].unit.maxLevel == 99 ? 5 : 0}}" ng-model="data.team[$index].llimit"><br ng-if="$index % 2 == 1"></span>
             </div>
@@ -135,7 +135,7 @@
 
         <li>
             <div>
-                <i class="fa fa-atom"></i> 
+                <i class="bi bi-atom"></i> 
                 Super Typing: 
             </div>
             <div id="supertypeContainer">
@@ -155,7 +155,7 @@
 
         <li>
             <div>
-                <i class="fa fa-toolbox"></i> 
+                <i class="bi bi-toolbox"></i> 
                 Super Class: 
             </div>
             <div id="superclassContainer">
@@ -185,7 +185,7 @@
 
         <li ng-show="options.sugarToysEnabled">
             <div id="sugarToy">
-                <i class="fa fa-paw"></i>
+                <i class="bi bi-paw"></i>
                 Hobby-Hobby Transformation:<br>
                 <span ng-repeat="n in ::[].constructor(6) track by $index"><label>Crew {{$index+1}}: <input type="checkbox" class="wheelable" name="sugarToy{{$index}}" ng-model="data.team[$index].sugarToy"></label><br ng-if="$index % 2 == 1"> </span>
                 <button type="button" ng-click="toggleSugarToys()">Toggle All</button>
@@ -194,7 +194,7 @@
 
         <li ng-show="options.vegapunkOptionsEnabled">
             <div id="vegapunkOptions">
-                <i class="fa fa-wrench"></i>
+                <i class="bi bi-wrench"></i>
                 Vegapunk Options:<br>
                 <span ng-repeat="n in ::[].constructor(6) track by $index"><label>Effect {{$index+1}}: <input type="checkbox" class="wheelable" name="vegapunkOptions{{$index}}" ng-model="data.vegapunkOptions[$index]"></label></span>
             </div>
@@ -202,7 +202,7 @@
 
         <li ng-show="options.tokiStateEnabled">
             <div id="toki">
-                <i class="fa fa-hourglass"></i>
+                <i class="bi bi-hourglass"></i>
                 Toki-Toki & Selected Character Effects:<br>
                 <span ng-repeat="n in ::[].constructor(6) track by $index"><label>Crew {{$index+1}}: <input type="checkbox" class="wheelable" name="tokiState{$index}}" ng-model="data.team[$index].tokiState"></label><br ng-if="$index % 2 == 1"> </span>
                 <button type="button" ng-click="resetTokiStates()">Reset</button>
@@ -211,7 +211,7 @@
 
         <li ng-show="options.cloneEnabled">
             <div id="clone">
-                <i class="fa fa-people-arrows"></i>
+                <i class="bi bi-people-arrows"></i>
                 Clone-Clone Effect:<br>
                 <input type="checkbox" name="cloneCheck1" value="left" ng-model="data.cloneCheck1">Friend/Guest Captain<br>
                 Type: <select style="color: black" name="cars" id="cloneType" ng-model="data.cloneFCType">
@@ -274,7 +274,7 @@
 
         <li ng-show="options.classOverrideEnabled">
             <div id="clone">
-                <i class="fa fa-people-arrows"></i>
+                <i class="bi bi-people-arrows"></i>
                 Universal Class Override:<br>
                 <input type="checkbox" name="classOverrideEnabled" value="left" ng-model="data.classOverrideEnabled"><br>
                 <!-- Type: <select style="color: black" name="cars" id="cloneType" ng-model="data.typeOverride">
@@ -312,13 +312,13 @@
         <li>
             <div id="sliderToggle" status="{{options.slidersEnabled ? 0 : 1}}"
                 ng-click="options.slidersEnabled = !options.slidersEnabled">
-                <i class="fa fa-circle-o-notch"></i>
+                <i class="bi bi-circle-notch"></i>
             </div>
         </li>
 
         <li ng-show="showGatherButton">
             <div id="gather" ui-sref=".gather">
-                <i class="fa fa-heartbeat"></i>
+                <i class="bi bi-heart-pulse"></i>
                 Data Gathering
             </div>
         </li>

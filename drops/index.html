@@ -25,8 +25,19 @@
 
         <link rel="stylesheet" type="text/css" href="../common/libs/css/animate.css" />
         <link rel="stylesheet" type="text/css" href="../common/libs/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="../common/libs/css/fontawesome/all.css" />
-        <script src="https://kit.fontawesome.com/ef0695d0bc.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" />
+        <style>
+            .bi, [class^="bi-"], [class*=" bi-"] {
+                font-family: 'bootstrap-icons' !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+            }
+        </style>
 
         <link rel="stylesheet" type="text/css" href="../common/css/links.css" />
         <link rel="stylesheet" type="text/css" href="../common/css/themes.css" />
@@ -68,11 +79,11 @@
                 ng-show="(!onlyGlobal || island.global) && (!query || query.test(island.name))">
                 <h3>
                     <div decorate-slot uid="island.thumb" class="slot small"></div>
-                    <i class="fa fa-chevron-right"></i>
-                    <i class="fa fa-chevron-down"></i>
+                    <i class="bi bi-chevron-right"></i>
+                    <i class="bi bi-chevron-down"></i>
                     <span>{{island.name}}</span>
-                    <i class="fa fa-globe-americas" ng-show="island.global" title="Available On Global"></i>
-                    <i class="fa fa-star" ng-show="island.challenge" title="Challenge Available"></i>
+                    <i class="bi bi-earth-americas" ng-show="island.global" title="Available On Global"></i>
+                    <i class="bi bi-star" ng-show="island.challenge" title="Challenge Available"></i>
                     <bonus-list ng-if="type == 'Story Island'" y="$index"></bonus-list>
                     <day-label ng-if="type == 'Rookie Mission'"></day-label>
                 </h3>
@@ -222,8 +233,8 @@
                 class="type collapsed" collapsable hidden-units="hiddenUnits" only-global="onlyGlobal"
                 target="type.html" type="type" data="data" query="query">
                 <h2>
-                    <i class="fa fa-chevron-right"></i>
-                    <i class="fa fa-chevron-down"></i>
+                    <i class="bi bi-chevron-right"></i>
+                    <i class="bi bi-chevron-down"></i>
                     <span>{{type}}s</span>
                 </h2> 
             </div>

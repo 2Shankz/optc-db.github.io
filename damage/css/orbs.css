@@ -82,14 +82,14 @@
     background-image: radial-gradient(9px 3px, circle cover, gold, orangered, rgb(50,50,50));
 }
 
-.unitOrb .fa {
+.unitOrb .bi {
     position: relative;
     font-size: 2em;
     color: white;
 }
 
-.unitOrb .fa-caret-up { top: -3px; }
-.unitOrb .fa-caret-down { top: -1px; }
+.unitOrb .bi-caret-up { top: -3px; }
+.unitOrb .bi-caret-down { top: -1px; }
 
 .g-orb,
 .str-orb,

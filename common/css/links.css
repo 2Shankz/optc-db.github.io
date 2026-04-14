@@ -25,18 +25,18 @@
     border: none !important;
 }
 
-#links-button .btn .fa {
+#links-button .btn .bi {
     position: relative;
     font-size: 1.1em;
     transition: color 0.3s;
 }
 
-#links-button .btn.trigger .fa {
+#links-button .btn.trigger .bi {
     top: -2px;
     left: -6px;
 }
 
-#links-button .btn:not(.trigger) .fa {
+#links-button .btn:not(.trigger) .bi {
     top: -7px;
     left: -11px;
     width: 26px;
@@ -45,7 +45,7 @@
 }
 
 @media (hover) {
-    #links-button .btn:hover .fa, .rotater i {
+    #links-button .btn:hover .bi, .rotater i {
         color: rgba(0, 0, 0, 0.7);
     }
 

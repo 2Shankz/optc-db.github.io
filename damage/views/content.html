@@ -25,38 +25,38 @@
     <div id="other">
         <button type="button" class="btn btn-settings menu-link" uib-tooltip="Settings" tooltip-append-to-body="true"
                 ng-click="options.sidebarVisible = !options.sidebarVisible">
-            <i class="fa fa-gear"></i>
+            <i class="bi bi-gear"></i>
         </a><!--
      --><button type="button" class="btn btn-info" id="reset" ui-sref=".saveSlot" uib-tooltip="Save" tooltip-append-to-body="true">
-            <i class="fa fa-download"></i>
+            <i class="bi bi-download"></i>
         </button><!--
      --><button type="button" class="btn btn-primary" id="reset" ui-sref=".loadSlot" uib-tooltip="Load" tooltip-append-to-body="true">
-            <i class="fa fa-upload"></i>
+            <i class="bi bi-upload"></i>
         </button><!--
      --><button type="button" class="btn btn-danger" id="reset" ui-sref=".reset" uib-tooltip="Reset" tooltip-append-to-body="true">
-            <i class="fa fa-eraser"></i>
+            <i class="bi bi-eraser"></i>
         </button><!--
      --><button type="button" class="btn btn-orchid" id="quickPick" ui-sref=".quickpick" uib-tooltip="Quick Pick" tooltip-append-to-body="true">
-            <i class="fa fa-bolt"></i>
+            <i class="bi bi-bolt"></i>
         </button><!--
      --><button type="button" class="btn btn-success" ng-click="generateURL()"
                 title="Transfer team" ng-controller="ExportCtrl" uib-tooltip="Export URL" tooltip-append-to-body="true">
-            <i class="fa fa-exchange"></i>
+            <i class="bi bi-right-left"></i>
         </button><!--
      --><button type="button" class="btn btn-warning" ui-sref=".image" title="Generate image"
                 uib-tooltip="Export Image" tooltip-append-to-body="true">
-            <i class="fa fa-picture-o"></i>
+            <i class="bi bi-image"></i>
         </button>
         <button type="button" class="btn" ui-sref="main.instruction" title="Instructions"
                 uib-tooltip="Instructions" tooltip-append-to-body="true">
-            <i class="fa fa-question-circle"></i>
+            <i class="bi bi-circle-question"></i>
         </button>
     </div>
 
     <url-container></url-container>
 
     <div id="transient" class="alert alert-danger" ng-if="options.transientMode" ng-click="options.transientMode = false">
-        <i class="fa fa-lock"></i>
+        <i class="bi bi-lock"></i>
         Transient mode enabled. Click to disable.
         <span popover-placement="top" popover-trigger="mouseenter"
             popover-title="Transient Mode" uib-popover-template="'transient.html'"
