@@ -12,129 +12,203 @@
 		$rootScope,
 		$timeout,
 		$compile,
-		$storage
+		$storage,
+		$state
 	) {
 		return {
 			restrict: "E",
 			replace: true,
-			template:
-				'<table id="mainTable" class="table table-striped-column panel panel-default"></table>',
+			template: '<div id="tabulator-table"></div>',
 			link: function (scope, element, attrs) {
-				window.charTable = element.dataTable({
-					stateSave: true, // includes page length
-					stateDuration: 0,
-					deferRender: true,
-					data: scope.table.data,
-					columns: scope.table.columns,
-					rowCallback: function (row, data, index) {
-						if (!row || row.hasAttribute("loaded")) return;
-						var $row = $(row);
-						if (!$row) return;
-						// lazy thumbnails
-						$row.find("[data-original]").each(function (n, x) {
-							x.setAttribute("src", x.getAttribute("data-original"));
-							x.removeAttribute("data-original");
-						});
-						// character log checkbox
-						var id = parseInt(data[0], 10);
-						var checkbox = $(
-							'<label><input type="checkbox" ng-change="checkLog(' +
-								id +
-								')" ng-model="characterLog[' +
-								id +
-								']"></input></label>'
-						);
-						$(row.cells[10 + scope.table.additional]).append(checkbox);
-						// cosmetic fixes
-						var typeBox = row.cells[2];
-						var classBox = row.cells[3];
-						var type = typeBox.textContent;
-						var classes = classBox.textContent;
-						if (type.indexOf(",") > -1 || type.indexOf("/") > -1) {
-							type = type.replace(/[,/]/g, "/");
-							var types = type.split("/");
-							var typeHtml =
-								'<span class="cell-' +
-								types[0] +
-								'">' +
-								types[0] +
-								'</span>/<span class="cell-' +
-								types[1] +
-								'">' +
-								types[1] +
-								"</span>";
-							$(typeBox).html(typeHtml);
+				var convertColumns = function(dtColumns) {
+					return dtColumns.map(function(col, index) {
+						var tabCol = {
+							title: col.title,
+							field: "col" + index,
+							headerSort: col.orderable !== false,
+						};
+						
+						if (index === 0) {
+							tabCol.width = 60;
+							tabCol.minWidth = 50;
+						} else if (index === 1) {
+							tabCol.widthGrow = 1;
+							tabCol.minWidth = 200;
+						} else if (index >= 4 && index <= 7) {
+							tabCol.width = 70;
+							tabCol.minWidth = 60;
+						} else if (index === 8) {
+							tabCol.width = 80;
+							tabCol.minWidth = 70;
+						} else if (index === 9) {
+							tabCol.width = 100;
+							tabCol.minWidth = 80;
+						} else if (index === 10) {
+							tabCol.width = 60;
+							tabCol.minWidth = 50;
 						}
-						if ((classes.match(new RegExp(",", "g")) || []).length > 1) {
-							while ((classes.match(new RegExp(",", "g")) || []).length >= 1)
-								classes = classes.replace(",", "/");
-							var classess = classes.split("/");
-							//console.log(classess);
-							var classesHtml =
-								'<span class="cell-' +
-								classess[classess.length - 2] +
-								'">' +
-								classess[classess.length - 2] +
-								'</span>, <span class="cell-' +
-								classess[classess.length - 1] +
-								'">' +
-								classess[classess.length - 1] +
-								"</span>";
-							$(classBox).html(classesHtml);
+						
+						if (col.render && typeof col.render === 'function') {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								var rowData = cell.getRow().getData();
+								var value = rowData["col" + index];
+								var mockCell = { getValue: function() { return value; }, getRow: function() { return { getData: function() { return rowData; } }; } };
+								return col.render(value, 'display', mockCell);
+							};
 						}
-						$(typeBox).addClass("cell-" + type);
-						var n = row.cells.length - 2 - scope.table.additional;
-						$(row.cells[n]).addClass("stars stars-" + row.cells[n].textContent);
-						row.cells[n].textContent = "";
-						// compile
-						$compile($(row).contents())($rootScope);
-						row.setAttribute("loaded", "true");
-					},
-					headerCallback: function (header) {
-						if (header.hasAttribute("loaded")) return;
-						header.cells[header.cells.length - 1].setAttribute(
-							"title",
-							"Character Log"
-						);
-						header.setAttribute("loaded", true);
-					},
-				});
-				scope.table.refresh = function () {
-					$rootScope.$emit("table.refresh");
-					$timeout(function () {
-						element.fnDraw();
+						
+						if (index === 1) {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								try {
+									var data = cell.getRow().getData();
+									var id = parseInt(data.col0, 10);
+									var name = data.col1 || "";
+									var paths = (window.Utils && window.Utils.getThumbnailUrl) ? window.Utils.getThumbnailUrl(id, "..") : { glo: "../api/images/common/noimage.png", jap: "../api/images/common/noimage.png" };
+									var noimage = "../api/images/common/noimage.png";
+									return '<img class="slot small" src="' + paths.glo + 
+								       '" onerror="this.onerror=null; this.src=\'' + paths.jap + 
+								       '\'; this.onerror=function(){this.src=\'' + noimage + '\'};" style="width:40px;height:40px;vertical-align:middle;margin-right:8px;border-radius:4px;">' +
+								       name;
+								} catch (e) {
+									var data = cell.getRow().getData();
+									return '<span>' + (data.col1 || "") + '</span>';
+								}
+							};
+							tabCol.cellClick = function(e, cell) {
+								var id = parseInt(cell.getData().col0, 10);
+								$state.go("main.search.view", { id: id, previous: [] });
+							};
+						}
+						
+						if (index === 9) {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								var stars = cell.getValue();
+								if (stars === "4+") return '<span class="stars-4+"></span>';
+								if (stars === "5+") return '<span class="stars-5+"></span>';
+								if (stars === "6+") return '<span class="stars-6+"></span>';
+								var starCount = typeof stars === 'string' ? parseInt(stars, 10) : stars;
+								var html = '';
+								for (var i = 0; i < 6; i++) {
+									html += i < starCount ? '<i class="bi bi-star-fill" style="color:#f7c118"></i>' : '<i class="bi bi-star" style="color:#ccc"></i>';
+								}
+								return html;
+							};
+						}
+						
+						if (index === 2) {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								var type = cell.getValue();
+								if (type && type.indexOf('/') > -1) {
+									var types = type.split('/');
+									return '<span class="cell-' + types[0] + '">' + types[0] + '</span>/<span class="cell-' + types[1] + '">' + types[1] + '</span>';
+								}
+								if (type && type.indexOf(',') > -1) {
+									var types = type.split(',');
+									return '<span class="cell-' + types[0].trim() + '">' + types[0].trim() + '</span>, <span class="cell-' + types[1].trim() + '">' + types[1].trim() + '</span>';
+								}
+								return type ? '<span class="cell-' + type + '">' + type + '</span>' : '';
+							};
+						}
+						
+						if (index === 3) {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								var cls = cell.getValue();
+								if (cls && cls.indexOf(',') > -1) {
+									var classes = cls.split(',');
+									var lastTwo = classes.slice(-2);
+									return '<span class="cell-' + lastTwo[0].trim() + '">' + lastTwo[0].trim() + '</span>, <span class="cell-' + lastTwo[1].trim() + '">' + lastTwo[1].trim() + '</span>';
+								}
+								return cls || '';
+							};
+						}
+						
+						return tabCol;
 					});
 				};
-				// report link
-				var link = $(
-					'<span class="help-link"><i class="fab fa-discord"></i> Want to report or request something? <a>Join our Discord server</a>.</span>'
-				);
-				link.find("a").attr("href", "https://discord.gg/xhKT87vKX7");
-				link.insertAfter($(".dataTables_length"));
-				// pick column link
-				var pick = $(
-					'<a id="pick-link" popover-placement="bottom" popover-trigger="click" popover-title="Additional Columns" ' +
-						"uib-popover-template=\"'views/pick.html'\" popover-append-to-body=\"'true'\">Additional columns</a>"
-				);
-				$compile(pick)(scope);
-				pick.insertAfter($(".dataTables_length"));
-				// fuzzy toggle
-				var fuzzyToggle = $(
-					'<label class="fuzzy-toggle"><input type="checkbox">Enable fuzzy search</input></label>'
-				);
-				fuzzyToggle.attr(
-					"title",
-					"When enabled, searches will also display units whose name is not an exact match to the search keywords.\nUseful if you don't know the correct spelling of a certain unit."
-				);
-				fuzzyToggle.find("input").prop("checked", scope.table.fuzzy);
-				fuzzyToggle.find("input").change(function () {
-					var checked = $(this).is(":checked");
-					if (checked == scope.table.fuzzy) return;
-					scope.table.fuzzy = checked;
-					$storage.set("fuzzy", scope.table.fuzzy);
-					scope.table.refresh();
+				
+				var transformData = function(data) {
+					if (!data || data.length === 0) return [];
+					return data.map(function(row) {
+						var newRow = {};
+						row.forEach(function(val, idx) {
+							newRow["col" + idx] = val;
+						});
+						return newRow;
+					});
+				};
+				
+				window.charTable = new Tabulator("#tabulator-table", {
+					data: transformData(scope.table.data),
+					layout: "fitData",
+					maxHeight: "100%",
+					persistentLayout: true,
+					persistentSort: true,
+					movableColumns: true,
+					columns: convertColumns(scope.table.columns),
+					rowFormatter: function(row) {
+						var cells = row.getCells();
+						var lastCell = cells[cells.length - 1];
+						if (lastCell && lastCell.getElement().querySelector('label')) {
+							return; // Already formatted - skip to prevent re-render on scroll
+						}
+						
+						var data = row.getData();
+						var id = data.col0;
+						var checkbox = document.createElement('label');
+						var input = document.createElement('input');
+						input.setAttribute('type', 'checkbox');
+						input.setAttribute('ng-change', 'checkLog(' + id + ')');
+						input.setAttribute('ng-model', 'characterLog[' + id + ']');
+						checkbox.appendChild(input);
+						
+						if (cells.length > 0) {
+							cells[cells.length - 1].getElement().appendChild(checkbox);
+						}
+						
+						// Handle lazy-loaded images
+						for (var i = 0; i < cells.length; i++) {
+							var cellEl = cells[i].getElement();
+							var imgs = cellEl.querySelectorAll('img[data-original]');
+							for (var j = 0; j < imgs.length; j++) {
+								var img = imgs[j];
+								img.src = img.getAttribute('data-original');
+								img.removeAttribute('data-original');
+							}
+						}
+					},
+					headerClick: function(e, column) {
+						if (column.getTitle() === "CL") {
+							column.getElement().setAttribute('title', 'Character Log');
+						}
+					},
 				});
-				fuzzyToggle.insertBefore($(".dataTables_length"));
+				
+				scope.table.refresh = function() {
+					$rootScope.$emit("table.refresh");
+					$timeout(function() {
+						window.charTable.setData(transformData(scope.table.data));
+					});
+				};
+
+				scope.$watch('table.data', function(newData, oldData) {
+					if (newData !== oldData && window.charTable) {
+						window.charTable.setData(transformData(newData));
+					}
+				}, true);
+
+				scope.$watch('table.parameters', function(newParams, oldParams) {
+					if (newParams !== oldParams && window.charTable) {
+						scope.table.refresh();
+					}
+				}, true);
+
+				scope.$on('$stateChangeSuccess', function() {
+					$timeout(function() {
+						if (window.charTable) {
+							window.charTable.redraw(true);
+						}
+					}, 300);
+				});
 			},
 		};
 	};

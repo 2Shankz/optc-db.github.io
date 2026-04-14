@@ -31,6 +31,9 @@
           $scope.query,
           jQuery.extend({}, $rootScope.filters)
         );
+        if ($rootScope.table) {
+          $rootScope.table.parameters = $scope.table.parameters;
+        }
       });
 
       $scope.$on("$stateChangeSuccess", function (e) {
@@ -55,6 +58,11 @@
 
       $scope.clearQuery = function () {
         $scope.query = "";
+      };
+
+      $scope.saveFuzzy = function () {
+        $storage.set("fuzzy", $scope.table.fuzzy);
+        $scope.table.refresh();
       };
     }
   );
@@ -82,6 +90,9 @@
               $stateParams.query,
               data
             );
+            if ($rootScope.table) {
+              $rootScope.table.parameters = $scope.table.parameters;
+            }
             if (!$scope.$$phase) $scope.$apply();
           },
           true

@@ -1515,6 +1515,7 @@ var flags = window.flags[unit.id] || {};
     };
 
     $rootScope.table = tableData;
+    $rootScope.tableOriginalData = data;
 
     $rootScope.characterLog = characterLog;
     $rootScope.showLogFilters = log.length > 0;
@@ -1560,6 +1561,16 @@ var flags = window.flags[unit.id] || {};
 
     $rootScope.$on("table.refresh", function () {
       fused = null;
+      if (!tableData || !tableData.parameters) return;
+      var allData = $rootScope.tableOriginalData;
+      if (!allData || allData.length === 0) return;
+      var filtered = allData.filter(function(row, index) {
+        return tableFilter(null, row, index);
+      });
+      tableData.data = filtered;
+      if ($rootScope.table === tableData) {
+        $rootScope.table = tableData;
+      }
     });
 
     $rootScope.checkLog = function () {
