@@ -24,10 +24,9 @@
         <i class="bi bi-filter"></i>
     </button>
     
-    <label class="fuzzy-toggle" title="Fuzzy Search: will display non-exact matches to the search keywords">
+    <button class="fuzzy-toggle" ng-class="{'active': table.fuzzy}" ng-click="table.fuzzy = !table.fuzzy; saveFuzzy()" title="Fuzzy Search: will display non-exact matches to the search keywords">
         <i class="bi bi-magic"></i>
-        <input type="checkbox" ng-model="table.fuzzy" ng-change="saveFuzzy()">
-    </label>
+    </button>
     
     <a id="pick-link" popover-placement="bottom" popover-trigger="click" popover-title="Additional Columns"
     uib-popover-template="'views/pick.html'" popover-append-to-body="'true'" title="Show/hide columns">

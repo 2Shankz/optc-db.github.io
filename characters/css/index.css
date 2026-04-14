@@ -94,7 +94,7 @@ body, html {
 .fuzzy-toggle {
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
     cursor: pointer;
     color: var(--text-primary);
     font-size: 13px;
@@ -105,8 +105,12 @@ body, html {
     margin: 0 4px;
 }
 
-.fuzzy-toggle input {
-    cursor: pointer;
+.fuzzy-toggle.active {
+    border-color: #00ff00;
+}
+
+.fuzzy-toggle.active i {
+    color: #00ff00;
 }
 
 #pick-link {
@@ -218,6 +222,7 @@ body, html {
     background: transparent !important;
     color: var(--text-primary) !important;
     border-right: 1px solid var(--border-color) !important;
+    white-space: pre-wrap;
 }
 
 .tabulator .tabulator-row:hover {
