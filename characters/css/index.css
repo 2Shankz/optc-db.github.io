@@ -528,6 +528,23 @@ input#burgerMenuState {
     display: none;
 }
 
+/* Override Bootstrap popover for dark mode */
+.popover {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color);
+}
+
+.popover-title {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.popover-content {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
 @media (min-width: 768px) {
     #mainContainer {
         display: grid;
@@ -1784,29 +1801,29 @@ a { color: var(--link-color); }
     color: var(--text-primary);
 }
 
-/* Type color classes - must override Tabulator default colors with !important */
+/* Type color classes - match orb-colors.css filter section colors */
 .tabulator .tabulator-cell .cell-STR,
 .tabulator .tabulator-cell .cell-Str,
-.tabulator .tabulator-cell .cell-str { color: var(--type-str) !important; }
+.tabulator .tabulator-cell .cell-str { color: #fa8072 !important; }
 .tabulator .tabulator-cell .cell-QCK,
 .tabulator .tabulator-cell .cell-Qck,
-.tabulator .tabulator-cell .cell-qck { color: var(--type-qck) !important; }
+.tabulator .tabulator-cell .cell-qck { color: #87CEEB !important; }
 .tabulator .tabulator-cell .cell-DEX,
 .tabulator .tabulator-cell .cell-Dex,
-.tabulator .tabulator-cell .cell-dex { color: var(--type-dex) !important; }
+.tabulator .tabulator-cell .cell-dex { color: #90EE90 !important; }
 .tabulator .tabulator-cell .cell-PSY,
 .tabulator .tabulator-cell .cell-Psy,
-.tabulator .tabulator-cell .cell-psy { color: var(--type-psy) !important; }
+.tabulator .tabulator-cell .cell-psy { color: #FFD700 !important; }
 .tabulator .tabulator-cell .cell-INT,
 .tabulator .tabulator-cell .cell-Int,
-.tabulator .tabulator-cell .cell-int { color: var(--type-int) !important; }
+.tabulator .tabulator-cell .cell-int { color: #DA70D6 !important; }
 
 /* Legacy selectors */
-.cell-STR, .cell-Str { color: var(--type-str) !important; }
-.cell-QCK, .cell-Qck { color: var(--type-qck) !important; }
-.cell-DEX, .cell-Dex { color: var(--type-dex) !important; }
-.cell-PSY, .cell-Psy { color: var(--type-psy) !important; }
-.cell-INT, .cell-Int { color: var(--type-int) !important; }
+.cell-STR, .cell-Str { color: #fa8072 !important; }
+.cell-QCK, .cell-Qck { color: #87CEEB !important; }
+.cell-DEX, .cell-Dex { color: #90EE90 !important; }
+.cell-PSY, .cell-Psy { color: #FFD700 !important; }
+.cell-INT, .cell-Int { color: #DA70D6 !important; }
 
 .dataTables_info, .dataTables_wrapper .dataTables_paginate .paginate_button {
     color: var(--text-primary) !important;

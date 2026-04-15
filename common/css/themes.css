@@ -11,8 +11,8 @@
     --bg-hover: #3e3e42;
     
     /* Text - proper contrast (4.5:1+) */
-    --text-primary: #cccccc;
-    --text-secondary: #858585;
+    --text-primary: #ffffff;
+    --text-secondary: #aaaaaa;
     
     /* Borders */
     --border-color: #3c3c3c;
@@ -152,9 +152,9 @@
     --btn-orchid: orchid;
     --btn-orchid-hover: mediumorchid;
 
-    /* Misc UI */
-    --ribbon-red: #e43;
-    --ribbon-orange: #e82;
+/* Misc UI */
+    --ribbon-red: #d32f2f;
+    --ribbon-orange: #e65100;
 }
 
 /* Light Mode - VS Code Light+ inspired */
@@ -309,134 +309,4 @@
     /* Misc UI */
     --ribbon-red: #d32f2f;
     --ribbon-orange: #e65100;
-}
-    
-    /* Type Colors - Light Mode (more saturated) */
-    --type-str: #d94535;
-    --type-qck: #2a7ab8;
-    --type-dex: #2ab848;
-    --type-psy: #b89220;
-    --type-int: #a84898;
-    
-    /* Type Colors - Hover/Active (even more saturated) */
-    --type-str-active: #ff6655;
-    --type-qck-active: #66b0ff;
-    --type-dex-active: #66cc77;
-    --type-psy-active: #ffcc44;
-    --type-int-active: #dd77dd;
-    
-    /* UI Elements */
-    --panel-bg: #e0e0e0;
-    --modal-header: #888888;
-    --modal-body: #ffffff;
-    --modal-footer: #e0e0e0;
-    --popover-bg: #ffffff;
-    
-    /* Links */
-    --link-color: #2a7a7a;
-    --link-hover: #1a5a5a;
-    
-    /* Filter Headers - lighter versions */
-    --filter-header-log: hsla(157, 90%, 92%, 0.5);
-    --filter-header-pve: hsla(220, 85%, 60%, 0.5);
-    --filter-header-pvp: hsl(0, 85%, 60%, 0.5);
-    
-    /* Table */
-    --table-stripe-odd: #ffffff;
-    --table-stripe-even: #f5f5f5;
-    
-    /* Scrollbars */
-    --scrollbar-track: #e0e0e0;
-    --scrollbar-thumb: #aaaaaa;
-
-    /* Buttons - Landing page */
-    --btn-green: #7FCA9F;
-    --btn-green-hover: #6EB98E;
-    --btn-blue: #85C1F5;
-    --btn-blue-hover: #74B0E4;
-    --btn-red: #E96D63;
-    --btn-red-hover: #D85C52;
-    --btn-purple: #DA70D6;
-    --btn-purple-hover: #C96995;
-    --btn-yellow: #F4BA70;
-    --btn-yellow-hover: #E3A969;
-    --btn-pink: #DEA5A4;
-    --btn-pink-hover: #A57777;
-    --btn-brown: #993300;
-    --btn-brown-hover: #662200;
-    --btn-darkpurple: #7D3C98;
-    --btn-darkpurple-hover: #5B2C6F;
-    --btn-gold: #B38F15;
-    --btn-gold-hover: #947713;
-    --btn-darkblue: #183578;
-    --btn-darkblue-hover: #092056;
-    --btn-limegreen: #32CD32;
-    --btn-limegreen-hover: #228B22;
-    --btn-darkorange: #CF5300;
-    --btn-darkorange-hover: #B54C05;
-
-    /* Bonuses */
-    --bonus-drop: #7bc8a4;
-    --bonus-stamina: skyblue;
-    --bonus-beli: #ffc65d;
-    --bonus-exp: #f16745;
-    --bonus-today: orchid;
-
-    /* Damage calc sliders */
-    --slider-turn: orchid;
-    --slider-heal: green;
-    --slider-rcv: rgb(216, 85, 14);
-    --slider-basehp: green;
-    --slider-semla: lemonchiffon;
-    --slider-damage: darkred;
-
-    /* Filter active states */
-    --filter-active: #ff4444;
-    --filter-active-hover: #cc0000;
-    --filter-subclass-active: #da70d6;
-    
-    /* Positive/Negative stats */
-    --positive: #2ab832;
-    --negative: #d93535;
-
-    /* Stars - slightly brighter in light mode */
-    --star-1: #40a3da;
-    --star-2: #acc523;
-    --star-3: #f7c118;
-    --star-4: #f28e00;
-    --star-5: #ee0000;
-    --star-5plus: #aa0000;
-    --star-6: #9932cc;
-    --star-6plus: #ff1493;
-
-    /* Tags - slightly more opaque in light mode */
-    --tag-flag: rgba(133,193,245,0.7);
-    --tag-captain: rgba(127,202,159,0.7);
-    --tag-special: rgba(244,186,112,0.7);
-    --tag-superSpecial: rgba(233,109,99,0.7);
-    --tag-swap: rgba(155, 112, 212,0.7);
-    --tag-sailor: rgba(181,160,75,0.7);
-    --tag-limit: rgba(6,151,154,0.7);
-    --tag-potential: rgba(189,109,10,0.7);
-    --tag-support: rgba(133,193,245,0.7);
-
-    /* Tag categories */
-    --tag-cat-1: rgb(211,125,6);
-    --tag-cat-2: rgb(87,131,27);
-    --tag-cat-3: rgb(194,47,135);
-    --tag-cat-4: rgb(4,151,138);
-
-    /* Dual unit */
-    --dual-header-bg: #f5f5f5;
-    --dual-border: #cccccc;
-
-    /* Damage calculator */
-    --btn-settings: #888;
-    --btn-settings-hover: #666;
-    --btn-orchid: orchid;
-    --btn-orchid-hover: mediumorchid;
-
-    /* Misc UI */
-    --ribbon-red: #ee3333;
-    --ribbon-orange: #ee7722;
 }

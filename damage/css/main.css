@@ -855,13 +855,26 @@ nav > li > div {
 }
 
 .popover-content {
-    color: black;
+    color: var(--text-primary);
     font-size: 90%;
 }
 
 .popover {
     width: 400px !important;
     max-width: 400px;
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color);
+}
+
+.popover-title {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.popover-content {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
 }
 
 .popover ul {
