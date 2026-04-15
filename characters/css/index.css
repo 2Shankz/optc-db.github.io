@@ -661,6 +661,56 @@ input#burgerMenuState {
 .filter-header > i {
     position: relative;
     top: 2px;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.filter-header > i.bi-chevron-down,
+.filter-header > i.bi-chevron-right,
+.filter-header > i.fa-chevron-down,
+.filter-header > i.fa-chevron-right {
+    display: inline-block;
+}
+
+.filter-container:not(.expanded) > .filter-header > i.bi-chevron-down,
+.filter-container:not(.expanded) > .filter-header > i.fa-chevron-down {
+    transform: rotate(-90deg);
+}
+
+.filter-container.expanded > .filter-header > i.bi-chevron-down,
+.filter-container.expanded > .filter-header > i.fa-chevron-down {
+    transform: rotate(0deg);
+}
+
+/* Filter headers with collapse - show chevron based on state using pseudo-element */
+.filter-container > .filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-container > .filter-header::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--text-secondary);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+/* Collapsed state - arrow pointing right (hidden content) */
+.filter-container > .collapse:not(.in) + .filter-header::after {
+    transform: rotate(-90deg);
+}
+
+/* Expanded state - arrow pointing down (showing content) */
+.filter-container > .collapse.in + .filter-header::after {
+    transform: rotate(0deg);
 }
 
 .filter {
