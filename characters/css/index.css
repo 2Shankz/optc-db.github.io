@@ -605,10 +605,12 @@ input#burgerMenuState {
  **********/
 .panel-x-scroll {
     overflow-x: auto;
+    background-color: var(--bg-secondary);
 }
 
 .stats-pane {
     clear: both;
+    background-color: var(--bg-secondary);
 }
 
 #type-container {
@@ -676,8 +678,8 @@ input#burgerMenuState {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: var(--accent-red);
-    color: var(--text-primary);
+    background-color: var(--filter-active);
+    color: white;
 }
 
 #leftContainer .submatchers .submatcher {
@@ -714,20 +716,21 @@ input#burgerMenuState {
 }
 
 #leftContainer .submatcher .submatcher-option.active {
-    background-color: var(--accent-red);
-    color: var(--text-primary);
+    background-color: var(--filter-active);
+    color: white;
     font-weight: bold;
 }
 
 #leftContainer .custom.filter .custom.filter.submatchers-toggler,
 #leftContainer .custom.filter > .collapse {
-    background-color: var(--accent-red);
+    background-color: var(--filter-active);
+    color: white;
 }
 
 @media (hover) {
     #leftContainer .custom.filter .custom.filter.submatchers-toggler:hover,
     #leftContainer .custom.filter > .collapse {
-        background-color: var(--accent-hover);
+        background-color: var(--filter-active-hover);
     }
 }
 
@@ -773,23 +776,24 @@ input#burgerMenuState {
     top: 2px;
     text-align: center;
     margin-right: 5px;
+    color: white;
 }
 
 /* Badge colors */
 .badge-japan { background: mediumvioletred; }
 .badge-swap { background: rebeccapurple; }
 .badge-superswap { background: rebeccapurple; }
-.badge-base { background: rgb(255,150,150); }
-.badge-level1 { background: rgb(255,130,130); }
-.badge-level2 { background: rgb(255,110,110); }
-.badge-level3 { background: rgb(255,90,90); }
-.badge-level4 { background: rgb(255,70,70); }
-.badge-level5 { background: rgb(255,50,50); }
-.badge-level6 { background: rgb(255,30,30); }
+.badge-base { background: #d35d6e; }
+.badge-level1 { background: #ce3b4f; }
+.badge-level2 { background: #c7303d; }
+.badge-level3 { background: #c0252b; }
+.badge-level4 { background: #b91a1a; }
+.badge-level5 { background: #a01010; }
+.badge-level6 { background: #8b0000; }
 .badge-character { background: rebeccapurple; }
 .badge-combined { background: mediumvioletred; }
-.badge-sbase { background: darkred; }
-.badge-slevel { background: red; }
+.badge-sbase { background: #8b0000; }
+.badge-slevel { background: #c7303d; }
 
 .stars:before, .stars:after {
     font-weight: bold;
@@ -903,22 +907,22 @@ input#burgerMenuState {
 #clear-button {
     background: var(--bg-secondary);
     cursor: pointer;
-    color: var(--accent-red);
+    color: var(--accent);
 }
 
 #toggle-button {
     background: var(--bg-secondary);
     cursor: pointer;
-    color: var(--accent-red);
+    color: var(--accent);
     }
 
 @media (hover) {
     #clear-button:hover {
-        background: var(--accent-hover);
+        background: var(--bg-hover);
     }
 
     #toggle-button:hover {
-        background: var(--accent-hover);
+        background: var(--bg-hover);
     }
 }
 
@@ -1721,13 +1725,13 @@ html, body,
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: var(--accent-red);
-    color: var(--text-primary);
+    background-color: var(--filter-active);
+    color: white;
     font-weight: normal;
 }
 
 #leftContainer .custom.filter .submatchers input {
-    color: black;
+    color: var(--text-primary);
 }
 
 #leftContainer .submatcher label {
@@ -1741,8 +1745,8 @@ html, body,
 .filter.active:not(.type):not(.stars):not(.orb),
 .filter.custom.active > div:first-child,
 .filter .submatchers .submatcher .submatcher-option.active {
-    background: var(--accent-red) !important;
-    color: var(--text-primary) !important;
+    background: var(--filter-active) !important;
+    color: white !important;
 }
 
 .filter.stars.active {
@@ -1755,8 +1759,8 @@ html, body,
     .drop.filter.active:hover:not(.type):not(.stars):not(.orb),
     .exc.filter.active:hover:not(.type):not(.stars):not(.orb),
     .filter .submatchers .submatcher .submatcher-option.active:hover {
-        background: var(--accent-hover) !important;
-        color: var(--text-primary) !important;
+        background: var(--filter-active-hover) !important;
+        color: white !important;
     }
 }
 
@@ -1850,13 +1854,14 @@ a { color: var(--link-color); }
     color: var(--text-primary);
 }
 
-.separator {
-    background: var(--bg-tertiary) !important;
-    color: var(--text-primary);
+.filter.orb {
+    outline: 1px solid var(--border-color);
 }
 
-.filter.orb {
-    outline: 1px solid var(--text-primary);
+.separator {
+    background: var(--bg-tertiary) !important;
+    color: var(--text-secondary);
+    border-left: none;
 }
 
 .filter-container:last-child > .filter:last-child {
@@ -1972,6 +1977,50 @@ a { color: var(--link-color); }
 
 .details-card-content .table-striped-column > * > tr:nth-child(even) > td {
     background-color: var(--table-stripe-even);
+}
+
+/* Force detail view tables to use CSS variables - override Bootstrap */
+.details-card .panel-default,
+.details-card-content .panel-default {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.details-card .table,
+.details-card-content .table {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+.details-card .table > tbody > tr > td,
+.details-card-content .table > tbody > tr > td {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.details-card .table > thead > tr > th,
+.details-card-content .table > thead > tr > th {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.details-card .table-striped > tbody > tr:nth-child(odd) > td,
+.details-card-content .table-striped > tbody > tr:nth-child(odd) > td {
+    background-color: var(--table-stripe-odd) !important;
+}
+
+.details-card .table-striped > tbody > tr:nth-child(even) > td,
+.details-card-content .table-striped > tbody > tr:nth-child(even) > td {
+    background-color: var(--table-stripe-even) !important;
+}
+
+.details-card .table-bordered > td,
+.details-card .table-bordered > th,
+.details-card-content .table-bordered > td,
+.details-card-content .table-bordered > th {
+    border-color: var(--table-border) !important;
 }
 
 /* Detail view form elements */

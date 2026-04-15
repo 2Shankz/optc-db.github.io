@@ -1,71 +1,74 @@
 /* common/css/themes.css */
 /* Consolidated theme variables for all modules */
 
-/* Default = Dark Mode (based on characters) */
+/* Default = Dark Mode (VS Code Dark+ inspired) */
 :root {
-    /* Backgrounds */
-    --bg-primary: #404040;
-    --bg-secondary: #383838;
-    --bg-tertiary: #505050;
-    --bg-input: #404040;
-    --bg-hover: #606060;
+    /* Backgrounds - VS Code style */
+    --bg-primary: #1e1e1e;
+    --bg-secondary: #252526;
+    --bg-tertiary: #2d2d30;
+    --bg-input: #3c3c3c;
+    --bg-hover: #3e3e42;
     
-    /* Text */
-    --text-primary: #f6f3e8;
-    --text-secondary: #cccccc;
+    /* Text - proper contrast (4.5:1+) */
+    --text-primary: #cccccc;
+    --text-secondary: #858585;
     
     /* Borders */
-    --border-color: #333333;
+    --border-color: #3c3c3c;
     
     /* Accents */
-    --accent-red: #dd6060;
-    --accent-hover: #ff9090;
-    --accent-blue: #88c0d0;
+    --accent: #007acc;
+    --accent-hover: #0098ff;
+    --accent-red: #f14c4c;
+    --accent-hover-red: #ff6b6b;
+    --accent-blue: #569cd6;
     
-    /* Type Colors - Dark Mode */
-    --type-str: #e07070;
-    --type-qck: #5a9a9a;
-    --type-dex: #90c070;
-    --type-psy: #d9b860;
-    --type-int: #c070c0;
+/* Type Colors - Dark Mode (saturated but visible on dark) */
+    --type-str: #ff6b6b;
+    --type-qck: #4ec9b0;
+    --type-dex: #6a9955;
+    --type-psy: #dcdcaa;
+    --type-int: #c586c0;
     
-    /* Positive/Negative stats */
-    --positive: #70c070;
-    --negative: #d05050;
+    /* Positive/Negative stats - better contrast */
+    --positive: #6a9955;
+    --negative: #f14c4c;
     
-    /* Filter active states */
-    --filter-active: #dd4040;
-    --filter-active-hover: #ff6060;
+    /* Filter active states - blue accent */
+    --filter-active: #007acc;
+    --filter-active-hover: #0098ff;
     
-    /* Type Colors - Hover/Active (saturated) */
-    --type-str-active: #ff6655;
-    --type-qck-active: #66b0ff;
-    --type-dex-active: #66cc77;
-    --type-psy-active: #ffcc44;
-    --type-int-active: #dd77dd;
+    /* Type Colors - Hover/Active (bright) */
+    --type-str-active: #ff6b6b;
+    --type-qck-active: #4ec9b0;
+    --type-dex-active: #6a9955;
+    --type-psy-active: #dcdcaa;
+    --type-int-active: #c586c0;
     
     /* UI Elements */
-    --panel-bg: #505050;
-    --modal-header: #65737e;
-    --modal-body: #ffffff;
-    --modal-footer: #505050;
-    --popover-bg: #404040;
+    --panel-bg: #2d2d30;
+    --modal-header: #2d2d30;
+    --modal-body: #1e1e1e;
+    --modal-footer: #252526;
+    --popover-bg: #2d2d30;
     
     /* Links */
-    --link-color: #8acccf;
-    --link-hover: #53dccd;
+    --link-color: #3794ff;
+    --link-hover: #4fc3ff;
     
     /* Filter Headers */
-    --filter-header-log: hsla(157, 79%, 15%, 0.4);
-    --filter-header-pve: hsla(230, 70%, 10%, 0.4);
-    --filter-header-pvp: hsla(0, 70%, 10%, 0.4);
+    --filter-header-log: hsla(157, 60%, 30%, 0.4);
+    --filter-header-pve: hsla(220, 60%, 25%, 0.4);
+    --filter-header-pvp: hsla(0, 60%, 25%, 0.4);
     
-    /* Table */
-    --table-stripe-odd: #494949;
-    --table-stripe-even: #404040;
+    /* Table - VS Code style */
+    --table-stripe-odd: #252526;
+    --table-stripe-even: #1e1e1e;
+    --table-border: #3c3c3c;
     
     /* Scrollbars */
-    --scrollbar-track: #969696;
+    --scrollbar-track: #3e3e42;
     --scrollbar-thumb: #5a5a5a;
 
     /* Buttons - Landing page */
@@ -109,10 +112,8 @@
     --slider-semla: lemonchiffon;
     --slider-damage: darkred;
 
-    /* Filter active states */
-    --filter-active: red;
-    --filter-active-hover: darkred;
-    --filter-subclass-active: orchid;
+    /* Filter active states - overridden in :root */
+    --filter-subclass-active: #c586c0;
 
     /* Stars */
     --star-1: #40a3da;
@@ -156,26 +157,159 @@
     --ribbon-orange: #e82;
 }
 
-/* Light Mode */
+/* Light Mode - VS Code Light+ inspired */
 .light-mode {
     /* Backgrounds */
-    --bg-primary: #f5f5f5;
-    --bg-secondary: #fafafa;
-    --bg-tertiary: #e0e0e0;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f3f3;
+    --bg-tertiary: #e8e8e8;
     --bg-input: #ffffff;
-    --bg-hover: #d0d0d0;
+    --bg-hover: #e1e1e1;
     
-    /* Text */
-    --text-primary: #333333;
-    --text-secondary: #666666;
+    /* Text - proper contrast */
+    --text-primary: #1e1e1e;
+    --text-secondary: #616161;
     
     /* Borders */
-    --border-color: #dddddd;
+    --border-color: #d4d4d4;
     
     /* Accents */
-    --accent-red: #dd6060;
-    --accent-hover: #ff9090;
-    --accent-blue: #88c0d0;
+    --accent: #0066b8;
+    --accent-hover: #007acc;
+    --accent-red: #d32f2f;
+    --accent-hover-red: #f44336;
+    --accent-blue: #0b6398;
+    
+    /* Type Colors - Light Mode (more saturated for contrast) */
+    --type-str: #c53030;
+    --type-qck: #0066b8;
+    --type-dex: #2d8016;
+    --type-psy: #92600a;
+    --type-int: #9c277a;
+    
+    /* Type Colors - Hover/Active */
+    --type-str-active: #e53e3e;
+    --type-qck-active: #3182ce;
+    --type-dex-active: #38a169;
+    --type-psy-active: #d69e2e;
+    --type-int-active: #b832b8;
+    
+    /* UI Elements */
+    --panel-bg: #f3f3f3;
+    --modal-header: #e8e8e8;
+    --modal-body: #ffffff;
+    --modal-footer: #f3f3f3;
+    --popover-bg: #ffffff;
+    
+    /* Links */
+    --link-color: #0066b8;
+    --link-hover: #007acc;
+    
+    /* Filter Headers - lighter versions */
+    --filter-header-log: hsla(157, 60%, 85%, 0.5);
+    --filter-header-pve: hsla(220, 60%, 90%, 0.5);
+    --filter-header-pvp: hsl(0, 60%, 90%, 0.5);
+    
+    /* Table */
+    --table-stripe-odd: #ffffff;
+    --table-stripe-even: #fafafa;
+    --table-border: #e0e0e0;
+    
+    /* Scrollbars */
+    --scrollbar-track: #e1e1e1;
+    --scrollbar-thumb: #a0a0a0;
+
+    /* Buttons - Landing page */
+    --btn-green: #7FCA9F;
+    --btn-green-hover: #6EB98E;
+    --btn-blue: #85C1F5;
+    --btn-blue-hover: #74B0E4;
+    --btn-red: #E96D63;
+    --btn-red-hover: #D85C52;
+    --btn-purple: #DA70D6;
+    --btn-purple-hover: #C96995;
+    --btn-yellow: #F4BA70;
+    --btn-yellow-hover: #E3A969;
+    --btn-pink: #DEA5A4;
+    --btn-pink-hover: #A57777;
+    --btn-brown: #993300;
+    --btn-brown-hover: #662200;
+    --btn-darkpurple: #7D3C98;
+    --btn-darkpurple-hover: #5B2C6F;
+    --btn-gold: #B38F15;
+    --btn-gold-hover: #947713;
+    --btn-darkblue: #183578;
+    --btn-darkblue-hover: #092056;
+    --btn-limegreen: #32CD32;
+    --btn-limegreen-hover: #228B22;
+    --btn-darkorange: #CF5300;
+    --btn-darkorange-hover: #B54C05;
+
+    /* Bonuses */
+    --bonus-drop: #7bc8a4;
+    --bonus-stamina: skyblue;
+    --bonus-beli: #ffc65d;
+    --bonus-exp: #f16745;
+    --bonus-today: orchid;
+
+    /* Damage calc sliders */
+    --slider-turn: orchid;
+    --slider-heal: green;
+    --slider-rcv: rgb(216, 85, 14);
+    --slider-basehp: green;
+    --slider-semla: lemonchiffon;
+    --slider-damage: darkred;
+
+    /* Filter active states */
+    --filter-active: #0066b8;
+    --filter-active-hover: #007acc;
+    --filter-subclass-active: #9c277a;
+    
+    /* Positive/Negative stats */
+    --positive: #2d8016;
+    --negative: #c53030;
+
+    /* Stars */
+    --star-1: #1b86c4;
+    --star-2: #7baa1b;
+    --star-3: #c99210;
+    --star-4: #c26900;
+    --star-5: #cc0000;
+    --star-5plus: #990000;
+    --star-6: #7b2c8f;
+    --star-6plus: #cc1177;
+
+    /* Tags */
+    --tag-flag: rgba(0,102,184,0.2);
+    --tag-captain: rgba(46,125,50,0.2);
+    --tag-special: rgba(214,158,46,0.2);
+    --tag-superSpecial: rgba(197,48,48,0.2);
+    --tag-swap: rgba(128,48,160,0.2);
+    --tag-sailor: rgba(138,124,38,0.2);
+    --tag-limit: rgba(6,138,140,0.2);
+    --tag-potential: rgba(189,109,10,0.2);
+    --tag-support: rgba(0,102,184,0.2);
+
+    /* Tag categories */
+    --tag-cat-1: rgb(211,125,6);
+    --tag-cat-2: rgb(87,131,27);
+    --tag-cat-3: rgb(194,47,135);
+    --tag-cat-4: rgb(4,151,138);
+
+    /* Dual unit */
+    --dual-header-bg: #f3f3f3;
+    --dual-border: #cccccc;
+
+    /* Damage calculator */
+    --btn-settings: #888;
+    --btn-settings-hover: #666;
+    --btn-orchid: orchid;
+    --btn-orchid-hover: mediumorchid;
+
+    /* Misc UI */
+    --ribbon-red: #d32f2f;
+    --ribbon-orange: #e65100;
+}
     
     /* Type Colors - Light Mode (more saturated) */
     --type-str: #d94535;
