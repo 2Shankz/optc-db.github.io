@@ -6494,7 +6494,7 @@
 
 			{
 				name: "Status ATK Boost Stack",
-				targets: ["special", "superSpecial"],
+				targets: ["captain", "special", "superSpecial"],
 				regex: /allows crew to stack 2 different Status ATK Boost buffs for ([?\d]+)(?:-([?\d]+))? turns?/i,
 				submatchers: [
 					{
