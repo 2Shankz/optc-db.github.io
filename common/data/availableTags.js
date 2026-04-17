@@ -140,6 +140,10 @@ window.availableTags = [
     "category": 4
   },
   {
+    "name": "Elbaph Arc",
+    "category": 4
+  },
+  {
     "name": "Elegia Kingdom",
     "category": 1
   },

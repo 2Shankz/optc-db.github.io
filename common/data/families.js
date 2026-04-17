@@ -5176,6 +5176,9 @@ window.families = {
     4544: [ ...Borsalino ],
     4545: [ ...Sakazuki ],
     4546: [ ...Sentomaru ],
+    4547: [ ...BenBeckman, ...Yasopp ],
+    4548: [ ...Hongo ],
+    4549: [ ...EustassKid ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
