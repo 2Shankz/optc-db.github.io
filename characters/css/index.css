@@ -667,19 +667,23 @@ input#burgerMenuState {
 }
 
 .filter-header > i.bi-chevron-down,
-.filter-header > i.bi-chevron-right,
-.filter-header > i.fa-chevron-down,
-.filter-header > i.fa-chevron-right {
+.filter-header > i.bi-chevron-right {
     display: inline-block;
+    transition: transform 0.2s ease;
 }
 
-.filter-container:not(.expanded) > .filter-header > i.bi-chevron-down,
-.filter-container:not(.expanded) > .filter-header > i.fa-chevron-down {
-    transform: rotate(-90deg);
+i.bi-chevron-rotated {
+    transform: rotate(90deg);
 }
 
-.filter-container.expanded > .filter-header > i.bi-chevron-down,
-.filter-container.expanded > .filter-header > i.fa-chevron-down {
+.animate-collapse-header > i {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.filter-name > i.bi-chevron-right {
+    display: inline-block;
+    transition: transform 0.2s ease;
     transform: rotate(0deg);
 }
 
@@ -690,28 +694,7 @@ input#burgerMenuState {
     justify-content: center;
 }
 
-.filter-container > .filter-header::after {
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 8px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid var(--text-secondary);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-}
 
-/* Collapsed state - arrow pointing right (hidden content) */
-.filter-container > .collapse:not(.in) + .filter-header::after {
-    transform: rotate(-90deg);
-}
-
-/* Expanded state - arrow pointing down (showing content) */
-.filter-container > .collapse.in + .filter-header::after {
-    transform: rotate(0deg);
-}
 
 .filter {
     display: inline-block;
@@ -1632,10 +1615,6 @@ unit > a {
 /**********
  * MOBILE *
  **********/
-.fa-rumble:before {
-    content: "⚔";
-    font-size: 17px;
-}
 
 .ribbon {
   --f: 0px;

@@ -11,8 +11,6 @@
 	directives.characterTable = function (
 		$rootScope,
 		$timeout,
-		$compile,
-		$storage,
 		$state
 	) {
 		return {
@@ -250,51 +248,47 @@
 		};
 	};
 
-	// Uses Bootstrap's Collapse Component
-	directives.animateCollapse = function ($timeout, $document) {
-		return {
-			restrict: "E",
-			transclude: true,
-			template: `<span>
+// Uses Bootstrap's Collapse Component
+directives.animateCollapse = function ($timeout, $document) {
+	return {
+		restrict: "E",
+		transclude: true,
+		template: `<span class="animate-collapse-header">
         <ng-transclude></ng-transclude>
-        <i class="{{ faClasses ? faClasses : 'fa fa-chevron-down pull-right' }}"></i>
+        <i class="{{ faClasses }}"></i>
     </span>`,
-			scope: {}, // empty isolate scope for `scope.faClasses`
-			link: function (scope, element, attrs) {
-				if (attrs.faClasses) {
-					// option to override font awesome classes
-					scope.faClasses = attrs.faClasses;
-				}
-				element.click(() => {
-					var collapsibleElement = element.next();
-					if (collapsibleElement.hasClass("collapse")) {
-						element.next().collapse("toggle");
+		scope: {},
+		link: function (scope, element, attrs) {
+			scope.faClasses = attrs.faClasses || "bi bi-chevron-right";
+
+			// Delegate to document-level events so chevron syncs with any trigger (click, Toggle All, jQuery)
+			if (!$document.isAnimateCollapseHandlerAdded) {
+				$document.on("hide.bs.collapse", (e) => {
+					var collapserElement = e.target.previousElementSibling;
+					if (collapserElement && collapserElement.tagName === "ANIMATE-COLLAPSE") {
+						var icon = collapserElement.querySelector("i");
+						if (icon) icon.classList.remove("bi-chevron-rotated");
 					}
 				});
+				$document.on("show.bs.collapse", (e) => {
+					var collapserElement = e.target.previousElementSibling;
+					if (collapserElement && collapserElement.tagName === "ANIMATE-COLLAPSE") {
+						var icon = collapserElement.querySelector("i");
+						if (icon) icon.classList.add("bi-chevron-rotated");
+					}
+				});
+				$document.isAnimateCollapseHandlerAdded = true;
+			}
 
-				if (!$document.isAnimateCollapseHandlerAdded) {
-					// delegate event to top level node, so we only add two event listeners
-					$document.on("hide.bs.collapse", (e) => {
-						var collapserElement = e.target.previousElementSibling;
-						if (collapserElement.tagName == "ANIMATE-COLLAPSE") {
-							collapserElement.children[0].lastElementChild.classList.remove(
-								"fa-flip-vertical"
-							);
-						}
-					});
-					$document.on("show.bs.collapse", (e) => {
-						var collapserElement = e.target.previousElementSibling;
-						if (collapserElement.tagName == "ANIMATE-COLLAPSE") {
-							collapserElement.children[0].lastElementChild.classList.add(
-								"fa-flip-vertical"
-							);
-						}
-					});
-					$document.isAnimateCollapseHandlerAdded = true;
+			element.on("click", () => {
+				var collapsibleElement = element.next();
+				if (collapsibleElement && collapsibleElement.hasClass("collapse")) {
+					collapsibleElement.collapse("toggle");
 				}
-			},
-		};
+			});
+		},
 	};
+};
 
 	directives.addCustomFilters = function ($timeout, $compile) {
 		return {
@@ -329,8 +323,6 @@
 				// called when a matcher is toggled, should debounce during the collapse animation
 				// of submatchers div
 				scope.toggleMatcher = function ($event, matcher) {
-					// debounce click during collapse animation, so the filter won't show
-					// the submatchers when it is turned off with a double click
 					var targetElement = $event.target.nextElementSibling;
 					if (targetElement) {
 						if (targetElement.classList.contains("collapsing")) {
@@ -344,6 +336,7 @@
 							matcher.name
 						];
 					matcherObj.enabled = !matcherObj.enabled;
+					matcherObj.submatchersOpen = !matcherObj.submatchersOpen;
 				};
 				scope.getCssClasses = function (submatcher) {
 					var classes = ["min-width-12"]; //default, may be overridden
@@ -708,7 +701,7 @@ directives.goBack = function ($state) {
 			replace: true,
 			template: '<div class="details-card" id="card-{{sectionId}}">' +
 				'<div class="details-card-header" ng-click="toggle()">' +
-				'<i class="fas fa-chevron-right details-card-chevron" ng-class="{\'details-card-collapsed\': !isOpen}"></i>' +
+				'<i class="bi bi-chevron-right details-card-chevron" ng-class="{\'details-card-collapsed\': !isOpen}"></i>' +
 				'<span class="details-card-title">{{title}}</span>' +
 				'</div>' +
 				'<div class="details-card-content" ng-transclude ng-show="isOpen"></div>' +
