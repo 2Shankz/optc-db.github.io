@@ -1351,7 +1351,7 @@ li.STR > div, li.QCK > div, li.DEX > div, li.PSY > div, li.INT > div {
     }
 }
 
-.fa-spin {
+.bi-spin {
     color: var(--text-primary) !important;
 }
 

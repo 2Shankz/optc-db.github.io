@@ -33,5 +33,15 @@ body {
 
 #hide > img {
 	margin-top: 15%;
-	animation: fa-spin 3s infinite linear;
+	animation: bi-spin 3s infinite linear;
+}
+
+.bi-spin {
+	display: inline-block;
+	animation: bi-spin 3s infinite linear;
+}
+
+@keyframes bi-spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }
