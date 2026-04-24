@@ -1247,10 +1247,10 @@
                                         <th ng-if="rumble2"><span>{{::char1.name}}</span></th>
                                         <td ng-if="!rumble2"><span>Stats</span></td>
                                         <td>
-                                            <span>Class: {{::rumble.festStats.style | decorate}}</span>
-                                            <span style="margin-left: 15px;">DEF: {{::rumble.festStats.def | number}}</span>
-                                            <span style="margin-left: 15px;">SPD: {{::rumble.festStats.spd | number}}</span>
-                                            <span style="margin-left: 15px;">Cost: {{::rumble.festCost | number}}</span>
+                                            <span>Class: {{::details.festStats.style | decorate}}</span>
+                                            <span style="margin-left: 15px;">DEF: {{::details.festStats.def | number}}</span>
+                                            <span style="margin-left: 15px;">SPD: {{::details.festStats.spd | number}}</span>
+                                            <span style="margin-left: 15px;">Cost: {{::details.festCost | number}}</span>
                                         </td>
                                     </tr>
                                     
@@ -1258,10 +1258,10 @@
                                     <tr ng-if="rumble2">
                                         <th><span>{{::char2.name}}</span></th>
                                         <td>
-                                            <span>Class: {{::rumble2.festStats.style | decorate}}</span>
-                                            <span>DEF: {{::rumble2.festStats.def | number}}</span>
-                                            <span>SPD: {{::rumble2.festStats.spd | number}}</span>
-                                            <span>Cost: {{::rumble2.festCost | number}}</span>
+                                            <span>Class: {{::details.festStats.style | decorate}}</span>
+                                            <span>DEF: {{::details.festStats.def | number}}</span>
+                                            <span>SPD: {{::details.festStats.spd | number}}</span>
+                                            <span>Cost: {{::details.festCost | number}}</span>
                                         </td>
                                     </tr>
                                     
