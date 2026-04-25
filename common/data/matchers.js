@@ -4893,7 +4893,7 @@
 				name: "Requirement: Enemy Effect",
 				targets: ["special", "superSpecial", "swap", "support"],
 				regex:
-					/If enemies (?:have|are) ([^."]+?) (?:when the special is activated|after receiving damage),/i,
+					/If enemies (?:have|are) ([^."]+?) (?:when the special is activated|after receiving damage)/i,
 				submatchers: [
 					{
 						type: "separator",
