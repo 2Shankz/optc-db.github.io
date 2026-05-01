@@ -5185,6 +5185,7 @@ window.families = {
     4553: [ ...MonkeyDGarp, ...Tashigi, ...Helmeppo ],
     4554: [ ...Vegapunk ],
     //4555: [ ...Vegapunk ],
+    4556: [ ...PortgasDAce ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
