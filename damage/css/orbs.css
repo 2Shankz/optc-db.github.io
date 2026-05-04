@@ -87,9 +87,9 @@
     font-size: 2em;
     color: white;
 }
+.unitOrb .caret-up { top: -3px; }
 
-.unitOrb .bi-caret-up { top: -3px; }
-.unitOrb .bi-caret-down { top: -1px; }
+.unitOrb .caret-down { top: -1px; }
 
 .g-orb,
 .str-orb,

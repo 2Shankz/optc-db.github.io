@@ -35,10 +35,10 @@ td:first-child {
     white-space: nowrap;
 }
 
-.island:not(.collapsed) > h3 > .bi-chevron-right,
-.island.collapsed > h3 > .bi-chevron-down,
-.type.collapsed > h2 > .bi-chevron-down,
-.type:not(.collapsed) > h2 > .bi-chevron-right {
+.island:not(.collapsed) > h3 > .material-icons-chevron-right,
+.island.collapsed > h3 > .material-icons-expand-more,
+.type.collapsed > h2 > .material-icons-expand-more,
+.type:not(.collapsed) > h2 > .material-icons-chevron-right {
     display: none;
 }
 

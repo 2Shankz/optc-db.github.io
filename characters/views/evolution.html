@@ -4,13 +4,13 @@
         ng-class="{ clickable: base != unit.id }"
         decorate-slot uid="base" ng-click="goToState(base)"></div>
 
-    <i class="bi bi-plus arrow" ng-if="base"></i>
+    <i class="material-icons arrow" ng-if="base">add</i>
 
     <div class="slot {{size}}" ng-repeat="evolver in evolvers track by $index"
         ng-class="{ clickable: evolver != unit.id }"
         decorate-slot uid="evolver" ng-click="goToState(evolver)"></div>
 
-    <i class="bi bi-arrow-right arrow"></i>
+    <i class="material-icons arrow">arrow_forward</i>
 
     <div class="slot {{size}}"
         ng-class="{ clickable: evolution != unit.id }"

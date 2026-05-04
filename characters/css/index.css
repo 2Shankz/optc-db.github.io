@@ -666,13 +666,13 @@ input#burgerMenuState {
     cursor: pointer;
 }
 
-.filter-header > i.bi-chevron-down,
-.filter-header > i.bi-chevron-right {
+.filter-header > i.material-icons-chevron-down,
+.filter-header > i.material-icons-chevron-right {
     display: inline-block;
     transition: transform 0.2s ease;
 }
 
-i.bi-chevron-rotated {
+i.material-icons-chevron-rotated {
     transform: rotate(90deg);
 }
 
@@ -681,7 +681,7 @@ i.bi-chevron-rotated {
     transition: transform 0.2s ease;
 }
 
-.filter-name > i.bi-chevron-right {
+.filter-name > i.material-icons-chevron-right {
     display: inline-block;
     transition: transform 0.2s ease;
     transform: rotate(0deg);

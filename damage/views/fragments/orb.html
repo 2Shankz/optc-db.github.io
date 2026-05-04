@@ -1,56 +1,57 @@
 <div class="unitOrb {{glow()}}">
-
-    <i class="bi"
-        ng-show="tdata.team[slot].orb != 'g' && tdata.team[slot].orb != 'str' && tdata.team[slot].orb != 'dex' && tdata.team[slot].orb != 'qck' && tdata.team[slot].orb != 'psy' && tdata.team[slot].orb != 'int' && tdata.team[slot].orb != 'rainbow'"
-        ng-class="{ 'bi-caret-up': tdata.team[slot].orb == 2, 'bi-caret-down': tdata.team[slot].orb == 0.5 }">
-    </i>
-
-    <i class="g-orb" ng-show="tdata.team[slot].orb == 'g'">
-        G
-    </i>
-
-    <i class="str-orb" ng-show="tdata.team[slot].orb == 'str'">
-        S
-    </i>
-
-    <i class="dex-orb" ng-show="tdata.team[slot].orb == 'dex'">
-        D
-    </i>
-
-    <i class="qck-orb" ng-show="tdata.team[slot].orb == 'qck'">
-        Q
-    </i>
-
-    <i class="psy-orb" ng-show="tdata.team[slot].orb == 'psy'">
-        P
-    </i>
-
-    <i class="int-orb" ng-show="tdata.team[slot].orb == 'int'">
-        I
-    </i>
-    
-    <i class="rainbow-orb" ng-show="tdata.team[slot].orb == 'rainbow'">
-        R
-    </i>
-    
-    <i class="meat-orb" ng-show="tdata.team[slot].orb == 'meat'">
-        M
-    </i>
-    
-    <i class="tnd-orb" ng-show="tdata.team[slot].orb == 'tnd'">
-        T
-    </i>
-    
-    <i class="wano-orb" ng-show="tdata.team[slot].orb == 'wano'">
-        和
-    </i>
-    
-    <i class="empty-orb" ng-show="tdata.team[slot].orb == 'empty'">
-        
-    </i>
-    
-    <i class="superbomb-orb" ng-show="tdata.team[slot].orb == 'superbomb'">
-        B
-    </i>
-
-</div>
+ 
+     <i class="material-icons"
+         ng-show="tdata.team[slot].orb != 'g' && tdata.team[slot].orb != 'str' && tdata.team[slot].orb != 'dex' && tdata.team[slot].orb != 'qck' && tdata.team[slot].orb != 'psy' && tdata.team[slot].orb != 'int' && tdata.team[slot].orb != 'rainbow'"
+         ng-class="{ 'caret-up': tdata.team[slot].orb == 2, 'caret-down': tdata.team[slot].orb == 0.5 }">
+         {{ tdata.team[slot].orb == 2 ? 'arrow_drop_up' : (tdata.team[slot].orb == 0.5 ? 'arrow_drop_down' : '') }}
+     </i>
+ 
+     <i class="g-orb" ng-show="tdata.team[slot].orb == 'g'">
+         G
+     </i>
+ 
+     <i class="str-orb" ng-show="tdata.team[slot].orb == 'str'">
+         S
+     </i>
+ 
+     <i class="dex-orb" ng-show="tdata.team[slot].orb == 'dex'">
+         D
+     </i>
+ 
+     <i class="qck-orb" ng-show="tdata.team[slot].orb == 'qck'">
+         Q
+     </i>
+ 
+     <i class="psy-orb" ng-show="tdata.team[slot].orb == 'psy'">
+         P
+     </i>
+ 
+     <i class="int-orb" ng-show="tdata.team[slot].orb == 'int'">
+         I
+     </i>
+     
+     <i class="rainbow-orb" ng-show="tdata.team[slot].orb == 'rainbow'">
+         R
+     </i>
+     
+     <i class="meat-orb" ng-show="tdata.team[slot].orb == 'meat'">
+         M
+     </i>
+     
+     <i class="tnd-orb" ng-show="tdata.team[slot].orb == 'tnd'">
+         T
+     </i>
+     
+     <i class="wano-orb" ng-show="tdata.team[slot].orb == 'wano'">
+         和
+     </i>
+     
+     <i class="empty-orb" ng-show="tdata.team[slot].orb == 'empty'">
+         
+     </i>
+     
+     <i class="superbomb-orb" ng-show="tdata.team[slot].orb == 'superbomb'">
+         B
+     </i>
+ 
+ </div>

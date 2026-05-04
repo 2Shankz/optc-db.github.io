@@ -79,10 +79,10 @@
 								if (stars === "5+") return '<span class="stars-5+"></span>';
 								if (stars === "6+") return '<span class="stars-6+"></span>';
 								var starCount = typeof stars === 'string' ? parseInt(stars, 10) : stars;
-								var html = '';
-								for (var i = 0; i < 6; i++) {
-									html += i < starCount ? '<i class="bi bi-star-fill" style="color:#f7c118"></i>' : '<i class="bi bi-star" style="color:#ccc"></i>';
-								}
+                                var html = '';
+                                for (var i = 0; i < 6; i++) {
+                                    html += i < starCount ? '<i class="material-icons" style="color:#f7c118">star</i>' : '<i class="material-icons" style="color:#ccc">star_border</i>';
+                                }
 								return html;
 							};
 						}
@@ -259,7 +259,7 @@ directives.animateCollapse = function ($timeout, $document) {
     </span>`,
 		scope: {},
 		link: function (scope, element, attrs) {
-			scope.faClasses = attrs.faClasses || "bi bi-chevron-right";
+			scope.faClasses = attrs.faClasses || "material-icons material-icons-chevron-right";
 
 			// Delegate to document-level events so chevron syncs with any trigger (click, Toggle All, jQuery)
 			if (!$document.isAnimateCollapseHandlerAdded) {
@@ -267,7 +267,7 @@ directives.animateCollapse = function ($timeout, $document) {
 					var collapserElement = e.target.previousElementSibling;
 					if (collapserElement && collapserElement.tagName === "ANIMATE-COLLAPSE") {
 						var icon = collapserElement.querySelector("i");
-						if (icon) icon.classList.remove("bi-chevron-rotated");
+						if (icon) icon.classList.remove("material-icons-chevron-rotated");
 					}
 				});
 				$document.on("show.bs.collapse", (e) => {
@@ -699,13 +699,13 @@ directives.goBack = function ($state) {
 			restrict: "E",
 			transclude: true,
 			replace: true,
-			template: '<div class="details-card" id="card-{{sectionId}}">' +
-				'<div class="details-card-header" ng-click="toggle()">' +
-				'<i class="bi bi-chevron-right details-card-chevron" ng-class="{\'details-card-collapsed\': !isOpen}"></i>' +
-				'<span class="details-card-title">{{title}}</span>' +
-				'</div>' +
-				'<div class="details-card-content" ng-transclude ng-show="isOpen"></div>' +
-				'</div>',
+template: '<div class="details-card" id="card-{{sectionId}}">' +
+            '<div class="details-card-header" ng-click="toggle()">' +
+            '<i class="material-icons material-icons-chevron-right details-card-chevron" ng-class="{\'details-card-collapsed\': !isOpen}">chevron_right</i>' +
+            '<span class="details-card-title">{{title}}</span>' +
+            '</div>' +
+            '<div class="details-card-content" ng-transclude ng-show="isOpen"></div>' +
+            '</div>',
 			scope: {
 				title: "@",
 				sectionId: "@",
