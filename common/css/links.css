@@ -26,27 +26,30 @@
     color: var(--text-primary);
 }
 
-#links-button .btn .bi {
+#links-button .btn .material-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     font-size: 1.1em;
+    color: white;
     transition: color 0.3s;
 }
 
-#links-button .btn.trigger .bi {
-    top: -2px;
-    left: -6px;
+#links-button .btn.trigger .material-icons {
+    /* centered */
 }
 
-#links-button .btn:not(.trigger) .bi {
-    top: -7px;
-    left: -11px;
-    width: 26px;
-    height: 26px;
-    padding-top: 7px;
+#links-button .btn:not(.trigger) .material-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 @media (hover) {
-    #links-button .btn:hover .bi, .rotater i {
+    #links-button .btn:hover .material-icons, .rotater i {
         color: var(--accent);
     }
 
