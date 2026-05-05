@@ -3554,31 +3554,22 @@
 				name: "Territory",
 				targets: ["captain", "special", "superSpecial", "swap", "support"],
 				regex:
-					/Applies Territory: (?=((?:[^ct."]+|c(?!lass)|t(?!ype))*))\1(?:class|type) to the field, boosts ATK by ([?.\d]+)x(?:-([?.\d]+)x)?(?:, (\D+?),)? and reduces damage received by ([?.\d]+)%(?:-([?.\d]+)%)? (?:based|depending) on number of characters matching the territory, for ([?\d]+\+?)(?:-([?\d]+))? turns?(?:, for ([?\d]+\+?)(?:-([?\d]+))? turns?)?/i,
+					/Applies Territory: (?=((?:[^f."]+|f(?!ield))*))\1field for ([?\d]+\+?)(?:-([?\d]+))? turns?(?:, for ([?\d]+\+?)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
 					{
 						type: "number",
-						description: "Multiplier:",
-						groups: [2, 3],
-					},
-					{
-						type: "number",
-						description: "Percentage:",
-						groups: [5, 6],
-					},
-					{
-						type: "number",
 						description: "Turns:",
-						groups: [7, 8, 9, 10],
+						groups: [2, 3, 4, 5],
 					},
+					...createUniversalSubmatcher([1]),
 					{
 						type: "separator",
-						description: "Affected Types:",
+						description: "Affected types:",
 					},
 					...createTypesSubmatchers([1]),
 					{
 						type: "separator",
-						description: "Affected Classes:",
+						description: "Affected classes:",
 					},
 					...createClassesSubmatchers([1]),
 				],
