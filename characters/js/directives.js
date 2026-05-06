@@ -197,9 +197,34 @@
 					}
 				}, true);
 
+				var lastQuery = '';
 				scope.$watch('table.parameters', function(newParams, oldParams) {
-					if (newParams !== oldParams && window.charTable) {
-						scope.table.refresh();
+					if (!newParams || !window.charTable) return;
+					var query = newParams.query || '';
+					var filters = newParams.filters;
+					var hasSidebarFilters = filters && (
+						(filters.types && filters.types.length) ||
+						(filters.classes && filters.classes.length) ||
+						(filters.cost && (filters.cost[0] > 0 || filters.cost[1] < 999)) ||
+						(filters.stars && filters.stars.length) ||
+						(filters.tags && filters.tags.length) ||
+						filters.noSingleClass || filters.noBase || filters.noEvos || filters.noLB ||
+						filters.drop || filters.farmable || filters.nonFarmable || filters.shop
+					);
+					if (query && !hasSidebarFilters) {
+						var q = query.toLowerCase();
+						window.charTable.setFilter(function(row) {
+							var name = (row.col1 || '').toLowerCase();
+							var id = row.col0 || '';
+							var type = (row.col2 || '').toLowerCase();
+							var cls = (row.col3 || '').toLowerCase();
+							return name.indexOf(q) !== -1 || id.indexOf(q) !== -1 || 
+							       type.indexOf(q) !== -1 || cls.indexOf(q) !== -1;
+						});
+						lastQuery = query;
+					} else if (!query && lastQuery) {
+						window.charTable.clearFilter();
+						lastQuery = '';
 					}
 				}, true);
 

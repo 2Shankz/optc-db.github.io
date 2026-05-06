@@ -26,7 +26,6 @@
           $scope.query == $stateParams.query
         )
           return;
-        $state.go(".", { query: $scope.query });
         $scope.table.parameters = CharUtils.generateSearchParameters(
           $scope.query,
           jQuery.extend({}, $rootScope.filters)
@@ -50,6 +49,29 @@
         $storage.set('optc-theme', $scope.theme);
         document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
       };
+
+      document.addEventListener('keydown', function(e) {
+        var tag = e.target.tagName.toLowerCase();
+        var isInput = tag === 'input' || tag === 'textarea';
+        if (isInput && e.target.id !== 'picker') return;
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
+        if (e.key === 'Backspace') {
+          $scope.$apply(function() {
+            $scope.query = '';
+          });
+        } else if (e.key === 'Enter') {
+          $state.go(".", { query: $scope.query });
+        } else if (e.key.length === 1 && !isInput) {
+          $scope.$apply(function() {
+            if (!$scope.query) $scope.query = '';
+            $scope.query += e.key;
+          });
+        }
+      });
+
+      document.getElementById('picker').addEventListener('blur', function() {
+        $state.go(".", { query: $scope.query });
+      });
 
       $scope.getRandChar = function () {
         var range = parseInt($rootScope.table.data.length) + 1;
