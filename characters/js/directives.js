@@ -73,6 +73,15 @@
 						}
 						
 						if (index === 9) {
+							tabCol.sorter = function(a, b, aRow, bRow, column, dir, sorterParams) {
+								var parseStars = function(v) {
+									if (v === "4+") return 4.5;
+									if (v === "5+") return 5.5;
+									if (v === "6+") return 6.5;
+									return typeof v === "string" ? parseInt(v, 10) || 0 : (v || 0);
+								};
+								return parseStars(a) - parseStars(b);
+							};
 							tabCol.formatter = function(cell, formatterParams, onRendered) {
 								var stars = cell.getValue();
 								if (stars === "4+") return '<span class="stars-4+"></span>';
