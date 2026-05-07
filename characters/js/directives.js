@@ -289,7 +289,7 @@ directives.animateCollapse = function ($timeout, $document) {
 		transclude: true,
 		template: `<span class="animate-collapse-header">
         <ng-transclude></ng-transclude>
-        <i class="{{ faClasses }}"></i>
+        <i class="{{ faClasses }}">chevron_right</i>
     </span>`,
 		scope: {},
 		link: function (scope, element, attrs) {
@@ -308,7 +308,7 @@ directives.animateCollapse = function ($timeout, $document) {
 					var collapserElement = e.target.previousElementSibling;
 					if (collapserElement && collapserElement.tagName === "ANIMATE-COLLAPSE") {
 						var icon = collapserElement.querySelector("i");
-						if (icon) icon.classList.add("bi-chevron-rotated");
+						if (icon) icon.classList.add("material-icons-chevron-rotated");
 					}
 				});
 				$document.isAnimateCollapseHandlerAdded = true;

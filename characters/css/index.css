@@ -678,6 +678,7 @@ i.material-icons-chevron-rotated {
 
 .animate-collapse-header > i {
     display: inline-block;
+    vertical-align: middle;
     transition: transform 0.2s ease;
 }
 
