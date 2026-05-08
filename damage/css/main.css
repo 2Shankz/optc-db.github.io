@@ -1,5 +1,11 @@
 @import url('../../common/css/orb-colors.css');
 
+/* Fallback for Bootstrap Icons (not loaded - use accent color as fallback) */
+.bi {
+    color: var(--accent);
+    font-style: normal;
+}
+
 /* Theme CSS Variables - loads from common/css/themes.css which is included in HTML */
 
 /* Override body/html to use CSS variables */
@@ -67,6 +73,32 @@ body, html {
 
 #other > button {
     width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+#other > button .material-icons {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.btn-theme {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--accent) !important;
+}
+
+.btn-theme .material-icons {
+    color: var(--accent) !important;
+}
+
+.btn-theme:hover {
+    background: var(--bg-hover) !important;
+    border-color: var(--accent) !important;
 }
 
 #transient {
@@ -304,12 +336,16 @@ body, html {
 
 .damageLabel {
     font-size: 75%;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
 }
 
 .damageAmount {
     font-size: 150%;
     font-weight: bold;
     display: block;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .damageDealer, .onTurn {
@@ -318,6 +354,8 @@ body, html {
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
+    color: rgba(255,255,255,0.85);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
 }
 
 /********************
@@ -406,26 +444,37 @@ body, html {
 }
 
 .btn-settings, .btn-settings:focus {
-    background: #555;
+    background: var(--bg-hover);
     color: white;
+}
+.btn-settings .material-icons,
+.btn-orchid .material-icons,
+.btn-success .material-icons,
+.btn-warning .material-icons,
+.btn-danger .material-icons,
+.btn-info .material-icons,
+.btn-primary .material-icons {
+    color: white;
+    font-size: 18px;
+    vertical-align: middle;
 }
 
 @media (hover) {
     .btn-settings:hover {
-        background: #444;
+        background: var(--bg-secondary);
         color: white;
     }
 }
 
 .btn-orchid {
     color: white;
-    background: orchid;
+    background: var(--accent);
 }
 
 @media (hover) {
     .btn-orchid:hover {
         color: white;
-        background: mediumorchid;
+        background: var(--accent-hover);
     }
 }
 
@@ -442,8 +491,8 @@ body, html {
 
 @media (hover) {
     #menu li > div:not(.menuIcon):not(#specialDivider):not(#supertypeContainer):not(#superclassContainer):hover {
-        background: #688aac;
-        color: white !important;
+        background: var(--bg-hover);
+        color: var(--text-primary) !important;
         cursor: pointer;
     }
 }
@@ -482,32 +531,42 @@ nav.panel {
     position: fixed;
     left: -16.625em;
     width: 16.625em;
-    background: #2C3E50;
+    background: var(--bg-secondary);
 }
 
 #menu li > div {
     display: block;
     padding: 0.8em;
-    color: white;
+    color: var(--text-primary);
     text-align: left;
     font-size: 11pt;
     transition: background 0.1s linear;
+}
+
+#menu li > div a {
+    color: var(--text-primary) !important;
 }
 
 ul { padding-left: 0; }
 
 #menu li {
     list-style: none;
-    border-bottom: 2px solid #34495D;
+    border-bottom: 2px solid var(--border-color);
     position: relative;
 }
 
 #menu li i {
     margin-right: 5px;
+    color: var(--accent);
+}
+
+#menu li a {
+    color: inherit;
+    text-decoration: none;
 }
 
 #menu li button {
-    color: black;
+    color: var(--text-primary);
 }
 
 input {

@@ -1,10 +1,5 @@
 <div id="main">
 
-    <button id="theme-toggle" ng-click="toggleTheme()" title="Toggle Theme" style="position: fixed; top: 10px; right: 10px; padding: 4px 12px; cursor: pointer; white-space: nowrap; font-size: 14px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary); z-index: 1000;">
-        <span ng-bind="theme === 'dark' ? '🌙' : '☀️'"></span>
-        <span ng-bind="theme === 'dark' ? 'Neko' : 'Inu'"></span>
-    </button>
-
     <div class="row">
         <units></units>
         <cruncher></cruncher>
@@ -23,33 +18,36 @@
     <hp-bar></hp-bar>
 
     <div id="other">
-        <button type="button" class="btn btn-settings menu-link" uib-tooltip="Settings" tooltip-append-to-body="true"
+        <button type="button" class="btn btn-theme" ng-click="toggleTheme()" uib-tooltip="Toggle theme (Light → Frappé → Macchiato → Dark)" tooltip-append-to-body="true">
+            <i class="material-icons">{{getThemeIcon()}}</i>
+        </button><!--
+     --><button type="button" class="btn btn-settings menu-link" uib-tooltip="Settings" tooltip-append-to-body="true"
                 ng-click="options.sidebarVisible = !options.sidebarVisible">
-            <i class="bi bi-gear"></i>
-        </a><!--
+            <i class="material-icons">settings</i>
+        </button><!--
      --><button type="button" class="btn btn-info" id="reset" ui-sref=".saveSlot" uib-tooltip="Save" tooltip-append-to-body="true">
-            <i class="bi bi-download"></i>
+            <i class="material-icons">download</i>
         </button><!--
      --><button type="button" class="btn btn-primary" id="reset" ui-sref=".loadSlot" uib-tooltip="Load" tooltip-append-to-body="true">
-            <i class="bi bi-upload"></i>
+            <i class="material-icons">upload</i>
         </button><!--
      --><button type="button" class="btn btn-danger" id="reset" ui-sref=".reset" uib-tooltip="Reset" tooltip-append-to-body="true">
-            <i class="bi bi-eraser"></i>
+            <i class="material-icons">delete</i>
         </button><!--
      --><button type="button" class="btn btn-orchid" id="quickPick" ui-sref=".quickpick" uib-tooltip="Quick Pick" tooltip-append-to-body="true">
-            <i class="bi bi-bolt"></i>
+            <i class="material-icons">flash_on</i>
         </button><!--
      --><button type="button" class="btn btn-success" ng-click="generateURL()"
                 title="Transfer team" ng-controller="ExportCtrl" uib-tooltip="Export URL" tooltip-append-to-body="true">
-            <i class="bi bi-right-left"></i>
+            <i class="material-icons">swap_horiz</i>
         </button><!--
      --><button type="button" class="btn btn-warning" ui-sref=".image" title="Generate image"
                 uib-tooltip="Export Image" tooltip-append-to-body="true">
-            <i class="bi bi-image"></i>
-        </button>
-        <button type="button" class="btn" ui-sref="main.instruction" title="Instructions"
+            <i class="material-icons">image</i>
+        </button><!--
+     --><button type="button" class="btn btn-info" ui-sref="main.instruction" title="Instructions"
                 uib-tooltip="Instructions" tooltip-append-to-body="true">
-            <i class="bi bi-circle-question"></i>
+            <i class="material-icons">help</i>
         </button>
     </div>
 

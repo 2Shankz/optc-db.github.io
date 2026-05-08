@@ -68,7 +68,7 @@
       document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
       document.documentElement.classList.add('modal-' + $scope.modalTheme);
 
-      var themeCycle = ['dark', 'light', 'frappe', 'macchiato'];
+      var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
       var themeIcons = {
         'dark': 'dark_mode',
         'light': 'light_mode',
