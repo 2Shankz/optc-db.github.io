@@ -636,7 +636,7 @@ input#burgerMenuState {
 
 .filter-header {
     display: block;
-    padding: 5px;
+    padding: 3px;
     text-align: center;
     background: var(--bg-secondary);
     color: var(--text-primary);
@@ -690,9 +690,7 @@ i.material-icons-chevron-rotated {
 
 /* Filter headers with collapse - show chevron based on state using pseudo-element */
 .filter-container > .filter-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
 }
 
 
@@ -1457,6 +1455,17 @@ tr.preview td:nth-child(2) > a:after {
 .modal-footer .btn {
     width: auto;
     flex: 1;
+}
+
+.btn-default {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.btn-default:hover {
+    background: var(--bg-hover) !important;
+    border-color: var(--text-primary) !important;
 }
 
 @media (min-width: 768px) {
