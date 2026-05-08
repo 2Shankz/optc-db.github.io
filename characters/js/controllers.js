@@ -109,6 +109,7 @@
         if (isInput && e.target.id !== 'picker') return;
         if (e.ctrlKey || e.metaKey || e.altKey) return;
         if (e.key === 'Backspace') {
+          if (e.target.id === 'picker') return;
           $scope.$apply(function() {
             $scope.query = '';
           });
