@@ -42,28 +42,38 @@
       });
 
       $scope.theme = $storage.get('optc-theme', 'dark');
+      $scope.modalTheme = $storage.get('optc-modal-theme', 'light');
 
-      var applyTheme = function(theme) {
-        document.documentElement.classList.remove('light-mode', 'dark-mode', 'frappe', 'macchiato');
+      // Make modal theme functions available to child scopes (like DetailsCtrl)
+      $rootScope.modalTheme = $scope.modalTheme;
+      $rootScope.toggleModalTheme = $scope.toggleModalTheme;
+      $rootScope.getModalThemeIcon = $scope.getModalThemeIcon;
+
+      var applyTheme = function(theme, target) {
+        target.classList.remove('light-mode', 'dark-mode', 'frappe', 'macchiato');
         if (theme === 'frappe') {
-          document.documentElement.classList.add('light-mode', 'frappe');
+          target.classList.add('light-mode', 'frappe');
         } else if (theme === 'macchiato') {
-          document.documentElement.classList.add('dark-mode', 'macchiato');
+          target.classList.add('dark-mode', 'macchiato');
         } else if (theme === 'light') {
-          document.documentElement.classList.add('light-mode');
+          target.classList.add('light-mode');
         } else {
-          document.documentElement.classList.add('dark-mode');
+          target.classList.add('dark-mode');
         }
       };
 
-      applyTheme($scope.theme);
+      applyTheme($scope.theme, document.documentElement);
+
+      // For modal, we need to apply to a specific scope - handled via class on modal elements
+      document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
+      document.documentElement.classList.add('modal-' + $scope.modalTheme);
 
       var themeCycle = ['dark', 'light', 'frappe', 'macchiato'];
       var themeIcons = {
-        'dark': 'dark_mode',      // Mocha - darkest
-        'light': 'light_mode',   // Latte - brightest
-        'frappe': 'brightness_medium', // Frappé - medium brightness
-        'macchiato': 'nightlight_round' // Macchiato - dark but variant
+        'dark': 'dark_mode',
+        'light': 'light_mode',
+        'frappe': 'brightness_medium',
+        'macchiato': 'nightlight_round'
       };
 
       $scope.toggleTheme = function() {
@@ -71,11 +81,26 @@
         var nextIndex = (currentIndex + 1) % themeCycle.length;
         $scope.theme = themeCycle[nextIndex];
         $storage.set('optc-theme', $scope.theme);
-        applyTheme($scope.theme);
+        applyTheme($scope.theme, document.documentElement);
+      };
+
+      $scope.toggleModalTheme = function() {
+        var modalCycle = ['light', 'frappe', 'macchiato', 'dark'];
+        var currentIndex = modalCycle.indexOf($scope.modalTheme);
+        var nextIndex = (currentIndex + 1) % modalCycle.length;
+        $scope.modalTheme = modalCycle[nextIndex];
+        $rootScope.modalTheme = $scope.modalTheme;
+        $storage.set('optc-modal-theme', $scope.modalTheme);
+        document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
+        document.documentElement.classList.add('modal-' + $scope.modalTheme);
       };
 
       $scope.getThemeIcon = function() {
         return themeIcons[$scope.theme] || 'dark_mode';
+      };
+
+      $scope.getModalThemeIcon = function() {
+        return themeIcons[$scope.modalTheme] || 'light_mode';
       };
 
       document.addEventListener('keydown', function(e) {
@@ -319,6 +344,38 @@
       $storage,
       $http
     ) {
+      // Fallback: If modal theme functions don't exist on rootScope (MainCtrl wasn't run), initialize them
+      if (!$rootScope.toggleModalTheme) {
+var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
+        var themeIcons = {
+          'dark': 'dark_mode',
+          'light': 'light_mode',
+          'frappe': 'brightness_medium',
+          'macchiato': 'nightlight_round'
+        };
+        $rootScope.modalTheme = $storage.get('optc-modal-theme', 'light');
+        document.documentElement.classList.add('modal-' + $rootScope.modalTheme);
+
+        $rootScope.toggleModalTheme = function() {
+          var modalCycle = ['light', 'frappe', 'macchiato', 'dark'];
+          var currentIndex = modalCycle.indexOf($rootScope.modalTheme);
+          var nextIndex = (currentIndex + 1) % modalCycle.length;
+          $rootScope.modalTheme = modalCycle[nextIndex];
+          $storage.set('optc-modal-theme', $rootScope.modalTheme);
+          document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
+          document.documentElement.classList.add('modal-' + $rootScope.modalTheme);
+        };
+
+        $rootScope.getModalThemeIcon = function() {
+          return themeIcons[$rootScope.modalTheme] || 'light_mode';
+        };
+      }
+
+      // Expose to scope for template
+      $scope.modalTheme = $rootScope.modalTheme;
+      $scope.toggleModalTheme = $rootScope.toggleModalTheme;
+      $scope.getModalThemeIcon = $rootScope.getModalThemeIcon;
+
       var rumbleRequest = {
         method: "get",
         url: "../common/data/rumble.json",

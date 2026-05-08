@@ -488,3 +488,51 @@
     --star-6: #c6a0f6;
     --star-6plus: #f5bde6;
 }
+
+/* Modal Theme Overrides - Latte (Light) */
+:root.modal-light {
+  --modal-bg-primary: #eff1f5;
+  --modal-bg-secondary: #e6e9ef;
+  --modal-bg-tertiary: #dce0e8;
+  --modal-text-primary: #4c4f69;
+  --modal-text-secondary: #5c5f77;
+  --modal-border: #ccd0da;
+  --modal-accent: #7287fd;
+  --modal-accent-hover: #8839ef;
+}
+
+/* Modal Theme Overrides - Frappé (Light variant) */
+:root.modal-frappe {
+  --modal-bg-primary: #303446;
+  --modal-bg-secondary: #292c3c;
+  --modal-bg-tertiary: #232634;
+  --modal-text-primary: #c6d0f5;
+  --modal-text-secondary: #b5bfe2;
+  --modal-border: #414559;
+  --modal-accent: #c5aef8;
+  --modal-accent-hover: #b4befe;
+}
+
+/* Modal Theme Overrides - Dark Mode (Mocha) */
+:root.modal-dark {
+  --modal-bg-primary: #1e1e2e;
+  --modal-bg-secondary: #181825;
+  --modal-bg-tertiary: #11111b;
+  --modal-text-primary: #cdd6f4;
+  --modal-text-secondary: #bac2de;
+  --modal-border: #313244;
+  --modal-accent: #cba6f7;
+  --modal-accent-hover: #b4befe;
+}
+
+/* Modal Theme Overrides - Macchiato (Dark variant) */
+:root.modal-macchiato {
+  --modal-bg-primary: #24273a;
+  --modal-bg-secondary: #1e2030;
+  --modal-bg-tertiary: #181926;
+  --modal-text-primary: #cad3f5;
+  --modal-text-secondary: #b8c0e0;
+  --modal-border: #363a4f;
+  --modal-accent: #c6a0f6;
+  --modal-accent-hover: #b7bdf8;
+}

@@ -2149,3 +2149,271 @@ a { color: var(--link-color); }
 .quick-nav .btn:hover {
     background: var(--bg-hover);
 }
+
+.quick-nav-sep {
+    height: 1px;
+    background: var(--border-color);
+    margin: 6px 0;
+}
+
+.quick-nav .modal-theme-btn.btn-default {
+    padding: 4px 4px !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    width: 100% !important;
+    min-height: 30px !important;
+    border-radius: 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.quick-nav .modal-theme-btn.btn-default i {
+    font-size: 18px !important;
+    margin-bottom: 2px !important;
+    color: var(--modal-accent) !important;
+}
+
+.quick-nav .modal-theme-btn.btn-default:hover {
+    background: var(--modal-bg-tertiary) !important;
+    border-color: var(--modal-accent) !important;
+}
+
+.quick-nav .modal-theme-btn.btn-default:hover i {
+    color: var(--modal-accent-hover) !important;
+}
+
+/* Modal Theme Override Styles - Apply when modal theme classes are active */
+:root.modal-light .modal-content,
+:root.modal-frappe .modal-content,
+:root.modal-dark .modal-content,
+:root.modal-macchiato .modal-content {
+    background-color: var(--modal-bg-primary) !important;
+    color: var(--modal-text-primary) !important;
+    border-color: var(--modal-border) !important;
+}
+
+:root.modal-light .modal-header,
+:root.modal-frappe .modal-header,
+:root.modal-dark .modal-header,
+:root.modal-macchiato .modal-header {
+    background-color: var(--modal-bg-secondary) !important;
+    color: var(--modal-text-primary) !important;
+    border-bottom-color: var(--modal-border) !important;
+}
+
+:root.modal-light .modal-body,
+:root.modal-frappe .modal-body,
+:root.modal-dark .modal-body,
+:root.modal-macchiato .modal-body {
+    background-color: var(--modal-bg-primary) !important;
+    color: var(--modal-text-primary) !important;
+    border-top-color: var(--modal-border) !important;
+}
+
+:root.modal-light .modal-footer,
+:root.modal-frappe .modal-footer,
+:root.modal-dark .modal-footer,
+:root.modal-macchiato .modal-footer {
+    background-color: var(--modal-bg-secondary) !important;
+    color: var(--modal-text-primary) !important;
+    border-top-color: var(--modal-border) !important;
+}
+
+:root.modal-light .panel-default,
+:root.modal-frappe .panel-default,
+:root.modal-dark .panel-default,
+:root.modal-macchiato .panel-default {
+    background-color: var(--modal-bg-secondary) !important;
+    border-color: var(--modal-border) !important;
+}
+
+:root.modal-light .panel-default > .panel-heading,
+:root.modal-frappe .panel-default > .panel-heading,
+:root.modal-dark .panel-default > .panel-heading,
+:root.modal-macchiato .panel-default > .panel-heading {
+    background-color: var(--modal-bg-tertiary) !important;
+    color: var(--modal-text-primary) !important;
+    border-bottom-color: var(--modal-border) !important;
+}
+
+:root.modal-light .table > thead > tr > th,
+:root.modal-frappe .table > thead > tr > th,
+:root.modal-dark .table > thead > tr > th,
+:root.modal-macchiato .table > thead > tr > th {
+    background-color: var(--modal-bg-tertiary) !important;
+    color: var(--modal-text-primary) !important;
+    border-color: var(--modal-border) !important;
+}
+
+:root.modal-light .table > tbody > tr > td,
+:root.modal-frappe .table > tbody > tr > td,
+:root.modal-dark .table > tbody > tr > td,
+:root.modal-macchiato .table > tbody > tr > td {
+    background-color: var(--modal-bg-secondary) !important;
+    color: var(--modal-text-primary) !important;
+    border-color: var(--modal-border) !important;
+}
+
+:root.modal-light .table-striped > tbody > tr:nth-child(odd) > td,
+:root.modal-frappe .table-striped > tbody > tr:nth-child(odd) > td,
+:root.modal-dark .table-striped > tbody > tr:nth-child(odd) > td,
+:root.modal-macchiato .table-striped > tbody > tr:nth-child(odd) > td {
+    background-color: var(--modal-bg-primary) !important;
+}
+
+:root.modal-light .table-striped > tbody > tr:nth-child(even) > td,
+:root.modal-frappe .table-striped > tbody > tr:nth-child(even) > td,
+:root.modal-dark .table-striped > tbody > tr:nth-child(even) > td,
+:root.modal-macchiato .table-striped > tbody > tr:nth-child(even) > td {
+    background-color: var(--modal-bg-secondary) !important;
+}
+
+:root.modal-light .table-bordered > thead > tr > th,
+:root.modal-light .table-bordered > tbody > tr > td,
+:root.modal-frappe .table-bordered > thead > tr > th,
+:root.modal-frappe .table-bordered > tbody > tr > td,
+:root.modal-dark .table-bordered > thead > tr > th,
+:root.modal-dark .table-bordered > tbody > tr > td,
+:root.modal-macchiato .table-bordered > thead > tr > th,
+:root.modal-macchiato .table-bordered > tbody > tr > td {
+    border-color: var(--modal-border) !important;
+}
+
+:root.modal-light .btn-default,
+:root.modal-frappe .btn-default,
+:root.modal-dark .btn-default,
+:root.modal-macchiato .btn-default {
+    background: var(--modal-bg-secondary) !important;
+    color: var(--modal-text-primary) !important;
+    border-color: var(--modal-border) !important;
+}
+
+:root.modal-light .btn-default:hover,
+:root.modal-frappe .btn-default:hover,
+:root.modal-dark .btn-default:hover,
+:root.modal-macchiato .btn-default:hover {
+    background: var(--modal-bg-tertiary) !important;
+    border-color: var(--modal-accent) !important;
+}
+
+:root.modal-light a,
+:root.modal-frappe a,
+:root.modal-dark a,
+:root.modal-macchiato a {
+    color: var(--modal-accent) !important;
+}
+
+:root.modal-light a:hover,
+:root.modal-frappe a:hover,
+:root.modal-dark a:hover,
+:root.modal-macchiato a:hover {
+    color: var(--modal-accent-hover) !important;
+}
+
+:root.modal-light .badge,
+:root.modal-frappe .badge,
+:root.modal-dark .badge,
+:root.modal-macchiato .badge {
+    color: white !important;
+}
+
+/* Details card overrides for modal theme */
+:root.modal-light .details-card,
+:root.modal-frappe .details-card,
+:root.modal-dark .details-card,
+:root.modal-macchiato .details-card {
+    background: var(--modal-bg-secondary) !important;
+    border-color: var(--modal-border) !important;
+}
+
+:root.modal-light .details-card-header,
+:root.modal-frappe .details-card-header,
+:root.modal-dark .details-card-header,
+:root.modal-macchiato .details-card-header {
+    background: var(--modal-bg-tertiary) !important;
+    color: var(--modal-text-primary) !important;
+    border-bottom-color: var(--modal-border) !important;
+}
+
+:root.modal-light .details-card-title,
+:root.modal-frappe .details-card-title,
+:root.modal-dark .details-card-title,
+:root.modal-macchiato .details-card-title {
+    color: var(--modal-text-primary) !important;
+}
+
+/* Quicknav background for modal theme */
+:root.modal-light .quick-nav,
+:root.modal-frappe .quick-nav {
+    background-color: var(--modal-bg-secondary) !important;
+    border-color: var(--modal-border) !important;
+}
+
+:root.modal-dark .quick-nav,
+:root.modal-macchiato .quick-nav {
+    background-color: var(--modal-bg-secondary) !important;
+    border-color: var(--modal-border) !important;
+}
+
+/* Scrollbar for modal theme - Light modes (Latte, Frappé) */
+:root.modal-light .modal-body::-webkit-scrollbar-track,
+:root.modal-frappe .modal-body::-webkit-scrollbar-track {
+    background: var(--modal-bg-tertiary, #dce0e8) !important;
+}
+
+:root.modal-light .modal-body::-webkit-scrollbar-thumb,
+:root.modal-frappe .modal-body::-webkit-scrollbar-thumb {
+    background: var(--modal-border, #acb0be) !important;
+    border-radius: 4px;
+}
+
+:root.modal-light .modal-body::-webkit-scrollbar-thumb:hover,
+:root.modal-frappe .modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--modal-text-secondary, #8a8f98) !important;
+}
+
+/* Scrollbar for modal theme - Dark modes (Mocha, Macchiato) */
+:root.modal-dark .modal-body::-webkit-scrollbar-track,
+:root.modal-macchiato .modal-body::-webkit-scrollbar-track {
+    background: var(--modal-bg-secondary, #181825) !important;
+}
+
+:root.modal-dark .modal-body::-webkit-scrollbar-thumb,
+:root.modal-macchiato .modal-body::-webkit-scrollbar-thumb {
+    background: var(--modal-border, #45475a) !important;
+    border-radius: 4px;
+}
+
+:root.modal-dark .modal-body::-webkit-scrollbar-thumb:hover,
+:root.modal-macchiato .modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--modal-text-secondary, #bac2de) !important;
+}
+
+/* Firefox scrollbar for modal theme */
+:root.modal-light .modal-body,
+:root.modal-frappe .modal-body {
+    scrollbar-color: var(--modal-border, #acb0be) var(--modal-bg-tertiary, #dce0e8) !important;
+}
+
+:root.modal-dark .modal-body,
+:root.modal-macchiato .modal-body {
+    scrollbar-color: var(--modal-border, #45475a) var(--modal-bg-secondary, #181825) !important;
+}
+
+/* Quicknav separator for modal theme */
+:root.modal-light .quick-nav-sep,
+:root.modal-frappe .quick-nav-sep {
+    background: var(--modal-border) !important;
+}
+
+:root.modal-dark .quick-nav-sep,
+:root.modal-macchiato .quick-nav-sep {
+    background: var(--modal-border) !important;
+}
