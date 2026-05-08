@@ -491,9 +491,9 @@
 
 /* Modal Theme Overrides - Latte (Light) */
 :root.modal-light {
-  --modal-bg-primary: #eff1f5;
-  --modal-bg-secondary: #e6e9ef;
-  --modal-bg-tertiary: #dce0e8;
+  --modal-bg-primary: #dce0e8;
+  --modal-bg-secondary: #eff1f5;
+  --modal-bg-tertiary: #e6e9ef;
   --modal-text-primary: #4c4f69;
   --modal-text-secondary: #5c5f77;
   --modal-border: #ccd0da;

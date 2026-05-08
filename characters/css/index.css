@@ -2048,28 +2048,28 @@ a { color: var(--link-color); }
 }
 
 .details-card-content .panel th {
-    background-color: var(--bg-tertiary);
-    color: var(--text-primary);
-    border-color: var(--border-color);
+    background-color: var(--modal-bg-tertiary);
+    color: var(--modal-text-primary);
+    border-color: var(--modal-border);
 }
 
 .details-card-content .panel thead td {
-    background-color: var(--bg-tertiary);
-    color: var(--text-primary);
-    border-color: var(--border-color);
+    background-color: var(--modal-bg-tertiary);
+    color: var(--modal-text-primary);
+    border-color: var(--modal-border);
 }
 
 .details-card-content .table-striped-column > * > tr > td {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
+    background-color: var(--modal-bg-secondary);
+    color: var(--modal-text-primary);
 }
 
 .details-card-content .table-striped-column > * > tr:nth-child(odd) > td {
-    background-color: var(--table-stripe-odd);
+    background-color: var(--modal-bg-tertiary);
 }
 
 .details-card-content .table-striped-column > * > tr:nth-child(even) > td {
-    background-color: var(--table-stripe-even);
+    background-color: var(--modal-bg-secondary);
 }
 
 /* Force detail view tables to use CSS variables - override Bootstrap */
@@ -2094,19 +2094,19 @@ a { color: var(--link-color); }
 
 .details-card .table > thead > tr > th,
 .details-card-content .table > thead > tr > th {
-    background-color: var(--bg-tertiary) !important;
-    color: var(--text-primary) !important;
-    border-color: var(--border-color) !important;
+    background-color: var(--modal-bg-tertiary) !important;
+    color: var(--modal-text-primary) !important;
+    border-color: var(--modal-border) !important;
 }
 
 .details-card .table-striped > tbody > tr:nth-child(odd) > td,
 .details-card-content .table-striped > tbody > tr:nth-child(odd) > td {
-    background-color: var(--table-stripe-odd) !important;
+    background-color: var(--modal-bg-secondary) !important;
 }
 
 .details-card .table-striped > tbody > tr:nth-child(even) > td,
 .details-card-content .table-striped > tbody > tr:nth-child(even) > td {
-    background-color: var(--table-stripe-even) !important;
+    background-color: var(--modal-bg-primary) !important;
 }
 
 .details-card .table-bordered > td,
