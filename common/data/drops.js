@@ -3713,6 +3713,16 @@ window.drops = {
             'Grand Feast Sugo': [ 4513 ]
         },
 
+        {
+            name: 'Gol D. Roger',
+            dropID: 'coop9',
+            thumb: 4572,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Grand Feast Sugo': [ 4572 ]
+        },
+
     ],
 
 
@@ -9868,6 +9878,14 @@ window.drops = {
             thumb: 4522,
             global: true,
             nakama: null,
+        },
+
+        {
+            name: '12th Anniversary Blitz Battle!',
+            thumb: 4571,
+            global: true,
+            nakama: null,
+            'Chopper Man Missions': [ 4574 ],
         },
 
         {

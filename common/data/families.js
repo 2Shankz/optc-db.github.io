@@ -743,6 +743,7 @@ const ClouDClover = [ "Clou D. Clover" ];
 const Guernica = [ "Guernica" ];
 const Joseph = [ "Joseph" ];
 const Strongheart = [ "Strongheart", "Stronger" ];
+const Imu = [ "Imu" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5186,6 +5187,25 @@ window.families = {
     4554: [ ...Vegapunk ],
     //4555: [ ...Vegapunk ],
     4556: [ ...PortgasDAce ],
+    4557: [ ...MonkeyDLuffy ],
+    4558: [ ...MonkeyDLuffy ],
+    4559: [ ...Shanks ],
+    4560: [ ...Shanks ],
+    4561: [ ...MarshallDTeach ],
+    4562: [ ...MarshallDTeach ],
+    4563: [ ...Buggy ],
+    4564: [ ...Buggy ],
+    4565: [ ...Sabo ],
+    4566: [ ...Coby ],
+    4567: [ ...MonkeyDDragon ],
+    4568: [ ...FigarlandGarling ],
+    4569: [ ...Sakazuki ],
+    4570: [ ...Kuzan ],
+    4571: [ ...Imu ],
+    4572: [ ...GolDRoger ],
+    4573: [ ...GolDRoger ],
+    4574: [ ...EthanbaronVNusjuro ],
+    4575: [ ...EthanbaronVNusjuro ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
