@@ -35,8 +35,8 @@
     <a class="btn btn-icon" target="_blank" href="https://discord.gg/MRhRrbF" style="background-image: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e3d80db9971f10a9757c99_Symbol.svg'); background-repeat: no-repeat; background-position: center; background-size: 70%;">
     </a>
 
-    <button type="button" id="theme-toggle" ng-click="toggleTheme()" title="Toggle light/dark theme">
-        <span ng-bind="theme === 'dark' ? '🌙🐱' : '☀️🐶'"></span>
+    <button type="button" id="theme-toggle" ng-click="toggleTheme()" title="Toggle theme (Mocha → Latte → Frappé → Macchiato)">
+        <i class="material-icons">{{getThemeIcon()}}</i>
     </button>
 </div>
 

@@ -42,12 +42,40 @@
       });
 
       $scope.theme = $storage.get('optc-theme', 'dark');
-      document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
+
+      var applyTheme = function(theme) {
+        document.documentElement.classList.remove('light-mode', 'dark-mode', 'frappe', 'macchiato');
+        if (theme === 'frappe') {
+          document.documentElement.classList.add('light-mode', 'frappe');
+        } else if (theme === 'macchiato') {
+          document.documentElement.classList.add('dark-mode', 'macchiato');
+        } else if (theme === 'light') {
+          document.documentElement.classList.add('light-mode');
+        } else {
+          document.documentElement.classList.add('dark-mode');
+        }
+      };
+
+      applyTheme($scope.theme);
+
+      var themeCycle = ['dark', 'light', 'frappe', 'macchiato'];
+      var themeIcons = {
+        'dark': 'dark_mode',      // Mocha - darkest
+        'light': 'light_mode',   // Latte - brightest
+        'frappe': 'brightness_medium', // Frappé - medium brightness
+        'macchiato': 'nightlight_round' // Macchiato - dark but variant
+      };
 
       $scope.toggleTheme = function() {
-        $scope.theme = $scope.theme === 'dark' ? 'light' : 'dark';
+        var currentIndex = themeCycle.indexOf($scope.theme);
+        var nextIndex = (currentIndex + 1) % themeCycle.length;
+        $scope.theme = themeCycle[nextIndex];
         $storage.set('optc-theme', $scope.theme);
-        document.documentElement.classList.toggle('light-mode', $scope.theme === 'light');
+        applyTheme($scope.theme);
+      };
+
+      $scope.getThemeIcon = function() {
+        return themeIcons[$scope.theme] || 'dark_mode';
       };
 
       document.addEventListener('keydown', function(e) {

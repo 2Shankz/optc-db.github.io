@@ -1,312 +1,490 @@
 /* common/css/themes.css */
 /* Consolidated theme variables for all modules */
 
-/* Default = Dark Mode (VS Code Dark+ inspired) */
+/* Default = Dark Mode (Catppuccin Mocha) */
 :root {
-    /* Backgrounds - VS Code style */
-    --bg-primary: #1e1e1e;
-    --bg-secondary: #252526;
-    --bg-tertiary: #2d2d30;
-    --bg-input: #3c3c3c;
-    --bg-hover: #2d2d2d;
+    /* Backgrounds - Catppuccin Mocha */
+    --bg-primary: #1e1e2e;
+    --bg-secondary: #181825;
+    --bg-tertiary: #11111b;
+    --bg-input: #313244;
+    --bg-hover: #585b70;
 
-    /* Text - proper contrast (4.5:1+) */
-    --text-primary: #ffffff;
-    --text-secondary: #aaaaaa;
+    /* Text - Catppuccin Mocha hierarchy */
+    --text-primary: #cdd6f4;
+    --text-secondary: #bac2de;
+    --text-tertiary: #a6adc8;
 
-    /* Borders */
-    --border-color: #2f2f2f;
-    
-    /* Accents */
-    --accent: #007acc;
-    --accent-hover: #0098ff;
-    --accent-red: #f14c4c;
-    --accent-hover-red: #ff6b6b;
-    --accent-blue: #569cd6;
-    
-/* Type Colors - Dark Mode (saturated but visible on dark) */
-    --type-str: #ff6b6b;
-    --type-qck: #4ec9b0;
-    --type-dex: #6a9955;
-    --type-psy: #dcdcaa;
-    --type-int: #c586c0;
-    
-    /* Positive/Negative stats - better contrast */
-    --positive: #6a9955;
-    --negative: #f14c4c;
-    
-    /* Filter active states - blue accent */
-    --filter-active: #007acc;
-    --filter-active-hover: #0098ff;
-    
-    /* Type Colors - Hover/Active (bright) */
-    --type-str-active: #ff6b6b;
-    --type-qck-active: #4ec9b0;
-    --type-dex-active: #6a9955;
-    --type-psy-active: #dcdcaa;
-    --type-int-active: #c586c0;
-    
-    /* UI Elements */
-    --panel-bg: #2d2d30;
-    --modal-header: #2d2d30;
-    --modal-body: #1e1e1e;
-    --modal-footer: #252526;
-    --popover-bg: #2d2d30;
-    
-    /* Links */
-    --link-color: #3794ff;
-    --link-hover: #4fc3ff;
-    
-    /* Filter Headers */
-    --filter-header-log: hsla(157, 60%, 30%, 0.4);
-    --filter-header-pve: hsla(220, 60%, 25%, 0.4);
-    --filter-header-pvp: hsla(0, 60%, 25%, 0.4);
-    
-    /* Table - VS Code style */
-    --table-stripe-odd: #252526;
-    --table-stripe-even: #1e1e1e;
-    --table-border: #3c3c3c;
-    
-    /* Scrollbars */
-    --scrollbar-track: #3e3e42;
-    --scrollbar-thumb: #5a5a5a;
+    /* Borders - Catppuccin Mocha */
+    --border-color: #313244;
+    --border-strong: #45475a;
+    --border-tertiary: #585b70;
 
-    /* Buttons - Landing page */
-    --btn-green: #7FCA9F;
-    --btn-green-hover: #6EB98E;
-    --btn-blue: #85C1F5;
-    --btn-blue-hover: #74B0E4;
-    --btn-red: #E96D63;
-    --btn-red-hover: #D85C52;
-    --btn-purple: #DA70D6;
-    --btn-purple-hover: #C96995;
-    --btn-yellow: #F4BA70;
-    --btn-yellow-hover: #E3A969;
-    --btn-pink: #DEA5A4;
-    --btn-pink-hover: #A57777;
-    --btn-brown: #993300;
-    --btn-brown-hover: #662200;
-    --btn-darkpurple: #7D3C98;
-    --btn-darkpurple-hover: #5B2C6F;
-    --btn-gold: #B38F15;
-    --btn-gold-hover: #947713;
-    --btn-darkblue: #183578;
-    --btn-darkblue-hover: #092056;
-    --btn-limegreen: #32CD32;
-    --btn-limegreen-hover: #228B22;
-    --btn-darkorange: #CF5300;
-    --btn-darkorange-hover: #B54C05;
+    /* Accents - Catppuccin Mocha mauve/lavender */
+    --accent: #cba6f7;
+    --accent-hover: #b4befe;
+    --accent-focus: #cba6f7;
+    --accent-strong: #b4befe;
+    --accent-red: #f38ba8;
+    --accent-hover-red: #f5c2e7;
+    --accent-blue: #89b4fa;
 
-    /* Bonuses */
-    --bonus-drop: #7bc8a4;
-    --bonus-stamina: skyblue;
-    --bonus-beli: #ffc65d;
-    --bonus-exp: #f16745;
-    --bonus-today: orchid;
+    /* Type Colors - Dark Mode (game hues - Mocha palette) */
+    --type-str: #f38ba8;
+    --type-qck: #89b4fa;
+    --type-dex: #a6e3a1;
+    --type-psy: #f9e2af;
+    --type-int: #cba6f7;
 
-    /* Damage calc sliders */
-    --slider-turn: orchid;
-    --slider-heal: green;
-    --slider-rcv: rgb(216, 85, 14);
-    --slider-basehp: green;
-    --slider-semla: lemonchiffon;
-    --slider-damage: darkred;
-
-    /* Filter active states - overridden in :root */
-    --filter-subclass-active: #c586c0;
-
-    /* Stars */
-    --star-1: #40a3da;
-    --star-2: #acc523;
-    --star-3: #f7c118;
-    --star-4: #f28e00;
-    --star-5: #ff0000;
-    --star-5plus: #d70000;
-    --star-6: #9932cc;
-    --star-6plus: #ff1493;
-
-    /* Tags */
-    --tag-flag: rgba(133,193,245,0.5);
-    --tag-captain: rgba(127,202,159,0.5);
-    --tag-special: rgba(244,186,112,0.5);
-    --tag-superSpecial: rgba(233,109,99,0.5);
-    --tag-swap: rgba(155, 112, 212,0.5);
-    --tag-sailor: rgba(181,160,75,0.5);
-    --tag-limit: rgba(6,151,154,0.5);
-    --tag-potential: rgba(189,109,10,0.5);
-    --tag-support: rgba(133,193,245,0.5);
-
-    /* Tag categories */
-    --tag-cat-1: rgb(211,125,6);
-    --tag-cat-2: rgb(87,131,27);
-    --tag-cat-3: rgb(194,47,135);
-    --tag-cat-4: rgb(4,151,138);
-
-    /* Dual unit */
-    --dual-header-bg: #ffffff;
-    --dual-border: #adadad;
-
-    /* Damage calculator */
-    --btn-settings: #555;
-    --btn-settings-hover: #444;
-    --btn-orchid: orchid;
-    --btn-orchid-hover: mediumorchid;
-
-/* Misc UI */
-    --ribbon-red: #d32f2f;
-    --ribbon-orange: #e65100;
-}
-
-/* Light Mode - VS Code Light+ inspired */
-.light-mode {
-    /* Backgrounds */
-    --bg-primary: #ffffff;
-    --bg-secondary: #fcfcfc;
-    --bg-tertiary: #e8e8e8;
-    --bg-input: #ffffff;
-    --bg-hover: #f7f7f7;
-
-    /* Text - proper contrast */
-    --text-primary: #1e1e1e;
-    --text-secondary: #616161;
-
-    /* Borders */
-    --border-color: #efefef;
-    
-    /* Accents */
-    --accent: #0066b8;
-    --accent-hover: #007acc;
-    --accent-red: #d32f2f;
-    --accent-hover-red: #f44336;
-    --accent-blue: #0b6398;
-    
-    /* Type Colors - Light Mode (more saturated for contrast) */
-    --type-str: #c53030;
-    --type-qck: #0066b8;
-    --type-dex: #2d8016;
-    --type-psy: #92600a;
-    --type-int: #9c277a;
-    
-    /* Type Colors - Hover/Active */
-    --type-str-active: #e53e3e;
-    --type-qck-active: #3182ce;
-    --type-dex-active: #38a169;
-    --type-psy-active: #d69e2e;
-    --type-int-active: #b832b8;
-    
-    /* UI Elements */
-    --panel-bg: #f3f3f3;
-    --modal-header: #e8e8e8;
-    --modal-body: #ffffff;
-    --modal-footer: #f3f3f3;
-    --popover-bg: #ffffff;
-    
-    /* Links */
-    --link-color: #0066b8;
-    --link-hover: #007acc;
-    
-    /* Filter Headers - lighter versions */
-    --filter-header-log: hsla(157, 60%, 85%, 0.5);
-    --filter-header-pve: hsla(220, 60%, 90%, 0.5);
-    --filter-header-pvp: hsl(0, 60%, 90%, 0.5);
-    
-    /* Table */
-    --table-stripe-odd: #ffffff;
-    --table-stripe-even: #fafafa;
-    --table-border: #e0e0e0;
-    
-    /* Scrollbars */
-    --scrollbar-track: #e1e1e1;
-    --scrollbar-thumb: #a0a0a0;
-
-    /* Buttons - Landing page */
-    --btn-green: #7FCA9F;
-    --btn-green-hover: #6EB98E;
-    --btn-blue: #85C1F5;
-    --btn-blue-hover: #74B0E4;
-    --btn-red: #E96D63;
-    --btn-red-hover: #D85C52;
-    --btn-purple: #DA70D6;
-    --btn-purple-hover: #C96995;
-    --btn-yellow: #F4BA70;
-    --btn-yellow-hover: #E3A969;
-    --btn-pink: #DEA5A4;
-    --btn-pink-hover: #A57777;
-    --btn-brown: #993300;
-    --btn-brown-hover: #662200;
-    --btn-darkpurple: #7D3C98;
-    --btn-darkpurple-hover: #5B2C6F;
-    --btn-gold: #B38F15;
-    --btn-gold-hover: #947713;
-    --btn-darkblue: #183578;
-    --btn-darkblue-hover: #092056;
-    --btn-limegreen: #32CD32;
-    --btn-limegreen-hover: #228B22;
-    --btn-darkorange: #CF5300;
-    --btn-darkorange-hover: #B54C05;
-
-    /* Bonuses */
-    --bonus-drop: #7bc8a4;
-    --bonus-stamina: skyblue;
-    --bonus-beli: #ffc65d;
-    --bonus-exp: #f16745;
-    --bonus-today: orchid;
-
-    /* Damage calc sliders */
-    --slider-turn: orchid;
-    --slider-heal: green;
-    --slider-rcv: rgb(216, 85, 14);
-    --slider-basehp: green;
-    --slider-semla: lemonchiffon;
-    --slider-damage: darkred;
-
-    /* Filter active states */
-    --filter-active: #0066b8;
-    --filter-active-hover: #007acc;
-    --filter-subclass-active: #9c277a;
-    
     /* Positive/Negative stats */
-    --positive: #2d8016;
-    --negative: #c53030;
+    --positive: #a6e3a1;
+    --negative: #f38ba8;
 
-    /* Stars */
-    --star-1: #1b86c4;
-    --star-2: #7baa1b;
-    --star-3: #c99210;
-    --star-4: #c26900;
-    --star-5: #cc0000;
-    --star-5plus: #990000;
-    --star-6: #7b2c8f;
-    --star-6plus: #cc1177;
+    /* Filter active states - mauve accent */
+    --filter-active: #cba6f7;
+    --filter-active-hover: #b4befe;
 
-    /* Tags */
-    --tag-flag: rgba(0,102,184,0.2);
-    --tag-captain: rgba(46,125,50,0.2);
-    --tag-special: rgba(214,158,46,0.2);
-    --tag-superSpecial: rgba(197,48,48,0.2);
-    --tag-swap: rgba(128,48,160,0.2);
-    --tag-sailor: rgba(138,124,38,0.2);
-    --tag-limit: rgba(6,138,140,0.2);
-    --tag-potential: rgba(189,109,10,0.2);
-    --tag-support: rgba(0,102,184,0.2);
+    /* Type Colors - Hover/Active */
+    --type-str-active: #f5c2e7;
+    --type-qck-active: #74c7ec;
+    --type-dex-active: #94e2d5;
+    --type-psy-active: #fab387;
+    --type-int-active: #f5c2e7;
 
-    /* Tag categories */
-    --tag-cat-1: rgb(211,125,6);
-    --tag-cat-2: rgb(87,131,27);
-    --tag-cat-3: rgb(194,47,135);
-    --tag-cat-4: rgb(4,151,138);
+    /* UI Elements */
+    --panel-bg: #181825;
+    --modal-header: #181825;
+    --modal-body: #1e1e2e;
+    --modal-footer: #181825;
+    --popover-bg: #181825;
 
-    /* Dual unit */
-    --dual-header-bg: #f3f3f3;
-    --dual-border: #cccccc;
+    /* Links */
+    --link-color: #cba6f7;
+    --link-hover: #b4befe;
 
-    /* Damage calculator */
-    --btn-settings: #888;
-    --btn-settings-hover: #666;
-    --btn-orchid: orchid;
-    --btn-orchid-hover: mediumorchid;
+    /* Filter Headers - Mocha darker versions */
+    --filter-header-log: hsla(150, 40%, 35%, 0.4);
+    --filter-header-pve: hsla(220, 50%, 25%, 0.4);
+    --filter-header-pvp: hsl(0, 50%, 25%, 0.4);
+
+    /* Table - Catppuccin Mocha */
+    --table-stripe-odd: #181825;
+    --table-stripe-even: #1e1e2e;
+    --table-border: #313244;
+
+    /* Scrollbars */
+    --scrollbar-track: #181825;
+    --scrollbar-thumb: #45475a;
+
+    /* Elevation - Catppuccin Mocha shadows */
+    --elevation-1: 0 1px 3px rgba(0,0,0,0.3);
+    --elevation-2: 0 4px 8px rgba(0,0,0,0.4);
+
+    /* Buttons - Landing page (Catppuccin Mocha palette) */
+    --btn-green: #a6e3a1;
+    --btn-green-hover: #94e2d5;
+    --btn-blue: #89b4fa;
+    --btn-blue-hover: #74c7ec;
+    --btn-red: #f38ba8;
+    --btn-red-hover: #f5c2e7;
+    --btn-purple: #cba6f7;
+    --btn-purple-hover: #b4befe;
+    --btn-yellow: #f9e2af;
+    --btn-yellow-hover: #fab387;
+    --btn-pink: #f5c2e7;
+    --btn-pink-hover: #f2cdcd;
+    --btn-brown: #f38ba8;
+    --btn-brown-hover: #f5c2e7;
+    --btn-darkpurple: #cba6f7;
+    --btn-darkpurple-hover: #b4befe;
+    --btn-gold: #f9e2af;
+    --btn-gold-hover: #fab387;
+    --btn-darkblue: #89b4fa;
+    --btn-darkblue-hover: #74c7ec;
+    --btn-limegreen: #a6e3a1;
+    --btn-limegreen-hover: #94e2d5;
+    --btn-darkorange: #fab387;
+    --btn-darkorange-hover: #f5a97f;
 
     /* Misc UI */
-    --ribbon-red: #d32f2f;
-    --ribbon-orange: #e65100;
+    --ribbon-red: #f38ba8;
+    --ribbon-orange: #fab387;
+}
+
+/* Light Mode - Catppuccin Latte */
+.light-mode {
+    /* Backgrounds - Catppuccin Latte */
+    --bg-primary: #eff1f5;
+    --bg-secondary: #e6e9ef;
+    --bg-tertiary: #dce0e8;
+    --bg-input: #ccd0da;
+    --bg-hover: #acb0be;
+
+    /* Text - Catppuccin Latte hierarchy */
+    --text-primary: #4c4f69;
+    --text-secondary: #5c5f77;
+    --text-tertiary: #6c6f85;
+
+    /* Borders - Catppuccin Latte */
+    --border-color: #ccd0da;
+    --border-strong: #acb0be;
+    --border-tertiary: #9ca0b0;
+
+    /* Accents - Catppuccin Latte lavender */
+    --accent: #7287fd;
+    --accent-hover: #8839ef;
+    --accent-focus: #7287fd;
+    --accent-strong: #8839ef;
+    --accent-red: #d20f39;
+    --accent-hover-red: #e64553;
+    --accent-blue: #1e66f5;
+
+    /* Type Colors - Light Mode (game hues - Latte palette) */
+    --type-str: #d20f39;
+    --type-qck: #1e66f5;
+    --type-dex: #40a02b;
+    --type-psy: #df8e1d;
+    --type-int: #8839ef;
+
+    /* Type Colors - Hover/Active */
+    --type-str-active: #e64553;
+    --type-qck-active: #209fb5;
+    --type-dex-active: #179299;
+    --type-psy-active: #fe640b;
+    --type-int-active: #ea76cb;
+
+    /* UI Elements */
+    --panel-bg: #e6e9ef;
+    --modal-header: #dce0e8;
+    --modal-body: #eff1f5;
+    --modal-footer: #dce0e8;
+    --popover-bg: #e6e9ef;
+
+    /* Links */
+    --link-color: #7287fd;
+    --link-hover: #8839ef;
+
+    /* Filter Headers - Catppuccin Latte pastel */
+    --filter-header-log: hsla(150, 40%, 85%, 0.5);
+    --filter-header-pve: hsla(220, 50%, 92%, 0.5);
+    --filter-header-pvp: hsl(0, 50%, 92%, 0.5);
+
+    /* Table - Catppuccin Latte */
+    --table-stripe-odd: #e6e9ef;
+    --table-stripe-even: #eff1f5;
+    --table-border: #ccd0da;
+
+    /* Scrollbars */
+    --scrollbar-track: #dce0e8;
+    --scrollbar-thumb: #acb0be;
+
+    /* Elevation - Catppuccin Latte shadows */
+    --elevation-1: 0 1px 3px rgba(76, 79, 105, 0.1);
+    --elevation-2: 0 4px 8px rgba(76, 79, 105, 0.15);
+
+    /* Buttons - Landing page (Catppuccin Latte palette) */
+    --btn-green: #40a02b;
+    --btn-green-hover: #359822;
+    --btn-blue: #1e66f5;
+    --btn-blue-hover: #1857d6;
+    --btn-red: #d20f39;
+    --btn-red-hover: #b01030;
+    --btn-purple: #8839ef;
+    --btn-purple-hover: #7830cc;
+    --btn-yellow: #df8e1d;
+    --btn-yellow-hover: #c98018;
+    --btn-pink: #ea76cb;
+    --btn-pink-hover: #d668b8;
+    --btn-brown: #d20f39;
+    --btn-brown-hover: #b01030;
+    --btn-darkpurple: #8839ef;
+    --btn-darkpurple-hover: #7830cc;
+    --btn-gold: #df8e1d;
+    --btn-gold-hover: #c98018;
+    --btn-darkblue: #1e66f5;
+    --btn-darkblue-hover: #1857d6;
+    --btn-limegreen: #40a02b;
+    --btn-limegreen-hover: #359822;
+    --btn-darkorange: #fe640b;
+    --btn-darkorange-hover: #e55a0a;
+
+    /* Bonuses - Catppuccin Latte */
+    --bonus-drop: #40a02b;
+    --bonus-stamina: #04a5e5;
+    --bonus-beli: #df8e1d;
+    --bonus-exp: #fe640b;
+    --bonus-today: #ea76cb;
+
+    /* Damage calc sliders */
+    --slider-turn: #ea76cb;
+    --slider-heal: #40a02b;
+    --slider-rcv: #df8e1d;
+    --slider-basehp: #40a02b;
+    --slider-semla: #df8e1d;
+    --slider-damage: #d20f39;
+
+    /* Filter active states - lavender accent */
+    --filter-active: #7287fd;
+    --filter-active-hover: #8839ef;
+    --filter-subclass-active: #8839ef;
+
+    /* Positive/Negative stats */
+    --positive: #40a02b;
+    --negative: #d20f39;
+
+    /* Stars - Catppuccin Latte */
+    --star-1: #04a5e5;
+    --star-2: #40a02b;
+    --star-3: #df8e1d;
+    --star-4: #fe640b;
+    --star-5: #d20f39;
+    --star-5plus: #b01030;
+    --star-6: #8839ef;
+    --star-6plus: #ea76cb;
+
+    /* Misc UI */
+    --ribbon-red: #d20f39;
+    --ribbon-orange: #fe640b;
+}
+
+/* Light Mode - Catppuccin Frappé */
+.light-mode.frappe {
+    /* Backgrounds - Catppuccin Frappé */
+    --bg-primary: #303446;
+    --bg-secondary: #292c3c;
+    --bg-tertiary: #232634;
+    --bg-input: #414559;
+    --bg-hover: #626880;
+
+    /* Text - Catppuccin Frappé hierarchy */
+    --text-primary: #c6d0f5;
+    --text-secondary: #b5bfe2;
+    --text-tertiary: #a5adce;
+
+    /* Borders - Catppuccin Frappé */
+    --border-color: #414559;
+    --border-strong: #51576d;
+    --border-tertiary: #626880;
+
+    /* Accents - Catppuccin Frappé lavender */
+    --accent: #c5aef8;
+    --accent-hover: #b4befe;
+    --accent-focus: #c5aef8;
+    --accent-strong: #b4befe;
+    --accent-red: #e78284;
+    --accent-hover-red: #f5bde6;
+    --accent-blue: #8caaee;
+
+    /* Type Colors - Light Mode (game hues - Frappé palette) */
+    --type-str: #e78284;
+    --type-qck: #8caaee;
+    --type-dex: #a6d189;
+    --type-psy: #e5c890;
+    --type-int: #c5aef8;
+
+    /* Type Colors - Hover/Active */
+    --type-str-active: #f5bde6;
+    --type-qck-active: #85c1dc;
+    --type-dex-active: #81c8be;
+    --type-psy-active: #ef9f76;
+    --type-int-active: #f5bde6;
+
+    /* UI Elements */
+    --panel-bg: #292c3c;
+    --modal-header: #292c3c;
+    --modal-body: #303446;
+    --modal-footer: #292c3c;
+    --popover-bg: #292c3c;
+
+    /* Links */
+    --link-color: #c5aef8;
+    --link-hover: #b4befe;
+
+    /* Filter Headers - Frappé versions */
+    --filter-header-log: hsla(150, 40%, 40%, 0.4);
+    --filter-header-pve: hsla(220, 50%, 30%, 0.4);
+    --filter-header-pvp: hsl(0, 50%, 30%, 0.4);
+
+    /* Table - Catppuccin Frappé */
+    --table-stripe-odd: #292c3c;
+    --table-stripe-even: #303446;
+    --table-border: #414559;
+
+    /* Scrollbars */
+    --scrollbar-track: #292c3c;
+    --scrollbar-thumb: #51576d;
+
+    /* Elevation - Catppuccin Frappé shadows */
+    --elevation-1: 0 1px 3px rgba(0,0,0,0.3);
+    --elevation-2: 0 4px 8px rgba(0,0,0,0.4);
+
+    /* Buttons - Landing page (Catppuccin Frappé palette) */
+    --btn-green: #a6d189;
+    --btn-green-hover: #81c8be;
+    --btn-blue: #8caaee;
+    --btn-blue-hover: #85c1dc;
+    --btn-red: #e78284;
+    --btn-red-hover: #f5bde6;
+    --btn-purple: #c5aef8;
+    --btn-purple-hover: #b4befe;
+    --btn-yellow: #e5c890;
+    --btn-yellow-hover: #ef9f76;
+    --btn-pink: #f5bde6;
+    --btn-pink-hover: #f0c6c6;
+    --btn-brown: #e78284;
+    --btn-brown-hover: #f5bde6;
+    --btn-darkpurple: #c5aef8;
+    --btn-darkpurple-hover: #b4befe;
+    --btn-gold: #e5c890;
+    --btn-gold-hover: #ef9f76;
+    --btn-darkblue: #8caaee;
+    --btn-darkblue-hover: #85c1dc;
+    --btn-limegreen: #a6d189;
+    --btn-limegreen-hover: #81c8be;
+    --btn-darkorange: #ef9f76;
+    --btn-darkorange-hover: #f5a97f;
+
+    /* Misc UI */
+    --ribbon-red: #e78284;
+    --ribbon-orange: #ef9f76;
+
+    /* Filter active states */
+    --filter-active: #c5aef8;
+    --filter-active-hover: #b4befe;
+    --filter-subclass-active: #c5aef8;
+
+    /* Positive/Negative stats */
+    --positive: #a6d189;
+    --negative: #e78284;
+
+    /* Stars */
+    --star-1: #99d1db;
+    --star-2: #a6d189;
+    --star-3: #e5c890;
+    --star-4: #ef9f76;
+    --star-5: #e78284;
+    --star-5plus: #f5bde6;
+    --star-6: #c5aef8;
+    --star-6plus: #f5bde6;
+}
+
+/* Dark Mode - Catppuccin Macchiato */
+.dark-mode.macchiato {
+    /* Backgrounds - Catppuccin Macchiato */
+    --bg-primary: #24273a;
+    --bg-secondary: #1e2030;
+    --bg-tertiary: #181926;
+    --bg-input: #363a4f;
+    --bg-hover: #5b6078;
+
+    /* Text - Catppuccin Macchiato hierarchy */
+    --text-primary: #cad3f5;
+    --text-secondary: #b8c0e0;
+    --text-tertiary: #a5adcb;
+
+    /* Borders - Catppuccin Macchiato */
+    --border-color: #363a4f;
+    --border-strong: #494d64;
+    --border-tertiary: #5b6078;
+
+    /* Accents - Catppuccin Macchiato mauve */
+    --accent: #c6a0f6;
+    --accent-hover: #b7bdf8;
+    --accent-focus: #c6a0f6;
+    --accent-strong: #b7bdf8;
+    --accent-red: #ed8796;
+    --accent-hover-red: #f5bde6;
+    --accent-blue: #8aadf4;
+
+    /* Type Colors - Dark Mode (game hues - Macchiato palette) */
+    --type-str: #ed8796;
+    --type-qck: #8aadf4;
+    --type-dex: #a6da95;
+    --type-psy: #eed49f;
+    --type-int: #c6a0f6;
+
+    /* Type Colors - Hover/Active */
+    --type-str-active: #f5bde6;
+    --type-qck-active: #7dc4e4;
+    --type-dex-active: #8bd5ca;
+    --type-psy-active: #f5a97f;
+    --type-int-active: #f5bde6;
+
+    /* UI Elements */
+    --panel-bg: #1e2030;
+    --modal-header: #1e2030;
+    --modal-body: #24273a;
+    --modal-footer: #1e2030;
+    --popover-bg: #1e2030;
+
+    /* Links */
+    --link-color: #c6a0f6;
+    --link-hover: #b7bdf8;
+
+    /* Filter Headers - Macchiato versions */
+    --filter-header-log: hsla(150, 40%, 35%, 0.4);
+    --filter-header-pve: hsla(220, 50%, 25%, 0.4);
+    --filter-header-pvp: hsl(0, 50%, 25%, 0.4);
+
+    /* Table - Catppuccin Macchiato */
+    --table-stripe-odd: #1e2030;
+    --table-stripe-even: #24273a;
+    --table-border: #363a4f;
+
+    /* Scrollbars */
+    --scrollbar-track: #1e2030;
+    --scrollbar-thumb: #494d64;
+
+    /* Elevation - Catppuccin Macchiato shadows */
+    --elevation-1: 0 1px 3px rgba(0,0,0,0.3);
+    --elevation-2: 0 4px 8px rgba(0,0,0,0.4);
+
+    /* Buttons - Landing page (Catppuccin Macchiato palette) */
+    --btn-green: #a6da95;
+    --btn-green-hover: #8bd5ca;
+    --btn-blue: #8aadf4;
+    --btn-blue-hover: #7dc4e4;
+    --btn-red: #ed8796;
+    --btn-red-hover: #f5bde6;
+    --btn-purple: #c6a0f6;
+    --btn-purple-hover: #b7bdf8;
+    --btn-yellow: #eed49f;
+    --btn-yellow-hover: #f5a97f;
+    --btn-pink: #f5bde6;
+    --btn-pink-hover: #f0c6c6;
+    --btn-brown: #ed8796;
+    --btn-brown-hover: #f5bde6;
+    --btn-darkpurple: #c6a0f6;
+    --btn-darkpurple-hover: #b7bdf8;
+    --btn-gold: #eed49f;
+    --btn-gold-hover: #f5a97f;
+    --btn-darkblue: #8aadf4;
+    --btn-darkblue-hover: #7dc4e4;
+    --btn-limegreen: #a6da95;
+    --btn-limegreen-hover: #8bd5ca;
+    --btn-darkorange: #f5a97f;
+    --btn-darkorange-hover: #f5a97f;
+
+    /* Misc UI */
+    --ribbon-red: #ed8796;
+    --ribbon-orange: #f5a97f;
+
+    /* Filter active states */
+    --filter-active: #c6a0f6;
+    --filter-active-hover: #b7bdf8;
+    --filter-subclass-active: #c6a0f6;
+
+    /* Positive/Negative stats */
+    --positive: #a6da95;
+    --negative: #ed8796;
+
+    /* Stars */
+    --star-1: #91d7e3;
+    --star-2: #a6da95;
+    --star-3: #eed49f;
+    --star-4: #f5a97f;
+    --star-5: #ed8796;
+    --star-5plus: #f5bde6;
+    --star-6: #c6a0f6;
+    --star-6plus: #f5bde6;
 }

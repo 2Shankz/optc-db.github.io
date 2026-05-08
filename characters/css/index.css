@@ -1389,6 +1389,42 @@ tr.preview td:nth-child(2) > a:after {
     min-height: 0;
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    border-top: 1px solid var(--border-color) !important;
+}
+
+.panel-default {
+    border-color: var(--border-color) !important;
+}
+
+.panel-default > .panel-heading {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-bottom-color: var(--border-color) !important;
+}
+
+/* Bootstrap override - use theme borders everywhere */
+.table > thead > tr > th,
+.table > tbody > tr > td,
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > td {
+    border-color: var(--border-color) !important;
+}
+
+.modal-content {
+    border: 1px solid var(--border-color) !important;
+}
+
+.popover {
+    border-color: var(--border-color) !important;
+}
+
+/* Modal header bottom border override */
+.modal-header {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color) !important;
 }
 
 .quick-nav {
@@ -1895,6 +1931,7 @@ a { color: var(--link-color); }
     width: 100%;
     overflow-y: scroll;
     text-align: center;
+    border-top: 1px solid var(--border-color) !important;
 }
 
 .modal-body h3 {
