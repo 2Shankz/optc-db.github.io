@@ -25,6 +25,7 @@
     --accent-hover: #b4befe;
     --accent-focus: #cba6f7;
     --accent-strong: #b4befe;
+    --text-inverse: #ffffff;
     --accent-red: #f38ba8;
     --accent-hover-red: #f5c2e7;
     --accent-blue: #89b4fa;
@@ -65,7 +66,7 @@
     /* Filter Headers - Mocha darker versions */
     --filter-header-log: hsla(150, 40%, 35%, 0.4);
     --filter-header-pve: hsla(220, 50%, 25%, 0.4);
-    --filter-header-pvp: hsl(0, 50%, 25%, 0.4);
+    --filter-header-pvp: hsla(0, 50%, 25%, 0.4);
 
     /* Table - Catppuccin Mocha */
     --table-stripe-odd: #181825;
@@ -104,11 +105,13 @@
     --btn-limegreen: #a6e3a1;
     --btn-limegreen-hover: #94e2d5;
     --btn-darkorange: #fab387;
-    --btn-darkorange-hover: #f5a97f;
+    --btn-darkorange-hover: #e59500;
 
     /* Misc UI */
     --ribbon-red: #f38ba8;
     --ribbon-orange: #fab387;
+    --fuzzy-active: #00ff00;
+    --type-text: #ffffff;
 }
 
 /* Light Mode - Catppuccin Latte */
@@ -135,6 +138,7 @@
     --accent-hover: #8839ef;
     --accent-focus: #7287fd;
     --accent-strong: #8839ef;
+    --text-inverse: #eff1f5;
     --accent-red: #d20f39;
     --accent-hover-red: #e64553;
     --accent-blue: #1e66f5;
@@ -167,7 +171,7 @@
     /* Filter Headers - Catppuccin Latte pastel */
     --filter-header-log: hsla(150, 40%, 85%, 0.5);
     --filter-header-pve: hsla(220, 50%, 92%, 0.5);
-    --filter-header-pvp: hsl(0, 50%, 92%, 0.5);
+    --filter-header-pvp: hsla(0, 50%, 92%, 0.5);
 
     /* Table - Catppuccin Latte */
     --table-stripe-odd: #e6e9ef;
@@ -245,6 +249,8 @@
     /* Misc UI */
     --ribbon-red: #d20f39;
     --ribbon-orange: #fe640b;
+    --fuzzy-active: #228b22;
+    --type-text: #ffffff;
 }
 
 /* Light Mode - Catppuccin Frappé */
@@ -271,6 +277,7 @@
     --accent-hover: #b4befe;
     --accent-focus: #c5aef8;
     --accent-strong: #b4befe;
+    --text-inverse: #c6d0f5;
     --accent-red: #e78284;
     --accent-hover-red: #f5bde6;
     --accent-blue: #8caaee;
@@ -303,7 +310,7 @@
     /* Filter Headers - Frappé versions */
     --filter-header-log: hsla(150, 40%, 40%, 0.4);
     --filter-header-pve: hsla(220, 50%, 30%, 0.4);
-    --filter-header-pvp: hsl(0, 50%, 30%, 0.4);
+    --filter-header-pvp: hsla(0, 50%, 30%, 0.4);
 
     /* Table - Catppuccin Frappé */
     --table-stripe-odd: #292c3c;
@@ -366,6 +373,9 @@
     --star-5plus: #f5bde6;
     --star-6: #c5aef8;
     --star-6plus: #f5bde6;
+
+    /* Type filter text - high contrast for readability */
+    --type-text: #ffffff;
 }
 
 /* Dark Mode - Catppuccin Macchiato */
@@ -392,6 +402,7 @@
     --accent-hover: #b7bdf8;
     --accent-focus: #c6a0f6;
     --accent-strong: #b7bdf8;
+    --text-inverse: #cad3f5;
     --accent-red: #ed8796;
     --accent-hover-red: #f5bde6;
     --accent-blue: #8aadf4;
@@ -424,7 +435,7 @@
     /* Filter Headers - Macchiato versions */
     --filter-header-log: hsla(150, 40%, 35%, 0.4);
     --filter-header-pve: hsla(220, 50%, 25%, 0.4);
-    --filter-header-pvp: hsl(0, 50%, 25%, 0.4);
+    --filter-header-pvp: hsla(0, 50%, 25%, 0.4);
 
     /* Table - Catppuccin Macchiato */
     --table-stripe-odd: #1e2030;
@@ -487,6 +498,9 @@
     --star-5plus: #f5bde6;
     --star-6: #c6a0f6;
     --star-6plus: #f5bde6;
+
+    /* Type filter text - high contrast for readability */
+    --type-text: #ffffff;
 }
 
 /* Modal Theme Overrides - Latte (Light) */
