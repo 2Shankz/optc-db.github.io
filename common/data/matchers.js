@@ -440,7 +440,7 @@
 				name: "Activates: Special",
 				targets: ["support"],
 				regex:
-					/When you reach the ([\w]+) stage, activates supported character's Special/i,
+					/When you reach the ([\w]+) stage[^.]*?, activates supported character's Special/i,
 				submatchers: [
 					{
 						type: "option",
