@@ -3729,7 +3729,7 @@
 			},
 			{
 				name: "Enemy Damage Reduction to ATK",
-				targets: ["special"],
+				targets: ["special", "superSpecial"],
 				regex:
 					/boosts Enemy Damage Reduction to ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([?.\d]+)x-([?.\d]+)x, proportional to the strength of enemies' Percent Damage Reduction buff, for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
 				submatchers: [
@@ -3930,7 +3930,7 @@
 					{
 						type: "option",
 						description: "STND Expansion",
-						regex: /End of Turn Healing/i,
+						regex: /STND Expansion/i,
 						groups: [1],
 						cssClasses: ["min-width-6"],
 					},
@@ -6055,6 +6055,11 @@
 							"TND",
 							"BOMB",
 							"EMPTY",
+							"Super STR",
+							"Super DEX",
+							"Super QCK",
+							"Super PSY",
+							"Super INT",
 							"SUPERBOMB",
 							"RAINBOW",
 							"SEMLA",
