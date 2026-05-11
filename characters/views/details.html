@@ -5,16 +5,23 @@
         <div class="custom-modal">
         <div class="modal-dialog">
           <div class="modal-content animated rollIn">
-            <div class="modal-header" style="text-align: center">
-              <div
-                class="btn btn-default back-button"
-                ng-if="withButton"
-                ng-click="onBackClick()"
-              >
-                 <i class="material-icons">arrow_back</i>
+            <div class="modal-header" ng-if="unit">
+              <div class="header-buttons-left">
+                <div class="btn btn-default close-button" ui-sref="^" title="Close">
+                  <span class="material-icons" style="font-size: 20px;">close</span>
+                </div>
+                <div class="btn btn-default back-button" ng-if="withButton" ng-click="onBackClick()">
+                  <i class="material-icons">arrow_back</i>
+                </div>
               </div>
-              {{::unit.name}}
+              <div class="header-title">{{::unit.name}}</div>
+              <div class="header-buttons-right">
+                <button class="btn btn-default modal-theme-btn header-theme-btn" ng-click="toggleModalTheme()" title="Toggle modal theme">
+                  <i class="material-icons">{{getModalThemeIcon()}}</i>
+                </button>
+              </div>
             </div>
+            <div class="modal-header" ng-if="!unit" style="height: 50px;"></div>
 
 <div class="modal-body" id="modal-body-top">
             

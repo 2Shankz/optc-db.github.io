@@ -36,7 +36,7 @@
 							tabCol.width = 50;
 						} else if (index === 1) {
 							tabCol.widthGrow = 1;
-							tabCol.minWidth = 200;
+							tabCol.minWidth = 220;
 							tabCol.formatter = "textarea";
 						} else if (index === 2 || index === 3 || index === 8 || index === 10) {
 							tabCol.width = 80;

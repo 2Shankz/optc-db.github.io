@@ -557,7 +557,51 @@ input#burgerMenuState {
     }
 
     .modal-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         padding: 10px 15px !important;
+        position: relative !important;
+    }
+
+    .header-buttons-left {
+        display: flex !important;
+        gap: 8px !important;
+        z-index: 1 !important;
+        flex-shrink: 0 !important;
+    }
+
+    .header-buttons-right {
+        display: flex !important;
+        gap: 8px !important;
+        z-index: 1 !important;
+        flex-shrink: 0 !important;
+    }
+
+    .header-title {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: calc(100% - 160px) !important;
+    }
+
+    .close-button,
+    .header-theme-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .close-button .material-icons,
+    .header-theme-btn .material-icons {
+        font-size: 18px !important;
+    }
+
+    .modal-header .back-button {
+        display: none !important;
     }
 
     .modal-body {
