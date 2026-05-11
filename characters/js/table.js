@@ -1584,5 +1584,25 @@ var flags = window.flags[unit.id] || {};
       $storage.set("characterLog", temp);
       $rootScope.showLogFilters = temp.length > 0;
     };
+
+    document.addEventListener('click', function(e) {
+      var anchor = e.target.closest('a[ui-sref^="main.search.view"]');
+      if (anchor && $rootScope.table && $rootScope.table.parameters) {
+        e.preventDefault();
+        var uiSref = anchor.getAttribute('ui-sref');
+        var match = uiSref.match(/id:\s*(\d+)/);
+        var prevMatch = uiSref.match(/previous:\s*\[(.*?)\]/);
+        if (match) {
+          var id = match[1];
+          var previous = prevMatch ? JSON.parse('[' + prevMatch[1] + ']') : [];
+          var currentQuery = $rootScope.table.parameters.query || '';
+          $rootScope.$evalAsync(function() {
+            var $state = angular.element(document.querySelector('[ng-view]')).injector().get('$state');
+            $state.go(".", { query: currentQuery }, { notify: false });
+            $state.go("main.search.view", { id: id, previous: previous });
+          });
+        }
+      }
+    }, true);
   });
 })();

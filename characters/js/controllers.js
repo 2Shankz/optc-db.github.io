@@ -37,7 +37,13 @@
 
       $scope.$on("$stateChangeSuccess", function (e) {
         if ($state.current.name == "main.search") {
-          $scope.query = $state.params.query;
+          $scope.query = $state.params.query || '';
+        }
+      });
+
+      $scope.$on("$stateChangeStart", function(e, toState, toParams) {
+        if ($state.current.name === "main.search" && toState.name !== "main.search") {
+          $state.go("main.search", { query: $scope.query || '' }, { notify: false });
         }
       });
 
@@ -112,6 +118,7 @@
           if (e.target.id === 'picker') return;
           $scope.$apply(function() {
             $scope.query = '';
+            $state.go(".", { query: '' });
           });
         } else if (e.key === 'Enter') {
           $state.go(".", { query: $scope.query });

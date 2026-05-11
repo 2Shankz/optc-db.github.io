@@ -68,6 +68,8 @@
 							};
 							tabCol.cellClick = function(e, cell) {
 								var id = parseInt(cell.getData().col0, 10);
+								var query = $rootScope.table && $rootScope.table.parameters && $rootScope.table.parameters.query || '';
+								$state.go(".", { query: query }, { notify: false });
 								$state.go("main.search.view", { id: id, previous: [] });
 							};
 						}
@@ -214,12 +216,10 @@
 					if (query && !hasSidebarFilters) {
 						var q = query.toLowerCase();
 						window.charTable.setFilter(function(row) {
-							var name = (row.col1 || '').toLowerCase();
-							var id = row.col0 || '';
-							var type = (row.col2 || '').toLowerCase();
-							var cls = (row.col3 || '').toLowerCase();
-							return name.indexOf(q) !== -1 || id.indexOf(q) !== -1 || 
-							       type.indexOf(q) !== -1 || cls.indexOf(q) !== -1;
+							var id = parseInt(row.col0, 10);
+							var fullName = (window.Utils && window.Utils.getFullUnitName) ? window.Utils.getFullUnitName(id) : (row.col1 || '');
+							var idStr = row.col0 || '';
+							return fullName.toLowerCase().indexOf(q) !== -1 || idStr.indexOf(q) !== -1;
 						});
 						lastQuery = query;
 					} else if (!query && lastQuery) {
@@ -230,9 +230,10 @@
 
 				scope.$on('$stateChangeSuccess', function() {
 					$timeout(function() {
-						if (window.charTable) {
-							window.charTable.redraw(true);
-						}
+						// Temporarily disabled for testing - re-enable if issues arise
+						// if (window.charTable) {
+						// 	window.charTable.redraw(true);
+						// }
 					}, 300);
 				});
 			},
@@ -381,7 +382,7 @@ directives.animateCollapse = function ($timeout, $document) {
 		};
 	};
 
-directives.goBack = function ($state) {
+directives.goBack = function ($state, $rootScope) {
 		return {
 			restrict: "A",
 			link: function (scope, element, attrs) {
@@ -392,6 +393,8 @@ directives.goBack = function ($state) {
 					$(".quick-nav").addClass("closing");
 					$(".backdrop").addClass("closing");
 					setTimeout(function () {
+						var query = $rootScope.table && $rootScope.table.parameters && $rootScope.table.parameters.query || '';
+						$state.go(".", { query: query }, { notify: false });
 						$state.go("^");
 					}, 300);
 				});
@@ -399,7 +402,7 @@ directives.goBack = function ($state) {
 		};
 	};
 
-	directives.evolution = function ($state, $stateParams) {
+	directives.evolution = function ($state, $stateParams, $rootScope) {
 		return {
 			restrict: "E",
 			replace: true,
@@ -410,13 +413,15 @@ directives.goBack = function ($state) {
 					if (!Number.isInteger(id)) return;
 					if (id == parseInt($stateParams.id, 10)) return;
 					var previous = $stateParams.previous.concat([$stateParams.id]);
+					var query = $rootScope.table && $rootScope.table.parameters && $rootScope.table.parameters.query || '';
+					$state.go(".", { query: query }, { notify: false });
 					$state.go("main.search.view", { id: id, previous: previous });
 				};
 			},
 		};
 	};
 
-	directives.unit = function ($state, $stateParams) {
+	directives.unit = function ($state, $stateParams, $rootScope) {
 		return {
 			restrict: "E",
 			scope: { uid: "=" },
@@ -426,6 +431,8 @@ directives.goBack = function ($state) {
 				scope.goToState = function (id) {
 					if (id == parseInt($stateParams.id, 10)) return;
 					var previous = $stateParams.previous.concat([$stateParams.id]);
+					var query = $rootScope.table && $rootScope.table.parameters && $rootScope.table.parameters.query || '';
+					$state.go(".", { query: query }, { notify: false });
 					$state.go("main.search.view", { id: id, previous: previous });
 				};
 			},
