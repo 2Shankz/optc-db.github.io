@@ -14386,6 +14386,20 @@
 					},
 					{
 						type: "option",
+						description: "Fixed",
+						regex: /Fixed Damage/i,
+						groups: [2],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
+						description: "Percentage",
+						regex: /Percentage Damage/i,
+						groups: [2],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "option",
 						description: "Ignoring DEF",
 						regex: /Damage Ignoring DEF/i,
 						groups: [2],
