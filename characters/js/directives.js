@@ -27,10 +27,16 @@
 							vertAlign: "middle",
 						};
 						
+						// First 4 columns (ID, Name, Type, Class) fixed width
+						if (index < 4) {
+							// These columns stay at fixed widths
+						}
+						
 						if (index === 0) {
-							tabCol.width = 60;
+							tabCol.width = 50;
 						} else if (index === 1) {
 							tabCol.widthGrow = 1;
+							tabCol.minWidth = 200;
 							tabCol.formatter = "textarea";
 						} else if (index === 2 || index === 3 || index === 8 || index === 10) {
 							tabCol.width = 80;

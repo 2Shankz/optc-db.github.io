@@ -461,15 +461,40 @@ input#burgerMenuState {
         display: inline-block;
     }
 
-    #mainTable {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+    /* Tabulator table mobile styles */
+    #tabulator-table {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
     }
 
-    #mainTable td,
-    #mainTable th {
-        white-space: nowrap;
+    #tabulator-table .tabulator-tableholder {
+        overflow-x: auto !important;
+        overflow-y: auto !important;
+    }
+
+    #tabulator-table .tabulator-table {
+        overflow-x: visible !important;
+    }
+
+    #tabulator-table .tabulator-header {
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+    }
+
+    #tabulator-table .tabulator-body {
+        overflow-x: auto !important;
+        overflow-y: auto !important;
+    }
+
+    /* On mobile, show only first 4 columns by default, allow scroll to see rest */
+    #tabulator-table .tabulator-col:nth-child(n+5),
+    #tabulator-table .tabulator-cell:nth-child(n+5) {
+        min-width: 60px !important;
     }
 
     .dataTables_wrapper {
@@ -484,43 +509,76 @@ input#burgerMenuState {
         display: none;
     }
 
+    /* Mobile modal - full screen, no gaps */
     .inner-container {
-        width: calc(100% - 2px) !important;
-        max-width: calc(100% - 2px) !important;
-        padding: 5px !important;
+        position: fixed !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: 100vh !important;
+        top: 0 !important;
+        left: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
         box-sizing: border-box !important;
+        z-index: 1050 !important;
     }
 
     .modal-wrapper {
-        width: calc(100% - 4px) !important;
-        max-width: calc(100% - 4px) !important;
+        position: fixed !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: 100vh !important;
+        top: 0 !important;
         left: 0 !important;
-        margin-left: 2px !important;
+        margin: 0 !important;
+        padding: 0 !important;
         box-sizing: border-box !important;
+        z-index: 1050 !important;
     }
 
     .custom-modal {
         width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box !important;
+        height: 100% !important;
     }
 
     .modal-dialog {
         width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box !important;
+        height: 100% !important;
+        margin: 0 !important;
     }
 
     .modal-content {
         width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+    }
+
+    .modal-header {
+        padding: 10px 15px !important;
+    }
+
+    .modal-body {
+        overflow-y: auto !important;
+        height: calc(100vh - 50px) !important;
+    }
+
+    /* Hide quick-nav on mobile - it causes overflow issues */
+    .quick-nav {
+        display: none !important;
     }
 
     body, html {
         overflow-x: hidden !important;
         margin: 0 !important;
         padding: 0 !important;
+    }
+
+    /* Ensure backdrop doesn't interfere */
+    .backdrop {
+        position: fixed !important;
     }
 }
 
