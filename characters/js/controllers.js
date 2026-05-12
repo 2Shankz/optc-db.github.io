@@ -17,40 +17,68 @@
       $controller
     ) {
 
-      $scope.query = $state.params.query;
+      $scope.query = $state.params.query || '';
+
+      var updateUrlTimeout = null;
+
+      function updateUrl(query) {
+        if (updateUrlTimeout) $timeout.cancel(updateUrlTimeout);
+        updateUrlTimeout = $timeout(function() {
+          $state.go('.', { query: query || '' }, { notify: false, reload: false });
+        }, 300);
+      }
 
       $scope.$watch("query", function (query) {
-        if (
-          query === null ||
-          query === undefined ||
-          $scope.query == $stateParams.query
-        )
-          return;
-        $scope.table.parameters = CharUtils.generateSearchParameters(
-          $scope.query,
+        if (query === null || query === undefined) return;
+        updateUrl(query);
+        var params = CharUtils.generateSearchParameters(
+          query,
           jQuery.extend({}, $rootScope.filters)
         );
         if ($rootScope.table) {
-          $rootScope.table.parameters = $scope.table.parameters;
+          $rootScope.table.parameters = params;
         }
       });
 
-      $scope.$on("$stateChangeSuccess", function (e) {
-        if ($state.current.name == "main.search") {
+      $scope.$on("$locationChangeSuccess", function() {
+        $scope.$evalAsync(function() {
           $scope.query = $state.params.query || '';
+        });
+      });
+
+      document.addEventListener('keydown', function(e) {
+        var tag = e.target.tagName.toLowerCase();
+        if (tag === 'input' || tag === 'textarea') return;
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
+        if (e.key === 'Backspace' && e.target.id !== 'picker') {
+          $scope.$apply(function() {
+            $scope.query = '';
+          });
+        } else if (e.key.length === 1) {
+          $scope.$apply(function() {
+            if (!$scope.query) $scope.query = '';
+            $scope.query += e.key;
+          });
         }
       });
 
-      $scope.$on("$stateChangeStart", function(e, toState, toParams) {
-        if ($state.current.name === "main.search" && toState.name !== "main.search") {
-          $state.go("main.search", { query: $scope.query || '' }, { notify: false });
-        }
-      });
+      $scope.getRandChar = function () {
+        var range = parseInt($rootScope.table.data.length) + 1;
+        return $rootScope.table.data[Math.floor(Math.random() * range)][0];
+      };
+
+      $scope.clearQuery = function () {
+        $scope.query = "";
+      };
+
+      $scope.saveFuzzy = function () {
+        $storage.set("fuzzy", $rootScope.table.fuzzy);
+        $rootScope.table.refresh();
+      };
 
       $scope.theme = $storage.get('optc-theme', 'dark');
       $scope.modalTheme = $storage.get('optc-modal-theme', 'light');
 
-      // Make modal theme functions available to child scopes (like DetailsCtrl)
       $rootScope.modalTheme = $scope.modalTheme;
       $rootScope.toggleModalTheme = $scope.toggleModalTheme;
       $rootScope.getModalThemeIcon = $scope.getModalThemeIcon;
@@ -70,7 +98,6 @@
 
       applyTheme($scope.theme, document.documentElement);
 
-      // For modal, we need to apply to a specific scope - handled via class on modal elements
       document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
       document.documentElement.classList.add('modal-' + $scope.modalTheme);
 
@@ -108,51 +135,12 @@
       $scope.getModalThemeIcon = function() {
         return themeIcons[$scope.modalTheme] || 'light_mode';
       };
-
-      document.addEventListener('keydown', function(e) {
-        var tag = e.target.tagName.toLowerCase();
-        var isInput = tag === 'input' || tag === 'textarea';
-        if (isInput && e.target.id !== 'picker') return;
-        if (e.ctrlKey || e.metaKey || e.altKey) return;
-        if (e.key === 'Backspace') {
-          if (e.target.id === 'picker') return;
-          $scope.$apply(function() {
-            $scope.query = '';
-            $state.go(".", { query: '' });
-          });
-        } else if (e.key === 'Enter') {
-          $state.go(".", { query: $scope.query });
-        } else if (e.key.length === 1 && !isInput) {
-          $scope.$apply(function() {
-            if (!$scope.query) $scope.query = '';
-            $scope.query += e.key;
-          });
-        }
-      });
-
-      document.getElementById('picker').addEventListener('blur', function() {
-        $state.go(".", { query: $scope.query });
-      });
-
-      $scope.getRandChar = function () {
-        var range = parseInt($rootScope.table.data.length) + 1;
-        return $rootScope.table.data[Math.floor(Math.random() * range)][0];
-      };
-
-      $scope.clearQuery = function () {
-        $scope.query = "";
-      };
-
-      $scope.saveFuzzy = function () {
-        $storage.set("fuzzy", $scope.table.fuzzy);
-        $scope.table.refresh();
-      };
     }
   );
 
   app.controller(
     "SidebarCtrl",
-    function ($scope, $rootScope, $stateParams, $timeout) {
+    function ($scope, $rootScope, $state, $stateParams, $timeout) {
       $scope.availableClasses = window.availableClasses;
       $scope.availableTags = window.availableTags;
       $scope.farmableOptions = window.farmableOptions;
@@ -169,12 +157,12 @@
             )
               return;
             var data = jQuery.extend({}, $rootScope.filters);
-            $scope.table.parameters = CharUtils.generateSearchParameters(
-              $stateParams.query,
+            var params = CharUtils.generateSearchParameters(
+              $state.params.query || '',
               data
             );
             if ($rootScope.table) {
-              $rootScope.table.parameters = $scope.table.parameters;
+              $rootScope.table.parameters = params;
             }
             if (!$scope.$$phase) $scope.$apply();
           },
@@ -498,6 +486,7 @@ var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
         $state.go("main.search.view", {
           id: previous,
           previous: $stateParams.previous,
+          query: $stateParams.query || ''
         });
       };
       $scope.openBigThumbTab = function (id) {

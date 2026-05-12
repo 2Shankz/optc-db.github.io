@@ -1587,7 +1587,7 @@ var flags = window.flags[unit.id] || {};
 
     document.addEventListener('click', function(e) {
       var anchor = e.target.closest('a[ui-sref^="main.search.view"]');
-      if (anchor && $rootScope.table && $rootScope.table.parameters) {
+      if (anchor) {
         e.preventDefault();
         var uiSref = anchor.getAttribute('ui-sref');
         var match = uiSref.match(/id:\s*(\d+)/);
@@ -1595,12 +1595,10 @@ var flags = window.flags[unit.id] || {};
         if (match) {
           var id = match[1];
           var previous = prevMatch ? JSON.parse('[' + prevMatch[1] + ']') : [];
-          var currentQuery = $rootScope.table.parameters.query || '';
-          $rootScope.$evalAsync(function() {
-            var $state = angular.element(document.querySelector('[ng-view]')).injector().get('$state');
-            $state.go(".", { query: currentQuery }, { notify: false });
-            $state.go("main.search.view", { id: id, previous: previous });
-          });
+          var $state = angular.element(document.querySelector('[ng-view]')).injector().get('$state');
+          var mainScope = angular.element(document.querySelector('[ng-view]')).scope();
+          var currentQuery = mainScope && mainScope.query ? mainScope.query : '';
+          $state.go("main.search.view", { id: id, previous: previous, query: currentQuery });
         }
       }
     }, true);
