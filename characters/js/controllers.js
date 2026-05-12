@@ -371,6 +371,8 @@ var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
       $scope.modalTheme = $rootScope.modalTheme;
       $scope.toggleModalTheme = $rootScope.toggleModalTheme;
       $scope.getModalThemeIcon = $rootScope.getModalThemeIcon;
+      $scope.characterLog = $rootScope.characterLog;
+      $scope.checkLog = $rootScope.checkLog;
 
       var rumbleRequest = {
         method: "get",

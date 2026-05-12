@@ -11,13 +11,16 @@
 	directives.characterTable = function (
 		$rootScope,
 		$timeout,
-		$state
+		$state,
+		$compile
 	) {
 		return {
 			restrict: "E",
 			replace: true,
 			template: '<div id="tabulator-table"></div>',
 			link: function (scope, element, attrs) {
+                scope.characterLog = $rootScope.characterLog;
+                scope.checkLog = $rootScope.checkLog;
 				var convertColumns = function(dtColumns) {
 					return dtColumns.map(function(col, index) {
 						var tabCol = {
@@ -155,25 +158,53 @@
 					movableColumns: true,
 					columns: convertColumns(scope.table.columns),
 					rowFormatter: function(row) {
+						var data = row.getData();
+						var id = String(parseInt(data.col0, 10)); // Normalize to integer string
 						var cells = row.getCells();
 						var lastCell = cells[cells.length - 1];
-						if (lastCell && lastCell.getElement().querySelector('label')) {
-							return; // Already formatted - skip to prevent re-render on scroll
+						var existingWrapper = lastCell && lastCell.getElement().querySelector('label.checkbox-cl');
+						var checkbox = null;
+
+						if (existingWrapper) {
+							checkbox = existingWrapper.querySelector('input[type="checkbox"]');
+							if (checkbox) {
+								checkbox.checked = !!(scope.characterLog && scope.characterLog[id]);
+							}
+							return;
 						}
-						
-						var data = row.getData();
-						var id = data.col0;
-						var checkbox = document.createElement('label');
-						var input = document.createElement('input');
-						input.setAttribute('type', 'checkbox');
-						input.setAttribute('ng-change', 'checkLog(' + id + ')');
-						input.setAttribute('ng-model', 'characterLog[' + id + ']');
-						checkbox.appendChild(input);
-						
+
+						var wrapper = document.createElement('label');
+						wrapper.className = 'checkbox-cl';
+						checkbox = document.createElement('input');
+						checkbox.type = 'checkbox';
+						checkbox.dataset.id = id;
+
+						// Initialize checked state from characterLog
+						if (scope.characterLog && scope.characterLog[id]) {
+							checkbox.checked = true;
+						}
+
+						checkbox.addEventListener('change', function() {
+							var unitId = this.dataset.id;
+							if (this.checked) {
+								scope.$apply(function() {
+									scope.characterLog[unitId] = true;
+									scope.checkLog();
+								});
+							} else {
+								scope.$apply(function() {
+									delete scope.characterLog[unitId];
+									scope.checkLog();
+								});
+							}
+						});
+
+						wrapper.appendChild(checkbox);
+
 						if (cells.length > 0) {
-							cells[cells.length - 1].getElement().appendChild(checkbox);
+							cells[cells.length - 1].getElement().appendChild(wrapper);
 						}
-						
+
 						// Handle lazy-loaded images
 						for (var i = 0; i < cells.length; i++) {
 							var cellEl = cells[i].getElement();
@@ -202,6 +233,14 @@
 				scope.$watch('table.data', function(newData, oldData) {
 					if (newData !== oldData && window.charTable) {
 						window.charTable.setData(transformData(newData));
+					}
+				}, true);
+
+				// Watch characterLog changes and update checkboxes
+				scope.$watch(function() { return $rootScope.characterLog; }, function(newLog) {
+					if (newLog && window.charTable) {
+						scope.characterLog = newLog;
+						window.charTable.redraw();
 					}
 				}, true);
 
