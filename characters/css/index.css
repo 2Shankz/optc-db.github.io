@@ -505,11 +505,31 @@ input#burgerMenuState {
         padding: 8px 0;
     }
 
-    #queryContainer > .toolbar-sep {
-        display: none;
-    }
+#queryContainer > .toolbar-sep {
+         display: none;
+     }
 
-    /* Mobile modal - full screen, no gaps */
+     #queryContainer {
+         overflow-x: auto;
+         -webkit-overflow-scrolling: touch;
+         padding: 6px 8px;
+         gap: 2px;
+     }
+
+     #queryContainer > input {
+         min-width: 80px;
+         flex-shrink: 1;
+     }
+
+     #queryContainer > button,
+     #queryContainer > label,
+     #queryContainer > a {
+         flex-shrink: 0;
+         padding: 4px 5px;
+         margin: 0 2px;
+     }
+
+     /* Mobile modal - full screen, no gaps */
     .inner-container {
         position: fixed !important;
         width: 100vw !important;
