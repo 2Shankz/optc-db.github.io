@@ -1,6 +1,6 @@
 # OPTC Database
 
-[![Discord](https://img.shields.io/badge/Discord-2shankzu-5865F2?logo=discord&logoColor=white)](https://discord.gg/MRhRrbF)
+[![Discord](https://img.shields.io/badge/Discord-2Shankz-5865F2?logo=discord&logoColor=white)](https://discord.gg/MRhRrbF)
 [![GitHub Pages](https://img.shields.io/github/deployments/2Shankz/optc-db.github.io/github-pages?label=GitHub%20Pages&logo=github)](https://2shankz.github.io/optc-db.github.io/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE.md)
 
