@@ -4520,6 +4520,7 @@ window.tags = {
 	"4552": ["Revolutionary Army","Paramythia-type","Egghead Arc"],
 	"4553": ["SWORD","Navy","Navy Vice Admiral","Egghead Arc"],
 	"4554": ["Vegapunk","Scientist","Paramythia-type","Egghead Arc"],
+	"4555": ["Vegapunk","Scientist","Egghead Arc"],
 	"4556": ["Spade Pirates","Logia-type","Land of Wano Arc"],
 	"4557": ["Straw Hat Pirates","Four Emperors","Worst Generation","Mythical Zoan-type","Egghead Arc"],
 	"4558": ["Straw Hat Pirates","Four Emperors","Worst Generation","Mythical Zoan-type","Egghead Arc"],
