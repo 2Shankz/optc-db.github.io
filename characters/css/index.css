@@ -2563,3 +2563,49 @@ a { color: var(--link-color); }
 :root.modal-macchiato .quick-nav-sep {
     background: var(--modal-border) !important;
 }
+
+.active-filters {
+    padding: 2px 10px 6px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    flex: 0 0 auto;
+}
+
+.active-filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 11px;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.active-filter-tag .filter-remove {
+    font-size: 13px;
+    cursor: pointer;
+    opacity: 0.5;
+    margin-left: 2px;
+}
+
+.active-filter-tag .filter-remove:hover {
+    opacity: 1;
+}
+
+.clear-all-filters {
+    font-size: 11px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 2px 6px;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.clear-all-filters:hover {
+    color: var(--text-primary);
+}

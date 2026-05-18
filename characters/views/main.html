@@ -40,6 +40,14 @@
     </button>
 </div>
 
+<div class="active-filters" ng-if="activeFilters.length > 0">
+    <span class="active-filter-tag" ng-repeat="f in activeFilters track by f.id">
+        <span class="filter-label">{{f.label}}</span>
+        <i class="material-icons filter-remove" ng-click="removeFilter(f)">close</i>
+    </span>
+    <span class="clear-all-filters" ng-click="clearAllFilters()">Clear all</span>
+</div>
+
 <div id="tableContainer">
     <character-table></character-table>
 </div>

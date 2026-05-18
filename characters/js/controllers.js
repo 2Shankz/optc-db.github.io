@@ -135,6 +135,146 @@
       $scope.getModalThemeIcon = function() {
         return themeIcons[$scope.modalTheme] || 'light_mode';
       };
+
+      function computeActiveFilters(filters) {
+        var active = [];
+        filters.types.forEach(function (t) {
+          active.push({ id: 'type-' + t, category: 'types', value: t, label: 'Type: ' + t });
+        });
+        filters.classes.forEach(function (c) {
+          active.push({ id: 'class-' + c, category: 'classes', value: c, label: 'Class: ' + c });
+        });
+        filters.tags.forEach(function (t) {
+          active.push({ id: 'tag-' + t.name, category: 'tags', value: t, label: 'Tag: ' + t.name });
+        });
+        filters.stars.forEach(function (s) {
+          active.push({ id: 'star-' + s, category: 'stars', value: s, label: s + '\u2605' });
+        });
+        if (filters.cost[0] !== 1 || filters.cost[1] !== 99) {
+          active.push({ id: 'cost', category: 'cost', value: filters.cost, label: 'Cost: ' + filters.cost[0] + '-' + filters.cost[1] });
+        }
+        if (filters.rumbleCost[0] !== 1 || filters.rumbleCost[1] !== 99) {
+          active.push({ id: 'rumbleCost', category: 'rumbleCost', value: filters.rumbleCost, label: 'Rumble Cost: ' + filters.rumbleCost[0] + '-' + filters.rumbleCost[1] });
+        }
+        Object.keys(window.exclusiveFilterLabels).forEach(function (key) {
+          if (filters[key]) {
+            var label = window.exclusiveFilterLabels[key];
+            if (label.indexOf(': ') > 0) {
+              if (key === 'shop') {
+                var shopName = Object.keys(window.shops || {}).find(function (k) { return window.shops[k] === filters[key]; });
+                label += (shopName || 'Unknown');
+              } else {
+                label += filters[key];
+              }
+            }
+            active.push({ id: 'excl-' + key, category: key, value: filters[key], label: label });
+          }
+        });
+        Object.keys(filters.farmable || {}).forEach(function (key) {
+          var val = filters.farmable[key];
+          if (val !== null && val !== undefined) {
+            var opt = (window.farmableOptions || []).find(function (o) { return o.key === key; });
+            if (opt) {
+              active.push({ id: 'farmable-' + key, category: 'farmable', value: key, label: val ? opt.label : opt.hideLabel });
+            }
+          }
+        });
+        Object.keys(filters.nonFarmable || {}).forEach(function (key) {
+          var val = filters.nonFarmable[key];
+          if (val !== null && val !== undefined) {
+            var opt = (window.nonFarmableOptions || []).find(function (o) { return o.key === key; });
+            if (opt) {
+              active.push({ id: 'nonfarmable-' + key, category: 'nonFarmable', value: key, label: val ? opt.label : opt.hideLabel });
+            }
+          }
+        });
+        Object.keys(filters.custom || {}).forEach(function (target) {
+          Object.keys(filters.custom[target] || {}).forEach(function (group) {
+            Object.keys(filters.custom[target][group].matchers || {}).forEach(function (name) {
+              var matcher = filters.custom[target][group].matchers[name];
+              if (matcher.enabled) {
+                var displayName = name;
+                if (window.matchers && window.matchers[target] && window.matchers[target][group] && window.matchers[target][group][name]) {
+                  displayName = window.matchers[target][group][name].name || name;
+                }
+                active.push({ id: 'custom-' + target + '-' + name, category: 'custom', target: target, group: group, name: name, label: target + ': ' + displayName });
+              }
+            });
+          });
+        });
+        return active;
+      }
+
+      $scope.$watch(
+        function () { return $rootScope.filters; },
+        function (filters) {
+          if (!filters || Object.keys(filters).length === 0) {
+            $scope.activeFilters = [];
+            return;
+          }
+          $scope.activeFilters = computeActiveFilters(filters);
+        },
+        true
+      );
+
+      $scope.removeFilter = function (filter) {
+        switch (filter.category) {
+          case 'types':
+          case 'classes':
+          case 'tags':
+          case 'stars':
+            var arr = $rootScope.filters[filter.category];
+            var idx = arr.indexOf(filter.value);
+            if (idx > -1) arr.splice(idx, 1);
+            break;
+          case 'cost':
+            $rootScope.filters.cost = [1, 99];
+            break;
+          case 'rumbleCost':
+            $rootScope.filters.rumbleCost = [1, 99];
+            break;
+          case 'farmable':
+            delete $rootScope.filters.farmable[filter.value];
+            break;
+          case 'nonFarmable':
+            delete $rootScope.filters.nonFarmable[filter.value];
+            break;
+          case 'custom':
+            $rootScope.filters.custom[filter.target][filter.group].matchers[filter.name].enabled = false;
+            break;
+          default:
+            if (filter.category === 'shop' || (typeof filter.value === 'string' && window.exclusiveFilterLabels[filter.category] && window.exclusiveFilterLabels[filter.category].indexOf(': ') > 0)) {
+              $rootScope.filters[filter.category] = null;
+            } else {
+              $rootScope.filters[filter.category] = false;
+            }
+        }
+      };
+
+      $scope.clearAllFilters = function () {
+        $rootScope.filters.types = [];
+        $rootScope.filters.classes = [];
+        $rootScope.filters.tags = [];
+        $rootScope.filters.stars = [];
+        $rootScope.filters.cost = [1, 99];
+        $rootScope.filters.rumbleCost = [1, 99];
+        $rootScope.filters.farmable = {};
+        $rootScope.filters.nonFarmable = {};
+        Object.keys($rootScope.filters.custom || {}).forEach(function (target) {
+          Object.keys($rootScope.filters.custom[target] || {}).forEach(function (group) {
+            Object.keys($rootScope.filters.custom[target][group].matchers || {}).forEach(function (name) {
+              $rootScope.filters.custom[target][group].matchers[name].enabled = false;
+            });
+          });
+        });
+        Object.keys(window.exclusiveFilterLabels).forEach(function (key) {
+          if (window.exclusiveFilterLabels[key].indexOf(': ') > 0) {
+            $rootScope.filters[key] = null;
+          } else {
+            $rootScope.filters[key] = false;
+          }
+        });
+      };
     }
   );
 
@@ -171,64 +311,46 @@
       });
 
       $scope.clearFilters = function () {
-        $rootScope.filters = {
-          custom: {},
-          classes: [],
-          tags: [],
-          types: [],
-          stars: [],
-          cost: [1, 99],
-          rumbleCost: [1, 99],
-          toggle: true,
-          typeEnabled: false,
-          characterEnabled: false,
-          classEnabled: false,
-          tagEnabled: false,
-          rumbleStyleEnabled: false,
-          dropEnabled: false,
-          temporaryEnabled: false,
-          specCaptEnabled: false,
-          tmkcEnabled: false,
-          exclusionEnabled: false,
-          costEnabled: false,
-          rarityEnabled: false,
-          farmEnabled: false,
-          nonfarmEnabled: false,
-          farmable: {},
-          nonFarmable: {},
-        };
-
-        // no idea why both local `filters` and `$rootScope.filters` exist
-        for (const target in window.matchers) {
-          $rootScope.filters.custom[target] = {};
-          for (const group in window.matchers[target]) {
-            // `expanded` - when a filter group is "opened"
-            $rootScope.filters.custom[target][group] = {
-              expanded: false,
-              matchers: {},
-            };
-
-            for (const name in window.matchers[target][group]) {
-              $rootScope.filters.custom[target][group].matchers[name] = {
-                enabled: false,
-              };
-
-              if (window.matchers[target][group][name].submatchers) {
-                $rootScope.filters.custom[target][group].matchers[
-                  name
-                ].submatchers = [];
-
-                for (const j in window.matchers[target][group][name]
-                  .submatchers) {
-                  $rootScope.filters.custom[target][group].matchers[
-                    name
-                  ].submatchers[j] = {};
+        if (!$rootScope.filters || Object.keys($rootScope.filters).length === 0) {
+          $rootScope.filters = { custom: {} };
+          for (const target in window.matchers) {
+            $rootScope.filters.custom[target] = {};
+            for (const group in window.matchers[target]) {
+              $rootScope.filters.custom[target][group] = { expanded: false, matchers: {} };
+              for (const name in window.matchers[target][group]) {
+                $rootScope.filters.custom[target][group].matchers[name] = { enabled: false };
+                if (window.matchers[target][group][name].submatchers) {
+                  $rootScope.filters.custom[target][group].matchers[name].submatchers = [];
+                  for (const j in window.matchers[target][group][name].submatchers) {
+                    $rootScope.filters.custom[target][group].matchers[name].submatchers[j] = {};
+                  }
                 }
               }
             }
           }
         }
-        $("#leftContainer .collapse").collapse("hide");
+
+        $rootScope.filters.types = [];
+        $rootScope.filters.classes = [];
+        $rootScope.filters.tags = [];
+        $rootScope.filters.stars = [];
+        $rootScope.filters.cost = [1, 99];
+        $rootScope.filters.rumbleCost = [1, 99];
+        $rootScope.filters.farmable = {};
+        $rootScope.filters.nonFarmable = {};
+
+        for (const target in $rootScope.filters.custom) {
+          for (const group in $rootScope.filters.custom[target]) {
+            for (const name in $rootScope.filters.custom[target][group].matchers) {
+              $rootScope.filters.custom[target][group].matchers[name].enabled = false;
+            }
+          }
+        }
+
+        var labels = window.exclusiveFilterLabels || {};
+        Object.keys(labels).forEach(function (key) {
+          $rootScope.filters[key] = labels[key] && labels[key].indexOf(': ') > 0 ? null : false;
+        });
       };
 
       $scope.clearFilters();
