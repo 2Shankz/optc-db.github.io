@@ -85,108 +85,96 @@
      * Table filtering *
      *******************/
 
+    function getUnitVariants(unit) {
+      var variants = [];
+      if (unit.class && unit.class.length > 0) {
+        variants.push(unit);
+      }
+      var variant1 = window.units[unit.id + '-1'];
+      if (variant1 && variant1.class && variant1.class.length > 0) {
+        variants.push(variant1);
+      }
+      var variant2 = window.units[unit.id + '-2'];
+      if (variant2 && variant2.class && variant2.class.length > 0) {
+        variants.push(variant2);
+      }
+      return variants;
+    }
+
+    function getUnitVariantsWithTypes(unit) {
+      var variants = [];
+      if (unit.type) {
+        variants.push(unit);
+      }
+      var variant1 = window.units[unit.id + '-1'];
+      if (variant1 && variant1.type) {
+        variants.push(variant1);
+      }
+      var variant2 = window.units[unit.id + '-2'];
+      if (variant2 && variant2.type) {
+        variants.push(variant2);
+      }
+      return variants;
+    }
+
+    function extractVariantClasses(variant) {
+      var variantClasses = [];
+      if (Array.isArray(variant.class)) {
+        for (var c = 0; c < variant.class.length; c++) {
+          if (Array.isArray(variant.class[c])) {
+            variantClasses = variantClasses.concat(variant.class[c]);
+          } else {
+            variantClasses.push(variant.class[c]);
+          }
+        }
+      } else if (variant.class) {
+        variantClasses = [variant.class];
+      }
+      return variantClasses;
+    }
+
+    function extractVariantTypes(variant) {
+      var variantTypes = [];
+      if (Array.isArray(variant.type)) {
+        variantTypes = variantTypes.concat(variant.type);
+      } else if (variant.type) {
+        variantTypes = [variant.type];
+      }
+      return variantTypes;
+    }
+
+    function hasOnlySingleClasses(unit) {
+      var variants = getUnitVariants(unit);
+      for (var v = 0; v < variants.length; v++) {
+        var variantClasses = extractVariantClasses(variants[v]);
+        if (variantClasses.length > 1) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function getVsUnitClasses(unit) {
+      var details = window.details[unit.id];
+      if (!details || !details.VSSpecial) return null;
+      var vsClasses = [];
+      vsClasses.push(extractVariantClasses(unit));
+      var v1 = window.units[unit.id + '-1'];
+      if (v1) vsClasses.push(extractVariantClasses(v1));
+      var v2 = window.units[unit.id + '-2'];
+      if (v2) vsClasses.push(extractVariantClasses(v2));
+      return vsClasses;
+    }
+
     var tableFilter = function (settings, data, index) {
       if (!tableData.parameters) return true;
-var id = parseInt(data[0], 10),
-  unit = window.units[String(id)];
-if (!unit) {
-  console.warn('[TableFilter] Missing unit for ID:', id, '- Row excluded from filtered results');
-  return false;
-}
-var flags = window.flags[unit.id] || {};
-
-/* Helper to get all variants of a unit (base, -1, -2) that have classes/types */
-      function getUnitVariants(unit) {
-        var variants = [];
-        
-        // Add base unit if it has classes
-        if (unit.class && unit.class.length > 0) {
-          variants.push(unit);
-        }
-        
-        // Add variant -1 if it exists and has classes
-        var variant1 = window.units[unit.id + '-1'];
-        if (variant1 && variant1.class && variant1.class.length > 0) {
-          variants.push(variant1);
-        }
-        
-        // Add variant -2 if it exists and has classes  
-        var variant2 = window.units[unit.id + '-2'];
-        if (variant2 && variant2.class && variant2.class.length > 0) {
-          variants.push(variant2);
-        }
-        
-        return variants;
+      var id = parseInt(data[0], 10),
+        unit = window.units[String(id)];
+      if (!unit) {
+        console.warn('[TableFilter] Missing unit for ID:', id, '- Row excluded from filtered results');
+        return false;
       }
-
-      /* Helper to get all variants of a unit that have types */
-      function getUnitVariantsWithTypes(unit) {
-        var variants = [];
-        
-        // Add base unit if it has type
-        if (unit.type) {
-          variants.push(unit);
-        }
-        
-        // Add variant -1 if it exists and has type
-        var variant1 = window.units[unit.id + '-1'];
-        if (variant1 && variant1.type) {
-          variants.push(variant1);
-        }
-        
-        // Add variant -2 if it exists and has type  
-        var variant2 = window.units[unit.id + '-2'];
-        if (variant2 && variant2.type) {
-          variants.push(variant2);
-        }
-        
-        return variants;
-      }
-
-      /* Helper to extract all classes from a variant (handle nested arrays) */
-      function extractVariantClasses(variant) {
-        var variantClasses = [];
-        
-        if (Array.isArray(variant.class)) {
-          for (var c = 0; c < variant.class.length; c++) {
-            if (Array.isArray(variant.class[c])) {
-              variantClasses = variantClasses.concat(variant.class[c]);
-            } else {
-              variantClasses.push(variant.class[c]);
-            }
-          }
-        } else if (variant.class) {
-          variantClasses = [variant.class];
-        }
-        
-        return variantClasses;
-      }
-
-      /* Helper to extract all types from a variant (handle arrays) */
-      function extractVariantTypes(variant) {
-        var variantTypes = [];
-        
-        if (Array.isArray(variant.type)) {
-          variantTypes = variantTypes.concat(variant.type);
-        } else if (variant.type) {
-          variantTypes = [variant.type];
-        }
-        
-        return variantTypes;
-      }
-
-      /* Helper to check if unit has only single classes across all variants */
-      function hasOnlySingleClasses(unit) {
-        var variants = getUnitVariants(unit);
-        for (var v = 0; v < variants.length; v++) {
-          var variant = variants[v];
-          var variantClasses = extractVariantClasses(variant);
-          if (variantClasses.length > 1) {
-            return false; // Found a variant with multiple classes
-          }
-        }
-        return true; // All variants have single class
-      }
+      var flags = window.flags[unit.id] || {};
 
       /* * * * * Query filters * * * * */
 
@@ -996,9 +984,8 @@ var flags = window.flags[unit.id] || {};
           "Cerebral",
           "Powerhouse",
         ];
-        var vsClasses = getVsUnitClasses();
+        var vsClasses = getVsUnitClasses(unit);
         if (vsClasses) {
-          // VS unit - check if at least one variant has 2 matching classes
           var vsMatch = false;
           for (var v = 0; v < vsClasses.length; v++) {
             var vKatacount = 0;
@@ -1013,7 +1000,6 @@ var flags = window.flags[unit.id] || {};
           }
           if (!vsMatch) return false;
         } else {
-          // Regular unit
           var Katacount = 0;
           var Katacount1 = 0;
           var Katacount2 = 0;
@@ -1053,9 +1039,8 @@ var flags = window.flags[unit.id] || {};
           "Cerebral",
           "Powerhouse",
         ];
-        var vsClasses = getVsUnitClasses();
+        var vsClasses = getVsUnitClasses(unit);
         if (vsClasses) {
-          // VS unit - check if at least one variant has 2 matching classes
           var vsMatch = false;
           for (var v = 0; v < vsClasses.length; v++) {
             var vKatacount = 0;
@@ -1070,7 +1055,6 @@ var flags = window.flags[unit.id] || {};
           }
           if (!vsMatch) return false;
         } else {
-          // Regular unit
           var Katacount = 0;
           var Katacount1 = 0;
           var Katacount2 = 0;
@@ -1110,9 +1094,8 @@ var flags = window.flags[unit.id] || {};
           "Driven",
           "Powerhouse",
         ];
-        var vsClasses = getVsUnitClasses();
+        var vsClasses = getVsUnitClasses(unit);
         if (vsClasses) {
-          // VS unit - check if at least one variant has 2 matching classes
           var vsMatch = false;
           for (var v = 0; v < vsClasses.length; v++) {
             var vKatacount = 0;
@@ -1127,7 +1110,6 @@ var flags = window.flags[unit.id] || {};
           }
           if (!vsMatch) return false;
         } else {
-          // Regular unit
           var Katacount = 0;
           var Katacount1 = 0;
           var Katacount2 = 0;
@@ -1161,7 +1143,7 @@ var flags = window.flags[unit.id] || {};
       }
       if (filters.TMlaw) {
         var Kataclass = ["Fighter", "Slasher", "Cerebral", "Free Spirit"];
-        var vsClasses = getVsUnitClasses();
+        var vsClasses = getVsUnitClasses(unit);
         if (vsClasses) {
           // VS unit - check if at least one variant has 2 matching classes
           var vsMatch = false;
@@ -1218,9 +1200,8 @@ var flags = window.flags[unit.id] || {};
           "Shooter",
           "Cerebral",
         ];
-        var vsClasses = getVsUnitClasses();
+        var vsClasses = getVsUnitClasses(unit);
         if (vsClasses) {
-          // VS unit - check if at least one variant has 2 matching classes
           var vsMatch = false;
           for (var v = 0; v < vsClasses.length; v++) {
             var vKatacount = 0;
@@ -1235,7 +1216,6 @@ var flags = window.flags[unit.id] || {};
           }
           if (!vsMatch) return false;
         } else {
-          // Regular unit
           var Katacount = 0;
           var Katacount1 = 0;
           var Katacount2 = 0;
@@ -1275,9 +1255,8 @@ var flags = window.flags[unit.id] || {};
           "Cerebral",
           "Powerhouse",
         ];
-        var vsClasses = getVsUnitClasses();
+        var vsClasses = getVsUnitClasses(unit);
         if (vsClasses) {
-          // VS unit - check if at least one variant has 2 matching classes
           var vsMatch = false;
           for (var v = 0; v < vsClasses.length; v++) {
             var vKatacount = 0;
@@ -1292,7 +1271,6 @@ var flags = window.flags[unit.id] || {};
           }
           if (!vsMatch) return false;
         } else {
-          // Regular unit
           var Katacount = 0;
           var Katacount1 = 0;
           var Katacount2 = 0;
@@ -1422,7 +1400,7 @@ var flags = window.flags[unit.id] || {};
           x.name,
           combinedType,
 
-          combinedClass && Array.isArray(combinedClass) ? combinedClass.join(", ") : (combinedClass || ""),
+          combinedClass && Array.isArray(combinedClass) ? combinedClass.join("\n") : (combinedClass || ""),
           combinedHp || 0,
           combinedAtk || 0,
           combinedRcv || 0,
@@ -1516,6 +1494,7 @@ var flags = window.flags[unit.id] || {};
     };
 
     $rootScope.table = tableData;
+    $rootScope.tableOriginalData = data;
 
     $rootScope.characterLog = characterLog;
     $rootScope.showLogFilters = log.length > 0;
@@ -1561,6 +1540,16 @@ var flags = window.flags[unit.id] || {};
 
     $rootScope.$on("table.refresh", function () {
       fused = null;
+      if (!tableData || !tableData.parameters) return;
+      var allData = $rootScope.tableOriginalData;
+      if (!allData || allData.length === 0) return;
+      var filtered = allData.filter(function(row, index) {
+        return tableFilter(null, row, index);
+      });
+      tableData.data = filtered;
+      if ($rootScope.table === tableData) {
+        $rootScope.table = tableData;
+      }
     });
 
     $rootScope.checkLog = function () {
@@ -1574,5 +1563,23 @@ var flags = window.flags[unit.id] || {};
       $storage.set("characterLog", temp);
       $rootScope.showLogFilters = temp.length > 0;
     };
+
+    document.addEventListener('click', function(e) {
+      var anchor = e.target.closest('a[ui-sref^="main.search.view"]');
+      if (anchor) {
+        e.preventDefault();
+        var uiSref = anchor.getAttribute('ui-sref');
+        var match = uiSref.match(/id:\s*(\d+)/);
+        var prevMatch = uiSref.match(/previous:\s*\[(.*?)\]/);
+        if (match) {
+          var id = match[1];
+          var previous = prevMatch ? JSON.parse('[' + prevMatch[1] + ']') : [];
+          var $state = angular.element(document.querySelector('[ng-view]')).injector().get('$state');
+          var mainScope = angular.element(document.querySelector('[ng-view]')).scope();
+          var currentQuery = mainScope && mainScope.query ? mainScope.query : '';
+          $state.go("main.search.view", { id: id, previous: previous, query: currentQuery });
+        }
+      }
+    }, true);
   });
 })();
