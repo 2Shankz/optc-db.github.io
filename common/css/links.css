@@ -26,7 +26,8 @@
     color: var(--text-primary);
 }
 
-#links-button .btn .material-icons {
+#links-button .btn .material-icons,
+#links-button .btn .material-symbols-outlined {
     display: flex;
     align-items: center;
     justify-content: center;
