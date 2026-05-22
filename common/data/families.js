@@ -5206,6 +5206,10 @@ window.families = {
     4573: [ ...GolDRoger ],
     4574: [ ...EthanbaronVNusjuro ],
     4575: [ ...EthanbaronVNusjuro ],
+    4576: [ ...MarcusMars, ...JaygarciaSaturn ],
+    4577: [ ...ShepherdJuPeter, ...TopmanWarcury ],
+    4578: [ ...Doberman ],
+    4579: [ ...Enel ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],

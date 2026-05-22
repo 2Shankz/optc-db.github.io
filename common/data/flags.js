@@ -4354,6 +4354,10 @@ window.flags = {
     4569: { rr: 1, rro: 1 },
     4570: { rr: 1, rro: 1 },
     4571: { rr: 1, rro: 1, lrr: 1, superlrr: 1 },
+    4576: { rr: 1, rro: 1, lrr: 1, annilrr: 1 },
+    4577: { rr: 1, rro: 1, lrr: 1, annilrr: 1 },
+    4578: { rr: 1, rro: 1, lrr: 1, kclrr: 1 },
+    4579: { rr: 1, rro: 1, lrr: 1, pflrr: 1 },
     //break
     5013: { rr: 1, rro: 1, global: 1 },
     5014: { rr: 1, rro: 1, global: 1 },
