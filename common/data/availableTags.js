@@ -336,6 +336,10 @@ window.availableTags = [
     "category": 1
   },
   {
+    "name": "New Giant Pirate Crew",
+    "category": 1
+  },
+  {
     "name": "Ohara",
     "category": 1
   },
