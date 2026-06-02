@@ -8542,7 +8542,7 @@
 
 			{
 				name: "Damage Nullification",
-				targets: ["captain", "special", "superSpecial", "swap", "support"],
+				targets: ["captain", "special", "superSpecial", "swap", "support", "sailor"],
 				regex:
 					/(?:reduces|removes) enemies'[^."]+?Damage Nullification[^."]+?(?:duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?|effect (?:by (\d+)%(?:-(\d+)%)?)(?:, by (\d+)%(?:-(\d+)%)?)?)/i,
 				submatchers: [
