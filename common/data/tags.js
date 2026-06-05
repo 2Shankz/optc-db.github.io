@@ -4552,6 +4552,7 @@ window.tags = {
 	"4586": ["Straw Hat Pirates","Elbaph Arc"],
 	"4587": ["Straw Hat Pirates","Zoan-type","Elbaph Arc"],
 	"4588": ["New Giant Pirate Crew","Giant","Elbaph Arc"],
+	"4590": ["Straw Hat Pirates","Elbaph Arc"],
 	"5013": [],
 	"5014": [],
 	"5029": [],
