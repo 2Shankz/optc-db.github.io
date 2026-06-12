@@ -7705,6 +7705,16 @@ window.drops = {
             'Calm Sea': [ "4555-skull" ],
         },
 
+        {
+            name: 'Rodo',
+            dropID: 'treasuremap105',
+            thumb: 4589,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Calm Sea': [ "4589-skull" ],
+        },
+
     ],
 
     

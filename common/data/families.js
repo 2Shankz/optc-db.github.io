@@ -745,6 +745,9 @@ const Joseph = [ "Joseph" ];
 const Strongheart = [ "Strongheart", "Stronger" ];
 const Imu = [ "Imu" ];
 const Rodo = [ "Rodo" ];
+const Stansen = [ "Stansen" ];
+const Goldberg = [ "Goldberg" ];
+const Gerd = [ "Gerd" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5218,8 +5221,11 @@ window.families = {
     4586: [ ...Usopp ],
     4587: [ ...TonyTonyChopper ],
     4588: [ ...Rodo ],
-    //4589: [ ...Rodo ],
+    4589: [ ...Rodo ],
     4590: [ ...Nami ],
+    4591: [ ...Hajrudin ],
+    4592: [ ...Stansen ],
+    4593: [ ...Goldberg, ...Gerd ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
