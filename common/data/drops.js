@@ -8593,7 +8593,7 @@ window.drops = {
         {
             name: 'Sabo & Koala',
             dropID: 'kizuna69',
-            thumb: 4378,
+            thumb: 4393,
             global: true,
             nakama: null,
             gamewith: null,
