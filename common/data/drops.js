@@ -3638,6 +3638,16 @@ window.drops = {
             'Defeat Level Rewards': [ 4588, "4583-skull" ],
         },
 
+        {
+            name: 'Garp',
+            dropID: 'pka36',
+            thumb: 4601,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4601, "4583-skull" ],
+        },
+
     ],
 
 
