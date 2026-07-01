@@ -4424,7 +4424,7 @@
 					"sailor",
 					"support",
 				],
-				regex: /if HP is (below|above)/i,
+				regex: /(?:if)? HP is (below|above)/i,
 			},
 
 			{
@@ -4608,13 +4608,13 @@
 			{
 				name: "Buff Activated %target%",
 				targets: ["support"],
-				regex: /when (the|an) enemy (gains|applies)/i,
+				regex: /(?:when)? (the|an) enemy (gains|applies)/i,
 			},
 
 			{
 				name: "Debuff Activated %target%",
 				targets: ["support"],
-				regex: /when (the|an) enemy inflicts/i,
+				regex: /(?:when)? (the|an) enemy inflicts/i,
 			},
 
 			{
@@ -4738,7 +4738,7 @@
 				name: "Requirement: Crew Effect",
 				targets: ["special", "superSpecial", "swap", "support"],
 				regex:
-					/If your crew (?:has|is) ([^."]+?) when the special is activated,/i,
+					/(?:If)? your crew (?:has|is) ([^."]+?) when the special is activated,/i,
 				submatchers: [
 					{
 						type: "separator",
