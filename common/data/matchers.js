@@ -3694,17 +3694,17 @@
 				name: "Crew Damage Reduction to ATK",
 				targets: ["captain", "special", "superSpecial", "support"],
 				regex:
-					/boosts Crew Damage Reduction to ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([?.\d]+)x-([?.\d]+)x, proportional to the strength of crew's Percent Damage Reduction buff([^,]*), for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
+					/boosts Crew Damage Reduction to ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([?.\d]+)x-([?.\d]+)x, proportional to the strength of crew's Percent Damage Reduction buff([^,]*), for ([?\d]+\+?)(?:-([?\d]+))? turns?(?:, by ([?.\d]+)x-([?.\d]+)x for ([?\d]+\+?)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
 					{
 						type: "number",
 						description: "Multiplier:",
-						groups: [2, 3],
+						groups: [2, 3, 7, 8],
 					},
 					{
 						type: "number",
 						description: "Turns:",
-						groups: [5, 6],
+						groups: [5, 6, 9, 10],
 					},
 					{
 						type: "option",
