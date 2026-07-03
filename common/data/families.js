@@ -5235,6 +5235,7 @@ window.families = {
     4600: [ ...Shiryu ],
     4601: [ ...MonkeyDGarp ],
     //4602: [ ...MonkeyDGarp ],
+    4607: [ ...Bartolomeo ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],

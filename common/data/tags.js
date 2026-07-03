@@ -4565,6 +4565,7 @@ window.tags = {
 	"4599": ["Blackbeard Pirates","Paramythia-type","Egghead Arc"],
 	"4600": ["Blackbeard Pirates","Paramythia-type","Egghead Arc"],
 	"4601": ["Navy","Navy Vice Admiral","Egghead Arc"],
+	"4607": ["Barto Club","Supernova","Paramythia-type","Land of Wano Arc"],
 	"5013": [],
 	"5014": [],
 	"5029": [],
