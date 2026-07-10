@@ -4683,7 +4683,7 @@
 			{
 				name: "Delayed Effect",
 				targets: ["special"],
-				regex: /(Following the activation|If during that turn|After \d+ turn)/i,
+				regex: /(Following the activation|If during (?:this|that) turn|After \d+ turn)/i,
 			},
 
 			{
@@ -4703,7 +4703,7 @@
 				name: "Delayed Effect: Tap Timing",
 				targets: ["special"],
 				regex:
-					/If during that turn you score (\d|all) (GOOD|GREAT|PERFECT) hits/i,
+					/If during (?:this|that) turn you score (\d|all) (GOOD|GREAT|PERFECT) hits/i,
 				submatchers: [
 					{
 						type: "number",
