@@ -4374,6 +4374,8 @@ window.flags = {
     4598: { rr: 1, rro: 1 },
     4599: { rr: 1, rro: 1 },
     4600: { rr: 1, rro: 1 },
+    4605: { shop: 1 },
+    4606: { shop: 1 },
     4607: { rr: 1, rro: 1, lrr: 1, pflrr: 1 },
     4608: { rr: 1, rro: 1, lrr: 1, tmlrr: 1 },
     4609: { rr: 1, rro: 1, lrr: 1, tmlrr: 1 },

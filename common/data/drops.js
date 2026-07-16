@@ -10020,11 +10020,19 @@ window.drops = {
         },
 
         {
-            name: 'Tutorial',
+            name: 'Egghead Tutorial',
             thumb: 4351,
             global: true,
             nakama: 6024700,
-            '': [ 4351 ]
+            'Completing Tutorial': [ 4351 ]
+        },
+
+        {
+            name: 'Elbaph Tutorial',
+            thumb: 4605,
+            global: true,
+            nakama: 6024700,
+            'Completing Tutorial': [ 4605, 4606 ]
         },
    ],
 
