@@ -748,6 +748,8 @@ const Rodo = [ "Rodo" ];
 const Stansen = [ "Stansen" ];
 const Goldberg = [ "Goldberg" ];
 const Gerd = [ "Gerd" ];
+const Shamrock = [ "Saint Shamrock", "St. Shamrock" ];
+const Gunko = [ "Saintess Gunko", "St. Gunko" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5235,12 +5237,16 @@ window.families = {
     4600: [ ...Shiryu ],
     4601: [ ...MonkeyDGarp ],
     4602: [ ...MonkeyDGarp ],
+    4603: [ ...MonkeyDLuffy ],
     4605: [ ...RoronoaZoro ],
     4606: [ ...VinsmokeSanji ],
     4607: [ ...Bartolomeo ],
     4608: [ ...Laffitte ],
     4609: [ ...DocQ ],
     4610: [ ...Kuzan ],
+    4611: [ ...Shamrock ],
+    4612: [ ...Gunko ],
+    4613: [ ...NefertariVivi ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],

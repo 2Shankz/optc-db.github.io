@@ -3631,11 +3631,11 @@ window.drops = {
         {
             name: 'Rodo',
             dropID: 'pka35',
-            thumb: 4554,
+            thumb: 4588,
             global: true,
             nakama: null,
             gamewith: null,
-            'Defeat Level Rewards': [ 4588, "4583-skull" ],
+            'Defeat Level Rewards': [ 4588, "4603-skull" ],
         },
 
         {
@@ -3645,7 +3645,7 @@ window.drops = {
             global: true,
             nakama: null,
             gamewith: null,
-            'Defeat Level Rewards': [ 4601, "4583-skull" ],
+            'Defeat Level Rewards': [ 4601, "4603-skull" ],
         },
 
     ],
@@ -7722,7 +7722,7 @@ window.drops = {
             global: true,
             nakama: null,
             gamewith: null,
-            'Calm Sea': [ "4583-skull", "4589-skull" ],
+            'Calm Sea': [ "4589-skull", "4603-skull" ],
         },
 
         {
@@ -7732,7 +7732,7 @@ window.drops = {
             global: true,
             nakama: null,
             gamewith: null,
-            'Calm Sea': [ "4583-skull", "4602-skull" ],
+            'Calm Sea': [ "4602-skull", "4603-skull" ],
         },
 
     ],
@@ -8737,7 +8737,17 @@ window.drops = {
             global: true,
             nakama: null,
             gamewith: null,
-            'Kizuna Exchange': [ "4583-skull", "4596-skull" ]
+            'Kizuna Exchange': [ "4596-skull", "4603-skull" ]
+        },
+
+        {
+            name: 'Vivi',
+            dropID: 'kizuna82',
+            thumb: 4613,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Kizuna Exchange': [ "4603-skull", "4613-skull" ]
         },
 
     ],
