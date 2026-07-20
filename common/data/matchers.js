@@ -604,6 +604,13 @@
 					},
 				],
 			},
+			{
+				name: "Does Not Activate Special",
+				targets: ["support"],
+				regex:
+					/Does not activate supported character's Special./i,
+			}
+
 		],
 
 		Damage: [
@@ -14468,6 +14475,12 @@
 				name: "Has Support Ability",
 				targets: ["support"],
 				regex: /\S/i,
+			},
+
+			{
+				name: "Has Auto+ Ability",
+				targets: ["support"],
+				regex: /AUTO\+/i,
 			},
 
 			/* * * * * Limit Break * * * * */
