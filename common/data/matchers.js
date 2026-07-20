@@ -11730,6 +11730,56 @@
 				],
 			},
 
+			{
+				name: "Damage Reflect",
+				targets: ["gpSpecial"],
+				regex:
+					/Grants Damage Reflect, reduces damage taken by ([.\d]+)% and reflects ([.\d]+)x of the damage reduced, to (\d)?(?=((?:[^c]+|c(?!rew))*))\4crew members?(?: with [^.]+ (ATK|DEF|HP|RCV|SPD|Special CT))?(?: for (\d+) seconds)?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Percentage:",
+						groups: [1],
+					},
+					{
+						type: "number",
+						description: "Amount:",
+						groups: [2],
+					},
+					{
+						type: "number",
+						description: "Duration:",
+						groups: [6],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					{
+						type: "number",
+						description: "Count:",
+						groups: [3],
+					},
+					{
+						type: "option",
+						description: "Universal",
+						regex: /all/i,
+						groups: [4],
+						cssClasses: ["min-width-6"],
+					},
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([4]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([4]),
+				],
+			},
+
 		],
 
 		"Hinderances": [
