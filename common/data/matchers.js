@@ -6108,6 +6108,14 @@
 						type: "separator",
 						description: "To orbs:", // To orbs won't have "Any", since simply not selecting any "To" orb does the same thing
 					},
+					{
+						type: "option",
+						description: "Super",
+						regex: /Super \[(?:STR|DEX|QCK|PSY|INT)\]/,
+						radioGroup: "targets",
+						groups: [4],
+						cssClasses: ["min-width-12"],
+					},
 					...createOrbsSubmatchers(
 						[
 							"STR",
@@ -6120,11 +6128,6 @@
 							"TND",
 							"BOMB",
 							"EMPTY",
-							"Super STR",
-							"Super DEX",
-							"Super QCK",
-							"Super PSY",
-							"Super INT",
 							"SUPERBOMB",
 							"RAINBOW",
 							"SEMLA",
