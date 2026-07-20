@@ -377,14 +377,26 @@
 				let typeMatch = term.match(typeRegex);
 				let classMatch = term.match(classRegex);
 				let tagMatch = term.match(tagRegex);
-				
-				if (typeMatch || classMatch || tagMatch) {
-					if (typeMatch) types.push(typeMatch[1]);
-					if (classMatch) classes.push(classMatch[0]);
-					if (tagMatch) tags.push(tagMatch[1]);
-				} else {
-					families.push(term.replace(specialCharactersRegex, "\\$&")); // escape special characters before pushing (except dot)
-				};
+				let familyMatch = term;
+
+				if (typeMatch) {
+					types.push(typeMatch[1]);
+					familyMatch = familyMatch.replace(typeMatch[0], "")
+				}
+				if (classMatch) {
+					classes.push(classMatch[0]);
+					familyMatch = familyMatch.replace(classMatch[0], "")
+				}
+				if (tagMatch) {
+					tags.push(tagMatch[1]);
+					familyMatch = familyMatch.replace(tagMatch[0], "");
+				}
+
+				familyMatch = familyMatch.trim()
+				if (familyMatch.length > 0) {
+					families.push(familyMatch.replace(specialCharactersRegex, "\\$&")); // escape special characters before pushing (except dot)
+				}
+					
 			};
 		};
 
@@ -395,6 +407,7 @@
 				"^(" + families.join("|").replace(whitespaceRegex, "_") + ")$";
 			matchers.push("family:" + params.matchers.family);
 		};
+		//console.log(matchers);
 		if (types.length > 0) {
 			params.matchers.type = types.join("|").replace(whitespaceRegex, "_");
 			matchers.push("type:" + params.matchers.type);
