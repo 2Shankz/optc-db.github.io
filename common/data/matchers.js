@@ -3785,6 +3785,71 @@
 					...createClassesSubmatchers([1]),
 				],
 			},
+
+			{
+				name: "Tap Timing ATK",
+				targets: ["special", "superSpecial", "support"],
+				regex:
+					/Boosts Tap Timing ATK of (?=((?:[^c."]+|c(?!har))*))\1characters? by ([?.\d]+)x(?:-([?.\d]+)x)?, following a chain of ([?.\d]+)(?:-([?.\d]+))? (?=((?:[^a."]+|a(?!ttacks))*))\6attacks?, for ([?\d]+\+?)(?:-([?\d]+))? turns?/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Multiplier:",
+						groups: [2, 3],
+					},
+					{
+						type: "number",
+						description: "Turns:",
+						groups: [7, 8],
+					},
+					{
+						type: "number",
+						description: "Taps:",
+						groups: [4, 5],
+					},
+					{
+						type: "separator",
+						description: "Timing:",
+					},
+					{
+						type: "option",
+						description: "GOOD",
+						regex: /GOOD/i,
+						groups: [6],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "GREAT",
+						regex: /GREAT/i,
+						groups: [6],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "option",
+						description: "PERFECT",
+						regex: /PERFECT/i,
+						groups: [6],
+						cssClasses: ["min-width-4"],
+					},
+					{
+						type: "separator",
+						description: "Targeting:",
+					},
+					...createUniversalSubmatcher([1]),
+					{
+						type: "separator",
+						description: "Types:",
+					},
+					...createTypesSubmatchers([1]),
+					{
+						type: "separator",
+						description: "Classes:",
+					},
+					...createClassesSubmatchers([1]),
+				],
+			},
+
 		],
 		"Modify Buff": [
 			{
