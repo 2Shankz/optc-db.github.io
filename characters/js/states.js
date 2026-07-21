@@ -14,11 +14,12 @@ angular.module('optc').config(function($stateProvider, $urlRouterProvider) {
 
         .state('main.search',{
             url: '^/search/:query',
+            reloadOnSearch: false,
             views: { '-': { template: '<div></div>' } }
         })
         
         .state('main.search.view',{
-            url: '^/view/:id',
+            url: '^/view/:id?query',
             params: { previous: [ ] },
             views: {
                 'popup@': {

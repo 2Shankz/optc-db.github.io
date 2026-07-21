@@ -11,130 +11,276 @@
 	directives.characterTable = function (
 		$rootScope,
 		$timeout,
-		$compile,
-		$storage
+		$state,
+		$compile
 	) {
 		return {
 			restrict: "E",
 			replace: true,
-			template:
-				'<table id="mainTable" class="table table-striped-column panel panel-default"></table>',
+			template: '<div id="tabulator-table"></div>',
 			link: function (scope, element, attrs) {
-				window.charTable = element.dataTable({
-					stateSave: true, // includes page length
-					stateDuration: 0,
-					deferRender: true,
-					data: scope.table.data,
-					columns: scope.table.columns,
-					rowCallback: function (row, data, index) {
-						if (!row || row.hasAttribute("loaded")) return;
-						var $row = $(row);
-						if (!$row) return;
-						// lazy thumbnails
-						$row.find("[data-original]").each(function (n, x) {
-							x.setAttribute("src", x.getAttribute("data-original"));
-							x.removeAttribute("data-original");
-						});
-						// character log checkbox
-						var id = parseInt(data[0], 10);
-						var checkbox = $(
-							'<label><input type="checkbox" ng-change="checkLog(' +
-								id +
-								')" ng-model="characterLog[' +
-								id +
-								']"></input></label>'
-						);
-						$(row.cells[10 + scope.table.additional]).append(checkbox);
-						// cosmetic fixes
-						var typeBox = row.cells[2];
-						var classBox = row.cells[3];
-						var type = typeBox.textContent;
-						var classes = classBox.textContent;
-						if (type.indexOf(",") > -1 || type.indexOf("/") > -1) {
-							type = type.replace(/[,/]/g, "/");
-							var types = type.split("/");
-							var typeHtml =
-								'<span class="cell-' +
-								types[0] +
-								'">' +
-								types[0] +
-								'</span>/<span class="cell-' +
-								types[1] +
-								'">' +
-								types[1] +
-								"</span>";
-							$(typeBox).html(typeHtml);
+                scope.characterLog = $rootScope.characterLog;
+                scope.checkLog = $rootScope.checkLog;
+				var convertColumns = function(dtColumns) {
+					return dtColumns.map(function(col, index) {
+						var tabCol = {
+							title: col.title,
+							field: "col" + index,
+							headerSort: col.orderable !== false,
+							vertAlign: "middle",
+						};
+						
+						// First 4 columns (ID, Name, Type, Class) fixed width
+						if (index < 4) {
+							// These columns stay at fixed widths
 						}
-						if ((classes.match(new RegExp(",", "g")) || []).length > 1) {
-							while ((classes.match(new RegExp(",", "g")) || []).length >= 1)
-								classes = classes.replace(",", "/");
-							var classess = classes.split("/");
-							//console.log(classess);
-							var classesHtml =
-								'<span class="cell-' +
-								classess[classess.length - 2] +
-								'">' +
-								classess[classess.length - 2] +
-								'</span>, <span class="cell-' +
-								classess[classess.length - 1] +
-								'">' +
-								classess[classess.length - 1] +
-								"</span>";
-							$(classBox).html(classesHtml);
+						
+						if (index === 0) {
+							tabCol.width = 50;
+						} else if (index === 1) {
+							tabCol.widthGrow = 1;
+							tabCol.minWidth = 220;
+							tabCol.formatter = "textarea";
+						} else if (index === 2 || index === 3 || index === 8 || index === 10) {
+							tabCol.width = 80;
+						} else if (index >= 4 && index <= 7) {
+							tabCol.width = 60;
+						} else if (index === 9) {
+							tabCol.width = 100;
 						}
-						$(typeBox).addClass("cell-" + type);
-						var n = row.cells.length - 2 - scope.table.additional;
-						$(row.cells[n]).addClass("stars stars-" + row.cells[n].textContent);
-						row.cells[n].textContent = "";
-						// compile
-						$compile($(row).contents())($rootScope);
-						row.setAttribute("loaded", "true");
-					},
-					headerCallback: function (header) {
-						if (header.hasAttribute("loaded")) return;
-						header.cells[header.cells.length - 1].setAttribute(
-							"title",
-							"Character Log"
-						);
-						header.setAttribute("loaded", true);
-					},
-				});
-				scope.table.refresh = function () {
-					$rootScope.$emit("table.refresh");
-					$timeout(function () {
-						element.fnDraw();
+						
+						if (col.render && typeof col.render === 'function') {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								var rowData = cell.getRow().getData();
+								var value = rowData["col" + index];
+								var mockCell = { getValue: function() { return value; }, getRow: function() { return { getData: function() { return rowData; } }; } };
+								return col.render(value, 'display', mockCell);
+							};
+						}
+						
+						if (index === 1) {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								try {
+									var data = cell.getRow().getData();
+									var id = parseInt(data.col0, 10);
+									var name = data.col1 || "";
+									var paths = (window.Utils && window.Utils.getThumbnailUrl) ? window.Utils.getThumbnailUrl(id, "..") : { glo: "../api/images/common/noimage.png", jap: "../api/images/common/noimage.png" };
+									var noimage = "../api/images/common/noimage.png";
+									return '<img class="slot small" src="' + paths.glo + 
+								       '" onerror="this.onerror=null; this.src=\'' + paths.jap + 
+								       '\'; this.onerror=function(){this.src=\'' + noimage + '\'};" style="width:40px;height:40px;vertical-align:middle;margin-right:8px;border-radius:4px;">' +
+								       name;
+								} catch (e) {
+									var data = cell.getRow().getData();
+									return '<span>' + (data.col1 || "") + '</span>';
+								}
+							};
+							tabCol.cellClick = function(e, cell) {
+								var id = parseInt(cell.getData().col0, 10);
+								var query = $rootScope.table && $rootScope.table.parameters && $rootScope.table.parameters.query || '';
+								$state.go(".", { query: query }, { notify: false });
+								$state.go("main.search.view", { id: id, previous: [] });
+							};
+						}
+						
+						if (index === 9) {
+							tabCol.sorter = function(a, b, aRow, bRow, column, dir, sorterParams) {
+								var parseStars = function(v) {
+									if (v === "4+") return 4.5;
+									if (v === "5+") return 5.5;
+									if (v === "6+") return 6.5;
+									return typeof v === "string" ? parseInt(v, 10) || 0 : (v || 0);
+								};
+								return parseStars(a) - parseStars(b);
+							};
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								var stars = cell.getValue();
+								if (stars === "4+") return '<span class="stars-4+"></span>';
+								if (stars === "5+") return '<span class="stars-5+"></span>';
+								if (stars === "6+") return '<span class="stars-6+"></span>';
+								var starCount = typeof stars === 'string' ? parseInt(stars, 10) : stars;
+                                var html = '';
+                                for (var i = 0; i < 6; i++) {
+                                    html += i < starCount ? '<i class="material-icons" style="color:#f7c118">star</i>' : '<i class="material-icons" style="color:#ccc">star_border</i>';
+                                }
+								return html;
+							};
+						}
+						
+						if (index === 2) {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								var type = cell.getValue();
+								if (type && type.indexOf('/') > -1) {
+									var types = type.split('/');
+									return '<span class="cell-' + types[0] + '">' + types[0] + '</span>/<span class="cell-' + types[1] + '">' + types[1] + '</span>';
+								}
+								if (type && type.indexOf(',') > -1) {
+									var types = type.split(',');
+									return '<span class="cell-' + types[0].trim() + '">' + types[0].trim() + '</span>, <span class="cell-' + types[1].trim() + '">' + types[1].trim() + '</span>';
+								}
+								return type ? '<span class="cell-' + type + '">' + type + '</span>' : '';
+							};
+						}
+						
+						if (index === 3) {
+							tabCol.formatter = function(cell, formatterParams, onRendered) {
+								var cls = cell.getValue();
+								if (cls && cls.indexOf(',') > -1) {
+									var classes = cls.split(',');
+									var lastTwo = classes.slice(-2);
+									return '<span class="cell-' + lastTwo[0].trim() + '">' + lastTwo[0].trim() + '</span><br><span class="cell-' + lastTwo[1].trim() + '">' + lastTwo[1].trim() + '</span>';
+								}
+								return cls || '';
+							};
+						}
+						
+						return tabCol;
 					});
 				};
-				// report link
-				var link = $(
-					'<span class="help-link"><i class="fab fa-discord"></i> Want to report or request something? <a>Join our Discord server</a>.</span>'
-				);
-				link.find("a").attr("href", "https://discord.gg/xhKT87vKX7");
-				link.insertAfter($(".dataTables_length"));
-				// pick column link
-				var pick = $(
-					'<a id="pick-link" popover-placement="bottom" popover-trigger="click" popover-title="Additional Columns" ' +
-						"uib-popover-template=\"'views/pick.html'\" popover-append-to-body=\"'true'\">Additional columns</a>"
-				);
-				$compile(pick)(scope);
-				pick.insertAfter($(".dataTables_length"));
-				// fuzzy toggle
-				var fuzzyToggle = $(
-					'<label class="fuzzy-toggle"><input type="checkbox">Enable fuzzy search</input></label>'
-				);
-				fuzzyToggle.attr(
-					"title",
-					"When enabled, searches will also display units whose name is not an exact match to the search keywords.\nUseful if you don't know the correct spelling of a certain unit."
-				);
-				fuzzyToggle.find("input").prop("checked", scope.table.fuzzy);
-				fuzzyToggle.find("input").change(function () {
-					var checked = $(this).is(":checked");
-					if (checked == scope.table.fuzzy) return;
-					scope.table.fuzzy = checked;
-					$storage.set("fuzzy", scope.table.fuzzy);
-					scope.table.refresh();
+				
+				var transformData = function(data) {
+					if (!data || data.length === 0) return [];
+					return data.map(function(row) {
+						var newRow = {};
+						row.forEach(function(val, idx) {
+							newRow["col" + idx] = val;
+						});
+						return newRow;
+					});
+				};
+				
+				window.charTable = new Tabulator("#tabulator-table", {
+					data: transformData(scope.table.data),
+					layout: "fitColumns",
+					maxHeight: "100%",
+					persistentLayout: false,
+					persistentSort: true,
+					movableColumns: true,
+					columns: convertColumns(scope.table.columns),
+					rowFormatter: function(row) {
+						var data = row.getData();
+						var id = String(parseInt(data.col0, 10)); // Normalize to integer string
+						var cells = row.getCells();
+						var lastCell = cells[cells.length - 1];
+						var existingWrapper = lastCell && lastCell.getElement().querySelector('label.checkbox-cl');
+						var checkbox = null;
+
+						if (existingWrapper) {
+							checkbox = existingWrapper.querySelector('input[type="checkbox"]');
+							if (checkbox) {
+								checkbox.checked = !!(scope.characterLog && scope.characterLog[id]);
+							}
+							return;
+						}
+
+						var wrapper = document.createElement('label');
+						wrapper.className = 'checkbox-cl';
+						checkbox = document.createElement('input');
+						checkbox.type = 'checkbox';
+						checkbox.dataset.id = id;
+
+						// Initialize checked state from characterLog
+						if (scope.characterLog && scope.characterLog[id]) {
+							checkbox.checked = true;
+						}
+
+						checkbox.addEventListener('change', function() {
+							var unitId = this.dataset.id;
+							if (this.checked) {
+								scope.$apply(function() {
+									scope.characterLog[unitId] = true;
+									scope.checkLog();
+								});
+							} else {
+								scope.$apply(function() {
+									delete scope.characterLog[unitId];
+									scope.checkLog();
+								});
+							}
+						});
+
+						wrapper.appendChild(checkbox);
+
+						if (cells.length > 0) {
+							cells[cells.length - 1].getElement().appendChild(wrapper);
+						}
+
+						// Handle lazy-loaded images
+						for (var i = 0; i < cells.length; i++) {
+							var cellEl = cells[i].getElement();
+							var imgs = cellEl.querySelectorAll('img[data-original]');
+							for (var j = 0; j < imgs.length; j++) {
+								var img = imgs[j];
+								img.src = img.getAttribute('data-original');
+								img.removeAttribute('data-original');
+							}
+						}
+					},
+					headerClick: function(e, column) {
+						if (column.getTitle() === "CL") {
+							column.getElement().setAttribute('title', 'Character Log');
+						}
+					},
 				});
-				fuzzyToggle.insertBefore($(".dataTables_length"));
+				
+				scope.table.refresh = function() {
+					$rootScope.$emit("table.refresh");
+					$timeout(function() {
+						window.charTable.setData(transformData(scope.table.data));
+					});
+				};
+
+				scope.$watch('table.data', function(newData, oldData) {
+					if (newData !== oldData && window.charTable) {
+						window.charTable.setData(transformData(newData));
+					}
+				}, true);
+
+				// Watch characterLog changes and update checkboxes
+				scope.$watch(function() { return $rootScope.characterLog; }, function(newLog) {
+					if (newLog && window.charTable) {
+						scope.characterLog = newLog;
+						window.charTable.redraw();
+					}
+				}, true);
+
+				var lastQuery = '';
+				scope.$watch('table.parameters', function(newParams, oldParams) {
+					if (!newParams || !window.charTable) return;
+					var query = newParams.query || '';
+					var filters = newParams.filters;
+					var hasSidebarFilters = filters && (
+						(filters.types && filters.types.length) ||
+						(filters.classes && filters.classes.length) ||
+						(filters.cost && (filters.cost[0] > 0 || filters.cost[1] < 999)) ||
+						(filters.stars && filters.stars.length) ||
+						(filters.tags && filters.tags.length) ||
+						filters.noSingleClass || filters.noBase || filters.noEvos || filters.noLB ||
+						filters.drop || filters.farmable || filters.nonFarmable || filters.shop
+					);
+					if (query && !hasSidebarFilters) {
+						var q = query.toLowerCase();
+						window.charTable.setFilter(function(row) {
+							var id = parseInt(row.col0, 10);
+							var fullName = (window.Utils && window.Utils.getFullUnitName) ? window.Utils.getFullUnitName(id) : (row.col1 || '');
+							var idStr = row.col0 || '';
+							return fullName.toLowerCase().indexOf(q) !== -1 || idStr.indexOf(q) !== -1;
+						});
+						lastQuery = query;
+					} else if (!query && lastQuery) {
+						window.charTable.clearFilter();
+						lastQuery = '';
+					}
+				}, true);
+
+				scope.$on('$stateChangeSuccess', function() {
+					$timeout(function() {
+						// Temporarily disabled for testing - re-enable if issues arise
+						// if (window.charTable) {
+						// 	window.charTable.redraw(true);
+						// }
+					}, 300);
+				});
 			},
 		};
 	};
@@ -182,51 +328,47 @@
 		};
 	};
 
-	// Uses Bootstrap's Collapse Component
-	directives.animateCollapse = function ($timeout, $document) {
-		return {
-			restrict: "E",
-			transclude: true,
-			template: `<span>
+// Uses Bootstrap's Collapse Component
+directives.animateCollapse = function ($timeout, $document) {
+	return {
+		restrict: "E",
+		transclude: true,
+		template: `<span class="animate-collapse-header">
         <ng-transclude></ng-transclude>
-        <i class="{{ faClasses ? faClasses : 'fa fa-chevron-down pull-right' }}"></i>
+        <i class="{{ faClasses }}">chevron_right</i>
     </span>`,
-			scope: {}, // empty isolate scope for `scope.faClasses`
-			link: function (scope, element, attrs) {
-				if (attrs.faClasses) {
-					// option to override font awesome classes
-					scope.faClasses = attrs.faClasses;
-				}
-				element.click(() => {
-					var collapsibleElement = element.next();
-					if (collapsibleElement.hasClass("collapse")) {
-						element.next().collapse("toggle");
+		scope: {},
+		link: function (scope, element, attrs) {
+			scope.faClasses = attrs.faClasses || "material-icons material-icons-chevron-right";
+
+			// Delegate to document-level events so chevron syncs with any trigger (click, Toggle All, jQuery)
+			if (!$document.isAnimateCollapseHandlerAdded) {
+				$document.on("hide.bs.collapse", (e) => {
+					var collapserElement = e.target.previousElementSibling;
+					if (collapserElement && collapserElement.tagName === "ANIMATE-COLLAPSE") {
+						var icon = collapserElement.querySelector("i");
+						if (icon) icon.classList.remove("material-icons-chevron-rotated");
 					}
 				});
+				$document.on("show.bs.collapse", (e) => {
+					var collapserElement = e.target.previousElementSibling;
+					if (collapserElement && collapserElement.tagName === "ANIMATE-COLLAPSE") {
+						var icon = collapserElement.querySelector("i");
+						if (icon) icon.classList.add("material-icons-chevron-rotated");
+					}
+				});
+				$document.isAnimateCollapseHandlerAdded = true;
+			}
 
-				if (!$document.isAnimateCollapseHandlerAdded) {
-					// delegate event to top level node, so we only add two event listeners
-					$document.on("hide.bs.collapse", (e) => {
-						var collapserElement = e.target.previousElementSibling;
-						if (collapserElement.tagName == "ANIMATE-COLLAPSE") {
-							collapserElement.children[0].lastElementChild.classList.remove(
-								"fa-flip-vertical"
-							);
-						}
-					});
-					$document.on("show.bs.collapse", (e) => {
-						var collapserElement = e.target.previousElementSibling;
-						if (collapserElement.tagName == "ANIMATE-COLLAPSE") {
-							collapserElement.children[0].lastElementChild.classList.add(
-								"fa-flip-vertical"
-							);
-						}
-					});
-					$document.isAnimateCollapseHandlerAdded = true;
+			element.on("click", () => {
+				var collapsibleElement = element.next();
+				if (collapsibleElement && collapsibleElement.hasClass("collapse")) {
+					collapsibleElement.collapse("toggle");
 				}
-			},
-		};
+			});
+		},
 	};
+};
 
 	directives.addCustomFilters = function ($timeout, $compile) {
 		return {
@@ -261,8 +403,6 @@
 				// called when a matcher is toggled, should debounce during the collapse animation
 				// of submatchers div
 				scope.toggleMatcher = function ($event, matcher) {
-					// debounce click during collapse animation, so the filter won't show
-					// the submatchers when it is turned off with a double click
 					var targetElement = $event.target.nextElementSibling;
 					if (targetElement) {
 						if (targetElement.classList.contains("collapsing")) {
@@ -276,6 +416,7 @@
 							matcher.name
 						];
 					matcherObj.enabled = !matcherObj.enabled;
+					matcherObj.submatchersOpen = !matcherObj.submatchersOpen;
 				};
 				scope.getCssClasses = function (submatcher) {
 					var classes = ["min-width-12"]; //default, may be overridden
@@ -286,7 +427,7 @@
 		};
 	};
 
-directives.goBack = function ($state) {
+directives.goBack = function ($state, $rootScope) {
 		return {
 			restrict: "A",
 			link: function (scope, element, attrs) {
@@ -297,6 +438,8 @@ directives.goBack = function ($state) {
 					$(".quick-nav").addClass("closing");
 					$(".backdrop").addClass("closing");
 					setTimeout(function () {
+						var query = $rootScope.table && $rootScope.table.parameters && $rootScope.table.parameters.query || '';
+						$state.go(".", { query: query }, { notify: false });
 						$state.go("^");
 					}, 300);
 				});
@@ -304,7 +447,7 @@ directives.goBack = function ($state) {
 		};
 	};
 
-	directives.evolution = function ($state, $stateParams) {
+	directives.evolution = function ($state, $stateParams, $rootScope) {
 		return {
 			restrict: "E",
 			replace: true,
@@ -315,13 +458,15 @@ directives.goBack = function ($state) {
 					if (!Number.isInteger(id)) return;
 					if (id == parseInt($stateParams.id, 10)) return;
 					var previous = $stateParams.previous.concat([$stateParams.id]);
+					var query = $rootScope.table && $rootScope.table.parameters && $rootScope.table.parameters.query || '';
+					$state.go(".", { query: query }, { notify: false });
 					$state.go("main.search.view", { id: id, previous: previous });
 				};
 			},
 		};
 	};
 
-	directives.unit = function ($state, $stateParams) {
+	directives.unit = function ($state, $stateParams, $rootScope) {
 		return {
 			restrict: "E",
 			scope: { uid: "=" },
@@ -331,6 +476,8 @@ directives.goBack = function ($state) {
 				scope.goToState = function (id) {
 					if (id == parseInt($stateParams.id, 10)) return;
 					var previous = $stateParams.previous.concat([$stateParams.id]);
+					var query = $rootScope.table && $rootScope.table.parameters && $rootScope.table.parameters.query || '';
+					$state.go(".", { query: query }, { notify: false });
 					$state.go("main.search.view", { id: id, previous: previous });
 				};
 			},
@@ -638,13 +785,13 @@ directives.goBack = function ($state) {
 			restrict: "E",
 			transclude: true,
 			replace: true,
-			template: '<div class="details-card" id="card-{{sectionId}}">' +
-				'<div class="details-card-header" ng-click="toggle()">' +
-				'<i class="fas fa-chevron-right details-card-chevron" ng-class="{\'details-card-collapsed\': !isOpen}"></i>' +
-				'<span class="details-card-title">{{title}}</span>' +
-				'</div>' +
-				'<div class="details-card-content" ng-transclude ng-show="isOpen"></div>' +
-				'</div>',
+template: '<div class="details-card" id="card-{{sectionId}}">' +
+            '<div class="details-card-header" ng-click="toggle()">' +
+            '<i class="material-icons material-icons-chevron-right details-card-chevron" ng-class="{\'details-card-collapsed\': !isOpen}">chevron_right</i>' +
+            '<span class="details-card-title">{{title}}</span>' +
+            '</div>' +
+            '<div class="details-card-content" ng-transclude ng-show="isOpen"></div>' +
+            '</div>',
 			scope: {
 				title: "@",
 				sectionId: "@",
