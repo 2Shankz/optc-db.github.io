@@ -3648,6 +3648,16 @@ window.drops = {
             'Defeat Level Rewards': [ 4601, "4603-skull" ],
         },
 
+        {
+            name: 'Collun',
+            dropID: 'pka37',
+            thumb: 4618,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4618 ],
+        },
+
     ],
 
 
@@ -3741,6 +3751,16 @@ window.drops = {
             nakama: null,
             gamewith: null,
             'Grand Feast Sugo': [ 4572 ]
+        },
+
+        {
+            name: 'Shanks',
+            dropID: 'coop10',
+            thumb: 4620,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Grand Feast Sugo': [ 4620 ]
         },
 
     ],
