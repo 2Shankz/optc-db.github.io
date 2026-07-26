@@ -889,7 +889,12 @@
 					return false;
 				}
 			} else if (matcher === "supports") {
-				let ids = regex; // `regex` is an array of IDs here
+				let ids = [...regex]; // `regex` is an array of IDs here
+				for (let id of regex) { // add variants to array of IDs
+					id = String(id);
+					if (window.units[id + '-1']) ids.push(id + '-1');
+					if (window.units[id + '-2']) ids.push(id + '-2');
+				}
 				if (!ids.some((id) => utils.canSupportUnit(id, unit))) return false;
 			} else if (matcher === "units") {
 				let ids = regex; // `regex` is an array of IDs here
@@ -945,8 +950,7 @@
 	 * @returns {boolean} true if the supporting unit can support the given unit.
 	 */
 	utils.canSupportUnit = function (unitToSupport, supportingUnit) {
-		if (typeof unitToSupport === "number")
-			unitToSupport = window.units[String(unitToSupport)];
+		unitToSupport = window.units[String(unitToSupport)];
 		if (typeof supportingUnit === "number")
 			supportingUnit = window.units[String(supportingUnit)];
 

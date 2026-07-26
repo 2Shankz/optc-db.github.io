@@ -201,7 +201,15 @@ var flags = window.flags[unit.id] || {};
         }
       }
 
-      if (!Utils.checkUnitMatchSearchParameters(unit, tempParams)) return false;
+      // Searchbar
+      var variants = getUnitVariants(unit);
+      var anyVariantMatches = false;
+
+      for (let variant of variants) {
+        anyVariantMatches = Utils.checkUnitMatchSearchParameters(variant, tempParams);
+        if (anyVariantMatches) break;
+      }
+      if (!anyVariantMatches) return false;
 
 /* * * * * Sidebar filters * * * * */
       if (!tableData.parameters.filters) return true;
