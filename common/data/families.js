@@ -751,6 +751,7 @@ const Gerd = [ "Gerd" ];
 const Shamrock = [ "Saint Shamrock", "St. Shamrock" ];
 const Gunko = [ "Saintess Gunko", "St. Gunko" ];
 const Collun = [ "Collun" ];
+const Jarul = [ "Jarul" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5256,6 +5257,7 @@ window.families = {
     //4619: [ ...Collun ],
     4620: [ ...Shanks ],
     4621: [ ...Shanks ],
+    4622: [ ...Jarul ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],

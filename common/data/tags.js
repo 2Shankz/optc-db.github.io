@@ -4583,6 +4583,7 @@ window.tags = {
 	"4618": ["Giant","Child","Elbaph Arc"],
 	"4620": ["Red-Haired Pirates","Four Emperors","Elbaph Arc"],
 	"4621": ["Red-Haired Pirates","Four Emperors","Elbaph Arc"],
+	"4622": ["Giant","Elbaph Arc"],
 	"5013": [],
 	"5014": [],
 	"5029": [],
