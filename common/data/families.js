@@ -454,7 +454,7 @@ const ThievesOfTehnaGehnaKingdom = [ "Thieves of Tehna Gehna Kingdom" ];
 const TequilaWolfGuard = [ "Tequila Wolf Guard" ];
 const Pekoms = [ "Pekoms" ];
 const BaronTamago = [ "Baron Tamago", "Viscount Hiyoko", "Count Niwatori" ];
-const Ronse = [ "Ronse" ];
+const Lonz = [ "Lonz", "Ronse" ];
 const Stainless = [ "Stainless" ];
 const Boo = [ "Boo" ];
 const JeanAngo = [ "Jean Ango" ];
@@ -2101,7 +2101,7 @@ window.families = {
     1414: [ ...VinsmokeSanji ],
     1415: [ ...Sengoku ],
     1416: [ ...Sengoku ],
-    1417: [ ...Ronse ],
+    1417: [ ...Lonz ],
     1418: [ ...Stainless ],
     1419: [ ...RobLucci ],
     1420: [ ...RobLucci ],
@@ -5254,10 +5254,13 @@ window.families = {
     4616: [ ...Jinbe ],
     4617: [ ...NicoRobin ],
     4618: [ ...Collun ],
-    //4619: [ ...Collun ],
+    4619: [ ...Collun ],
     4620: [ ...Shanks ],
     4621: [ ...Shanks ],
     4622: [ ...Jarul ],
+    4623: [ ...PortgasDAce, ...LittleOarsJr ],
+    4624: [ ...Lonz ],
+    4625: [ ...JohnGiant ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],

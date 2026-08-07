@@ -24,6 +24,10 @@ window.availableTags = [
     "category": 4
   },
   {
+    "name": "Ancient Giant",
+    "category": 2
+  },
+  {
     "name": "Ancient Zoan-type",
     "category": 3
   },
