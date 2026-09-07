@@ -191409,22 +191409,22 @@ window.details = {
         ]
     },
     4640: {//Oars
-        captain: "Boosts Powerhouse and Striker characters' ATK by approximately 6.25x when slots match (3x otherwise), HP by 1.4x, and halves their RCV. If crew uses a Special to boost slot effects, extends the duration of that effect by 2 turns. Heals crew by number of enemies defeated by normal attacks multiplied by 50% of crew's total RCV at end of enemy's turn (halved RCV does not apply to this effect)",
-        special: "Reduces one enemy's HP by 10% (ignoring all defensive effects), and boosts [INT], Powerhouse, and Striker characters' base ATK by +1500 for 3 turns. If enemy has Threshold Damage Reduction status and an [INT] is set as Support for character when Special is launched, boosts [INT], Powerhouse, and Striker characters' ATK by 3.25x for 8 turns. If enemy has Threshold Damage Reduction status and a [PSY] is set as Support for character when Special is launched, reduces crew's ATK boost by 5 turns, but allows crew's ATK boost to be further increased up to 2 times, and further increases boost by 1.5x (up to a maximum 8x). If 2 or more [Thriller Bark Pirates] characters are on the crew, further increases crew's slot effect boost by 2x (up to a maximum 5x). If 3 or more [Giant] characters are on the crew, applies \"Territory: Powerhouse class\" to the field for 2 turns, and massively reduces a portion of each enemies' dealt damage that exceeds 3,000 for 2 turns",
+        captain: "Boosts ATK of Powerhouse and Striker characters by 3x, by 6.25x instead if they have a beneficial orb, boosts HP of Powerhouse and Striker characters by 1.4x, boosts RCV of Powerhouse and Striker characters by 0.5x, and increases duration of any Orb Amplification buffs applied by specials by 2 turns. Recovers HP proportional to the number of enemies you defeated in this turn ✕ 50% crew's RCV at the end of the enemy turn.",
+        special: "Deals 10% of enemies' current HP in True damage to one enemy, and boosts Base ATK of [INT], Powerhouse and Striker characters by 1,500 for 3 turns. If enemies have Threshold Damage Reduction when the special is activated and an [INT] character is supporting this character, boosts ATK of [INT], Powerhouse and Striker characters by 3.25x for 8 turns. If enemies have Threshold Damage Reduction when the special is activated and a [PSY] character is supporting this character, decreases duration of any ATK Up buffs by 5 turns, enables ATK Up buffs to be enhanced up to 2 times, and increases boost effects of ATK Up buffs by 1.5x (up to 8x). If your crew has 2+ [Thriller Bark Pirates] characters, increases boost effects of Orb Amplification buffs by 2x (up to 5x). If your crew has 3+ [Giant] characters, applies Territory: Powerhouse to the field for 2 turns, and reduces any damage received above 3,000 HP by 97% for 2 turns.",
         specialName: "Giant Body Gum-Gum Bazooka",
         sailor: {
-            base: "Character cannot be blown away by attack",
-            level1: "Adds 10x character's ATK on top of tap-timing bonuses"
+            base: "This character cannot be Blown Away.",
+            level1: "Adds 10x character's ATK as Additional Damage."
         },
         support: [
             {
-                Characters: "Characters with the following Character Tag: [Thriller Bark Pirates]",
+                Characters: "[Thriller Bark Pirates] characters",
                 description: [
-                    "Adds 12% of character's base HP to supported character's base HP",
-                    "Adds 14% of character's base HP to supported character's base HP",
-                    "Adds 16% of character's base HP to supported character's base HP",
-                    "Adds 18% of character's base HP to supported character's base HP",
-                    "Adds 20% of character's base HP to supported character's base HP"
+                    "Adds 12% of this character's base HP to the supported character's base HP.",
+                    "Adds 14% of this character's base HP to the supported character's base HP.",
+                    "Adds 16% of this character's base HP to the supported character's base HP.",
+                    "Adds 18% of this character's base HP to the supported character's base HP.",
+                    "Adds 20% of this character's base HP to the supported character's base HP."
                 ]
             }
         ],
@@ -191504,18 +191504,18 @@ window.details = {
         ],
         superTandemBoost: {
             characterCondition: [
-                "When a [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] character performs Super Tandem",
-                "When a [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] character performs Super Tandem",
-                "When a [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] character performs Super Tandem",
-                "When a [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] character performs Super Tandem",
-                "When a [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] character performs Super Tandem"
+                "When a [Thriller Bark Pirates], [Seven Warlords of the Sea] or [Giant] character performs Super Tandem",
+                "When a [Thriller Bark Pirates], [Seven Warlords of the Sea] or [Giant] character performs Super Tandem",
+                "When a [Thriller Bark Pirates], [Seven Warlords of the Sea] or [Giant] character performs Super Tandem",
+                "When a [Thriller Bark Pirates], [Seven Warlords of the Sea] or [Giant] character performs Super Tandem",
+                "When a [Thriller Bark Pirates], [Seven Warlords of the Sea] or [Giant] character performs Super Tandem"
             ],
             description: [
-                "Raises Boost Level of [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] characters by 1 for 1 turn",
-                "Raises Boost Level of [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] characters by 2 for 1 turn",
-                "Raises Boost Level of [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] characters by 3 for 1 turn",
-                "Raises Boost Level of [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] characters by 4 for 1 turn",
-                "Raises Boost Level of [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] characters by 5 for 1 turn"
+                "Raises Boost Level of [Thriller Bark Pirates], [Seven Warlords of the Sea] and [Giant] characters by 1 for 1 turn.",
+                "Raises Boost Level of [Thriller Bark Pirates], [Seven Warlords of the Sea] and [Giant] characters by 2 for 1 turn.",
+                "Raises Boost Level of [Thriller Bark Pirates], [Seven Warlords of the Sea] and [Giant] characters by 3 for 1 turn.",
+                "Raises Boost Level of [Thriller Bark Pirates], [Seven Warlords of the Sea] and [Giant] characters by 4 for 1 turn.",
+                "Raises Boost Level of [Thriller Bark Pirates], [Seven Warlords of the Sea] and [Giant] characters by 5 for 1 turn."
             ]
         }
     },
