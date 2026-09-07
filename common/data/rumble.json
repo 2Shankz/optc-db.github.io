@@ -492211,6 +492211,342 @@
       "cost": 20
     },
     {
+      "id": 4640,
+      "ability": [
+        {
+          "effects": [
+            {
+              "attributes": ["HP", "DEF"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[INT]", "Powerhouse", "[Giant]"]}
+            },
+            {
+              "attributes": ["ATK", "SPD"],
+              "effect": "buff",
+              "level": 7,
+              "targeting": {"targets": ["self"]},
+              "condition": {"type": "character", "team": "crew", "families": ["Monkey D. Luffy"]}
+            },
+            {
+              "attributes": ["ATK"],
+              "effect": "penalty",
+              "level": 18,
+              "targeting": {"targets": ["crew"], "families": ["Monkey D. Luffy"]}
+            },
+            {
+              "attributes": ["ATK"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[INT]", "Powerhouse", "[Giant]"]},
+              "condition": {"type": "time", "comparator": "first", "count": 50}
+            },
+            {
+              "attributes": ["Special CT"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[INT]", "Powerhouse", "[Giant]"]},
+              "condition": {"type": "time", "comparator": "first", "count": 50}
+            }
+          ]
+        },
+        {
+          "effects": [
+            {
+              "override": {"level": 2}
+            },
+            {
+              "override": {"level": 8}
+            },
+            {},
+            {
+              "override": {"level": 2}
+            },
+            {}
+          ]
+        },
+        {
+          "effects": [
+            {
+              "override": {"level": 3}
+            },
+            {
+              "override": {"level": 9}
+            },
+            {},
+            {
+              "override": {"level": 3}
+            },
+            {}
+          ]
+        },
+        {
+          "effects": [
+            {
+              "override": {"level": 4}
+            },
+            {
+              "override": {"level": 10}
+            },
+            {},
+            {
+              "override": {"level": 4}
+            },
+            {
+              "override": {"level": 2}
+            }
+          ]
+        },
+        {
+          "effects": [
+            {
+              "override": {"level": 6}
+            },
+            {
+              "override": {"level": 12}
+            },
+            {},
+            {
+              "override": {"level": 6}
+            },
+            {
+              "override": {"level": 3}
+            }
+          ]
+        }
+      ],
+      "special": [
+        {
+          "cooldown": 32,
+          "effects": [
+            {
+              "attributes": ["ATK"],
+              "effect": "buff",
+              "level": 1,
+              "duration": 20,
+              "targeting": {"targets": ["[INT]", "Powerhouse", "[Giant]"]}
+            },
+            {
+              "amount": 0.3,
+              "repeat": 3,
+              "effect": "damage",
+              "type": "atk",
+              "defbypass": true,
+              "targeting": {"count": 2, "targets": ["enemies"]}
+            },
+            {
+              "amount": 8,
+              "effect": "damage",
+              "type": "atk",
+              "spread": true,
+              "targeting": {"targets": ["enemies"]},
+              "range": {"size": "large", "direction": "radial"},
+              "condition": {"type": "character", "team": "crew", "families": ["Monkey D. Luffy"]}
+            },
+            {
+              "attributes": ["ATK"],
+              "effect": "penalty",
+              "level": 5,
+              "duration": 100,
+              "targeting": {"targets": ["self"]}
+            },
+            {
+              "attributes": ["DEF"],
+              "effect": "penalty",
+              "level": 3,
+              "duration": 100,
+              "targeting": {"targets": ["self"]}
+            }
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {},
+            {
+              "override": {"amount": 0.4}
+            },
+            {
+              "override": {"amount": 9}
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {},
+            {
+              "override": {"amount": 0.5}
+            },
+            {
+              "override": {"amount": 10}
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {
+              "override": {"level": 2}
+            },
+            {
+              "override": {"amount": 0.6}
+            },
+            {
+              "override": {"amount": 11}
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {
+              "override": {"level": 2}
+            },
+            {
+              "override": {"amount": 0.7}
+            },
+            {
+              "override": {"amount": 12}
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {
+              "override": {"level": 3}
+            },
+            {
+              "override": {"amount": 0.8}
+            },
+            {
+              "override": {"amount": 13}
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {
+              "override": {"level": 3}
+            },
+            {
+              "override": {"amount": 0.9}
+            },
+            {
+              "override": {"amount": 14}
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {
+              "override": {"level": 3}
+            },
+            {
+              "override": {"amount": 1}
+            },
+            {
+              "override": {"amount": 15}
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {
+              "override": {"level": 4}
+            },
+            {
+              "override": {"amount": 1.1}
+            },
+            {
+              "override": {"amount": 16}
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "cooldown": 32,
+          "effects": [
+            {
+              "override": {"level": 5}
+            },
+            {
+              "override": {"amount": 1.2}
+            },
+            {
+              "override": {"amount": 18}
+            },
+            {},
+            {}
+          ]
+        }
+      ],
+      "resilience": [
+        {
+          "attribute": "Special Bind",
+          "chance": 100,
+          "type": "debuff"
+        },
+        {
+          "attribute": "Half Stats",
+          "chance": 100,
+          "type": "debuff"
+        },
+        {
+          "attribute": "[PSY]",
+          "percentage": 30,
+          "type": "damage"
+        }
+      ],
+      "pattern": [
+        {
+          "type": "Normal",
+          "action": "attack"
+        },
+        {
+          "level": 2,
+          "area": "Self",
+          "action": "heal"
+        },
+        {
+          "type": "Power",
+          "action": "attack"
+        },
+        {
+          "type": "Power",
+          "action": "attack"
+        }
+      ],
+      "target": {
+        "criteria": "near"
+      },
+      "stats": {
+        "rumbleType": "ATK",
+        "def": 172,
+        "spd": 160
+      },
+      "cost": 20
+    },
+    {
       "id": 5013,
       "basedOn": 5014
     },

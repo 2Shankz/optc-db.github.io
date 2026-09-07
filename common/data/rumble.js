@@ -119323,6 +119323,45 @@ window.rumble = {
             }
         }
     },
+    4640: {
+        festCost: 20,
+        festStats: {
+            def: 172,
+            spd: 160,
+            style: "ATK"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['100% chance to resist Special Bind.', '100% chance to resist Half Stats.', '30% damage reduction from [PSY] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 1 HP and DEF up buff to [INT], Powerhouse and [Giant] crew members.', 'When Monkey D. Luffy is on your crew, applies Lv. 7 ATK and SPD up buff to self.', 'Inflicts Lv. 18 ATK down debuff to Monkey D. Luffy crew member.', 'For the first 50 seconds, applies Lv. 1 ATK up buff to [INT], Powerhouse and [Giant] crew members.', 'For the first 50 seconds, applies Lv. 1 Special CT up buff to [INT], Powerhouse and [Giant] crew members.'],
+                ['Applies Lv. 2 HP and DEF up buff to [INT], Powerhouse and [Giant] crew members.', 'When Monkey D. Luffy is on your crew, applies Lv. 8 ATK and SPD up buff to self.', 'Inflicts Lv. 18 ATK down debuff to Monkey D. Luffy crew member.', 'For the first 50 seconds, applies Lv. 2 ATK up buff to [INT], Powerhouse and [Giant] crew members.', 'For the first 50 seconds, applies Lv. 1 Special CT up buff to [INT], Powerhouse and [Giant] crew members.'],
+                ['Applies Lv. 3 HP and DEF up buff to [INT], Powerhouse and [Giant] crew members.', 'When Monkey D. Luffy is on your crew, applies Lv. 9 ATK and SPD up buff to self.', 'Inflicts Lv. 18 ATK down debuff to Monkey D. Luffy crew member.', 'For the first 50 seconds, applies Lv. 3 ATK up buff to [INT], Powerhouse and [Giant] crew members.', 'For the first 50 seconds, applies Lv. 1 Special CT up buff to [INT], Powerhouse and [Giant] crew members.'],
+                ['Applies Lv. 4 HP and DEF up buff to [INT], Powerhouse and [Giant] crew members.', 'When Monkey D. Luffy is on your crew, applies Lv. 10 ATK and SPD up buff to self.', 'Inflicts Lv. 18 ATK down debuff to Monkey D. Luffy crew member.', 'For the first 50 seconds, applies Lv. 4 ATK up buff to [INT], Powerhouse and [Giant] crew members.', 'For the first 50 seconds, applies Lv. 2 Special CT up buff to [INT], Powerhouse and [Giant] crew members.'],
+                ['Applies Lv. 6 HP and DEF up buff to [INT], Powerhouse and [Giant] crew members.', 'When Monkey D. Luffy is on your crew, applies Lv. 12 ATK and SPD up buff to self.', 'Inflicts Lv. 18 ATK down debuff to Monkey D. Luffy crew member.', 'For the first 50 seconds, applies Lv. 6 ATK up buff to [INT], Powerhouse and [Giant] crew members.', 'For the first 50 seconds, applies Lv. 3 Special CT up buff to [INT], Powerhouse and [Giant] crew members.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 32,
+                descriptions: [
+                    ['Applies Lv. 1 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 0.3x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 8x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 1 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 0.4x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 9x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 1 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 0.5x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 10x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 2 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 0.6x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 11x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 2 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 0.7x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 12x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 3 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 0.8x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 13x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 3 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 0.9x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 14x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 3 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 1x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 15x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 4 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 1.1x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 16x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.'],
+                    ['Applies Lv. 5 ATK up buff to [INT], Powerhouse and [Giant] crew members for 20 seconds.', 'Deals 1.2x ATK in damage ignoring DEF to 2 enemies 3 times.', 'When Monkey D. Luffy is on your crew, deals 18x ATK in spread damage to all enemies in a large, radial range.', 'Inflicts Lv. 5 ATK down debuff to self for 100 seconds.', 'Inflicts Lv. 3 DEF down debuff to self for 100 seconds.']
+                ]
+            }
+        }
+    },
     5013: {
         festCost: 55,
         festStats: {

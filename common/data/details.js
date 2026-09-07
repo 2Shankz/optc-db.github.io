@@ -191517,69 +191517,7 @@ window.details = {
                 "Raises Boost Level of [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] characters by 4 for 1 turn",
                 "Raises Boost Level of [Thriller Bark Pirates] [Seven Warlords of the Sea] [Giant] characters by 5 for 1 turn"
             ]
-        },
-        festStats: {
-            def: 172,
-            spd: 160,
-            style: "ATK"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind/Halve Stats, reduce damage taken from [PSY] by 30%",
-        festAbility: [
-            "[INT]/Powerhouse class and [Giant] teammates HP Up Lv.1, DEF Up Lv.1; if \"Monkey D. Luffy\" is on the team, self ATK Up Lv.7, SPD Up Lv.7; \"Monkey D. Luffy\" teammate ATK Down Lv.18; first 50 s of battle, [INT]/Powerhouse class and [Giant] teammates ATK Up Lv.1, Special CT Speed Up Lv.1",
-            "[INT]/Powerhouse class and [Giant] teammates HP Up Lv.2, DEF Up Lv.2; if \"Monkey D. Luffy\" is on the team, self ATK Up Lv.8, SPD Up Lv.8; \"Monkey D. Luffy\" teammate ATK Down Lv.18; first 50 s of battle, [INT]/Powerhouse class and [Giant] teammates ATK Up Lv.2, Special CT Speed Up Lv.1",
-            "[INT]/Powerhouse class and [Giant] teammates HP Up Lv.3, DEF Up Lv.3; if \"Monkey D. Luffy\" is on the team, self ATK Up Lv.9, SPD Up Lv.9; \"Monkey D. Luffy\" teammate ATK Down Lv.18; first 50 s of battle, [INT]/Powerhouse class and [Giant] teammates ATK Up Lv.3, Special CT Speed Up Lv.1",
-            "[INT]/Powerhouse class and [Giant] teammates HP Up Lv.4, DEF Up Lv.4; if \"Monkey D. Luffy\" is on the team, self ATK Up Lv.10, SPD Up Lv.10; \"Monkey D. Luffy\" teammate ATK Down Lv.18; first 50 s of battle, [INT]/Powerhouse class and [Giant] teammates ATK Up Lv.4, Special CT Speed Up Lv.2",
-            "[INT]/Powerhouse class and [Giant] teammates HP Up Lv.6, DEF Up Lv.6; if \"Monkey D. Luffy\" is on the team, self ATK Up Lv.12, SPD Up Lv.12; \"Monkey D. Luffy\" teammate ATK Down Lv.18; first 50 s of battle, [INT]/Powerhouse class and [Giant] teammates ATK Up Lv.6, Special CT Speed Up Lv.3"
-        ],
-        festSpecial: [
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.1 (20 s); targets 2 enemies ignoring DEF for ATK x 0.3 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.1 (20 s); targets 2 enemies ignoring DEF for ATK x 0.4 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.1 (20 s); targets 2 enemies ignoring DEF for ATK x 0.5 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.2 (20 s); targets 2 enemies ignoring DEF for ATK x 0.6 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.2 (20 s); targets 2 enemies ignoring DEF for ATK x 0.7 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.3 (20 s); targets 2 enemies ignoring DEF for ATK x 0.8 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.3 (20 s); targets 2 enemies ignoring DEF for ATK x 0.9 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.3 (20 s); targets 2 enemies ignoring DEF for ATK x 1 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.4 (20 s); targets 2 enemies ignoring DEF for ATK x 1.1 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 16 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            },
-            {
-                cooldown: 32,
-                description: "Targets [INT]/Powerhouse class and [Giant] teammates for ATK Up Lv.5 (20 s); targets 2 enemies ignoring DEF for ATK x 1.2 damage 3 times; if \"Monkey D. Luffy\" is on the team, targets enemies within large range for ATK x 18 spread damage (damage on each enemy reduced based on number of total enemies); targets self for ATK Down Lv.5 (100 s), DEF Down Lv.3 (100 s)"
-            }
-        ]
+        }
     },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
