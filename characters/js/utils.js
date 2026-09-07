@@ -485,10 +485,12 @@ CharUtils.hasFarmableSocket = function(id) {
 }
 
 CharUtils.getFilteredUnitIds = function () {
-    // don't rely on internal row index, as some units are not in the table,
-    // messing up the id numbers of later units
-    var result = window.charTable.DataTable().rows({"filter":"applied"}).data().map(x => Number(x[0]));
-    return result;
+    // Tabulator - get all visible/filtered row data
+    if (window.charTable) {
+        var data = window.charTable.getData();
+        return data.map(function(row) { return Number(row.col0); });
+    }
+    return [];
 }
 
 /******************

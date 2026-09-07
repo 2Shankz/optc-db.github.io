@@ -12,6 +12,27 @@ window.farmableOptions = [
     { key: "Piraterumble", label: "Pirate Rumble-only", hideLabel: "Hide PiRumble-only" }
 ];
 
+window.exclusiveFilterLabels = {
+    drop: 'Drop: ', server: 'Server: ', rr: 'RR: ', socket: 'Socket: ',
+    inkable: 'Inkable: ', shop: 'Shop: ',
+    dualUnits: 'Dual Units', vsUnits: 'VS Units', superTypeUnits: 'Super Class/Type',
+    classInclusive: 'Excl. other Classes', noSingleClass: 'No Single Class',
+    tagsStrict: 'Match All Tags',
+    noBase: 'Hide Base', noFodder: 'Hide Fodder', noEvos: 'Hide Evos',
+    noLog: 'Hide Log', noMissing: 'Hide Missing',
+    globalTM: 'TM Boost', globalKC: 'KC Boost',
+    globalPKA: 'PKA Boost', comodorevsempress: 'Blitz Boost',
+    styleATK: 'Style ATK', styleDEF: 'Style DEF',
+    styleRCV: 'Style RCV', styleSPT: 'Style SPT',
+    styleDBF: 'Style DBF', styleBAL: 'Style BAL',
+    katakuri: 'Kata', katakuriplus: 'Kata+', katakuriv2: 'Kata V2',
+    TMlaw: 'TM Law', carrotwanda: 'Carrot & Wanda',
+    noLB: 'No LB', potential: 'Potential', noLBex: 'No LB+',
+    noLBCap: 'No LB Cap', noLLB: 'No LLB', LLBSailor: 'LLB Sailor',
+    noSupport: 'No Support', typoClass: 'Typo Class',
+    nodualUnits: 'No Dual Units'
+};
+
 window.nonFarmableOptions = [
     { key: "lrr", label: "Limited RR-only", hideLabel: "Hide lim. RR-only" },
     { key: "tmlrr", label: "TM Limited RR-only", hideLabel: "Hide TM lim. RR-only" },

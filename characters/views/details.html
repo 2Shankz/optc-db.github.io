@@ -5,16 +5,23 @@
         <div class="custom-modal">
         <div class="modal-dialog">
           <div class="modal-content animated rollIn">
-            <div class="modal-header" style="text-align: center">
-              <div
-                class="btn btn-default back-button"
-                ng-if="withButton"
-                ng-click="onBackClick()"
-              >
-                <i class="fas fa-arrow-left"></i>
+            <div class="modal-header" ng-if="unit">
+              <div class="header-buttons-left">
+                <div class="btn btn-default close-button" ui-sref="^" title="Close">
+                  <span class="material-icons" style="font-size: 20px;">close</span>
+                </div>
+                <div class="btn btn-default back-button" ng-if="withButton" ng-click="onBackClick()">
+                  <i class="material-icons">arrow_back</i>
+                </div>
               </div>
-              {{::unit.name}}
+              <div class="header-title">{{::unit.name}}</div>
+              <div class="header-buttons-right">
+                <button class="btn btn-default modal-theme-btn header-theme-btn" ng-click="toggleModalTheme()" title="Toggle modal theme">
+                  <i class="material-icons">{{getModalThemeIcon()}}</i>
+                </button>
+              </div>
             </div>
+            <div class="modal-header" ng-if="!unit" style="height: 50px;"></div>
 
 <div class="modal-body" id="modal-body-top">
             
@@ -200,22 +207,22 @@
                                             <span class="badge badge-base" ng-show="details.captain.base">Base</span>
                                             <div ng-show="details.captain.base"
                                                 ng-bind-html="details.captain.base | decorate"></div>
-                                            <span class="badge badge-level1" ng-show="details.captain.level1">LB Level 1</span>
+                                            <span class="badge badge-level1" ng-show="details.captain.level1">LB Lv. 1</span>
                                             <div ng-show="details.captain.level1"
                                                 ng-bind-html="details.captain.level1 | decorate"></div>
-                                            <span class="badge badge-level2" ng-show="details.captain.level2">LB Level 2</span>
+                                            <span class="badge badge-level2" ng-show="details.captain.level2">LB Lv. 2</span>
                                             <div ng-show="details.captain.level2"
                                                 ng-bind-html="details.captain.level2 | decorate"></div>
-                                            <span class="badge badge-level3" ng-show="details.captain.level3">LB Level 3</span>
+                                            <span class="badge badge-level3" ng-show="details.captain.level3">LB Lv. 3</span>
                                             <div ng-show="details.captain.level3"
                                                 ng-bind-html="details.captain.level3 | decorate"></div>
-                                            <span class="badge badge-level4" ng-show="details.captain.level4">LB Level 4</span>
+                                            <span class="badge badge-level4" ng-show="details.captain.level4">LB Lv. 4</span>
                                             <div ng-show="details.captain.level4"
                                                 ng-bind-html="details.captain.level4 | decorate"></div>
-                                            <span class="badge badge-level5" ng-show="details.captain.level5">LB Level 5</span>
+                                            <span class="badge badge-level5" ng-show="details.captain.level5">LB Lv. 5</span>
                                             <div ng-show="details.captain.level5"
                                                 ng-bind-html="details.captain.level5 | decorate"></div>
-                                            <span class="badge badge-level6" ng-show="details.captain.level6">LB Level 6</span>
+                                            <span class="badge badge-level6" ng-show="details.captain.level6">LB Lv. 6</span>
                                             <div ng-show="details.captain.level6"
                                                 ng-bind-html="details.captain.level6 | decorate"></div>
                                             <span class="badge badge-character"
@@ -241,15 +248,15 @@
                                             <div ng-show="details.captain.llbbase"
                                                 ng-bind-html="details.captain.llbbase | decorate"></div>
                                             <span class="badge badge-level1" ng-show="details.captain.llblevel1">LLB LB
-                                                Level 1</span>
+                                                Lv. 1</span>
                                             <div ng-show="details.captain.llblevel1"
                                                 ng-bind-html="details.captain.llblevel1 | decorate"></div>
                                             <span class="badge badge-level2" ng-show="details.captain.llblevel2">LLB LB
-                                                Level 2</span>
+                                                Lv. 2</span>
                                             <div ng-show="details.captain.llblevel2"
                                                 ng-bind-html="details.captain.llblevel2 | decorate"></div>
                                             <span class="badge badge-level6" ng-show="details.captain.llblevel6">LLB LB
-                                                Level 6</span>
+                                                Lv. 6</span>
                                             <div ng-show="details.captain.llblevel6"
                                                 ng-bind-html="details.captain.llblevel6 | decorate"></div>
                                             <span class="badge badge-character"
@@ -355,11 +362,11 @@
                                             <div ng-show="details.special.llbbase"
                                                 ng-bind-html="details.special.llbbase | decorate"></div>
                                             <span class="badge badge-slevel" ng-show="details.special.llblevel1">LLB
-                                                Level 1</span>
+                                                Lv. 1</span>
                                             <div ng-show="details.special.llblevel1"
                                                 ng-bind-html="details.special.llblevel1 | decorate"></div>
                                             <span class="badge badge-slevel" ng-show="details.special.llblevel2">LLB
-                                                Level 2 Special</span>
+                                                Lv. 2 Special</span>
                                             <div ng-show="details.special.llblevel2"
                                                 ng-bind-html="details.special.llblevel2 | decorate"></div>
                                             <span class="badge badge-character"
@@ -599,10 +606,10 @@
                                                 2</span>
                                             <div ng-show="details.sailor.base2"
                                                 ng-bind-html="details.sailor.base2 | decorate"></div>
-                                            <span class="badge badge-slevel" ng-show="details.sailor.level1">LB Level 1</span>
+                                            <span class="badge badge-slevel" ng-show="details.sailor.level1">LB Lv. 1</span>
                                             <div ng-show="details.sailor.level1"
                                                 ng-bind-html="details.sailor.level1 | decorate"></div>
-                                            <span class="badge badge-slevel" ng-show="details.sailor.level2">LB Level 2</span>
+                                            <span class="badge badge-slevel" ng-show="details.sailor.level2">LB Lv. 2</span>
                                             <div ng-show="details.sailor.level2"
                                                 ng-bind-html="details.sailor.level2 | decorate"></div>
                                             <span class="badge badge-combined" ng-show="details.sailor.combined">Dual Character</span>
@@ -651,11 +658,11 @@
                                             <div ng-show="details.sailor.llbbase2"
                                                 ng-bind-html="details.sailor.llbbase2 | decorate"></div>
                                             <span class="badge badge-slevel" ng-show="details.sailor.llblevel1">LLB LB
-                                                Level 1 Sailor</span>
+                                                Lv. 1 Sailor</span>
                                             <div ng-show="details.sailor.llblevel1"
                                                 ng-bind-html="details.sailor.llblevel1 | decorate"></div>
                                             <span class="badge badge-slevel" ng-show="details.sailor.llblevel2">LLB LB
-                                                Level 2 Sailor</span>
+                                                Lv. 2 Sailor</span>
                                             <div ng-show="details.sailor.llblevel2"
                                                 ng-bind-html="details.sailor.llblevel2 | decorate"></div>
                                             <span class="badge badge-character"
@@ -722,7 +729,7 @@
                                     <div ng-repeat="stage in details.support track by $index">
                                         <strong>Supported Characters:</strong> <span
                                             ng-bind-html="stage.Characters | decorate"></span>
-                                        <div ng-repeat="item in stage.description track by $index"><strong>Level
+                                        <div ng-repeat="item in stage.description track by $index"><strong>Lv.
                                                 {{::$index + 1}}:</strong>
                                             <span ng-bind-html="item | decorate"></span><br>
                                         </div>
@@ -758,7 +765,7 @@
                                 <!-- different limit abilities -->
                                 <div ng-if="!isLimitHybrid && isLimitStaged">
                                     <div ng-repeat="stage in details.limit track by $index">
-                                        <strong>Level {{::$index + 1}}:</strong>
+                                        <strong>Lv. {{::$index + 1}}:</strong>
                                         <span ng-bind-html="stage | decorate"></span>
                                     </div>
                                 </div>
@@ -814,7 +821,7 @@
                                 <tr ng-if="details.lastTap">
                             <td>
                                 <strong>Condition:</strong> <span ng-bind-html="details.lastTap.condition | decorate"></span>
-                                        <div ng-repeat="item in details.lastTap.description track by $index"><strong>Level {{::$index + 1}}:</strong>
+                                        <div ng-repeat="item in details.lastTap.description track by $index"><strong>Lv. {{::$index + 1}}:</strong>
                                         <span ng-bind-html="item | decorate"></span><br></div>
                                 <span class="notes" ng-if="details.lastTapNotes" ng-bind-html="details.lastTapNotes | notes | decorate"></span>
                             </td>
@@ -833,7 +840,7 @@
                                 <tr ng-if="details.superTandem">
                                     <td>
                                         <span ng-if="details.superTandem.condition"><strong>Condition:</strong> <span ng-bind-html="details.superTandem.condition | decorate"></span></span>
-                                        <div ng-repeat="item in details.superTandem.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandem.characterCondition[$index] | decorate"></span>):</strong>
+                                        <div ng-repeat="item in details.superTandem.description track by $index"><strong>Lv. {{::$index + 1}} (<span ng-bind-html="details.superTandem.characterCondition[$index] | decorate"></span>):</strong>
                                         <span ng-bind-html="item | decorate"></span><br></div>
                                         <span class="notes" ng-if="details.superTandemNotes" ng-bind-html="details.superTandemNotes | notes | decorate"></span>
                                 <add-super-tandem-query criteria="details.superTandem.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
@@ -852,7 +859,7 @@
                             <tbody>
                                 <tr ng-if="details.superTandemBoost.characterCondition">
                                     <td >
-                                        <div ng-repeat="item in details.superTandemBoost.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
+                                        <div ng-repeat="item in details.superTandemBoost.description track by $index"><strong>Lv. {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
                                         <span class="notes" ng-if="details.superTandemBoostNotes" ng-bind-html="details.superTandemBoostNotes | notes | decorate"></span>
                                         <add-super-tandem-query criteria="details.superTandemBoost.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
                                     </td>
@@ -860,14 +867,14 @@
                                 <tr ng-if="details.superTandemBoost.character1">
                                     <th><span>{{::char1.name}}</span></th>
                                     <td>
-                                        <div ng-repeat="item in details.superTandemBoost.character1.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.character1.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
+                                        <div ng-repeat="item in details.superTandemBoost.character1.description track by $index"><strong>Lv. {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.character1.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
                                         <add-super-tandem-query criteria="details.superTandemBoost.character1.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
                                     </td>
                                 </tr>
                                 <tr ng-if="details.superTandemBoost.character2">
                                     <th><span>{{::char2.name}}</span></th>
                                     <td>
-                                        <div ng-repeat="item in details.superTandemBoost.character2.description track by $index"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.character2.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
+                                        <div ng-repeat="item in details.superTandemBoost.character2.description track by $index"><strong>Lv. {{::$index + 1}} (<span ng-bind-html="details.superTandemBoost.character2.characterCondition[$index] | decorate"></span>): </strong><span ng-bind-html="item | decorate"></span><br></div>
                                         <add-super-tandem-query criteria="details.superTandemBoost.character2.characterCondition[4]" excluded-families="families"></add-super-tandem-query>
                                     </td>
                                 </tr>
@@ -888,7 +895,7 @@
                                         <table class="table table-striped-column abilities rush">
                                             <tbody>
                                                 <tr ng-repeat-start="item in details.rush.description track by $index">
-                                                    <th colspan="2"><strong>Level {{::$index + 1}} (<span ng-bind-html="details.rush.characterCondition[$index] | decorate"></span>)</strong></th>
+                                                    <th colspan="2"><strong>Lv. {{::$index + 1}} (<span ng-bind-html="details.rush.characterCondition[$index] | decorate"></span>)</strong></th>
                                                 </tr>
                                                 <tr ng-repeat-end>
                                                     <td width="50%"><!--strong>Level {{::$index + 1}} (<span ng-bind-html="details.rush.characterCondition[$index] | decorate"></span>):</strong-->
@@ -915,24 +922,24 @@
                                 <tr>
                                     <td>
                                         <div ng-repeat="stage in details.lLimit track by $index" ng-if="details.lLimit">
-                                            <div><strong>Level {{::$index + 1}}:</strong> Increase Max Level to {{::[105, 110, 120, 130, 150][$index]}}</div>
+                                            <div><strong>Lv. {{::$index + 1}}:</strong> Increase Max Lv. to {{::[105, 110, 120, 130, 150][$index]}}</div>
                                             <span ng-if="stage.captain.base" class="badge badge-base">Base Captain</span><div ng-if="stage.captain.base" ng-bind-html="stage.captain.base | decorate"></div>
-                                            <span ng-if="stage.captain.level1" class="badge badge-level1">LB Level 1 Captain</span><div ng-if="stage.captain.level1" ng-bind-html="stage.captain.level1 | decorate"></div>
-                                            <span ng-if="stage.captain.level2" class="badge badge-level2">LB Level 2 Captain</span><div ng-if="stage.captain.level2" ng-bind-html="stage.captain.level2 | decorate"></div>
-                                            <span ng-if="stage.captain.level6" class="badge badge-level6">LB Level 6 Captain</span><div ng-if="stage.captain.level6" ng-bind-html="stage.captain.level6 | decorate"></div>
+                                            <span ng-if="stage.captain.level1" class="badge badge-level1">LB Lv. 1 Captain</span><div ng-if="stage.captain.level1" ng-bind-html="stage.captain.level1 | decorate"></div>
+                                            <span ng-if="stage.captain.level2" class="badge badge-level2">LB Lv. 2 Captain</span><div ng-if="stage.captain.level2" ng-bind-html="stage.captain.level2 | decorate"></div>
+                                            <span ng-if="stage.captain.level6" class="badge badge-level6">LB Lv. 6 Captain</span><div ng-if="stage.captain.level6" ng-bind-html="stage.captain.level6 | decorate"></div>
                                             <span ng-if="stage.captain.character1" class="badge badge-character">{{::char1.name}} Captain</span><div ng-if="stage.captain.character1" ng-bind-html="stage.captain.character1 | decorate"></div>
                                             <span ng-if="stage.captain.character2" class="badge badge-character">{{::char2.name}} Captain</span><div ng-if="stage.captain.character2" ng-bind-html="stage.captain.character2 | decorate"></div>
                                             <span ng-if="stage.captain.combined" class="badge badge-combined">Dual Character Captain</span><div ng-if="stage.captain.combined" ng-bind-html="stage.captain.combined | decorate"></div>
                                             <span ng-if="stage.sailor.base" class="badge badge-sbase">Base Sailor</span><div ng-if="stage.sailor.base" ng-bind-html="stage.sailor.base | decorate"></div>
                                             <span ng-if="stage.sailor.base2" class="badge badge-sbase">Base Sailor 2</span><div ng-if="stage.sailor.base2" ng-bind-html="stage.sailor.base2 | decorate"></div>
-                                            <span ng-if="stage.sailor.level1" class="badge badge-slevel">LB Level 1 Sailor</span><div ng-if="stage.sailor.level1" ng-bind-html="stage.sailor.level1 | decorate"></div>
-                                            <span ng-if="stage.sailor.level2" class="badge badge-slevel">LB Level 2 Sailor</span><div ng-if="stage.sailor.level2" ng-bind-html="stage.sailor.level2 | decorate"></div>
+                                            <span ng-if="stage.sailor.level1" class="badge badge-slevel">LB Lv. 1 Sailor</span><div ng-if="stage.sailor.level1" ng-bind-html="stage.sailor.level1 | decorate"></div>
+                                            <span ng-if="stage.sailor.level2" class="badge badge-slevel">LB Lv. 2 Sailor</span><div ng-if="stage.sailor.level2" ng-bind-html="stage.sailor.level2 | decorate"></div>
                                             <span ng-if="stage.sailor.character1" class="badge badge-character">{{::char1.name}} Sailor</span><div ng-if="stage.sailor.character1" ng-bind-html="stage.sailor.character1 | decorate"></div>
                                             <span ng-if="stage.sailor.character2" class="badge badge-character">{{::char2.name}} Sailor</span><div ng-if="stage.sailor.character2" ng-bind-html="stage.sailor.character2 | decorate"></div>
                                             <span ng-if="stage.sailor.combined" class="badge badge-combined">Dual Character Sailor</span><div ng-if="stage.sailor.combined" ng-bind-html="stage.sailor.combined | decorate"></div>
                                             <span ng-if="stage.special.base" class="badge badge-slevel">Base Special</span><div ng-if="stage.special.base && !isLLBSpecialStaged[$index]" ng-bind-html="stage.special.base | decorate"></div>
-                                            <span ng-if="stage.special.level1" class="badge badge-slevel">Level 1 Special</span><div ng-if="stage.special.level1 && !isLLBSpecialStaged[$index]" ng-bind-html="stage.special.level1 | decorate"></div>
-                                            <span ng-if="stage.special.level2" class="badge badge-slevel">Level 2 Special</span><div ng-if="stage.special.level2 && !isLLBSpecialStaged[$index]" ng-bind-html="stage.special.level2 | decorate"></div>
+                                            <span ng-if="stage.special.level1" class="badge badge-slevel">Lv. 1 Special</span><div ng-if="stage.special.level1 && !isLLBSpecialStaged[$index]" ng-bind-html="stage.special.level1 | decorate"></div>
+                                            <span ng-if="stage.special.level2" class="badge badge-slevel">Lv. 2 Special</span><div ng-if="stage.special.level2 && !isLLBSpecialStaged[$index]" ng-bind-html="stage.special.level2 | decorate"></div>
                                             <span ng-if="stage.special.character1" class="badge badge-character">{{::char1.name}} Special</span><div ng-if="stage.special.character1 && !isLLBSpecialStaged[$index]" ng-bind-html="stage.special.character1 | decorate"></div>
                                             <span ng-if="stage.special.character2" class="badge badge-character">{{::char2.name}} Special</span><div ng-if="stage.special.character2 && !isLLBSpecialStaged[$index]" ng-bind-html="stage.special.character2 | decorate"></div>
                                             <span ng-if="stage.special.combined" class="badge badge-combined">Combined Special</span><div ng-if="stage.special.combined && !isLLBSpecialStaged[$index]" ng-bind-html="stage.special.combined | decorate"></div>
@@ -954,7 +961,7 @@
                                             <br ng-if="$index != 4">
                                         </div>
                                         <div ng-repeat="x in [].constructor(5) track by $index" ng-if="!details.lLimit">
-                                            <strong>Level {{::$index + 1}}:</strong> Increase Max Level to {{::[105, 110, 120, 130, 150][$index]}}
+                                            <strong>Lv. {{::$index + 1}}:</strong> Increase Max Lv. to {{::[105, 110, 120, 130, 150][$index]}}
                                         </div>
                                     </td>
                                 </tr>
@@ -1043,13 +1050,13 @@
                                         </td>
                                         <td ng-style="!hasRumbleLLB(rumble) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festAbility.base : [rumble.festAbility.base[rumble.festAbility.base.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festAbility.base.length}}:</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble.festAbility.base.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
                                         <td ng-if="hasRumbleLLB(rumble)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festAbility.llbbase : [rumble.festAbility.llbbase[rumble.festAbility.llbbase.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festAbility.llbbase.length}}:</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble.festAbility.llbbase.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
@@ -1065,13 +1072,13 @@
                                         </td>
                                         <td ng-style="!hasRumbleLLB(rumble) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festSpecial.base.descriptions : [rumble.festSpecial.base.descriptions[rumble.festSpecial.base.descriptions.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festSpecial.base.descriptions.length}}: [{{rumble.festSpecial.base.cooldown}} seconds]</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble.festSpecial.base.descriptions.length}}: [{{rumble.festSpecial.base.cooldown}} seconds]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
                                         <td ng-if="hasRumbleLLB(rumble)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festSpecial.llbbase.descriptions : [rumble.festSpecial.llbbase.descriptions[rumble.festSpecial.llbbase.descriptions.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festSpecial.llbbase.descriptions.length}}: [{{rumble.festSpecial.llbbase.cooldown}} seconds]</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble.festSpecial.llbbase.descriptions.length}}: [{{rumble.festSpecial.llbbase.cooldown}} seconds]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
@@ -1171,13 +1178,13 @@
                                         </td>
                                         <td ng-style="!hasRumbleLLB(rumble2) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festAbility.base : [rumble2.festAbility.base[rumble2.festAbility.base.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festAbility.base.length}}:</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble2.festAbility.base.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
                                         <td ng-if="hasRumbleLLB(rumble2)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festAbility.llbbase : [rumble2.festAbility.llbbase[rumble2.festAbility.llbbase.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festAbility.llbbase.length}}:</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble2.festAbility.llbbase.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
@@ -1193,13 +1200,13 @@
                                         </td>
                                         <td ng-style="!hasRumbleLLB(rumble2) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festSpecial.base.descriptions : [rumble2.festSpecial.base.descriptions[rumble2.festSpecial.base.descriptions.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festSpecial.base.descriptions.length}}: [{{rumble2.festSpecial.base.cooldown}} seconds]</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble2.festSpecial.base.descriptions.length}}: [{{rumble2.festSpecial.base.cooldown}} seconds]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
                                         <td ng-if="hasRumbleLLB(rumble2)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festSpecial.llbbase.descriptions : [rumble2.festSpecial.llbbase.descriptions[rumble2.festSpecial.llbbase.descriptions.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festSpecial.llbbase.descriptions.length}}: [{{rumble2.festSpecial.llbbase.cooldown}} seconds]</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble2.festSpecial.llbbase.descriptions.length}}: [{{rumble2.festSpecial.llbbase.cooldown}} seconds]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
@@ -1307,17 +1314,17 @@
                                         <td width="5%">Rumble Ability</td>
                                         <td ng-if="!details.festAbility.hasOwnProperty('base')">
                                             <div ng-repeat="item in details.festAbility track by $index">
-                                                <strong>Level {{$index + 1}}:</strong> <span ng-bind-html="item | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}:</strong> <span ng-bind-html="item | decorate"></span><br>
                                             </div>
                                         </td>
                                         <td ng-if="details.festAbility.hasOwnProperty('base')">
                                             <div ng-repeat="item in details.festAbility.base track by $index">
-                                                <strong>Level {{$index + 1}}:</strong> <span ng-bind-html="item | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}:</strong> <span ng-bind-html="item | decorate"></span><br>
                                             </div>
                                         </td>
                                         <td ng-if="details.festAbility.hasOwnProperty('llbbase')">
                                             <div ng-repeat="item in details.festAbility.llbbase track by $index">
-                                                <strong>Level {{$index + 1}}:</strong> <span ng-bind-html="item | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}:</strong> <span ng-bind-html="item | decorate"></span><br>
                                             </div>
                                         </td>
                                     </tr>
@@ -1327,17 +1334,17 @@
                                         <td width="5%">Rumble Special</td>
                                         <td ng-if="!details.festSpecial.hasOwnProperty('base')">
                                             <div ng-repeat="item in details.festSpecial track by $index">
-                                                <strong>Level {{$index + 1}}: [{{item.cooldown}} seconds]</strong> <span ng-bind-html="item.description | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}: [{{item.cooldown}} seconds]</strong> <span ng-bind-html="item.description | decorate"></span><br>
                                             </div>
                                         </td>
                                         <td ng-if="details.festSpecial.hasOwnProperty('base')">
                                             <div ng-repeat="item in details.festSpecial.base track by $index">
-                                                <strong>Level {{$index + 1}}: [{{item.cooldown}} seconds]</strong> <span ng-bind-html="item.description | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}: [{{item.cooldown}} seconds]</strong> <span ng-bind-html="item.description | decorate"></span><br>
                                             </div>
                                         </td>
                                         <td ng-if="details.festSpecial.hasOwnProperty('llbbase')">
                                             <div ng-repeat="item in details.festSpecial.llbbase track by $index">
-                                                <strong>Level {{$index + 1}}: [{{item.cooldown}} seconds]</strong> <span ng-bind-html="item.description | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}: [{{item.cooldown}} seconds]</strong> <span ng-bind-html="item.description | decorate"></span><br>
                                             </div>
                                         </td>
                                     </tr>
@@ -1406,13 +1413,13 @@
                                         </td>
                                         <td ng-style="!hasGrandPartyLLB(rumble) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festGPAbility.base : [rumble.festGPAbility.base[rumble.festGPAbility.base.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festGPAbility.base.length}}:</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble.festGPAbility.base.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
                                         <td ng-if="hasGrandPartyLLB(rumble)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festGPAbility.llbbase : [rumble.festGPAbility.llbbase[rumble.festGPAbility.llbbase.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festGPAbility.llbbase.length}}:</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble.festGPAbility.llbbase.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
@@ -1439,13 +1446,13 @@
                                         </td>
                                         <td ng-style="!hasGrandPartyLLB(rumble) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festGPSpecial.base.descriptions : [rumble.festGPSpecial.base.descriptions[rumble.festGPSpecial.base.descriptions.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festGPSpecial.base.descriptions.length}}: [{{rumble.festGPSpecial.base.uses}} use{{rumble.festGPSpecial.base.uses == 1 ? "" : "s"}}]</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble.festGPSpecial.base.descriptions.length}}: [{{rumble.festGPSpecial.base.uses}} use{{rumble.festGPSpecial.base.uses == 1 ? "" : "s"}}]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
                                         <td ng-if="hasGrandPartyLLB(rumble)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble.festGPSpecial.llbbase.descriptions : [rumble.festGPSpecial.llbbase.descriptions[rumble.festGPSpecial.llbbase.descriptions.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble.festGPSpecial.llbbase.descriptions.length}}: [{{rumble.festGPSpecial.llbbase.uses}} use{{rumble.festGPSpecial.llbbase.uses == 1 ? "" : "s"}}]</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble.festGPSpecial.llbbase.descriptions.length}}: [{{rumble.festGPSpecial.llbbase.uses}} use{{rumble.festGPSpecial.llbbase.uses == 1 ? "" : "s"}}]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
@@ -1475,13 +1482,13 @@
                                         </td>
                                         <td ng-style="!hasGrandPartyLLB(rumble2) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festGPAbility.base : [rumble2.festGPAbility.base[rumble2.festGPAbility.base.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festGPAbility.base.length}}:</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble2.festGPAbility.base.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
                                         <td ng-if="hasGrandPartyLLB(rumble2)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festGPAbility.llbbase : [rumble2.festGPAbility.llbbase[rumble2.festGPAbility.llbbase.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festGPAbility.llbbase.length}}:</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble2.festGPAbility.llbbase.length}}:</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
@@ -1508,13 +1515,13 @@
                                         </td>
                                         <td ng-style="!hasGrandPartyLLB(rumble2) ? {'width': '100%'} : {}">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festGPSpecial.base.descriptions : [rumble2.festGPSpecial.base.descriptions[rumble2.festGPSpecial.base.descriptions.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festGPSpecial.base.descriptions.length}}: [{{rumble2.festGPSpecial.base.uses}} use{{rumble2.festGPSpecial.base.uses == 1 ? "" : "s"}}]</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble2.festGPSpecial.base.descriptions.length}}: [{{rumble2.festGPSpecial.base.uses}} use{{rumble2.festGPSpecial.base.uses == 1 ? "" : "s"}}]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
                                         <td ng-if="hasGrandPartyLLB(rumble2)">
                                             <div ng-repeat="level in (showAllRumbleLevels ? rumble2.festGPSpecial.llbbase.descriptions : [rumble2.festGPSpecial.llbbase.descriptions[rumble2.festGPSpecial.llbbase.descriptions.length - 1]]) track by $index">
-                                                <strong>Level {{showAllRumbleLevels ? $index + 1 : rumble2.festGPSpecial.llbbase.descriptions.length}}: [{{rumble2.festGPSpecial.llbbase.uses}} use{{rumble2.festGPSpecial.llbbase.uses == 1 ? "" : "s"}}]</strong>
+                                                <strong>Lv. {{showAllRumbleLevels ? $index + 1 : rumble2.festGPSpecial.llbbase.descriptions.length}}: [{{rumble2.festGPSpecial.llbbase.uses}} use{{rumble2.festGPSpecial.llbbase.uses == 1 ? "" : "s"}}]</strong>
                                                 <div ng-repeat="item in level"><span ng-bind-html="item | decorate"></span></div>
                                             </div>
                                         </td>
@@ -1540,17 +1547,17 @@
                                         <td width="5%">Leader Skill</td>
                                         <td ng-if="!details.festAbilityGP.hasOwnProperty('base')">
                                             <div ng-repeat="item in details.festAbilityGP track by $index">
-                                                <strong>Level {{$index + 1}}:</strong> <span ng-bind-html="item.festGPAbility | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}:</strong> <span ng-bind-html="item.festGPAbility | decorate"></span><br>
                                             </div>
                                         </td>
                                         <td ng-if="details.festAbilityGP.hasOwnProperty('base')">
                                             <div ng-repeat="item in details.festAbilityGP.base track by $index">
-                                                <strong>Level {{$index + 1}}:</strong> <span ng-bind-html="item.festGPAbility | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}:</strong> <span ng-bind-html="item.festGPAbility | decorate"></span><br>
                                             </div>
                                         </td>
                                         <td ng-if="details.festAbilityGP.hasOwnProperty('llbbase')">
                                             <div ng-repeat="item in details.festAbilityGP.llbbase track by $index">
-                                                <strong>Level {{$index + 1}}:</strong> <span ng-bind-html="item.festGPAbility | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}:</strong> <span ng-bind-html="item.festGPAbility | decorate"></span><br>
                                             </div>
                                         </td>
                                     </tr>
@@ -1574,17 +1581,17 @@
                                         <td width="5%">Burst</td>
                                         <td ng-if="!details.festAbilityGP.hasOwnProperty('base')">
                                             <div ng-repeat="item in details.festAbilityGP track by $index">
-                                                <strong>Level {{$index + 1}}: [{{item.uses}} use{{item.uses == 1 ? "" : "s"}}]</strong> <span ng-bind-html="item.festGPSpecial | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}: [{{item.uses}} use{{item.uses == 1 ? "" : "s"}}]</strong> <span ng-bind-html="item.festGPSpecial | decorate"></span><br>
                                             </div>
                                         </td>
                                         <td ng-if="details.festAbilityGP.hasOwnProperty('base')">
                                             <div ng-repeat="item in details.festAbilityGP.base track by $index">
-                                                <strong>Level {{$index + 1}}: [{{item.uses}} use{{item.uses == 1 ? "" : "s"}}]</strong> <span ng-bind-html="item.festGPSpecial | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}: [{{item.uses}} use{{item.uses == 1 ? "" : "s"}}]</strong> <span ng-bind-html="item.festGPSpecial | decorate"></span><br>
                                             </div>
                                         </td>
                                         <td ng-if="details.festAbilityGP.hasOwnProperty('llbbase')">
                                             <div ng-repeat="item in details.festAbilityGP.llbbase track by $index">
-                                                <strong>Level {{$index + 1}}: [{{item.uses}} use{{item.uses == 1 ? "" : "s"}}]</strong> <span ng-bind-html="item.festGPSpecial | decorate"></span><br>
+                                                <strong>Lv. {{$index + 1}}: [{{item.uses}} use{{item.uses == 1 ? "" : "s"}}]</strong> <span ng-bind-html="item.festGPSpecial | decorate"></span><br>
                                             </div>
                                         </td>
                                     </tr>
@@ -1780,9 +1787,9 @@
 </div>
 
 <div class="quick-nav">
-    <button class="btn btn-default" title="Details" scroll-to-section="modal-body-top">
-    <i class="fa fa-arrow-up"></i>
-    </button>
+<button class="btn btn-default" title="Details" scroll-to-section="modal-body-top">
+<i class="material-icons">arrow_upward</i>
+</button>
     <button class="btn btn-default" title="Details" scroll-to-section="card-details">
     DET
     </button>
@@ -1854,6 +1861,10 @@
     </button>
     <button class="btn btn-default" title="Tags" scroll-to-section="card-tags">
     TAG
+    </button>
+    <div class="quick-nav-sep"></div>
+    <button class="btn btn-default modal-theme-btn" ng-click="toggleModalTheme()" title="Toggle modal theme">
+        <i class="material-icons">{{getModalThemeIcon()}}</i>
     </button>
 </div>
 

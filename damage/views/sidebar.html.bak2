@@ -30,23 +30,23 @@
 </div>
 </li>
 
-<li>
-    <div id="customRainbow">
-        <i class="material-icons">handshake</i> Custom Rainbow Damage:<br>
+        <li>
+            <div id="customRainbow">
+                <i class="bi bi-hand-fist"></i> Custom Rainbow Damage:<br>
                 <span ng-repeat="n in ::[].constructor(6) track by $index"><label>Crew {{$index+1}}: <input type="checkbox" class="wheelable" name="rainbowDamage{{$index}}" ng-model="data.rainbowDamage[$index]"></label><br ng-if="$index % 2 == 1"> </span>
             </div>
         </li>
         
-<li>
-<div id="heal">
-<i class="material-icons">favorite</i>
-Heal Socket Level: <input type="number" size="2" min="0" max="5" id="healLevel" to-int ng-model="data.healLevel"></input>
-</div>
-</li>
+        <li>
+            <div id="heal">
+                <i class="bi bi-heart"></i>
+                Heal Socket Level: <input type="number" size="2" min="0" max="5" id="healLevel" to-int ng-model="data.healLevel"></input>
+            </div>
+        </li>
 
         <li>
             <div id="defenseContainer" title="Middle-click or CTRL-click for details" defense-on-click>
-                <i class="material-icons" ui-sref="main.defense">vertical_align_top</i>
+                <i class="bi bi-arrow-up-long" ui-sref="main.defense"></i>
                 <i class="bi bi-shield"></i>
                 Enemy Defense: <input type="number" id="defense" min = 0 to-int ng-model="data.defense"></input>
             </div>

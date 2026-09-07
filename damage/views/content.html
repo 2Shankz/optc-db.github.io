@@ -18,40 +18,43 @@
     <hp-bar></hp-bar>
 
     <div id="other">
-        <button type="button" class="btn btn-settings menu-link" uib-tooltip="Settings" tooltip-append-to-body="true"
+        <button type="button" class="btn btn-theme" ng-click="toggleTheme()" uib-tooltip="Toggle theme (Light → Frappé → Macchiato → Dark)" tooltip-append-to-body="true">
+            <i class="material-icons">{{getThemeIcon()}}</i>
+        </button><!--
+     --><button type="button" class="btn btn-settings menu-link" uib-tooltip="Settings" tooltip-append-to-body="true"
                 ng-click="options.sidebarVisible = !options.sidebarVisible">
-            <i class="fa fa-gear"></i>
-        </a><!--
+            <i class="material-icons">settings</i>
+        </button><!--
      --><button type="button" class="btn btn-info" id="reset" ui-sref=".saveSlot" uib-tooltip="Save" tooltip-append-to-body="true">
-            <i class="fa fa-download"></i>
+            <i class="material-icons">download</i>
         </button><!--
      --><button type="button" class="btn btn-primary" id="reset" ui-sref=".loadSlot" uib-tooltip="Load" tooltip-append-to-body="true">
-            <i class="fa fa-upload"></i>
+            <i class="material-icons">upload</i>
         </button><!--
      --><button type="button" class="btn btn-danger" id="reset" ui-sref=".reset" uib-tooltip="Reset" tooltip-append-to-body="true">
-            <i class="fa fa-eraser"></i>
+            <i class="material-icons">delete</i>
         </button><!--
      --><button type="button" class="btn btn-orchid" id="quickPick" ui-sref=".quickpick" uib-tooltip="Quick Pick" tooltip-append-to-body="true">
-            <i class="fa fa-bolt"></i>
+            <i class="material-icons">flash_on</i>
         </button><!--
      --><button type="button" class="btn btn-success" ng-click="generateURL()"
                 title="Transfer team" ng-controller="ExportCtrl" uib-tooltip="Export URL" tooltip-append-to-body="true">
-            <i class="fa fa-exchange"></i>
+            <i class="material-icons">swap_horiz</i>
         </button><!--
      --><button type="button" class="btn btn-warning" ui-sref=".image" title="Generate image"
                 uib-tooltip="Export Image" tooltip-append-to-body="true">
-            <i class="fa fa-picture-o"></i>
-        </button>
-        <button type="button" class="btn" ui-sref="main.instruction" title="Instructions"
+            <i class="material-icons">image</i>
+        </button><!--
+     --><button type="button" class="btn btn-info" ui-sref="main.instruction" title="Instructions"
                 uib-tooltip="Instructions" tooltip-append-to-body="true">
-            <i class="fa fa-question-circle"></i>
+            <i class="material-icons">help</i>
         </button>
     </div>
 
     <url-container></url-container>
 
     <div id="transient" class="alert alert-danger" ng-if="options.transientMode" ng-click="options.transientMode = false">
-        <i class="fa fa-lock"></i>
+        <i class="bi bi-lock"></i>
         Transient mode enabled. Click to disable.
         <span popover-placement="top" popover-trigger="mouseenter"
             popover-title="Transient Mode" uib-popover-template="'transient.html'"

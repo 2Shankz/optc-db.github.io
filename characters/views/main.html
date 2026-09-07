@@ -5,31 +5,47 @@
 </div>
 
 <div id="queryContainer">
-    <label for="burgerMenuState" id="burgerMenu" class="fa fa-bars fa-lg"></label>
+    <label for="burgerMenuState" id="burgerMenu" class="material-icons" title="Toggle Menu">menu</label>
     
     <input type="text" id="picker" placeholder="type to filter"
-        ng-model="query" ng-model-options="{ updateOn: 'change blur' }" auto-focus>
+        ng-model="query" auto-focus>
 
-    <button ng-if="query" ng-click="clearQuery()" title="clear">
-        <i class="fa fa-times"></i>
-        <span>Clear</span>
+    <button type="button" ng-if="query" ng-click="clearQuery()" title="Clear search">
+        <i class="material-icons" style="color: red;">close</i>
     </button>
 
-    <button ng-click="query = getRandChar();" title="random">
-        <i class="fa fa-random"></i>
-        <span>Random</span>
+    <button type="button" ng-click="query = getRandChar();" title="Random character">
+        <i class="material-icons">shuffle</i>
     </button>
 
-    <button popover-trigger="mouseenter" popover-placement="bottom"
-        uib-popover-template="'operators.html'" popover-append-to-body="'true'" title="operators">
-        <i class="fa fa-info-circle"></i>
-        <span>Operators</span>
+    <button type="button" popover-trigger="mouseenter" popover-placement="bottom"
+        uib-popover-template="'operators.html'" popover-append-to-body="'true'" title="Filter operators">
+        <i class="material-icons">filter_list</i>
     </button>
+    
+    <button class="fuzzy-toggle" ng-class="{'active': table.fuzzy}" ng-click="table.fuzzy = !table.fuzzy; saveFuzzy()" title="Fuzzy Search: will display non-exact matches to the search keywords">
+        <i class="material-icons">auto_awesome</i>
+    </button>
+    
+    <a id="pick-link" popover-placement="bottom" popover-trigger="click" popover-title="Additional Columns"
+    uib-popover-template="'views/pick.html'" popover-append-to-body="'true'" title="Show/hide columns">
+        <i class="material-icons">view_column</i>
+    </a>
 
-    <button id="theme-toggle" ng-click="toggleTheme()" title="toggle theme">
-        <span ng-bind="theme === 'dark' ? '🌙' : '☀️'"></span>
-        <span ng-bind="theme === 'dark' ? 'Neko' : 'Inu'"></span>
+    <a class="btn btn-icon" target="_blank" href="https://discord.gg/MRhRrbF" style="background-image: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e3d80db9971f10a9757c99_Symbol.svg'); background-repeat: no-repeat; background-position: center; background-size: 70%;">
+    </a>
+
+    <button type="button" id="theme-toggle" ng-click="toggleTheme()" title="Toggle theme (Mocha → Latte → Frappé → Macchiato)">
+        <i class="material-icons">{{getThemeIcon()}}</i>
     </button>
+</div>
+
+<div class="active-filters" ng-if="activeFilters.length > 0">
+    <span class="active-filter-tag" ng-repeat="f in activeFilters track by f.id">
+        <span class="filter-label">{{f.label}}</span>
+        <i class="material-icons filter-remove" ng-click="removeFilter(f)">close</i>
+    </span>
+    <span class="clear-all-filters" ng-click="clearAllFilters()">Clear all</span>
 </div>
 
 <div id="tableContainer">
