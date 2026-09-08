@@ -190980,24 +190980,25 @@ window.details = {
         ]
     },
     4634: {//Gerd
-        captain: "Reduces Slasher and Striker characters' Special charge time by 2 turns at start of quest, launches the following effect at start of quest: \"Boosts Slasher and Striker characters' ATK by 3x for 10 turns\", makes [DEX] and [PSY] characters' [DEX][PSY][RCV][TND] slots have matching slot effects, reduces [PSY] characters' Bind duration by 6 turns, and allows crew to obtain [RCV] slots with PERFECT taps [Applies following effect based on number of applicable Character Tags on crew] Boosts [Elbaph Arc] characters' ATK by 6x and HP by 1.5x",
-        special: "Deals 200x character's ATK in non-type damage to all enemies, further increases crew's ATK UpOrb Boost by 1.25x (up to a maximum 6x), and boosts crew's ATK based on the damage reduction effect applied on the crew (e.g. if crew has 95% damage reduction, boosts ATK by 1.95x) for 2 turns. If a [STR], [DEX], or [QCK] is set as Support for character, applies \"Territory: Slasher class\" to the field for 2 turns (applies \"Territory: Striker class\" to the field for 2 turns otherwise), then after that, applies -50% [DEX] and [PSY] Resistance to all enemies for 2 turns. If enemy has increase damage taken and Weakened status when Special is launched, locks crew's slots for 1 turn, then after 1 turn, increases all enemies' damage taken by 2.25x for 1 turn",
+        captain: "Launches the following effects at start of fight: reduces Special Cooldown of Slasher and Striker characters by 2 turns, and boosts ATK of Slasher and Striker characters by 3x for 10 turns. Boosts ATK of [Elbaph Arc] characters by 6x, boosts HP of [Elbaph Arc] characters by 1.5x, makes [DEX], [PSY], [RCV] and [TND] orbs beneficial for [DEX] and [PSY] characters, reduces Bind duration by 6 turns on [PSY] characters, and makes PERFECTs consume [RCV] orbs.",
+        special: "Deals 200x character's ATK in typeless damage to all enemies, increases boost effects of ATK Up and Orb Boost buffs by 1.25x (up to 6x), boosts Crew Damage Reduction to ATK of all characters by 1x-2x, proportional to the strength of crew's Percent Damage Reduction buff, for 2 turns, and reduces enemies' [DEX] and [PSY] resistance by -50% for 2 turns. If a [STR], [DEX] or [QCK] character is supporting this character, applies Territory: Slasher to the field for 2 turns; applies Territory: Striker to the field for 2 turns otherwise. If enemies are inflicted with Increase Damage Taken and Weaken when the special is activated, locks all orbs for 1 turn, and after 1 turn, inflicts all enemies with Increase Damage Taken by 2.25x for 1 turn.",
         specialName: "Apologizing to the Little Human",
         sailor: {
-            base: "Reduces [PSY] [Straw Hat Pirates] [Four Emperors] [Giant] characters' Bind duration by 6 turns and makes their [RCV] slots have matching slot effects",
-            level1: "If 3 or more [Straw Hat Pirates] [Four Emperors] [Giant] characters are on the crew and enemy launches Threshold Damage Reduction effect, reduces all enemies' Threshold Damage Reduction duration by 5 turns at start of crew's next turn (only once per quest)"
+            base: "Reduces Bind duration by 6 turns on [PSY], [Straw Hat Pirates], [Four Emperors] and [Giant] characters. Makes [RCV] orbs beneficial for [PSY], [Straw Hat Pirates], [Four Emperors] and [Giant] characters.",
+            level1: "If your crew has 3+ [Straw Hat Pirates], [Four Emperors] or [Giant] characters, once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 5 turns."
         },
-        superSpecialCriteria: "When any 3 [Giant] characters not including self or any 3 [Straw Hat Pirates] characters are on the crew (except as Double Characters in inactive state; can be launched when character is a crewmate)",
-        superSpecial: "Reduces damage taken by 95% for 1 turn, boosts the chain multiplier by +2.0 for 2 turns, changes [Straw Hat Pirates] [Four Emperors] [Giant] characters' [BLOCK] and type slots to [RCV], and changes [PSY] characters to Super [PSY]",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 4 or 3 of the following, excluding supports and counting only 1 per unit: [Giant] or [Straw Hat Pirates] characters",
+        superSpecialCriteriaNotes: "4 [Giant] characters or 3 [Straw Hat Pirates] characters",
+        superSpecial: "Reduces damage received by 95% for 1 turn, adds 2.0x to chain multiplier for 2 turns, changes [STR], [DEX], [QCK], [PSY], [INT] and [BLOCK] orbs of [Straw Hat Pirates], [Four Emperors] and [Giant] characters into [RCV] orbs, and transforms [PSY] characters into Super [PSY] characters.",
         support: [
             {
-                Characters: "[PSY] characters with the following Character Tag: [Giant]",
+                Characters: "[PSY] [Giant] characters",
                 description: [
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 3 turns at start of crew's next turn"
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 2 turns.",
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 2 turns.",
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 3 turns."
                 ]
             }
         ],
@@ -191085,35 +191086,35 @@ window.details = {
             }
         ],
         lastTap: {
-            condition: "When crew has ATK Up, slot effect boost, and type effect boost",
+            condition: "When crew has an ATK Up, Orb Boost and Color Affinity buff",
             description: [
-                "Further boosts the chain multiplier of the final tap by 1.2x",
-                "Further boosts the chain multiplier of the final tap by 1.4x",
-                "Further boosts the chain multiplier of the final tap by 1.6x",
-                "Further boosts the chain multiplier of the final tap by 1.8x",
-                "Further boosts the chain multiplier of the final tap by 2x"
+                "Further boosts Chain Multiplier Growth Rate by 1.2x.",
+                "Further boosts Chain Multiplier Growth Rate by 1.4x.",
+                "Further boosts Chain Multiplier Growth Rate by 1.6x.",
+                "Further boosts Chain Multiplier Growth Rate by 1.8x.",
+                "Further boosts Chain Multiplier Growth Rate by 2x."
             ]
         }
     },
     4635: {//Ripley
-        captain: "Reduces crew's Special charge time by 2 turns and Switch Effect by 2 at start of quest, boosts Powerhouse and Striker characters' HP by 1.2x, ATK by 4.75x, boosts their ATK by approximately 6x when they have [RCV] slots, makes their [RCV] slots have matching slot effects, reduces [DEX] characters' Bind duration by 6 turns, reduces crew's Burn (applied by enemy) duration by 10 turns, and allows crew to obtain [RCV] slots with PERFECT taps",
-        special: "Extends the duration of crew's damage dealt to enemies with a specific status effect boost and Percent Damage Reduction status by 2 turns, further increases all enemies' increase damage taken effect by +1.0, and reduces all enemies' Percent Damage Reduction duration by 10 turns. If \"Scopper Gaban\" or \"Collun\" has launched a Special in this turn, swaps bottom-left character with the Captain for 3 turns, then after that, applies -50% [DEX] and [PSY] Resistance to all enemies for 2 turns",
+        captain: "Launches the following effects at start of fight: reduces Special Cooldown of all characters by 2 turns, and reduces Switch Effect of all characters by 2. Boosts ATK of Powerhouse and Striker characters by 4.75x, by 6x instead if they have a [RCV] orb, boosts HP of Powerhouse and Striker characters by 1.2x, makes [RCV] orbs beneficial for Powerhouse and Striker characters, reduces Bind duration by 6 turns on [DEX] characters, reduces Burn duration by 10 turns, and makes PERFECTs consume [RCV] orbs.",
+        special: "Reduces enemies' Percent Damage Reduction duration by 10 turns, increases duration of any Percent Damage Reduction and Status ATK Boosting buffs by 2 turns, increases boost effects of enemies' Increase Damage Taken debuffs by +1.0x, and reduces enemies' [DEX] and [PSY] resistance by -50% for 2 turns. If your crew has Scopper Gaban or Collun who has used a special this turn, swaps bottom-left character with your captain for 3 turns.",
         specialName: "Telling the Grand History of Elbaph",
         sailor: {
-            base: "Reduces [DEX] [Straw Hat Pirates] [Roger Pirates] [Giant] characters' Bind duration by 6 turns and makes their [RCV] slots have matching slot effects",
-            level1: "If 3 or more [Straw Hat Pirates] [Roger Pirates] [Giant] characters are on the crew and enemy launches Threshold Damage Reduction effect, reduces all enemies' Threshold Damage Reduction duration by 5 turns at start of crew's next turn (only once per quest)"
+            base: "Reduces Bind duration by 6 turns on [DEX], [Straw Hat Pirates], [Roger Pirates] and [Giant] characters. Makes [RCV] orbs beneficial for [DEX], [Straw Hat Pirates], [Roger Pirates] and [Giant] characters.",
+            level1: "If your crew has 3+ [Straw Hat Pirates], [Roger Pirates] or [Giant] characters, once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 5 turns."
         },
-        superSpecialCriteria: "When any of the following characters are on the crew (can be launched when character is a crewmate): Scopper Gaban, Collun",
-        superSpecial: "Can choose to completely remove crew's Swap Captains effect, changes [DEX] characters' [BLOCK] and type slots to [RCV], applies \"Territory: [DEX]\" to the field for 2 turns, doubles the type effects of normal attacks for Striker characters for 1 turn (effect can be overwritten), reduces \"Scopper Gaban\" crewmate's Special charge time by 8 turns, and changes [DEX] characters to Super [DEX]",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 1 of the following, excluding supports and counting only 1 per unit: Scopper Gaban, Collun",
+        superSpecial: "Optionally removes Captain Swap duration completely, changes [STR], [DEX], [QCK], [PSY], [INT] and [BLOCK] orbs of [DEX] characters into [RCV] orbs, applies Territory: [DEX] to the field for 2 turns, boosts Color Affinity of Striker characters by 2x, allowing override, for 1 turn, reduces Special Cooldown of Scopper Gaban characters by 8 turns, and transforms [DEX] characters into Super [DEX] characters.",
         support: [
             {
-                Characters: "Striker class characters with the following Character Tag: [Giant]",
+                Characters: "Striker [Giant] characters",
                 description: [
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if enemy activates Threshold Damage Reduction, reduces all enemies' Threshold Damage Reduction duration by 3 turns at start of crew's next turn"
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 2 turns.",
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 2 turns.",
+                    "Once per adventure, when the enemy gains a Threshold Damage Reduction buff, reduces enemies' Threshold Damage Reduction duration by 3 turns."
                 ]
             }
         ],
@@ -191201,32 +191202,32 @@ window.details = {
             }
         ],
         lastTap: {
-            condition: "When any of the following characters are on the crew (except as Support Characters): Scopper Gaban, Collun",
+            condition: "Your crew must consist of any 1 of the following, excluding supports and counting only 1 per unit: Scopper Gaban, Collun",
             description: [
-                "Boosts damage dealt to enemies with increase damage taken status by 2.5x for 1 turn, and if crew lands 6 PERFECT strikes in this turn, sets all enemies' DEF to 0 and applies increase damage taken status to all enemies by 2x the next turn",
-                "Boosts damage dealt to enemies with increase damage taken status by 2.5x for 1 turn, and if crew lands 6 PERFECT strikes in this turn, sets all enemies' DEF to 0 and applies increase damage taken status to all enemies by 2.5x the next turn",
-                "Boosts damage dealt to enemies with increase damage taken status by 3x for 1 turn, and if crew lands 6 PERFECT strikes in this turn, sets all enemies' DEF to 0 and applies increase damage taken status to all enemies by 2.5x the next turn",
-                "Boosts damage dealt to enemies with increase damage taken status by 3x for 1 turn, and if crew lands 6 PERFECT strikes in this turn, sets all enemies' DEF to 0 and applies increase damage taken status to all enemies by 3x the next turn",
-                "Boosts damage dealt to enemies with increase damage taken status by 3x for 1 turn, and if crew lands 6 PERFECT strikes in this turn, sets all enemies' DEF to 0, applies increase damage taken status to all enemies by 3x, and applies Weakened status (increase damage taken by 1.5x for all enemies, damage further increased by 1.25x if enemy has Increase Damage Taken) to all enemies the next turn"
+                "Boosts ATK against enemies inflicted with Increase Damage Taken by 2.5x for 1 turn, and if during that turn you score 6 PERFECT hits, reduces the defense of all enemies by 100% for 1 turn, and inflicts all enemies with Increase Damage Taken by 2x for 1 turn in the following turn.",
+                "Boosts ATK against enemies inflicted with Increase Damage Taken by 2.5x for 1 turn, and if during that turn you score 6 PERFECT hits, reduces the defense of all enemies by 100% for 1 turn, and inflicts all enemies with Increase Damage Taken by 2.5x for 1 turn in the following turn.",
+                "Boosts ATK against enemies inflicted with Increase Damage Taken by 3x for 1 turn, and if during that turn you score 6 PERFECT hits, reduces the defense of all enemies by 100% for 1 turn, and inflicts all enemies with Increase Damage Taken by 2.5x for 1 turn in the following turn.",
+                "Boosts ATK against enemies inflicted with Increase Damage Taken by 3x for 1 turn, and if during that turn you score 6 PERFECT hits, reduces the defense of all enemies by 100% for 1 turn, and inflicts all enemies with Increase Damage Taken by 3x for 1 turn in the following turn.",
+                "Boosts ATK against enemies inflicted with Increase Damage Taken by 3x for 1 turn, and if during that turn you score 6 PERFECT hits, reduces the defense of all enemies by 100% for 1 turn, inflicts all enemies with Increase Damage Taken by 3x for 1 turn, and inflicts all enemies with Weaken by 1.5x, by 1.875x instead if enemies are inflicted with Increase Damage Taken, for 1 turn in the following turn."
             ]
         }
     },
     4636: {//Collun
-        special: "Doubles all enemies' damage taken for 1 turn, boosts [Elbaph Arc] characters' slot effects by 2.5x for 3 turns, changes Powerhouse and Striker characters' slots (including [BLOCK] slots) to [RCV], and deals 60x character's ATK in [PSY] damage to all enemies at end of turn for 3 turns",
+        special: "Inflicts all enemies with Increase Damage Taken by 2x for 1 turn, boosts Orb Effects of [Elbaph Arc] characters by 2.5x for 3 turns, changes orbs, including [BLOCK] orbs, of Powerhouse and Striker characters into [RCV] orbs, and deals 60x character's ATK in [PSY] damage to all enemies at the end of each turn for 3 turns.",
         specialName: "Young Warrior Lost to the Emperor",
         sailor: {
-            base: "Boosts [Four Emperors] [Giant] characters' base ATK by 250",
-            level1: "Makes [PSY] characters' [INT] slots have matching slot effects"
+            base: "Boosts base ATK of [Four Emperors] and [Giant] characters by 250.",
+            level1: "Makes [INT] orbs beneficial for [PSY] characters."
         },
         support: [
             {
                 Characters: "[PSY] Striker characters",
                 description: [
-                    "Adds 1% of character's base HP to supported character's base HP [AUTO+] At battle 4, activates supported character's Special",
-                    "Adds 3% of character's base HP to supported character's base HP [AUTO+] At battle 4, activates supported character's Special",
-                    "Adds 5% of character's base HP to supported character's base HP [AUTO+] At battle 4, activates supported character's Special",
-                    "Adds 7% of character's base HP to supported character's base HP [AUTO+] At battle 4, activates supported character's Special",
-                    "Adds 9% of character's base HP to supported character's base HP [AUTO+] At battle 4, activates supported character's Special"
+                    "Adds 1% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Special.",
+                    "Adds 3% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Special.",
+                    "Adds 5% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Special.",
+                    "Adds 7% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Special.",
+                    "Adds 9% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Special."
                 ]
             }
         ],
@@ -191271,21 +191272,21 @@ window.details = {
         ]
     },
     4637: {//Dr. Vegapunk - Lilith
-        special: "Reduces crew's lock chain multiplier/decrease chain multiplier growth duration by 6 turns, double Shooter and Striker characters' advantageous class effect for 1 turn, and sets the chain multiplier's minimum value at 2.75 and maximum value at 30.0 for 1 turn",
+        special: "Reduces Chain Multiplier Limit and Chain Coefficient Reduction duration by 6 turns, boosts Advantageous Class Effect of Shooter and Striker characters by 2x for 1 turn, and sets Chain Boundaries to 2.75x and 30.0x for 1 turn.",
         specialName: "Ideal New Laboratory",
         sailor: {
-            base: "Boosts [Straw Hat Pirates] [Giant] characters' base ATK by 250",
-            level1: "Makes [DEX] characters' [STR] slots have matching slot effects"
+            base: "Boosts base ATK of [Straw Hat Pirates] and [Giant] characters by 250.",
+            level1: "Makes [STR] orbs beneficial for [DEX] characters."
         },
         support: [
             {
                 Characters: "[DEX] Shooter characters",
                 description: [
-                    "Adds 1% of character's base HP to supported character's base HP [AUTO+] At battle 3, activates supported character's Special",
-                    "Adds 3% of character's base HP to supported character's base HP [AUTO+] At battle 3, activates supported character's Special",
-                    "Adds 5% of character's base HP to supported character's base HP [AUTO+] At battle 3, activates supported character's Special",
-                    "Adds 7% of character's base HP to supported character's base HP [AUTO+] At battle 3, activates supported character's Special",
-                    "Adds 9% of character's base HP to supported character's base HP [AUTO+] At battle 3, activates supported character's Special"
+                    "Adds 1% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 3rd stage, activates supported character's Special.",
+                    "Adds 3% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 3rd stage, activates supported character's Special.",
+                    "Adds 5% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 3rd stage, activates supported character's Special.",
+                    "Adds 7% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 3rd stage, activates supported character's Special.",
+                    "Adds 9% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> When you reach the 3rd stage, activates supported character's Special."
                 ]
             }
         ],
@@ -191330,21 +191331,22 @@ window.details = {
         ]
     },
     4638: {//5* PKA Luffy
-        special: "Deals 50,000 damage to all enemies, reduces crew's Despair duration by 2 turns, and reduces all enemies' DEF Up duration by 2 turns. If 3 or more [Straw Hat Pirates] [Vegapunk] characters are on the crew, boosts crew's chain multiplier growth rate of normal attacks up to +0.6 (GOOD +0.2; GREAT +0.4; PERFECT +0.6) for 1 turn. If 3 or more [Giant] characters are on the crew, reduces crew's Paralysis duration by 2 turns",
+        special: "Deals 50,000 fixed damage to all enemies, reduces Despair duration by 2 turns, and reduces enemies' Increased Defense duration by 2 turns. If your crew has 3+ [Straw Hat Pirates] or [Vegapunk] characters, increases Chain Tap Timing Bonus of all characters to +0.2x-0.6x for 1 turn depending on Tap Timing. If your crew has 3+ [Giant] characters, reduces Paralysis duration by 2 turns.",
+        specialNotes: "<b>GOOD:</b> +0.2, <b>GREAT:</b> +0.4, <b>PERFECT:</b> +0.6",
         specialName: "Retaliating Gum-Gum Elephant Gun",
         sailor: {
-            base: "Reduces character's Special Reverse by 3 turns",
-            level1: "Reduces the duration of Reduce SFX by 5 turns"
+            base: "Restores Special Cooldown of this character by 3 turns when it is rewinded.",
+            level1: "Reduces Blindness duration by 5 turns."
         },
         support: [
             {
-                Characters: "Striker class characters with the following Character Tag: [Giant]",
+                Characters: "Striker [Giant] characters",
                 description: [
-                    "Adds 2% of character's base stats to supported character's base stats",
-                    "Adds 3% of character's base stats to supported character's base stats",
-                    "Adds 4% of character's base stats to supported character's base stats",
-                    "Adds 5% of character's base stats to supported character's base stats",
-                    "Adds 6% of character's base stats to supported character's base stats [AUTO+] At battle 5, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                    "Adds 2% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 3% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 4% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 6% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. <b>[AUTO+]</b> When you reach the 5th stage, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special."
                 ]
             }
         ],

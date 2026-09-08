@@ -14363,7 +14363,7 @@
 				name: "Captain Swap",
 				targets: ["special", "superSpecial", "swap", "support"],
 				regex:
-					/(optionally )?swaps this unit with your captain for ([?\d]+\+?)(?:-([?\d]+))? turns?(?:, for ([?\d]+\+?)(?:-([?\d]+))? turns?)?/i,
+					/(optionally )?swaps [^,]+ with your captain for ([?\d]+\+?)(?:-([?\d]+))? turns?(?:, for ([?\d]+\+?)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
 					{
 						type: "option",
