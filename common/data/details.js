@@ -184149,7 +184149,7 @@ window.details = {
             }
         ],
         lastTap: {
-            condition: "When this character has a [SUPER STR], [SUPER DEX], [SUPER QCK], [SUPER PSY] or [SUPER INT] orb, and your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe, Portgas D. Ace, Sabo, Monkey D. Garp, Shanks, Buggy, Marshall D. Teach (Blackbeard), Gol D. Roger, Silvers Rayleigh, Dorry, Broggy, Jewelry Bonney",
+            condition: "When this character has a Super [STR], Super [DEX], Super [QCK], Super [PSY] or Super [INT] orb, and your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe, Portgas D. Ace, Sabo, Monkey D. Garp, Shanks, Buggy, Marshall D. Teach (Blackbeard), Gol D. Roger, Silvers Rayleigh, Dorry, Broggy, Jewelry Bonney",
             description: [
                 "Boosts Chain Multiplier Growth Rate by 1.25x, and makes normal attacks of this character deal damage to all enemies for 1 turn.",
                 "Boosts Chain Multiplier Growth Rate by 1.5x, and makes normal attacks of this character deal damage to all enemies for 1 turn.",
@@ -184257,7 +184257,7 @@ window.details = {
             }
         ],
         lastTap: {
-            condition: "When this character has a [SUPER STR], [SUPER DEX], [SUPER QCK], [SUPER PSY] or [SUPER INT] orb, and your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe, Portgas D. Ace, Sabo, Monkey D. Garp, Shanks, Buggy, Marshall D. Teach (Blackbeard), Gol D. Roger, Silvers Rayleigh, Dorry, Broggy, Jewelry Bonney",
+            condition: "When this character has a Super [STR], Super [DEX], Super [QCK], Super [PSY] or Super [INT] orb, and your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe, Portgas D. Ace, Sabo, Monkey D. Garp, Shanks, Buggy, Marshall D. Teach (Blackbeard), Gol D. Roger, Silvers Rayleigh, Dorry, Broggy, Jewelry Bonney",
             description: [
                 "Boosts Chain Multiplier Growth Rate by 1.25x, and makes normal attacks of this character deal damage to all enemies for 1 turn.",
                 "Boosts Chain Multiplier Growth Rate by 1.5x, and makes normal attacks of this character deal damage to all enemies for 1 turn.",
@@ -189376,7 +189376,7 @@ window.details = {
         }
     },
     4617: {//Robin
-        special: "Reduces ATK Down duration by 6 turns, reduces enemies' Percent Damage Reduction duration by 6 turns, changes all orbs, including [BLOCK] orbs, into matching orbs, boosts Color Affinity of Cerebral, Fighter and Striker characters by 2.25x for 1 turn, and boosts ATK of Cerebral, Fighter and Striker characters by 2.25x for 4 turns. If your crew has 4+ [Straw Hat Pirates] or [Giant] characters, changes the orb of this character into a [TND] orb, reduces damage received by 70% for 3 turns, reduces the defense of all enemies by 100% for 1 turn, and increases duration of any Color Affinity buffs by 3 turns, including effects activated in the same ability.",
+        special: "Reduces ATK Down duration by 6 turns, reduces enemies' Percent Damage Reduction duration by 6 turns, changes [BLOCK] orbs into matching orbs, boosts Color Affinity of Cerebral, Fighter and Striker characters by 2.25x for 1 turn, and boosts ATK of Cerebral, Fighter and Striker characters by 2.25x for 4 turns. If your crew has 4+ [Straw Hat Pirates] or [Giant] characters, changes the orb of this character into a [TND] orb, reduces damage received by 70% for 3 turns, reduces the defense of all enemies by 100% for 1 turn, and increases duration of any Color Affinity buffs by 3 turns, including effects activated in the same ability.",
         specialName: "Unleashed Attack in Warrior's Garb",
         sailor: {
             base: "Boosts base RCV of all characters by 60.",
