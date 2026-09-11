@@ -119323,6 +119323,45 @@ window.rumble = {
             }
         }
     },
+    4639: {
+        festCost: 20,
+        festStats: {
+            def: 148,
+            spd: 181,
+            style: "DBF"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['80% chance to resist Special Bind.', '20% damage reduction from [PSY] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 1 SPD and HP up buff to [INT], Powerhouse, [Giant] and [Child] crew members.', 'Inflicts Lv. 2 SPD down debuff to [PSY] enemies.', 'When there is 3 or more [Child] and [Giant] crew members, reduces 22% of Special CT to self upon appearance.'],
+                ['Applies Lv. 2 SPD and HP up buff to [INT], Powerhouse, [Giant] and [Child] crew members.', 'Inflicts Lv. 3 SPD down debuff to [PSY] enemies.', 'When there is 3 or more [Child] and [Giant] crew members, reduces 24% of Special CT to self upon appearance.'],
+                ['Applies Lv. 3 SPD and HP up buff to [INT], Powerhouse, [Giant] and [Child] crew members.', 'Inflicts Lv. 4 SPD down debuff to [PSY] enemies.', 'When there is 3 or more [Child] and [Giant] crew members, reduces 26% of Special CT to self upon appearance.'],
+                ['Applies Lv. 4 SPD and HP up buff to [INT], Powerhouse, [Giant] and [Child] crew members.', 'Inflicts Lv. 5 SPD down debuff to [PSY] enemies.', 'When there is 3 or more [Child] and [Giant] crew members, reduces 28% of Special CT to self upon appearance.'],
+                ['Applies Lv. 5 SPD and HP up buff to [INT], Powerhouse, [Giant] and [Child] crew members.', 'Inflicts Lv. 6 SPD down debuff to [PSY] enemies.', 'When there is 3 or more [Child] and [Giant] crew members, reduces 30% of Special CT to self upon appearance.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 20,
+                descriptions: [
+                    ['Inflicts Lv. 3 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 21% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 4,200 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 1 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 3 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 22% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 4,400 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 1 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 3 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 23% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 4,600 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 1 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 3 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 24% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 4,800 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 2 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 4 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 25% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 5,000 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 2 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 4 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 26% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 5,200 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 3 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 4 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 27% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 5,400 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 3 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 5 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 28% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 5,600 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 3 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 5 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 29% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 5,800 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 4 DEF down debuff to 3 [PSY] enemies for 15 seconds.'],
+                    ['Inflicts Lv. 6 ATK and Accuracy down debuff to 3 enemies for 15 seconds.', 'When there is 3 or more [Giant] and [Child] crew members, reduces 30% of Special CT to 1 [Giant] and [Child] crew member with the highest ATK.', 'Deals 6,000 fixed damage to 1 enemy with the highest HP.', 'During Assault Rumble, inflicts Lv. 5 DEF down debuff to 3 [PSY] enemies for 15 seconds.']
+                ]
+            }
+        }
+    },
     4640: {
         festCost: 20,
         festStats: {
@@ -119361,6 +119400,65 @@ window.rumble = {
                 ]
             }
         }
+    },
+    4641: {
+        festCost: 55,
+        festStats: {
+            def: 163,
+            spd: 169,
+            style: "ATK"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['100% chance to resist Special Bind.', '30% damage reduction from [QCK] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 1 ATK up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'Applies Lv. 1 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'When there are 60 seconds or less remaining, reduces 10% of Special CT to [Giant] and [Child] crew members upon appearance.', 'For the first 40 seconds, inflicts Lv. 2 ATK down debuff to all enemies.'],
+                ['Applies Lv. 2 ATK up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'Applies Lv. 1 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'When there are 60 seconds or less remaining, reduces 15% of Special CT to [Giant] and [Child] crew members upon appearance.', 'For the first 40 seconds, inflicts Lv. 3 ATK down debuff to all enemies.'],
+                ['Applies Lv. 3 ATK up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'Applies Lv. 2 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'When there are 60 seconds or less remaining, reduces 20% of Special CT to [Giant] and [Child] crew members upon appearance.', 'For the first 40 seconds, inflicts Lv. 4 ATK down debuff to all enemies.'],
+                ['Applies Lv. 4 ATK up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'Applies Lv. 2 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'When there are 60 seconds or less remaining, reduces 25% of Special CT to [Giant] and [Child] crew members upon appearance.', 'For the first 40 seconds, inflicts Lv. 5 ATK down debuff to all enemies.'],
+                ['Applies Lv. 6 ATK up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'Applies Lv. 3 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members.', 'When there are 60 seconds or less remaining, reduces 30% of Special CT to [Giant] and [Child] crew members upon appearance.', 'For the first 40 seconds, inflicts Lv. 7 ATK down debuff to all enemies.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 32,
+                descriptions: [
+                    ['When there is 1 or more [Child] crew members, applies Lv. 6 ATK up buff to self for 5 seconds.', 'Applies Lv. 2 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 11 seconds.', '80% chance to evade Fixed Damage to [Giant] and [Child] crew members for 11 seconds.', 'Deals 1x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 6 ATK up buff to self for 5 seconds.', 'Applies Lv. 2 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 12 seconds.', '82% chance to evade Fixed Damage to [Giant] and [Child] crew members for 12 seconds.', 'Deals 1.3x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1.1x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 6 ATK up buff to self for 5 seconds.', 'Applies Lv. 2 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 13 seconds.', '84% chance to evade Fixed Damage to [Giant] and [Child] crew members for 13 seconds.', 'Deals 1.6x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1.2x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 7 ATK up buff to self for 5 seconds.', 'Applies Lv. 3 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 14 seconds.', '86% chance to evade Fixed Damage to [Giant] and [Child] crew members for 14 seconds.', 'Deals 1.9x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1.3x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 7 ATK up buff to self for 5 seconds.', 'Applies Lv. 3 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 15 seconds.', '88% chance to evade Fixed Damage to [Giant] and [Child] crew members for 15 seconds.', 'Deals 2.2x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1.4x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 8 ATK up buff to self for 5 seconds.', 'Applies Lv. 4 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 16 seconds.', '90% chance to evade Fixed Damage to [Giant] and [Child] crew members for 16 seconds.', 'Deals 2.5x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1.5x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 8 ATK up buff to self for 5 seconds.', 'Applies Lv. 4 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 17 seconds.', '92% chance to evade Fixed Damage to [Giant] and [Child] crew members for 17 seconds.', 'Deals 2.8x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1.6x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 8 ATK up buff to self for 5 seconds.', 'Applies Lv. 4 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 18 seconds.', '94% chance to evade Fixed Damage to [Giant] and [Child] crew members for 18 seconds.', 'Deals 3.1x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1.7x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 9 ATK up buff to self for 5 seconds.', 'Applies Lv. 5 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 19 seconds.', '96% chance to evade Fixed Damage to [Giant] and [Child] crew members for 19 seconds.', 'Deals 3.4x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 1.8x ATK in damage ignoring DEF to 3 enemies.'],
+                    ['When there is 1 or more [Child] crew members, applies Lv. 10 ATK up buff to self for 5 seconds.', 'Applies Lv. 6 DEF up buff to [DEX], Cerebral, [Giant] and [Child] crew members for 20 seconds.', '100% chance to evade Fixed Damage to [Giant] and [Child] crew members for 20 seconds.', 'Deals 4x ATK in damage to all enemies.', 'When there are 60 seconds or less remaining, deals 2x ATK in damage ignoring DEF to 3 enemies.']
+                ]
+            }
+        }
+    },
+    4642: {
+        festCost: 30,
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "DEF"
+        },
+        festAttackPattern: ['Normal Attack'],
+        festAttackTarget: "Nearby Enemies."
+    },
+    4643: {
+        festCost: 1,
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: ['Normal Attack'],
+        festAttackTarget: "Nearby Enemies."
     },
     5013: {
         festCost: 55,
