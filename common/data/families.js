@@ -754,6 +754,8 @@ const Collun = [ "Collun" ];
 const Jarul = [ "Jarul" ];
 const Loki = [ "Loki" ];
 const Ripley = [ "Ripley" ];
+const Tusk = [ "Tusk" ];
+const Blade = [ "Blade" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5276,8 +5278,11 @@ window.families = {
     4636: [ ...Collun ],
     4637: [ ...Lilith ],
     4638: [ ...MonkeyDLuffy ],
-    //4639: [ ...MonkeyDLuffy ],
+    4639: [ ...MonkeyDLuffy ],
     4640: [ ...Oars ],
+    4641: [ ...Saul ],
+    4642: [ ...Tusk ],
+    4643: [ ...Blade ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
