@@ -191490,68 +191490,6 @@ window.details = {
                     "2 times per adventure, reduces Special Cooldown of this character completely after the first times this special is used"
                 ]
             }
-        ],
-        festStats: {
-            def: 148,
-            spd: 181,
-            style: "DBF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "80% chance to evade Special Bind, reduce damage taken from [PSY] by 20％",
-        festAbility: [
-            "[INT]/Powerhouse class and [Giant] [Child] teammates SPD Up Lv.1, HP Up Lv.1; [PSY] enemies SPD Down Lv.2; if 3 or more [Giant] [Child] characters are on the team, when appearing on the field, self Special CT 22% reduction",
-            "[INT]/Powerhouse class and [Giant] [Child] teammates SPD Up Lv.2, HP Up Lv.2; [PSY] enemies SPD Down Lv.3; if 3 or more [Giant] [Child] characters are on the team, when appearing on the field, self Special CT 24% reduction",
-            "[INT]/Powerhouse class and [Giant] [Child] teammates SPD Up Lv.3, HP Up Lv.3; [PSY] enemies SPD Down Lv.4; if 3 or more [Giant] [Child] characters are on the team, when appearing on the field, self Special CT 26% reduction",
-            "[INT]/Powerhouse class and [Giant] [Child] teammates SPD Up Lv.4, HP Up Lv.4; [PSY] enemies SPD Down Lv.5; if 3 or more [Giant] [Child] characters are on the team, when appearing on the field, self Special CT 28% reduction",
-            "[INT]/Powerhouse class and [Giant] [Child] teammates SPD Up Lv.5, HP Up Lv.5; [PSY] enemies SPD Down Lv.6; if 3 or more [Giant] [Child] characters are on the team, when appearing on the field, self Special CT 30% reduction"
-        ],
-        festSpecial: [
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.3 (15 s), Miss % Up Lv.3 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 21% reduction; targets 1 enemy with high current HP for 4200 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.1 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.3 (15 s), Miss % Up Lv.3 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 22% reduction; targets 1 enemy with high current HP for 4400 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.1 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.3 (15 s), Miss % Up Lv.3 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 23% reduction; targets 1 enemy with high current HP for 4600 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.1 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.3 (15 s), Miss % Up Lv.3 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 24% reduction; targets 1 enemy with high current HP for 4800 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.2 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.4 (15 s), Miss % Up Lv.4 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 25% reduction; targets 1 enemy with high current HP for 5000 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.2 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.4 (15 s), Miss % Up Lv.4 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 26% reduction; targets 1 enemy with high current HP for 5200 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.3 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.4 (15 s), Miss % Up Lv.4 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 27% reduction; targets 1 enemy with high current HP for 5400 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.3 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.5 (15 s), Miss % Up Lv.5 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 28% reduction; targets 1 enemy with high current HP for 5600 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.3 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.5 (15 s), Miss % Up Lv.5 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 29% reduction; targets 1 enemy with high current HP for 5800 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.4 (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for ATK Down Lv.6 (15 s), Miss % Up Lv.6 (15 s); if 3 or more [Giant] [Child] characters are on the team, targets 1 high ATK [Giant] [Child] teammate for Special CT 30% reduction; targets 1 enemy with high current HP for 6000 damage; during Assault Rumble, targets 3 [PSY] enemies for DEF Down Lv.5 (15 s)"
-            }
         ]
     },
     4640: {//Oars
@@ -191776,69 +191714,7 @@ window.details = {
                 "Boosts Tandem ATK of Cerebral and Striker characters by 2.5x for 1 turn, and boosts Base ATK of [DEX] characters by 850 for 1 turn.",
                 "Boosts Tandem ATK of Cerebral and Striker characters by 2.75x for 1 turn, and boosts Base ATK of [DEX] characters by 1,000 for 1 turn."
             ]
-        },
-        festStats: {
-            def: 163,
-            spd: 169,
-            style: "ATK"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind, reduce damage taken from [QCK] by 30％",
-        festAbility: [
-            "[DEX]/Cerebral class and [Giant] [Child] teammates ATK Up Lv.1, DEF Up Lv.1; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, [Giant] [Child] teammates Special CT 10% reduction; when remaining time is more than 60 s, all enemies ATK Down Lv.2",
-            "[DEX]/Cerebral class and [Giant] [Child] teammates ATK Up Lv.2, DEF Up Lv.1; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, [Giant] [Child] teammates Special CT 15% reduction; when remaining time is more than 60 s, all enemies ATK Down Lv.3",
-            "[DEX]/Cerebral class and [Giant] [Child] teammates ATK Up Lv.3, DEF Up Lv.2; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, [Giant] [Child] teammates Special CT 20% reduction; when remaining time is more than 60 s, all enemies ATK Down Lv.4",
-            "[DEX]/Cerebral class and [Giant] [Child] teammates ATK Up Lv.4, DEF Up Lv.2; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, [Giant] [Child] teammates Special CT 25% reduction; when remaining time is more than 60 s, all enemies ATK Down Lv.5",
-            "[DEX]/Cerebral class and [Giant] [Child] teammates ATK Up Lv.6, DEF Up Lv.3; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, [Giant] [Child] teammates Special CT 30% reduction; when remaining time is more than 60 s, all enemies ATK Down Lv.7"
-        ],
-        festSpecial: [
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.6 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.2 (11 s); targets [Giant] [Child] teammates for 80% chance to evade fixed damage (11 s); targets all enemies for ATK x 1 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.6 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.2 (12 s); targets [Giant] [Child] teammates for 82% chance to evade fixed damage (12 s); targets all enemies for ATK x 1.3 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1.1 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.6 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.2 (13 s); targets [Giant] [Child] teammates for 84% chance to evade fixed damage (13 s); targets all enemies for ATK x 1.6 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1.2 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.7 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.3 (14 s); targets [Giant] [Child] teammates for 86% chance to evade fixed damage (14 s); targets all enemies for ATK x 1.9 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1.3 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.7 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.3 (15 s); targets [Giant] [Child] teammates for 88% chance to evade fixed damage (15 s); targets all enemies for ATK x 2.2 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1.4 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.8 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.4 (16 s); targets [Giant] [Child] teammates for 90% chance to evade fixed damage (16 s); targets all enemies for ATK x 2.5 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1.5 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.8 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.4 (17 s); targets [Giant] [Child] teammates for 92% chance to evade fixed damage (17 s); targets all enemies for ATK x 2.8 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1.6 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.8 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.4 (18 s); targets [Giant] [Child] teammates for 94% chance to evade fixed damage (18 s); targets all enemies for ATK x 3.1 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1.7 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.9 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.5 (19 s); targets [Giant] [Child] teammates for 96% chance to evade fixed damage (19 s); targets all enemies for ATK x 3.4 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 1.8 damage"
-            },
-            {
-                cooldown: 32,
-                description: "If 1 or more [Child] characters are on the team, targets self for ATK Up Lv.10 (5 s); targets [DEX]/Cerebral class and [Giant] [Child] teammates for DEF Up Lv.6 (20 s); targets [Giant] [Child] teammates for 100% chance to evade fixed damage (20 s); targets all enemies for ATK x 4 damage; when remaining time is 60 s or less, targets 3 enemies ignoring DEF for ATK x 2 damage"
-            }
-        ]
+        }
     },
     4642: {//Tusk
         special: "Reduces Paralysis and ATK Down duration by 6 turns, changes all orbs, including [BLOCK] orbs, into [TND] orbs, and boosts Orb Effects of [DEX] and [PSY] characters by 2.75x for 3 turns.",
@@ -191897,16 +191773,7 @@ window.details = {
                     "Boosts base ATK by 150 the turn after recovering 3000, HP and reduces Hunger stack by 2 stacks"
                 ]
             }
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "DEF"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4643: {//Blade
         support: [
@@ -191937,16 +191804,7 @@ window.details = {
             "Boosts base RCV by 30",
             "Boosts base RCV by 30",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
