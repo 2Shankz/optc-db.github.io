@@ -191806,6 +191806,518 @@ window.details = {
             "Boosts base ATK by 50"
         ]
     },
+    4644: {//Chopper & Bonney
+        captain: "Boosts [DEX] and Cerebral characters' ATK by 5.5x, boosts their ATK by approximately 6x when they have [RCV] slots, boosts their HP by 1.25x, and if crew uses a Special to boost ATK or type effects, extends the duration of that effect by 1 turn [Applies following effect based on number of applicable Character Tags on crew] Makes [Elbaph Arc] characters' [RCV][TND] slots have matching slot effects",
+        special: "Heals 50% of crew's maximum HP, and boosts Striker and Cerebral characters' advantageous class effect by 2.25x for 1 turn. If crew's ATK Up status has 2 or less turns remaining when Special is launched, further boosts crew's ATK Up by 1.3x (up to a maximum of 4.5x). If crew's ATK Up status has 3 or more turns remaining at 4x or more when Special is launched, reduces crew's ATK Up duration by 2 turns, but heals crew by 7,500 HP at end of turn for 15 turns. At application of this effect or if crew's End of Turn Healing status has 15 or more turns remaining when Special is launched, changes ATK Up to a stackable ATK boost, and boosts [DEX] characters' ATK by 3.5x for 1 turn. If crew's Color Affinity status has 2 or less turns remaining when Special is launched, further boosts crew's Color Affinity by 1.3x (up to a maximum of 4.5x). If crew's Color Affinity status has 3 or more turns remaining at 4x or more when Special is launched, reduces crew's Color Affinity duration by 2 turns, but boosts crew's RCV by 1.5x for 15 turns. At application of this effect or if crew's RCV Up status has 15 or more turns remaining when Special is launched, changes Color Affinity to a stackable type effect boost,and boosts [DEX] characters' type effects by 3.5x for 1 turn",
+        specialName: "Laughter Atop Books",
+        sailor: {
+            base: "Makes [Elbaph Arc] characters' [RCV][TND] slots have matching slot effects",
+            level1: "Adds +0.1 to the minimum chain multiplier value (this effect can stack) when Captain is a Cerebral or Striker class"
+        },
+        superSpecialCriteria: "When any 2 of the following characters are on the crew (can be launched when character is a crewmate): Monkey D. Luffy, Roronoa Zoro, Nami, Usopp, Sanji, Nico Robin, Franky, Brook, Jinbe, Bartholomew Kuma, Jaguar D. Saul, Dr. Vegapunk \"Lilith the Evil\"",
+        superSpecial: "Allows crew to heal over the max HP limit for 3 turns, reduces all enemies' Resilience/DEF Up duration by 6 turns, changes [DEX] characters' [BLOCK] and type slots to [RCV], and changes [DEX] characters to Super [DEX]",
+        support: [
+            {
+                Characters: "Nico Robin, Jaguar D. Saul, Dr. Vegapunk \"Lilith the Evil\"",
+                description: [
+                    "Once per quest, if supported character uses a Special to boost ATK, further increases crew's ATK boost by 1.05x (up to a maximum of 5x)",
+                    "Once per quest, if supported character uses a Special to boost ATK, further increases crew's ATK boost by 1.05x (up to a maximum of 5x)",
+                    "Once per quest, if supported character uses a Special to boost ATK, further increases crew's ATK boost by 1.05x (up to a maximum of 5x)",
+                    "Once per quest, if supported character uses a Special to boost ATK, further increases crew's ATK boost by 1.05x (up to a maximum of 5x)",
+                    "Once per quest, if supported character uses a Special to boost ATK, further increases crew's ATK boost by 1.1x (up to a maximum of 5x)"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Acquire Potential 1: No Healing",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 30",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 30",
+            "Acquire Potential 2: Nutrition/Hunger",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 50",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Acquire Sailor Ability 2: Adds +0.1 to the minimum chain multiplier value (this effect can stack) when Captain is a Cerebral or Striker class",
+            "Boosts base RCV by 40",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 40",
+            "Boosts base HP by 80",
+            "Acquire Potential 3: Last Tap",
+            "LOCKED WITH KEY",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50",
+            "Boosts base RCV by 50",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 150",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 100",
+            "Reduce base Special Cooldown by 1 turn"
+        ],
+        potential: [
+            {
+                Name: "No Healing",
+                description: [
+                    "Reduces No Healing duration by 3 turns",
+                    "Reduces No Healing duration by 4 turns",
+                    "Reduces No Healing duration by 5 turns",
+                    "Reduces No Healing duration by 7 turns",
+                    "Reduces No Healing duration by 10 turns"
+                ]
+            },
+            {
+                Name: "Nutrition/Hunger",
+                description: [
+                    "Boosts base ATK by 50 the turn after recovering 3000, HP and reduces Hunger stack by 1 stack",
+                    "Boosts base ATK by 100 the turn after recovering 3000, HP and reduces Hunger stack by 1 stack",
+                    "Boosts base ATK by 150 the turn after recovering 3000, HP and reduces Hunger stack by 2 stacks",
+                    "Boosts base ATK by 200 the turn after recovering 3000, HP and reduces Hunger stack by 2 stacks",
+                    "Boosts base ATK by 300 the turn after recovering 3000, HP and reduces Hunger stack by 3 stacks"
+                ]
+            },
+            {
+                Name: "Last Tap",
+                description: [
+                    "Obtain Last Tap Lv.1",
+                    "Obtain Last Tap Lv.2",
+                    "Obtain Last Tap Lv.3",
+                    "Obtain Last Tap Lv.4",
+                    "Obtain Last Tap Lv.5"
+                ]
+            }
+        ],
+        lastTap: {
+            condition: "On the turn Special is launched during final Battle",
+            description: [
+                "Further increases crew's ATK and type effect boosts by +0.1, and further boosts the chain multiplier of the final tap by 1.3x",
+                "Further increases crew's ATK and type effect boosts by +0.2, and further boosts the chain multiplier of the final tap by 1.4x",
+                "Further increases crew's ATK and type effect boosts by +0.3, and further boosts the chain multiplier of the final tap by 1.5x",
+                "Further increases crew's ATK and type effect boosts by +0.4, and further boosts the chain multiplier of the final tap by 1.6x",
+                "Further increases crew's ATK and type effect boosts by +0.5, and further boosts the chain multiplier of the final tap by 1.75x"
+            ]
+        },
+        festStats: {
+            def: 132,
+            spd: 179,
+            style: "RCV"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Normal Attack",
+            "Power Attack",
+            "Heal Lv.2 (Medium Range)"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Special Bind, reduce damage taken from [QCK] by 30％",
+        festAbility: [
+            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.1, SPD Up Lv.1; after dealing damage, up to 10 times targets self for 40% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 6% reduction",
+            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.2, SPD Up Lv.2; after dealing damage, up to 10 times targets self for 42% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 7% reduction",
+            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.3, SPD Up Lv.3; after dealing damage, up to 10 times targets self for 45% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 8% reduction",
+            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.4, SPD Up Lv.4; after dealing damage, up to 10 times targets self for 47% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 9% reduction",
+            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.6, SPD Up Lv.6; after dealing damage, up to 10 times targets self for 50% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 10% reduction"
+        ],
+        festSpecial: [
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (11 s), 73% chance to evade RCV Bind/CT delay (11 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 420 HP per interval healing (11 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (12 s), 76% chance to evade RCV Bind/CT delay (12 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 440 HP per interval healing (12 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (13 s), 79% chance to evade RCV Bind/CT delay (13 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 460 HP per interval healing (13 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (14 s), 82% chance to evade RCV Bind/CT delay (14 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 480 HP per interval healing (14 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (15 s), 85% chance to evade RCV Bind/CT delay (15 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 500 HP per interval healing (15 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (16 s), 88% chance to evade RCV Bind/CT delay (16 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 520 HP per interval healing (16 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (17 s), 91% chance to evade RCV Bind/CT delay (17 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 540 HP per interval healing (17 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (18 s), 94% chance to evade RCV Bind/CT delay (18 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 560 HP per interval healing (18 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (19 s), 97% chance to evade RCV Bind/CT delay (19 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 580 HP per interval healing (19 s)"
+            },
+            {
+                cooldown: 30,
+                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (20 s), 100% chance to evade RCV Bind/CT delay (20 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 600 HP per interval healing (20 s)"
+            }
+        ]
+    },
+    4645: {//Biblo
+        support: [
+            {
+                Characters: "Cerebral class characters with the following Character Tag: [Child], [Giant]",
+                description: [
+                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 1 turn [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 1 turn [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 2 turns [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 2 turns [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 3 turns [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 50",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 60",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 70",
+            "Boosts base HP by 70",
+            "Boosts base RCV by 30",
+            "Boosts base ATK by 40",
+            "Boosts base HP by 90",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50"
+        ],
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: [
+            "Normal Attack"
+        ],
+        festAttackTarget: "Targets closest enemies"
+    },
+    4646: {//Ange
+        support: [
+            {
+                Characters: "Cerebral class characters with the following Character Tag: [Child], [Giant]",
+                description: [
+                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if enemy activates Resilience, reduces all enemies' Resilience duration by 1 turn [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if enemy activates Resilience, reduces all enemies' Resilience duration by 1 turn [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if enemy activates Resilience, reduces all enemies' Resilience duration by 2 turns [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if enemy activates Resilience, reduces all enemies' Resilience duration by 2 turns [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if enemy activates Resilience, reduces all enemies' Resilience duration by 3 turns [AUTO+] If enemy has any type of barrier, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 50",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 100",
+            "Boosts base RCV by 40",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50"
+        ],
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: [
+            "Normal Attack"
+        ],
+        festAttackTarget: "Targets closest enemies"
+    },
+    4647: {//6+ Queen
+        captain: "Reduces crew's Special charge time by 1 turn and VS Effect gauge and Switch Effect by 1 at start of quest, boosts [DEX], Driven, and Powerhouse characters' ATK by 5.5x, HP by 1.35x, and makes crew's [DEX][PSY] slots have matching slot effects. If crew boosts slot effects, or another status effect is applied to the crew, all enemies, or an individual enemy on the same turn after the required effect was applied, launches \"Inescapable Laser Barrage\" at the start of crew's next turn (auto-launches up to 2 times per quest; Specials launched due to Captain Ability will not reduce the character's Special charge time). On the turn \"Inescapable Laser Barrage\" is used, deals 500x character's ATK in [DEX] damage to all enemies at end of turn [Applies following effect based on number of applicable Character Tags on crew] Boosts [Lead Performer] [Animal Kingdom Pirates] characters' ATK by 1.1x. If 3 or more [Lead Performer] [Animal Kingdom Pirates] characters are on the crew and crew uses a Special to boost ATK or slot effects, further increases the effect by +0.25 (stackable with other further raising effects)",
+        special: "Reduces all enemies' HP by 20%, removes all Poison effects on the crew, reduces crew's Special charge time by 1 turn, boosts [DEX], Driven, and Powerhouse characters' ATK by 3x for 1 turn, and if crew lands 3 PERFECT strikes in this turn, sets the chain multiplier's minimum value at 3.25 and maximum value at 35.0 for the next turn",
+        specialName: "Inescapable Laser Barrage",
+        sailor: {
+            level1: "Makes character immune to Special Reverse",
+            level2: "Makes crew's [DEX] slots have matching slot effects"
+        },
+        superSpecialCriteria: "When crew's slots are boosted (can be launched when character is a crewmate)",
+        superSpecial: "Reduces crew's Bind duration by 6 turns, further increases crew's slot effect boost by 1.2x (up to a maximum of 6x), deals 75x character's ATK in non-type damage to all enemies, changes all slots to [DEX], and changes [DEX] characters to Super [DEX]",
+        support: [
+            {
+                Characters: "Jack, Kaido, King",
+                description: [
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, boosts Powerhouse characters' ATK by 1.5x for 1 turn",
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, boosts Powerhouse characters' ATK by 1.55x for 1 turn",
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, boosts Powerhouse characters' ATK by 1.6x for 1 turn",
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, boosts Powerhouse characters' ATK by 1.65x for 1 turn",
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, boosts Powerhouse characters' ATK by 1.75x for 1 turn"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base RCV by 5",
+            "Boosts base RCV by 5",
+            "Boosts base RCV by 10",
+            "Acquire Potential 1: Critical Hit",
+            "Boosts base HP by 15",
+            "Boosts base HP by 15",
+            "Boosts base RCV by 10",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 10",
+            "Acquire Sailor Ability 1: Makes character immune to Special Reverse",
+            "Boosts base HP by 25",
+            "Boosts base HP by 25",
+            "Boosts base ATK by 20",
+            "Boosts base ATK by 20",
+            "Acquire Potential 2: Slot Bind",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 60",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 30",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 80",
+            "Boosts base RCV by 30",
+            "Acquire Sailor Ability 2: Makes crew's [DEX] slots have matching slot effects",
+            "Boosts base HP by 100",
+            "Boosts base HP by 120",
+            "Boosts base ATK by 40",
+            "Boosts base ATK by 40",
+            "Acquire Potential 3: Sailor Despair",
+            "LOCKED WITH KEY",
+            "Boosts base ATK by 100",
+            "Boosts base HP by 50",
+            "Boosts base HP by 100",
+            "Boosts base HP by 150",
+            "Boosts base RCV by 25",
+            "Boosts base RCV by 25",
+            "Boosts base ATK by 100",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 200"
+        ],
+        lLimit: [
+            null,
+            {
+                rAbility: true
+            },
+            {
+                captain: {
+                    base: "Reduces crew's Special charge time by 1 turn and VS Effect gauge and Switch Effect by 1 at start of quest, boosts [DEX], Driven, and Powerhouse characters' ATK by 5.5x, HP by 1.35x, and makes crew's [DEX][PSY] slots have matching slot effects. If crew boosts slot effects, or another status effect is applied to the crew, all enemies, or an individual enemy on the same turn after the required effect was applied, launches \"Inescapable Laser Barrage\" at the start of crew's next turn (auto-launches up to 3 times per quest; Specials launched due to Captain Ability will not reduce the character's Special charge time). On the turn \"Inescapable Laser Barrage\" is used, deals 500x character's ATK in [DEX] damage to all enemies at end of turn [Applies following effect based on number of applicable Character Tags on crew] Boosts [Lead Performer] [Animal Kingdom Pirates] characters' ATK by 1.2x. If 3 or more [Lead Performer] [Animal Kingdom Pirates] characters are on the crew and crew uses a Special to boost ATK or slot effects, further increases the effect by +0.3 (stackable with other further raising effects). If 3 or more [Lead Performer] characters are on the crew and a [Lead Performer] character uses a Special to apply similar effect of slot effect boost that is applied on crew, changes the effect to a stackable boost"
+                }
+            },
+            {
+                rSpecial: true
+            },
+            {
+                special: {
+                    base: "Reduces all enemies' HP by 20%, removes all Poison effects on the crew, reduces crew's Special charge time by 1 turn, boosts [DEX], Driven, and Powerhouse characters' ATK by 3.25x for 1 turn, and if crew lands 3 PERFECT strikes in this turn, sets the chain multiplier's minimum value at 3.25 and maximum value at 35.0 for the next turn. If Captain is a [DEX] and 3 or more [Lead Performer] characters are on the crew, reduces \"King (Alber)\" and \"Jack\" crewmates' Special charge time by 11 turns (Special charge time reduction effect of \"Inescapable Laser Barrage\" can be activated up to 1 time including any Specials with similar effect)"
+                },
+                rResilience: true
+            }
+        ],
+        potential: [
+            {
+                Name: "Critical Hit",
+                description: [
+                    "If you hit a PERFECT with this character, there is a 30% chance to deal 3% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 40% chance to deal 4% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 50% chance to deal 5% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 60% chance to deal 6% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 70% chance to deal 7% of this character's attack in extra damage"
+                ]
+            },
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character",
+                    "Reduces Slot Bind duration by 7 turns on this character"
+                ]
+            },
+            {
+                Name: "Sailor Despair",
+                description: [
+                    "Reduces Sailor Despair duration by 1 turn on this character",
+                    "Reduces Sailor Despair duration by 2 turns on this character",
+                    "Reduces Sailor Despair duration by 3 turns on this character",
+                    "Reduces Sailor Despair duration by 4 turns on this character",
+                    "Reduces Sailor Despair duration by 5 turns on this character"
+                ]
+            }
+        ],
+        festStats: {
+            def: 313,
+            spd: 122,
+            style: "DEF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Lv.2 (Medium Range)",
+            "Normal Attack",
+            "Heal Lv.2 (Small Range)"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: {
+            base: "Completely evades Action Bind, reduce damage taken from [QCK] by 30％",
+            llbbase: "Completely evades Action Bind, reduce damage taken from [QCK] by 40%"
+        },
+        festAbility: {
+            base: [
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.4, DEF Up Lv.2; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 24% chance of Haste",
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.5, DEF Up Lv.3; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 25% chance of Haste",
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.6, DEF Up Lv.4; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 27% chance of Haste",
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.7, DEF Up Lv.5; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 28% chance of Haste",
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.8, DEF Up Lv.6; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 30% chance of Haste"
+            ],
+            llbbase: [
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.6, DEF Up Lv.3; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 40% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction",
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.7, DEF Up Lv.4; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 42% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction",
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.8, DEF Up Lv.5; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 45% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction",
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.9, DEF Up Lv.6; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 47% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction",
+                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.10, DEF Up Lv.7; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 50% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction"
+            ]
+        },
+        festSpecial: {
+            base: [
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 4400 damage; targets enemies within large range for 40% chance of Action Bind (5 s), SPD Down Lv.3 (6 s); targets [Animal Kingdom Pirates] teammates for 23% chance to evade damage ignoring DEF (6 s), Shield Lv.1 (6 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 4800 damage; targets enemies within large range for 44% chance of Action Bind (5 s), SPD Down Lv.3 (7 s); targets [Animal Kingdom Pirates] teammates for 26% chance to evade damage ignoring DEF (7 s), Shield Lv.1 (7 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 5200 damage; targets enemies within large range for 48% chance of Action Bind (5 s), SPD Down Lv.4 (8 s); targets [Animal Kingdom Pirates] teammates for 29% chance to evade damage ignoring DEF (8 s), Shield Lv.1 (8 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 5600 damage; targets enemies within large range for 52% chance of Action Bind (5 s), SPD Down Lv.4 (9 s); targets [Animal Kingdom Pirates] teammates for 32% chance to evade damage ignoring DEF (9 s), Shield Lv.1 (9 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 6000 damage; targets enemies within large range for 56% chance of Action Bind (5 s), SPD Down Lv.5 (10 s); targets [Animal Kingdom Pirates] teammates for 35% chance to evade damage ignoring DEF (10 s), Shield Lv.2 (10 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 6400 damage; targets enemies within large range for 60% chance of Action Bind (5 s), SPD Down Lv.5 (11 s); targets [Animal Kingdom Pirates] teammates for 38% chance to evade damage ignoring DEF (11 s), Shield Lv.2 (11 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 6800 damage; targets enemies within large range for 64% chance of Action Bind (5 s), SPD Down Lv.6 (12 s); targets [Animal Kingdom Pirates] teammates for 41% chance to evade damage ignoring DEF (12 s), Shield Lv.2 (12 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 7200 damage; targets enemies within large range for 68% chance of Action Bind (5 s), SPD Down Lv.6 (13 s); targets [Animal Kingdom Pirates] teammates for 44% chance to evade damage ignoring DEF (13 s), Shield Lv.3 (13 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 7600 damage; targets enemies within large range for 72% chance of Action Bind (5 s), SPD Down Lv.7 (14 s); targets [Animal Kingdom Pirates] teammates for 47% chance to evade damage ignoring DEF (14 s), Shield Lv.3 (14 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 8000 damage; targets enemies within large range for 80% chance of Action Bind (5 s), SPD Down Lv.8 (15 s); targets [Animal Kingdom Pirates] teammates for 50% chance to evade damage ignoring DEF (15 s), Shield Lv.4 (15 s)"
+                }
+            ],
+            llbbase: [
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 6400 damage; targets enemies within large range for 60% chance of Action Bind (5 s), SPD Down Lv.4 (11 s); targets enemies with Action Bind for 73% chance of RCV Bind (11 s); targets [Animal Kingdom Pirates] teammates for 23% chance to evade damage ignoring DEF (6 s), 23% chance to evade fixed damage (6 s), Shield Lv.2 (11 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 6800 damage; targets enemies within large range for 64% chance of Action Bind (5 s), SPD Down Lv.4 (12 s); targets enemies with Action Bind for 76% chance of RCV Bind (12 s); targets [Animal Kingdom Pirates] teammates for 26% chance to evade damage ignoring DEF (7 s), 26% chance to evade fixed damage (7 s), Shield Lv.2 (12 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 7200 damage; targets enemies within large range for 68% chance of Action Bind (5 s), SPD Down Lv.5 (13 s); targets enemies with Action Bind for 79% chance of RCV Bind (13 s); targets [Animal Kingdom Pirates] teammates for 29% chance to evade damage ignoring DEF (8 s), 29% chance to evade fixed damage (8 s), Shield Lv.2 (13 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 7600 damage; targets enemies within large range for 72% chance of Action Bind (5 s), SPD Down Lv.5 (14 s); targets enemies with Action Bind for 82% chance of RCV Bind (14 s); targets [Animal Kingdom Pirates] teammates for 32% chance to evade damage ignoring DEF (9 s), 32% chance to evade fixed damage (9 s), Shield Lv.2 (14 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 8000 damage; targets enemies within large range for 76% chance of Action Bind (5 s), SPD Down Lv.6 (15 s); targets enemies with Action Bind for 85% chance of RCV Bind (15 s); targets [Animal Kingdom Pirates] teammates for 35% chance to evade damage ignoring DEF (10 s), 35% chance to evade fixed damage (10 s), Shield Lv.3 (15 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 8400 damage; targets enemies within large range for 80% chance of Action Bind (5 s), SPD Down Lv.6 (16 s); targets enemies with Action Bind for 88% chance of RCV Bind (16 s); targets [Animal Kingdom Pirates] teammates for 38% chance to evade damage ignoring DEF (11 s), 38% chance to evade fixed damage (11 s), Shield Lv.3 (16 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 8800 damage; targets enemies within large range for 84% chance of Action Bind (5 s), SPD Down Lv.7 (17 s); targets enemies with Action Bind for 91% chance of RCV Bind (17 s); targets [Animal Kingdom Pirates] teammates for 41% chance to evade damage ignoring DEF (12 s), 41% chance to evade fixed damage (12 s), Shield Lv.3 (17 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 9200 damage; targets enemies within large range for 88% chance of Action Bind (5 s), SPD Down Lv.7 (18 s); targets enemies with Action Bind for 94% chance of RCV Bind (18 s); targets [Animal Kingdom Pirates] teammates for 44% chance to evade damage ignoring DEF (13 s), 44% chance to evade fixed damage (13 s), Shield Lv.4 (18 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 9600 damage; targets enemies within large range for 92% chance of Action Bind (5 s), SPD Down Lv.8 (19 s); targets enemies with Action Bind for 97% chance of RCV Bind (19 s); targets [Animal Kingdom Pirates] teammates for 47% chance to evade damage ignoring DEF (14 s), 47% chance to evade fixed damage (14 s), Shield Lv.4 (19 s)"
+                },
+                {
+                    cooldown: 30,
+                    description: "Targets 1 enemy for 10000 damage; targets enemies within large range for 100% chance of Action Bind (5 s), SPD Down Lv.9 (20 s); targets enemies with Action Bind for 100% chance of RCV Bind (20 s); targets [Animal Kingdom Pirates] teammates for 50% chance to evade damage ignoring DEF (15 s), 50% chance to evade fixed damage (15 s), Shield Lv.5 (20 s)"
+                }
+            ]
+        },
+        festAbilityGP: [
+            {
+                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.1",
+                festGPSpecial: "Targets all enemies for 500 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.2",
+                festGPSpecial: "Targets all enemies for 625 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.2",
+                festGPSpecial: "Targets all enemies for 750 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.3",
+                festGPSpecial: "Targets all enemies for 875 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.3, HP, SPD Up Lv.3",
+                festGPSpecial: "Targets all enemies for 1000 damage",
+                uses: 2
+            }
+        ],
+        festAbilityGPCondition: "When 2 teammates are defeated"
+    },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
         special: "Deals 120x character's ATK in Typeless damage to all enemies, changes orbs of adjacent characters into Matching Orbs, boosts ATK of all characters by 1.75x for 2 turns, reduces any damage received above 5,656 HP by 97% for 2 turns and makes PERFECTs easier to hit for 2 turns",

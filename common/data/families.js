@@ -756,6 +756,8 @@ const Loki = [ "Loki" ];
 const Ripley = [ "Ripley" ];
 const Tusk = [ "Tusk" ];
 const Blade = [ "Blade" ];
+const Biblo = [ "Biblo" ];
+const Ange = [ "Ange" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5283,6 +5285,10 @@ window.families = {
     4641: [ ...Saul ],
     4642: [ ...Tusk ],
     4643: [ ...Blade ],
+    4644: [ ...TonyTonyChopper, ...JewelryBonney ],
+    4645: [ ...Biblo ],
+    4646: [ ...Ange ],
+    4647: [ ...Queen ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
