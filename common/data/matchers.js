@@ -440,7 +440,7 @@
 				name: "Activates: Special",
 				targets: ["support"],
 				regex:
-					/When you reach the ([\w]+) stage[^.]*?, activates supported character's[^.]+?Special/i,
+					/(?:When you reach the ([\w]+) stage[^.]*?)?, activates supported character's[^.]+?Special/i,
 				submatchers: [
 					{
 						type: "option",
@@ -496,7 +496,7 @@
 				name: "Activates: Super Effect",
 				targets: ["support"],
 				regex:
-					/When you reach the ([\w]+) stage, activates supported character's[^.]+?Super Effect/i,
+					/(?:When you reach the ([\w]+) stage[^.]*?)?, activates supported character's[^.]+?Super Effect/i,
 				submatchers: [
 					{
 						type: "option",
@@ -552,7 +552,7 @@
 				name: "Activates: Switch Effect",
 				targets: ["support"],
 				regex:
-					/When you reach the ([\w]+) stage, activates supported character's[^.]+?Switch Effect/i,
+					/(?:When you reach the ([\w]+) stage[^.]*?)?, activates supported character's[^.]+?Switch Effect/i,
 				submatchers: [
 					{
 						type: "option",
@@ -4353,7 +4353,7 @@
 			{
 				name: "Stackable: Orb Boost",
 				targets: ["captain", "special", "superSpecial"],
-				regex: /converts Orb Amplification into a Stackable Orb Amplification/i,
+				regex: /converts Orb (?:Amplification|Boost|Effect) into a Stackable Orb (?:Amplification|Boost|Effect)/i,
 			},
 
 			{
