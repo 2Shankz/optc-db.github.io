@@ -191911,69 +191911,7 @@ window.details = {
                 "Increases boost effects of ATK Up and Color Affinity buffs by +0.4x, and further boosts Chain Multiplier Growth Rate by 1.6x.",
                 "Increases boost effects of ATK Up and Color Affinity buffs by +0.5x, and further boosts Chain Multiplier Growth Rate by 1.75x."
             ]
-        },
-        festStats: {
-            def: 132,
-            spd: 179,
-            style: "RCV"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Normal Attack",
-            "Power Attack",
-            "Heal Lv.2 (Medium Range)"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind, reduce damage taken from [QCK] by 30％",
-        festAbility: [
-            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.1, SPD Up Lv.1; after dealing damage, up to 10 times targets self for 40% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 6% reduction",
-            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.2, SPD Up Lv.2; after dealing damage, up to 10 times targets self for 42% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 7% reduction",
-            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.3, SPD Up Lv.3; after dealing damage, up to 10 times targets self for 45% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 8% reduction",
-            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.4, SPD Up Lv.4; after dealing damage, up to 10 times targets self for 47% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 9% reduction",
-            "[DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates HP Up Lv.6, SPD Up Lv.6; after dealing damage, up to 10 times targets self for 50% chance of Haste; [Straw Hat Pirates] [Giant] teammates Special CT 10% reduction"
-        ],
-        festSpecial: [
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (11 s), 73% chance to evade RCV Bind/CT delay (11 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 420 HP per interval healing (11 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (12 s), 76% chance to evade RCV Bind/CT delay (12 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 440 HP per interval healing (12 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (13 s), 79% chance to evade RCV Bind/CT delay (13 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 460 HP per interval healing (13 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (14 s), 82% chance to evade RCV Bind/CT delay (14 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 480 HP per interval healing (14 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (15 s), 85% chance to evade RCV Bind/CT delay (15 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 500 HP per interval healing (15 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (16 s), 88% chance to evade RCV Bind/CT delay (16 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 520 HP per interval healing (16 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (17 s), 91% chance to evade RCV Bind/CT delay (17 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 540 HP per interval healing (17 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (18 s), 94% chance to evade RCV Bind/CT delay (18 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 560 HP per interval healing (18 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (19 s), 97% chance to evade RCV Bind/CT delay (19 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 580 HP per interval healing (19 s)"
-            },
-            {
-                cooldown: 30,
-                description: "Targets [DEX]/Cerebral class and [Straw Hat Pirates] [Giant] teammates for RCV Bind/Action Bind reduction (20 s), 100% chance to evade RCV Bind/CT delay (20 s), RCV x 3 healing; when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for 600 HP per interval healing (20 s)"
-            }
-        ]
+        }
     },
     4645: {//Biblo
         support: [
@@ -192004,16 +191942,7 @@ window.details = {
             "Boosts base RCV by 30",
             "Boosts base HP by 100",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4646: {//Ange
         support: [
@@ -192044,16 +191973,7 @@ window.details = {
             "Boosts base RCV by 40",
             "Boosts base HP by 100",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4647: {//6+ Queen
         captain: "Launches the following effect at start of fight: reduces Special Cooldown of all characters by 1 turn, and reduces VS Gauge and Switch Effect of all characters by 1. Boosts ATK of [Lead Performer] and [Animal Kingdom Pirates] characters by 1.1x, boosts ATK of [DEX], Driven and Powerhouse characters by 5.5x, by 6.05x instead if they have the applicable tag, boosts HP of [DEX], Driven and Powerhouse characters by 1.35x, and makes [DEX] and [PSY] orbs beneficial for all characters. Up to 2 times per adventure, if your crew obtains an Orb Boost effect, activates \"Inescapable Laser Barrage\" in the following turn. If you use \"Inescapable Laser Barrage\" in this turn, deals 500x character's ATK in [DEX] damage to all enemies at the end of the turn. If your crew has 3+ [Lead Performer] or [Animal Kingdom Pirates] characters, increases boost effects of ATK Up and Orb Boost buffs applied by specials by +0.25x.",
@@ -192170,153 +192090,7 @@ window.details = {
                     "Reduces Sailor Despair duration by 5 turns on this character"
                 ]
             }
-        ],
-        festStats: {
-            def: 313,
-            spd: 122,
-            style: "DEF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Lv.2 (Medium Range)",
-            "Normal Attack",
-            "Heal Lv.2 (Small Range)"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: {
-            base: "Completely evades Action Bind, reduce damage taken from [QCK] by 30％",
-            llbbase: "Completely evades Action Bind, reduce damage taken from [QCK] by 40%"
-        },
-        festAbility: {
-            base: [
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.4, DEF Up Lv.2; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 24% chance of Haste",
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.5, DEF Up Lv.3; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 25% chance of Haste",
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.6, DEF Up Lv.4; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 27% chance of Haste",
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.7, DEF Up Lv.5; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 28% chance of Haste",
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.8, DEF Up Lv.6; after dealing damage, up to 3 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 30% chance of Haste"
-            ],
-            llbbase: [
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.6, DEF Up Lv.3; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 40% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction",
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.7, DEF Up Lv.4; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 42% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction",
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.8, DEF Up Lv.5; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 45% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction",
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.9, DEF Up Lv.6; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 47% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction",
-                "[DEX]/Powerhouse class and [Animal Kingdom Pirates] HP Up Lv.10, DEF Up Lv.7; after dealing damage, up to 5 times [DEX]/Powerhouse class and [Animal Kingdom Pirates] DEF Up Lv.1; after receiving damage; up to 10 times targets self for 50% chance of Haste; after receiving healing, up to 7 times [Animal Kingdom Pirates] teammates Special CT 10% reduction"
-            ]
-        },
-        festSpecial: {
-            base: [
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 4400 damage; targets enemies within large range for 40% chance of Action Bind (5 s), SPD Down Lv.3 (6 s); targets [Animal Kingdom Pirates] teammates for 23% chance to evade damage ignoring DEF (6 s), Shield Lv.1 (6 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 4800 damage; targets enemies within large range for 44% chance of Action Bind (5 s), SPD Down Lv.3 (7 s); targets [Animal Kingdom Pirates] teammates for 26% chance to evade damage ignoring DEF (7 s), Shield Lv.1 (7 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 5200 damage; targets enemies within large range for 48% chance of Action Bind (5 s), SPD Down Lv.4 (8 s); targets [Animal Kingdom Pirates] teammates for 29% chance to evade damage ignoring DEF (8 s), Shield Lv.1 (8 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 5600 damage; targets enemies within large range for 52% chance of Action Bind (5 s), SPD Down Lv.4 (9 s); targets [Animal Kingdom Pirates] teammates for 32% chance to evade damage ignoring DEF (9 s), Shield Lv.1 (9 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 6000 damage; targets enemies within large range for 56% chance of Action Bind (5 s), SPD Down Lv.5 (10 s); targets [Animal Kingdom Pirates] teammates for 35% chance to evade damage ignoring DEF (10 s), Shield Lv.2 (10 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 6400 damage; targets enemies within large range for 60% chance of Action Bind (5 s), SPD Down Lv.5 (11 s); targets [Animal Kingdom Pirates] teammates for 38% chance to evade damage ignoring DEF (11 s), Shield Lv.2 (11 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 6800 damage; targets enemies within large range for 64% chance of Action Bind (5 s), SPD Down Lv.6 (12 s); targets [Animal Kingdom Pirates] teammates for 41% chance to evade damage ignoring DEF (12 s), Shield Lv.2 (12 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 7200 damage; targets enemies within large range for 68% chance of Action Bind (5 s), SPD Down Lv.6 (13 s); targets [Animal Kingdom Pirates] teammates for 44% chance to evade damage ignoring DEF (13 s), Shield Lv.3 (13 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 7600 damage; targets enemies within large range for 72% chance of Action Bind (5 s), SPD Down Lv.7 (14 s); targets [Animal Kingdom Pirates] teammates for 47% chance to evade damage ignoring DEF (14 s), Shield Lv.3 (14 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 8000 damage; targets enemies within large range for 80% chance of Action Bind (5 s), SPD Down Lv.8 (15 s); targets [Animal Kingdom Pirates] teammates for 50% chance to evade damage ignoring DEF (15 s), Shield Lv.4 (15 s)"
-                }
-            ],
-            llbbase: [
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 6400 damage; targets enemies within large range for 60% chance of Action Bind (5 s), SPD Down Lv.4 (11 s); targets enemies with Action Bind for 73% chance of RCV Bind (11 s); targets [Animal Kingdom Pirates] teammates for 23% chance to evade damage ignoring DEF (6 s), 23% chance to evade fixed damage (6 s), Shield Lv.2 (11 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 6800 damage; targets enemies within large range for 64% chance of Action Bind (5 s), SPD Down Lv.4 (12 s); targets enemies with Action Bind for 76% chance of RCV Bind (12 s); targets [Animal Kingdom Pirates] teammates for 26% chance to evade damage ignoring DEF (7 s), 26% chance to evade fixed damage (7 s), Shield Lv.2 (12 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 7200 damage; targets enemies within large range for 68% chance of Action Bind (5 s), SPD Down Lv.5 (13 s); targets enemies with Action Bind for 79% chance of RCV Bind (13 s); targets [Animal Kingdom Pirates] teammates for 29% chance to evade damage ignoring DEF (8 s), 29% chance to evade fixed damage (8 s), Shield Lv.2 (13 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 7600 damage; targets enemies within large range for 72% chance of Action Bind (5 s), SPD Down Lv.5 (14 s); targets enemies with Action Bind for 82% chance of RCV Bind (14 s); targets [Animal Kingdom Pirates] teammates for 32% chance to evade damage ignoring DEF (9 s), 32% chance to evade fixed damage (9 s), Shield Lv.2 (14 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 8000 damage; targets enemies within large range for 76% chance of Action Bind (5 s), SPD Down Lv.6 (15 s); targets enemies with Action Bind for 85% chance of RCV Bind (15 s); targets [Animal Kingdom Pirates] teammates for 35% chance to evade damage ignoring DEF (10 s), 35% chance to evade fixed damage (10 s), Shield Lv.3 (15 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 8400 damage; targets enemies within large range for 80% chance of Action Bind (5 s), SPD Down Lv.6 (16 s); targets enemies with Action Bind for 88% chance of RCV Bind (16 s); targets [Animal Kingdom Pirates] teammates for 38% chance to evade damage ignoring DEF (11 s), 38% chance to evade fixed damage (11 s), Shield Lv.3 (16 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 8800 damage; targets enemies within large range for 84% chance of Action Bind (5 s), SPD Down Lv.7 (17 s); targets enemies with Action Bind for 91% chance of RCV Bind (17 s); targets [Animal Kingdom Pirates] teammates for 41% chance to evade damage ignoring DEF (12 s), 41% chance to evade fixed damage (12 s), Shield Lv.3 (17 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 9200 damage; targets enemies within large range for 88% chance of Action Bind (5 s), SPD Down Lv.7 (18 s); targets enemies with Action Bind for 94% chance of RCV Bind (18 s); targets [Animal Kingdom Pirates] teammates for 44% chance to evade damage ignoring DEF (13 s), 44% chance to evade fixed damage (13 s), Shield Lv.4 (18 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 9600 damage; targets enemies within large range for 92% chance of Action Bind (5 s), SPD Down Lv.8 (19 s); targets enemies with Action Bind for 97% chance of RCV Bind (19 s); targets [Animal Kingdom Pirates] teammates for 47% chance to evade damage ignoring DEF (14 s), 47% chance to evade fixed damage (14 s), Shield Lv.4 (19 s)"
-                },
-                {
-                    cooldown: 30,
-                    description: "Targets 1 enemy for 10000 damage; targets enemies within large range for 100% chance of Action Bind (5 s), SPD Down Lv.9 (20 s); targets enemies with Action Bind for 100% chance of RCV Bind (20 s); targets [Animal Kingdom Pirates] teammates for 50% chance to evade damage ignoring DEF (15 s), 50% chance to evade fixed damage (15 s), Shield Lv.5 (20 s)"
-                }
-            ]
-        },
-        festAbilityGP: [
-            {
-                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.1",
-                festGPSpecial: "Targets all enemies for 500 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.2",
-                festGPSpecial: "Targets all enemies for 625 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.2",
-                festGPSpecial: "Targets all enemies for 750 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.3",
-                festGPSpecial: "Targets all enemies for 875 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.3, HP, SPD Up Lv.3",
-                festGPSpecial: "Targets all enemies for 1000 damage",
-                uses: 2
-            }
-        ],
-        festAbilityGPCondition: "When 2 teammates are defeated"
+        ]
     },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",

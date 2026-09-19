@@ -119460,6 +119460,149 @@ window.rumble = {
         festAttackPattern: ['Normal Attack'],
         festAttackTarget: "Nearby Enemies."
     },
+    4644: {
+        festCost: 55,
+        festStats: {
+            def: 132,
+            spd: 179,
+            style: "RCV"
+        },
+        festAttackPattern: ['Normal Attack', 'Normal Attack', '<b><i>Power Attack</b></i>', '<i>Level 2 Medium Range Heal</i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['100% chance to resist Special Bind.', '30% damage reduction from [QCK] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 1 HP and SPD up buff to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'The first 10 times this character lands a hit, 40% chance to grant Haste to self.', 'The first 10 times this character lands a hit, reduces 6% of Special CT to [Straw Hat Pirates] and [Giant] crew members.'],
+                ['Applies Lv. 2 HP and SPD up buff to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'The first 10 times this character lands a hit, 42% chance to grant Haste to self.', 'The first 10 times this character lands a hit, reduces 7% of Special CT to [Straw Hat Pirates] and [Giant] crew members.'],
+                ['Applies Lv. 3 HP and SPD up buff to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'The first 10 times this character lands a hit, 45% chance to grant Haste to self.', 'The first 10 times this character lands a hit, reduces 8% of Special CT to [Straw Hat Pirates] and [Giant] crew members.'],
+                ['Applies Lv. 4 HP and SPD up buff to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'The first 10 times this character lands a hit, 47% chance to grant Haste to self.', 'The first 10 times this character lands a hit, reduces 9% of Special CT to [Straw Hat Pirates] and [Giant] crew members.'],
+                ['Applies Lv. 6 HP and SPD up buff to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'The first 10 times this character lands a hit, 50% chance to grant Haste to self.', 'The first 10 times this character lands a hit, reduces 10% of Special CT to [Straw Hat Pirates] and [Giant] crew members.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 30,
+                descriptions: [
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 11 seconds.', '73% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 11 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 420 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 11 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 12 seconds.', '76% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 12 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 440 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 12 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 13 seconds.', '79% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 13 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 460 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 13 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 14 seconds.', '82% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 14 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 480 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 14 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 15 seconds.', '85% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 15 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 500 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 15 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 16 seconds.', '88% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 16 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 520 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 16 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 17 seconds.', '91% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 17 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 540 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 17 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 18 seconds.', '94% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 18 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 560 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 18 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 19 seconds.', '97% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 19 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 580 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 19 seconds.'],
+                    ['Reduce RCV Bind and Action Bind to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 20 seconds.', '100% chance to evade RCV Bind and Special CT Delay to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members for 20 seconds.', 'Heals 3x RCV of HP to [DEX], Cerebral, [Straw Hat Pirates] and [Giant] crew members.', 'When there are 50 seconds or less remaining, heals 600 fixed HP every 3 seconds to [Straw Hat Pirates] and [Giant] crew members for 20 seconds.']
+                ]
+            }
+        }
+    },
+    4645: {
+        festCost: 1,
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: ['Normal Attack'],
+        festAttackTarget: "Nearby Enemies."
+    },
+    4646: {
+        festCost: 1,
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: ['Normal Attack'],
+        festAttackTarget: "Nearby Enemies."
+    },
+    4647: {
+        festCost: 55,
+        festStats: {
+            def: 313,
+            spd: 122,
+            style: "DEF"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Medium Range Heal</i>', 'Normal Attack', '<i>Level 2 Small Range Heal</i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['100% chance to resist Action Bind.', '30% damage reduction from [QCK] enemies.'],
+            llbbase: ['100% chance to resist Action Bind.', '40% damage reduction from [QCK] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 4 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 2 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 3 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 24% chance to grant Haste to self.'],
+                ['Applies Lv. 5 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 3 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 3 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 25% chance to grant Haste to self.'],
+                ['Applies Lv. 6 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 4 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 3 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 27% chance to grant Haste to self.'],
+                ['Applies Lv. 7 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 5 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 3 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 28% chance to grant Haste to self.'],
+                ['Applies Lv. 8 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 6 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 3 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 30% chance to grant Haste to self.']
+            ],
+            llbbase: [
+                ['Applies Lv. 6 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 3 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 5 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 40% chance to grant Haste to self.', 'The first 7 times this character lands a heal, reduces 10% of Special CT to [Animal Kingdom Pirates] crew members.'],
+                ['Applies Lv. 7 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 4 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 5 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 42% chance to grant Haste to self.', 'The first 7 times this character lands a heal, reduces 10% of Special CT to [Animal Kingdom Pirates] crew members.'],
+                ['Applies Lv. 8 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 5 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 5 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 45% chance to grant Haste to self.', 'The first 7 times this character lands a heal, reduces 10% of Special CT to [Animal Kingdom Pirates] crew members.'],
+                ['Applies Lv. 9 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 6 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 5 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 47% chance to grant Haste to self.', 'The first 7 times this character lands a heal, reduces 10% of Special CT to [Animal Kingdom Pirates] crew members.'],
+                ['Applies Lv. 10 HP up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'Applies Lv. 7 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 5 times this character lands a hit, applies Lv. 1 DEF up buff to [DEX], Powerhouse and [Animal Kingdom Pirates] crew members.', 'The first 10 times this character takes damage, 50% chance to grant Haste to self.', 'The first 7 times this character lands a heal, reduces 10% of Special CT to [Animal Kingdom Pirates] crew members.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 30,
+                descriptions: [
+                    ['Deals 4,400 fixed damage to 1 enemy.', '40% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 3 SPD down debuff to all enemies in a large, radial range for 6 seconds.', '23% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 6 seconds.', 'Applies Lv. 1 Shield up buff to [Animal Kingdom Pirates] crew members for 6 seconds.'],
+                    ['Deals 4,800 fixed damage to 1 enemy.', '44% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 3 SPD down debuff to all enemies in a large, radial range for 7 seconds.', '26% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 7 seconds.', 'Applies Lv. 1 Shield up buff to [Animal Kingdom Pirates] crew members for 7 seconds.'],
+                    ['Deals 5,200 fixed damage to 1 enemy.', '48% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 4 SPD down debuff to all enemies in a large, radial range for 8 seconds.', '29% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 8 seconds.', 'Applies Lv. 1 Shield up buff to [Animal Kingdom Pirates] crew members for 8 seconds.'],
+                    ['Deals 5,600 fixed damage to 1 enemy.', '52% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 4 SPD down debuff to all enemies in a large, radial range for 9 seconds.', '32% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 9 seconds.', 'Applies Lv. 1 Shield up buff to [Animal Kingdom Pirates] crew members for 9 seconds.'],
+                    ['Deals 6,000 fixed damage to 1 enemy.', '56% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 5 SPD down debuff to all enemies in a large, radial range for 10 seconds.', '35% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 10 seconds.', 'Applies Lv. 2 Shield up buff to [Animal Kingdom Pirates] crew members for 10 seconds.'],
+                    ['Deals 6,400 fixed damage to 1 enemy.', '60% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 5 SPD down debuff to all enemies in a large, radial range for 11 seconds.', '38% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 11 seconds.', 'Applies Lv. 2 Shield up buff to [Animal Kingdom Pirates] crew members for 11 seconds.'],
+                    ['Deals 6,800 fixed damage to 1 enemy.', '64% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 6 SPD down debuff to all enemies in a large, radial range for 12 seconds.', '41% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 12 seconds.', 'Applies Lv. 2 Shield up buff to [Animal Kingdom Pirates] crew members for 12 seconds.'],
+                    ['Deals 7,200 fixed damage to 1 enemy.', '68% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 6 SPD down debuff to all enemies in a large, radial range for 13 seconds.', '44% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 13 seconds.', 'Applies Lv. 3 Shield up buff to [Animal Kingdom Pirates] crew members for 13 seconds.'],
+                    ['Deals 7,600 fixed damage to 1 enemy.', '72% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 7 SPD down debuff to all enemies in a large, radial range for 14 seconds.', '47% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 14 seconds.', 'Applies Lv. 3 Shield up buff to [Animal Kingdom Pirates] crew members for 14 seconds.'],
+                    ['Deals 8,000 fixed damage to 1 enemy.', '80% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 8 SPD down debuff to all enemies in a large, radial range for 15 seconds.', '50% chance to evade Damage Ignoring DEF to [Animal Kingdom Pirates] crew members for 15 seconds.', 'Applies Lv. 4 Shield up buff to [Animal Kingdom Pirates] crew members for 15 seconds.']
+                ]
+            },
+            llbbase: {
+                cooldown: 30,
+                descriptions: [
+                    ['Deals 6,400 fixed damage to 1 enemy.', '60% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 4 SPD down debuff to all enemies in a large, radial range for 11 seconds.', '73% chance to inflict RCV Bind to all enemies with Action Bind for 11 seconds.', '23% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 6 seconds.', 'Applies Lv. 2 Shield up buff to [Animal Kingdom Pirates] crew members for 11 seconds.'],
+                    ['Deals 6,800 fixed damage to 1 enemy.', '64% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 4 SPD down debuff to all enemies in a large, radial range for 12 seconds.', '76% chance to inflict RCV Bind to all enemies with Action Bind for 12 seconds.', '26% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 7 seconds.', 'Applies Lv. 2 Shield up buff to [Animal Kingdom Pirates] crew members for 12 seconds.'],
+                    ['Deals 7,200 fixed damage to 1 enemy.', '68% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 5 SPD down debuff to all enemies in a large, radial range for 13 seconds.', '79% chance to inflict RCV Bind to all enemies with Action Bind for 13 seconds.', '29% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 8 seconds.', 'Applies Lv. 2 Shield up buff to [Animal Kingdom Pirates] crew members for 13 seconds.'],
+                    ['Deals 7,600 fixed damage to 1 enemy.', '72% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 5 SPD down debuff to all enemies in a large, radial range for 14 seconds.', '82% chance to inflict RCV Bind to all enemies with Action Bind for 14 seconds.', '32% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 9 seconds.', 'Applies Lv. 2 Shield up buff to [Animal Kingdom Pirates] crew members for 14 seconds.'],
+                    ['Deals 8,000 fixed damage to 1 enemy.', '76% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 6 SPD down debuff to all enemies in a large, radial range for 15 seconds.', '85% chance to inflict RCV Bind to all enemies with Action Bind for 15 seconds.', '35% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 10 seconds.', 'Applies Lv. 3 Shield up buff to [Animal Kingdom Pirates] crew members for 15 seconds.'],
+                    ['Deals 8,400 fixed damage to 1 enemy.', '80% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 6 SPD down debuff to all enemies in a large, radial range for 16 seconds.', '88% chance to inflict RCV Bind to all enemies with Action Bind for 16 seconds.', '38% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 11 seconds.', 'Applies Lv. 3 Shield up buff to [Animal Kingdom Pirates] crew members for 16 seconds.'],
+                    ['Deals 8,800 fixed damage to 1 enemy.', '84% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 7 SPD down debuff to all enemies in a large, radial range for 17 seconds.', '91% chance to inflict RCV Bind to all enemies with Action Bind for 17 seconds.', '41% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 12 seconds.', 'Applies Lv. 3 Shield up buff to [Animal Kingdom Pirates] crew members for 17 seconds.'],
+                    ['Deals 9,200 fixed damage to 1 enemy.', '88% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 7 SPD down debuff to all enemies in a large, radial range for 18 seconds.', '94% chance to inflict RCV Bind to all enemies with Action Bind for 18 seconds.', '44% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 13 seconds.', 'Applies Lv. 4 Shield up buff to [Animal Kingdom Pirates] crew members for 18 seconds.'],
+                    ['Deals 9,600 fixed damage to 1 enemy.', '92% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 8 SPD down debuff to all enemies in a large, radial range for 19 seconds.', '97% chance to inflict RCV Bind to all enemies with Action Bind for 19 seconds.', '47% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 14 seconds.', 'Applies Lv. 4 Shield up buff to [Animal Kingdom Pirates] crew members for 19 seconds.'],
+                    ['Deals 10,000 fixed damage to 1 enemy.', '100% chance to inflict Action Bind to all enemies in a large, radial range for 5 seconds.', 'Inflicts Lv. 9 SPD down debuff to all enemies in a large, radial range for 20 seconds.', '100% chance to inflict RCV Bind to all enemies with Action Bind for 20 seconds.', '50% chance to evade Damage Ignoring DEF and Fixed Damage to [Animal Kingdom Pirates] crew members for 15 seconds.', 'Applies Lv. 5 Shield up buff to [Animal Kingdom Pirates] crew members for 20 seconds.']
+                ]
+            }
+        },
+        festGPAbility: {
+            base: [
+                ['Applies Lv. 1 ATK up buff to all crew members.', 'Applies Lv. 1 HP and SPD up buff to all crew members.'],
+                ['Applies Lv. 1 ATK up buff to all crew members.', 'Applies Lv. 2 HP and SPD up buff to all crew members.'],
+                ['Applies Lv. 2 ATK up buff to all crew members.', 'Applies Lv. 2 HP and SPD up buff to all crew members.'],
+                ['Applies Lv. 2 ATK up buff to all crew members.', 'Applies Lv. 3 HP and SPD up buff to all crew members.'],
+                ['Applies Lv. 3 ATK up buff to all crew members.', 'Applies Lv. 3 HP and SPD up buff to all crew members.']
+            ]
+        },
+        festGPSpecial: {
+            base: {
+                uses: 2,
+                condition: "After 2 crew members are defeated",
+                descriptions: [
+                    ['Deals 500 fixed damage to all enemies.'],
+                    ['Deals 625 fixed damage to all enemies.'],
+                    ['Deals 750 fixed damage to all enemies.'],
+                    ['Deals 875 fixed damage to all enemies.'],
+                    ['Deals 1,000 fixed damage to all enemies.']
+                ]
+            }
+        }
+    },
     5013: {
         festCost: 55,
         festStats: {
