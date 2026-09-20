@@ -67,6 +67,7 @@
       $scope.farmableOptions = window.farmableOptions;
       $scope.nonFarmableOptions = window.nonFarmableOptions;
       $scope.shops = window.shops;
+      $scope.banners = window.banners;
 
       $timeout(function () {
         $scope.$watch(

@@ -430,6 +430,7 @@ var flags = window.flags[unit.id] || {};
         }
       }
       if (filters.shop && filters.shop.indexOf(id) == -1) return false;
+      if (filters.banner && filters.banner.indexOf(id) == -1) return false;
       if (filters.drop) {
         var isFarmable = CharUtils.isFarmable(id);
         if (filters.drop == "Farmable") {

@@ -526,6 +526,12 @@ directives.goBack = function ($state) {
 					if (Object.values(value).includes(Number(id)))
 						htmlToAppend += '<span class="tag flag">' + key + ' Shop</span>';
 				});
+
+				// Banners
+				Object.entries(window.banners).forEach(([key, value]) => {
+					if (Object.values(value).includes(Number(id)))
+						htmlToAppend += '<span class="tag flag">' + key + ' Banner</span>';
+				});
 				
 				// matchers
 				if (data) {

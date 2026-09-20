@@ -141,6 +141,8 @@
         <div id="farmable-filter">
             <animate-collapse class="filter-header">Farmable</animate-collapse>
             <div class="collapse">
+                <span class="filter width-12 drop" ng-model="filters.banner" ng-class="{ active: filters.banner == banners['FP'] }"
+                    ng-click="onFilterClick($event, banners['FP'])">Friend Point Banner</span>
                 <div ng-repeat="opt in farmableOptions">
                     <span class="filter width-6 drop"
                         ng-class="{ active: filters.farmable[opt.key] }"
