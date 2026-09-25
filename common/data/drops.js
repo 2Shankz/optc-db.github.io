@@ -3669,6 +3669,16 @@ window.drops = {
             'Defeat Level Rewards': [ 4638 ],
         },
 
+        {
+            name: 'HW Crocodile',
+            dropID: 'pka39',
+            thumb: 4651,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 3108, "4651-skull" ],
+        },
+
     ],
 
 
