@@ -192093,24 +192093,24 @@ window.details = {
         ]
     },
     4648: {//Zoro & Robin
-        captain: "Reduces [PSY] and Cerebral characters' Special charge time by 2 turns at start of quest, and boosts their ATK by 5.75x and HP by 1.2x. If crew boosts slot effects, or another status effect is applied to the crew, all enemies, or an individual enemy on the same turn after the required effect was applied, launches \"Moonlit Costumes\" at the start of crew's next turn (auto-launches up to 2 times per quest; Specials launched due to Captain Ability will not reduce the character's Special charge time) [Applies following effect based on number of applicable Character Tags on crew] Boosts [Straw Hat Pirates] characters' ATK by 1.1x",
-        special: "Deals 120x character's ATK in non-type damage to all enemies, and reduces crew's Burn duration by 7 turns. If crew has type effect boost when Special is launched, applies Weakened status (increase damage taken by 1.75x for all enemies, damage further increased by 1.25x if enemy has Increase Damage Taken) to all enemies for 1 turn, then after that, boosts [PSY] and Cerebral characters' type effects by 3.5x for 1 turn, then after 1 turn, boosts the chain multiplier by 1.75x for 1 turn. If 3 or more [Straw Hat Pirates] characters are on the crew, further increases crew's slot effect boost by +0.5",
+        captain: "Reduces Special Cooldown of [PSY] and Cerebral characters by 2 turns at the start of the fight, boosts ATK of [Straw Hat Pirates] characters by 1.1x, boosts ATK of [PSY] and Cerebral characters by 5.75x, by 6.325x instead if they have the applicable tag, and boosts HP of [PSY] and Cerebral characters by 1.2x. Up to 2 times per adventure, if your crew obtains an Orb Boost effect, activates \"Moonlit Costumes\" in the following turn.",
+        special: "Deals 120x character's ATK in typeless damage to all enemies, reduces Burn duration by 7 turns, boosts Color Affinity of [PSY] and Cerebral characters by 3.5x for 1 turn, and after 1 turn, boosts Chain Multiplier Growth Rate by 1.75x for 1 turn. If your crew has Color Affinity when the special is activated, inflicts all enemies with Weaken by 1.75x, by 2.1875x instead if enemies are inflicted with Increase Damage Taken, for 1 turn. If your crew has 3+ [Straw Hat Pirates] characters, increases boost effects of Orb Boost buffs by +0.5x.",
         specialName: "Moonlit Costumes",
         sailor: {
-            base: "Boosts Cerebral characters' base ATK by 1.1x when Captain is a Cerebral class",
-            level1: "If 4 or more [Straw Hat Pirates] characters are on the crew and enemy launches Percent Damage Reduction effect, reduces all enemies' Percent Damage Reduction duration by 6 turns at start of crew's next turn (only once per quest)"
+            base: "If your Captain is a Cerebral character, boosts base ATK of Cerebral characters by 1.1x.",
+            level1: "If your crew has 4+ [Straw Hat Pirates] characters, once per adventure, when the enemy gains a Percent Damage Reduction buff, reduces enemies' Percent Damage Reduction duration by 6 turns."
         },
-        superSpecialCriteria: "When crew has both type effect and slot effect boosts (can be launched when character is a crewmate)",
-        superSpecial: "Boosts damage dealt to increase damage taken enemies by 2.5x for 1 turn, allows crew's slot effect boost to be further increased up to 2 times, and changes Cerebral characters to Super Cerebral",
+        superSpecialCriteria: "Can be launched as crewmate. If your crew has Orb Boost and Color Affinity buffs",
+        superSpecial: "Boosts ATK against enemies inflicted with Increase Damage Taken by 2.5x for 1 turn, enables Orb Boost buffs to be enhanced up to 2 times, and transforms Cerebral characters into Super Cerebral characters.",
         support: [
             {
-                Characters: "[PSY] Cerebral characters with the following Character Tag: [Straw Hat Pirates]",
+                Characters: "[PSY] Cerebral [Straw Hat Pirates] characters",
                 description: [
-                    "Once per quest, if inflicted with Burn status from the enemy, reduces crew's Burn duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if inflicted with Burn status from the enemy, reduces crew's Burn duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if inflicted with Burn status from the enemy, reduces crew's Burn duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if inflicted with Burn status from the enemy, reduces crew's Burn duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if inflicted with Burn status from the enemy, reduces crew's Burn duration by 3 turns at start of crew's next turn"
+                    "Once per adventure, when an enemy inflicts you with Burn, reduces Burn duration by 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Burn, reduces Burn duration by 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Burn, reduces Burn duration by 2 turns.",
+                    "Once per adventure, when an enemy inflicts you with Burn, reduces Burn duration by 2 turns.",
+                    "Once per adventure, when an enemy inflicts you with Burn, reduces Burn duration by 3 turns."
                 ]
             }
         ],
@@ -192199,18 +192199,18 @@ window.details = {
         ],
         superTandemBoost: {
             characterCondition: [
-                "When a [Straw Hat Pirates] [Worst Generation] [Paramythia-type] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Worst Generation] [Paramythia-type] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Worst Generation] [Paramythia-type] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Worst Generation] [Paramythia-type] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Worst Generation] [Paramythia-type] character performs Super Tandem"
+                "When a [Straw Hat Pirates], [Worst Generation] or [Paramythia-type] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Worst Generation] or [Paramythia-type] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Worst Generation] or [Paramythia-type] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Worst Generation] or [Paramythia-type] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Worst Generation] or [Paramythia-type] character performs Super Tandem"
             ],
             description: [
-                "Raises Boost Level of [Straw Hat Pirates] [Worst Generation] [Paramythia-type] characters by 1 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Worst Generation] [Paramythia-type] characters by 2 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Worst Generation] [Paramythia-type] characters by 3 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Worst Generation] [Paramythia-type] characters by 4 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Worst Generation] [Paramythia-type] characters by 5 for 1 turn"
+                "Raises Boost Level of [Straw Hat Pirates], [Worst Generation] and [Paramythia-type] characters by 1 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Worst Generation] and [Paramythia-type] characters by 2 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Worst Generation] and [Paramythia-type] characters by 3 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Worst Generation] and [Paramythia-type] characters by 4 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Worst Generation] and [Paramythia-type] characters by 5 for 1 turn."
             ]
         },
         festStats: {
@@ -192287,24 +192287,24 @@ window.details = {
         }
     },
     4649: {//Usopp & Franky
-        captain: "Reduces [PSY] and Powerhouse characters' Special charge time by 2 turns at start of quest, and boosts their ATK by 5.5x, HP by 1.3x, and makes crew's [TND] slots have matching slot effects. If crew boosts type effects, or another status effect is applied to the crew, all enemies, or an individual enemy on the same turn after the required effect was applied, launches \"Joyful Pumpkin Decorations\" at the start of crew's next turn (auto-launches up to 2 times per quest; Specials launched due to Captain Ability will not reduce the character's Special charge time) [Applies following effect based on number of applicable Character Tags on crew] Boosts [Straw Hat Pirates] characters' ATK by 1.2x",
-        special: "Reduces crew's Special Bind duration by 7 turns, and changes crew's slots (including [BLOCK] slots) to [TND]. If crew has slot effect boost when Special is launched, increases all enemies' damage taken by 2.5x for 1 turn, then after that, boosts [PSY] and Powerhouse characters' slot effect by 3.5x for 1 turn, and if crew lands 3 PERFECT strikes in this turn, sets the chain multiplier's minimum value at 3.25 and maximum value at 30.0 the next turn. If 3 or more [Straw Hat Pirates] characters are on the crew, further increases crew's type effect boost by +0.5",
+        captain: "Reduces Special Cooldown of [PSY] and Powerhouse characters by 2 turns at the start of the fight, boosts ATK of [Straw Hat Pirates] characters by 1.2x, boosts ATK of [PSY] and Powerhouse characters by 5.5x, by 6.6x instead if they have the applicable tag, boosts HP of [PSY] and Powerhouse characters by 1.3x, and makes [TND] orbs beneficial for all characters. Up to 2 times per adventure, if your crew obtains a Color Affinity effect, activates \"Joyful Pumpkin Decorations\" in the following turn.",
+        special: "Reduces Special Bind duration by 7 turns, changes all orbs, including [BLOCK] orbs, into [TND] orbs, boosts Orb Effects of [PSY] and Powerhouse characters by 3.5x for 1 turn, and if during this turn you score 3 PERFECT hits, sets Chain Boundaries to 3.25x and 30.0x for 1 turn in the following turn. If your crew has Orb Boost when the special is activated, inflicts all enemies with Increase Damage Taken by 2.5x for 1 turn. If your crew has 3+ [Straw Hat Pirates] characters, increases boost effects of Color Affinity buffs by +0.5x.",
         specialName: "Joyful Pumpkin Decorations",
         sailor: {
-            base: "Makes [PSY] and Powerhouse characters' [TND] slots have matching slot effects, and reduces character's Special Bind duration by 8 turns",
-            level1: "If 4 or more [Straw Hat Pirates] characters are on the crew and enemy launches DEF Up effect, reduces all enemies' DEF Up duration by 6 turns at start of crew's next turn (only once per quest)"
+            base: "Makes [TND] orbs beneficial for [PSY] and Powerhouse characters, and reduces Special Bind duration by 8 turns on this character.",
+            level1: "If your crew has 4+ [Straw Hat Pirates] characters, once per adventure, when the enemy gains an Increased Defense buff, reduces enemies' Increased Defense duration by 6 turns."
         },
-        superSpecialCriteria: "When crew has both type effect and slot effect boosts (can be launched when character is a crewmate)",
-        superSpecial: "Boosts [PSY] and Powerhouse characters' ATK when landing a successful strike by 2x for 1 turn after landing 3 PERFECT strikes in a row in this turn, allows crew's type effect boost to be further increased up to 2 times, and changes [PSY] characters to Super [PSY]",
+        superSpecialCriteria: "Can be launched as crewmate. If your crew has Orb Boost and Color Affinity buffs",
+        superSpecial: "Boosts Tap Timing ATK of [PSY] and Powerhouse characters by 2x, following a chain of 3 PERFECT attacks, for 1 turn, enables Color Affinity buffs to be enhanced up to 2 times, and transforms [PSY] characters into Super [PSY] characters.",
         support: [
             {
-                Characters: "[PSY] Powerhouse characters with the following Character Tag: [Straw Hat Pirates]",
+                Characters: "[PSY] Powerhouse [Straw Hat Pirates] characters",
                 description: [
-                    "Once per quest, if inflicted with Special Bind status from the enemy, reduces crew's Special Bind duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if inflicted with Special Bind status from the enemy, reduces crew's Special Bind duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if inflicted with Special Bind status from the enemy, reduces crew's Special Bind duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if inflicted with Special Bind status from the enemy, reduces crew's Special Bind duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if inflicted with Special Bind status from the enemy, reduces crew's Special Bind duration by 3 turns at start of crew's next turn"
+                    "Once per adventure, when an enemy inflicts you with Special Bind, reduces Special Bind duration by 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Special Bind, reduces Special Bind duration by 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Special Bind, reduces Special Bind duration by 2 turns.",
+                    "Once per adventure, when an enemy inflicts you with Special Bind, reduces Special Bind duration by 2 turns.",
+                    "Once per adventure, when an enemy inflicts you with Special Bind, reduces Special Bind duration by 3 turns."
                 ]
             }
         ],
@@ -192393,18 +192393,18 @@ window.details = {
         ],
         superTandem: {
             characterCondition: [
-                "When any 2 of the following characters are on the crew (except as Support Characters; Double Characters counts as 1): Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe",
-                "When any 2 of the following characters are on the crew (except as Support Characters; Double Characters counts as 1): Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe",
-                "When any 2 of the following characters are on the crew (except as Support Characters; Double Characters counts as 1): Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe",
-                "When any 2 of the following characters are on the crew (except as Support Characters; Double Characters counts as 1): Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe",
-                "When any 2 of the following characters are on the crew (except as Support Characters; Double Characters counts as 1): Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe"
+                "Your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe",
+                "Your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe",
+                "Your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe",
+                "Your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe",
+                "Your crew must consist of any 2 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Brook, Jinbe"
             ],
             description: [
-                "Applies ATK Boost (Tandem) of 1.75x to [PSY] characters for 1 turn",
-                "Applies ATK Boost (Tandem) of 2x to [PSY] characters for 1 turn",
-                "Applies ATK Boost (Tandem) of 2.25x to [PSY] characters for 1 turn",
-                "Applies ATK Boost (Tandem) of 2.5x to [PSY] characters for 1 turn",
-                "Applies ATK Boost (Tandem) of 2.75x to [PSY] characters for 1 turn, and further increases crew's damage boost by +0.25"
+                "Boosts Tandem ATK of [PSY] characters by 1.75x for 1 turn.",
+                "Boosts Tandem ATK of [PSY] characters by 2x for 1 turn.",
+                "Boosts Tandem ATK of [PSY] characters by 2.25x for 1 turn.",
+                "Boosts Tandem ATK of [PSY] characters by 2.5x for 1 turn.",
+                "Boosts Tandem ATK of [PSY] characters by 2.75x for 1 turn, and increases boost effects of Status ATK Boost buffs by +0.25x."
             ]
         },
         festStats: {
@@ -192481,21 +192481,21 @@ window.details = {
         }
     },
     4650: {//Nami
-        special: "Boosts [PSY] and Cerebral characters' ATK by 2.75x for 1 turn, reduces all enemies' damage nullification duration by 2 turns, reduces crew's ATK Down duration by 6 turns, and if crew has slot effect or type effect boost when Special is launched, further increases crew's ATK boost by +0.25 (this effect also applies to ATK boost from this Special)",
+        special: "Boosts ATK of [PSY] and Cerebral characters by 2.75x for 1 turn, reduces enemies' Damage Nullification duration by 2 turns, and reduces ATK Down duration by 6 turns. If your crew has Orb Boost or Color Affinity when the special is activated, increases boost effects of ATK Up buffs by +0.25x, including effects activated in the same ability.",
         specialName: "Trick or Berries!",
         sailor: {
-            base: "Boosts [PSY] and Cerebral characters' base RCV by 80",
-            level1: "Reduces the duration of Remove SFX by 6 turns"
+            base: "Boosts base RCV of [PSY] and Cerebral characters by 80.",
+            level1: "Reduces Blindness duration by 6 turns."
         },
         support: [
             {
                 Characters: "[PSY] Cerebral characters",
                 description: [
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 1 turn at start of crew's next turn [AUTO+] At battle 4, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 1 turn at start of crew's next turn [AUTO+] At battle 4, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 1 turn at start of crew's next turn [AUTO+] At battle 4, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 1 turn at start of crew's next turn [AUTO+] At battle 4, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 2 turns at start of crew's next turn [AUTO+] At battle 4, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 1 turn. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Super Effect; when you reach the final stage, activates supported character's Special.",
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 1 turn. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Super Effect; when you reach the final stage, activates supported character's Special.",
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 1 turn. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Super Effect; when you reach the final stage, activates supported character's Special.",
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 1 turn. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Super Effect; when you reach the final stage, activates supported character's Special.",
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 2 turns. <b>[AUTO+]</b> When you reach the 4th stage, activates supported character's Super Effect; when you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -192603,24 +192603,24 @@ window.details = {
     },
     4651: {//5+ HW Crocodile
         captain: {
-            base: "Boosts [INT] characters' ATK by 4x, boosts other characters' ATK by 3x, boosts [INT] characters' HP by 1.3x, and reduces their Special charge time by 1 turn at start of quest",
-            level1: "Boosts [INT] characters' ATK by 4.5x, boosts other characters' ATK by 3.5x, boosts [INT] characters' HP by 1.3x, and reduces their Special charge time by 2 turns at start of quest"
+            base: "Reduces Special Cooldown of [INT] characters by 1 turn at the start of the fight, boosts ATK of [INT] characters by 4x, boosts ATK of all other characters by 3x, and boosts HP of [INT] characters by 1.3x.",
+            level1: "Reduces Special Cooldown of [INT] characters by 2 turns at the start of the fight, boosts ATK of [INT] characters by 4.5x, boosts ATK of all other characters by 3.5x, and boosts HP of [INT] characters by 1.3x."
         },
-        special: "Deals 100x character's ATK in non-type damage to all enemies, reduces crew's ATK Down/Burn duration by 6 turns, and boosts the type effects of normal attacks for [INT] characters by 2.75x for 1 turn. If crew has Percent Damage Reduction status when Special is launched, boosts crew's ATK based on the Percent Damage Reduction effect applied on the crew (e.g. if crew has 80% damage reduction, boosts ATK by 1.8x) for 2 turns, then after that, reduces damage taken by 80% for 1 turn, and if 3 or more [Baroque Works] [Seven Warlords of the Sea] [Logia-type] characters are on the crew, boosts [INT] characters' base ATK by +1500 for 1 turn",
+        special: "Deals 100x character's ATK in typeless damage to all enemies, reduces ATK Down and Burn duration by 6 turns, boosts Color Affinity of [INT] characters by 2.75x for 1 turn, and reduces damage received by 80% for 1 turn. If your crew has Percent Damage Reduction when the special is activated, boosts Crew Damage Reduction to ATK of all characters by 1x-2x, proportional to the strength of crew's Percent Damage Reduction buff, for 2 turns. If your crew has 3+ [Baroque Works], [Seven Warlords of the Sea] or [Logia-type] characters, boosts Base ATK of [INT] characters by 1,500 for 1 turn.",
         specialName: "Gastronomy Filled Night",
         sailor: {
-            base: "Boosts [INT] characters' base ATK by 40",
-            level1: "Character's [INT] slot is carried over to the next turn if character lands a PERFECT strike"
+            base: "Boosts base ATK of [INT] characters by 40.",
+            level1: "If this character has an [INT] orb and you hit a PERFECT with them, keep their [INT] orb for the next turn."
         },
         support: [
             {
                 Characters: "[INT] characters",
                 description: [
-                    "Adds 2% of character's base stats to supported character's base stats",
-                    "Adds 3% of character's base stats to supported character's base stats",
-                    "Adds 4% of character's base stats to supported character's base stats",
-                    "Adds 5% of character's base stats to supported character's base stats",
-                    "Adds 6% of character's base stats to supported character's base stats"
+                    "Adds 2% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 3% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 4% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 6% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV."
                 ]
             }
         ],
