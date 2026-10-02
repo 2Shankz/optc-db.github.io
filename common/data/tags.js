@@ -4614,6 +4614,7 @@ window.tags = {
 	"4649": ["Straw Hat Pirates"],
 	"4650": ["Straw Hat Pirates"],
 	"4651": ["Former / Baroque Works","Former / Seven Warlords of the Sea","Logia-type / Devil Fruit User"],
+	"4652": ["New Giant Pirate Crew","Giant","Elbaph Arc"],
 	"5013": [],
 	"5014": [],
 	"5029": [],
