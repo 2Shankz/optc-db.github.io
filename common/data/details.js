@@ -192571,67 +192571,6 @@ window.details = {
                     "If HP is below 50% at the start of the turn, recovers 1.5x this character's RCV at the end of the turn for each time you hit a PERFECT with this character"
                 ]
             }
-        ],
-        festStats: {
-            def: 216,
-            spd: 120,
-            style: "DEF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Normal Attack",
-            "Heal Self Lv.2"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind/Damage Over Time, reduce damage taken from [INT] by 30%",
-        festAbility: [
-            "[PSY]/Striker class and [Giant] teammates HP Up Lv.2, SPD Up Lv.2, DEF Up Lv.2; if 3 or more [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 30% reduction; when appearing on the field, [New Giant Pirate Crew] teammates Special CT 10% reduction; revives 1 [Giant] teammate up to 1 time at 30% HP",
-            "[PSY]/Striker class and [Giant] teammates HP Up Lv.3, SPD Up Lv.3, DEF Up Lv.3; if 3 or more [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 35% reduction; when appearing on the field, [New Giant Pirate Crew] teammates Special CT 15% reduction; revives 1 [Giant] teammate up to 1 time at 35% HP",
-            "[PSY]/Striker class and [Giant] teammates HP Up Lv.4, SPD Up Lv.4, DEF Up Lv.4; if 3 or more [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 40% reduction; when appearing on the field, [New Giant Pirate Crew] teammates Special CT 20% reduction; revives 1 [Giant] teammate up to 1 time at 40% HP",
-            "[PSY]/Striker class and [Giant] teammates HP Up Lv.5, SPD Up Lv.5, DEF Up Lv.5; if 3 or more [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 45% reduction; when appearing on the field, [New Giant Pirate Crew] teammates Special CT 25% reduction; revives 1 [Giant] teammate up to 1 time at 45% HP",
-            "[PSY]/Striker class and [Giant] teammates HP Up Lv.6, SPD Up Lv.6, DEF Up Lv.6; if 3 or more [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 50% reduction; when appearing on the field, [New Giant Pirate Crew] teammates Special CT 30% reduction; revives 1 [Giant] teammate up to 1 time at 50% HP"
-        ],
-        festSpecial: [
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.1 (11 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.1 (11 s), DEF Up Lv.1 (11 s); targets [Giant] teammates for 73% chance to evade Action Bind (11 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 33% and reflect x 0.1 the damage reduced (11 s); when remaining time is less than 30 s, targets all enemies for 16500 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.1 (12 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.1 (12 s), DEF Up Lv.1 (12 s); targets [Giant] teammates for 76% chance to evade Action Bind (12 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 36% and reflect x 0.1 the damage reduced (12 s); when remaining time is less than 30 s, targets all enemies for 18000 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.1 (13 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.2 (13 s), DEF Up Lv.1 (13 s); targets [Giant] teammates for 79% chance to evade Action Bind (13 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 39% and reflect x 0.1 the damage reduced (13 s); when remaining time is less than 30 s, targets all enemies for 19500 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.2 (14 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.3 (14 s), DEF Up Lv.2 (14 s); targets [Giant] teammates for 82% chance to evade Action Bind (14 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 42% and reflect x 0.1 the damage reduced (14 s); when remaining time is less than 30 s, targets all enemies for 21000 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.2 (15 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.3 (15 s), DEF Up Lv.2 (15 s); targets [Giant] teammates for 85% chance to evade Action Bind (15 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 45% and reflect x 0.1 the damage reduced (15 s); when remaining time is less than 30 s, targets all enemies for 22500 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.3 (16 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.4 (16 s), DEF Up Lv.3 (16 s); targets [Giant] teammates for 88% chance to evade Action Bind (16 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 48% and reflect x 0.1 the damage reduced (16 s); when remaining time is less than 30 s, targets all enemies for 24000 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.3 (17 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.5 (17 s), DEF Up Lv.3 (17 s); targets [Giant] teammates for 91% chance to evade Action Bind (17 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 51% and reflect x 0.1 the damage reduced (17 s); when remaining time is less than 30 s, targets all enemies for 25500 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.3 (18 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.5 (18 s), DEF Up Lv.3 (18 s); targets [Giant] teammates for 94% chance to evade Action Bind (18 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 54% and reflect x 0.1 the damage reduced (18 s); when remaining time is less than 30 s, targets all enemies for 27000 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.4 (19 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.6 (19 s), DEF Up Lv.4 (19 s); targets [Giant] teammates for 97% chance to evade Action Bind (19 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 57% and reflect x 0.1 the damage reduced (19 s); when remaining time is less than 30 s, targets all enemies for 28500 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 29,
-                description: "Targets enemies within large range for SPD Down Lv.5 (20 s); targets [PSY]/Striker class and [Giant] teammates for Guard % Up Lv.7 (20 s), DEF Up Lv.5 (20 s); targets [Giant] teammates for 100% chance to evade Action Bind (20 s); when remaining time is 30 s or more, targets (not including self) [PSY]/Striker class and [Giant] teammates for Damage Reflect status to reduce damage by 60% and reflect x 0.1 the damage reduced (20 s); when remaining time is less than 30 s, targets all enemies for 30000 spread damage (damage on each enemy reduced based on number of total enemies)"
-            }
         ]
     },
     5013: {//Kung Fu Luffy
