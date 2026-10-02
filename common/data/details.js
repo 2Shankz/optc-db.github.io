@@ -192479,22 +192479,22 @@ window.details = {
         ]
     },
     4652: {//Goldberg
-        captain: "Boosts [PSY] and Striker characters' ATK by approximately 5.75x when slots match (5.5x otherwise), HP by 1.5x, makes crew's [PSY] slots have matching slot effects, and if crew uses a Special to apply additive chain multiplier boost (except multiplicative boost), extends the duration of that effect by 2 turns [Applies following effect based on number of applicable Character Tags on crew] If 2 or more [New Giant Pirate Crew] characters are on the crew, boosts [New Giant Pirate Crew] characters' ATK by 1.1x",
-        special: "Reduces the duration of all enemy barriers and damage nullification by 2 turns. If 2 or more [New Giant Pirate Crew] characters are on the crew, deals 300x character's ATK in [PSY] damage to all enemies at end of turn for 3 turns. If crew has ATK Up status when Special is launched, allows crew's ATK boost to be further increased up to 2 times and further increases the boost by 1.2x (up to a maximum of 6x), otherwise, boosts [PSY] and Striker characters' ATK by 2.75x for 3 turns. If crew has additive chain multiplier boost (except multiplicative boosts) when Special is launched, extends the duration of chain multiplier boost (except multiplicative boosts) by 1 turn and further increases the boost by +0.5, otherwise, boosts the chain multiplier by +1.8 for 2 turns",
+        captain: "Boosts ATK of [PSY] and Striker characters by 5.5x, by 5.75x instead if they have a beneficial orb, boosts HP of [PSY] and Striker characters by 1.5x, makes [PSY] orbs beneficial for all characters, and increases duration of any Chain Addition buffs applied by specials by 2 turns. If your crew has 2+ [New Giant Pirate Crew] characters, further boosts ATK of [New Giant Pirate Crew] characters by 1.1x.",
+        special: "Reduces enemies' Barrier and Damage Nullification duration by 2 turns. If your crew has 2+ [New Giant Pirate Crew] characters, deals 300x character's ATK in [PSY] damage to all enemies at the end of each turn for 3 turns. If your crew has ATK Up when the special is activated, enables ATK Up buffs to be enhanced up to 2 times, and increases boost effects of ATK Up buffs by 1.2x (up to 6x); boosts ATK of [PSY] and Striker characters by 2.75x for 3 turns otherwise. If your crew has Chain Addition when the special is activated, increases duration of any Chain Addition buffs by 1 turn, and increases boost effects of Chain Addition buffs by +0.5x; adds 1.8x to Chain Multiplier for 2 turns otherwise.",
         specialName: "Giant Questioning Straw Hat",
         sailor: {
-            base: "Character cannot be blown away by attack",
-            level1: "Boosts [PSY] and Striker characters' base stats by 100"
+            base: "This character cannot be Blown Away.",
+            level1: "Boosts base ATK, HP and RCV of [PSY] and Striker characters by 100."
         },
         support: [
             {
                 Characters: "[PSY] Striker characters",
                 description: [
-                    "Adds 6% of character's base HP to supported character's base HP",
-                    "Adds 8% of character's base HP to supported character's base HP",
-                    "Adds 10% of character's base HP to supported character's base HP",
-                    "Adds 12% of character's base HP to supported character's base HP",
-                    "Adds 15% of character's base HP to supported character's base HP"
+                    "Adds 6% of this character's base HP to the supported character's base HP.",
+                    "Adds 8% of this character's base HP to the supported character's base HP.",
+                    "Adds 10% of this character's base HP to the supported character's base HP.",
+                    "Adds 12% of this character's base HP to the supported character's base HP.",
+                    "Adds 15% of this character's base HP to the supported character's base HP."
                 ]
             }
         ],
