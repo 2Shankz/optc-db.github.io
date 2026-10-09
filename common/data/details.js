@@ -67359,7 +67359,7 @@ window.details = {
             {
                 captain: {
                     base: "Boosts ATK of Shooter characters by 2.25x, boosts Color Affinity of Shooter characters by 1.5x and recovers 1.5x character's RCV in HP at the end of each turn.",
-                    level6: "Deals 200,000 Fixed damage to all enemies, reduces enemies' Barrier duration by 2 turns, and recovers 10x character's RCV in HP at the end of each turn for 2 turns. If your Captain is a Shooter character, boosts the Color Affinity of all characters by 2.25x for 1 turn. If during that turn you score 3 PERFECT hits, boosts the Color Affinity of all characters by 2.5x for 1 turn."
+                    level6: "Reduces Special Cooldown of all characters by 1 turn at the start of the fight, boosts ATK of Shooter characters by 3.5x, boosts Color Affinity of Shooter characters by 1.4x, and recovers 1.5x character's RCV in HP at the end of each turn."
                 }
             },
             null,
