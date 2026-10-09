@@ -192684,69 +192684,7 @@ window.details = {
                 "Raises Boost Level of [Straw Hat Pirates], [Paramythia-type] and [Zoan-type] characters by 4 for 1 turn.",
                 "Raises Boost Level of [Straw Hat Pirates], [Paramythia-type] and [Zoan-type] characters by 5 for 1 turn."
             ]
-        },
-        festStats: {
-            def: 123,
-            spd: 183,
-            style: "DBF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind, reduce damage taken from [INT] by 30％",
-        festAbility: [
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.2, ATK Up Lv.2; if 5 or more [Straw Hat Pirates] characters are on the team, [INT] enemies ATK Down Lv.4; after receiving damage, up to 10 times [PSY] [Straw Hat Pirates] teammates DEF Up Lv.1, Special CT 6% reduction, [INT] enemies Special CT 6% delay",
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.3, ATK Up Lv.3; if 5 or more [Straw Hat Pirates] characters are on the team, [INT] enemies ATK Down Lv.5; after receiving damage, up to 10 times [PSY] [Straw Hat Pirates] teammates DEF Up Lv.1, Special CT 7% reduction, [INT] enemies Special CT 7% delay",
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.4, ATK Up Lv.4; if 5 or more [Straw Hat Pirates] characters are on the team, [INT] enemies ATK Down Lv.6; after receiving damage, up to 10 times [PSY] [Straw Hat Pirates] teammates DEF Up Lv.1, Special CT 8% reduction, [INT] enemies Special CT 8% delay",
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.5, ATK Up Lv.5; if 5 or more [Straw Hat Pirates] characters are on the team, [INT] enemies ATK Down Lv.7; after receiving damage, up to 10 times [PSY] [Straw Hat Pirates] teammates DEF Up Lv.1, Special CT 9% reduction, [INT] enemies Special CT 9% delay",
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.6, ATK Up Lv.6; if 5 or more [Straw Hat Pirates] characters are on the team, [INT] enemies ATK Down Lv.8; after receiving damage, up to 10 times [PSY] [Straw Hat Pirates] teammates DEF Up Lv.1, Special CT 10% reduction, [INT] enemies Special CT 10% delay"
-        ],
-        festSpecial: [
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 73% chance of RCV Bind (11 s); targets enemies with RCV Bind for ATK Down Lv.1 (100 s), SPD Down Lv.1 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 73% chance to evade Paralysis/CT delay (11 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 60% chance of Halve Stats (11 s); targets all enemies for ATK x 2 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 76% chance of RCV Bind (12 s); targets enemies with RCV Bind for ATK Down Lv.1 (100 s), SPD Down Lv.1 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 76% chance to evade Paralysis/CT delay (12 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 64% chance of Halve Stats (12 s); targets all enemies for ATK x 2.3 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 79% chance of RCV Bind (13 s); targets enemies with RCV Bind for ATK Down Lv.1 (100 s), SPD Down Lv.1 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 79% chance to evade Paralysis/CT delay (13 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 68% chance of Halve Stats (13 s); targets all enemies for ATK x 2.6 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 82% chance of RCV Bind (14 s); targets enemies with RCV Bind for ATK Down Lv.1 (100 s), SPD Down Lv.1 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 82% chance to evade Paralysis/CT delay (14 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 72% chance of Halve Stats (14 s); targets all enemies for ATK x 2.9 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 85% chance of RCV Bind (15 s); targets enemies with RCV Bind for ATK Down Lv.1 (100 s), SPD Down Lv.1 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 85% chance to evade Paralysis/CT delay (15 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 76% chance of Halve Stats (15 s); targets all enemies for ATK x 3.2 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 88% chance of RCV Bind (16 s); targets enemies with RCV Bind for ATK Down Lv.2 (100 s), SPD Down Lv.2 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 88% chance to evade Paralysis/CT delay (16 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 80% chance of Halve Stats (16 s); targets all enemies for ATK x 3.5 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 91% chance of RCV Bind (17 s); targets enemies with RCV Bind for ATK Down Lv.2 (100 s), SPD Down Lv.2 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 91% chance to evade Paralysis/CT delay (17 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 84% chance of Halve Stats (17 s); targets all enemies for ATK x 3.8 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 94% chance of RCV Bind (18 s); targets enemies with RCV Bind for ATK Down Lv.2 (100 s), SPD Down Lv.2 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 94% chance to evade Paralysis/CT delay (18 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 88% chance of Halve Stats (18 s); targets all enemies for ATK x 4.1 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 97% chance of RCV Bind (19 s); targets enemies with RCV Bind for ATK Down Lv.2 (100 s), SPD Down Lv.2 (100 s), DEF Down Lv.1 (100 s), Special CT Speed Down Lv.1 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 97% chance to evade Paralysis/CT delay (19 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 92% chance of Halve Stats (19 s); targets all enemies for ATK x 4.4 damage"
-            },
-            {
-                cooldown: 30,
-                description: "Targets enemies within large range for 100% chance of RCV Bind (20 s); targets enemies with RCV Bind for ATK Down Lv.3 (100 s), SPD Down Lv.3 (100 s), DEF Down Lv.2 (100 s), Special CT Speed Down Lv.2 (100 s); targets [PSY] [Straw Hat Pirates] teammates for 100% chance to evade Paralysis/CT delay (20 s); if 5 or more [Straw Hat Pirates] characters are on the team, targets [INT] enemies for 100% chance of Halve Stats (20 s); targets all enemies for ATK x 5 damage"
-            }
-        ]
+        }
     },
     4654: {//Sanji
         special: "Reduces Despair duration by 6 turns, and reduces enemies' Resilience duration by 6 turns. If your crew has Color Affinity when the special is activated, increases boost effects of Color Affinity buffs by +0.25x; boosts Color Affinity of [PSY] and Cerebral characters by 2.75x for 1 turn otherwise. If field has Territory: [PSY] when the special is activated, boosts Final Tap ATK of [PSY] and Cerebral characters by 30%.",
@@ -192804,68 +192742,6 @@ window.details = {
                     "If HP is below 40% at the start of the turn, recovers 1.5x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
                     "If HP is below 50% at the start of the turn, recovers 1.5x this character's RCV at the end of the turn for each time you hit a PERFECT with this character"
                 ]
-            }
-        ],
-        festStats: {
-            def: 141,
-            spd: 181,
-            style: "RCV"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Lv.2 (Medium Range)",
-            "Normal Attack",
-            "Heal Lv.2 (Medium Range)"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind, reduce damage taken from [INT] by 20%",
-        festAbility: [
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.1, DEF Up Lv.1; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates HP Up Lv.1, DEF Up Lv.1; after receiving damage, up to 7 times [INT] enemies Special CT 3% delay, self Special CT 7% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 6% reduction",
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.1, DEF Up Lv.1; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates HP Up Lv.1, DEF Up Lv.1; after receiving damage, up to 7 times [INT] enemies Special CT 4% delay, self Special CT 9% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 7% reduction",
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.2, DEF Up Lv.2; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates HP Up Lv.2, DEF Up Lv.2; after receiving damage, up to 7 times [INT] enemies Special CT 5% delay, self Special CT 11% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 8% reduction",
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.3, DEF Up Lv.2; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates HP Up Lv.3, DEF Up Lv.2; after receiving damage, up to 7 times [INT] enemies Special CT 6% delay, self Special CT 13% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 9% reduction",
-            "[PSY] and [Straw Hat Pirates] teammates HP Up Lv.4, DEF Up Lv.3; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates HP Up Lv.4, DEF Up Lv.3; after receiving damage, up to 7 times [INT] enemies Special CT 7% delay, self Special CT 15% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 10% reduction"
-        ],
-        festSpecial: [
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 320 HP per interval healing (11 s), DEF Up Lv.1 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 21% reduction; targets [INT] enemies for ATK Down Lv.1 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 73% chance to evade stat-reducing effects (11 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 340 HP per interval healing (12 s), DEF Up Lv.1 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 22% reduction; targets [INT] enemies for ATK Down Lv.1 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 76% chance to evade stat-reducing effects (12 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 360 HP per interval healing (13 s), DEF Up Lv.1 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 23% reduction; targets [INT] enemies for ATK Down Lv.1 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 79% chance to evade stat-reducing effects (13 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 380 HP per interval healing (14 s), DEF Up Lv.1 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 24% reduction; targets [INT] enemies for ATK Down Lv.2 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 82% chance to evade stat-reducing effects (14 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 400 HP per interval healing (15 s), DEF Up Lv.1 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 25% reduction; targets [INT] enemies for ATK Down Lv.2 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 85% chance to evade stat-reducing effects (15 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 420 HP per interval healing (16 s), DEF Up Lv.2 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 26% reduction; targets [INT] enemies for ATK Down Lv.3 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 88% chance to evade stat-reducing effects (16 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 440 HP per interval healing (17 s), DEF Up Lv.2 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 27% reduction; targets [INT] enemies for ATK Down Lv.3 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 91% chance to evade stat-reducing effects (17 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 460 HP per interval healing (18 s), DEF Up Lv.2 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 28% reduction; targets [INT] enemies for ATK Down Lv.3 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 94% chance to evade stat-reducing effects (18 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 480 HP per interval healing (19 s), DEF Up Lv.2 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 29% reduction; targets [INT] enemies for ATK Down Lv.4 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 97% chance to evade stat-reducing effects (19 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for 500 HP per interval healing (20 s), DEF Up Lv.3 (100 s); if 5 or more [PSY] characters are on the team, targets self for Special CT 30% reduction; targets [INT] enemies for ATK Down Lv.5 (100 s); if there are 5 or more [INT] enemies, targets [PSY] [Straw Hat Pirates] teammates for 100% chance to evade stat-reducing effects (20 s); if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
             }
         ]
     },
@@ -192925,68 +192801,6 @@ window.details = {
                     "Reduces Slot Bind duration by 4 turns on this character",
                     "Reduces Slot Bind duration by 5 turns on this character"
                 ]
-            }
-        ],
-        festStats: {
-            def: 132,
-            spd: 192,
-            style: "ATK"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Normal Attack",
-            "Power Attack",
-            "Full Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind, reduce damage taken from [INT] by 20%",
-        festAbility: [
-            "[PSY] and [Straw Hat Pirates] teammates ATK Up Lv.1, SPD Up Lv.1; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates ATK Up Lv.1, SPD Up Lv.1; after receiving damage, up to 7 times [INT] enemies Special CT 3% delay, self Special CT 7% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 6% reduction",
-            "[PSY] and [Straw Hat Pirates] teammates ATK Up Lv.1, SPD Up Lv.1; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates ATK Up Lv.1, SPD Up Lv.1; after receiving damage, up to 7 times [INT] enemies Special CT 4% delay, self Special CT 9% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 7% reduction",
-            "[PSY] and [Straw Hat Pirates] teammates ATK Up Lv.2, SPD Up Lv.2; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates ATK Up Lv.2, SPD Up Lv.2; after receiving damage, up to 7 times [INT] enemies Special CT 5% delay, self Special CT 11% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 8% reduction",
-            "[PSY] and [Straw Hat Pirates] teammates ATK Up Lv.3, SPD Up Lv.3; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates ATK Up Lv.3, SPD Up Lv.3; after receiving damage, up to 7 times [INT] enemies Special CT 6% delay, self Special CT 13% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 9% reduction",
-            "[PSY] and [Straw Hat Pirates] teammates ATK Up Lv.4, SPD Up Lv.4; if 5 or more [Straw Hat Pirates] characters are on the team, [PSY] and [Straw Hat Pirates] teammates ATK Up Lv.4, SPD Up Lv.4; after receiving damage, up to 7 times [INT] enemies Special CT 7% delay, self Special CT 15% reduction; when appearing on field, [PSY] [Straw Hat Pirates] teammates Special CT 10% reduction"
-        ],
-        festSpecial: [
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.2 (100 s); targets enemies within large range for ATK x 2.2 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 21% reduction; targets [INT] enemies for SPD Down Lv.1 (100 s); if there are 5 or more [INT] enemies, targets team for 73% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.2 (100 s); targets enemies within large range for ATK x 2.4 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 22% reduction; targets [INT] enemies for SPD Down Lv.1 (100 s); if there are 5 or more [INT] enemies, targets team for 76% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.3 (100 s); targets enemies within large range for ATK x 2.6 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 23% reduction; targets [INT] enemies for SPD Down Lv.1 (100 s); if there are 5 or more [INT] enemies, targets team for 79% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.3 (100 s); targets enemies within large range for ATK x 2.8 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 24% reduction; targets [INT] enemies for SPD Down Lv.2 (100 s); if there are 5 or more [INT] enemies, targets team for 82% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.4 (100 s); targets enemies within large range for ATK x 3 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 25% reduction; targets [INT] enemies for SPD Down Lv.2 (100 s); if there are 5 or more [INT] enemies, targets team for 85% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.4 (100 s); targets enemies within large range for ATK x 3.2 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 26% reduction; targets [INT] enemies for SPD Down Lv.3 (100 s); if there are 5 or more [INT] enemies, targets team for 88% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.5 (100 s); targets enemies within large range for ATK x 3.4 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 27% reduction; targets [INT] enemies for SPD Down Lv.3 (100 s); if there are 5 or more [INT] enemies, targets team for 91% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.5 (100 s); targets enemies within large range for ATK x 3.6 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 28% reduction; targets [INT] enemies for SPD Down Lv.3 (100 s); if there are 5 or more [INT] enemies, targets team for 94% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.6 (100 s); targets enemies within large range for ATK x 3.8 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 29% reduction; targets [INT] enemies for SPD Down Lv.4 (100 s); if there are 5 or more [INT] enemies, targets team for 97% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
-            },
-            {
-                cooldown: 27,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for ATK Up Lv.6 (100 s); targets enemies within large range for ATK x 4 damage; if 5 or more [PSY] characters are on the team, targets self for Special CT 30% reduction; targets [INT] enemies for SPD Down Lv.5 (100 s); if there are 5 or more [INT] enemies, targets team for 100% chance to remove ATK Down effects; if 5 or more [Straw Hat Pirates] characters are on the team, switches character with 2nd sub character"
             }
         ]
     },
@@ -193119,68 +192933,6 @@ window.details = {
                     "Reduces Sailor Despair duration by 4 turns on this character",
                     "Reduces Sailor Despair duration by 5 turns on this character"
                 ]
-            }
-        ],
-        festStats: {
-            def: 147,
-            spd: 222,
-            style: "SPT"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Normal Attack",
-            "Power Attack",
-            "Full Attack"
-        ],
-        festAttackTarget: "Targets enemies with low remaining HP",
-        festResistance: "80% chance to evade Special Bind, reduce damage taken from [INT] by 20%",
-        festAbility: [
-            "[PSY]/Powerhouse class and [Big Mom Pirates] teammates HP Up Lv.1, SPD Up Lv.1, DEF Up Lv.1; revives [Big Mom Pirates] (including self) and \"Sanji\" teammates up to 1 time at 10% HP; if there are 5 or more Cerebral class enemies, when appearing on the field, self Special CT 22% reduction; during Assault Rumble, self HP Up Lv.2, Special CT Speed Up Lv.1",
-            "[PSY]/Powerhouse class and [Big Mom Pirates] teammates HP Up Lv.2, SPD Up Lv.2, DEF Up Lv.1; revives [Big Mom Pirates] (including self) and \"Sanji\" teammates up to 1 time at 15% HP; if there are 5 or more Cerebral class enemies, when appearing on the field, self Special CT 24% reduction; during Assault Rumble, self HP Up Lv.3, Special CT Speed Up Lv.1",
-            "[PSY]/Powerhouse class and [Big Mom Pirates] teammates HP Up Lv.3, SPD Up Lv.3, DEF Up Lv.2; revives [Big Mom Pirates] (including self) and \"Sanji\" teammates up to 1 time at 20% HP; if there are 5 or more Cerebral class enemies, when appearing on the field, self Special CT 26% reduction; during Assault Rumble, self HP Up Lv.4, Special CT Speed Up Lv.2",
-            "[PSY]/Powerhouse class and [Big Mom Pirates] teammates HP Up Lv.4, SPD Up Lv.4, DEF Up Lv.2; revives [Big Mom Pirates] (including self) and \"Sanji\" teammates up to 1 time at 25% HP; if there are 5 or more Cerebral class enemies, when appearing on the field, self Special CT 28% reduction; during Assault Rumble, self HP Up Lv.5, Special CT Speed Up Lv.2",
-            "[PSY]/Powerhouse class and [Big Mom Pirates] teammates HP Up Lv.5, SPD Up Lv.5, DEF Up Lv.3; revives [Big Mom Pirates] (including self) and \"Sanji\" teammates up to 1 time at 30% HP; if there are 5 or more Cerebral class enemies, when appearing on the field, self Special CT 30% reduction; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.3"
-        ],
-        festSpecial: [
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.3 (16 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 21% reduction, DEF Up Lv.1 (16 s); during Assault Rumble, targets [INT] enemies for ATK x 7.5 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.4 (17 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 22% reduction, DEF Up Lv.1 (17 s); during Assault Rumble, targets [INT] enemies for ATK x 8.0 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.4 (18 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 23% reduction, DEF Up Lv.2 (18 s); during Assault Rumble, targets [INT] enemies for ATK x 8.5 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.5 (19 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 24% reduction, DEF Up Lv.2 (19 s); during Assault Rumble, targets [INT] enemies for ATK x 9.0 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.5 (20 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 25% reduction, DEF Up Lv.3 (20 s); during Assault Rumble, targets [INT] enemies for ATK x 9.5 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.6 (21 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 26% reduction, DEF Up Lv.3 (21 s); during Assault Rumble, targets [INT] enemies for ATK x 10 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.6 (22 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 27% reduction, DEF Up Lv.4 (22 s); during Assault Rumble, targets [INT] enemies for ATK x 10.5 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.7 (23 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 28% reduction, DEF Up Lv.4 (23 s); during Assault Rumble, targets [INT] enemies for ATK x 11 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.7 (24 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 29% reduction, DEF Up Lv.5 (24 s); during Assault Rumble, targets [INT] enemies for ATK x 11.5 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [PSY]/Powerhouse class and [Big Mom Pirates] teammates for ATK Up Lv.8 (25 s); targets (including self) [Big Mom Pirates] and \"Sanji\" teammates for Special CT 30% reduction, DEF Up Lv.5 (25 s); during Assault Rumble, targets [INT] enemies for ATK x 12 spread damage; if 2 or more [Big Mom Pirates] characters are on the team, switches character with 1st sub character"
             }
         ]
     },
