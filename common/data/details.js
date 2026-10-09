@@ -192574,24 +192574,24 @@ window.details = {
         ]
     },
     4653: {//Luffy & Chopper
-        captain: "Launches the following effect at start of quest: \"Boosts crew's slot effects and type effects of normal attacks by 1.5x for 5 turns (effect can be overwritten)\", boosts [PSY] and Cerebral characters' ATK by approximately 6x when slots match (5.5x otherwise), HP by 1.3x, makes crew's [PSY][TND][RCV] slots have matching slot effects, and tapping on this character with a [TND][RCV] slot will reduce the duration of all enemy barriers by 2 turns [Applies following effect based on number of applicable Character Tags on crew] Boosts [Straw Hat Pirates] [Paramythia-type] [Zoan-type] characters' ATK by 1.1x. If 3 or more [Straw Hat Pirates] [Giant] characters are on the crew, reduces crew's \"ATK Down when chain multiplier is below certain amount\" (applied by enemy) effect by 10 turns",
-        special: "Changes crew's slots (including [BLOCK] slots) to [RCV], and boosts [PSY] and Cerebral characters' base ATK by +1750 for 3 turns. If field has \"Territory: [PSY]\" when Special is launched, applies -50% Cerebral Resistance to all enemies for 1 turn (applies \"Territory: [PSY]\" to the field for 2 turns otherwise). If 3 or more [Straw Hat Pirates] [Paramythia-type] [Zoan-type] characters are on the crew, reduces crew's Blow Away duration by 6 turns",
+        captain: "Launches the following effect at start of fight: boosts Orb Effects of all characters by 1.5x, allowing override, for 5 turns, and boosts Color Affinity of all characters by 1.5x, allowing override, for 5 turns. Boosts ATK of [Straw Hat Pirates], [Paramythia-type] and [Zoan-type] characters by 1.1x, boosts ATK of [PSY] and Cerebral characters by 5.5x, by 6x instead if they have a beneficial orb, boosts HP of [PSY] and Cerebral characters by 1.3x, and makes [PSY], [TND] and [RCV] orbs beneficial for all characters. When tapping on this character with a [TND] or [RCV] orb, reduces enemies' Barrier duration by 2 turns. If your crew has 3+ [Straw Hat Pirates], [Paramythia-type] or [Zoan-type] characters, reduces Minimum-Chain ATK Down duration by 10 turns.",
+        special: "Changes all orbs, including [BLOCK] orbs, into [RCV] orbs, and boosts Base ATK of [PSY] and Cerebral characters by 1,750 for 3 turns. If field has Territory: [PSY] when the special is activated, reduces enemies' Cerebral Resistance by -50% for 1 turn; applies Territory: [PSY] to the field for 2 turns otherwise. If your crew has 3+ [Straw Hat Pirates], [Paramythia-type] or [Zoan-type] characters, reduces Blow Away duration by 6 turns.",
         specialName: "Lively Moonlit Party",
         sailor: {
-            base: "Makes [PSY] and Cerebral characters' [TND][RCV] slots have matching slot effects, and character cannot be blown away by attack",
-            level1: "If field has \"Territory: [PSY]\", boosts crew's base ATK by 1.1x"
+            base: "This character cannot be Blown Away, and makes [TND] and [RCV] orbs beneficial for [PSY] and Cerebral characters.",
+            level1: "If field has Territory: [PSY], boosts base ATK of all characters by 1.1x."
         },
-        superSpecialCriteria: "When any 3 [Straw Hat Pirates] [Paramythia-type] [Zoan-type] characters are on the crew not including self (except as Double Characters in inactive state; can be launched when character is a crewmate)",
-        superSpecial: "Allows crew to perform Super Tandem with [RCV] slots for 2 turns, reduces [PSY] and Cerebral characters' Special charge time by 2 turns, boosts the ATK of the next final tap performed by a [PSY] or Cerebral character by 50%, and changes Cerebral characters to Super Cerebral",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 4 of the following, excluding supports and counting only 1 per unit: [Straw Hat Pirates], [Paramythia-type], [Zoan-type] characters",
+        superSpecial: "Allows all characters to perform Super Tandem with [RCV] orbs for 2 turns, reduces Special Cooldown of [PSY] and Cerebral characters by 2 turns, boosts Final Tap ATK of [PSY] and Cerebral characters by 50%, and transforms Cerebral characters into Super Cerebral characters.",
         support: [
             {
-                Characters: "[PSY] Cerebral characters with the following Character Tag: [Straw Hat Pirates]",
+                Characters: "[PSY] Cerebral [Straw Hat Pirates] characters",
                 description: [
-                    "Once per quest, if supported character uses a Special, applies -5% [PSY] Resistance to all enemies for 1 turn",
-                    "Once per quest, if supported character uses a Special, applies -6% [PSY] Resistance to all enemies for 1 turn",
-                    "Once per quest, if supported character uses a Special, applies -7% [PSY] Resistance to all enemies for 1 turn",
-                    "Once per quest, if supported character uses a Special, applies -8% [PSY] Resistance to all enemies for 1 turn",
-                    "Once per quest, if supported character uses a Special, applies -10% [PSY] Resistance to all enemies for 1 turn"
+                    "Once per adventure, when the supported character uses their special, reduces enemies' [PSY] Resistance by -5% for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' [PSY] Resistance by -6% for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' [PSY] Resistance by -7% for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' [PSY] Resistance by -8% for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' [PSY] Resistance by -10% for 1 turn."
                 ]
             }
         ],
@@ -192671,18 +192671,18 @@ window.details = {
         ],
         superTandemBoost: {
             characterCondition: [
-                "When a [Straw Hat Pirates] [Paramythia-type] [Zoan-type] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Paramythia-type] [Zoan-type] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Paramythia-type] [Zoan-type] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Paramythia-type] [Zoan-type] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Paramythia-type] [Zoan-type] character performs Super Tandem"
+                "When a [Straw Hat Pirates], [Paramythia-type] or [Zoan-type] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Paramythia-type] or [Zoan-type] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Paramythia-type] or [Zoan-type] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Paramythia-type] or [Zoan-type] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Paramythia-type] or [Zoan-type] character performs Super Tandem"
             ],
             description: [
-                "Raises Boost Level of [Straw Hat Pirates] [Paramythia-type] [Zoan-type] characters by 1 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Paramythia-type] [Zoan-type] characters by 2 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Paramythia-type] [Zoan-type] characters by 3 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Paramythia-type] [Zoan-type] characters by 4 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Paramythia-type] [Zoan-type] characters by 5 for 1 turn"
+                "Raises Boost Level of [Straw Hat Pirates], [Paramythia-type] and [Zoan-type] characters by 1 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Paramythia-type] and [Zoan-type] characters by 2 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Paramythia-type] and [Zoan-type] characters by 3 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Paramythia-type] and [Zoan-type] characters by 4 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Paramythia-type] and [Zoan-type] characters by 5 for 1 turn."
             ]
         },
         festStats: {
@@ -192749,21 +192749,21 @@ window.details = {
         ]
     },
     4654: {//Sanji
-        special: "Reduces crew's Despair duration by 6 turns, and reduces all enemies' Resilience duration by 6 turns. If crew has type effect boost when Special is launched, further increases crew's type effect boost by +0.25 (boosts the type effects of normal attacks for [PSY] and Cerebral characters by 2.75x for 1 turn otherwise). If field has \"Territory: [PSY]\" when Special is launched, boosts the ATK of the next final tap performed by a [PSY] or Cerebral character by 30%",
+        special: "Reduces Despair duration by 6 turns, and reduces enemies' Resilience duration by 6 turns. If your crew has Color Affinity when the special is activated, increases boost effects of Color Affinity buffs by +0.25x; boosts Color Affinity of [PSY] and Cerebral characters by 2.75x for 1 turn otherwise. If field has Territory: [PSY] when the special is activated, boosts Final Tap ATK of [PSY] and Cerebral characters by 30%.",
         specialName: "Levitating Ghost Knight",
         sailor: {
-            base: "If field has \"Territory: [PSY]\", boosts Cerebral and Powerhouse characters' base ATK by 200 (boosts their base ATK by 75 otherwise)",
-            level1: "Tapping on this character with a [RCV] slot will apply -5% [PSY] Resistance to all enemies for 1 turn"
+            base: "If field has Territory: [PSY], boosts base ATK of Cerebral and Powerhouse characters by 200; boosts base ATK of Cerebral and Powerhouse characters by 75 otherwise.",
+            level1: "When tapping on this character with a [RCV] orb, reduces enemies' [PSY] Resistance by -5% for 1 turn."
         },
         support: [
             {
-                Characters: "[PSY] Cerebral characters with the following Character Tag: [Straw Hat Pirates]",
+                Characters: "[PSY] Cerebral [Straw Hat Pirates] characters",
                 description: [
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Resilience duration by 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Resilience duration by 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Resilience duration by 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Resilience duration by 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Resilience duration by 2 turns"
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Resilience duration by 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Resilience duration by 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Resilience duration by 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Resilience duration by 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Resilience duration by 2 turns."
                 ]
             }
         ],
@@ -192870,21 +192870,21 @@ window.details = {
         ]
     },
     4655: {//Brook
-        special: "Reduces crew's Paralysis duration by 6 turns, and reduces all enemies' Percent Damage Reduction duration by 6 turns. If crew has slot effect boost when Special is launched, further increases crew's slot effect boost by +0.25 (boosts [PSY] and Cerebral characters' slot effects by 2.75x for 1 turn otherwise). If field has \"Territory: [PSY]\" when Special is launched, boosts Cerebral characters' Critical rate by 30% for 1 turn",
+        special: "Reduces Paralysis duration by 6 turns, and reduces enemies' Percent Damage Reduction duration by 6 turns. If your crew has Orb Boost when the special is activated, increases boost effects of Orb Boost buffs by +0.25x; boosts Orb Effects of [PSY] and Cerebral characters by 2.75x for 1 turn otherwise. If field has Territory: [PSY] when the special is activated, boosts Critical Hit Rate of Cerebral characters by 30% for 1 turn.",
         specialName: "Screaming Cowardly Skeleton",
         sailor: {
-            base: "If field has \"Territory: [PSY]\", boosts Cerebral and Slasher characters' base ATK by 200 (boosts their base ATK by 75 otherwise)",
-            level1: "Tapping on this character with a [RCV] slot will apply -5% Cerebral Resistance to all enemies for 1 turn"
+            base: "If field has Territory: [PSY], boosts base ATK of Cerebral and Slasher characters by 200; boosts base ATK of Cerebral and Slasher characters by 75 otherwise.",
+            level1: "When tapping on this character with a [RCV] orb, reduces enemies' Cerebral Resistance by -5% for 1 turn."
         },
         support: [
             {
-                Characters: "[PSY] Cerebral characters with the following Character Tag: [Straw Hat Pirates]",
+                Characters: "[PSY] Cerebral [Straw Hat Pirates] characters",
                 description: [
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Percent Damage Reduction duration by 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Percent Damage Reduction duration by 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Percent Damage Reduction duration by 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Percent Damage Reduction duration by 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces all enemies' Percent Damage Reduction duration by 2 turns"
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Percent Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Percent Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Percent Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Percent Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces enemies' Percent Damage Reduction duration by 2 turns."
                 ]
             }
         ],
@@ -192992,29 +192992,29 @@ window.details = {
     },
     4656: {//5+ Halloween Pudding
         captain: {
-            base: "Boosts [PSY] characters' ATK by 2.25x",
-            level1: "Boosts [PSY] characters' ATK by 2.5x",
-            level2: "Boosts [PSY] characters' ATK by 2.75x",
-            level3: "Boosts [PSY] characters' ATK by 3x",
-            level4: "Boosts [PSY] characters' ATK by 3.25x, HP by 1.1x, and reduces crew's Special Reverse by 1 turn",
-            level5: "Boosts [PSY] characters' ATK by 3.5x, HP by 1.1x, and reduces crew's Special Reverse by 2 turns",
-            level6: "Boosts [PSY] characters' ATK by 4x, HP by 1.2x, and reduces crew's Special Reverse by 3 turns"
+            base: "Boosts ATK of [PSY] characters by 2.25x.",
+            level1: "Boosts ATK of [PSY] characters by 2.5x.",
+            level2: "Boosts ATK of [PSY] characters by 2.75x.",
+            level3: "Boosts ATK of [PSY] characters by 3x.",
+            level4: "Boosts ATK of [PSY] characters by 3.25x, boosts HP of [PSY] characters by 1.1x, and restores Special Cooldown of all characters by 1 turn when they are rewinded.",
+            level5: "Boosts ATK of [PSY] characters by 3.5x, boosts HP of [PSY] characters by 1.1x, and restores Special Cooldown of all characters by 2 turns when they are rewinded.",
+            level6: "Boosts ATK of [PSY] characters by 4x, boosts HP of [PSY] characters by 1.2x, and restores Special Cooldown of all characters by 3 turns when they are rewinded."
         },
-        special: "Changes crew's [TND][RCV] slots and type slots to character's own type, reduces crew's Counter-RCVIncrease Damage Taken duration by 5 turns, boosts the type effects of normal attacks for top-row characters by 3x for 1 turn, and completely heals crew's HP. After launching Special, applies the same Special effect at start of each BATTLE for 3 turns (will not stack with other abilities that apply the same Special effects at start of each BATTLE)",
+        special: "Changes [STR], [DEX], [QCK], [PSY], [INT], [TND] and [RCV] orbs into matching orbs, reduces Counter-RCV and Increase Damage Taken duration by 5 turns, boosts Color Affinity of top row characters by 3x for 1 turn, and recovers all missing HP. Applies a Continuous Effect that applies the same special effect at the start of every stage for 3 turns.",
         specialName: "Witch and Cheeky Cat",
         sailor: {
-            level1: "Boosts [PSY] characters' base stats by 30",
-            level2: "Reduces character's Special Reverse by 2 turns"
+            level1: "Boosts base ATK, HP and RCV of [PSY] characters by 30.",
+            level2: "Restores Special Cooldown of this character by 2 turns when it is rewinded."
         },
         support: [
             {
                 Characters: "Sanji, Charlotte Chiffon",
                 description: [
-                    "Reduces damage taken from [INT] characters by 1% and adds 5% of character's base HP and RCV to supported character's base HP and RCV",
-                    "Reduces damage taken from [INT] characters by 2% and adds 6% of character's base HP and RCV to supported character's base HP and RCV",
-                    "Reduces damage taken from [INT] characters by 3% and adds 7% of character's base HP and RCV to supported character's base HP and RCV",
-                    "Reduces damage taken from [INT] characters by 4% and adds 8% of character's base HP and RCV to supported character's base HP and RCV",
-                    "Reduces damage taken from [INT] characters by 5% and adds 10% of character's base HP and RCV to supported character's base HP and RCV"
+                    "Reduces damage received from [INT] characters by 1%. Adds 5% of this character's base HP and RCV to the supported character's base HP and RCV.",
+                    "Reduces damage received from [INT] characters by 2%. Adds 6% of this character's base HP and RCV to the supported character's base HP and RCV.",
+                    "Reduces damage received from [INT] characters by 3%. Adds 7% of this character's base HP and RCV to the supported character's base HP and RCV.",
+                    "Reduces damage received from [INT] characters by 4%. Adds 8% of this character's base HP and RCV to the supported character's base HP and RCV.",
+                    "Reduces damage received from [INT] characters by 5%. Adds 10% of this character's base HP and RCV to the supported character's base HP and RCV."
                 ]
             }
         ],
@@ -193075,17 +193075,17 @@ window.details = {
             null,
             {
                 captain: {
-                    base: "Boosts [PSY] characters' ATK by 4x, HP by 1.2x, and reduces crew's Special Reverse by 3 turns",
-                    level1: "Boosts [PSY] characters' ATK (between 4.5x and approximately 5.25x) based on amount of HP healed in previous turn, boosts their HP and RCV by 1.2x, heals crew by 2x character's RCV at end of turn, and reduces crew's Special Reverse by 5 turns"
+                    base: "Boosts ATK of [PSY] characters by 4x, boosts HP of [PSY] characters by 1.2x, and restores Special Cooldown of all characters by 3 turns when they are rewinded.",
+                    level1: "Boosts ATK of [PSY] characters by 4.5-5.25x depending on the amount healed in the last turn, boosts HP and RCV of [PSY] characters by 1.2x, recovers 2x character's RCV in HP at the end of each turn, and restores Special Cooldown of all characters by 5 turns when they are rewinded."
                 }
             },
             null,
             {
                 special: {
-                    base: "Changes crew's [TND][RCV] slots and type slots to character's own type, changes crew's [BLOCK] slots to [SEMLA] slots, reduces crew's Counter-RCVIncrease Damage Taken duration by 10 turns, boosts the type effects of normal attacks for top-row characters by 3x for 1 turn, boosts bottom-row characters' ATK by 3x for 1 turn, completely heals crew's HP, and if \"Sanji\" is in the crew or is set as Support for character, reduces all enemies' damage reduction from certain slots effect duration by 2 turns, then after that, after launching Special, applies the same Special effect at start of each BATTLE for 3 turns (will not stack with other abilities that apply the same Special effects at start of each BATTLE)"
+                    base: "Changes [STR], [DEX], [QCK], [PSY], [INT], [TND] and [RCV] orbs into matching orbs, changes [BLOCK] orbs into [SEMLA] orbs, reduces Counter-RCV and Increase Damage Taken duration by 10 turns, boosts Color Affinity of top row characters by 3x for 1 turn, boosts ATK of bottom row characters by 3x for 1 turn, and recovers all missing HP. If your crew has Sanji as a member or supporting this character, reduces enemies' Orb-Based Damage Reduction duration by 2 turns. Applies a Continuous Effect that applies the same special effect at the start of every stage for 3 turns."
                 },
                 sailor: {
-                    level1: "Boosts [PSY] characters' base stats by 60"
+                    level1: "Boosts base ATK, HP and RCV of [PSY] characters by 60."
                 }
             }
         ],
