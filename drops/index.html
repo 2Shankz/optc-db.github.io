@@ -25,10 +25,41 @@
 
         <link rel="stylesheet" type="text/css" href="../common/libs/css/animate.css" />
         <link rel="stylesheet" type="text/css" href="../common/libs/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="../common/libs/css/fontawesome/all.css" />
-        <script src="https://kit.fontawesome.com/ef0695d0bc.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+        <style>
+            .material-icons {
+                font-family: 'Material Icons' !important;
+                font-feature-settings: 'liga';
+                -webkit-font-feature-settings: 'liga';
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+            }
+            .material-symbols-outlined {
+                font-family: 'Material Symbols Outlined' !important;
+                font-feature-settings: 'liga';
+                -webkit-font-feature-settings: 'liga';
+                font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+            }
+        </style>
 
         <link rel="stylesheet" type="text/css" href="../common/css/links.css" />
+        <link rel="stylesheet" type="text/css" href="../common/css/themes.css" />
 
         <link rel="stylesheet" type="text/css" href="index.css" />
 
@@ -50,6 +81,7 @@
         <script src="index.js"></script>
 
         <script src="../common/js/directives.js"></script>
+        <script src="../common/js/services.js"></script>
 
         <script src="../characters/js/utils.js"></script>
         
@@ -64,16 +96,16 @@
             <div ng-repeat="island in data[type]" ng-if="island.name != 'Oars Special'" class="island collapsed"
                 collapsable target="island.html" island="island" data="data"
                 ng-show="(!onlyGlobal || island.global) && (!query || query.test(island.name))">
-                <h3>
-                    <div decorate-slot uid="island.thumb" class="slot small"></div>
-                    <i class="fa fa-chevron-right"></i>
-                    <i class="fa fa-chevron-down"></i>
-                    <span>{{island.name}}</span>
-                    <i class="fa fa-globe-americas" ng-show="island.global" title="Available On Global"></i>
-                    <i class="fa fa-star" ng-show="island.challenge" title="Challenge Available"></i>
-                    <bonus-list ng-if="type == 'Story Island'" y="$index"></bonus-list>
-                    <day-label ng-if="type == 'Rookie Mission'"></day-label>
-                </h3>
+                 <h3>
+                     <div decorate-slot uid="island.thumb" class="slot small"></div>
+                     <i class="material-icons material-icons-chevron-right">chevron_right</i>
+                     <i class="material-icons material-icons-expand-more">expand_more</i>
+                     <span>{{island.name}}</span>
+                     <i class="material-icons" ng-show="island.global" title="Available On Global">public</i>
+                     <i class="material-icons" ng-show="island.challenge" title="Challenge Available">star</i>
+                     <bonus-list ng-if="type == 'Story Island'" y="$index"></bonus-list>
+                     <day-label ng-if="type == 'Rookie Mission'"></day-label>
+                 </h3>
             </div>
         </script>
 
@@ -182,24 +214,47 @@
 
         <div id="main" ng-cloak>
 
-            <h1 class="page-header">
-                Drop Table
-                <label><input type="checkbox" ng-model="onlyGlobal" ng-change="changeFilters()">Show only Global</label>
-                <label><input type="checkbox" ng-model="noFodder" ng-change="changeFilters()">Hide fodder</label>
-                <label><input type="checkbox" ng-model="noEvolverBooster" ng-change="changeFilters()">Hide Boosters and Evolvers</label>
-                <label><input type="checkbox" ng-model="sortByType" ng-change="changeSorting()">Sort by type</label>
-                <input class="pull-right" type="text" placeholder="Filter by name" auto-focus
-                    ng-model="queryFilter" ng-model-options="{ debounce: 500 }" ng-change="changeQueryFilter()" id="search">
-            </h1>
+<h1 class="page-header" style="display: flex; align-items: center; flex-wrap: nowrap; gap: 15px; margin-top: 20px; margin-bottom: 10px;">
+    
+    <span style="font-size: inherit; white-space: nowrap;">Drop Table</span>
 
+    <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: normal;">
+        <label style="margin: 0; display: flex; align-items: center; gap: 5px; cursor: pointer; white-space: nowrap;">
+            <input type="checkbox" ng-model="onlyGlobal" ng-change="changeFilters()"> Show only Global
+        </label>
+        <label style="margin: 0; display: flex; align-items: center; gap: 5px; cursor: pointer; white-space: nowrap;">
+            <input type="checkbox" ng-model="noFodder" ng-change="changeFilters()"> Hide fodder
+        </label>
+        <label style="margin: 0; display: flex; align-items: center; gap: 5px; cursor: pointer; white-space: nowrap;">
+            <input type="checkbox" ng-model="noEvolverBooster" ng-change="changeFilters()"> Hide Boosters/Evolvers
+        </label>
+        <label style="margin: 0; display: flex; align-items: center; gap: 5px; cursor: pointer; white-space: nowrap;">
+            <input type="checkbox" ng-model="sortByType" ng-change="changeSorting()"> Sort by type
+        </label>
+    </div>
+
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 10px;">
+        <input type="text" placeholder="Filter by name" auto-focus
+            ng-model="queryFilter" 
+            ng-model-options="{ debounce: 500 }" 
+            ng-change="changeQueryFilter()" 
+            id="search"
+            style="padding: 4px 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; width: 180px;">
+            
+        <button ng-click="toggleTheme()" title="Toggle theme (Light → Frappé → Macchiato → Dark)" style="padding: 4px 12px; cursor: pointer; white-space: nowrap; font-size: 14px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--accent); display: inline-flex; align-items: center; gap: 4px;">
+            <i class="material-icons">{{getThemeIcon()}}</i>
+        </button>
+    </div>
+
+</h1>
             <div ng-repeat="type in [ 'Story Island', 'Booster and Evolver Island', 'Rookie Mission', 'Fortnight', 'Pirate King Adventure', 'Co-Op', 'Raid', 'Coliseum', 'Arena', 'Treasure Map', 'Ambush', 'Kizuna Clash', 'Pirate Rumble', 'Special', 'Training Forest' ]"
                 class="type collapsed" collapsable hidden-units="hiddenUnits" only-global="onlyGlobal"
                 target="type.html" type="type" data="data" query="query">
-                <h2>
-                    <i class="fa fa-chevron-right"></i>
-                    <i class="fa fa-chevron-down"></i>
-                    <span>{{type}}s</span>
-                </h2> 
+                 <h2>
+                     <i class="material-icons">chevron_right</i>
+                     <i class="material-icons">expand_more</i>
+                     <span>{{type}}s</span>
+                 </h2>
             </div>
 
             <h1 class="page-header">Bonus Table</h1>

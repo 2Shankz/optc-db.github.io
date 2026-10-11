@@ -1,0 +1,552 @@
+/* common/css/themes.css */
+/* Consolidated theme variables for all modules */
+
+/* Default = Dark Mode (Catppuccin Mocha) */
+:root {
+    /* Backgrounds - Catppuccin Mocha */
+    --bg-primary: #1e1e2e;
+    --bg-secondary: #181825;
+    --bg-tertiary: #11111b;
+    --bg-input: #313244;
+    --bg-hover: #585b70;
+
+    /* Text - Catppuccin Mocha hierarchy */
+    --text-primary: #cdd6f4;
+    --text-secondary: #bac2de;
+    --text-tertiary: #a6adc8;
+
+    /* Borders - Catppuccin Mocha */
+    --border-color: #313244;
+    --border-strong: #45475a;
+    --border-tertiary: #585b70;
+
+    /* Accents - Catppuccin Mocha mauve/lavender */
+    --accent: #cba6f7;
+    --accent-hover: #b4befe;
+    --accent-focus: #cba6f7;
+    --accent-strong: #b4befe;
+    --text-inverse: #ffffff;
+    --accent-red: #f38ba8;
+    --accent-hover-red: #f5c2e7;
+    --accent-blue: #89b4fa;
+
+    /* Type Colors - Dark Mode (game hues - Mocha palette) */
+    --type-str: #f38ba8;
+    --type-qck: #89b4fa;
+    --type-dex: #a6e3a1;
+    --type-psy: #f9e2af;
+    --type-int: #cba6f7;
+
+    /* Positive/Negative stats */
+    --positive: #a6e3a1;
+    --negative: #f38ba8;
+
+    /* Filter active states - mauve accent */
+    --filter-active: #cba6f7;
+    --filter-active-hover: #b4befe;
+
+    /* Type Colors - Hover/Active */
+    --type-str-active: #f5c2e7;
+    --type-qck-active: #74c7ec;
+    --type-dex-active: #94e2d5;
+    --type-psy-active: #fab387;
+    --type-int-active: #f5c2e7;
+
+    /* UI Elements */
+    --panel-bg: #181825;
+    --modal-header: #181825;
+    --modal-body: #1e1e2e;
+    --modal-footer: #181825;
+    --popover-bg: #181825;
+
+    /* Links */
+    --link-color: #cba6f7;
+    --link-hover: #b4befe;
+
+    /* Filter Headers - Mocha darker versions */
+    --filter-header-log: hsla(150, 40%, 35%, 0.4);
+    --filter-header-pve: hsla(220, 50%, 25%, 0.4);
+    --filter-header-pvp: hsla(0, 50%, 25%, 0.4);
+
+    /* Table - Catppuccin Mocha */
+    --table-stripe-odd: #181825;
+    --table-stripe-even: #1e1e2e;
+    --table-border: #313244;
+
+    /* Scrollbars */
+    --scrollbar-track: #181825;
+    --scrollbar-thumb: #45475a;
+
+    /* Elevation - Catppuccin Mocha shadows */
+    --elevation-1: 0 1px 3px rgba(0,0,0,0.3);
+    --elevation-2: 0 4px 8px rgba(0,0,0,0.4);
+
+    /* Buttons - Landing page (Catppuccin Mocha palette) */
+    --btn-green: #a6e3a1;
+    --btn-green-hover: #94e2d5;
+    --btn-blue: #89b4fa;
+    --btn-blue-hover: #74c7ec;
+    --btn-red: #f38ba8;
+    --btn-red-hover: #f5c2e7;
+    --btn-purple: #cba6f7;
+    --btn-purple-hover: #b4befe;
+    --btn-yellow: #f9e2af;
+    --btn-yellow-hover: #fab387;
+    --btn-pink: #f5c2e7;
+    --btn-pink-hover: #f2cdcd;
+    --btn-brown: #f38ba8;
+    --btn-brown-hover: #f5c2e7;
+    --btn-darkpurple: #cba6f7;
+    --btn-darkpurple-hover: #b4befe;
+    --btn-gold: #f9e2af;
+    --btn-gold-hover: #fab387;
+    --btn-darkblue: #89b4fa;
+    --btn-darkblue-hover: #74c7ec;
+    --btn-limegreen: #a6e3a1;
+    --btn-limegreen-hover: #94e2d5;
+    --btn-darkorange: #fab387;
+    --btn-darkorange-hover: #e59500;
+
+    /* Misc UI */
+    --ribbon-red: #f38ba8;
+    --ribbon-orange: #fab387;
+    --fuzzy-active: #00ff00;
+    --type-text: #ffffff;
+}
+
+/* Light Mode - Catppuccin Latte */
+.light-mode {
+    /* Backgrounds - Catppuccin Latte */
+    --bg-primary: #eff1f5;
+    --bg-secondary: #e6e9ef;
+    --bg-tertiary: #dce0e8;
+    --bg-input: #ccd0da;
+    --bg-hover: #acb0be;
+
+    /* Text - Catppuccin Latte hierarchy */
+    --text-primary: #4c4f69;
+    --text-secondary: #5c5f77;
+    --text-tertiary: #6c6f85;
+
+    /* Borders - Catppuccin Latte */
+    --border-color: #ccd0da;
+    --border-strong: #acb0be;
+    --border-tertiary: #9ca0b0;
+
+    /* Accents - Catppuccin Latte lavender */
+    --accent: #7287fd;
+    --accent-hover: #8839ef;
+    --accent-focus: #7287fd;
+    --accent-strong: #8839ef;
+    --text-inverse: #eff1f5;
+    --accent-red: #d20f39;
+    --accent-hover-red: #e64553;
+    --accent-blue: #1e66f5;
+
+    /* Type Colors - Light Mode (game hues - Latte palette) */
+    --type-str: #d20f39;
+    --type-qck: #1e66f5;
+    --type-dex: #40a02b;
+    --type-psy: #df8e1d;
+    --type-int: #8839ef;
+
+    /* Type Colors - Hover/Active */
+    --type-str-active: #e64553;
+    --type-qck-active: #209fb5;
+    --type-dex-active: #179299;
+    --type-psy-active: #fe640b;
+    --type-int-active: #ea76cb;
+
+    /* UI Elements */
+    --panel-bg: #e6e9ef;
+    --modal-header: #dce0e8;
+    --modal-body: #eff1f5;
+    --modal-footer: #dce0e8;
+    --popover-bg: #e6e9ef;
+
+    /* Links */
+    --link-color: #7287fd;
+    --link-hover: #8839ef;
+
+    /* Filter Headers - Catppuccin Latte pastel */
+    --filter-header-log: hsla(150, 40%, 85%, 0.5);
+    --filter-header-pve: hsla(220, 50%, 92%, 0.5);
+    --filter-header-pvp: hsla(0, 50%, 92%, 0.5);
+
+    /* Table - Catppuccin Latte */
+    --table-stripe-odd: #e6e9ef;
+    --table-stripe-even: #eff1f5;
+    --table-border: #ccd0da;
+
+    /* Scrollbars */
+    --scrollbar-track: #dce0e8;
+    --scrollbar-thumb: #acb0be;
+
+    /* Elevation - Catppuccin Latte shadows */
+    --elevation-1: 0 1px 3px rgba(76, 79, 105, 0.1);
+    --elevation-2: 0 4px 8px rgba(76, 79, 105, 0.15);
+
+    /* Buttons - Landing page (Catppuccin Latte palette) */
+    --btn-green: #40a02b;
+    --btn-green-hover: #359822;
+    --btn-blue: #1e66f5;
+    --btn-blue-hover: #1857d6;
+    --btn-red: #d20f39;
+    --btn-red-hover: #b01030;
+    --btn-purple: #8839ef;
+    --btn-purple-hover: #7830cc;
+    --btn-yellow: #df8e1d;
+    --btn-yellow-hover: #c98018;
+    --btn-pink: #ea76cb;
+    --btn-pink-hover: #d668b8;
+    --btn-brown: #d20f39;
+    --btn-brown-hover: #b01030;
+    --btn-darkpurple: #8839ef;
+    --btn-darkpurple-hover: #7830cc;
+    --btn-gold: #df8e1d;
+    --btn-gold-hover: #c98018;
+    --btn-darkblue: #1e66f5;
+    --btn-darkblue-hover: #1857d6;
+    --btn-limegreen: #40a02b;
+    --btn-limegreen-hover: #359822;
+    --btn-darkorange: #fe640b;
+    --btn-darkorange-hover: #e55a0a;
+
+    /* Bonuses - Catppuccin Latte */
+    --bonus-drop: #40a02b;
+    --bonus-stamina: #04a5e5;
+    --bonus-beli: #df8e1d;
+    --bonus-exp: #fe640b;
+    --bonus-today: #ea76cb;
+
+    /* Damage calc sliders */
+    --slider-turn: #ea76cb;
+    --slider-heal: #40a02b;
+    --slider-rcv: #df8e1d;
+    --slider-basehp: #40a02b;
+    --slider-semla: #df8e1d;
+    --slider-damage: #d20f39;
+
+    /* Filter active states - lavender accent */
+    --filter-active: #7287fd;
+    --filter-active-hover: #8839ef;
+    --filter-subclass-active: #8839ef;
+
+    /* Positive/Negative stats */
+    --positive: #40a02b;
+    --negative: #d20f39;
+
+    /* Stars - Catppuccin Latte */
+    --star-1: #04a5e5;
+    --star-2: #40a02b;
+    --star-3: #df8e1d;
+    --star-4: #fe640b;
+    --star-5: #d20f39;
+    --star-5plus: #b01030;
+    --star-6: #8839ef;
+    --star-6plus: #ea76cb;
+
+    /* Misc UI */
+    --ribbon-red: #d20f39;
+    --ribbon-orange: #fe640b;
+    --fuzzy-active: #228b22;
+    --type-text: #ffffff;
+}
+
+/* Light Mode - Catppuccin Frappé */
+.light-mode.frappe {
+    /* Backgrounds - Catppuccin Frappé */
+    --bg-primary: #303446;
+    --bg-secondary: #292c3c;
+    --bg-tertiary: #232634;
+    --bg-input: #414559;
+    --bg-hover: #626880;
+
+    /* Text - Catppuccin Frappé hierarchy */
+    --text-primary: #c6d0f5;
+    --text-secondary: #b5bfe2;
+    --text-tertiary: #a5adce;
+
+    /* Borders - Catppuccin Frappé */
+    --border-color: #414559;
+    --border-strong: #51576d;
+    --border-tertiary: #626880;
+
+    /* Accents - Catppuccin Frappé lavender */
+    --accent: #c5aef8;
+    --accent-hover: #b4befe;
+    --accent-focus: #c5aef8;
+    --accent-strong: #b4befe;
+    --text-inverse: #c6d0f5;
+    --accent-red: #e78284;
+    --accent-hover-red: #f5bde6;
+    --accent-blue: #8caaee;
+
+    /* Type Colors - Light Mode (game hues - Frappé palette) */
+    --type-str: #e78284;
+    --type-qck: #8caaee;
+    --type-dex: #a6d189;
+    --type-psy: #e5c890;
+    --type-int: #c5aef8;
+
+    /* Type Colors - Hover/Active */
+    --type-str-active: #f5bde6;
+    --type-qck-active: #85c1dc;
+    --type-dex-active: #81c8be;
+    --type-psy-active: #ef9f76;
+    --type-int-active: #f5bde6;
+
+    /* UI Elements */
+    --panel-bg: #292c3c;
+    --modal-header: #292c3c;
+    --modal-body: #303446;
+    --modal-footer: #292c3c;
+    --popover-bg: #292c3c;
+
+    /* Links */
+    --link-color: #c5aef8;
+    --link-hover: #b4befe;
+
+    /* Filter Headers - Frappé versions */
+    --filter-header-log: hsla(150, 40%, 40%, 0.4);
+    --filter-header-pve: hsla(220, 50%, 30%, 0.4);
+    --filter-header-pvp: hsla(0, 50%, 30%, 0.4);
+
+    /* Table - Catppuccin Frappé */
+    --table-stripe-odd: #292c3c;
+    --table-stripe-even: #303446;
+    --table-border: #414559;
+
+    /* Scrollbars */
+    --scrollbar-track: #292c3c;
+    --scrollbar-thumb: #51576d;
+
+    /* Elevation - Catppuccin Frappé shadows */
+    --elevation-1: 0 1px 3px rgba(0,0,0,0.3);
+    --elevation-2: 0 4px 8px rgba(0,0,0,0.4);
+
+    /* Buttons - Landing page (Catppuccin Frappé palette) */
+    --btn-green: #a6d189;
+    --btn-green-hover: #81c8be;
+    --btn-blue: #8caaee;
+    --btn-blue-hover: #85c1dc;
+    --btn-red: #e78284;
+    --btn-red-hover: #f5bde6;
+    --btn-purple: #c5aef8;
+    --btn-purple-hover: #b4befe;
+    --btn-yellow: #e5c890;
+    --btn-yellow-hover: #ef9f76;
+    --btn-pink: #f5bde6;
+    --btn-pink-hover: #f0c6c6;
+    --btn-brown: #e78284;
+    --btn-brown-hover: #f5bde6;
+    --btn-darkpurple: #c5aef8;
+    --btn-darkpurple-hover: #b4befe;
+    --btn-gold: #e5c890;
+    --btn-gold-hover: #ef9f76;
+    --btn-darkblue: #8caaee;
+    --btn-darkblue-hover: #85c1dc;
+    --btn-limegreen: #a6d189;
+    --btn-limegreen-hover: #81c8be;
+    --btn-darkorange: #ef9f76;
+    --btn-darkorange-hover: #f5a97f;
+
+    /* Misc UI */
+    --ribbon-red: #e78284;
+    --ribbon-orange: #ef9f76;
+
+    /* Filter active states */
+    --filter-active: #c5aef8;
+    --filter-active-hover: #b4befe;
+    --filter-subclass-active: #c5aef8;
+
+    /* Positive/Negative stats */
+    --positive: #a6d189;
+    --negative: #e78284;
+
+    /* Stars */
+    --star-1: #99d1db;
+    --star-2: #a6d189;
+    --star-3: #e5c890;
+    --star-4: #ef9f76;
+    --star-5: #e78284;
+    --star-5plus: #f5bde6;
+    --star-6: #c5aef8;
+    --star-6plus: #f5bde6;
+
+    /* Type filter text - high contrast for readability */
+    --type-text: #ffffff;
+}
+
+/* Dark Mode - Catppuccin Macchiato */
+.dark-mode.macchiato {
+    /* Backgrounds - Catppuccin Macchiato */
+    --bg-primary: #24273a;
+    --bg-secondary: #1e2030;
+    --bg-tertiary: #181926;
+    --bg-input: #363a4f;
+    --bg-hover: #5b6078;
+
+    /* Text - Catppuccin Macchiato hierarchy */
+    --text-primary: #cad3f5;
+    --text-secondary: #b8c0e0;
+    --text-tertiary: #a5adcb;
+
+    /* Borders - Catppuccin Macchiato */
+    --border-color: #363a4f;
+    --border-strong: #494d64;
+    --border-tertiary: #5b6078;
+
+    /* Accents - Catppuccin Macchiato mauve */
+    --accent: #c6a0f6;
+    --accent-hover: #b7bdf8;
+    --accent-focus: #c6a0f6;
+    --accent-strong: #b7bdf8;
+    --text-inverse: #cad3f5;
+    --accent-red: #ed8796;
+    --accent-hover-red: #f5bde6;
+    --accent-blue: #8aadf4;
+
+    /* Type Colors - Dark Mode (game hues - Macchiato palette) */
+    --type-str: #ed8796;
+    --type-qck: #8aadf4;
+    --type-dex: #a6da95;
+    --type-psy: #eed49f;
+    --type-int: #c6a0f6;
+
+    /* Type Colors - Hover/Active */
+    --type-str-active: #f5bde6;
+    --type-qck-active: #7dc4e4;
+    --type-dex-active: #8bd5ca;
+    --type-psy-active: #f5a97f;
+    --type-int-active: #f5bde6;
+
+    /* UI Elements */
+    --panel-bg: #1e2030;
+    --modal-header: #1e2030;
+    --modal-body: #24273a;
+    --modal-footer: #1e2030;
+    --popover-bg: #1e2030;
+
+    /* Links */
+    --link-color: #c6a0f6;
+    --link-hover: #b7bdf8;
+
+    /* Filter Headers - Macchiato versions */
+    --filter-header-log: hsla(150, 40%, 35%, 0.4);
+    --filter-header-pve: hsla(220, 50%, 25%, 0.4);
+    --filter-header-pvp: hsla(0, 50%, 25%, 0.4);
+
+    /* Table - Catppuccin Macchiato */
+    --table-stripe-odd: #1e2030;
+    --table-stripe-even: #24273a;
+    --table-border: #363a4f;
+
+    /* Scrollbars */
+    --scrollbar-track: #1e2030;
+    --scrollbar-thumb: #494d64;
+
+    /* Elevation - Catppuccin Macchiato shadows */
+    --elevation-1: 0 1px 3px rgba(0,0,0,0.3);
+    --elevation-2: 0 4px 8px rgba(0,0,0,0.4);
+
+    /* Buttons - Landing page (Catppuccin Macchiato palette) */
+    --btn-green: #a6da95;
+    --btn-green-hover: #8bd5ca;
+    --btn-blue: #8aadf4;
+    --btn-blue-hover: #7dc4e4;
+    --btn-red: #ed8796;
+    --btn-red-hover: #f5bde6;
+    --btn-purple: #c6a0f6;
+    --btn-purple-hover: #b7bdf8;
+    --btn-yellow: #eed49f;
+    --btn-yellow-hover: #f5a97f;
+    --btn-pink: #f5bde6;
+    --btn-pink-hover: #f0c6c6;
+    --btn-brown: #ed8796;
+    --btn-brown-hover: #f5bde6;
+    --btn-darkpurple: #c6a0f6;
+    --btn-darkpurple-hover: #b7bdf8;
+    --btn-gold: #eed49f;
+    --btn-gold-hover: #f5a97f;
+    --btn-darkblue: #8aadf4;
+    --btn-darkblue-hover: #7dc4e4;
+    --btn-limegreen: #a6da95;
+    --btn-limegreen-hover: #8bd5ca;
+    --btn-darkorange: #f5a97f;
+    --btn-darkorange-hover: #f5a97f;
+
+    /* Misc UI */
+    --ribbon-red: #ed8796;
+    --ribbon-orange: #f5a97f;
+
+    /* Filter active states */
+    --filter-active: #c6a0f6;
+    --filter-active-hover: #b7bdf8;
+    --filter-subclass-active: #c6a0f6;
+
+    /* Positive/Negative stats */
+    --positive: #a6da95;
+    --negative: #ed8796;
+
+    /* Stars */
+    --star-1: #91d7e3;
+    --star-2: #a6da95;
+    --star-3: #eed49f;
+    --star-4: #f5a97f;
+    --star-5: #ed8796;
+    --star-5plus: #f5bde6;
+    --star-6: #c6a0f6;
+    --star-6plus: #f5bde6;
+
+    /* Type filter text - high contrast for readability */
+    --type-text: #ffffff;
+}
+
+/* Modal Theme Overrides - Latte (Light) */
+:root.modal-light {
+  --modal-bg-primary: #dce0e8;
+  --modal-bg-secondary: #eff1f5;
+  --modal-bg-tertiary: #e6e9ef;
+  --modal-text-primary: #4c4f69;
+  --modal-text-secondary: #5c5f77;
+  --modal-border: #ccd0da;
+  --modal-accent: #7287fd;
+  --modal-accent-hover: #8839ef;
+}
+
+/* Modal Theme Overrides - Frappé (Light variant) */
+:root.modal-frappe {
+  --modal-bg-primary: #303446;
+  --modal-bg-secondary: #292c3c;
+  --modal-bg-tertiary: #232634;
+  --modal-text-primary: #c6d0f5;
+  --modal-text-secondary: #b5bfe2;
+  --modal-border: #414559;
+  --modal-accent: #c5aef8;
+  --modal-accent-hover: #b4befe;
+}
+
+/* Modal Theme Overrides - Dark Mode (Mocha) */
+:root.modal-dark {
+  --modal-bg-primary: #1e1e2e;
+  --modal-bg-secondary: #181825;
+  --modal-bg-tertiary: #11111b;
+  --modal-text-primary: #cdd6f4;
+  --modal-text-secondary: #bac2de;
+  --modal-border: #313244;
+  --modal-accent: #cba6f7;
+  --modal-accent-hover: #b4befe;
+}
+
+/* Modal Theme Overrides - Macchiato (Dark variant) */
+:root.modal-macchiato {
+  --modal-bg-primary: #24273a;
+  --modal-bg-secondary: #1e2030;
+  --modal-bg-tertiary: #181926;
+  --modal-text-primary: #cad3f5;
+  --modal-text-secondary: #b8c0e0;
+  --modal-border: #363a4f;
+  --modal-accent: #c6a0f6;
+  --modal-accent-hover: #b7bdf8;
+}
