@@ -193042,69 +193042,7 @@ window.details = {
                 "Boosts base ATK of this character by 800 for 1 turn, and boosts ATK of this character against enemies inflicted with Increase Damage Taken by 2x for 1 turn.",
                 "Boosts base ATK of this character by 1,000 for 1 turn, and boosts ATK of this character against enemies inflicted with Increase Damage Taken by 2.25x for 1 turn."
             ]
-        },
-        festStats: {
-            def: 121,
-            spd: 187,
-            style: "DBF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind, reduce damage taken from [QCK] by 30％",
-        festAbility: [
-            "[QCK] enemies ATK Down Lv.1; Free Spirit class enemies DEF Down Lv.1; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.1, DEF Down Lv.1, Special CT Speed Down Lv.1; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 60% chance of Haste",
-            "[QCK] enemies ATK Down Lv.2; Free Spirit class enemies DEF Down Lv.1; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.1, DEF Down Lv.1, Special CT Speed Down Lv.2; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 70% chance of Haste",
-            "[QCK] enemies ATK Down Lv.3; Free Spirit class enemies DEF Down Lv.2; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.2, DEF Down Lv.1, Special CT Speed Down Lv.3; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 80% chance of Haste",
-            "[QCK] enemies ATK Down Lv.4; Free Spirit class enemies DEF Down Lv.2; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.3, DEF Down Lv.1, Special CT Speed Down Lv.4; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 90% chance of Haste",
-            "[QCK] enemies ATK Down Lv.5; Free Spirit class enemies DEF Down Lv.3; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.4, DEF Down Lv.2, Special CT Speed Down Lv.5; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 100% chance of Haste"
-        ],
-        festSpecial: [
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 73% chance of Action Bind (6 s); targets Free Spirit class enemies for 73% chance of Confusion (5 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 73% chance of Forced Out (5 s); targets enemies within large range for ATK x 10.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 21% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 76% chance of Action Bind (7 s); targets Free Spirit class enemies for 76% chance of Confusion (6 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 76% chance of Forced Out (6 s); targets enemies within large range for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 22% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 79% chance of Action Bind (8 s); targets Free Spirit class enemies for 79% chance of Confusion (6 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 79% chance of Forced Out (6 s); targets enemies within large range for ATK x 11.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 23% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 82% chance of Action Bind (9 s); targets Free Spirit class enemies for 82% chance of Confusion (7 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 82% chance of Forced Out (7 s); targets enemies within large range for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 24% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 85% chance of Action Bind (10 s); targets Free Spirit class enemies for 85% chance of Confusion (7 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 85% chance of Forced Out (7 s); targets enemies within large range for ATK x 12.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 25% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 88% chance of Action Bind (11 s); targets Free Spirit class enemies for 88% chance of Confusion (8 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 88% chance of Forced Out (8 s); targets enemies within large range for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 26% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 91% chance of Action Bind (12 s); targets Free Spirit class enemies for 91% chance of Confusion (8 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 91% chance of Forced Out (8 s); targets enemies within large range for ATK x 13.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 27% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 94% chance of Action Bind (13 s); targets Free Spirit class enemies for 94% chance of Confusion (9 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 94% chance of Forced Out (9 s); targets enemies within large range for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 28% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 97% chance of Action Bind (14 s); targets Free Spirit class enemies for 97% chance of Confusion (9 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 97% chance of Forced Out (9 s); targets enemies within large range for ATK x 14.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 29% reduction"
-            },
-            {
-                cooldown: 26,
-                description: "Targets [QCK] enemies for 100% chance of Action Bind (15 s); targets Free Spirit class enemies for 100% chance of Confusion (10 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 100% chance of Forced Out (10 s); targets enemies within large range for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 30% reduction"
-            }
-        ]
+        }
     },
     4658: {//Jiron
         support: [
@@ -193135,16 +193073,7 @@ window.details = {
             "Boosts base RCV by 30",
             "Boosts base HP by 100",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4659: {//Gambo
         support: [
@@ -193175,16 +193104,7 @@ window.details = {
             "Boosts base RCV by 40",
             "Boosts base HP by 100",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4660: {//Ahiru
         support: [
@@ -193215,16 +193135,7 @@ window.details = {
             "Boosts base RCV by 40",
             "Boosts base HP by 100",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4661: {//Ushiano
         support: [
@@ -193255,16 +193166,7 @@ window.details = {
             "Boosts base RCV by 40",
             "Boosts base HP by 100",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4662: {//6+ Koala
         captain: "Boosts ATK of [Revolutionary Army] characters by 1.1x, boosts ATK of [DEX], Cerebral and Free Spirit characters by 5.25x, by 5.55x instead if they have a beneficial orb, boosts RCV of [DEX], Cerebral and Free Spirit characters by 1.5x, makes [STR] and [QCK] orbs beneficial for [DEX], Cerebral and Free Spirit characters, reduces damage received by 20%, and restores Special Cooldown of all characters by 10 turns when they are rewinded.",
@@ -193381,153 +193283,7 @@ window.details = {
                     "Boosts base ATK by 300 the turn after taking damage and reduces Increase Damage Taken duration by 5 turns"
                 ]
             }
-        ],
-        festStats: {
-            def: 150,
-            spd: 192,
-            style: "RCV"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Normal Attack",
-            "Power Attack",
-            "Full Attack"
-        ],
-        festAttackTarget: "Targets enemies with low remaining HP",
-        festResistance: {
-            base: "Completely evades Special Bind, reduce damage taken from [QCK] by 30％",
-            llbbase: "Completely evades Special Bind, reduce damage taken from [QCK] by 40％"
-        },
-        festAbility: {
-            base: [
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.1, HP Up Lv.1, SPD Up Lv.1, DEF Up Lv.1; if current team is 5 teammates or more, self ATK Up Lv.7; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 12% healing",
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.2, HP Up Lv.2, SPD Up Lv.2, DEF Up Lv.1; if current team is 5 teammates or more, self ATK Up Lv.8; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 14% healing",
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.3, HP Up Lv.3, SPD Up Lv.3, DEF Up Lv.2; if current team is 5 teammates or more, self ATK Up Lv.9; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 16% healing",
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.4, HP Up Lv.4, SPD Up Lv.4, DEF Up Lv.2; if current team is 5 teammates or more, self ATK Up Lv.10; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 18% healing",
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.5, HP Up Lv.5, SPD Up Lv.5, DEF Up Lv.3; if current team is 5 teammates or more, self ATK Up Lv.11; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 20% healing"
-            ],
-            llbbase: [
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.1, HP Up Lv.1, SPD Up Lv.1, DEF Up Lv.2; if current team is 5 teammates or more, self ATK Up Lv.8; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 12% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 7% reduction",
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.2, HP Up Lv.2, SPD Up Lv.2, DEF Up Lv.2; if current team is 5 teammates or more, self ATK Up Lv.9; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 14% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 9% reduction",
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.3, HP Up Lv.3, SPD Up Lv.3, DEF Up Lv.3; if current team is 5 teammates or more, self ATK Up Lv.10; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 16% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 11% reduction",
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.4, HP Up Lv.4, SPD Up Lv.4, DEF Up Lv.3; if current team is 5 teammates or more, self ATK Up Lv.11; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 18% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 13% reduction",
-                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.5, HP Up Lv.5, SPD Up Lv.5, DEF Up Lv.4; if current team is 5 teammates or more, self ATK Up Lv.12; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 20% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 15% reduction"
-            ]
-        },
-        festSpecial: {
-            base: [
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.6 (16 s); targets 1 low DEF enemy for DEF Down Lv.6 (16 s); targets 1 high SPD enemy for SPD Down Lv.6 (16 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 2.85 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 11% reduction; targets 1 low DEF enemy for ATK x 2.1 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.7 (17 s); targets 1 low DEF enemy for DEF Down Lv.7 (17 s); targets 1 high SPD enemy for SPD Down Lv.7 (17 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 2.95 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 12% reduction; targets 1 low DEF enemy for ATK x 2.2 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.8 (18 s); targets 1 low DEF enemy for DEF Down Lv.8 (18 s); targets 1 high SPD enemy for SPD Down Lv.8 (18 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.05 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 13% reduction; targets 1 low DEF enemy for ATK x 2.3 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.9 (19 s); targets 1 low DEF enemy for DEF Down Lv.9 (19 s); targets 1 high SPD enemy for SPD Down Lv.9 (19 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.15 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 14% reduction; targets 1 low DEF enemy for ATK x 2.4 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.10 (20 s); targets 1 low DEF enemy for DEF Down Lv.10 (20 s); targets 1 high SPD enemy for SPD Down Lv.10 (20 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.25 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 15% reduction; targets 1 low DEF enemy for ATK x 2.5 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.11 (21 s); targets 1 low DEF enemy for DEF Down Lv.11 (21 s); targets 1 high SPD enemy for SPD Down Lv.11 (21 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.35 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 16% reduction; targets 1 low DEF enemy for ATK x 2.6 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.12 (22 s); targets 1 low DEF enemy for DEF Down Lv.12 (22 s); targets 1 high SPD enemy for SPD Down Lv.12 (22 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.45 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 17% reduction; targets 1 low DEF enemy for ATK x 2.7 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.13 (23 s); targets 1 low DEF enemy for DEF Down Lv.13 (23 s); targets 1 high SPD enemy for SPD Down Lv.13 (23 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.55 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 18% reduction; targets 1 low DEF enemy for ATK x 2.8 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.14 (24 s); targets 1 low DEF enemy for DEF Down Lv.14 (24 s); targets 1 high SPD enemy for SPD Down Lv.14 (24 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.65 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 19% reduction; targets 1 low DEF enemy for ATK x 2.9 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.15 (25 s); targets 1 low DEF enemy for DEF Down Lv.15 (25 s); targets 1 high SPD enemy for SPD Down Lv.15 (25 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.75 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 20% reduction; targets 1 low DEF enemy for ATK x 3 damage"
-                }
-            ],
-            llbbase: [
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.6 (21 s); targets 1 low DEF enemy for DEF Down Lv.6 (21 s); targets 1 high SPD enemy for SPD Down Lv.6 (21 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.1 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 18% reduction; targets 1 low DEF enemy for ATK x 2.83 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 330 HP per interval healing (21 s); targets 1 low DEF enemy for ATK x 3.47 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.7 (22 s); targets 1 low DEF enemy for DEF Down Lv.7 (22 s); targets 1 high SPD enemy for SPD Down Lv.7 (22 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.2 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 19% reduction; targets 1 low DEF enemy for ATK x 2.96 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 360 HP per interval healing (22 s); targets 1 low DEF enemy for ATK x 3.64 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.8 (23 s); targets 1 low DEF enemy for DEF Down Lv.8 (23 s); targets 1 high SPD enemy for SPD Down Lv.8 (23 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.3 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 20% reduction; targets 1 low DEF enemy for ATK x 3.09 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 390 HP per interval healing (23 s); targets 1 low DEF enemy for ATK x 3.81 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.9 (24 s); targets 1 low DEF enemy for DEF Down Lv.9 (24 s); targets 1 high SPD enemy for SPD Down Lv.9 (24 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.4 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 21% reduction; targets 1 low DEF enemy for ATK x 3.22 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 420 HP per interval healing (24 s); targets 1 low DEF enemy for ATK x 3.98 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.10 (25 s); targets 1 low DEF enemy for DEF Down Lv.10 (25 s); targets 1 high SPD enemy for SPD Down Lv.10 (25 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.5 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 23% reduction; targets 1 low DEF enemy for ATK x 3.35 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 450 HP per interval healing (25 s); targets 1 low DEF enemy for ATK x 4.15 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.11 (26 s); targets 1 low DEF enemy for DEF Down Lv.11 (26 s); targets 1 high SPD enemy for SPD Down Lv.11 (26 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.6 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 24% reduction; targets 1 low DEF enemy for ATK x 3.48 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 480 HP per interval healing (26 s); targets 1 low DEF enemy for ATK x 4.32 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.12 (27 s); targets 1 low DEF enemy for DEF Down Lv.12 (27 s); targets 1 high SPD enemy for SPD Down Lv.12 (27 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.7 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 25% reduction; targets 1 low DEF enemy for ATK x 3.61 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 510 HP per interval healing (27 s); targets 1 low DEF enemy for ATK x 4.49 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.13 (28 s); targets 1 low DEF enemy for DEF Down Lv.13 (28 s); targets 1 high SPD enemy for SPD Down Lv.13 (28 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.8 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 27% reduction; targets 1 low DEF enemy for ATK x 3.74 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 540 HP per interval healing (28 s); targets 1 low DEF enemy for ATK x 4.66 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.14 (29 s); targets 1 low DEF enemy for DEF Down Lv.14 (29 s); targets 1 high SPD enemy for SPD Down Lv.14 (29 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.9 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 28% reduction; targets 1 low DEF enemy for ATK x 3.87 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 570 HP per interval healing (29 s); targets 1 low DEF enemy for ATK x 4.83 damage"
-                },
-                {
-                    cooldown: 32,
-                    description: "Targets 1 high ATK enemy for ATK Down Lv.15 (30 s); targets 1 low DEF enemy for DEF Down Lv.15 (30 s); targets 1 high SPD enemy for SPD Down Lv.15 (30 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 4 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 30% reduction; targets 1 low DEF enemy for ATK x 4 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 600 HP per interval healing (30 s); targets 1 low DEF enemy for ATK x 5 damage"
-                }
-            ]
-        },
-        festAbilityGP: [
-            {
-                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.1",
-                festGPSpecial: "Targets all enemies for 500 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.2",
-                festGPSpecial: "Targets all enemies for 625 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.2",
-                festGPSpecial: "Targets all enemies for 750 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.3",
-                festGPSpecial: "Targets all enemies for 875 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.3, HP, SPD Up Lv.3",
-                festGPSpecial: "Targets all enemies for 1000 damage",
-                uses: 2
-            }
-        ],
-        festAbilityGPCondition: "When 2 teammates are defeated"
+        ]
     },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
