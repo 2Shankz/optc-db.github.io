@@ -5102,6 +5102,13 @@
 						groups: [1],
 						cssClasses: ["min-width-12"],
 					},
+					{
+						type: "option",
+						description: "Increase Damage Taken",
+						regex: /Increase Damage Taken/i,
+						groups: [1],
+						cssClasses: ["min-width-12"],
+					},
 				],
 			},
 		],
@@ -7851,7 +7858,7 @@
 					"support",
 				],
 				regex:
-					/(?:reduces|removes)[^."]+?(?:Chain Multiplier Limit|selected debuffs?)[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
+					/(?:reduces|removes)[^."]+?(?:Chain Multiplier Limit|Chain Lock|selected debuffs?)[^."]+?duration (?:by ([?\d]+)(?:-([?\d]+))? turns?|(completely))(?:, by ([?\d]+)(?:-([?\d]+))? turns?)?/i,
 				submatchers: [
 					{
 						type: "number",

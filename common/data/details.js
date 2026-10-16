@@ -192937,24 +192937,25 @@ window.details = {
         ]
     },
     4657: {//Belo Betty & Morley & Lindbergh & Karasu
-        captain: "Boosts [DEX], Cerebral, and Free Spirit characters' ATK by 5.5x, HP by 1.2x, reduces crew's Paralysis duration by 10 turns, and makes crew's [DEX] slots have matching slot effects [Applies following effect based on number of applicable Character Tags on crew] Boosts [Revolutionary Army] characters' ATK by 1.2x, and reduces [Revolutionary Army] [Mink] [Giant] [Paramythia-type] characters' Special charge time by 2 turns at start of quest",
-        special: "Reduces all enemies' HP by 20%, reduces crew's Bind duration by 7 turns, and boosts Cerebral and Free Spirit characters' advantageous class effect by 2.25x for 1 turn. If field has \"Territory: [DEX]\" when Special is launched, increases all enemies' damage taken by 2.25x for 1 turn ignoring immunity to status effects (applies \"Territory: [DEX]\" to the field for 3 turns otherwise). If 2 or more [Revolutionary Army] [Mink] [Giant] [Paramythia-type] characters are on the crew, reduces all enemies' damage nullification duration by 3 turns",
+        captain: "Reduces Special Cooldown of [Revolutionary Army], [Mink], [Giant] and [Paramythia-type] characters by 2 turns at the start of the fight, boosts ATK of [Revolutionary Army] characters by 1.2x, boosts ATK of [DEX], Cerebral and Free Spirit characters by 5.5x, boosts HP of [DEX], Cerebral and Free Spirit characters by 1.2x, makes [DEX] orbs beneficial for all characters, and reduces Paralysis duration by 10 turns.",
+        special: "Deals 20% of enemies' current HP in damage to all enemies, reduces Bind duration by 7 turns, and boosts Advantageous Class Effect of Cerebral and Free Spirit characters by 2.25x for 1 turn. If field has Territory: [DEX] when the special is activated, ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 2.25x for 1 turn; applies Territory: [DEX] to the field for 3 turns otherwise. If your crew has 2+ [Revolutionary Army], [Mink], [Giant] or [Paramythia-type] characters, reduces enemies' Damage Nullification duration by 3 turns.",
         specialName: "Whipping Up the Storm of Revolution",
         sailor: {
-            base: "Makes crew's [DEX] slots have matching slot effects",
-            level1: "If field has \"Territory: [DEX]\", boosts crew's base ATK by 200 (boosts crew's base ATK by 100 otherwise)"
+            base: "Makes [DEX] orbs beneficial for all characters.",
+            level1: "If field has Territory: [DEX], boosts base ATK of all characters by 200; boosts base ATK of all characters by 100 otherwise."
         },
-        superSpecialCriteria: "When any of the following characters are on the crew (can be launched when character is a crewmate): Sabo, Koala, Hack, Monkey D. Dragon, Emporio Ivankov, Bartholomew Kuma, Ginny, Nico Robin",
-        superSpecial: "Boosts [DEX] and Cerebral characters' chain multiplier growth rate of normal attacks up to +0.7 (GOOD +0.1; GREAT +0.3; PERFECT +0.7) for 1 turn, heals 40% of crew's maximum HP, changes crew's slots (including [BLOCK] slots) to character's own type, and changes Cerebral characters to Super Cerebral",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 1 of the following, excluding supports and counting only 1 per unit: Sabo, Koala, Hack, Monkey D. Dragon, Emporio Ivankov, Bartholomew Kuma, Ginny, Nico Robin",
+        superSpecial: "Increases Chain Tap Timing Bonus of [DEX] and Cerebral characters to +0.1x-0.7x for 1 turn depending on Tap Timing, recovers 40% of crew's Max HP, changes all orbs, including [BLOCK] orbs, into matching orbs, and transforms Cerebral characters into Super Cerebral characters.",
+        superSpecialNotes: "<b>GOOD:</b> +0.1, <b>GREAT:</b> +0.3, <b>PERFECT:</b> +0.7",
         support: [
             {
                 Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Monkey D. Dragon, Ginny",
                 description: [
-                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 1 turn at start of crew's next turn, and applies increase damage taken status to all enemies by 1.1x for 1 turn",
-                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 1 turn at start of crew's next turn, and applies increase damage taken status to all enemies by 1.15x for 1 turn",
-                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 1 turn at start of crew's next turn, and applies increase damage taken status to all enemies by 1.2x for 1 turn",
-                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 1 turn at start of crew's next turn, and applies increase damage taken status to all enemies by 1.25x for 1 turn",
-                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 2 turns at start of crew's next turn, and applies increase damage taken status to all enemies by 1.3x for 1 turn"
+                    "Once per adventure, when an enemy inflicts you with Bind, reduces Bind duration by 1 turn, and inflicts all enemies with Increase Damage Taken by 1.1x for 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Bind, reduces Bind duration by 1 turn, and inflicts all enemies with Increase Damage Taken by 1.15x for 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Bind, reduces Bind duration by 1 turn, and inflicts all enemies with Increase Damage Taken by 1.2x for 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Bind, reduces Bind duration by 1 turn, and inflicts all enemies with Increase Damage Taken by 1.25x for 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Bind, reduces Bind duration by 2 turns, and inflicts all enemies with Increase Damage Taken by 1.3x for 1 turn."
                 ]
             }
         ],
@@ -193033,13 +193034,13 @@ window.details = {
             }
         ],
         lastTap: {
-            condition: "On the turn Special is launched during final Battle",
+            condition: "On the last stage, on the turn this character's special is used",
             description: [
-                "Boosts character's base ATK by +500 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 1.25x for 1 turn",
-                "Boosts character's base ATK by +600 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 1.5x for 1 turn",
-                "Boosts character's base ATK by +700 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 1.75x for 1 turn",
-                "Boosts character's base ATK by +800 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 2x for 1 turn",
-                "Boosts character's base ATK by +1000 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 2.25x for 1 turn"
+                "Boosts base ATK of this character by 500 for 1 turn, and boosts ATK of this character against enemies inflicted with Increase Damage Taken by 1.25x for 1 turn.",
+                "Boosts base ATK of this character by 600 for 1 turn, and boosts ATK of this character against enemies inflicted with Increase Damage Taken by 1.5x for 1 turn.",
+                "Boosts base ATK of this character by 700 for 1 turn, and boosts ATK of this character against enemies inflicted with Increase Damage Taken by 1.75x for 1 turn.",
+                "Boosts base ATK of this character by 800 for 1 turn, and boosts ATK of this character against enemies inflicted with Increase Damage Taken by 2x for 1 turn.",
+                "Boosts base ATK of this character by 1,000 for 1 turn, and boosts ATK of this character against enemies inflicted with Increase Damage Taken by 2.25x for 1 turn."
             ]
         },
         festStats: {
@@ -193110,11 +193111,11 @@ window.details = {
             {
                 Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Lindbergh, Belo Betty, Karasu, Morley, Monkey D. Dragon, Ginny",
                 description: [
-                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special",
-                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special",
-                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special",
-                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special",
-                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 2 turns at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special"
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when an enemy inflicts you with Bind or Burn, reduces Bind and Burn duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special.",
+                    "Adds 7% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when an enemy inflicts you with Bind or Burn, reduces Bind and Burn duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special.",
+                    "Adds 9% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when an enemy inflicts you with Bind or Burn, reduces Bind and Burn duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special.",
+                    "Adds 10% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when an enemy inflicts you with Bind or Burn, reduces Bind and Burn duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special.",
+                    "Adds 12% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when an enemy inflicts you with Bind or Burn, reduces Bind and Burn duration by 2 turns. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special."
                 ]
             }
         ],
@@ -193150,11 +193151,11 @@ window.details = {
             {
                 Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Lindbergh, Belo Betty, Karasu, Morley, Monkey D. Dragon, Ginny",
                 description: [
-                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 1 turn [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 1 turn [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 2 turns [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 2 turns [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 3 turns [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Increased Defense duration by 1 turn. <b>[AUTO+]</b> If your crew has Color Affinity, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 7% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Increased Defense duration by 1 turn. <b>[AUTO+]</b> If your crew has Color Affinity, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 9% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Increased Defense duration by 2 turns. <b>[AUTO+]</b> If your crew has Color Affinity, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 10% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Increased Defense duration by 2 turns. <b>[AUTO+]</b> If your crew has Color Affinity, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 12% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Increased Defense duration by 3 turns. <b>[AUTO+]</b> If your crew has Color Affinity, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -193190,11 +193191,11 @@ window.details = {
             {
                 Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Lindbergh, Belo Betty, Karasu, Morley, Monkey D. Dragon, Ginny",
                 description: [
-                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 1 turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last",
-                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 1 turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last",
-                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 1 turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last",
-                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 2 turns [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last",
-                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 2 turns [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last"
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses an Advantageous Class Effect special, increases boost effects of Advantageous Class Effect buffs by +0.25x, and reduces enemies' Barrier duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special last.",
+                    "Adds 7% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses an Advantageous Class Effect special, increases boost effects of Advantageous Class Effect buffs by +0.25x, and reduces enemies' Barrier duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special last.",
+                    "Adds 9% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses an Advantageous Class Effect special, increases boost effects of Advantageous Class Effect buffs by +0.25x, and reduces enemies' Barrier duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special last.",
+                    "Adds 10% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses an Advantageous Class Effect special, increases boost effects of Advantageous Class Effect buffs by +0.25x, and reduces enemies' Barrier duration by 2 turns. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special last.",
+                    "Adds 12% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses an Advantageous Class Effect special, increases boost effects of Advantageous Class Effect buffs by +0.25x, and reduces enemies' Barrier duration by 2 turns. <b>[AUTO+]</b> When you reach the final stage and enemies have Increased Damage Taken, activates supported character's Special last."
                 ]
             }
         ],
@@ -193230,11 +193231,11 @@ window.details = {
             {
                 Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Lindbergh, Belo Betty, Karasu, Morley, Monkey D. Dragon, Ginny",
                 description: [
-                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 1 turn [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special",
-                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 1 turn [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special",
-                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 2 turns [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special",
-                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 2 turns [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special",
-                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 3 turns [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special"
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Resilience duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and an enemy applies Territory, activates supported character's Special.",
+                    "Adds 7% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Resilience duration by 1 turn. <b>[AUTO+]</b> When you reach the final stage and an enemy applies Territory, activates supported character's Special.",
+                    "Adds 9% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Resilience duration by 2 turns. <b>[AUTO+]</b> When you reach the final stage and an enemy applies Territory, activates supported character's Special.",
+                    "Adds 10% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Resilience duration by 2 turns. <b>[AUTO+]</b> When you reach the final stage and an enemy applies Territory, activates supported character's Special.",
+                    "Adds 12% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Resilience duration by 2 turns. <b>[AUTO+]</b> When you reach the final stage and an enemy applies Territory, activates supported character's Special."
                 ]
             }
         ],
@@ -193266,24 +193267,24 @@ window.details = {
         festAttackTarget: "Targets closest enemies"
     },
     4662: {//6+ Koala
-        captain: "Reduces damage taken by 20%, boosts [DEX], Cerebral, and Free Spirit characters' ATK by approximately 5.55x when slots match (5.25x otherwise), RCV by 1.5x, makes their [STR][QCK] slots have matching slot effects, and reduces crew's Special Reverse by 10 turns [Applies following effect based on number of applicable Character Tags on crew] Boosts [Revolutionary Army] characters' ATK by 1.1x",
-        special: "Reduces crew's Counter-Healing and lock chain multiplier duration by 10 turns, and boosts the type effects of normal attacks for [DEX], Cerebral, and Free Spirit characters by 3x for 1 turn. If crew's maximum HP is over 40,000 when Special is launched, heals crew by 30,000 HP (up to 2x max HP ignoring max HP limit). If crew's maximum HP is 40,000 or less when Special is launched, boosts crew's maximum HP by 30% and heals crew by 30,000 HP (up to 2x max HP ignoring max HP limit)",
+        captain: "Boosts ATK of [Revolutionary Army] characters by 1.1x, boosts ATK of [DEX], Cerebral and Free Spirit characters by 5.25x, by 5.55x instead if they have a beneficial orb, boosts RCV of [DEX], Cerebral and Free Spirit characters by 1.5x, makes [STR] and [QCK] orbs beneficial for [DEX], Cerebral and Free Spirit characters, reduces damage received by 20%, and restores Special Cooldown of all characters by 10 turns when they are rewinded.",
+        special: "Reduces Counter-Healing and Chain Lock duration by 10 turns, boosts Color Affinity of [DEX], Cerebral and Free Spirit characters by 3x for 1 turn, and recovers 30,000 HP, allowing HP Overfill up to 2x Max HP. If Max HP is below 40,000 when the special is activated, permanently boosts HP by a static 1.3x.",
         specialName: "Sweet Moonlit Time",
         sailor: {
-            level1: "Boosts Cerebral and Free Spirit characters' base HP and ATK by 75",
-            level2: "Makes crew's [DEX] slots have matching slot effects"
+            level1: "Boosts base ATK and HP of Cerebral and Free Spirit characters by 75.",
+            level2: "Makes [DEX] orbs beneficial for all characters."
         },
-        superSpecialCriteria: "When any 2 [Revolutionary Army] characters are on the crew not including self (can be launched when character is a crewmate)",
-        superSpecial: "Boosts crew's maximum HP by 20%, changes crew's slots (including [BLOCK] slots) to [DEX], sets the chain multiplier's minimum value at 3.25 and maximum value at 35.0 for 2 turns, heals 30% of crew's maximum HP (up to 2x max HP ignoring max HP limit) and changes [DEX] characters to Super [DEX]",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 3 of the following, excluding supports and counting only 1 per unit: [Revolutionary Army] characters",
+        superSpecial: "Permanently boosts HP by a static 1.2x, changes all orbs, including [BLOCK] orbs, into [DEX] orbs, sets Chain Boundaries to 3.25x and 35.0x for 2 turns, recovers 30% of crew's Max HP, allowing HP Overfill up to 2x Max HP, and transforms [DEX] characters into Super [DEX] characters.",
         support: [
             {
                 Characters: "Cerebral and Free Spirit characters",
                 description: [
-                    "Adds 4% of character's base HP and RCV to supported character's base HP and RCV",
-                    "Adds 6% of character's base HP and RCV to supported character's base HP and RCV",
-                    "Adds 8% of character's base HP and RCV to supported character's base HP and RCV",
-                    "Adds 10% of character's base HP and RCV to supported character's base HP and RCV",
-                    "Adds 12% of character's base HP and RCV to supported character's base HP and RCV"
+                    "Adds 4% of this character's base HP and RCV to the supported character's base HP and RCV.",
+                    "Adds 6% of this character's base HP and RCV to the supported character's base HP and RCV.",
+                    "Adds 8% of this character's base HP and RCV to the supported character's base HP and RCV.",
+                    "Adds 10% of this character's base HP and RCV to the supported character's base HP and RCV.",
+                    "Adds 12% of this character's base HP and RCV to the supported character's base HP and RCV."
                 ]
             }
         ],
@@ -193336,7 +193337,7 @@ window.details = {
             },
             {
                 captain: {
-                    base: "Reduces damage taken by 20%, boosts [DEX], Cerebral, and Free Spirit characters' ATK by approximately 5.75x when slots match (5.5x otherwise), RCV by 1.5x, makes their [STR][QCK] slots have matching slot effects, and reduces crew's Special Reverse by 10 turns [Applies following effect based on number of applicable Character Tags on crew] Boosts [Revolutionary Army] characters' ATK by 1.1x. If 2 or more [Revolutionary Army] characters are on the crew and crew uses a Special to boost type effects, further increases the effect by +0.25 (stackable with other further raising effects)"
+                    base: "Boosts ATK of [Revolutionary Army] characters by 1.1x, boosts ATK of [DEX], Cerebral and Free Spirit characters by 5.5x, by 5.75x instead if they have a beneficial orb, boosts RCV of [DEX], Cerebral and Free Spirit characters by 1.5x, makes [STR] and [QCK] orbs beneficial for [DEX], Cerebral and Free Spirit characters, reduces damage received by 20%, and restores Special Cooldown of all characters by 10 turns when they are rewinded. If your crew has 2+ [Revolutionary Army] characters, increases boost effects of Color Affinity buffs applied by specials by +0.25."
                 }
             },
             {
@@ -193344,7 +193345,7 @@ window.details = {
             },
             {
                 special: {
-                    base: "Reduces crew's Counter-Healing and lock chain multiplier duration by 10 turns, and boosts the type effects of normal attacks for [DEX], Cerebral, and Free Spirit characters by 3.5x for 1 turn. If crew's maximum HP is over 40,000 when Special is launched, heals crew by 30,000 HP (up to 2x max HP ignoring max HP limit). If crew's maximum HP is 40,000 or less when Special is launched, boosts crew's maximum HP by 30% and heals crew by 30,000 HP (up to 2x max HP ignoring max HP limit). If 2 or more [Revolutionary Army] characters are on the crew, changes crew's ATK multiplier of [DEX] slots to 2.75x when slots match (normally 2.0x when matching), 0.5x when unfavorable, 1.0x otherwise for 1 turn"
+                    base: "Reduces Counter-Healing and Chain Lock duration by 10 turns, boosts Color Affinity of [DEX], Cerebral and Free Spirit characters by 3.5x for 1 turn, and recovers 30,000 HP, allowing HP Overfill up to 2x Max HP. If Max HP is below 40,000 when the special is activated, permanently boosts HP by a static 1.3x. If your crew has 2+ [Revolutionary Army] characters, increases Orb Effects of beneficial [DEX] orbs to 2.75x for 1 turn."
                 },
                 rResilience: true
             }
