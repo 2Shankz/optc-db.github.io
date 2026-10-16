@@ -192936,6 +192936,598 @@ window.details = {
             }
         ]
     },
+    4657: {//Belo Betty & Morley & Lindbergh & Karasu
+        captain: "Boosts [DEX], Cerebral, and Free Spirit characters' ATK by 5.5x, HP by 1.2x, reduces crew's Paralysis duration by 10 turns, and makes crew's [DEX] slots have matching slot effects [Applies following effect based on number of applicable Character Tags on crew] Boosts [Revolutionary Army] characters' ATK by 1.2x, and reduces [Revolutionary Army] [Mink] [Giant] [Paramythia-type] characters' Special charge time by 2 turns at start of quest",
+        special: "Reduces all enemies' HP by 20%, reduces crew's Bind duration by 7 turns, and boosts Cerebral and Free Spirit characters' advantageous class effect by 2.25x for 1 turn. If field has \"Territory: [DEX]\" when Special is launched, increases all enemies' damage taken by 2.25x for 1 turn ignoring immunity to status effects (applies \"Territory: [DEX]\" to the field for 3 turns otherwise). If 2 or more [Revolutionary Army] [Mink] [Giant] [Paramythia-type] characters are on the crew, reduces all enemies' damage nullification duration by 3 turns",
+        specialName: "Whipping Up the Storm of Revolution",
+        sailor: {
+            base: "Makes crew's [DEX] slots have matching slot effects",
+            level1: "If field has \"Territory: [DEX]\", boosts crew's base ATK by 200 (boosts crew's base ATK by 100 otherwise)"
+        },
+        superSpecialCriteria: "When any of the following characters are on the crew (can be launched when character is a crewmate): Sabo, Koala, Hack, Monkey D. Dragon, Emporio Ivankov, Bartholomew Kuma, Ginny, Nico Robin",
+        superSpecial: "Boosts [DEX] and Cerebral characters' chain multiplier growth rate of normal attacks up to +0.7 (GOOD +0.1; GREAT +0.3; PERFECT +0.7) for 1 turn, heals 40% of crew's maximum HP, changes crew's slots (including [BLOCK] slots) to character's own type, and changes Cerebral characters to Super Cerebral",
+        support: [
+            {
+                Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Monkey D. Dragon, Ginny",
+                description: [
+                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 1 turn at start of crew's next turn, and applies increase damage taken status to all enemies by 1.1x for 1 turn",
+                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 1 turn at start of crew's next turn, and applies increase damage taken status to all enemies by 1.15x for 1 turn",
+                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 1 turn at start of crew's next turn, and applies increase damage taken status to all enemies by 1.2x for 1 turn",
+                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 1 turn at start of crew's next turn, and applies increase damage taken status to all enemies by 1.25x for 1 turn",
+                    "Once per quest, if inflicted with Bind status from the enemy, reduces crew's Bind duration by 2 turns at start of crew's next turn, and applies increase damage taken status to all enemies by 1.3x for 1 turn"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Acquire Potential 1: No Healing",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 30",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 30",
+            "Acquire Potential 2: Enrage/Increase Damage Taken",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 50",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Acquire Sailor Ability 2: If field has \"Territory: [DEX]\", boosts crew's base ATK by 200 (boosts crew's base ATK by 100 otherwise)",
+            "Boosts base RCV by 40",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 40",
+            "Boosts base HP by 80",
+            "Acquire Potential 3: Last Tap",
+            "LOCKED WITH KEY",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50",
+            "Boosts base RCV by 50",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 150",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 100",
+            "Reduce base Special Cooldown by 1 turn"
+        ],
+        potential: [
+            {
+                Name: "No Healing",
+                description: [
+                    "Reduces No Healing duration by 3 turns",
+                    "Reduces No Healing duration by 4 turns",
+                    "Reduces No Healing duration by 5 turns",
+                    "Reduces No Healing duration by 7 turns",
+                    "Reduces No Healing duration by 10 turns"
+                ]
+            },
+            {
+                Name: "Enrage/Increase Damage Taken",
+                description: [
+                    "Boosts base ATK by 75 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 100 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 150 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 200 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 300 the turn after taking damage and reduces Increase Damage Taken duration by 3 turns"
+                ]
+            },
+            {
+                Name: "Last Tap",
+                description: [
+                    "Obtain Last Tap Lv.1",
+                    "Obtain Last Tap Lv.2",
+                    "Obtain Last Tap Lv.3",
+                    "Obtain Last Tap Lv.4",
+                    "Obtain Last Tap Lv.5"
+                ]
+            }
+        ],
+        lastTap: {
+            condition: "On the turn Special is launched during final Battle",
+            description: [
+                "Boosts character's base ATK by +500 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 1.25x for 1 turn",
+                "Boosts character's base ATK by +600 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 1.5x for 1 turn",
+                "Boosts character's base ATK by +700 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 1.75x for 1 turn",
+                "Boosts character's base ATK by +800 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 2x for 1 turn",
+                "Boosts character's base ATK by +1000 for 1 turn (stacks with effects from Special), and boosts character's damage dealt to increase damage taken enemies by 2.25x for 1 turn"
+            ]
+        },
+        festStats: {
+            def: 121,
+            spd: 187,
+            style: "DBF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Special Bind, reduce damage taken from [QCK] by 30％",
+        festAbility: [
+            "[QCK] enemies ATK Down Lv.1; Free Spirit class enemies DEF Down Lv.1; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.1, DEF Down Lv.1, Special CT Speed Down Lv.1; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 60% chance of Haste",
+            "[QCK] enemies ATK Down Lv.2; Free Spirit class enemies DEF Down Lv.1; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.1, DEF Down Lv.1, Special CT Speed Down Lv.2; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 70% chance of Haste",
+            "[QCK] enemies ATK Down Lv.3; Free Spirit class enemies DEF Down Lv.2; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.2, DEF Down Lv.1, Special CT Speed Down Lv.3; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 80% chance of Haste",
+            "[QCK] enemies ATK Down Lv.4; Free Spirit class enemies DEF Down Lv.2; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.3, DEF Down Lv.1, Special CT Speed Down Lv.4; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 90% chance of Haste",
+            "[QCK] enemies ATK Down Lv.5; Free Spirit class enemies DEF Down Lv.3; if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, all enemies ATK Down Lv.4, DEF Down Lv.2, Special CT Speed Down Lv.5; when remaining time becomes 60 s or less, or when appearing on the field when remaining time is 60 s or less, targets SPT Style [Revolutionary Army] teammates for 100% chance of Haste"
+        ],
+        festSpecial: [
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 73% chance of Action Bind (6 s); targets Free Spirit class enemies for 73% chance of Confusion (5 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 73% chance of Forced Out (5 s); targets enemies within large range for ATK x 10.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 21% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 76% chance of Action Bind (7 s); targets Free Spirit class enemies for 76% chance of Confusion (6 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 76% chance of Forced Out (6 s); targets enemies within large range for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 22% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 79% chance of Action Bind (8 s); targets Free Spirit class enemies for 79% chance of Confusion (6 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 79% chance of Forced Out (6 s); targets enemies within large range for ATK x 11.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 23% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 82% chance of Action Bind (9 s); targets Free Spirit class enemies for 82% chance of Confusion (7 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 82% chance of Forced Out (7 s); targets enemies within large range for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 24% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 85% chance of Action Bind (10 s); targets Free Spirit class enemies for 85% chance of Confusion (7 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 85% chance of Forced Out (7 s); targets enemies within large range for ATK x 12.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 25% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 88% chance of Action Bind (11 s); targets Free Spirit class enemies for 88% chance of Confusion (8 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 88% chance of Forced Out (8 s); targets enemies within large range for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 26% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 91% chance of Action Bind (12 s); targets Free Spirit class enemies for 91% chance of Confusion (8 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 91% chance of Forced Out (8 s); targets enemies within large range for ATK x 13.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 27% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 94% chance of Action Bind (13 s); targets Free Spirit class enemies for 94% chance of Confusion (9 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 94% chance of Forced Out (9 s); targets enemies within large range for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 28% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 97% chance of Action Bind (14 s); targets Free Spirit class enemies for 97% chance of Confusion (9 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 97% chance of Forced Out (9 s); targets enemies within large range for ATK x 14.5 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 29% reduction"
+            },
+            {
+                cooldown: 26,
+                description: "Targets [QCK] enemies for 100% chance of Action Bind (15 s); targets Free Spirit class enemies for 100% chance of Confusion (10 s); if 4 or more [Revolutionary Army] characters or 8 or more Cerebral/Free Spirit class characters are on the team, targets 2 enemies for 100% chance of Forced Out (10 s); targets enemies within large range for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies); targets (not including self) [Revolutionary Army] teammates with 70% or less Special CT for Special CT 30% reduction"
+            }
+        ]
+    },
+    4658: {//Jiron
+        support: [
+            {
+                Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Lindbergh, Belo Betty, Karasu, Morley, Monkey D. Dragon, Ginny",
+                description: [
+                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special",
+                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special",
+                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special",
+                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special",
+                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if inflicted with Bind or Burn status from the enemy, reduces crew's Bind/Burn duration by 2 turns at start of crew's next turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 50",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 60",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 70",
+            "Boosts base HP by 70",
+            "Boosts base RCV by 30",
+            "Boosts base ATK by 40",
+            "Boosts base HP by 90",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50"
+        ],
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: [
+            "Normal Attack"
+        ],
+        festAttackTarget: "Targets closest enemies"
+    },
+    4659: {//Gambo
+        support: [
+            {
+                Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Lindbergh, Belo Betty, Karasu, Morley, Monkey D. Dragon, Ginny",
+                description: [
+                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 1 turn [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 1 turn [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 2 turns [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 2 turns [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' DEF Up duration by 3 turns [AUTO+] If crew has type effect boost, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 50",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 100",
+            "Boosts base RCV by 40",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50"
+        ],
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: [
+            "Normal Attack"
+        ],
+        festAttackTarget: "Targets closest enemies"
+    },
+    4660: {//Ahiru
+        support: [
+            {
+                Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Lindbergh, Belo Betty, Karasu, Morley, Monkey D. Dragon, Ginny",
+                description: [
+                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 1 turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last",
+                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 1 turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last",
+                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 1 turn [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last",
+                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 2 turns [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last",
+                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if supported character uses a Special to launch advantageous class effect, further increases crew's advantageous class effect by +0.25, and reduces the duration of all enemy barriers by 2 turns [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special last"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 50",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 100",
+            "Boosts base RCV by 40",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50"
+        ],
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: [
+            "Normal Attack"
+        ],
+        festAttackTarget: "Targets closest enemies"
+    },
+    4661: {//Ushiano
+        support: [
+            {
+                Characters: "Nico Robin, Emporio Ivankov, Bartholomew Kuma, Sabo, Koala, Hack, Lindbergh, Belo Betty, Karasu, Morley, Monkey D. Dragon, Ginny",
+                description: [
+                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 1 turn [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special",
+                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 1 turn [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special",
+                    "Adds 9% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 2 turns [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special",
+                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 2 turns [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special",
+                    "Adds 12% of character's base stats to supported character's base stats, and once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' Resilience duration by 3 turns [AUTO+] If enemy launches any type of Territory and at final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 50",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 100",
+            "Boosts base RCV by 40",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 50"
+        ],
+        festStats: {
+            def: 50,
+            spd: 100,
+            style: "BAL"
+        },
+        festAttackPattern: [
+            "Normal Attack"
+        ],
+        festAttackTarget: "Targets closest enemies"
+    },
+    4662: {//6+ Koala
+        captain: "Reduces damage taken by 20%, boosts [DEX], Cerebral, and Free Spirit characters' ATK by approximately 5.55x when slots match (5.25x otherwise), RCV by 1.5x, makes their [STR][QCK] slots have matching slot effects, and reduces crew's Special Reverse by 10 turns [Applies following effect based on number of applicable Character Tags on crew] Boosts [Revolutionary Army] characters' ATK by 1.1x",
+        special: "Reduces crew's Counter-Healing and lock chain multiplier duration by 10 turns, and boosts the type effects of normal attacks for [DEX], Cerebral, and Free Spirit characters by 3x for 1 turn. If crew's maximum HP is over 40,000 when Special is launched, heals crew by 30,000 HP (up to 2x max HP ignoring max HP limit). If crew's maximum HP is 40,000 or less when Special is launched, boosts crew's maximum HP by 30% and heals crew by 30,000 HP (up to 2x max HP ignoring max HP limit)",
+        specialName: "Sweet Moonlit Time",
+        sailor: {
+            level1: "Boosts Cerebral and Free Spirit characters' base HP and ATK by 75",
+            level2: "Makes crew's [DEX] slots have matching slot effects"
+        },
+        superSpecialCriteria: "When any 2 [Revolutionary Army] characters are on the crew not including self (can be launched when character is a crewmate)",
+        superSpecial: "Boosts crew's maximum HP by 20%, changes crew's slots (including [BLOCK] slots) to [DEX], sets the chain multiplier's minimum value at 3.25 and maximum value at 35.0 for 2 turns, heals 30% of crew's maximum HP (up to 2x max HP ignoring max HP limit) and changes [DEX] characters to Super [DEX]",
+        support: [
+            {
+                Characters: "Cerebral and Free Spirit characters",
+                description: [
+                    "Adds 4% of character's base HP and RCV to supported character's base HP and RCV",
+                    "Adds 6% of character's base HP and RCV to supported character's base HP and RCV",
+                    "Adds 8% of character's base HP and RCV to supported character's base HP and RCV",
+                    "Adds 10% of character's base HP and RCV to supported character's base HP and RCV",
+                    "Adds 12% of character's base HP and RCV to supported character's base HP and RCV"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 10",
+            "Boosts base HP by 10",
+            "Boosts base HP by 20",
+            "Acquire Potential 1: No Healing",
+            "Boosts base RCV by 10",
+            "Boosts base RCV by 10",
+            "Boosts base ATK by 15",
+            "Boosts base RCV by 10",
+            "Boosts base RCV by 20",
+            "Acquire Sailor Ability 1: Boosts Cerebral and Free Spirit characters' base HP and ATK by 75",
+            "Boosts base ATK by 20",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 30",
+            "Boosts base HP by 30",
+            "Acquire Potential 2: Pinch Healing",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base ATK by 25",
+            "Boosts base HP by 50",
+            "Boosts base HP by 50",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Acquire Sailor Ability 2: Makes crew's [DEX] slots have matching slot effects",
+            "Boosts base HP by 90",
+            "Boosts base HP by 90",
+            "Boosts base ATK by 40",
+            "Boosts base ATK by 50",
+            "Acquire Potential 3: Enrage/Increase Damage Taken",
+            "LOCKED WITH KEY",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 50",
+            "Boosts base RCV by 50",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 100",
+            "Boosts base HP by 150",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 200"
+        ],
+        lLimit: [
+            null,
+            {
+                rAbility: true
+            },
+            {
+                captain: {
+                    base: "Reduces damage taken by 20%, boosts [DEX], Cerebral, and Free Spirit characters' ATK by approximately 5.75x when slots match (5.5x otherwise), RCV by 1.5x, makes their [STR][QCK] slots have matching slot effects, and reduces crew's Special Reverse by 10 turns [Applies following effect based on number of applicable Character Tags on crew] Boosts [Revolutionary Army] characters' ATK by 1.1x. If 2 or more [Revolutionary Army] characters are on the crew and crew uses a Special to boost type effects, further increases the effect by +0.25 (stackable with other further raising effects)"
+                }
+            },
+            {
+                rSpecial: true
+            },
+            {
+                special: {
+                    base: "Reduces crew's Counter-Healing and lock chain multiplier duration by 10 turns, and boosts the type effects of normal attacks for [DEX], Cerebral, and Free Spirit characters by 3.5x for 1 turn. If crew's maximum HP is over 40,000 when Special is launched, heals crew by 30,000 HP (up to 2x max HP ignoring max HP limit). If crew's maximum HP is 40,000 or less when Special is launched, boosts crew's maximum HP by 30% and heals crew by 30,000 HP (up to 2x max HP ignoring max HP limit). If 2 or more [Revolutionary Army] characters are on the crew, changes crew's ATK multiplier of [DEX] slots to 2.75x when slots match (normally 2.0x when matching), 0.5x when unfavorable, 1.0x otherwise for 1 turn"
+                },
+                rResilience: true
+            }
+        ],
+        potential: [
+            {
+                Name: "No Healing",
+                description: [
+                    "Reduces No Healing duration by 1 turn",
+                    "Reduces No Healing duration by 2 turns",
+                    "Reduces No Healing duration by 3 turns",
+                    "Reduces No Healing duration by 4 turns",
+                    "Reduces No Healing duration by 5 turns"
+                ]
+            },
+            {
+                Name: "Pinch Healing",
+                description: [
+                    "If HP is below 10% at the start of the turn, recovers 1x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
+                    "If HP is below 20% at the start of the turn, recovers 1x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
+                    "If HP is below 30% at the start of the turn, recovers 1x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
+                    "If HP is below 40% at the start of the turn, recovers 1.5x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
+                    "If HP is below 50% at the start of the turn, recovers 1.5x this character's RCV at the end of the turn for each time you hit a PERFECT with this character"
+                ]
+            },
+            {
+                Name: "Enrage/Increase Damage Taken",
+                description: [
+                    "Boosts base ATK by 75 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 100 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 150 the turn after taking damage and reduces Increase Damage Taken duration by 3 turns",
+                    "Boosts base ATK by 200 the turn after taking damage and reduces Increase Damage Taken duration by 4 turns",
+                    "Boosts base ATK by 300 the turn after taking damage and reduces Increase Damage Taken duration by 5 turns"
+                ]
+            }
+        ],
+        festStats: {
+            def: 150,
+            spd: 192,
+            style: "RCV"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Normal Attack",
+            "Power Attack",
+            "Full Attack"
+        ],
+        festAttackTarget: "Targets enemies with low remaining HP",
+        festResistance: {
+            base: "Completely evades Special Bind, reduce damage taken from [QCK] by 30％",
+            llbbase: "Completely evades Special Bind, reduce damage taken from [QCK] by 40％"
+        },
+        festAbility: {
+            base: [
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.1, HP Up Lv.1, SPD Up Lv.1, DEF Up Lv.1; if current team is 5 teammates or more, self ATK Up Lv.7; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 12% healing",
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.2, HP Up Lv.2, SPD Up Lv.2, DEF Up Lv.1; if current team is 5 teammates or more, self ATK Up Lv.8; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 14% healing",
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.3, HP Up Lv.3, SPD Up Lv.3, DEF Up Lv.2; if current team is 5 teammates or more, self ATK Up Lv.9; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 16% healing",
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.4, HP Up Lv.4, SPD Up Lv.4, DEF Up Lv.2; if current team is 5 teammates or more, self ATK Up Lv.10; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 18% healing",
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.5, HP Up Lv.5, SPD Up Lv.5, DEF Up Lv.3; if current team is 5 teammates or more, self ATK Up Lv.11; after dealing damage, up to 3 times targets [Revolutionary Army] teammates for HP 20% healing"
+            ],
+            llbbase: [
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.1, HP Up Lv.1, SPD Up Lv.1, DEF Up Lv.2; if current team is 5 teammates or more, self ATK Up Lv.8; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 12% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 7% reduction",
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.2, HP Up Lv.2, SPD Up Lv.2, DEF Up Lv.2; if current team is 5 teammates or more, self ATK Up Lv.9; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 14% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 9% reduction",
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.3, HP Up Lv.3, SPD Up Lv.3, DEF Up Lv.3; if current team is 5 teammates or more, self ATK Up Lv.10; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 16% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 11% reduction",
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.4, HP Up Lv.4, SPD Up Lv.4, DEF Up Lv.3; if current team is 5 teammates or more, self ATK Up Lv.11; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 18% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 13% reduction",
+                "[DEX] and [Revolutionary Army] teammates ATK Up Lv.5, HP Up Lv.5, SPD Up Lv.5, DEF Up Lv.4; if current team is 5 teammates or more, self ATK Up Lv.12; after dealing damage, up to 5 times targets [Revolutionary Army] teammates for HP 20% healing; when healing, up to 5 times [Revolutionary Army] teammates Special CT 15% reduction"
+            ]
+        },
+        festSpecial: {
+            base: [
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.6 (16 s); targets 1 low DEF enemy for DEF Down Lv.6 (16 s); targets 1 high SPD enemy for SPD Down Lv.6 (16 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 2.85 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 11% reduction; targets 1 low DEF enemy for ATK x 2.1 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.7 (17 s); targets 1 low DEF enemy for DEF Down Lv.7 (17 s); targets 1 high SPD enemy for SPD Down Lv.7 (17 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 2.95 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 12% reduction; targets 1 low DEF enemy for ATK x 2.2 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.8 (18 s); targets 1 low DEF enemy for DEF Down Lv.8 (18 s); targets 1 high SPD enemy for SPD Down Lv.8 (18 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.05 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 13% reduction; targets 1 low DEF enemy for ATK x 2.3 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.9 (19 s); targets 1 low DEF enemy for DEF Down Lv.9 (19 s); targets 1 high SPD enemy for SPD Down Lv.9 (19 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.15 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 14% reduction; targets 1 low DEF enemy for ATK x 2.4 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.10 (20 s); targets 1 low DEF enemy for DEF Down Lv.10 (20 s); targets 1 high SPD enemy for SPD Down Lv.10 (20 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.25 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 15% reduction; targets 1 low DEF enemy for ATK x 2.5 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.11 (21 s); targets 1 low DEF enemy for DEF Down Lv.11 (21 s); targets 1 high SPD enemy for SPD Down Lv.11 (21 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.35 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 16% reduction; targets 1 low DEF enemy for ATK x 2.6 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.12 (22 s); targets 1 low DEF enemy for DEF Down Lv.12 (22 s); targets 1 high SPD enemy for SPD Down Lv.12 (22 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.45 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 17% reduction; targets 1 low DEF enemy for ATK x 2.7 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.13 (23 s); targets 1 low DEF enemy for DEF Down Lv.13 (23 s); targets 1 high SPD enemy for SPD Down Lv.13 (23 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.55 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 18% reduction; targets 1 low DEF enemy for ATK x 2.8 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.14 (24 s); targets 1 low DEF enemy for DEF Down Lv.14 (24 s); targets 1 high SPD enemy for SPD Down Lv.14 (24 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.65 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 19% reduction; targets 1 low DEF enemy for ATK x 2.9 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.15 (25 s); targets 1 low DEF enemy for DEF Down Lv.15 (25 s); targets 1 high SPD enemy for SPD Down Lv.15 (25 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.75 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 20% reduction; targets 1 low DEF enemy for ATK x 3 damage"
+                }
+            ],
+            llbbase: [
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.6 (21 s); targets 1 low DEF enemy for DEF Down Lv.6 (21 s); targets 1 high SPD enemy for SPD Down Lv.6 (21 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.1 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 18% reduction; targets 1 low DEF enemy for ATK x 2.83 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 330 HP per interval healing (21 s); targets 1 low DEF enemy for ATK x 3.47 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.7 (22 s); targets 1 low DEF enemy for DEF Down Lv.7 (22 s); targets 1 high SPD enemy for SPD Down Lv.7 (22 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.2 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 19% reduction; targets 1 low DEF enemy for ATK x 2.96 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 360 HP per interval healing (22 s); targets 1 low DEF enemy for ATK x 3.64 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.8 (23 s); targets 1 low DEF enemy for DEF Down Lv.8 (23 s); targets 1 high SPD enemy for SPD Down Lv.8 (23 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.3 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 20% reduction; targets 1 low DEF enemy for ATK x 3.09 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 390 HP per interval healing (23 s); targets 1 low DEF enemy for ATK x 3.81 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.9 (24 s); targets 1 low DEF enemy for DEF Down Lv.9 (24 s); targets 1 high SPD enemy for SPD Down Lv.9 (24 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.4 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 21% reduction; targets 1 low DEF enemy for ATK x 3.22 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 420 HP per interval healing (24 s); targets 1 low DEF enemy for ATK x 3.98 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.10 (25 s); targets 1 low DEF enemy for DEF Down Lv.10 (25 s); targets 1 high SPD enemy for SPD Down Lv.10 (25 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.5 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 23% reduction; targets 1 low DEF enemy for ATK x 3.35 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 450 HP per interval healing (25 s); targets 1 low DEF enemy for ATK x 4.15 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.11 (26 s); targets 1 low DEF enemy for DEF Down Lv.11 (26 s); targets 1 high SPD enemy for SPD Down Lv.11 (26 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.6 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 24% reduction; targets 1 low DEF enemy for ATK x 3.48 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 480 HP per interval healing (26 s); targets 1 low DEF enemy for ATK x 4.32 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.12 (27 s); targets 1 low DEF enemy for DEF Down Lv.12 (27 s); targets 1 high SPD enemy for SPD Down Lv.12 (27 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.7 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 25% reduction; targets 1 low DEF enemy for ATK x 3.61 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 510 HP per interval healing (27 s); targets 1 low DEF enemy for ATK x 4.49 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.13 (28 s); targets 1 low DEF enemy for DEF Down Lv.13 (28 s); targets 1 high SPD enemy for SPD Down Lv.13 (28 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.8 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 27% reduction; targets 1 low DEF enemy for ATK x 3.74 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 540 HP per interval healing (28 s); targets 1 low DEF enemy for ATK x 4.66 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.14 (29 s); targets 1 low DEF enemy for DEF Down Lv.14 (29 s); targets 1 high SPD enemy for SPD Down Lv.14 (29 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 3.9 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 28% reduction; targets 1 low DEF enemy for ATK x 3.87 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 570 HP per interval healing (29 s); targets 1 low DEF enemy for ATK x 4.83 damage"
+                },
+                {
+                    cooldown: 32,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.15 (30 s); targets 1 low DEF enemy for DEF Down Lv.15 (30 s); targets 1 high SPD enemy for SPD Down Lv.15 (30 s); targets [DEX] and [Revolutionary Army] teammates for RCV x 4 healing; if 4 or more [Revolutionary Army] characters are on the team, targets self for Special CT 30% reduction; targets 1 low DEF enemy for ATK x 4 damage; during Assault Rumble, targets [Revolutionary Army] teammates for 600 HP per interval healing (30 s); targets 1 low DEF enemy for ATK x 5 damage"
+                }
+            ]
+        },
+        festAbilityGP: [
+            {
+                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.1",
+                festGPSpecial: "Targets all enemies for 500 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.2",
+                festGPSpecial: "Targets all enemies for 625 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.2",
+                festGPSpecial: "Targets all enemies for 750 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.3",
+                festGPSpecial: "Targets all enemies for 875 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.3, HP, SPD Up Lv.3",
+                festGPSpecial: "Targets all enemies for 1000 damage",
+                uses: 2
+            }
+        ],
+        festAbilityGPCondition: "When 2 teammates are defeated"
+    },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
         special: "Deals 120x character's ATK in Typeless damage to all enemies, changes orbs of adjacent characters into Matching Orbs, boosts ATK of all characters by 1.75x for 2 turns, reduces any damage received above 5,656 HP by 97% for 2 turns and makes PERFECTs easier to hit for 2 turns",

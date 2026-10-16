@@ -758,6 +758,10 @@ const Tusk = [ "Tusk" ];
 const Blade = [ "Blade" ];
 const Biblo = [ "Biblo" ];
 const Ange = [ "Ange" ];
+const Jiron = [ "Jiron" ];
+const Gambo = [ "Gambo" ];
+const Ahiru = [ "Ahiru" ];
+const Ushiano = [ "Ushiano" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5298,6 +5302,12 @@ window.families = {
     4654: [ ...VinsmokeSanji ],
     4655: [ ...Brook ],
     4656: [ ...CharlottePudding ],
+    4657: [ ...BeloBetty, ...Morley, ...Lindbergh, ...Karasu ],
+    4658: [ ...Jiron ],
+    4659: [ ...Gambo ],
+    4660: [ ...Ahiru ],
+    4661: [ ...Ushiano ],
+    4662: [ ...Koala ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
