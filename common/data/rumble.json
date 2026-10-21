@@ -214170,6 +214170,20 @@
               "level": 3,
               "targeting": {"targets": ["crew"]},
               "condition": {"type": "time", "comparator": "first", "count": 40}
+            },
+            {
+              "attributes": ["DEF"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[Animal Kingdom Pirates]"]},
+              "condition": {"type": "time", "comparator": "after", "count": 40}
+            },
+            {
+              "attributes": ["ATK", "Blow Away"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[Animal Kingdom Pirates]"]},
+              "condition": {"type": "trigger", "stat": "takes damage", "count": 10}
             }
           ]
         },
@@ -214177,6 +214191,10 @@
           "effects": [
             {
               "override": {"level": 4}
+            },
+            {},
+            {
+              "override": {"level": 2}
             },
             {}
           ]
@@ -214186,6 +214204,10 @@
             {
               "override": {"level": 5}
             },
+            {},
+            {
+              "override": {"level": 3}
+            },
             {}
           ]
         },
@@ -214193,6 +214215,10 @@
           "effects": [
             {
               "override": {"level": 6}
+            },
+            {},
+            {
+              "override": {"level": 4}
             },
             {}
           ]
@@ -214204,7 +214230,11 @@
             },
             {
               "override": {"level": 4}
-            }
+            },
+            {
+              "override": {"level": 6}
+            },
+            {}
           ]
         }
       ],
@@ -214214,26 +214244,26 @@
           "effects": [
             {
               "attributes": ["DEF"],
-              "duration": 16,
               "effect": "buff",
               "level": 1,
-              "range": {"direction": "radial", "size": "large"},
-              "targeting": {"targets": ["crew"]}
+              "duration": 16,
+              "targeting": {"targets": ["crew"]},
+              "range": {"size": "large", "direction": "radial"}
             },
             {
               "amount": 5,
               "effect": "damage",
-              "range": {"direction": "radial", "size": "large"},
+              "type": "cut",
               "targeting": {"targets": ["enemies"]},
-              "type": "cut"
+              "range": {"size": "large", "direction": "radial"}
             },
             {
               "amount": 20,
               "effect": "damage",
-              "range": {"direction": "radial", "size": "large"},
-              "condition": {"comparator": "first", "count": 40, "type": "time"},
+              "type": "cut",
               "targeting": {"targets": ["enemies"]},
-              "type": "cut"
+              "range": {"size": "large", "direction": "radial"},
+              "condition": {"type": "time", "comparator": "first", "count": 40}
             }
           ]
         },
@@ -214283,7 +214313,7 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 20, "level": 2}
+              "override": {"level": 2, "duration": 20}
             },
             {
               "override": {"amount": 9}
@@ -214297,7 +214327,7 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 21, "level": 2}
+              "override": {"level": 2, "duration": 21}
             },
             {
               "override": {"amount": 10}
@@ -214311,7 +214341,7 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 22, "level": 2}
+              "override": {"level": 2, "duration": 22}
             },
             {
               "override": {"amount": 11}
@@ -214325,7 +214355,7 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 23, "level": 3}
+              "override": {"level": 3, "duration": 23}
             },
             {
               "override": {"amount": 12}
@@ -214339,7 +214369,7 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 24, "level": 3}
+              "override": {"level": 3, "duration": 24}
             },
             {
               "override": {"amount": 13}
@@ -214353,7 +214383,7 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 25, "level": 4}
+              "override": {"level": 4, "duration": 25}
             },
             {
               "override": {"amount": 15}
@@ -214370,32 +214400,42 @@
           "effects": [
             {
               "attributes": ["DEF"],
-              "duration": 16,
               "effect": "buff",
               "level": 2,
-              "range": {"direction": "radial", "size": "large"},
-              "targeting": {"targets": ["crew"]}
+              "duration": 16,
+              "targeting": {"targets": ["crew"]},
+              "range": {"size": "large", "direction": "radial"}
+            },
+            {
+              "attributes": ["SPD"],
+              "effect": "buff",
+              "level": 2,
+              "duration": 16,
+              "targeting": {"targets": ["[Animal Kingdom Pirates]"]}
             },
             {
               "amount": 8,
               "effect": "damage",
-              "range": {"direction": "radial", "size": "large"},
+              "type": "cut",
               "targeting": {"targets": ["enemies"]},
-              "type": "cut"
+              "range": {"size": "large", "direction": "radial"}
             },
             {
               "amount": 24,
               "effect": "damage",
-              "range": {"direction": "radial", "size": "large"},
-              "condition": {"comparator": "first", "count": 40, "type": "time"},
+              "type": "cut",
               "targeting": {"targets": ["enemies"]},
-              "type": "cut"
+              "range": {"size": "large", "direction": "radial"},
+              "condition": {"type": "time", "comparator": "first", "count": 40}
             }
           ]
         },
         {
           "cooldown": 22,
           "effects": [
+            {
+              "override": {"duration": 17}
+            },
             {
               "override": {"duration": 17}
             },
@@ -214414,6 +214454,9 @@
               "override": {"duration": 18}
             },
             {
+              "override": {"duration": 18}
+            },
+            {
               "override": {"amount": 10}
             },
             {
@@ -214424,6 +214467,9 @@
         {
           "cooldown": 22,
           "effects": [
+            {
+              "override": {"duration": 19}
+            },
             {
               "override": {"duration": 19}
             },
@@ -214439,7 +214485,10 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 20, "level": 3}
+              "override": {"level": 3, "duration": 20}
+            },
+            {
+              "override": {"level": 3, "duration": 20}
             },
             {
               "override": {"amount": 12}
@@ -214453,7 +214502,10 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 21, "level": 3}
+              "override": {"level": 3, "duration": 21}
+            },
+            {
+              "override": {"level": 3, "duration": 21}
             },
             {
               "override": {"amount": 13}
@@ -214467,7 +214519,10 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 22, "level": 3}
+              "override": {"level": 3, "duration": 22}
+            },
+            {
+              "override": {"level": 3, "duration": 22}
             },
             {
               "override": {"amount": 14}
@@ -214481,7 +214536,10 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 23, "level": 4}
+              "override": {"level": 4, "duration": 23}
+            },
+            {
+              "override": {"level": 4, "duration": 23}
             },
             {
               "override": {"amount": 15}
@@ -214495,7 +214553,10 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 24, "level": 4}
+              "override": {"level": 4, "duration": 24}
+            },
+            {
+              "override": {"level": 4, "duration": 24}
             },
             {
               "override": {"amount": 16}
@@ -214509,7 +214570,10 @@
           "cooldown": 22,
           "effects": [
             {
-              "override": {"duration": 25, "level": 5}
+              "override": {"level": 5, "duration": 25}
+            },
+            {
+              "override": {"level": 5, "duration": 25}
             },
             {
               "override": {"amount": 17}
@@ -214619,8 +214683,8 @@
             {
               "amount": 500,
               "effect": "damage",
-              "targeting": {"targets": ["enemies"]},
-              "type": "fixed"
+              "type": "fixed",
+              "targeting": {"targets": ["enemies"]}
             }
           ]
         },
@@ -214659,9 +214723,9 @@
       ],
       "gpcondition": [
         {
-          "count": 2,
           "type": "defeat",
-          "team": "crew"
+          "team": "crew",
+          "count": 2
         }
       ],
       "pattern": [
@@ -220407,13 +220471,35 @@
               "attributes": ["HP"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["Powerhouse"]}
+              "targeting": {"targets": ["[QCK]", "Powerhouse", "[Big Mom Pirates]"]}
             },
             {
               "attributes": ["ATK"],
               "effect": "buff",
               "level": 2,
-              "targeting": {"targets": ["Powerhouse"]}
+              "targeting": {"targets": ["[QCK]", "Powerhouse", "[Big Mom Pirates]"]}
+            },
+            {
+              "attributes": ["DEF"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[Big Mom Pirates]"]}
+            },
+            {
+              "amount": 12,
+              "effect": "recharge",
+              "type": "Special CT",
+              "onArrival": true,
+              "targeting": {"targets": ["[Big Mom Pirates]"]},
+              "condition": {"type": "crew", "composition": true, "count": 3, "comparator": "more", "targets": ["[Big Mom Pirates]"]}
+            },
+            {
+              "attributes": ["Special CT"],
+              "effect": "hinderance",
+              "amount": 18,
+              "onArrival": true,
+              "targeting": {"targets": ["enemies"], "count": 1, "priority": "highest", "stat": "Special CT"},
+              "condition": {"type": "crew", "composition": true, "count": 3, "comparator": "more", "targets": ["[Big Mom Pirates]"]}
             }
           ]
         },
@@ -220424,6 +220510,15 @@
             },
             {
               "override": {"level": 3}
+            },
+            {
+              "override": {"level": 2}
+            },
+            {
+              "override": {"amount": 14}
+            },
+            {
+              "override": {"amount": 21}
             }
           ]
         },
@@ -220434,6 +220529,15 @@
             },
             {
               "override": {"level": 4}
+            },
+            {
+              "override": {"level": 3}
+            },
+            {
+              "override": {"amount": 16}
+            },
+            {
+              "override": {"amount": 24}
             }
           ]
         },
@@ -220444,16 +220548,34 @@
             },
             {
               "override": {"level": 5}
+            },
+            {
+              "override": {"level": 4}
+            },
+            {
+              "override": {"amount": 18}
+            },
+            {
+              "override": {"amount": 27}
             }
           ]
         },
         {
           "effects": [
             {
-              "override": {"level": 5}
+              "override": {"level": 6}
             },
             {
               "override": {"level": 6}
+            },
+            {
+              "override": {"level": 5}
+            },
+            {
+              "override": {"amount": 20}
+            },
+            {
+              "override": {"amount": 30}
             }
           ]
         }
@@ -220465,30 +220587,44 @@
             {
               "amount": 1500,
               "effect": "damage",
-              "range": {"direction": "sideways", "size": "large"},
+              "type": "fixed",
               "targeting": {"targets": ["enemies"]},
-              "type": "fixed"
+              "range": {"size": "large", "direction": "sideways"}
             },
             {
               "attributes": ["SPD"],
-              "duration": 11,
               "effect": "debuff",
               "level": 1,
-              "range": {"direction": "sideways", "size": "large"},
-              "targeting": {"targets": ["enemies"]}
+              "duration": 11,
+              "targeting": {"targets": ["enemies"]},
+              "range": {"size": "large", "direction": "sideways"}
             },
             {
               "attributes": ["Paralysis"],
+              "effect": "hinderance",
               "chance": 40,
               "duration": 11,
-              "effect": "hinderance",
               "targeting": {"targets": ["enemies"]}
             },
             {
-              "amount": 0.5,
+              "attributes": ["DEF"],
+              "effect": "debuff",
+              "level": 1,
+              "duration": 11,
+              "targeting": {"targets": ["enemies"], "status": ["Paralysis"]}
+            },
+            {
+              "amount": 7.8,
               "effect": "damage",
-              "targeting": {"count": 2, "targets": ["Cerebral"]},
-              "type": "atk"
+              "type": "atk",
+              "spread": true,
+              "targeting": {"targets": ["Cerebral", ""], "status": ["Paralysis"]}
+            },
+            {
+              "attributes": ["Switch"],
+              "effect": "boon",
+              "targeting": {"targets": ["self"], "switch": "1st sub character"},
+              "condition": {"type": "crew", "composition": true, "count": 2, "comparator": "more", "targets": ["[Big Mom Pirates]"]}
             }
           ]
         },
@@ -220505,8 +220641,12 @@
               "override": {"chance": 44, "duration": 12}
             },
             {
-              "override": {"amount": 0.6}
-            }
+              "override": {"level": 2, "duration": 12}
+            },
+            {
+              "override": {"amount": 8.6}
+            },
+            {}
           ]
         },
         {
@@ -220516,14 +220656,18 @@
               "override": {"amount": 1800}
             },
             {
-              "override": {"duration": 13, "level": 2}
+              "override": {"level": 2, "duration": 13}
             },
             {
               "override": {"chance": 48, "duration": 13}
             },
             {
-              "override": {"amount": 0.7}
-            }
+              "override": {"level": 2, "duration": 13}
+            },
+            {
+              "override": {"amount": 9.4}
+            },
+            {}
           ]
         },
         {
@@ -220533,14 +220677,18 @@
               "override": {"amount": 1950}
             },
             {
-              "override": {"duration": 14, "level": 2}
+              "override": {"level": 2, "duration": 14}
             },
             {
               "override": {"chance": 52, "duration": 14}
             },
             {
-              "override": {"amount": 0.8}
-            }
+              "override": {"level": 3, "duration": 14}
+            },
+            {
+              "override": {"amount": 10.2}
+            },
+            {}
           ]
         },
         {
@@ -220550,14 +220698,18 @@
               "override": {"amount": 2100}
             },
             {
-              "override": {"duration": 15, "level": 3}
+              "override": {"level": 3, "duration": 15}
             },
             {
               "override": {"chance": 56, "duration": 15}
             },
             {
-              "override": {"amount": 0.9}
-            }
+              "override": {"level": 4, "duration": 15}
+            },
+            {
+              "override": {"amount": 11}
+            },
+            {}
           ]
         },
         {
@@ -220567,14 +220719,18 @@
               "override": {"amount": 2250}
             },
             {
-              "override": {"duration": 16, "level": 4}
+              "override": {"level": 4, "duration": 16}
             },
             {
               "override": {"chance": 60, "duration": 16}
             },
             {
-              "override": {"amount": 1}
-            }
+              "override": {"level": 4, "duration": 16}
+            },
+            {
+              "override": {"amount": 11.8}
+            },
+            {}
           ]
         },
         {
@@ -220584,14 +220740,18 @@
               "override": {"amount": 2400}
             },
             {
-              "override": {"duration": 17, "level": 4}
+              "override": {"level": 4, "duration": 17}
             },
             {
               "override": {"chance": 64, "duration": 17}
             },
             {
-              "override": {"amount": 1.1}
-            }
+              "override": {"level": 5, "duration": 17}
+            },
+            {
+              "override": {"amount": 12.6}
+            },
+            {}
           ]
         },
         {
@@ -220601,14 +220761,18 @@
               "override": {"amount": 2550}
             },
             {
-              "override": {"duration": 18, "level": 5}
+              "override": {"level": 5, "duration": 18}
             },
             {
               "override": {"chance": 68, "duration": 18}
             },
             {
-              "override": {"amount": 1.2}
-            }
+              "override": {"level": 6, "duration": 18}
+            },
+            {
+              "override": {"amount": 13.4}
+            },
+            {}
           ]
         },
         {
@@ -220618,14 +220782,18 @@
               "override": {"amount": 2700}
             },
             {
-              "override": {"duration": 19, "level": 5}
+              "override": {"level": 5, "duration": 19}
             },
             {
               "override": {"chance": 72, "duration": 19}
             },
             {
-              "override": {"amount": 1.3}
-            }
+              "override": {"level": 6, "duration": 19}
+            },
+            {
+              "override": {"amount": 14.2}
+            },
+            {}
           ]
         },
         {
@@ -220635,14 +220803,18 @@
               "override": {"amount": 3000}
             },
             {
-              "override": {"duration": 20, "level": 7}
+              "override": {"level": 7, "duration": 20}
             },
             {
               "override": {"chance": 80, "duration": 20}
             },
             {
-              "override": {"amount": 1.5}
-            }
+              "override": {"level": 7, "duration": 20}
+            },
+            {
+              "override": {"amount": 15}
+            },
+            {}
           ]
         }
       ],
@@ -220721,8 +220893,8 @@
             {
               "amount": 500,
               "effect": "damage",
-              "targeting": {"targets": ["enemies"]},
-              "type": "fixed"
+              "type": "fixed",
+              "targeting": {"targets": ["enemies"]}
             }
           ]
         },
@@ -220761,9 +220933,9 @@
       ],
       "gpcondition": [
         {
-          "count": 2,
           "type": "defeat",
-          "team": "crew"
+          "team": "crew",
+          "count": 2
         }
       ],
       "pattern": [
@@ -292235,19 +292407,33 @@
               "attributes": ["SPD"],
               "effect": "buff",
               "level": 2,
-              "targeting": {"targets": ["[INT]"]}
+              "targeting": {"targets": ["[INT]", "Shooter", "[Animal Kingdom Pirates]"]}
+            },
+            {
+              "attributes": ["DEF"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[INT]", "Shooter", "[Animal Kingdom Pirates]"]}
             },
             {
               "attributes": ["Special CT"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["[INT]"]}
+              "targeting": {"targets": ["[INT]", "Shooter", "[Animal Kingdom Pirates]"]}
             },
             {
               "attributes": ["DEF"],
               "effect": "debuff",
               "level": 2,
               "targeting": {"targets": ["[PSY]"]}
+            },
+            {
+              "attributes": ["Haste"],
+              "effect": "boon",
+              "chance": 60,
+              "onArrival": true,
+              "targeting": {"targets": ["[Animal Kingdom Pirates]"]},
+              "condition": {"type": "time", "comparator": "remaining", "count": 70}
             }
           ]
         },
@@ -292255,10 +292441,16 @@
           "effects": [
             {
               "override": {"level": 3}
+            },
+            {
+              "override": {"level": 2}
             },
             {},
             {
               "override": {"level": 3}
+            },
+            {
+              "override": {"chance": 70}
             }
           ]
         },
@@ -292268,10 +292460,16 @@
               "override": {"level": 4}
             },
             {
+              "override": {"level": 3}
+            },
+            {
               "override": {"level": 2}
             },
             {
               "override": {"level": 4}
+            },
+            {
+              "override": {"chance": 80}
             }
           ]
         },
@@ -292279,17 +292477,26 @@
           "effects": [
             {
               "override": {"level": 5}
+            },
+            {
+              "override": {"level": 4}
             },
             {
               "override": {"level": 2}
             },
             {
               "override": {"level": 5}
+            },
+            {
+              "override": {"chance": 90}
             }
           ]
         },
         {
           "effects": [
+            {
+              "override": {"level": 6}
+            },
             {
               "override": {"level": 6}
             },
@@ -292298,6 +292505,9 @@
             },
             {
               "override": {"level": 6}
+            },
+            {
+              "override": {"chance": 100}
             }
           ]
         }
@@ -292307,54 +292517,32 @@
           "cooldown": 29,
           "effects": [
             {
-              "amount": 1.7,
+              "amount": 1.75,
               "effect": "damage",
-              "range": {"direction": "radial", "size": "large"},
+              "type": "atk",
               "targeting": {"targets": ["enemies"]},
-              "type": "atk"
+              "range": {"size": "large", "direction": "radial"}
             },
             {
               "attributes": ["ATK", "SPD"],
-              "duration": 16,
               "effect": "buff",
               "level": 4,
-              "targeting": {"targets": ["[INT]"]}
+              "duration": 16,
+              "targeting": {"targets": ["[INT]", "Shooter", "[Animal Kingdom Pirates]"]}
             },
             {
               "amount": 0.2,
               "effect": "damage",
-              "range": {"direction": "radial", "size": "large"},
-              "targeting": {"targets": ["[PSY]"]},
               "type": "atk",
-              "defbypass": true
-            }
-          ]
-        },
-        {
-          "cooldown": 29,
-          "effects": [
-            {
-              "override": {"amount": 1.8}
+              "defbypass": true,
+              "targeting": {"targets": ["[PSY]"]}
             },
             {
-              "override": {"duration": 17}
-            },
-            {
-              "override": {"amount": 0.3}
-            }
-          ]
-        },
-        {
-          "cooldown": 29,
-          "effects": [
-            {
-              "override": {"amount": 1.9}
-            },
-            {
-              "override": {"duration": 18}
-            },
-            {
-              "override": {"amount": 0.4}
+              "attributes": ["Special CT Delay"],
+              "effect": "evade",
+              "chance": 73,
+              "duration": 11,
+              "targeting": {"targets": ["[Animal Kingdom Pirates]"]}
             }
           ]
         },
@@ -292365,66 +292553,30 @@
               "override": {"amount": 2}
             },
             {
-              "override": {"duration": 19}
+              "override": {"duration": 17}
+            },
+            {
+              "override": {"amount": 0.35}
+            },
+            {
+              "override": {"chance": 76, "duration": 12}
+            }
+          ]
+        },
+        {
+          "cooldown": 29,
+          "effects": [
+            {
+              "override": {"amount": 2.25}
+            },
+            {
+              "override": {"duration": 18}
             },
             {
               "override": {"amount": 0.5}
-            }
-          ]
-        },
-        {
-          "cooldown": 29,
-          "effects": [
-            {
-              "override": {"amount": 2.1}
             },
             {
-              "override": {"duration": 20, "level": 5}
-            },
-            {
-              "override": {"amount": 0.6}
-            }
-          ]
-        },
-        {
-          "cooldown": 29,
-          "effects": [
-            {
-              "override": {"amount": 2.2}
-            },
-            {
-              "override": {"duration": 21, "level": 5}
-            },
-            {
-              "override": {"amount": 0.7}
-            }
-          ]
-        },
-        {
-          "cooldown": 29,
-          "effects": [
-            {
-              "override": {"amount": 2.3}
-            },
-            {
-              "override": {"duration": 22, "level": 5}
-            },
-            {
-              "override": {"amount": 0.8}
-            }
-          ]
-        },
-        {
-          "cooldown": 29,
-          "effects": [
-            {
-              "override": {"amount": 2.4}
-            },
-            {
-              "override": {"duration": 23, "level": 6}
-            },
-            {
-              "override": {"amount": 0.9}
+              "override": {"chance": 79, "duration": 13}
             }
           ]
         },
@@ -292435,10 +292587,13 @@
               "override": {"amount": 2.5}
             },
             {
-              "override": {"duration": 24, "level": 6}
+              "override": {"duration": 19}
             },
             {
-              "override": {"amount": 1}
+              "override": {"amount": 0.65}
+            },
+            {
+              "override": {"chance": 82, "duration": 14}
             }
           ]
         },
@@ -292446,13 +292601,101 @@
           "cooldown": 29,
           "effects": [
             {
-              "override": {"amount": 2.7}
+              "override": {"amount": 2.75}
             },
             {
-              "override": {"duration": 25, "level": 7}
+              "override": {"level": 5, "duration": 20}
+            },
+            {
+              "override": {"amount": 0.8}
+            },
+            {
+              "override": {"chance": 85, "duration": 15}
+            }
+          ]
+        },
+        {
+          "cooldown": 29,
+          "effects": [
+            {
+              "override": {"amount": 3}
+            },
+            {
+              "override": {"level": 5, "duration": 21}
+            },
+            {
+              "override": {"amount": 0.9}
+            },
+            {
+              "override": {"chance": 88, "duration": 16}
+            }
+          ]
+        },
+        {
+          "cooldown": 29,
+          "effects": [
+            {
+              "override": {"amount": 3.25}
+            },
+            {
+              "override": {"level": 5, "duration": 22}
+            },
+            {
+              "override": {"amount": 1.05}
+            },
+            {
+              "override": {"chance": 91, "duration": 17}
+            }
+          ]
+        },
+        {
+          "cooldown": 29,
+          "effects": [
+            {
+              "override": {"amount": 3.5}
+            },
+            {
+              "override": {"level": 6, "duration": 23}
             },
             {
               "override": {"amount": 1.2}
+            },
+            {
+              "override": {"chance": 94, "duration": 18}
+            }
+          ]
+        },
+        {
+          "cooldown": 29,
+          "effects": [
+            {
+              "override": {"amount": 3.75}
+            },
+            {
+              "override": {"level": 6, "duration": 24}
+            },
+            {
+              "override": {"amount": 1.35}
+            },
+            {
+              "override": {"chance": 97, "duration": 19}
+            }
+          ]
+        },
+        {
+          "cooldown": 29,
+          "effects": [
+            {
+              "override": {"amount": 4}
+            },
+            {
+              "override": {"level": 7, "duration": 25}
+            },
+            {
+              "override": {"amount": 1.5}
+            },
+            {
+              "override": {"chance": 100, "duration": 20}
             }
           ]
         }
@@ -292537,8 +292780,8 @@
             {
               "amount": 500,
               "effect": "damage",
-              "targeting": {"targets": ["enemies"]},
-              "type": "fixed"
+              "type": "fixed",
+              "targeting": {"targets": ["enemies"]}
             }
           ]
         },
@@ -292577,9 +292820,9 @@
       ],
       "gpcondition": [
         {
-          "count": 2,
           "type": "defeat",
-          "team": "crew"
+          "team": "crew",
+          "count": 2
         }
       ],
       "pattern": [
@@ -433273,14 +433516,14 @@
               "attributes": ["ATK", "RCV", "SPD"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["Striker", "Slasher"]}
+              "targeting": {"targets": ["Striker", "Slasher", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
             },
             {
               "attributes": ["ATK", "DEF"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["self"]},
-              "condition": {"type": "crew", "composition": true, "comparator": "more", "count": 6, "targets": ["Slasher", "Striker"]}
+              "targeting": {"targets": ["[Animal Kingdom Pirates]", "[Big Mom Pirates]"]},
+              "condition": {"type": "multi", "conjunction": "or", "conditions": [{"type": "crew", "composition": true, "count": 6, "comparator": "more", "targets": ["Slasher", "Striker"]}, {"type": "crew", "composition": true, "count": 4, "comparator": "more", "targets": ["[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}]}
             },
             {
               "amount": 15,
@@ -433288,15 +433531,15 @@
               "type": "Special CT",
               "onArrival": true,
               "targeting": {"targets": ["self"]},
-              "condition": {"type": "crew", "composition": true, "comparator": "more", "count": 3, "targets": ["[Mythical Zoan-type]", "[Paramythia-type]", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
+              "condition": {"type": "crew", "composition": true, "count": 3, "comparator": "more", "targets": ["[Mythical Zoan-type]", "[Paramythia-type]", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
             },
             {
               "attributes": ["Revive"],
               "effect": "boon",
-              "repeat": 1,
               "amount": 25,
+              "repeat": 1,
               "targeting": {"targets": ["self"]},
-              "condition": {"type": "crew", "composition": true, "comparator": "more", "count": 3, "targets": ["[Mythical Zoan-type]", "[Paramythia-type]", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
+              "condition": {"type": "crew", "composition": true, "count": 3, "comparator": "more", "targets": ["[Mythical Zoan-type]", "[Paramythia-type]", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
             }
           ]
         },
@@ -433374,14 +433617,14 @@
               "effect": "buff",
               "level": 1,
               "duration": 11,
-              "targeting": {"targets": ["Striker", "Slasher"]}
+              "targeting": {"targets": ["Striker", "Slasher", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
             },
             {
               "attributes": ["ATK"],
               "effect": "buff",
               "level": 3,
               "duration": 11,
-              "targeting": {"targets": ["self"]}
+              "targeting": {"targets": ["[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
             },
             {
               "attributes": ["Half Stats"],
@@ -433401,7 +433644,7 @@
               "effect": "damage",
               "type": "atk",
               "targeting": {"targets": ["enemies"]},
-              "condition": {"type": "crew", "composition": true, "count": 6, "comparator": "more", "targets": ["Striker", "Slasher"]}
+              "condition": {"type": "multi", "conjunction": "or", "conditions": [{"type": "crew", "composition": true, "count": 6, "comparator": "more", "targets": ["Slasher", "Striker"]}, {"type": "crew", "composition": true, "count": 4, "comparator": "more", "targets": ["[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}]}
             },
             {
               "attributes": ["DEF"],
@@ -433409,7 +433652,7 @@
               "level": 3,
               "duration": 11,
               "targeting": {"targets": ["self"]},
-              "condition": {"type": "stat", "stat": "HP", "comparator": "Below", "count": 50}
+              "condition": {"type": "stat", "stat": "HP", "comparator": "below", "count": 50}
             },
             {
               "attributes": ["Special Bind"],
@@ -433417,7 +433660,7 @@
               "chance": 70,
               "duration": 10,
               "targeting": {"count": 2, "targets": ["enemies"]},
-              "condition": {"type": "stat", "stat": "HP", "comparator": "Below", "count": 50}
+              "condition": {"type": "stat", "stat": "HP", "comparator": "below", "count": 50}
             }
           ]
         },
@@ -433668,14 +433911,14 @@
               "effect": "buff",
               "level": 8,
               "duration": 30,
-              "targeting": {"targets": ["Striker", "Slasher"]}
+              "targeting": {"targets": ["Striker", "Slasher", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
             },
             {
               "attributes": ["ATK", "DEF"],
               "effect": "buff",
               "level": 9,
               "duration": 30,
-              "targeting": {"targets": ["Striker", "Slasher"]}
+              "targeting": {"targets": ["Striker", "Slasher", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
             },
             {
               "attributes": ["Half Stats"],
@@ -433702,7 +433945,7 @@
               "effect": "damage",
               "type": "atk",
               "targeting": {"targets": ["enemies"]},
-              "condition": {"type": "crew", "composition": true, "count": 6, "comparator": "more", "targets": ["Striker", "Slasher"]}
+              "condition": {"type": "multi", "conjunction": "or", "conditions": [{"type": "crew", "composition": true, "count": 6, "comparator": "more", "targets": ["Slasher", "Striker"]}, {"type": "crew", "composition": true, "count": 4, "comparator": "more", "targets": ["[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}]}
             }
           ]
         }
@@ -433719,7 +433962,7 @@
               "effect": "buff",
               "level": 10,
               "duration": 40,
-              "targeting": {"targets": ["Striker", "Slasher"]}
+              "targeting": {"targets": ["Striker", "Slasher", "[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}
             },
             {
               "attributes": ["Half Stats"],
@@ -433746,7 +433989,7 @@
               "effect": "damage",
               "type": "atk",
               "targeting": {"targets": ["enemies"]},
-              "condition": {"type": "crew", "composition": true, "count": 6, "comparator": "more", "targets": ["Striker", "Slasher"]}
+              "condition": {"type": "multi", "conjunction": "or", "conditions": [{"type": "crew", "composition": true, "count": 6, "comparator": "more", "targets": ["Slasher", "Striker"]}, {"type": "crew", "composition": true, "count": 4, "comparator": "more", "targets": ["[Animal Kingdom Pirates]", "[Big Mom Pirates]"]}]}
             }
           ]
         }
@@ -447547,13 +447790,13 @@
               "attributes": ["HP"],
               "effect": "buff",
               "level": 4,
-              "targeting": {"targets": ["Driven", "Powerhouse"]}
+              "targeting": {"targets": ["Driven", "Powerhouse", "[Animal Kingdom Pirates]"]}
             },
             {
               "attributes": ["Blow Away", "Critical Hit"],
               "effect": "buff",
               "level": 3,
-              "targeting": {"targets": ["Driven", "Powerhouse"]}
+              "targeting": {"targets": ["Driven", "Powerhouse", "[Animal Kingdom Pirates]"]}
             },
             {
               "attributes": ["ATK"],
@@ -447665,16 +447908,16 @@
             },
             {
               "amount": 2.1,
-              "type": "atk",
               "effect": "damage",
+              "type": "atk",
               "targeting": {"targets": ["enemies"]},
               "range": {"size": "large", "direction": "sideways"}
             },
             {
               "amount": 5.5,
+              "effect": "damage",
               "type": "atk",
               "spread": true,
-              "effect": "damage",
               "targeting": {"targets": ["Powerhouse"]}
             },
             {
@@ -447849,20 +448092,20 @@
               "effect": "buff",
               "level": 3,
               "duration": 21,
-              "targeting": {"targets": ["Driven", "Powerhouse"]}
+              "targeting": {"targets": ["Driven", "Powerhouse", "[Animal Kingdom Pirates]"]}
             },
             {
               "amount": 2.6,
-              "type": "atk",
               "effect": "damage",
+              "type": "atk",
               "targeting": {"targets": ["enemies"]},
               "range": {"size": "large", "direction": "sideways"}
             },
             {
               "amount": 10.5,
+              "effect": "damage",
               "type": "atk",
               "spread": true,
-              "effect": "damage",
               "targeting": {"targets": ["Powerhouse"]}
             },
             {
@@ -447870,14 +448113,14 @@
               "effect": "buff",
               "level": 2,
               "duration": 21,
-              "targeting": {"targets": ["[Land of Wano Arc]"]}
+              "targeting": {"targets": ["[Land of Wano Arc]", "[Animal Kingdom Pirates]"]}
             },
             {
               "attributes": ["ATK", "SPD"],
               "effect": "buff",
               "level": 3,
               "duration": 21,
-              "targeting": {"targets": ["[Land of Wano Arc]"]},
+              "targeting": {"targets": ["[Land of Wano Arc]", "[Animal Kingdom Pirates]"]},
               "condition": {"type": "mode", "mode": "Assault Rumble"}
             }
           ]
@@ -448159,8 +448402,8 @@
           "effects": [
             {
               "amount": 500,
-              "type": "fixed",
               "effect": "damage",
+              "type": "fixed",
               "targeting": {"targets": ["enemies"]}
             }
           ]
@@ -448200,9 +448443,9 @@
       ],
       "gpcondition": [
         {
-          "count": 2,
           "type": "defeat",
-          "team": "crew"
+          "team": "crew",
+          "count": 2
         }
       ],
       "pattern": [
