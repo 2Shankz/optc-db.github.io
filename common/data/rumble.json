@@ -155853,10 +155853,17 @@
         {
           "effects": [
             {
-              "attributes": ["ATK"],
+              "attributes": ["ATK", "SPD"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["self"]},
+              "targeting": {"targets": ["[Skypiea Arc]"]},
+              "condition": {"type": "time", "comparator": "first", "count": 40}
+            },
+            {
+              "attributes": ["Special CT"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[Skypiea Arc]"]},
               "condition": {"type": "time", "comparator": "first", "count": 40}
             },
             {
@@ -155870,7 +155877,7 @@
               "attributes": ["ATK", "Special CT", "SPD"],
               "effect": "buff",
               "level": 2,
-              "targeting": {"targets": ["self"]},
+              "targeting": {"targets": ["[Skypiea Arc]"]},
               "condition": {"type": "time", "comparator": "remaining", "count": 40}
             }
           ]
@@ -155880,6 +155887,7 @@
             {
               "override": {"level": 2}
             },
+            {},
             {
               "override": {"level": 3}
             },
@@ -155892,6 +155900,9 @@
           "effects": [
             {
               "override": {"level": 3}
+            },
+            {
+              "override": {"level": 2}
             },
             {
               "override": {"level": 4}
@@ -155907,6 +155918,9 @@
               "override": {"level": 4}
             },
             {
+              "override": {"level": 2}
+            },
+            {
               "override": {"level": 5}
             },
             {
@@ -155918,6 +155932,9 @@
           "effects": [
             {
               "override": {"level": 5}
+            },
+            {
+              "override": {"level": 3}
             },
             {
               "override": {"level": 6}
@@ -155933,24 +155950,17 @@
           "cooldown": 15,
           "effects": [
             {
-              "attributes": ["ATK"],
-              "duration": 35,
+              "attributes": ["ATK", "SPD"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["self"]}
-            },
-            {
-              "attributes": ["SPD"],
               "duration": 35,
-              "effect": "buff",
-              "level": 1,
               "targeting": {"targets": ["self"]}
             },
             {
               "amount": 1.5,
               "effect": "damage",
-              "targeting": {"count": 1, "targets": ["enemies"]},
-              "type": "atk"
+              "type": "atk",
+              "targeting": {"count": 1, "targets": ["enemies"]}
             }
           ]
         },
@@ -155958,9 +155968,6 @@
           "cooldown": 15,
           "effects": [
             {},
-            {
-              "override": {"targeting": {"targets": ["crew"]}}
-            },
             {
               "override": {"amount": 1.6}
             }
@@ -155971,9 +155978,6 @@
           "effects": [
             {
               "override": {"level": 2}
-            },
-            {
-              "override": {"level": 2, "targeting": {"targets": ["crew"]}}
             },
             {
               "override": {"amount": 1.7}
@@ -155987,9 +155991,6 @@
               "override": {"level": 3}
             },
             {
-              "override": {"level": 3, "targeting": {"targets": ["crew"]}}
-            },
-            {
               "override": {"amount": 1.8}
             }
           ]
@@ -155999,9 +156000,6 @@
           "effects": [
             {
               "override": {"level": 3}
-            },
-            {
-              "override": {"level": 3, "targeting": {"targets": ["crew"]}}
             },
             {
               "override": {"amount": 1.9}
@@ -156015,9 +156013,6 @@
               "override": {"level": 4}
             },
             {
-              "override": {"level": 4, "targeting": {"targets": ["crew"]}}
-            },
-            {
               "override": {"amount": 2}
             }
           ]
@@ -156027,9 +156022,6 @@
           "effects": [
             {
               "override": {"level": 5}
-            },
-            {
-              "override": {"level": 5, "targeting": {"targets": ["crew"]}}
             },
             {
               "override": {"amount": 2.1}
@@ -156043,9 +156035,6 @@
               "override": {"level": 5}
             },
             {
-              "override": {"level": 5, "targeting": {"targets": ["crew"]}}
-            },
-            {
               "override": {"amount": 2.2}
             }
           ]
@@ -156055,9 +156044,6 @@
           "effects": [
             {
               "override": {"level": 6}
-            },
-            {
-              "override": {"level": 6, "targeting": {"targets": ["crew"]}}
             },
             {
               "override": {"amount": 2.3}
@@ -156071,9 +156057,6 @@
               "override": {"level": 7}
             },
             {
-              "override": {"level": 7, "targeting": {"targets": ["crew"]}}
-            },
-            {
               "override": {"amount": 2.5}
             }
           ]
@@ -156085,22 +156068,22 @@
           "effects": [
             {
               "attributes": ["ATK", "SPD"],
-              "duration": 35,
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["self"]}
+              "duration": 35,
+              "targeting": {"targets": ["[Skypiea Arc]"]}
             },
             {
-              "amount": 1.75,
+              "amount": 1.85,
               "effect": "damage",
-              "targeting": {"count": 1, "targets": ["enemies"]},
-              "type": "atk"
+              "type": "atk",
+              "targeting": {"count": 1, "targets": ["enemies"]}
             },
             {
-              "amount": 1600,
+              "amount": 1650,
               "effect": "damage",
-              "targeting": {"count": 2, "priority": "highest", "stat": "DEF", "targets": ["[INT]"]},
-              "type": "fixed"
+              "type": "fixed",
+              "targeting": {"targets": ["[INT]", ""], "status": ["Paralysis"]}
             }
           ]
         },
@@ -156109,21 +156092,7 @@
           "effects": [
             {},
             {
-              "override": {"amount": 1.85}
-            },
-            {
-              "override": {"amount": 1700}
-            }
-          ]
-        },
-        {
-          "cooldown": 15,
-          "effects": [
-            {
-              "override": {"level": 2}
-            },
-            {
-              "override": {"amount": 1.95}
+              "override": {"amount": 2.2}
             },
             {
               "override": {"amount": 1800}
@@ -156134,13 +156103,13 @@
           "cooldown": 15,
           "effects": [
             {
-              "override": {"level": 3}
+              "override": {"level": 2}
             },
             {
-              "override": {"amount": 2.05}
+              "override": {"amount": 2.55}
             },
             {
-              "override": {"amount": 1900}
+              "override": {"amount": 1950}
             }
           ]
         },
@@ -156151,21 +156120,7 @@
               "override": {"level": 3}
             },
             {
-              "override": {"amount": 2.15}
-            },
-            {
-              "override": {"amount": 2000}
-            }
-          ]
-        },
-        {
-          "cooldown": 15,
-          "effects": [
-            {
-              "override": {"level": 4}
-            },
-            {
-              "override": {"amount": 2.25}
+              "override": {"amount": 2.9}
             },
             {
               "override": {"amount": 2100}
@@ -156176,13 +156131,13 @@
           "cooldown": 15,
           "effects": [
             {
-              "override": {"level": 5}
+              "override": {"level": 3}
             },
             {
-              "override": {"amount": 2.35}
+              "override": {"amount": 3.25}
             },
             {
-              "override": {"amount": 2200}
+              "override": {"amount": 2250}
             }
           ]
         },
@@ -156190,24 +156145,10 @@
           "cooldown": 15,
           "effects": [
             {
-              "override": {"level": 5}
+              "override": {"level": 4}
             },
             {
-              "override": {"amount": 2.45}
-            },
-            {
-              "override": {"amount": 2300}
-            }
-          ]
-        },
-        {
-          "cooldown": 15,
-          "effects": [
-            {
-              "override": {"level": 6}
-            },
-            {
-              "override": {"amount": 2.55}
+              "override": {"amount": 3.6}
             },
             {
               "override": {"amount": 2400}
@@ -156218,13 +156159,55 @@
           "cooldown": 15,
           "effects": [
             {
+              "override": {"level": 5}
+            },
+            {
+              "override": {"amount": 3.95}
+            },
+            {
+              "override": {"amount": 2550}
+            }
+          ]
+        },
+        {
+          "cooldown": 15,
+          "effects": [
+            {
+              "override": {"level": 5}
+            },
+            {
+              "override": {"amount": 4.3}
+            },
+            {
+              "override": {"amount": 2700}
+            }
+          ]
+        },
+        {
+          "cooldown": 15,
+          "effects": [
+            {
+              "override": {"level": 6}
+            },
+            {
+              "override": {"amount": 4.65}
+            },
+            {
+              "override": {"amount": 2850}
+            }
+          ]
+        },
+        {
+          "cooldown": 15,
+          "effects": [
+            {
               "override": {"level": 7}
             },
             {
-              "override": {"amount": 2.75}
+              "override": {"amount": 5}
             },
             {
-              "override": {"amount": 2500}
+              "override": {"amount": 3000}
             }
           ]
         }
@@ -156334,51 +156317,68 @@
         {
           "effects": [
             {
+              "attributes": ["DEF"],
+              "effect": "buff",
+              "level": 5,
+              "targeting": {"targets": ["[INT]", "[Skypiea Arc]"]}
+            },
+            {
+              "attributes": ["HP", "ATK", "SPD"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[Skypiea Arc]"]}
+            },
+            {
               "attributes": ["Special CT"],
               "effect": "debuff",
               "level": 2,
               "targeting": {"targets": ["[PSY]"]},
-              "condition": {"type": "time", "comparator": "first", "count": 40}
-            },
-            {
-              "attributes": ["DEF"],
-              "effect": "buff",
-              "level": 5,
-              "targeting": {"targets": ["[INT]"]},
               "condition": {"type": "time", "comparator": "first", "count": 40}
             }
           ]
         },
         {
           "effects": [
+            {},
+            {
+              "override": {"level": 2}
+            },
+            {
+              "override": {"level": 3}
+            }
+          ]
+        },
+        {
+          "effects": [
+            {},
             {
               "override": {"level": 3}
             },
-            {}
+            {
+              "override": {"level": 4}
+            }
           ]
         },
         {
           "effects": [
+            {},
             {
               "override": {"level": 4}
             },
-            {}
-          ]
-        },
-        {
-          "effects": [
             {
               "override": {"level": 5}
-            },
-            {}
+            }
           ]
         },
         {
           "effects": [
+            {},
             {
               "override": {"level": 6}
             },
-            {}
+            {
+              "override": {"level": 6}
+            }
           ]
         }
       ],
@@ -156388,30 +156388,30 @@
           "effects": [
             {
               "attributes": ["DEF"],
-              "duration": 15,
               "effect": "debuff",
               "level": 2,
+              "duration": 15,
               "targeting": {"targets": ["enemies"]}
             },
             {
               "attributes": ["SPD", "Guard"],
-              "duration": 15,
               "effect": "debuff",
               "level": 2,
+              "duration": 15,
               "targeting": {"targets": ["enemies"]}
             },
             {
               "attributes": ["Special Bind"],
+              "effect": "hinderance",
               "chance": 60,
               "duration": 20,
-              "effect": "hinderance",
               "targeting": {"count": 2, "targets": ["[PSY]"]}
             },
             {
               "attributes": ["Action Bind"],
+              "effect": "hinderance",
               "chance": 100,
               "duration": 10,
-              "effect": "hinderance",
               "targeting": {"count": 1, "targets": ["[PSY]"]}
             }
           ]
@@ -156436,7 +156436,7 @@
               "override": {"duration": 17}
             },
             {
-              "override": {"duration": 17, "level": 3}
+              "override": {"level": 3, "duration": 17}
             },
             {},
             {}
@@ -156449,7 +156449,7 @@
               "override": {"duration": 18}
             },
             {
-              "override": {"duration": 18, "level": 3}
+              "override": {"level": 3, "duration": 18}
             },
             {},
             {}
@@ -156462,7 +156462,7 @@
               "override": {"duration": 19}
             },
             {
-              "override": {"duration": 19, "level": 4}
+              "override": {"level": 4, "duration": 19}
             },
             {
               "override": {"chance": 61}
@@ -156477,7 +156477,7 @@
               "override": {"duration": 20}
             },
             {
-              "override": {"duration": 20, "level": 4}
+              "override": {"level": 4, "duration": 20}
             },
             {
               "override": {"chance": 61}
@@ -156492,7 +156492,7 @@
               "override": {"duration": 21}
             },
             {
-              "override": {"duration": 21, "level": 5}
+              "override": {"level": 5, "duration": 21}
             },
             {
               "override": {"chance": 61}
@@ -156507,7 +156507,7 @@
               "override": {"duration": 22}
             },
             {
-              "override": {"duration": 22, "level": 5}
+              "override": {"level": 5, "duration": 22}
             },
             {
               "override": {"chance": 62}
@@ -156522,7 +156522,7 @@
               "override": {"duration": 23}
             },
             {
-              "override": {"duration": 23, "level": 6}
+              "override": {"level": 6, "duration": 23}
             },
             {
               "override": {"chance": 62}
@@ -156537,7 +156537,7 @@
               "override": {"duration": 24}
             },
             {
-              "override": {"duration": 24, "level": 6}
+              "override": {"level": 6, "duration": 24}
             },
             {
               "override": {"chance": 100}
@@ -156552,31 +156552,38 @@
           "effects": [
             {
               "attributes": ["DEF"],
-              "duration": 15,
               "effect": "debuff",
               "level": 5,
+              "duration": 15,
               "targeting": {"targets": ["enemies"]}
             },
             {
               "attributes": ["SPD", "Guard"],
-              "duration": 15,
               "effect": "debuff",
               "level": 2,
+              "duration": 15,
               "targeting": {"targets": ["enemies"]}
             },
             {
               "attributes": ["Special Bind"],
+              "effect": "hinderance",
               "chance": 60,
               "duration": 20,
-              "effect": "hinderance",
               "targeting": {"count": 2, "targets": ["[PSY]"]}
             },
             {
               "attributes": ["Action Bind"],
+              "effect": "hinderance",
               "chance": 100,
               "duration": 10,
-              "effect": "hinderance",
               "targeting": {"count": 1, "targets": ["[PSY]"]}
+            },
+            {
+              "attributes": ["Confusion"],
+              "effect": "hinderance",
+              "chance": 60,
+              "duration": 10,
+              "targeting": {"count": 2, "targets": ["enemies"], "status": ["Paralysis"]}
             }
           ]
         },
@@ -156592,7 +156599,10 @@
             {
               "override": {"chance": 64}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 64}
+            }
           ]
         },
         {
@@ -156602,12 +156612,15 @@
               "override": {"duration": 17}
             },
             {
-              "override": {"duration": 17, "level": 3}
+              "override": {"level": 3, "duration": 17}
             },
             {
               "override": {"chance": 68}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 68}
+            }
           ]
         },
         {
@@ -156617,12 +156630,15 @@
               "override": {"duration": 18}
             },
             {
-              "override": {"duration": 18, "level": 3}
+              "override": {"level": 3, "duration": 18}
             },
             {
               "override": {"chance": 72}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 72}
+            }
           ]
         },
         {
@@ -156632,12 +156648,15 @@
               "override": {"duration": 19}
             },
             {
-              "override": {"duration": 19, "level": 4}
+              "override": {"level": 4, "duration": 19}
             },
             {
               "override": {"chance": 76}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 76}
+            }
           ]
         },
         {
@@ -156647,12 +156666,15 @@
               "override": {"duration": 20}
             },
             {
-              "override": {"duration": 20, "level": 4}
+              "override": {"level": 4, "duration": 20}
             },
             {
               "override": {"chance": 80}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 80}
+            }
           ]
         },
         {
@@ -156662,12 +156684,15 @@
               "override": {"duration": 21}
             },
             {
-              "override": {"duration": 21, "level": 5}
+              "override": {"level": 5, "duration": 21}
             },
             {
               "override": {"chance": 84}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 84}
+            }
           ]
         },
         {
@@ -156677,12 +156702,15 @@
               "override": {"duration": 22}
             },
             {
-              "override": {"duration": 22, "level": 5}
+              "override": {"level": 5, "duration": 22}
             },
             {
               "override": {"chance": 88}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 88}
+            }
           ]
         },
         {
@@ -156692,12 +156720,15 @@
               "override": {"duration": 23}
             },
             {
-              "override": {"duration": 23, "level": 6}
+              "override": {"level": 6, "duration": 23}
             },
             {
               "override": {"chance": 92}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 92}
+            }
           ]
         },
         {
@@ -156707,12 +156738,15 @@
               "override": {"duration": 24}
             },
             {
-              "override": {"duration": 24, "level": 6}
+              "override": {"level": 6, "duration": 24}
             },
             {
               "override": {"chance": 100}
             },
-            {}
+            {},
+            {
+              "override": {"chance": 100}
+            }
           ]
         }
       ],
@@ -196395,7 +196429,21 @@
               "attributes": ["ATK"],
               "effect": "buff",
               "level": 2,
-              "targeting": {"targets": ["[PSY]"]}
+              "targeting": {"targets": ["[PSY]", "[Red-Haired Pirates]", "[Skypiea Arc]"]}
+            },
+            {
+              "attributes": ["HP", "SPD"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[Red-Haired Pirates]", "[Skypiea Arc]"]}
+            },
+            {
+              "amount": 14,
+              "effect": "recharge",
+              "type": "Special CT",
+              "onArrival": true,
+              "targeting": {"targets": ["self"]},
+              "condition": {"type": "character", "team": "crew", "families": ["Shanks"]}
             }
           ]
         },
@@ -196403,6 +196451,12 @@
           "effects": [
             {
               "override": {"level": 3}
+            },
+            {
+              "override": {"level": 2}
+            },
+            {
+              "override": {"amount": 18}
             }
           ]
         },
@@ -196410,6 +196464,12 @@
           "effects": [
             {
               "override": {"level": 4}
+            },
+            {
+              "override": {"level": 3}
+            },
+            {
+              "override": {"amount": 22}
             }
           ]
         },
@@ -196417,6 +196477,12 @@
           "effects": [
             {
               "override": {"level": 5}
+            },
+            {
+              "override": {"level": 4}
+            },
+            {
+              "override": {"amount": 26}
             }
           ]
         },
@@ -196424,6 +196490,12 @@
           "effects": [
             {
               "override": {"level": 6}
+            },
+            {
+              "override": {"level": 6}
+            },
+            {
+              "override": {"amount": 30}
             }
           ]
         }
@@ -196433,51 +196505,24 @@
           "cooldown": 22,
           "effects": [
             {
-              "amount": 0.3,
+              "amount": 0.35,
               "effect": "damage",
-              "range": {"direction": "forward", "size": "medium"},
+              "type": "atk",
               "targeting": {"targets": ["enemies"]},
-              "type": "atk"
+              "range": {"size": "medium", "direction": "forward"}
             },
             {
-              "attributes": ["ATK"],
+              "attributes": ["ATK", "DEF"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["[PSY]"]},
-              "duration": 11
-            }
-          ]
-        },
-        {
-          "cooldown": 22,
-          "effects": [
-            {
-              "override": {"amount": 0.4}
+              "duration": 11,
+              "targeting": {"targets": ["[PSY]", "[Red-Haired Pirates]", "[Skypiea Arc]"]}
             },
             {
-              "override": {"duration": 12}
-            }
-          ]
-        },
-        {
-          "cooldown": 22,
-          "effects": [
-            {
-              "override": {"amount": 0.5}
-            },
-            {
-              "override": {"duration": 13}
-            }
-          ]
-        },
-        {
-          "cooldown": 22,
-          "effects": [
-            {
-              "override": {"amount": 0.6}
-            },
-            {
-              "override": {"level": 2, "duration": 14}
+              "attributes": ["Switch"],
+              "effect": "boon",
+              "targeting": {"targets": ["self"], "switch": "1st sub character"},
+              "condition": {"type": "character", "team": "crew", "families": ["Shanks"]}
             }
           ]
         },
@@ -196488,63 +196533,105 @@
               "override": {"amount": 0.7}
             },
             {
-              "override": {"level": 2, "duration": 15}
-            }
+              "override": {"duration": 12}
+            },
+            {}
           ]
         },
         {
           "cooldown": 22,
           "effects": [
             {
-              "override": {"amount": 0.8}
+              "override": {"amount": 1.05}
+            },
+            {
+              "override": {"duration": 13}
+            },
+            {}
+          ]
+        },
+        {
+          "cooldown": 22,
+          "effects": [
+            {
+              "override": {"amount": 1.4}
+            },
+            {
+              "override": {"level": 2, "duration": 14}
+            },
+            {}
+          ]
+        },
+        {
+          "cooldown": 22,
+          "effects": [
+            {
+              "override": {"amount": 1.75}
+            },
+            {
+              "override": {"level": 2, "duration": 15}
+            },
+            {}
+          ]
+        },
+        {
+          "cooldown": 22,
+          "effects": [
+            {
+              "override": {"amount": 2.1}
             },
             {
               "override": {"level": 3, "duration": 16}
-            }
+            },
+            {}
           ]
         },
         {
           "cooldown": 22,
           "effects": [
             {
-              "override": {"amount": 0.9}
+              "override": {"amount": 2.45}
             },
             {
               "override": {"level": 3, "duration": 17}
-            }
+            },
+            {}
           ]
         },
         {
           "cooldown": 22,
           "effects": [
             {
-              "override": {"amount": 1}
+              "override": {"amount": 2.8}
             },
             {
               "override": {"level": 3, "duration": 18}
-            }
+            },
+            {}
           ]
         },
         {
           "cooldown": 22,
           "effects": [
             {
-              "override": {"amount": 1.1}
+              "override": {"amount": 3.15}
             },
             {
               "override": {"level": 4, "duration": 19}
-            }
+            },
+            {}
           ]
         },
         {
           "cooldown": 22,
           "effects": [
             {
-              "override": {"amount": 1.3}
+              "override": {"amount": 3.5}
             },
             {
               "override": {"level": 5, "duration": 20}
-            }
+            },
+            {}
           ]
         }
       ],
@@ -196581,7 +196668,7 @@
         "def": 113,
         "spd": 147
       },
-      "cost": 30
+      "cost": 20
     },
     {
       "id": 3361,
@@ -225728,7 +225815,7 @@
               "attributes": ["HP", "ATK"],
               "effect": "buff",
               "level": 2,
-              "targeting": {"targets": ["[INT]"]}
+              "targeting": {"targets": ["[INT]", "[Skypiea Arc]"]}
             },
             {
               "attributes": ["DEF"],
@@ -225736,6 +225823,20 @@
               "level": 3,
               "targeting": {"targets": ["[PSY]"]},
               "condition": {"type": "time", "comparator": "first", "count": 50}
+            },
+            {
+              "amount": 6,
+              "effect": "recharge",
+              "type": "Special CT",
+              "targeting": {"targets": ["[Skypiea Arc]"]},
+              "condition": {"type": "trigger", "stat": "hit", "count": 4}
+            },
+            {
+              "amount": 6,
+              "effect": "recharge",
+              "type": "Special CT",
+              "targeting": {"targets": ["crew"], "families": ["Eneru"]},
+              "condition": {"type": "trigger", "stat": "hit", "count": 4}
             }
           ]
         },
@@ -225744,7 +225845,13 @@
             {
               "override": {"level": 3}
             },
-            {}
+            {},
+            {
+              "override": {"amount": 7}
+            },
+            {
+              "override": {"amount": 7}
+            }
           ]
         },
         {
@@ -225754,6 +225861,12 @@
             },
             {
               "override": {"level": 4}
+            },
+            {
+              "override": {"amount": 8}
+            },
+            {
+              "override": {"amount": 8}
             }
           ]
         },
@@ -225764,6 +225877,12 @@
             },
             {
               "override": {"level": 4}
+            },
+            {
+              "override": {"amount": 9}
+            },
+            {
+              "override": {"amount": 9}
             }
           ]
         },
@@ -225774,6 +225893,12 @@
             },
             {
               "override": {"level": 5}
+            },
+            {
+              "override": {"amount": 10}
+            },
+            {
+              "override": {"amount": 10}
             }
           ]
         }
@@ -225784,24 +225909,24 @@
           "effects": [
             {
               "attributes": ["Half Stats"],
+              "effect": "hinderance",
               "chance": 80,
               "duration": 11,
-              "effect": "hinderance",
               "targeting": {"count": 3, "targets": ["enemies"]}
             },
             {
               "amount": 2100,
               "effect": "damage",
-              "range": {"direction": "sideways", "size": "medium"},
+              "type": "fixed",
               "targeting": {"targets": ["enemies"]},
-              "type": "fixed"
+              "range": {"size": "medium", "direction": "sideways"}
             },
             {
               "attributes": ["Special CT"],
-              "amount": 12,
               "effect": "hinderance",
-              "condition": {"comparator": "first", "count": 40, "type": "time"},
-              "targeting": {"count": 3, "targets": ["[PSY]"]}
+              "amount": 12,
+              "targeting": {"count": 3, "targets": ["[PSY]"]},
+              "condition": {"type": "time", "comparator": "first", "count": 40}
             }
           ]
         },
@@ -225938,24 +226063,36 @@
           "effects": [
             {
               "attributes": ["Half Stats"],
+              "effect": "hinderance",
               "chance": 80,
               "duration": 11,
-              "effect": "hinderance",
               "targeting": {"count": 4, "targets": ["enemies"]}
             },
             {
               "amount": 2200,
               "effect": "damage",
-              "range": {"direction": "sideways", "size": "large"},
+              "type": "fixed",
               "targeting": {"targets": ["enemies"]},
-              "type": "fixed"
+              "range": {"size": "large", "direction": "sideways"}
+            },
+            {
+              "attributes": ["Haste"],
+              "effect": "boon",
+              "chance": 50,
+              "targeting": {"targets": ["crew"], "families": ["Eneru"], "priority": "exactly", "percentage": 100, "stat": "Special CT"}
             },
             {
               "attributes": ["Special CT"],
-              "amount": 22,
               "effect": "hinderance",
-              "condition": {"comparator": "first", "count": 50, "type": "time"},
-              "targeting": {"targets": ["[PSY]"]}
+              "amount": 22,
+              "targeting": {"targets": ["[PSY]", ""], "status": ["Paralysis"]},
+              "condition": {"type": "time", "comparator": "first", "count": 50}
+            },
+            {
+              "attributes": ["Switch"],
+              "effect": "boon",
+              "targeting": {"targets": ["self"], "switch": "3rd sub character"},
+              "condition": {"type": "time", "comparator": "after", "count": 50}
             }
           ]
         },
@@ -225969,8 +226106,12 @@
               "override": {"amount": 2400}
             },
             {
+              "override": {"chance": 55}
+            },
+            {
               "override": {"amount": 24}
-            }
+            },
+            {}
           ]
         },
         {
@@ -225983,8 +226124,12 @@
               "override": {"amount": 2600}
             },
             {
+              "override": {"chance": 60}
+            },
+            {
               "override": {"amount": 26}
-            }
+            },
+            {}
           ]
         },
         {
@@ -225997,8 +226142,12 @@
               "override": {"amount": 2800}
             },
             {
+              "override": {"chance": 65}
+            },
+            {
               "override": {"amount": 28}
-            }
+            },
+            {}
           ]
         },
         {
@@ -226011,8 +226160,12 @@
               "override": {"amount": 3000}
             },
             {
+              "override": {"chance": 70}
+            },
+            {
               "override": {"amount": 30}
-            }
+            },
+            {}
           ]
         },
         {
@@ -226025,8 +226178,12 @@
               "override": {"amount": 3200}
             },
             {
+              "override": {"chance": 75}
+            },
+            {
               "override": {"amount": 32}
-            }
+            },
+            {}
           ]
         },
         {
@@ -226039,8 +226196,12 @@
               "override": {"amount": 3400}
             },
             {
+              "override": {"chance": 80}
+            },
+            {
               "override": {"amount": 34}
-            }
+            },
+            {}
           ]
         },
         {
@@ -226053,8 +226214,12 @@
               "override": {"amount": 3600}
             },
             {
+              "override": {"chance": 85}
+            },
+            {
               "override": {"amount": 36}
-            }
+            },
+            {}
           ]
         },
         {
@@ -226067,8 +226232,12 @@
               "override": {"amount": 3800}
             },
             {
+              "override": {"chance": 90}
+            },
+            {
               "override": {"amount": 38}
-            }
+            },
+            {}
           ]
         },
         {
@@ -226081,8 +226250,12 @@
               "override": {"amount": 4000}
             },
             {
+              "override": {"chance": 100}
+            },
+            {
               "override": {"amount": 40}
-            }
+            },
+            {}
           ]
         }
       ],
@@ -281795,13 +281968,13 @@
               "attributes": ["ATK", "HP"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["Fighter"]}
+              "targeting": {"targets": ["Fighter", "[Animal Kingdom Pirates]"]}
             },
             {
               "attributes": ["ATK", "Special CT"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["self"]},
+              "targeting": {"targets": ["[Animal Kingdom Pirates]"]},
               "condition": {"type": "time", "comparator": "after", "count": 50}
             }
           ]
@@ -281854,10 +282027,31 @@
             {
               "amount": 1.1,
               "effect": "damage",
-              "targeting": {"targets": ["enemies"]},
-              "range": {"direction": "sideways", "size": "large"},
               "type": "atk",
-              "defbypass": true
+              "defbypass": true,
+              "targeting": {"targets": ["enemies"]},
+              "range": {"size": "large", "direction": "sideways"}
+            },
+            {
+              "attributes": ["ATK", "SPD"],
+              "effect": "buff",
+              "level": 1,
+              "duration": 11,
+              "targeting": {"targets": ["[Animal Kingdom Pirates]"]}
+            },
+            {
+              "attributes": ["DEF"],
+              "effect": "buff",
+              "level": 1,
+              "duration": 11,
+              "targeting": {"targets": ["[Animal Kingdom Pirates]"]}
+            },
+            {
+              "amount": 15,
+              "effect": "recharge",
+              "type": "Special CT",
+              "targeting": {"targets": ["self"]},
+              "condition": {"type": "crew", "composition": true, "count": 4, "comparator": "more", "targets": ["[Animal Kingdom Pirates]"]}
             }
           ]
         },
@@ -281866,6 +282060,15 @@
           "effects": [
             {
               "override": {"amount": 1.2}
+            },
+            {
+              "override": {"duration": 12}
+            },
+            {
+              "override": {"duration": 12}
+            },
+            {
+              "override": {"amount": 17}
             }
           ]
         },
@@ -281874,6 +282077,15 @@
           "effects": [
             {
               "override": {"amount": 1.3}
+            },
+            {
+              "override": {"level": 2, "duration": 13}
+            },
+            {
+              "override": {"duration": 13}
+            },
+            {
+              "override": {"amount": 18}
             }
           ]
         },
@@ -281882,6 +282094,15 @@
           "effects": [
             {
               "override": {"amount": 1.4}
+            },
+            {
+              "override": {"level": 2, "duration": 14}
+            },
+            {
+              "override": {"duration": 14}
+            },
+            {
+              "override": {"amount": 20}
             }
           ]
         },
@@ -281890,6 +282111,15 @@
           "effects": [
             {
               "override": {"amount": 1.5}
+            },
+            {
+              "override": {"level": 3, "duration": 15}
+            },
+            {
+              "override": {"level": 2, "duration": 15}
+            },
+            {
+              "override": {"amount": 22}
             }
           ]
         },
@@ -281898,6 +282128,15 @@
           "effects": [
             {
               "override": {"amount": 1.6}
+            },
+            {
+              "override": {"level": 3, "duration": 16}
+            },
+            {
+              "override": {"level": 2, "duration": 16}
+            },
+            {
+              "override": {"amount": 23}
             }
           ]
         },
@@ -281906,6 +282145,15 @@
           "effects": [
             {
               "override": {"amount": 1.7}
+            },
+            {
+              "override": {"level": 4, "duration": 17}
+            },
+            {
+              "override": {"level": 2, "duration": 17}
+            },
+            {
+              "override": {"amount": 25}
             }
           ]
         },
@@ -281914,6 +282162,15 @@
           "effects": [
             {
               "override": {"amount": 1.8}
+            },
+            {
+              "override": {"level": 4, "duration": 18}
+            },
+            {
+              "override": {"level": 3, "duration": 18}
+            },
+            {
+              "override": {"amount": 27}
             }
           ]
         },
@@ -281922,6 +282179,15 @@
           "effects": [
             {
               "override": {"amount": 1.9}
+            },
+            {
+              "override": {"level": 5, "duration": 19}
+            },
+            {
+              "override": {"level": 3, "duration": 19}
+            },
+            {
+              "override": {"amount": 28}
             }
           ]
         },
@@ -281930,6 +282196,15 @@
           "effects": [
             {
               "override": {"amount": 2}
+            },
+            {
+              "override": {"level": 5, "duration": 20}
+            },
+            {
+              "override": {"level": 3, "duration": 20}
+            },
+            {
+              "override": {"amount": 30}
             }
           ]
         }
@@ -315712,7 +315987,7 @@
         "def": 50,
         "spd": 100
       },
-      "cost": 30
+      "cost": 20
     },
     {
       "id": 3997,
@@ -397003,16 +397278,22 @@
         {
           "effects": [
             {
-              "attributes": ["HP"],
+              "attributes": ["HP", "SPD"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["[PSY]", "Striker"]}
+              "targeting": {"targets": ["[PSY]", "Striker", "[Skypiea Arc]"]}
             },
             {
-              "attributes": ["SPD"],
+              "attributes": ["ATK"],
               "effect": "buff",
               "level": 1,
-              "targeting": {"targets": ["[PSY]", "Striker"]}
+              "targeting": {"targets": ["[Skypiea Arc]"]}
+            },
+            {
+              "attributes": ["DEF"],
+              "effect": "buff",
+              "level": 1,
+              "targeting": {"targets": ["[Skypiea Arc]"]}
             }
           ]
         },
@@ -397021,11 +397302,17 @@
             {
               "override": {"level": 2}
             },
+            {
+              "override": {"level": 2}
+            },
             {}
           ]
         },
         {
           "effects": [
+            {
+              "override": {"level": 3}
+            },
             {
               "override": {"level": 3}
             },
@@ -397040,12 +397327,18 @@
               "override": {"level": 4}
             },
             {
+              "override": {"level": 4}
+            },
+            {
               "override": {"level": 2}
             }
           ]
         },
         {
           "effects": [
+            {
+              "override": {"level": 5}
+            },
             {
               "override": {"level": 5}
             },
@@ -397061,25 +397354,33 @@
           "effects": [
             {
               "attributes": ["SPD", "ATK"],
+              "effect": "debuff",
               "level": 2,
               "duration": 21,
-              "effect": "debuff",
-              "targeting": {"targets": ["enemies"], "count": 3}
+              "targeting": {"count": 3, "targets": ["enemies"]}
             },
             {
               "attributes": ["Paralysis"],
               "effect": "hinderance",
               "chance": 70,
               "duration": 11,
-              "targeting": {"targets": ["enemies"], "count": 3}
+              "targeting": {"count": 3, "targets": ["enemies"]}
             },
             {
               "attributes": ["Special Bind"],
               "effect": "hinderance",
               "chance": 100,
               "duration": 1,
-              "condition": {"count": 50, "comparator": "after", "type": "time"},
-              "targeting": {"targets": ["enemies"], "count": 1}
+              "targeting": {"count": 1, "targets": ["enemies"]},
+              "condition": {"type": "time", "comparator": "after", "count": 50}
+            },
+            {
+              "attributes": ["Special Bind"],
+              "effect": "hinderance",
+              "chance": 100,
+              "duration": 1,
+              "targeting": {"targets": ["enemies"], "status": ["Paralysis"]},
+              "condition": {"type": "crew", "composition": true, "count": 5, "comparator": "more", "targets": ["[Skypiea Arc]"]}
             }
           ]
         },
@@ -397092,6 +397393,7 @@
             {
               "override": {"chance": 73}
             },
+            {},
             {}
           ]
         },
@@ -397103,6 +397405,9 @@
             },
             {
               "override": {"chance": 76, "duration": 12}
+            },
+            {
+              "override": {"duration": 2}
             },
             {
               "override": {"duration": 2}
@@ -397120,6 +397425,9 @@
             },
             {
               "override": {"duration": 2}
+            },
+            {
+              "override": {"duration": 2}
             }
           ]
         },
@@ -397131,6 +397439,9 @@
             },
             {
               "override": {"chance": 82, "duration": 13}
+            },
+            {
+              "override": {"duration": 3}
             },
             {
               "override": {"duration": 3}
@@ -397148,6 +397459,9 @@
             },
             {
               "override": {"duration": 3}
+            },
+            {
+              "override": {"duration": 3}
             }
           ]
         },
@@ -397159,6 +397473,9 @@
             },
             {
               "override": {"chance": 88, "duration": 14}
+            },
+            {
+              "override": {"duration": 4}
             },
             {
               "override": {"duration": 4}
@@ -397176,6 +397493,9 @@
             },
             {
               "override": {"duration": 4}
+            },
+            {
+              "override": {"duration": 4}
             }
           ]
         },
@@ -397190,6 +397510,9 @@
             },
             {
               "override": {"duration": 5}
+            },
+            {
+              "override": {"duration": 5}
             }
           ]
         },
@@ -397201,6 +397524,9 @@
             },
             {
               "override": {"chance": 100, "duration": 15}
+            },
+            {
+              "override": {"duration": 5}
             },
             {
               "override": {"duration": 5}

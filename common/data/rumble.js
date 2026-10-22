@@ -56365,42 +56365,42 @@ window.rumble = {
                 ['For the first 40 seconds, applies Lv. 5 ATK up buff to self.', 'When there are 40 seconds or less remaining, applies Lv. 6 ATK, Special CT and SPD up buff to self.']
             ],
             llbbase: [
-                ['For the first 40 seconds, applies Lv. 1 ATK up buff to self.', 'For the first 40 seconds, inflicts Lv. 2 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 2 ATK, Special CT and SPD up buff to self.'],
-                ['For the first 40 seconds, applies Lv. 2 ATK up buff to self.', 'For the first 40 seconds, inflicts Lv. 3 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 3 ATK, Special CT and SPD up buff to self.'],
-                ['For the first 40 seconds, applies Lv. 3 ATK up buff to self.', 'For the first 40 seconds, inflicts Lv. 4 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 4 ATK, Special CT and SPD up buff to self.'],
-                ['For the first 40 seconds, applies Lv. 4 ATK up buff to self.', 'For the first 40 seconds, inflicts Lv. 5 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 5 ATK, Special CT and SPD up buff to self.'],
-                ['For the first 40 seconds, applies Lv. 5 ATK up buff to self.', 'For the first 40 seconds, inflicts Lv. 6 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 6 ATK, Special CT and SPD up buff to self.']
+                ['For the first 40 seconds, applies Lv. 1 ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, applies Lv. 1 Special CT up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 2 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 2 ATK, Special CT and SPD up buff to [Skypiea Arc] crew members.'],
+                ['For the first 40 seconds, applies Lv. 2 ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, applies Lv. 1 Special CT up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 3 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 3 ATK, Special CT and SPD up buff to [Skypiea Arc] crew members.'],
+                ['For the first 40 seconds, applies Lv. 3 ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, applies Lv. 2 Special CT up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 4 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 4 ATK, Special CT and SPD up buff to [Skypiea Arc] crew members.'],
+                ['For the first 40 seconds, applies Lv. 4 ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, applies Lv. 2 Special CT up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 5 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 5 ATK, Special CT and SPD up buff to [Skypiea Arc] crew members.'],
+                ['For the first 40 seconds, applies Lv. 5 ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, applies Lv. 3 Special CT up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 6 DEF down debuff to [INT] enemies.', 'When there are 40 seconds or less remaining, applies Lv. 6 ATK, Special CT and SPD up buff to [Skypiea Arc] crew members.']
             ]
         },
         festSpecial: {
             base: {
                 cooldown: 15,
                 descriptions: [
-                    ['Applies Lv. 1 ATK up buff to self for 35 seconds.', 'Applies Lv. 1 SPD up buff to self for 35 seconds.', 'Deals 1.5x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 1 ATK up buff to self for 35 seconds.', 'Applies Lv. 1 SPD up buff to all crew members for 35 seconds.', 'Deals 1.6x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 2 ATK up buff to self for 35 seconds.', 'Applies Lv. 2 SPD up buff to all crew members for 35 seconds.', 'Deals 1.7x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 3 ATK up buff to self for 35 seconds.', 'Applies Lv. 3 SPD up buff to all crew members for 35 seconds.', 'Deals 1.8x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 3 ATK up buff to self for 35 seconds.', 'Applies Lv. 3 SPD up buff to all crew members for 35 seconds.', 'Deals 1.9x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 4 ATK up buff to self for 35 seconds.', 'Applies Lv. 4 SPD up buff to all crew members for 35 seconds.', 'Deals 2x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 5 ATK up buff to self for 35 seconds.', 'Applies Lv. 5 SPD up buff to all crew members for 35 seconds.', 'Deals 2.1x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 5 ATK up buff to self for 35 seconds.', 'Applies Lv. 5 SPD up buff to all crew members for 35 seconds.', 'Deals 2.2x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 6 ATK up buff to self for 35 seconds.', 'Applies Lv. 6 SPD up buff to all crew members for 35 seconds.', 'Deals 2.3x ATK in damage to 1 enemy.'],
-                    ['Applies Lv. 7 ATK up buff to self for 35 seconds.', 'Applies Lv. 7 SPD up buff to all crew members for 35 seconds.', 'Deals 2.5x ATK in damage to 1 enemy.']
+                    ['Applies Lv. 1 ATK and SPD up buff to self for 35 seconds.', 'Deals 1.5x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 1 ATK and SPD up buff to self for 35 seconds.', 'Deals 1.6x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 2 ATK and SPD up buff to self for 35 seconds.', 'Deals 1.7x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 3 ATK and SPD up buff to self for 35 seconds.', 'Deals 1.8x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 3 ATK and SPD up buff to self for 35 seconds.', 'Deals 1.9x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 4 ATK and SPD up buff to self for 35 seconds.', 'Deals 2x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 5 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.1x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 5 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.2x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 6 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.3x ATK in damage to 1 enemy.'],
+                    ['Applies Lv. 7 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.5x ATK in damage to 1 enemy.']
                 ]
             },
             llbbase: {
                 cooldown: 15,
                 descriptions: [
-                    ['Applies Lv. 1 ATK and SPD up buff to self for 35 seconds.', 'Deals 1.75x ATK in damage to 1 enemy.', 'Deals 1,600 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 1 ATK and SPD up buff to self for 35 seconds.', 'Deals 1.85x ATK in damage to 1 enemy.', 'Deals 1,700 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 2 ATK and SPD up buff to self for 35 seconds.', 'Deals 1.95x ATK in damage to 1 enemy.', 'Deals 1,800 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 3 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.05x ATK in damage to 1 enemy.', 'Deals 1,900 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 3 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.15x ATK in damage to 1 enemy.', 'Deals 2,000 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 4 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.25x ATK in damage to 1 enemy.', 'Deals 2,100 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 5 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.35x ATK in damage to 1 enemy.', 'Deals 2,200 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 5 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.45x ATK in damage to 1 enemy.', 'Deals 2,300 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 6 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.55x ATK in damage to 1 enemy.', 'Deals 2,400 fixed damage to 2 [INT] enemies with the highest DEF.'],
-                    ['Applies Lv. 7 ATK and SPD up buff to self for 35 seconds.', 'Deals 2.75x ATK in damage to 1 enemy.', 'Deals 2,500 fixed damage to 2 [INT] enemies with the highest DEF.']
+                    ['Applies Lv. 1 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 1.85x ATK in damage to 1 enemy.', 'Deals 1,650 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 1 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 2.2x ATK in damage to 1 enemy.', 'Deals 1,800 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 2 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 2.55x ATK in damage to 1 enemy.', 'Deals 1,950 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 3 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 2.9x ATK in damage to 1 enemy.', 'Deals 2,100 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 3 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 3.25x ATK in damage to 1 enemy.', 'Deals 2,250 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 4 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 3.6x ATK in damage to 1 enemy.', 'Deals 2,400 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 5 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 3.95x ATK in damage to 1 enemy.', 'Deals 2,550 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 5 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 4.3x ATK in damage to 1 enemy.', 'Deals 2,700 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 6 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 4.65x ATK in damage to 1 enemy.', 'Deals 2,850 fixed damage to [INT] and enemies with Paralysis.'],
+                    ['Applies Lv. 7 ATK and SPD up buff to [Skypiea Arc] crew members for 35 seconds.', 'Deals 5x ATK in damage to 1 enemy.', 'Deals 3,000 fixed damage to [INT] and enemies with Paralysis.']
                 ]
             }
         }
@@ -56427,11 +56427,11 @@ window.rumble = {
                 ['For the first 40 seconds, inflicts Lv. 6 Special CT down debuff to [PSY] enemies.', 'For the first 40 seconds, applies Lv. 2 DEF up buff to [INT] crew members.']
             ],
             llbbase: [
-                ['For the first 40 seconds, inflicts Lv. 2 Special CT down debuff to [PSY] enemies.', 'For the first 40 seconds, applies Lv. 5 DEF up buff to [INT] crew members.'],
-                ['For the first 40 seconds, inflicts Lv. 3 Special CT down debuff to [PSY] enemies.', 'For the first 40 seconds, applies Lv. 5 DEF up buff to [INT] crew members.'],
-                ['For the first 40 seconds, inflicts Lv. 4 Special CT down debuff to [PSY] enemies.', 'For the first 40 seconds, applies Lv. 5 DEF up buff to [INT] crew members.'],
-                ['For the first 40 seconds, inflicts Lv. 5 Special CT down debuff to [PSY] enemies.', 'For the first 40 seconds, applies Lv. 5 DEF up buff to [INT] crew members.'],
-                ['For the first 40 seconds, inflicts Lv. 6 Special CT down debuff to [PSY] enemies.', 'For the first 40 seconds, applies Lv. 5 DEF up buff to [INT] crew members.']
+                ['Applies Lv. 5 DEF up buff to [INT] and [Skypiea Arc] crew members.', 'Applies Lv. 1 HP, ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 2 Special CT down debuff to [PSY] enemies.'],
+                ['Applies Lv. 5 DEF up buff to [INT] and [Skypiea Arc] crew members.', 'Applies Lv. 2 HP, ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 3 Special CT down debuff to [PSY] enemies.'],
+                ['Applies Lv. 5 DEF up buff to [INT] and [Skypiea Arc] crew members.', 'Applies Lv. 3 HP, ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 4 Special CT down debuff to [PSY] enemies.'],
+                ['Applies Lv. 5 DEF up buff to [INT] and [Skypiea Arc] crew members.', 'Applies Lv. 4 HP, ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 5 Special CT down debuff to [PSY] enemies.'],
+                ['Applies Lv. 5 DEF up buff to [INT] and [Skypiea Arc] crew members.', 'Applies Lv. 6 HP, ATK and SPD up buff to [Skypiea Arc] crew members.', 'For the first 40 seconds, inflicts Lv. 6 Special CT down debuff to [PSY] enemies.']
             ]
         },
         festSpecial: {
@@ -56453,16 +56453,16 @@ window.rumble = {
             llbbase: {
                 cooldown: 28,
                 descriptions: [
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 15 seconds.', 'Inflicts Lv. 2 SPD and Guard down debuff to all enemies for 15 seconds.', '60% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 16 seconds.', 'Inflicts Lv. 2 SPD and Guard down debuff to all enemies for 16 seconds.', '64% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 17 seconds.', 'Inflicts Lv. 3 SPD and Guard down debuff to all enemies for 17 seconds.', '68% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 18 seconds.', 'Inflicts Lv. 3 SPD and Guard down debuff to all enemies for 18 seconds.', '72% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 19 seconds.', 'Inflicts Lv. 4 SPD and Guard down debuff to all enemies for 19 seconds.', '76% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 20 seconds.', 'Inflicts Lv. 4 SPD and Guard down debuff to all enemies for 20 seconds.', '80% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 21 seconds.', 'Inflicts Lv. 5 SPD and Guard down debuff to all enemies for 21 seconds.', '84% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 22 seconds.', 'Inflicts Lv. 5 SPD and Guard down debuff to all enemies for 22 seconds.', '88% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 23 seconds.', 'Inflicts Lv. 6 SPD and Guard down debuff to all enemies for 23 seconds.', '92% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.'],
-                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 24 seconds.', 'Inflicts Lv. 6 SPD and Guard down debuff to all enemies for 24 seconds.', '100% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.']
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 15 seconds.', 'Inflicts Lv. 2 SPD and Guard down debuff to all enemies for 15 seconds.', '60% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '60% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 16 seconds.', 'Inflicts Lv. 2 SPD and Guard down debuff to all enemies for 16 seconds.', '64% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '64% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 17 seconds.', 'Inflicts Lv. 3 SPD and Guard down debuff to all enemies for 17 seconds.', '68% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '68% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 18 seconds.', 'Inflicts Lv. 3 SPD and Guard down debuff to all enemies for 18 seconds.', '72% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '72% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 19 seconds.', 'Inflicts Lv. 4 SPD and Guard down debuff to all enemies for 19 seconds.', '76% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '76% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 20 seconds.', 'Inflicts Lv. 4 SPD and Guard down debuff to all enemies for 20 seconds.', '80% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '80% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 21 seconds.', 'Inflicts Lv. 5 SPD and Guard down debuff to all enemies for 21 seconds.', '84% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '84% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 22 seconds.', 'Inflicts Lv. 5 SPD and Guard down debuff to all enemies for 22 seconds.', '88% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '88% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 23 seconds.', 'Inflicts Lv. 6 SPD and Guard down debuff to all enemies for 23 seconds.', '92% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '92% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.'],
+                    ['Inflicts Lv. 5 DEF down debuff to all enemies for 24 seconds.', 'Inflicts Lv. 6 SPD and Guard down debuff to all enemies for 24 seconds.', '100% chance to inflict Special Bind to 2 [PSY] enemies for 20 seconds.', '100% chance to inflict Action Bind to 1 [PSY] enemy for 10 seconds.', '100% chance to inflict Confusion to 2 enemies with Paralysis for 10 seconds.']
                 ]
             }
         }
@@ -66128,7 +66128,7 @@ window.rumble = {
         }
     },
     3360: {
-        festCost: 30,
+        festCost: 20,
         festStats: {
             def: 113,
             spd: 147,
@@ -66141,27 +66141,27 @@ window.rumble = {
         },
         festAbility: {
             base: [
-                ['Applies Lv. 2 ATK up buff to [PSY] crew members.'],
-                ['Applies Lv. 3 ATK up buff to [PSY] crew members.'],
-                ['Applies Lv. 4 ATK up buff to [PSY] crew members.'],
-                ['Applies Lv. 5 ATK up buff to [PSY] crew members.'],
-                ['Applies Lv. 6 ATK up buff to [PSY] crew members.']
+                ['Applies Lv. 2 ATK up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'Applies Lv. 1 HP and SPD up buff to [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'When Shanks is on your crew, reduces 14% of Special CT to self upon appearance.'],
+                ['Applies Lv. 3 ATK up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'Applies Lv. 2 HP and SPD up buff to [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'When Shanks is on your crew, reduces 18% of Special CT to self upon appearance.'],
+                ['Applies Lv. 4 ATK up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'Applies Lv. 3 HP and SPD up buff to [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'When Shanks is on your crew, reduces 22% of Special CT to self upon appearance.'],
+                ['Applies Lv. 5 ATK up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'Applies Lv. 4 HP and SPD up buff to [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'When Shanks is on your crew, reduces 26% of Special CT to self upon appearance.'],
+                ['Applies Lv. 6 ATK up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'Applies Lv. 6 HP and SPD up buff to [Red-Haired Pirates] and [Skypiea Arc] crew members.', 'When Shanks is on your crew, reduces 30% of Special CT to self upon appearance.']
             ]
         },
         festSpecial: {
             base: {
                 cooldown: 22,
                 descriptions: [
-                    ['Deals 0.3x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 1 ATK up buff to [PSY] crew members for 11 seconds.'],
-                    ['Deals 0.4x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 1 ATK up buff to [PSY] crew members for 12 seconds.'],
-                    ['Deals 0.5x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 1 ATK up buff to [PSY] crew members for 13 seconds.'],
-                    ['Deals 0.6x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 2 ATK up buff to [PSY] crew members for 14 seconds.'],
-                    ['Deals 0.7x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 2 ATK up buff to [PSY] crew members for 15 seconds.'],
-                    ['Deals 0.8x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 3 ATK up buff to [PSY] crew members for 16 seconds.'],
-                    ['Deals 0.9x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 3 ATK up buff to [PSY] crew members for 17 seconds.'],
-                    ['Deals 1x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 3 ATK up buff to [PSY] crew members for 18 seconds.'],
-                    ['Deals 1.1x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 4 ATK up buff to [PSY] crew members for 19 seconds.'],
-                    ['Deals 1.3x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 5 ATK up buff to [PSY] crew members for 20 seconds.']
+                    ['Deals 0.35x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 1 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 11 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 0.7x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 1 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 12 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 1.05x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 1 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 13 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 1.4x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 2 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 14 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 1.75x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 2 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 15 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 2.1x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 3 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 16 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 2.45x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 3 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 17 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 2.8x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 3 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 18 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 3.15x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 4 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 19 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.'],
+                    ['Deals 3.5x ATK in damage to all enemies in a medium, forward range.', 'Applies Lv. 5 ATK and DEF up buff to [PSY], [Red-Haired Pirates] and [Skypiea Arc] crew members for 20 seconds.', 'When Shanks is on your crew, switches self with 1st sub character.']
                 ]
             }
         }
@@ -72215,11 +72215,11 @@ window.rumble = {
                 ['Applies Lv. 6 HP up buff to [INT] crew members.', 'Applies Lv. 5 ATK up buff to [INT] crew members.', 'For the first 40 seconds, inflicts Lv. 3 DEF down debuff to [PSY] enemies.']
             ],
             llbbase: [
-                ['Applies Lv. 2 HP and ATK up buff to [INT] crew members.', 'For the first 50 seconds, inflicts Lv. 3 DEF down debuff to [PSY] enemies.'],
-                ['Applies Lv. 3 HP and ATK up buff to [INT] crew members.', 'For the first 50 seconds, inflicts Lv. 3 DEF down debuff to [PSY] enemies.'],
-                ['Applies Lv. 4 HP and ATK up buff to [INT] crew members.', 'For the first 50 seconds, inflicts Lv. 4 DEF down debuff to [PSY] enemies.'],
-                ['Applies Lv. 5 HP and ATK up buff to [INT] crew members.', 'For the first 50 seconds, inflicts Lv. 4 DEF down debuff to [PSY] enemies.'],
-                ['Applies Lv. 6 HP and ATK up buff to [INT] crew members.', 'For the first 50 seconds, inflicts Lv. 5 DEF down debuff to [PSY] enemies.']
+                ['Applies Lv. 2 HP and ATK up buff to [INT] and [Skypiea Arc] crew members.', 'For the first 50 seconds, inflicts Lv. 3 DEF down debuff to [PSY] enemies.', 'The first 4 times this character lands a hit, reduces 6% of Special CT to [Skypiea Arc] crew members.', 'The first 4 times this character lands a hit, reduces 6% of Special CT to Eneru crew member.'],
+                ['Applies Lv. 3 HP and ATK up buff to [INT] and [Skypiea Arc] crew members.', 'For the first 50 seconds, inflicts Lv. 3 DEF down debuff to [PSY] enemies.', 'The first 4 times this character lands a hit, reduces 7% of Special CT to [Skypiea Arc] crew members.', 'The first 4 times this character lands a hit, reduces 7% of Special CT to Eneru crew member.'],
+                ['Applies Lv. 4 HP and ATK up buff to [INT] and [Skypiea Arc] crew members.', 'For the first 50 seconds, inflicts Lv. 4 DEF down debuff to [PSY] enemies.', 'The first 4 times this character lands a hit, reduces 8% of Special CT to [Skypiea Arc] crew members.', 'The first 4 times this character lands a hit, reduces 8% of Special CT to Eneru crew member.'],
+                ['Applies Lv. 5 HP and ATK up buff to [INT] and [Skypiea Arc] crew members.', 'For the first 50 seconds, inflicts Lv. 4 DEF down debuff to [PSY] enemies.', 'The first 4 times this character lands a hit, reduces 9% of Special CT to [Skypiea Arc] crew members.', 'The first 4 times this character lands a hit, reduces 9% of Special CT to Eneru crew member.'],
+                ['Applies Lv. 6 HP and ATK up buff to [INT] and [Skypiea Arc] crew members.', 'For the first 50 seconds, inflicts Lv. 5 DEF down debuff to [PSY] enemies.', 'The first 4 times this character lands a hit, reduces 10% of Special CT to [Skypiea Arc] crew members.', 'The first 4 times this character lands a hit, reduces 10% of Special CT to Eneru crew member.']
             ]
         },
         festSpecial: {
@@ -72241,16 +72241,16 @@ window.rumble = {
             llbbase: {
                 cooldown: 34,
                 descriptions: [
-                    ['80% chance to inflict Half Stats to 4 enemies for 11 seconds.', 'Deals 2,200 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 22% Special CT Delay to [PSY] enemies.'],
-                    ['82% chance to inflict Half Stats to 4 enemies for 12 seconds.', 'Deals 2,400 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 24% Special CT Delay to [PSY] enemies.'],
-                    ['84% chance to inflict Half Stats to 4 enemies for 13 seconds.', 'Deals 2,600 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 26% Special CT Delay to [PSY] enemies.'],
-                    ['86% chance to inflict Half Stats to 4 enemies for 14 seconds.', 'Deals 2,800 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 28% Special CT Delay to [PSY] enemies.'],
-                    ['88% chance to inflict Half Stats to 4 enemies for 15 seconds.', 'Deals 3,000 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 30% Special CT Delay to [PSY] enemies.'],
-                    ['90% chance to inflict Half Stats to 4 enemies for 16 seconds.', 'Deals 3,200 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 32% Special CT Delay to [PSY] enemies.'],
-                    ['92% chance to inflict Half Stats to 4 enemies for 17 seconds.', 'Deals 3,400 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 34% Special CT Delay to [PSY] enemies.'],
-                    ['94% chance to inflict Half Stats to 4 enemies for 18 seconds.', 'Deals 3,600 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 36% Special CT Delay to [PSY] enemies.'],
-                    ['96% chance to inflict Half Stats to 4 enemies for 19 seconds.', 'Deals 3,800 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 38% Special CT Delay to [PSY] enemies.'],
-                    ['100% chance to inflict Half Stats to 4 enemies for 20 seconds.', 'Deals 4,000 fixed damage to all enemies in a large, sideways range.', 'For the first 50 seconds, 40% Special CT Delay to [PSY] enemies.']
+                    ['80% chance to inflict Half Stats to 4 enemies for 11 seconds.', 'Deals 2,200 fixed damage to all enemies in a large, sideways range.', '50% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 22% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['82% chance to inflict Half Stats to 4 enemies for 12 seconds.', 'Deals 2,400 fixed damage to all enemies in a large, sideways range.', '55% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 24% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['84% chance to inflict Half Stats to 4 enemies for 13 seconds.', 'Deals 2,600 fixed damage to all enemies in a large, sideways range.', '60% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 26% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['86% chance to inflict Half Stats to 4 enemies for 14 seconds.', 'Deals 2,800 fixed damage to all enemies in a large, sideways range.', '65% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 28% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['88% chance to inflict Half Stats to 4 enemies for 15 seconds.', 'Deals 3,000 fixed damage to all enemies in a large, sideways range.', '70% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 30% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['90% chance to inflict Half Stats to 4 enemies for 16 seconds.', 'Deals 3,200 fixed damage to all enemies in a large, sideways range.', '75% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 32% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['92% chance to inflict Half Stats to 4 enemies for 17 seconds.', 'Deals 3,400 fixed damage to all enemies in a large, sideways range.', '80% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 34% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['94% chance to inflict Half Stats to 4 enemies for 18 seconds.', 'Deals 3,600 fixed damage to all enemies in a large, sideways range.', '85% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 36% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['96% chance to inflict Half Stats to 4 enemies for 19 seconds.', 'Deals 3,800 fixed damage to all enemies in a large, sideways range.', '90% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 38% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.'],
+                    ['100% chance to inflict Half Stats to 4 enemies for 20 seconds.', 'Deals 4,000 fixed damage to all enemies in a large, sideways range.', '100% chance to grant Haste to Eneru crew member with exactly 100% Special CT.', 'For the first 50 seconds, 40% Special CT Delay to [PSY] and enemies with Paralysis.', 'After the first 50 seconds, switches self with 3rd sub character.']
                 ]
             }
         }
@@ -84871,27 +84871,27 @@ window.rumble = {
         },
         festAbility: {
             base: [
-                ['Applies Lv. 1 ATK and HP up buff to Fighter crew members.', 'After the first 50 seconds, applies Lv. 1 ATK and Special CT up buff to self.'],
-                ['Applies Lv. 2 ATK and HP up buff to Fighter crew members.', 'After the first 50 seconds, applies Lv. 2 ATK and Special CT up buff to self.'],
-                ['Applies Lv. 3 ATK and HP up buff to Fighter crew members.', 'After the first 50 seconds, applies Lv. 3 ATK and Special CT up buff to self.'],
-                ['Applies Lv. 4 ATK and HP up buff to Fighter crew members.', 'After the first 50 seconds, applies Lv. 4 ATK and Special CT up buff to self.'],
-                ['Applies Lv. 6 ATK and HP up buff to Fighter crew members.', 'After the first 50 seconds, applies Lv. 5 ATK and Special CT up buff to self.']
+                ['Applies Lv. 1 ATK and HP up buff to Fighter and [Animal Kingdom Pirates] crew members.', 'After the first 50 seconds, applies Lv. 1 ATK and Special CT up buff to [Animal Kingdom Pirates] crew members.'],
+                ['Applies Lv. 2 ATK and HP up buff to Fighter and [Animal Kingdom Pirates] crew members.', 'After the first 50 seconds, applies Lv. 2 ATK and Special CT up buff to [Animal Kingdom Pirates] crew members.'],
+                ['Applies Lv. 3 ATK and HP up buff to Fighter and [Animal Kingdom Pirates] crew members.', 'After the first 50 seconds, applies Lv. 3 ATK and Special CT up buff to [Animal Kingdom Pirates] crew members.'],
+                ['Applies Lv. 4 ATK and HP up buff to Fighter and [Animal Kingdom Pirates] crew members.', 'After the first 50 seconds, applies Lv. 4 ATK and Special CT up buff to [Animal Kingdom Pirates] crew members.'],
+                ['Applies Lv. 6 ATK and HP up buff to Fighter and [Animal Kingdom Pirates] crew members.', 'After the first 50 seconds, applies Lv. 5 ATK and Special CT up buff to [Animal Kingdom Pirates] crew members.']
             ]
         },
         festSpecial: {
             base: {
                 cooldown: 37,
                 descriptions: [
-                    ['Deals 1.1x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 1.2x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 1.3x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 1.4x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 1.5x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 1.6x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 1.7x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 1.8x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 1.9x ATK in damage ignoring DEF to all enemies in a large, sideways range.'],
-                    ['Deals 2x ATK in damage ignoring DEF to all enemies in a large, sideways range.']
+                    ['Deals 1.1x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 1 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 11 seconds.', 'Applies Lv. 1 DEF up buff to [Animal Kingdom Pirates] crew members for 11 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 15% of Special CT to self.'],
+                    ['Deals 1.2x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 1 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 12 seconds.', 'Applies Lv. 1 DEF up buff to [Animal Kingdom Pirates] crew members for 12 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 17% of Special CT to self.'],
+                    ['Deals 1.3x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 2 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 13 seconds.', 'Applies Lv. 1 DEF up buff to [Animal Kingdom Pirates] crew members for 13 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 18% of Special CT to self.'],
+                    ['Deals 1.4x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 2 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 14 seconds.', 'Applies Lv. 1 DEF up buff to [Animal Kingdom Pirates] crew members for 14 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 20% of Special CT to self.'],
+                    ['Deals 1.5x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 3 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 15 seconds.', 'Applies Lv. 2 DEF up buff to [Animal Kingdom Pirates] crew members for 15 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 22% of Special CT to self.'],
+                    ['Deals 1.6x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 3 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 16 seconds.', 'Applies Lv. 2 DEF up buff to [Animal Kingdom Pirates] crew members for 16 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 23% of Special CT to self.'],
+                    ['Deals 1.7x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 4 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 17 seconds.', 'Applies Lv. 2 DEF up buff to [Animal Kingdom Pirates] crew members for 17 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 25% of Special CT to self.'],
+                    ['Deals 1.8x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 4 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 18 seconds.', 'Applies Lv. 3 DEF up buff to [Animal Kingdom Pirates] crew members for 18 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 27% of Special CT to self.'],
+                    ['Deals 1.9x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 5 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 19 seconds.', 'Applies Lv. 3 DEF up buff to [Animal Kingdom Pirates] crew members for 19 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 28% of Special CT to self.'],
+                    ['Deals 2x ATK in damage ignoring DEF to all enemies in a large, sideways range.', 'Applies Lv. 5 ATK and SPD up buff to [Animal Kingdom Pirates] crew members for 20 seconds.', 'Applies Lv. 3 DEF up buff to [Animal Kingdom Pirates] crew members for 20 seconds.', 'When there is 4 or more [Animal Kingdom Pirates] crew members, reduces 30% of Special CT to self.']
                 ]
             }
         }
@@ -92860,7 +92860,7 @@ window.rumble = {
         }
     },
     3996: {
-        festCost: 30,
+        festCost: 20,
         festStats: {
             def: 50,
             spd: 100,
@@ -107762,27 +107762,27 @@ window.rumble = {
         },
         festAbility: {
             base: [
-                ['Applies Lv. 1 HP up buff to [PSY] and Striker crew members.', 'Applies Lv. 1 SPD up buff to [PSY] and Striker crew members.'],
-                ['Applies Lv. 2 HP up buff to [PSY] and Striker crew members.', 'Applies Lv. 1 SPD up buff to [PSY] and Striker crew members.'],
-                ['Applies Lv. 3 HP up buff to [PSY] and Striker crew members.', 'Applies Lv. 2 SPD up buff to [PSY] and Striker crew members.'],
-                ['Applies Lv. 4 HP up buff to [PSY] and Striker crew members.', 'Applies Lv. 2 SPD up buff to [PSY] and Striker crew members.'],
-                ['Applies Lv. 5 HP up buff to [PSY] and Striker crew members.', 'Applies Lv. 3 SPD up buff to [PSY] and Striker crew members.']
+                ['Applies Lv. 1 HP and SPD up buff to [PSY], Striker and [Skypiea Arc] crew members.', 'Applies Lv. 1 ATK up buff to [Skypiea Arc] crew members.', 'Applies Lv. 1 DEF up buff to [Skypiea Arc] crew members.'],
+                ['Applies Lv. 2 HP and SPD up buff to [PSY], Striker and [Skypiea Arc] crew members.', 'Applies Lv. 2 ATK up buff to [Skypiea Arc] crew members.', 'Applies Lv. 1 DEF up buff to [Skypiea Arc] crew members.'],
+                ['Applies Lv. 3 HP and SPD up buff to [PSY], Striker and [Skypiea Arc] crew members.', 'Applies Lv. 3 ATK up buff to [Skypiea Arc] crew members.', 'Applies Lv. 2 DEF up buff to [Skypiea Arc] crew members.'],
+                ['Applies Lv. 4 HP and SPD up buff to [PSY], Striker and [Skypiea Arc] crew members.', 'Applies Lv. 4 ATK up buff to [Skypiea Arc] crew members.', 'Applies Lv. 2 DEF up buff to [Skypiea Arc] crew members.'],
+                ['Applies Lv. 5 HP and SPD up buff to [PSY], Striker and [Skypiea Arc] crew members.', 'Applies Lv. 5 ATK up buff to [Skypiea Arc] crew members.', 'Applies Lv. 3 DEF up buff to [Skypiea Arc] crew members.']
             ]
         },
         festSpecial: {
             base: {
                 cooldown: 32,
                 descriptions: [
-                    ['Inflicts Lv. 2 SPD and ATK down debuff to 3 enemies for 21 seconds.', '70% chance to inflict Paralysis to 3 enemies for 11 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 1 seconds.'],
-                    ['Inflicts Lv. 2 SPD and ATK down debuff to 3 enemies for 22 seconds.', '73% chance to inflict Paralysis to 3 enemies for 11 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 1 seconds.'],
-                    ['Inflicts Lv. 3 SPD and ATK down debuff to 3 enemies for 23 seconds.', '76% chance to inflict Paralysis to 3 enemies for 12 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 2 seconds.'],
-                    ['Inflicts Lv. 3 SPD and ATK down debuff to 3 enemies for 24 seconds.', '79% chance to inflict Paralysis to 3 enemies for 12 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 2 seconds.'],
-                    ['Inflicts Lv. 4 SPD and ATK down debuff to 3 enemies for 25 seconds.', '82% chance to inflict Paralysis to 3 enemies for 13 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 3 seconds.'],
-                    ['Inflicts Lv. 4 SPD and ATK down debuff to 3 enemies for 26 seconds.', '85% chance to inflict Paralysis to 3 enemies for 13 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 3 seconds.'],
-                    ['Inflicts Lv. 5 SPD and ATK down debuff to 3 enemies for 27 seconds.', '88% chance to inflict Paralysis to 3 enemies for 14 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 4 seconds.'],
-                    ['Inflicts Lv. 5 SPD and ATK down debuff to 3 enemies for 28 seconds.', '91% chance to inflict Paralysis to 3 enemies for 14 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 4 seconds.'],
-                    ['Inflicts Lv. 6 SPD and ATK down debuff to 3 enemies for 29 seconds.', '94% chance to inflict Paralysis to 3 enemies for 15 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 5 seconds.'],
-                    ['Inflicts Lv. 7 SPD and ATK down debuff to 3 enemies for 30 seconds.', '100% chance to inflict Paralysis to 3 enemies for 15 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 5 seconds.']
+                    ['Inflicts Lv. 2 SPD and ATK down debuff to 3 enemies for 21 seconds.', '70% chance to inflict Paralysis to 3 enemies for 11 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 1 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 1 seconds.'],
+                    ['Inflicts Lv. 2 SPD and ATK down debuff to 3 enemies for 22 seconds.', '73% chance to inflict Paralysis to 3 enemies for 11 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 1 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 1 seconds.'],
+                    ['Inflicts Lv. 3 SPD and ATK down debuff to 3 enemies for 23 seconds.', '76% chance to inflict Paralysis to 3 enemies for 12 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 2 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 2 seconds.'],
+                    ['Inflicts Lv. 3 SPD and ATK down debuff to 3 enemies for 24 seconds.', '79% chance to inflict Paralysis to 3 enemies for 12 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 2 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 2 seconds.'],
+                    ['Inflicts Lv. 4 SPD and ATK down debuff to 3 enemies for 25 seconds.', '82% chance to inflict Paralysis to 3 enemies for 13 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 3 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 3 seconds.'],
+                    ['Inflicts Lv. 4 SPD and ATK down debuff to 3 enemies for 26 seconds.', '85% chance to inflict Paralysis to 3 enemies for 13 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 3 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 3 seconds.'],
+                    ['Inflicts Lv. 5 SPD and ATK down debuff to 3 enemies for 27 seconds.', '88% chance to inflict Paralysis to 3 enemies for 14 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 4 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 4 seconds.'],
+                    ['Inflicts Lv. 5 SPD and ATK down debuff to 3 enemies for 28 seconds.', '91% chance to inflict Paralysis to 3 enemies for 14 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 4 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 4 seconds.'],
+                    ['Inflicts Lv. 6 SPD and ATK down debuff to 3 enemies for 29 seconds.', '94% chance to inflict Paralysis to 3 enemies for 15 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 5 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 5 seconds.'],
+                    ['Inflicts Lv. 7 SPD and ATK down debuff to 3 enemies for 30 seconds.', '100% chance to inflict Paralysis to 3 enemies for 15 seconds.', 'After the first 50 seconds, 100% chance to inflict Special Bind to 1 enemy for 5 seconds.', 'When there is 5 or more [Skypiea Arc] crew members, 100% chance to inflict Special Bind to all enemies with Paralysis for 5 seconds.']
                 ]
             }
         }
