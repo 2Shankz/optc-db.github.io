@@ -156083,7 +156083,7 @@
               "amount": 1650,
               "effect": "damage",
               "type": "fixed",
-              "targeting": {"targets": ["[INT]", ""], "status": ["Paralysis"]}
+              "targeting": {"targets": ["[INT] enemies", ""], "status": ["Paralysis"]}
             }
           ]
         },
@@ -220827,7 +220827,7 @@
               "effect": "damage",
               "type": "atk",
               "spread": true,
-              "targeting": {"targets": ["Cerebral", ""], "status": ["Paralysis"]}
+              "targeting": {"targets": ["Cerebral enemies", ""], "status": ["Paralysis"]}
             },
             {
               "attributes": ["Switch"],
@@ -226085,7 +226085,7 @@
               "attributes": ["Special CT"],
               "effect": "hinderance",
               "amount": 22,
-              "targeting": {"targets": ["[PSY]", ""], "status": ["Paralysis"]},
+              "targeting": {"targets": ["[PSY] enemies", ""], "status": ["Paralysis"]},
               "condition": {"type": "time", "comparator": "first", "count": 50}
             },
             {
