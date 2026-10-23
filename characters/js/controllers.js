@@ -5,6 +5,23 @@
 
   var app = angular.module("optc");
 
+  // Reset the sidebar after Clear All, including the panels and cost sliders.
+  function resetFilterUI() {
+    var $container = $("#leftContainer");
+    if (!$container.length) return;
+
+    // Type and Class stay open by default; close every other panel.
+    $container.find(".collapse")
+      .not("#type-filter > .collapse, #class-filter > .collapse")
+      .collapse("hide");
+    $container.find("#type-filter > .collapse, #class-filter > .collapse").collapse("show");
+
+    ["cost-slider", "rumble-cost-slider"].forEach(function (id) {
+      var slider = document.getElementById(id);
+      if (slider && slider.noUiSlider) slider.noUiSlider.set([1, 99]);
+    });
+  }
+
   app.controller(
     "MainCtrl",
     function (
@@ -252,28 +269,9 @@
       };
 
       $scope.clearAllFilters = function () {
-        $rootScope.filters.types = [];
-        $rootScope.filters.classes = [];
-        $rootScope.filters.tags = [];
-        $rootScope.filters.stars = [];
-        $rootScope.filters.cost = [1, 99];
-        $rootScope.filters.rumbleCost = [1, 99];
-        $rootScope.filters.farmable = {};
-        $rootScope.filters.nonFarmable = {};
-        Object.keys($rootScope.filters.custom || {}).forEach(function (target) {
-          Object.keys($rootScope.filters.custom[target] || {}).forEach(function (group) {
-            Object.keys($rootScope.filters.custom[target][group].matchers || {}).forEach(function (name) {
-              $rootScope.filters.custom[target][group].matchers[name].enabled = false;
-            });
-          });
-        });
-        Object.keys(window.exclusiveFilterLabels).forEach(function (key) {
-          if (window.exclusiveFilterLabels[key].indexOf(': ') > 0) {
-            $rootScope.filters[key] = null;
-          } else {
-            $rootScope.filters[key] = false;
-          }
-        });
+        if (!$rootScope.filters) return;
+        CharUtils.resetFilters($rootScope.filters);
+        resetFilterUI();
       };
     }
   );
@@ -310,7 +308,7 @@
         );
       });
 
-      $scope.clearFilters = function () {
+      $scope.clearFilters = function (resetUI) {
         if (!$rootScope.filters || Object.keys($rootScope.filters).length === 0) {
           $rootScope.filters = { custom: {} };
           for (const target in window.matchers) {
@@ -330,51 +328,19 @@
           }
         }
 
-        $rootScope.filters.types = [];
-        $rootScope.filters.classes = [];
-        $rootScope.filters.tags = [];
-        $rootScope.filters.stars = [];
-        $rootScope.filters.cost = [1, 99];
-        $rootScope.filters.rumbleCost = [1, 99];
-        $rootScope.filters.farmable = {};
-        $rootScope.filters.nonFarmable = {};
-
-        for (const target in $rootScope.filters.custom) {
-          for (const group in $rootScope.filters.custom[target]) {
-            for (const name in $rootScope.filters.custom[target][group].matchers) {
-              $rootScope.filters.custom[target][group].matchers[name].enabled = false;
-            }
-          }
-        }
-
-        var labels = window.exclusiveFilterLabels || {};
-        Object.keys(labels).forEach(function (key) {
-          $rootScope.filters[key] = labels[key] && labels[key].indexOf(': ') > 0 ? null : false;
-        });
+        CharUtils.resetFilters($rootScope.filters);
+        if (resetUI !== false) resetFilterUI();
       };
 
-      $scope.clearFilters();
+      // Build the filter tree before the sidebar exists, so skip its DOM reset.
+      $scope.clearFilters(false);
 
       $scope.toggleFilters = function () {
-        for (x in $rootScope.filters) {
-          if (x.includes("Enabled")) {
-            // type, character, class, and tag filters are expanded by default
-            if (
-              x == "typeEnabled" ||
-              x == "characterEnabled" ||
-              x == "classEnabled" || 
-              x == "tagEnabled"
-            ) {
-              $rootScope.filters[x] = !$rootScope.filters["toggle"];
-            } else {
-              $rootScope.filters[x] = $rootScope.filters["toggle"];
-            }
-          }
-        }
+        var expand = !$rootScope.filters.toggle;
         $("#leftContainer animate-collapse + div.collapse").collapse(
-          $rootScope.filters["toggle"] ? "show" : "hide"
+          expand ? "show" : "hide"
         );
-        $rootScope.filters["toggle"] = !$rootScope.filters["toggle"];
+        $rootScope.filters.toggle = expand;
       };
 
       $scope.onFilterClick = function (e, value) {
