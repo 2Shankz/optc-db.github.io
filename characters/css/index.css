@@ -676,9 +676,9 @@ input#burgerMenuState {
         display: grid;
         grid-template:
             "filters  query" auto
+            "filters  active" auto
             "filters  grid" 1fr
             / 275px 1fr;
-        ;
         height: 100%;
         overflow-x: hidden;
     }
@@ -2586,6 +2586,7 @@ a { color: var(--link-color); }
     align-items: center;
     gap: 4px;
     flex: 0 0 auto;
+    grid-area: active;
 }
 
 .active-filter-tag {
