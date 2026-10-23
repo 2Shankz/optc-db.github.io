@@ -193285,6 +193285,1536 @@ window.details = {
             }
         ]
     },
+    4663: {//Saintess Gunko (Imu Possessed)
+        captain: "Launches the following effect at start of quest: \"Boosts Super [QCK] effects for 10 turns, boosts damage dealt to effective types by 3x for 10 turns (normally 2.5x when effective), allows crew to perform Super Tandem with [QCK] slots for 10 turns, reduces crew's Special charge time by 2 turns and VS Effect gauge and Switch Effect by 2\", boosts [QCK] and Driven characters' ATK by 6x, makes crew's [QCK][TND] slots have matching slot effects, reduces the duration of ATK Down when above certain chain multiplier effect received from the enemy by 7 turns, and if field has \"Territory: Driven class\", boosts crew's ATK by 1.2x [If 4 or more [Domi Reversi] [Holy Knights] [World Government] characters are on the crew and character is a Captain (Friend/Helper Captain does not count) and performs EXCELLENT for the Action Special] Boosts [QCK] characters' ATK by a further 1.2x for 1 turn",
+        special: "Deals 1,000,000 damage to all enemies (ignoring all defensive effects, DEF, and Non-Normal Attacks Deal 1 Damage effect), reduces crew's Orb Boost effect by 1.0 but changes the effect to a stackable slot effect boost, reduces crew's Special Bind duration by 15 turns, and boosts crew's ATK for 1 turn based on the damage reduction effect applied on the enemy (values based on outcome of Action Special: base value 1.6x ~ 2x ATK; 2.1x ~ 2.5x ATK for Percent Damage Reduction status of 50%; 1x ATK for no Percent Damage Reduction status) [If 4 or more [Domi Reversi] [Holy Knights] [World Government] characters are on the crew and field has \"Territory: Driven class\"] Boosts [QCK] Driven characters' Orb Boost by 8x for 3 turns, and boosts [QCK] and Driven characters' Orb Boost by 6x for 3 turns [Otherwise] Boosts [QCK] and Driven characters' Orb Boost by 4x for 1 turn, and applies \"Territory: Driven class\" to the field for 3 turns",
+        specialName: "Diabolical Covenant: Domi Reversi",
+        sailor: {
+            base: "Character cannot be blown away by attack, and reduces character's Special Bind duration by 15 turns",
+            level1: "Boosts [QCK] and Driven characters' base ATK by 1.1x, and makes Driven and Shooter characters' [QCK] slots have matching slot effects"
+        },
+        superSpecialCriteria: "When any 2 [Domi Reversi] [Holy Knights] [World Government] characters are on the crew not including self",
+        superSpecial: "Changes crew's [BLOCK] and [QCK][TND][RCV] slots to Super [QCK], reduces character's Special Bind duration by 15 turns, applies 50% damage reduction to enemies for 1 turn<hidden> (this effect is treated as an activation of damage reduction effect)</hidden>, allows [Domi Reversi] [Holy Knights] [World Government] characters' normal attacks to ignore enemies' defensive effects for 1 turn, changes Driven characters to Super Driven, and changes Shooter characters to Super Shooter",
+        support: [
+            {
+                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                description: [
+                    "Adds 10% of character's base stats to supported character's base stats",
+                    "Adds 12% of character's base stats to supported character's base stats",
+                    "Adds 13% of character's base stats to supported character's base stats",
+                    "Adds 14% of character's base stats to supported character's base stats",
+                    "Adds 15% of character's base stats to supported character's base stats"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Boosts base HP by 30",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 30",
+            "Boosts base RCV by 10",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 40",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 40",
+            "Boosts base ATK by 20",
+            "Acquire Potential 2: Damage Limit Break: Class",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 40",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 50",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 50",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 60",
+            "Acquire Sailor Ability 2: Boosts [QCK] and Driven characters' base ATK by 1.1x, and makes Driven and Shooter characters' [QCK] slots have matching slot effects",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 40",
+            "Boosts base ATK by 40",
+            "Boosts base HP by 80",
+            "Acquire Potential 3: Super Tandem",
+            "LOCKED WITH KEY",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base RCV by 50",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 200",
+            "Reduce base Special Cooldown by 1 turn"
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character",
+                    "Reduces Slot Bind duration by 7 turns on this character",
+                    "Reduces Slot Bind duration by 10 turns on this character"
+                ]
+            },
+            {
+                Name: "Damage Limit Break: Class",
+                description: [
+                    "Boosts Damage Limit Break effect based on number of Driven characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.1 for 3, +0.1 for 4, +0.2 for 5, +0.3 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of Driven characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.1 for 3, +0.2 for 4, +0.3 for 5, +0.4 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of Driven characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.2 for 3, +0.3 for 4, +0.4 for 5, +0.5 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of Driven characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.2 for 3, +0.4 for 4, +0.5 for 5, +0.6 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of Driven characters on the crew (except as Support Characters): +0.2 for 1, +0.3 for 2, +0.4 for 3, +0.5 for 4, +0.6 for 5, +0.75 for 6 "
+                ]
+            },
+            {
+                Name: "Super Tandem",
+                description: [
+                    "Obtain Super Tandem Lv.1",
+                    "Obtain Super Tandem Lv.2",
+                    "Obtain Super Tandem Lv.3",
+                    "Obtain Super Tandem Lv.4",
+                    "Obtain Super Tandem Lv.5"
+                ]
+            }
+        ],
+        superTandem: {
+            characterCondition: [
+                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)",
+                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)",
+                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)",
+                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)",
+                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)"
+            ],
+            description: [
+                "Boosts base ATK by +500 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 2x to [QCK] and Driven characters for 1 turn",
+                "Boosts base ATK by +750 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 2.25x to [QCK] and Driven characters for 1 turn",
+                "Boosts base ATK by +1000 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 2.5x to [QCK] and Driven characters for 1 turn",
+                "Boosts base ATK by +1250 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 2.75x to [QCK] and Driven characters for 1 turn",
+                "Boosts base ATK by +1500 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 3x to [QCK] and Driven characters for 1 turn"
+            ]
+        },
+        festStats: {
+            def: 139,
+            spd: 171,
+            style: "DBF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Special CT delay/Confusion, reduce damage taken from [STR] by 30%",
+        festAbility: [
+            "[QCK]/Driven class and [World Government] teammates SPD Up Lv.3, DEF Up Lv.3; when defeating enemy, up to 3 times self Special CT 30% reduction; [World Government] [Domi Reversi] teammates Special CT 12% reduction; when teammate is defeated, up to 1 time targets [QCK] and [World Government] [Domi Reversi] teammates for 60% chance of Haste; first 50 s of battle, revives [Holy Knights] [Domi Reversi] teammates up to 3 times at 30% HP",
+            "[QCK]/Driven class and [World Government] teammates SPD Up Lv.4, DEF Up Lv.4; when defeating enemy, up to 3 times self Special CT 35% reduction; [World Government] [Domi Reversi] teammates Special CT 14% reduction; when teammate is defeated, up to 1 time targets [QCK] and [World Government] [Domi Reversi] teammates for 70% chance of Haste; first 50 s of battle, revives [Holy Knights] [Domi Reversi] teammates up to 3 times at 35% HP",
+            "[QCK]/Driven class and [World Government] teammates SPD Up Lv.5, DEF Up Lv.5; when defeating enemy, up to 3 times self Special CT 40% reduction; [World Government] [Domi Reversi] teammates Special CT 16% reduction; when teammate is defeated, up to 1 time targets [QCK] and [World Government] [Domi Reversi] teammates for 80% chance of Haste; first 50 s of battle, revives [Holy Knights] [Domi Reversi] teammates up to 3 times at 40% HP",
+            "[QCK]/Driven class and [World Government] teammates SPD Up Lv.6, DEF Up Lv.6; when defeating enemy, up to 3 times self Special CT 45% reduction; [World Government] [Domi Reversi] teammates Special CT 18% reduction; when teammate is defeated, up to 1 time targets [QCK] and [World Government] [Domi Reversi] teammates for 90% chance of Haste; first 50 s of battle, revives [Holy Knights] [Domi Reversi] teammates up to 3 times at 45% HP",
+            "[QCK]/Driven class and [World Government] teammates SPD Up Lv.7, DEF Up Lv.7; when defeating enemy, up to 3 times self Special CT 50% reduction; [World Government] [Domi Reversi] teammates Special CT 20% reduction; when teammate is defeated, up to 1 time targets [QCK] and [World Government] [Domi Reversi] teammates for 100% chance of Haste; first 50 s of battle, revives [Holy Knights] [Domi Reversi] teammates up to 3 times at 50% HP"
+        ],
+        festSpecial: [
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 73% chance of Ability Bind (11 s); targets 1 high DEF enemy ignoring DEF for ATK x 1.2 damage; targets 2 high ATK enemies for 73% chance of Confusion (6 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.2 (6 s), 73% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.2 (11 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 76% chance of Ability Bind (12 s); targets 1 high DEF enemy ignoring DEF for ATK x 1.4 damage; targets 2 high ATK enemies for 76% chance of Confusion (7 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.2 (7 s), 76% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.2 (12 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 79% chance of Ability Bind (13 s); targets 1 high DEF enemy ignoring DEF for ATK x 1.6 damage; targets 2 high ATK enemies for 79% chance of Confusion (8 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.2 (8 s), 79% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.2 (13 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 82% chance of Ability Bind (14 s); targets 1 high DEF enemy ignoring DEF for ATK x 1.8 damage; targets 2 high ATK enemies for 82% chance of Confusion (9 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.3 (9 s), 82% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.3 (14 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 85% chance of Ability Bind (15 s); targets 1 high DEF enemy ignoring DEF for ATK x 2 damage; targets 2 high ATK enemies for 85% chance of Confusion (10 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.3 (10 s), 85% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.3 (15 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 88% chance of Ability Bind (16 s); targets 1 high DEF enemy ignoring DEF for ATK x 2.2 damage; targets 2 high ATK enemies for 88% chance of Confusion (11 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.4 (11 s), 88% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.4 (16 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 91% chance of Ability Bind (17 s); targets 1 high DEF enemy ignoring DEF for ATK x 2.4 damage; targets 2 high ATK enemies for 91% chance of Confusion (12 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.4 (12 s), 91% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.4 (17 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 94% chance of Ability Bind (18 s); targets 1 high DEF enemy ignoring DEF for ATK x 2.6 damage; targets 2 high ATK enemies for 94% chance of Confusion (13 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.4 (13 s), 94% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.4 (18 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 97% chance of Ability Bind (19 s); targets 1 high DEF enemy ignoring DEF for ATK x 2.8 damage; targets 2 high ATK enemies for 97% chance of Confusion (14 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.5 (14 s), 97% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.5 (19 s)"
+            },
+            {
+                cooldown: 32,
+                description: "Targets enemies with Confusion for 100% chance of Ability Bind (20 s); targets 1 high DEF enemy ignoring DEF for ATK x 3 damage; targets 2 high ATK enemies for 100% chance of Confusion (15 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), DEF Down Lv.6 (15 s), 100% chance of Haste; targets [Domi Reversi] teammates for ATK Up Lv.6 (20 s)"
+            }
+        ],
+        festAbilityGP: [
+            {
+                festGPAbility: "[QCK] and [World Government] [Domi Reversi] teammates HP, SPD Up Lv.2, DEF Up Lv.1; Driven/Shooter class teammates ATK, RCV Up Lv.2, Special CT Speed Up Lv.1; when defeating enemy, up to 3 times targets 2 [World Government] [Domi Reversi] teammates with high current Special CT for 60% chance of Haste; first 50 s of battle, revives [World Government] [Domi Reversi] teammates up to 2 times at 30% HP",
+                festGPSpecial: "Targets enemies with Confusion for 60% chance of Ability Bind (16 s); targets 1 enemy with low current HP ignoring DEF for Leader base ATK x 1 damage; targets 2 high ATK enemies for 60% chance of Confusion (11 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), 60% chance of Haste",
+                uses: 2
+            },
+            {
+                festGPAbility: "[QCK] and [World Government] [Domi Reversi] teammates HP, SPD Up Lv.3, DEF Up Lv.2; Driven/Shooter class teammates ATK, RCV Up Lv.3, Special CT Speed Up Lv.2; when defeating enemy, up to 3 times targets 2 [World Government] [Domi Reversi] teammates with high current Special CT for 70% chance of Haste; first 50 s of battle, revives [World Government] [Domi Reversi] teammates up to 2 times at 35% HP",
+                festGPSpecial: "Targets enemies with Confusion for 70% chance of Ability Bind (17 s); targets 1 enemy with low current HP ignoring DEF for Leader base ATK x 1.5 damage; targets 2 high ATK enemies for 70% chance of Confusion (12 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), 70% chance of Haste",
+                uses: 2
+            },
+            {
+                festGPAbility: "[QCK] and [World Government] [Domi Reversi] teammates HP, SPD Up Lv.4, DEF Up Lv.3; Driven/Shooter class teammates ATK, RCV Up Lv.4, Special CT Speed Up Lv.2; when defeating enemy, up to 3 times targets 2 [World Government] [Domi Reversi] teammates with high current Special CT for 80% chance of Haste; first 50 s of battle, revives [World Government] [Domi Reversi] teammates up to 2 times at 40% HP",
+                festGPSpecial: "Targets enemies with Confusion for 80% chance of Ability Bind (18 s); targets 1 enemy with low current HP ignoring DEF for Leader base ATK x 2 damage; targets 2 high ATK enemies for 80% chance of Confusion (13 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), 80% chance of Haste",
+                uses: 2
+            },
+            {
+                festGPAbility: "[QCK] and [World Government] [Domi Reversi] teammates HP, SPD Up Lv.5, DEF Up Lv.3; Driven/Shooter class teammates ATK, RCV Up Lv.5, Special CT Speed Up Lv.3; when defeating enemy, up to 3 times targets 2 [World Government] [Domi Reversi] teammates with high current Special CT for 90% chance of Haste; first 50 s of battle, revives [World Government] [Domi Reversi] teammates up to 2 times at 45% HP",
+                festGPSpecial: "Targets enemies with Confusion for 90% chance of Ability Bind (19 s); targets 1 enemy with low current HP ignoring DEF for Leader base ATK x 2.5 damage; targets 2 high ATK enemies for 90% chance of Confusion (14 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), 90% chance of Haste",
+                uses: 2
+            },
+            {
+                festGPAbility: "[QCK] and [World Government] [Domi Reversi] teammates HP, SPD Up Lv.6, DEF Up Lv.4; Driven/Shooter class teammates ATK, RCV Up Lv.6, Special CT Speed Up Lv.3; when defeating enemy, up to 3 times targets 2 [World Government] [Domi Reversi] teammates with high current Special CT for 100% chance of Haste; first 50 s of battle, revives [World Government] [Domi Reversi] teammates up to 2 times at 50% HP",
+                festGPSpecial: "Targets enemies with Confusion for 100% chance of Ability Bind (20 s); targets 1 enemy with low current HP ignoring DEF for Leader base ATK x 3 damage; targets 2 high ATK enemies for 100% chance of Confusion (15 s); targets enemies with Confusion for ATK Up Lv.20 (10 s), 100% chance of Haste",
+                uses: 2
+            }
+        ],
+        festAbilityGPCondition: "After dealing damage 20 times"
+    },
+    4664: {//Dorry
+        captain: "Reduces crew's Special charge time by 2 turns at start of quest, boosts [QCK] and Driven characters' ATK by approximately 6x when slots match (5.5x otherwise), HP by 1.65x, and makes their [QCK] slots have matching slot effects [If 4 or more [Giant Pirate Crew] [Giant] [Domi Reversi] characters are on the crew] Boosts [QCK] and Driven characters' ATK by a further 1.1x, and crew cannot be blown away by attack",
+        special: "Cuts crew's HP by 20%, but reduces crew's Despair duration by 10 turns, applies Set Target status to all enemies for 3 turns ([QCK] and Driven characters will deal 2x damage, and their Special charge time will be reduced by 2 turns for every enemy with Set Target status defeated by normal attacks and Specials), and reduces Captain's Special charge time by 3 turns [If enemy has Percent Damage Reduction status when Special is launched] Boosts [QCK] and Driven characters' base ATK by +2250 for 1 turn (cannot be removed by crew or enemies) [Otherwise] Boosts [QCK] and Driven characters' base ATK by +1750 for 1 turn [If \"Saintess Gunko\", \"Imu\", and \"Broggy\" launch Specials in the same turn] Nullifies damage taken until hit 1 time (+1 hit if Captain Ability is doubled)",
+        specialName: "The Blue with Powers Bestowed by God",
+        sailor: {
+            base: "Reduces [Domi Reversi] characters' Bind duration by 6 turns",
+            level1: "Character cannot be blown away by attack"
+        },
+        superSpecialCriteria: "When crew has ability to nullify damage until a certain number of attacks (can be launched when character is a crewmate)",
+        superSpecial: "Reduces all enemies' damage reduction from certain slots effect duration by 6 turns, extends the duration of crew's base ATK boost by 2 turns, further increases the boost by +500, and changes [QCK] characters to Super [QCK]",
+        support: [
+            {
+                Characters: "Broggy, Imu, Saintess Gunko",
+                description: [
+                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 1 turn at start of crew's next turn",
+                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 1 turn at start of crew's next turn",
+                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 2 turns at start of crew's next turn",
+                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 2 turns at start of crew's next turn",
+                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 3 turns at start of crew's next turn"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base RCV by 10",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Acquire Potential 1: Special Use Limit",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Boosts base HP by 30",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 20",
+            "Acquire Potential 2: Enrage/Increase Damage Taken",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 30",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 50",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Acquire Sailor Ability 2: Character cannot be blown away by attack",
+            "Boosts base RCV by 40",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 40",
+            "Boosts base HP by 80",
+            "Acquire Potential 3: Super Tandem Boost",
+            "LOCKED WITH KEY",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 200",
+            "Boosts base RCV by 30",
+            "Boosts base ATK by 100",
+            "Reduce base Special Cooldown by 1 turn"
+        ],
+        lLimit: [
+            null,
+            null,
+            null,
+            null,
+            {
+                rSuperSpecial: true
+            }
+        ],
+        potential: [
+            {
+                Name: "Special Use Limit",
+                description: [
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 3 turns"
+                ]
+            },
+            {
+                Name: "Enrage/Increase Damage Taken",
+                description: [
+                    "Boosts base ATK by 75 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 100 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 150 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 250 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 300 the turn after taking damage and reduces Increase Damage Taken duration by 3 turns"
+                ]
+            },
+            {
+                Name: "Super Tandem Boost",
+                description: [
+                    "Obtain Super Tandem Boost Lv.1",
+                    "Obtain Super Tandem Boost Lv.2",
+                    "Obtain Super Tandem Boost Lv.3",
+                    "Obtain Super Tandem Boost Lv.4",
+                    "Obtain Super Tandem Boost Lv.5"
+                ]
+            }
+        ],
+        superTandemBoost: {
+            characterCondition: [
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem"
+            ],
+            description: [
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 1 for 1 turn",
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 2 for 1 turn",
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 3 for 1 turn",
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 4 for 1 turn",
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 5 for 1 turn"
+            ]
+        },
+        festStats: {
+            def: 124,
+            spd: 189,
+            style: "ATK"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Normal Attack",
+            "Power Attack",
+            "Full Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Forced Out, reduce damage taken from [STR] by 30%",
+        festAbility: [
+            "[QCK]/Driven class and [Giant] teammates HP Up Lv.2, ATK Up Lv.2; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 22% reduction; [STR]/Powerhouse class enemies Special CT 22% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [Giant] teammates HP Up Lv.3, ATK Up Lv.3; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 24% reduction; [STR]/Powerhouse class enemies Special CT 24% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [Giant] teammates HP Up Lv.4, ATK Up Lv.4; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 26% reduction; [STR]/Powerhouse class enemies Special CT 26% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [Giant] teammates HP Up Lv.5, ATK Up Lv.5; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 28% reduction; [STR]/Powerhouse class enemies Special CT 28% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [Giant] teammates HP Up Lv.6, ATK Up Lv.6; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 30% reduction; [STR]/Powerhouse class enemies Special CT 30% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time"
+        ],
+        festSpecial: [
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 73% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 5.5 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 0.6 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 73% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.2 (73 s); targets [STR]/Powerhouse class enemies for ATK x 5.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.1 (73 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.2 (73 s), Special CT 1% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 76% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 0.7 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 76% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.2 (76 s); targets [STR]/Powerhouse class enemies for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.1 (76 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.2 (76 s), Special CT 2% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 79% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 6.5 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 0.8 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 79% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.2 (79 s); targets [STR]/Powerhouse class enemies for ATK x 6.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.1 (79 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.2 (79 s), Special CT 3% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 82% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 0.9 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 82% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.3 (82 s); targets [STR]/Powerhouse class enemies for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.1 (82 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.3 (82 s), Special CT 4% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 85% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 7.5 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 1 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 85% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.3 (85 s); targets [STR]/Powerhouse class enemies for ATK x 7.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.1 (85 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.3 (85 s), Special CT 5% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 88% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 1.1 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 88% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.4 (88 s); targets [STR]/Powerhouse class enemies for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.2 (88 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.4 (88 s), Special CT 6% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 91% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 8.5 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 1.2 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 91% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.4 (91 s); targets [STR]/Powerhouse class enemies for ATK x 8.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.2 (91 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.4 (91 s), Special CT 7% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 94% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 1.3 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 94% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.4 (94 s); targets [STR]/Powerhouse class enemies for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.2 (94 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.4 (94 s), Special CT 8% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 97% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 9.5 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 1.4 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 97% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.5 (97 s); targets [STR]/Powerhouse class enemies for ATK x 9.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.2 (97 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.5 (97 s), Special CT 9% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 100% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 1.5 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 100% chance of Haste; if character has Damage Over Time, targets 1 low DEF enemy for DEF Down Lv.6 (100 s); targets [STR]/Powerhouse class enemies for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.3 (100 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.6 (100 s), Special CT 10% reduction"
+            }
+        ],
+        festSuperSpecial: {
+            base: {
+                condition: "After character receives 8,000 damage",
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 100% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 1.7 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 100% chance of Haste; targets 1 low DEF enemy for DEF Down Lv.8 (100 s); targets [STR]/Powerhouse class enemies for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.4 (100 s), SPD Up Lv.6 (100 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.8 (100 s), Special CT 15% reduction"
+            },
+            llbbase: {
+                condition: "After character receives 5,000 damage",
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 100% chance to remove ATK Down; targets enemies with less than 600 DEF for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies); targets enemies with 600 DEF or more ignoring DEF for ATK x 2 damage; targets 1 [Domi Reversi] teammate with high current Special CT for 100% chance of Haste; targets 1 low DEF enemy for DEF Down Lv.10 (100 s); targets [STR]/Powerhouse class enemies for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Special CT Speed Up Lv.5 (100 s), SPD Up Lv.8 (100 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.10 (100 s), Special CT 20% reduction"
+            }
+        }
+    },
+    4665: {//Broggy
+        captain: "Reduces crew's Special charge time by 2 turns at start of quest, boosts [QCK] and Driven characters' ATK by approximately 6x when slots match (5.5x otherwise), HP by 1.65x, and makes their [QCK] slots have matching slot effects [If 4 or more [Giant Pirate Crew] [Giant] [Domi Reversi] characters are on the crew] Boosts [QCK] and Driven characters' ATK by a further 1.1x, and crew cannot be blown away by attack",
+        special: "Cuts crew's HP by 20%, but reduces crew's ATK Down duration by 10 turns, boosts the ATK of the next final tap performed by a [QCK] character by 60%, and reduces Captain's Special charge time by 3 turns [If enemy has Percent Damage Reduction status when Special is launched] Boosts the type effects of normal attacks for [QCK] and Driven characters by 4x for 1 turn (cannot be removed by crew or enemies) [Otherwise] Boosts the type effects of normal attacks for [QCK] and Driven characters by 3.5x for 1 turn [If \"Saintess Gunko\", \"Imu\", and \"Dorry\" launch Specials in the same turn] Nullifies damage taken until hit 1 time (+1 hit if Captain Ability is doubled)",
+        specialName: "The Red with Powers Bestowed by God",
+        sailor: {
+            base: "Reduces [Domi Reversi] characters' Bind duration by 6 turns",
+            level1: "Character cannot be blown away by attack"
+        },
+        superSpecialCriteria: "When crew has ability to nullify damage until a certain number of attacks (can be launched when character is a crewmate)",
+        superSpecial: "Reduces crew's tap limit duration by 3 turns, extends the duration of crew's type effect boost by 2 turns, further increases the boost by +0.5, and changes Striker characters to Super Striker",
+        support: [
+            {
+                Characters: "Dorry, Imu, Saintess Gunko",
+                description: [
+                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 1 turn at start of crew's next turn",
+                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 1 turn at start of crew's next turn",
+                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 2 turns at start of crew's next turn",
+                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 2 turns at start of crew's next turn",
+                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 3 turns at start of crew's next turn"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base RCV by 10",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Acquire Potential 1: Special Use Limit",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Boosts base HP by 30",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 20",
+            "Acquire Potential 2: Enrage/Increase Damage Taken",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 30",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 50",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Acquire Sailor Ability 2: Character cannot be blown away by attack",
+            "Boosts base RCV by 40",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 40",
+            "Boosts base HP by 80",
+            "Acquire Potential 3: Super Tandem Boost",
+            "LOCKED WITH KEY",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 200",
+            "Boosts base ATK by 100",
+            "Reduce base Special Cooldown by 1 turn"
+        ],
+        lLimit: [
+            null,
+            null,
+            null,
+            null,
+            {
+                rSuperSpecial: true
+            }
+        ],
+        potential: [
+            {
+                Name: "Special Use Limit",
+                description: [
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 3 turns"
+                ]
+            },
+            {
+                Name: "Enrage/Increase Damage Taken",
+                description: [
+                    "Boosts base ATK by 75 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 100 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 150 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 250 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 300 the turn after taking damage and reduces Increase Damage Taken duration by 3 turns"
+                ]
+            },
+            {
+                Name: "Super Tandem Boost",
+                description: [
+                    "Obtain Super Tandem Boost Lv.1",
+                    "Obtain Super Tandem Boost Lv.2",
+                    "Obtain Super Tandem Boost Lv.3",
+                    "Obtain Super Tandem Boost Lv.4",
+                    "Obtain Super Tandem Boost Lv.5"
+                ]
+            }
+        ],
+        superTandemBoost: {
+            characterCondition: [
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
+                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem"
+            ],
+            description: [
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 1 for 1 turn",
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 2 for 1 turn",
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 3 for 1 turn",
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 4 for 1 turn",
+                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 5 for 1 turn"
+            ]
+        },
+        festStats: {
+            def: 155,
+            spd: 178,
+            style: "ATK"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Normal Attack",
+            "Power Attack",
+            "Full Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Forced Out, reduce damage taken from [STR] by 30%",
+        festAbility: [
+            "[QCK]/Driven class and [Giant] teammates ATK Up Lv.2, DEF Up Lv.2; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 22% reduction; [STR]/Powerhouse class enemies Special CT 22% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [Giant] teammates ATK Up Lv.3, DEF Up Lv.3; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 24% reduction; [STR]/Powerhouse class enemies Special CT 24% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [Giant] teammates ATK Up Lv.4, DEF Up Lv.4; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 26% reduction; [STR]/Powerhouse class enemies Special CT 26% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [Giant] teammates ATK Up Lv.5, DEF Up Lv.5; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 28% reduction; [STR]/Powerhouse class enemies Special CT 28% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [Giant] teammates ATK Up Lv.6, DEF Up Lv.6; after character receives Damage Over Time, up to 1 time [Domi Reversi] teammates Special CT 30% reduction; [STR]/Powerhouse class enemies Special CT 30% delay; if 4 or more [Giant] characters or 2 or more [Domi Reversi] characters are on the team, when self is KO'd, launches Rumble Special 1 time"
+        ],
+        festSpecial: [
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 73% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 1.2 damage; targets enemies with 600 DEF or more for 6000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 73% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.2 (73 s), ATK x 5.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.1 (73 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.2 (73 s), Special CT 1% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 76% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 1.4 damage; targets enemies with 600 DEF or more for 7000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 76% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.2 (76 s), ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.1 (76 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.2 (76 s), Special CT 2% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 79% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 1.6 damage; targets enemies with 600 DEF or more for 8000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 79% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.2 (79 s), ATK x 6.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.1 (79 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.2 (79 s), Special CT 3% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 82% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 1.8 damage; targets enemies with 600 DEF or more for 9000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 82% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.3 (82 s), ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.2 (82 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.2 (82 s), Special CT 4% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 85% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 2 damage; targets enemies with 600 DEF or more for 10000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 85% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.3 (85 s), ATK x 7.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.2 (85 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.2 (85 s), Special CT 5% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 88% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 2.2 damage; targets enemies with 600 DEF or more for 11000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 88% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.4 (88 s), ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.3 (88 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.3 (88 s), Special CT 6% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 91% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 2.4 damage; targets enemies with 600 DEF or more for 12000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 91% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.4 (91 s), ATK x 8.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.3 (91 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.3 (91 s), Special CT 7% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 94% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 2.6 damage; targets enemies with 600 DEF or more for 13000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 94% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.4 (94 s), ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.3 (94 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.3 (94 s), Special CT 8% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 97% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 2.8 damage; targets enemies with 600 DEF or more for 14000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 97% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.5 (97 s), ATK x 9.5 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.4 (97 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.3 (97 s), Special CT 9% reduction"
+            },
+            {
+                cooldown: 35,
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 100% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 3 damage; targets enemies with 600 DEF or more for 15000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 100% chance of Haste; if character has Damage Over Time, targets [STR]/Powerhouse class enemies for ATK Down Lv.6 (100 s), ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.5 (100 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.4 (100 s), Special CT 10% reduction"
+            }
+        ],
+        festSuperSpecial: {
+            base: {
+                condition: "After character receives damage 8 times",
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 100% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 3.5 damage; targets enemies with 600 DEF or more for 17500 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 100% chance of Haste; targets [STR]/Powerhouse class enemies for ATK Down Lv.8 (100 s), ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.6 (100 s), DEF Up Lv.6 (100 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.5 (100 s), Special CT 15% reduction"
+            },
+            llbbase: {
+                condition: "After character receives damage 5 times",
+                description: "If 4 or more [Giant] [Domi Reversi] characters are on the team, targets team for 100% chance to remove DEF Down; targets enemies with less than 600 DEF for ATK x 4 damage; targets enemies with 600 DEF or more for 20000 spread damage (damage on each enemy reduced based on number of total enemies); targets 1 [Domi Reversi] teammate with high current Special CT for 100% chance of Haste; targets [STR]/Powerhouse class enemies for ATK Down Lv.10 (100 s), ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies); targets self for Damage Over Time Lv.1 (100 s); targets [Domi Reversi] teammates for Shield Lv.7 (100 s), DEF Up Lv.7 (100 s); during Assault Rumble, targets [Domi Reversi] teammates for ATK Up Lv.6 (100 s), Special CT 20% reduction"
+            }
+        }
+    },
+    4666: {//Jarul
+        special: "Reduces all enemies' DEF Up duration by 6 turns, reduces crew's Paralysis duration by 6 turns, and sets the chain multiplier's minimum value at 2.5 and maximum value at 20.0 for 1 turn [If 4 or more [Giant] characters are on the crew] Further increases crew's lock chain multiplier effect by +0.5 (this effect also applies to lock chain multiplier effect from this Special), and reduces right column characters' Special charge time by 3 turns",
+        specialName: "Unflinching Dignity of a Warrior",
+        sailor: {
+            base: "Character cannot be blown away by attack",
+            level1: "Reduces character's Special Reverse by 4 turns"
+        },
+        support: [
+            {
+                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                description: [
+                    "Adds 4% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 5% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 6% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 7% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 9% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base RCV by 10",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 10",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 30",
+            "Acquire 1 additional Socket slot",
+            "Boosts base RCV by 10",
+            "Boosts base ATK by 40",
+            "Boosts base RCV by 20",
+            "Acquire Sailor Ability 2: Reduces character's Special Reverse by 4 turns",
+            "Boosts base HP by 80",
+            "Reduce base Special Cooldown by 1 turn",
+            "Acquire Potential 2: Sailor Despair"
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 4 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character"
+                ]
+            },
+            {
+                Name: "Sailor Despair",
+                description: [
+                    "Reduces Sailor Despair duration by 1 turn on this character",
+                    "Reduces Sailor Despair duration by 2 turns on this character",
+                    "Reduces Sailor Despair duration by 3 turns on this character",
+                    "Reduces Sailor Despair duration by 4 turns on this character",
+                    "Reduces Sailor Despair duration by 5 turns on this character"
+                ]
+            }
+        ],
+        festStats: {
+            def: 158,
+            spd: 168,
+            style: "SPT"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Power Attack",
+            "Heal Lv.1 (Small Range)",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Heal 200 HP at an interval, reduce damage taken from [STR] by 20%",
+        festAbility: [
+            "[QCK] and [Giant] teammates HP Up Lv.2, ATK Up Lv.2; after receiving healing, up to 20 times [Giant] teammates Special CT 1% reduction; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.2",
+            "[QCK] and [Giant] teammates HP Up Lv.3, ATK Up Lv.3; after receiving healing, up to 20 times [Giant] teammates Special CT 2% reduction; during Assault Rumble, self HP Up Lv.7, Special CT Speed Up Lv.3",
+            "[QCK] and [Giant] teammates HP Up Lv.4, ATK Up Lv.4; after receiving healing, up to 20 times [Giant] teammates Special CT 3% reduction; during Assault Rumble, self HP Up Lv.8, Special CT Speed Up Lv.4",
+            "[QCK] and [Giant] teammates HP Up Lv.5, ATK Up Lv.5; after receiving healing, up to 20 times [Giant] teammates Special CT 4% reduction; during Assault Rumble, self HP Up Lv.9, Special CT Speed Up Lv.5",
+            "[QCK] and [Giant] teammates HP Up Lv.6, ATK Up Lv.6; after receiving healing, up to 20 times [Giant] teammates Special CT 5% reduction; during Assault Rumble, self HP Up Lv.10, Special CT Speed Up Lv.6"
+        ],
+        festSpecial: [
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.2 (11 s); targets [STR] enemies for 73% chance of Special Bind (6 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.2 (11 s), 50 HP per interval healing (11 s); during Assault Rumble, targets [STR] enemies for ATK x 2.2 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.2 (12 s); targets [STR] enemies for 76% chance of Special Bind (7 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.2 (12 s), 100 HP per interval healing (12 s); during Assault Rumble, targets [STR] enemies for ATK x 2.4 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.2 (13 s); targets [STR] enemies for 79% chance of Special Bind (8 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.2 (13 s), 150 HP per interval healing (13 s); during Assault Rumble, targets [STR] enemies for ATK x 2.6 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.3 (14 s); targets [STR] enemies for 82% chance of Special Bind (9 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.3 (14 s), 200 HP per interval healing (14 s); during Assault Rumble, targets [STR] enemies for ATK x 2.8 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.3 (15 s); targets [STR] enemies for 85% chance of Special Bind (10 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.3 (15 s), 250 HP per interval healing (15 s); during Assault Rumble, targets [STR] enemies for ATK x 3 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.4 (16 s); targets [STR] enemies for 88% chance of Special Bind (11 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.4 (16 s), 300 HP per interval healing (16 s); during Assault Rumble, targets [STR] enemies for ATK x 3.2 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.4 (17 s); targets [STR] enemies for 91% chance of Special Bind (12 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.4 (17 s), 350 HP per interval healing (17 s); during Assault Rumble, targets [STR] enemies for ATK x 3.4 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.4 (18 s); targets [STR] enemies for 94% chance of Special Bind (13 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.4 (18 s), 400 HP per interval healing (18 s); during Assault Rumble, targets [STR] enemies for ATK x 3.6 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.5 (19 s); targets [STR] enemies for 97% chance of Special Bind (14 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.5 (19 s), 450 HP per interval healing (19 s); during Assault Rumble, targets [STR] enemies for ATK x 3.8 damage"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.6 (20 s); targets [STR] enemies for 100% chance of Special Bind (15 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.6 (20 s), 500 HP per interval healing (20 s); during Assault Rumble, targets [STR] enemies for ATK x 4 damage"
+            }
+        ]
+    },
+    4667: {//Kashii
+        special: "Deals 80x character's ATK in [QCK] damage to all enemies, reduces crew's Bind/Burn duration by 6 turns, and boosts [QCK] characters' ATK by 2.25x for 1 turn [If 4 or more [Giant] characters are on the crew] Further increases crew's ATK boost by +0.5 (this effect also applies to ATK boost from this Special), and reduces left column characters' Special charge time by 3 turns",
+        specialName: "Giant Talking About Elbaph's King's Son",
+        sailor: {
+            base: "Character cannot be blown away by attack",
+            level1: "Reduces character's Special Reverse by 4 turns"
+        },
+        support: [
+            {
+                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                description: [
+                    "Adds 4% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 5% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 6% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 7% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
+                    "Adds 9% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 40",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 50",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 30",
+            "Acquire 1 additional Socket slot",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 30",
+            "Acquire Sailor Ability 2: Reduces character's Special Reverse by 4 turns",
+            "Boosts base HP by 60",
+            "Reduce base Special Cooldown by 1 turn",
+            "Acquire Potential 2: Sailor Despair"
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 4 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character"
+                ]
+            },
+            {
+                Name: "Sailor Despair",
+                description: [
+                    "Reduces Sailor Despair duration by 1 turn on this character",
+                    "Reduces Sailor Despair duration by 2 turns on this character",
+                    "Reduces Sailor Despair duration by 3 turns on this character",
+                    "Reduces Sailor Despair duration by 4 turns on this character",
+                    "Reduces Sailor Despair duration by 5 turns on this character"
+                ]
+            }
+        ],
+        festStats: {
+            def: 151,
+            spd: 157,
+            style: "DBF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Heal 200 HP at an interval, reduce damage taken from [STR] by 20%",
+        festAbility: [
+            "[QCK] and [Giant] teammates HP Up Lv.2, SPD Up Lv.2; after receiving healing, up to 20 times [STR] enemies Special CT 1% delay; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.2",
+            "[QCK] and [Giant] teammates HP Up Lv.3, SPD Up Lv.3; after receiving healing, up to 20 times [STR] enemies Special CT 2% delay; during Assault Rumble, self HP Up Lv.7, Special CT Speed Up Lv.3",
+            "[QCK] and [Giant] teammates HP Up Lv.4, SPD Up Lv.4; after receiving healing, up to 20 times [STR] enemies Special CT 3% delay; during Assault Rumble, self HP Up Lv.8, Special CT Speed Up Lv.4",
+            "[QCK] and [Giant] teammates HP Up Lv.5, SPD Up Lv.5; after receiving healing, up to 20 times [STR] enemies Special CT 4% delay; during Assault Rumble, self HP Up Lv.9, Special CT Speed Up Lv.5",
+            "[QCK] and [Giant] teammates HP Up Lv.6, SPD Up Lv.6; after receiving healing, up to 20 times [STR] enemies Special CT 5% delay; during Assault Rumble, self HP Up Lv.10, Special CT Speed Up Lv.6"
+        ],
+        festSpecial: [
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.2 (11 s); targets 1 low DEF [STR] enemy for 73% chance of Halve DEF (11 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.2 (11 s), Special CT Speed Down Lv.2 (11 s); during Assault Rumble, targets [STR] enemies for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.2 (12 s); targets 1 low DEF [STR] enemy for 76% chance of Halve DEF (12 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.2 (12 s), Special CT Speed Down Lv.2 (12 s); during Assault Rumble, targets [STR] enemies for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.2 (13 s); targets 1 low DEF [STR] enemy for 79% chance of Halve DEF (13 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.2 (13 s), Special CT Speed Down Lv.2 (13 s); during Assault Rumble, targets [STR] enemies for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.3 (14 s); targets 1 low DEF [STR] enemy for 82% chance of Halve DEF (14 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.3 (14 s), Special CT Speed Down Lv.2 (14 s); during Assault Rumble, targets [STR] enemies for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.3 (15 s); targets 1 low DEF [STR] enemy for 85% chance of Halve DEF (15 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.3 (15 s), Special CT Speed Down Lv.2 (15 s); during Assault Rumble, targets [STR] enemies for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.4 (16 s); targets 1 low DEF [STR] enemy for 88% chance of Halve DEF (16 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.4 (16 s), Special CT Speed Down Lv.3 (16 s); during Assault Rumble, targets [STR] enemies for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.4 (17 s); targets 1 low DEF [STR] enemy for 91% chance of Halve DEF (17 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.4 (17 s), Special CT Speed Down Lv.3 (17 s); during Assault Rumble, targets [STR] enemies for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.4 (18 s); targets 1 low DEF [STR] enemy for 94% chance of Halve DEF (18 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.4 (18 s), Special CT Speed Down Lv.3 (18 s); during Assault Rumble, targets [STR] enemies for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.5 (19 s); targets 1 low DEF [STR] enemy for 97% chance of Halve DEF (19 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.5 (19 s), Special CT Speed Down Lv.3 (19 s); during Assault Rumble, targets [STR] enemies for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets [STR] enemies for ATK Down Lv.6 (20 s); targets 1 low DEF [STR] enemy for 100% chance of Halve DEF (20 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.6 (20 s), Special CT Speed Down Lv.4 (20 s); during Assault Rumble, targets [STR] enemies for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies)"
+            }
+        ]
+    },
+    4668: {//6+ HW Mihawk
+        captain: "Reduces crew's Special charge time by 1 turn at start of quest, boosts [INT] characters' ATK by 5.25x, HP by 1.3x, boosts their ATK by approximately 5.5x until a character lands a non-PERFECT strike, and reduces crew's Paralysis duration by 10 turns",
+        special: "Reduces one enemy's HP by 20%, and reduces all enemies' Percent Damage Reduction duration by 10 turns. If 3 or more [Seven Warlords of the Sea] characters are on the crew, deals 200x character's ATK in [INT] damage to all enemies at end of turn for 3 turns, adds +0.25 to the effect of ATK boosts that are launched after this Special by [INT] characters for 3 turns, then after that, boosts [INT] characters' ATK by 3x for 1 turn, increases all enemies' damage taken by 1.75x for 1 turn ignoring immunity to status effects, and if crew lands 3 PERFECT strikes in this turn, boosts [INT] characters' ATK by 3.25x and increases all enemies' damage taken by 2x for 1 turn ignoring immunity to status effects the next turn",
+        specialName: "Fine Wine Savored at Midnight",
+        sailor: {
+            level1: "Boosts [INT] characters' base stats by 75",
+            level2: "Adds 5x character's ATK on top of tap-timing bonuses"
+        },
+        superSpecialCriteria: "When any of the following characters are on the crew (can be launched when character is a crewmate): Roronoa Zoro, Sir Crocodile (Mr. 0), Donquixote Doflamingo, Bartholomew Kuma, Gecko Moria, Boa Hancock, Jinbe, Marshall D. Teach (Blackbeard), Trafalgar Law, Buggy, Edward Weevil",
+        superSpecial: "Changes all slots (including [BLOCK] slots) to character's own type, allows crew's slot effect boost to be further increased up to 2 times, and further increases boost by 1.3x (maximum value is 8x), adds 1,000x character's ATK in non-type damage on top of tap-timing bonuses for character for 1 turn, and changes [INT] characters to Super [INT]",
+        support: [
+            {
+                Characters: "Roronoa Zoro",
+                description: [
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 1 turn",
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 1 turn",
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 2 turns",
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 2 turns",
+                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 3 turns"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 5",
+            "Boosts base ATK by 5",
+            "Boosts base ATK by 5",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base RCV by 10",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 30",
+            "Boosts base HP by 30",
+            "Boosts base HP by 30",
+            "Acquire Sailor Ability 1: Boosts [INT] characters' base stats by 75",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 15",
+            "Acquire Potential 2: Critical Hit",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base RCV by 20",
+            "Boosts base RCV by 30",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 70",
+            "Boosts base HP by 70",
+            "Boosts base HP by 70",
+            "Boosts base HP by 100",
+            "Boosts base HP by 100",
+            "Acquire Sailor Ability 2: Adds 5x character's ATK on top of tap-timing bonuses",
+            "Boosts base ATK by 30",
+            "Boosts base ATK by 30",
+            "Boosts base ATK by 30",
+            "Boosts base ATK by 50",
+            "Acquire Potential 3: Barrier Penetration",
+            "LOCKED WITH KEY",
+            "Boosts base HP by 100",
+            "Boosts base HP by 100",
+            "Boosts base RCV by 25",
+            "Boosts base RCV by 50",
+            "Boosts base ATK by 50",
+            "Boosts base ATK by 50",
+            "Boosts base ATK by 100",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 150"
+        ],
+        lLimit: [
+            null,
+            {
+                rAbility: true
+            },
+            {
+                captain: {
+                    base: "Reduces crew's Special charge time by 1 turn at start of quest, boosts [INT] characters' ATK by 5.5x, HP by 1.3x, boosts their ATK by approximately 5.75x until a character lands a non-PERFECT strike, and reduces crew's Paralysis duration by 10 turns [Applies following effect based on number of applicable Character Tags on crew] Reduces [Seven Warlords of the Sea] characters' Special charge time by 5 turns at start of quest, and if 3 or more [Seven Warlords of the Sea] characters are on the crew, boosts [INT] characters' ATK by a further 1.1x"
+                }
+            },
+            {
+                rSpecial: true
+            },
+            {
+                special: {
+                    base: "Reduces one enemy's HP by 20%, and reduces all enemies' Percent Damage Reduction duration by 12 turns. If 3 or more [Seven Warlords of the Sea] characters are on the crew, deals 200x character's ATK in [INT] damage to all enemies at end of turn for 3 turns, adds +0.5 to the effect of ATK boosts that are launched after this Special by [INT] characters for 3 turns, then after that, boosts [INT] characters' ATK by 3.25x for 1 turn, increases all enemies' damage taken by 2x for 1 turn ignoring immunity to status effects, and if crew lands 3 PERFECT strikes in this turn, boosts [INT] characters' ATK by 3.5x and increases all enemies' damage taken by 2.25x for 1 turn ignoring immunity to status effects the next turn"
+                },
+                rResilience: true,
+                rSuperSpecial: true
+            }
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 4 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character"
+                ]
+            },
+            {
+                Name: "Critical Hit",
+                description: [
+                    "If you hit a PERFECT with this character, there is a 30% chance to deal 3% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 40% chance to deal 4% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 50% chance to deal 5% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 60% chance to deal 6% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 70% chance to deal 7% of this character's attack in extra damage"
+                ]
+            },
+            {
+                Name: "Barrier Penetration",
+                description: [
+                    "This character's normal attack will ignore barriers if HP is above 99% at the start of the turn",
+                    "This character's normal attack will ignore barriers if HP is above 90% at the start of the turn",
+                    "This character's normal attack will ignore barriers if HP is above 70% at the start of the turn",
+                    "This character's normal attack will ignore barriers if HP is above 50% at the start of the turn",
+                    "This character's normal attack will ignore barriers"
+                ]
+            }
+        ],
+        festStats: {
+            def: 129,
+            spd: 218,
+            style: "ATK"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Normal Attack",
+            "Power Attack",
+            "Full Attack"
+        ],
+        festAttackTarget: "Targets enemies with high ATK",
+        festResistance: {
+            base: "Completely evades Paralysis, reduce damage taken from [PSY] by 30％",
+            llbbase: "Completely evades Paralysis, reduce damage taken from [PSY] by 40％"
+        },
+        festAbility: {
+            base: [
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.2, SPD Up Lv.2, Critical % Up Lv.2; after dealing damage, up to 6 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 1% healing; when striking a Critical, up to 4 times all enemies DEF Down Lv.1",
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.3, SPD Up Lv.3, Critical % Up Lv.3; after dealing damage, up to 6 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 2% healing; when striking a Critical, up to 4 times all enemies DEF Down Lv.1",
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.4, SPD Up Lv.4, Critical % Up Lv.4; after dealing damage, up to 6 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 3% healing; when striking a Critical, up to 4 times all enemies DEF Down Lv.1",
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.5, SPD Up Lv.5, Critical % Up Lv.5; after dealing damage, up to 6 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 4% healing; when striking a Critical, up to 4 times all enemies DEF Down Lv.1",
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.6, SPD Up Lv.6, Critical % Up Lv.6; after dealing damage, up to 6 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 5% healing; when striking a Critical, up to 4 times all enemies DEF Down Lv.2"
+            ],
+            llbbase: [
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.3, SPD Up Lv.3, Critical % Up Lv.2; after dealing damage, up to 8 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 6% healing; when striking a Critical, up to 3 times all enemies DEF Down Lv.2",
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.4, SPD Up Lv.4, Critical % Up Lv.3; after dealing damage, up to 8 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 7% healing; when striking a Critical, up to 3 times all enemies DEF Down Lv.2",
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.5, SPD Up Lv.5, Critical % Up Lv.4; after dealing damage, up to 8 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 8% healing; when striking a Critical, up to 3 times all enemies DEF Down Lv.2",
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.6, SPD Up Lv.6, Critical % Up Lv.5; after dealing damage, up to 8 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 9% healing; when striking a Critical, up to 3 times all enemies DEF Down Lv.2",
+                "[INT]/Slasher class and [Cross Guild] [Seven Warlords of the Sea] teammates HP Up Lv.7, SPD Up Lv.7, Critical % Up Lv.6; after dealing damage, up to 8 times [Cross Guild] [Seven Warlords of the Sea] teammates ATK Up Lv.1, HP 10% healing; when striking a Critical, up to 3 times all enemies DEF Down Lv.3"
+            ]
+        },
+        festSpecial: {
+            base: [
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.4 (11 s); targets self for ATK Up Lv.4 (11 s); targets enemies within large range (frontal) for ATK x 1 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 1 damage; during Assault Rumble, targets all enemies for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.4 (12 s); targets self for ATK Up Lv.4 (12 s); targets enemies within large range (frontal) for ATK x 1.2 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 1.2 damage; during Assault Rumble, targets all enemies for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.5 (13 s); targets self for ATK Up Lv.5 (13 s); targets enemies within large range (frontal) for ATK x 1.4 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 1.4 damage; during Assault Rumble, targets all enemies for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.5 (14 s); targets self for ATK Up Lv.5 (14 s); targets enemies within large range (frontal) for ATK x 1.6 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 1.6 damage; during Assault Rumble, targets all enemies for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.6 (15 s); targets self for ATK Up Lv.6 (15 s); targets enemies within large range (frontal) for ATK x 1.8 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 1.8 damage; during Assault Rumble, targets all enemies for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.6 (16 s); targets self for ATK Up Lv.6 (16 s); targets enemies within large range (frontal) for ATK x 2 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 2 damage; during Assault Rumble, targets all enemies for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.7 (17 s); targets self for ATK Up Lv.7 (17 s); targets enemies within large range (frontal) for ATK x 2.2 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 2.2 damage; during Assault Rumble, targets all enemies for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.7 (18 s); targets self for ATK Up Lv.7 (18 s); targets enemies within large range (frontal) for ATK x 2.4 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 2.4 damage; during Assault Rumble, targets all enemies for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.8 (19 s); targets self for ATK Up Lv.8 (19 s); targets enemies within large range (frontal) for ATK x 2.6 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 2.6 damage; during Assault Rumble, targets all enemies for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.8 (20 s); targets self for ATK Up Lv.8 (20 s); targets enemies within large range (frontal) for ATK x 3 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 3 damage; during Assault Rumble, targets all enemies for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies)"
+                }
+            ],
+            llbbase: [
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.6 (11 s); targets self for ATK Up Lv.6 (11 s); targets enemies within large range (frontal) for ATK x 2.2 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 2.2 damage; during Assault Rumble, targets all enemies for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.6 (12 s); targets self for ATK Up Lv.6 (12 s); targets enemies within large range (frontal) for ATK x 2.4 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 2.4 damage; during Assault Rumble, targets all enemies for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.7 (13 s); targets self for ATK Up Lv.7 (13 s); targets enemies within large range (frontal) for ATK x 2.6 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 2.6 damage; during Assault Rumble, targets all enemies for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.7 (14 s); targets self for ATK Up Lv.7 (14 s); targets enemies within large range (frontal) for ATK x 2.8 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 2.8 damage; during Assault Rumble, targets all enemies for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.8 (15 s); targets self for ATK Up Lv.8 (15 s); targets enemies within large range (frontal) for ATK x 3 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 3 damage; during Assault Rumble, targets all enemies for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.8 (16 s); targets self for ATK Up Lv.8 (16 s); targets enemies within large range (frontal) for ATK x 3.2 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 3.2 damage; during Assault Rumble, targets all enemies for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.9 (17 s); targets self for ATK Up Lv.9 (17 s); targets enemies within large range (frontal) for ATK x 3.4 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 3.4 damage; during Assault Rumble, targets all enemies for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.9 (18 s); targets self for ATK Up Lv.9 (18 s); targets enemies within large range (frontal) for ATK x 3.6 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 3.6 damage; during Assault Rumble, targets all enemies for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.10 (19 s); targets self for ATK Up Lv.10 (19 s); targets enemies within large range (frontal) for ATK x 3.8 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 3.8 damage; during Assault Rumble, targets all enemies for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies)"
+                },
+                {
+                    cooldown: 33,
+                    description: "Targets 1 high ATK enemy for ATK Down Lv.10 (20 s); targets self for ATK Up Lv.10 (20 s); targets enemies within large range (frontal) for ATK x 4 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 4 damage; during Assault Rumble, targets all enemies for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies)"
+                }
+            ]
+        },
+        festSuperSpecial: {
+            base: {
+                condition: "After character is healed 8 times",
+                description: "Targets 1 high ATK enemy for ATK Down Lv.12 (30 s); targets self for ATK Up Lv.12 (30 s); targets enemies within large range (frontal) for ATK x 4.5 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 4.5 damage; targets all enemies ignoring DEF for ATK x 1 damage; targets [Seven Warlords of the Sea] [Cross Guild] teammates for HP 10% healing; during Assault Rumble, targets all enemies for ATK x 18 spread damage (damage on each enemy reduced based on number of total enemies)"
+            },
+            llbbase: {
+                condition: "After character is healed 6 times",
+                description: "Targets 1 high ATK enemy for ATK Down Lv.15 (40 s); targets self for ATK Up Lv.15 (40 s); targets enemies within large range (frontal) for ATK x 5 damage; if 2 or more [Seven Warlords of the Sea] [Cross Guild] characters are on the team, targets enemies within large range (horizontal) for ATK x 5 damage; targets all enemies ignoring DEF for ATK x 1.3 damage; targets [Seven Warlords of the Sea] [Cross Guild] teammates for HP 20% healing; during Assault Rumble, targets all enemies for ATK x 20 spread damage (damage on each enemy reduced based on number of total enemies)"
+            }
+        },
+        festAbilityGP: [
+            {
+                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.1",
+                festGPSpecial: "Targets all enemies for 500 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.2",
+                festGPSpecial: "Targets all enemies for 625 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.2",
+                festGPSpecial: "Targets all enemies for 750 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.3",
+                festGPSpecial: "Targets all enemies for 875 damage",
+                uses: 2
+            },
+            {
+                festGPAbility: "Team ATK Up Lv.3, HP, SPD Up Lv.3",
+                festGPSpecial: "Targets all enemies for 1000 damage",
+                uses: 2
+            }
+        ],
+        festAbilityGPCondition: "When 2 teammates are defeated"
+    },
+    4669: {//5* PKA Mr. Ya
+        special: "Changes crew's slots (including [BLOCK] slots) to character's own type, reduces crew's Paralysis/Despair duration by 5 turns, reduces all enemies' damage nullification duration by 1 turn, and applies Weakened status (increase damage taken by 1.3x for all enemies, damage further increased by 1.25x if enemy has Increase Damage Taken) to all enemies for 1 turn [If 4 or more [Roger Pirates] [Elbaph Arc] characters are on the crew] Applies -20% [QCK] Resistance to all enemies for 2 turns",
+        specialName: "Impeding Legendary Figure",
+        sailor: {
+            base: "Boosts Slasher characters' base ATK by 150",
+            level1: "Makes crew's [QCK] slots have matching slot effects"
+        },
+        support: [
+            {
+                Characters: "[QCK] characters with the following Character Tag: [Former / Roger Pirates], [Elbaph Arc]",
+                description: [
+                    "Adds 3% of character's base stats to supported character's base stats",
+                    "Adds 4% of character's base stats to supported character's base stats",
+                    "Adds 5% of character's base stats to supported character's base stats",
+                    "Adds 6% of character's base stats to supported character's base stats",
+                    "Adds 7% of character's base stats to supported character's base stats [AUTO+] At battle 5, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 40",
+            "Boosts base ATK by 30",
+            "Acquire Potential 2: Critical Hit",
+            "Acquire 1 additional Socket slot",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 40",
+            "Reduce base Special Cooldown by 1 turn",
+            "LOCKED WITH KEY",
+            "Boosts base RCV by 10",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 100",
+            "Boosts base HP by 200",
+            "Boosts base RCV by 20",
+            "Acquire Potential 3: Enrage/Increase Damage Taken",
+            "Boosts base HP by 300",
+            "Boosts base ATK by 100",
+            "Acquire Sailor Ability 2: Makes crew's [QCK] slots have matching slot effects"
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 4 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character"
+                ]
+            },
+            {
+                Name: "Critical Hit",
+                description: [
+                    "If you hit a PERFECT with this character, there is a 40% chance to deal 3% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 50% chance to deal 4% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 60% chance to deal 5% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 70% chance to deal 6% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 80% chance to deal 7% of this character's attack in extra damage"
+                ]
+            },
+            {
+                Name: "Enrage/Increase Damage Taken",
+                description: [
+                    "Boosts base ATK by 50 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 75 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 100 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 150 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 200 the turn after taking damage and reduces Increase Damage Taken duration by 3 turns"
+                ]
+            }
+        ],
+        festStats: {
+            def: 214,
+            spd: 117,
+            style: "DEF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "60% chance to evade Action Bind",
+        festAbility: [
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.1, DEF Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.1",
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.2, DEF Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.1",
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.3, DEF Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.2",
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.4, DEF Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.2",
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.5, DEF Up Lv.2; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.3"
+        ],
+        festSpecial: [
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 3.2 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1 Counter stance (11 s), Shield Lv.2 (11 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 3.4 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.1 Counter stance (12 s), Shield Lv.2 (12 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 3.6 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.2 Counter stance (13 s), Shield Lv.2 (13 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 3.8 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.3 Counter stance (14 s), Shield Lv.2 (14 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 4 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.4 Counter stance (15 s), Shield Lv.2 (15 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 4.2 damage; targets all enemies for Miss % Up Lv.2 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.5 Counter stance (16 s), Shield Lv.2 (16 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 4.4 damage; targets all enemies for Miss % Up Lv.2 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.6 Counter stance (17 s), Shield Lv.2 (17 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 4.6 damage; targets all enemies for Miss % Up Lv.2 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.7 Counter stance (18 s), Shield Lv.2 (18 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 4.8 damage; targets all enemies for Miss % Up Lv.2 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.8 Counter stance (19 s), Shield Lv.2 (19 s)"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 5 damage; targets all enemies for Miss % Up Lv.3 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 2 Counter stance (20 s), Shield Lv.3 (20 s)"
+            }
+        ]
+    },
+    4671: {//5* Co-Op Brook
+        special: "Reduces [DEX] and Slasher characters' Special charge time by 1 turn, reduces the duration of all enemy barriers by 2 turns, sets all enemies' DEF to 0 for 1 turn, boosts the chain multiplier by 1.5x for 1 turn, and if crew lands 3 PERFECT strikes in this turn, applies increase damage taken status to all enemies by 1.5x the next turn [If 4 or more [Straw Hat Pirates] [Paramythia-type] characters are on the crew] Boosts damage dealt to enemies affected by DEF Down and increase damage taken status by 2.5x for 3 turns",
+        specialName: "God-Slashing Gavotte",
+        sailor: {
+            base: "Reduces character's Special Reverse by 3 turns",
+            level1: "Boosts [DEX] and Slasher characters' base stats by 70"
+        },
+        support: [
+            {
+                Characters: "[DEX] characters with the following Character Tag: [Elbaph Arc]",
+                description: [
+                    "Adds 2% of character's base HP to supported character's base HP",
+                    "Adds 3% of character's base HP to supported character's base HP",
+                    "Adds 4% of character's base HP to supported character's base HP",
+                    "Adds 5% of character's base HP to supported character's base HP",
+                    "Adds 6% of character's base HP to supported character's base HP [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 30",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 30",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base HP by 40",
+            "Boosts base HP by 30",
+            "Boosts base RCV by 10",
+            "Boosts base RCV by 20",
+            "Acquire Potential 2: Critical Hit",
+            "Acquire 1 additional Socket slot",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 50",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 40",
+            "Reduce base Special Cooldown by 1 turn",
+            "LOCKED WITH KEY",
+            "Boosts base RCV by 50",
+            "Boosts base HP by 150",
+            "Boosts base HP by 200",
+            "Boosts base RCV by 50",
+            "Boosts base ATK by 50",
+            "Acquire Sailor Ability 2: Boosts [DEX] and Slasher characters' base stats by 70",
+            "Boosts base ATK by 70",
+            "Boosts base ATK by 80",
+            "Acquire Potential 3: Damage Limit Break: Type"
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 4 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character"
+                ]
+            },
+            {
+                Name: "Critical Hit",
+                description: [
+                    "If you hit a PERFECT with this character, there is a 30% chance to deal 4% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 40% chance to deal 5% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 50% chance to deal 6% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 60% chance to deal 7% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 70% chance to deal 8% of this character's attack in extra damage"
+                ]
+            },
+            {
+                Name: "Damage Limit Break: Type",
+                description: [
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.1 for 3, +0.1 for 4, +0.2 for 5, +0.3 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.1 for 3, +0.2 for 4, +0.3 for 5, +0.4 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.2 for 3, +0.3 for 4, +0.4 for 5, +0.5 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.2 for 3, +0.4 for 4, +0.5 for 5, +0.6 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.2 for 1, +0.3 for 2, +0.4 for 3, +0.5 for 4, +0.6 for 5, +0.75 for 6 "
+                ]
+            }
+        ],
+        festStats: {
+            def: 197,
+            spd: 137,
+            style: "DBF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "60% chance to evade Special Bind",
+        festAbility: [
+            "[DEX]/Slasher class teammates HP Up Lv.1; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.1; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.1",
+            "[DEX]/Slasher class teammates HP Up Lv.1; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.1; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.1",
+            "[DEX]/Slasher class teammates HP Up Lv.1; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.1; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.1",
+            "[DEX]/Slasher class teammates HP Up Lv.2; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.2; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.2",
+            "[DEX]/Slasher class teammates HP Up Lv.3; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.3"
+        ],
+        festSpecial: [
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.1 (6 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (6 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 1% delay; targets \"Saintess Gunko\" enemy for Special CT 5% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 1.5 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.1 (7 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (7 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 1% delay; targets \"Saintess Gunko\" enemy for Special CT 5% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 1.7 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.1 (8 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (8 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 1% delay; targets \"Saintess Gunko\" enemy for Special CT 5% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 1.9 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.1 (9 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (9 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 2% delay; targets \"Saintess Gunko\" enemy for Special CT 6% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.1 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.2 (10 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (10 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 2% delay; targets \"Saintess Gunko\" enemy for Special CT 6% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.3 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.2 (11 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.2 (11 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 3% delay; targets \"Saintess Gunko\" enemy for Special CT 7% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.5 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.2 (12 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.2 (12 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 3% delay; targets \"Saintess Gunko\" enemy for Special CT 7% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.7 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.3 (13 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.2 (13 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 3% delay; targets \"Saintess Gunko\" enemy for Special CT 7% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.9 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.3 (14 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.2 (14 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 4% delay; targets \"Saintess Gunko\" enemy for Special CT 8% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.1 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.4 (15 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (15 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 5% delay; targets \"Saintess Gunko\" enemy for Special CT 10% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.5 damage"
+            }
+        ]
+    },
+    4672: {//5+ Co-Op Brook
+        special: "Reduces [DEX] and Slasher characters' Special charge time by 2 turns, reduces the duration of all enemy barriers by 3 turns, sets all enemies' DEF to 0 for 1 turn (ignoring immunity to DEF Down, immunity to all status effects, or immunity excluding certain status effect), boosts the chain multiplier by 1.6x for 1 turn, and if crew lands 3 PERFECT strikes in this turn, applies increase damage taken status to all enemies by 1.75x ignoring immunity to status effects for 1 turn the next turn [If 4 or more [Straw Hat Pirates] [Paramythia-type] characters are on the crew] Boosts damage dealt to enemies affected by DEF Down and increase damage taken status by 2.75x for 3 turns",
+        specialName: "God-Slashing Gavotte",
+        sailor: {
+            base: "Reduces character's Special Reverse by 3 turns",
+            level1: "Boosts [DEX] and Slasher characters' base stats by 70"
+        },
+        support: [
+            {
+                Characters: "[DEX] characters with the following Character Tag: [Elbaph Arc]",
+                description: [
+                    "Adds 2% of character's base HP to supported character's base HP",
+                    "Adds 3% of character's base HP to supported character's base HP",
+                    "Adds 4% of character's base HP to supported character's base HP",
+                    "Adds 5% of character's base HP to supported character's base HP",
+                    "Adds 6% of character's base HP to supported character's base HP [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 30",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 30",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base HP by 40",
+            "Boosts base HP by 30",
+            "Boosts base RCV by 10",
+            "Boosts base RCV by 20",
+            "Acquire Potential 2: Critical Hit",
+            "Acquire 1 additional Socket slot",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 50",
+            "Boosts base HP by 50",
+            "Boosts base ATK by 40",
+            "Reduce base Special Cooldown by 1 turn",
+            "LOCKED WITH KEY",
+            "Boosts base RCV by 50",
+            "Boosts base HP by 150",
+            "Boosts base HP by 200",
+            "Boosts base RCV by 50",
+            "Boosts base ATK by 50",
+            "Acquire Sailor Ability 2: Boosts [DEX] and Slasher characters' base stats by 70",
+            "Boosts base ATK by 70",
+            "Boosts base ATK by 80",
+            "Acquire Potential 3: Damage Limit Break: Type"
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 4 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character"
+                ]
+            },
+            {
+                Name: "Critical Hit",
+                description: [
+                    "If you hit a PERFECT with this character, there is a 30% chance to deal 4% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 40% chance to deal 5% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 50% chance to deal 6% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 60% chance to deal 7% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 70% chance to deal 8% of this character's attack in extra damage"
+                ]
+            },
+            {
+                Name: "Damage Limit Break: Type",
+                description: [
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.1 for 3, +0.1 for 4, +0.2 for 5, +0.3 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.1 for 3, +0.2 for 4, +0.3 for 5, +0.4 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.2 for 3, +0.3 for 4, +0.4 for 5, +0.5 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.2 for 3, +0.4 for 4, +0.5 for 5, +0.6 for 6 ",
+                    "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.2 for 1, +0.3 for 2, +0.4 for 3, +0.5 for 4, +0.6 for 5, +0.75 for 6 "
+                ]
+            }
+        ],
+        festStats: {
+            def: 222,
+            spd: 142,
+            style: "DBF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "80% chance to evade Special Bind, reduce damage taken from [QCK] by 20％",
+        festAbility: [
+            "[DEX]/Slasher class teammates HP Up Lv.3; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.3; during Assault Rumble, self HP Up Lv.4, Special CT Speed Up Lv.1",
+            "[DEX]/Slasher class teammates HP Up Lv.3; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.3; during Assault Rumble, self HP Up Lv.5, Special CT Speed Up Lv.1",
+            "[DEX]/Slasher class teammates HP Up Lv.3; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.3; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.2",
+            "[DEX]/Slasher class teammates HP Up Lv.4; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.4; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.4; during Assault Rumble, self HP Up Lv.7, Special CT Speed Up Lv.3",
+            "[DEX]/Slasher class teammates HP Up Lv.5; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.5; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.5; during Assault Rumble, self HP Up Lv.8, Special CT Speed Up Lv.4"
+        ],
+        festSpecial: [
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.2 (11 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (11 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 5% delay; targets \"Saintess Gunko\" enemy for Special CT 11% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.2 (12 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (12 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 5% delay; targets \"Saintess Gunko\" enemy for Special CT 12% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.2 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.2 (13 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (13 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 5% delay; targets \"Saintess Gunko\" enemy for Special CT 13% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.4 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.2 (14 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (14 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 6% delay; targets \"Saintess Gunko\" enemy for Special CT 14% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.6 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.3 (15 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (15 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 6% delay; targets \"Saintess Gunko\" enemy for Special CT 15% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.8 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.3 (16 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.4 (16 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 7% delay; targets \"Saintess Gunko\" enemy for Special CT 16% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 4 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.3 (17 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.4 (17 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 7% delay; targets \"Saintess Gunko\" enemy for Special CT 17% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 4.2 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.4 (18 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.4 (18 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 7% delay; targets \"Saintess Gunko\" enemy for Special CT 18% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 4.4 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.4 (19 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.4 (19 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 8% delay; targets \"Saintess Gunko\" enemy for Special CT 19% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 4.6 damage"
+            },
+            {
+                cooldown: 26,
+                description: "Targets enemies within large range for ATK Down Lv.5 (20 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.5 (20 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 10% delay; targets \"Saintess Gunko\" enemy for Special CT 20% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 5 damage"
+            }
+        ]
+    },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
         special: "Deals 120x character's ATK in Typeless damage to all enemies, changes orbs of adjacent characters into Matching Orbs, boosts ATK of all characters by 1.75x for 2 turns, reduces any damage received above 5,656 HP by 97% for 2 turns and makes PERFECTs easier to hit for 2 turns",

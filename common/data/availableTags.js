@@ -112,6 +112,10 @@ window.availableTags = [
     "category": 4
   },
   {
+    "name": "Domi Reversi",
+    "category": 2
+  },
+  {
     "name": "Donquixote Pirates",
     "category": 1
   },
