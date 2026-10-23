@@ -1,11 +1,5 @@
 @import url('../../common/css/orb-colors.css');
 
-/* Fallback for Bootstrap Icons (not loaded - use accent color as fallback) */
-.bi {
-    color: var(--accent);
-    font-style: normal;
-}
-
 /* Theme CSS Variables - loads from common/css/themes.css which is included in HTML */
 
 /* Override body/html to use CSS variables */
@@ -303,12 +297,21 @@ body, html {
     color: darkred;
 }
 
+.unitRemoved .material-icons {
+    font-size: 100px;
+}
+
 .unitChain.active, .unitSilence.active, .unitRemoved.active {
     display: block;
 }
 
 #removeZone {
     line-height: 150%;
+}
+
+#removeZone .material-icons {
+    font-size: 48px;
+    line-height: 112px;
 }
 
 .picking .unitContainer {
@@ -567,10 +570,18 @@ ul { padding-left: 0; }
 
 #menu li button {
     color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 1px 6px;
 }
 
-input {
-    color: black;
+input[type="number"],
+input[type="text"],
+select {
+    color: var(--text-primary);
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
 }
 
 .width-12 { width: 100%; }
@@ -1097,6 +1108,14 @@ nav > li > div {
     box-shadow: inset 0px 0px 1px blue, 0px 0px 1px blue;
 }
 
+.unitSailor .material-icons {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+}
+
 .unitAbilities {
     width: 20px;
     height: 20px;
@@ -1409,8 +1428,3 @@ li.STR > div, li.QCK > div, li.DEX > div, li.PSY > div, li.INT > div {
         color: var(--text-primary) !important;
     }
 }
-
-.bi-spin {
-    color: var(--text-primary) !important;
-}
-
