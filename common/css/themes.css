@@ -44,6 +44,14 @@
     /* Filter active states - mauve accent */
     --filter-active: #cba6f7;
     --filter-active-hover: #b4befe;
+    --filter-active-text: #1e1e2e;
+
+    /* Filter hierarchy: matcher header > subfilter panel > subfilter option */
+    --filter-surface: #38324c;
+    --filter-option-hover-bg: #2f2c42;
+    --filter-option-active-bg: #63547e;
+    --filter-option-active-text: #ffffff;
+    --filter-option-active-hover-bg: #746292;
 
     /* Type Colors - Hover/Active */
     --type-str-active: #f5c2e7;
@@ -230,7 +238,14 @@
     /* Filter active states - lavender accent */
     --filter-active: #7287fd;
     --filter-active-hover: #8839ef;
-    --filter-subclass-active: #8839ef;
+    --filter-active-text: #ffffff;
+
+    /* Filter hierarchy: matcher header > subfilter panel > subfilter option */
+    --filter-surface: #dbe0f6;
+    --filter-option-hover-bg: #e3e6f6;
+    --filter-option-active-bg: #bfc9f8;
+    --filter-option-active-text: #4c4f69;
+    --filter-option-active-hover-bg: #b3bef9;
 
     /* Positive/Negative stats */
     --positive: #40a02b;
@@ -358,7 +373,14 @@
     /* Filter active states */
     --filter-active: #c5aef8;
     --filter-active-hover: #b4befe;
-    --filter-subclass-active: #c5aef8;
+    --filter-active-text: #232634;
+
+    /* Filter hierarchy: matcher header > subfilter panel > subfilter option */
+    --filter-surface: #464661;
+    --filter-option-hover-bg: #3f4058;
+    --filter-option-active-bg: #6c658d;
+    --filter-option-active-text: #ffffff;
+    --filter-option-active-hover-bg: #736b96;
 
     /* Positive/Negative stats */
     --positive: #a6d189;
@@ -483,7 +505,14 @@
     /* Filter active states */
     --filter-active: #c6a0f6;
     --filter-active-hover: #b7bdf8;
-    --filter-subclass-active: #c6a0f6;
+    --filter-active-text: #181926;
+
+    /* Filter hierarchy: matcher header > subfilter panel > subfilter option */
+    --filter-surface: #3c3956;
+    --filter-option-hover-bg: #34334d;
+    --filter-option-active-bg: #655785;
+    --filter-option-active-text: #ffffff;
+    --filter-option-active-hover-bg: #756498;
 
     /* Positive/Negative stats */
     --positive: #a6da95;
