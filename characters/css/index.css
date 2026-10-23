@@ -1562,17 +1562,23 @@ tr.preview td:nth-child(2) > a:after {
 
 .quick-nav {
     position: absolute;
-    right: -50px;
+    /* Sit just outside the 800px modal (inside a 10px-padded wrapper), but
+       stay on-screen on narrow windows */
+    right: max(-50px, calc((820px - 100vw) / 2 + 8px));
     top: 50%;
     transform: translateY(-50%);
     width: 50px;
+    max-height: calc(100% - 16px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 8px 4px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 4px;
     animation: slideInNav 0.3s ease-out 0.15s backwards;
 }
