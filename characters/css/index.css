@@ -198,6 +198,10 @@ body, html {
 
 .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
     color: var(--text-primary) !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.15;
 }
 
 .tabulator .tabulator-header .tabulator-col:hover {
@@ -1000,17 +1004,13 @@ i.material-icons-chevron-rotated {
 .stars-4:before { color: var(--star-4); content: '\2605\2605\2605\2605'; }
 .stars-4:after  { color: var(--text-secondary); content: '\2605\2605'; }
 
-*[class~="stars-4+"]:before { color: var(--star-4plus); content: '\2605\2605\2605\2605\002B'; }
-
 .stars-5:before { color: var(--star-5); content: '\2605\2605\2605\2605\2605'; }
 .stars-5:after  { color: var(--text-secondary); content: '\2605'; }
 
-*[class~="stars-5+"]:before { color: var(--star-5plus); content: '\2605\2605\2605\2605\2605\002B'; }
-
 .stars-6:before { color: var(--star-6); content: '\2605\2605\2605\2605\2605\2605'; }
 
-*[class~="stars-6+"]:before { color: var(--star-6plus); content: '\2605\2605\2605\2605\2605\2605\002B'; }
-
+.star-filled { color: #f7c118; }
+.star-empty { color: #ccc; }
 
 .class.filter.active, .custom.filter.active, .drop.filter.active, .exc.filter.active {
     background: var(--filter-active);

@@ -257,9 +257,7 @@
     --star-3: #df8e1d;
     --star-4: #fe640b;
     --star-5: #d20f39;
-    --star-5plus: #b01030;
     --star-6: #8839ef;
-    --star-6plus: #ea76cb;
 
     /* Misc UI */
     --ribbon-red: #d20f39;
@@ -392,9 +390,7 @@
     --star-3: #e5c890;
     --star-4: #ef9f76;
     --star-5: #e78284;
-    --star-5plus: #f5bde6;
     --star-6: #c5aef8;
-    --star-6plus: #f5bde6;
 
     /* Type filter text - high contrast for readability */
     --type-text: #ffffff;
@@ -524,9 +520,7 @@
     --star-3: #eed49f;
     --star-4: #f5a97f;
     --star-5: #ed8796;
-    --star-5plus: #f5bde6;
     --star-6: #c6a0f6;
-    --star-6plus: #f5bde6;
 
     /* Type filter text - high contrast for readability */
     --type-text: #ffffff;

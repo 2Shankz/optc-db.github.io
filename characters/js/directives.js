@@ -35,18 +35,27 @@
 							// These columns stay at fixed widths
 						}
 						
+						tabCol.headerTooltip = true;
+
 						if (index === 0) {
 							tabCol.width = 50;
+							tabCol.minWidth = 50;
 						} else if (index === 1) {
 							tabCol.widthGrow = 1;
 							tabCol.minWidth = 220;
 							tabCol.formatter = "textarea";
 						} else if (index === 2 || index === 3 || index === 8 || index === 10) {
 							tabCol.width = 80;
+							tabCol.minWidth = 70;
 						} else if (index >= 4 && index <= 7) {
 							tabCol.width = 60;
+							tabCol.minWidth = 55;
 						} else if (index === 9) {
 							tabCol.width = 100;
+							tabCol.minWidth = 90;
+						} else {
+							tabCol.width = 90;
+							tabCol.minWidth = 70;
 						}
 						
 						if (col.render && typeof col.render === 'function') {
@@ -95,14 +104,15 @@
 							};
 							tabCol.formatter = function(cell, formatterParams, onRendered) {
 								var stars = cell.getValue();
-								if (stars === "4+") return '<span class="stars-4+"></span>';
-								if (stars === "5+") return '<span class="stars-5+"></span>';
-								if (stars === "6+") return '<span class="stars-6+"></span>';
-								var starCount = typeof stars === 'string' ? parseInt(stars, 10) : stars;
+								var isPlus = typeof stars === 'string' && stars.indexOf('+') > -1;
+								var starCount = parseInt(stars, 10) || 0;
+								// Plus units show only filled stars plus "+"; base units always show six.
+								var total = isPlus ? starCount : 6;
                                 var html = '';
-                                for (var i = 0; i < 6; i++) {
-                                    html += i < starCount ? '<i class="material-icons" style="color:#f7c118">star</i>' : '<i class="material-icons" style="color:#ccc">star_border</i>';
+                                for (var i = 0; i < total; i++) {
+                                    html += i < starCount ? '<i class="material-icons star-filled">star</i>' : '<i class="material-icons star-empty">star_border</i>';
                                 }
+								if (isPlus) html += '<span class="star-filled">+</span>';
 								return html;
 							};
 						}
