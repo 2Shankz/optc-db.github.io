@@ -165,6 +165,7 @@
 					maxHeight: "100%",
 					persistentLayout: false,
 					persistentSort: true,
+					initialSort: [{ column: "col0", dir: "desc" }],
 					movableColumns: true,
 					columns: convertColumns(scope.table.columns),
 					rowFormatter: function(row) {
