@@ -193286,24 +193286,25 @@ window.details = {
         ]
     },
     4663: {//Saintess Gunko (Imu Possessed)
-        captain: "Launches the following effect at start of quest: \"Boosts Super [QCK] effects for 10 turns, boosts damage dealt to effective types by 3x for 10 turns (normally 2.5x when effective), allows crew to perform Super Tandem with [QCK] slots for 10 turns, reduces crew's Special charge time by 2 turns and VS Effect gauge and Switch Effect by 2\", boosts [QCK] and Driven characters' ATK by 6x, makes crew's [QCK][TND] slots have matching slot effects, reduces the duration of ATK Down when above certain chain multiplier effect received from the enemy by 7 turns, and if field has \"Territory: Driven class\", boosts crew's ATK by 1.2x [If 4 or more [Domi Reversi] [Holy Knights] [World Government] characters are on the crew and character is a Captain (Friend/Helper Captain does not count) and performs EXCELLENT for the Action Special] Boosts [QCK] characters' ATK by a further 1.2x for 1 turn",
-        special: "Deals 1,000,000 damage to all enemies (ignoring all defensive effects, DEF, and Non-Normal Attacks Deal 1 Damage effect), reduces crew's Orb Boost effect by 1.0 but changes the effect to a stackable slot effect boost, reduces crew's Special Bind duration by 15 turns, and boosts crew's ATK for 1 turn based on the damage reduction effect applied on the enemy (values based on outcome of Action Special: base value 1.6x ~ 2x ATK; 2.1x ~ 2.5x ATK for Percent Damage Reduction status of 50%; 1x ATK for no Percent Damage Reduction status) [If 4 or more [Domi Reversi] [Holy Knights] [World Government] characters are on the crew and field has \"Territory: Driven class\"] Boosts [QCK] Driven characters' Orb Boost by 8x for 3 turns, and boosts [QCK] and Driven characters' Orb Boost by 6x for 3 turns [Otherwise] Boosts [QCK] and Driven characters' Orb Boost by 4x for 1 turn, and applies \"Territory: Driven class\" to the field for 3 turns",
+        captain: "Launches the following effects at start of fight: reduces Special Cooldown of all characters by 2 turns, reduces VS Gauge and Switch Effect of all characters by 2, boosts Super Type Effects of [QCK] characters to 3x for 10 turns, and allows all characters to perform Super Tandem with [QCK] orbs for 10 turns. Boosts ATK of [QCK] and Driven characters by 6x, makes [QCK] and [TND] orbs beneficial for all characters, and reduces Maximum-Chain ATK Down duration by 7 turns. If field has Territory: Driven, further boosts ATK of all characters by 1.2x. If your crew has 4+ [Domi Reversi], [Holy Knights] or [World Government] characters and this character is your Captain and performs EXCELLENT with their Action Special, further boosts ATK of [QCK] and Driven characters by 1.2x.",
+        special: "Deals 1,000,000 Fixed True damage, ignoring Normal Attack Only, to all enemies, decreases boost effects of Orb Boost buffs by -1.0x and converts Orb Boost into a Stackable Orb Boost, reduces Special Bind duration by 15 turns, boosts Enemy Damage Reduction to ATK of all characters by 1.6x-3.0x, proportional to the strength of enemies' Percent Damage Reduction buff, for 1 turn depending on the outcome of Action Special. If your crew has 4+ [Domi Reversi], [Holy Knights] or [World Government] characters and field has Territory: Driven when the special is activated, boosts Orb Effects of [QCK] Driven characters by 8x for 3 turns and boosts Orb Effects of [QCK] and Driven characters by 6x for 3 turns; boosts Orb Effects of [QCK] and Driven characters by 4x for 1 turn, and applies Territory: Driven to the field for 3 turns otherwise.",
+        specialNotes: "<br><b>MISS:</b> 1.6x-2.6x<br><b>GOOD:</b> 1.7x-2.7x<br><b>GREAT:</b> 1.8x-2.8x<br><b>PERFECT:</b> 1.9x-2.9x<br><b>EXCELLENT:</b> 2.0x-3.0x",
         specialName: "Diabolical Covenant: Domi Reversi",
         sailor: {
-            base: "Character cannot be blown away by attack, and reduces character's Special Bind duration by 15 turns",
-            level1: "Boosts [QCK] and Driven characters' base ATK by 1.1x, and makes Driven and Shooter characters' [QCK] slots have matching slot effects"
+            base: "This character cannot be Blown Away, and reduces Special Bind duration by 15 turns on this character.",
+            level1: "Boosts base ATK of [QCK] and Driven characters by 1.1x, and makes [QCK] orbs beneficial for Driven and Shooter characters."
         },
-        superSpecialCriteria: "When any 2 [Domi Reversi] [Holy Knights] [World Government] characters are on the crew not including self",
-        superSpecial: "Changes crew's [BLOCK] and [QCK][TND][RCV] slots to Super [QCK], reduces character's Special Bind duration by 15 turns, applies 50% damage reduction to enemies for 1 turn<hidden> (this effect is treated as an activation of damage reduction effect)</hidden>, allows [Domi Reversi] [Holy Knights] [World Government] characters' normal attacks to ignore enemies' defensive effects for 1 turn, changes Driven characters to Super Driven, and changes Shooter characters to Super Shooter",
+        superSpecialCriteria: "This character must be captain. Your crew must consist of any 3 of the following, excluding supports and counting only 1 per unit: [Domi Reversi], [Holy Knights], [World Government] characters",
+        superSpecial: "Changes [QCK], [TND], [RCV] and [BLOCK] orbs into Super [QCK] orbs, reduces Special Bind duration by 15 turns on this character, reduces enemies' damage received by 50% for 1 turn, makes [Domi Reversi], [Holy Knights] and [World Government] characters normal attacks ignore damage reducing barriers and buffs for 1 turn, and transforms Driven and Shooter characters into Super Driven and Super Shooter characters.",
         support: [
             {
-                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "[Elbaph Arc] characters",
                 description: [
-                    "Adds 10% of character's base stats to supported character's base stats",
-                    "Adds 12% of character's base stats to supported character's base stats",
-                    "Adds 13% of character's base stats to supported character's base stats",
-                    "Adds 14% of character's base stats to supported character's base stats",
-                    "Adds 15% of character's base stats to supported character's base stats"
+                    "Adds 10% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 12% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 13% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 14% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 15% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV."
                 ]
             }
         ],
@@ -193383,18 +193384,18 @@ window.details = {
         ],
         superTandem: {
             characterCondition: [
-                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)",
-                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)",
-                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)",
-                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)",
-                "When 4 or more [QCK] characters are on the crew (not including self) and crew can perform Super Tandem with certain slots (except as Support Characters; Double Characters counts as 1)"
+                "When your crew has a STND Expansion buff and your crew must consist of 5+ [QCK] characters",
+                "When your crew has a STND Expansion buff and your crew must consist of 5+ [QCK] characters",
+                "When your crew has a STND Expansion buff and your crew must consist of 5+ [QCK] characters",
+                "When your crew has a STND Expansion buff and your crew must consist of 5+ [QCK] characters",
+                "When your crew has a STND Expansion buff and your crew must consist of 5+ [QCK] characters"
             ],
             description: [
-                "Boosts base ATK by +500 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 2x to [QCK] and Driven characters for 1 turn",
-                "Boosts base ATK by +750 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 2.25x to [QCK] and Driven characters for 1 turn",
-                "Boosts base ATK by +1000 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 2.5x to [QCK] and Driven characters for 1 turn",
-                "Boosts base ATK by +1250 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 2.75x to [QCK] and Driven characters for 1 turn",
-                "Boosts base ATK by +1500 for user of Final Tap Sugo Special (stacks with effects from Special) for 1 turn, and applies ATK Boost (Tandem) of 3x to [QCK] and Driven characters for 1 turn"
+                "Boosts base ATK of Last Tap character by +500 for 1 turn, and boosts Tandem ATK of [QCK] and Driven characters by 2x for 1 turn.",
+                "Boosts base ATK of Last Tap character by +750 for 1 turn, and boosts Tandem ATK of [QCK] and Driven characters by 2.25x for 1 turn.",
+                "Boosts base ATK of Last Tap character by +1,000 for 1 turn, and boosts Tandem ATK of [QCK] and Driven characters by 2.5x for 1 turn.",
+                "Boosts base ATK of Last Tap character by +1,250 for 1 turn, and boosts Tandem ATK of [QCK] and Driven characters by 2.75x for 1 turn.",
+                "Boosts base ATK of Last Tap character by +1,500 for 1 turn, and boosts Tandem ATK of [QCK] and Driven characters by 3x for 1 turn."
             ]
         },
         festStats: {
@@ -193489,24 +193490,25 @@ window.details = {
         festAbilityGPCondition: "After dealing damage 20 times"
     },
     4664: {//Dorry
-        captain: "Reduces crew's Special charge time by 2 turns at start of quest, boosts [QCK] and Driven characters' ATK by approximately 6x when slots match (5.5x otherwise), HP by 1.65x, and makes their [QCK] slots have matching slot effects [If 4 or more [Giant Pirate Crew] [Giant] [Domi Reversi] characters are on the crew] Boosts [QCK] and Driven characters' ATK by a further 1.1x, and crew cannot be blown away by attack",
-        special: "Cuts crew's HP by 20%, but reduces crew's Despair duration by 10 turns, applies Set Target status to all enemies for 3 turns ([QCK] and Driven characters will deal 2x damage, and their Special charge time will be reduced by 2 turns for every enemy with Set Target status defeated by normal attacks and Specials), and reduces Captain's Special charge time by 3 turns [If enemy has Percent Damage Reduction status when Special is launched] Boosts [QCK] and Driven characters' base ATK by +2250 for 1 turn (cannot be removed by crew or enemies) [Otherwise] Boosts [QCK] and Driven characters' base ATK by +1750 for 1 turn [If \"Saintess Gunko\", \"Imu\", and \"Broggy\" launch Specials in the same turn] Nullifies damage taken until hit 1 time (+1 hit if Captain Ability is doubled)",
+        captain: "Reduces Special Cooldown of all characters by 2 turns at the start of the fight, boosts ATK of [QCK] and Driven characters by 5.5x, by 6x instead if they have a beneficial orb, boosts HP of [QCK] and Driven characters by 1.65x, and makes [QCK] orbs beneficial for [QCK] and Driven characters. If your crew has 4+ [Giant Pirate Crew], [Giant] or [Domi Reversi] characters, further boosts ATK of [QCK] and Driven characters by 1.1x, and makes crew immune to Blow Away.",
+        special: "Reduces crew's current HP by 20%, reduces Despair duration by 10 turns, reduces Special Cooldown of Captain character by 3 turns, and inflicts all enemies with Set Target, increasing damage taken from [QCK] and Driven characters by 2x and reducing Special Cooldown of [QCK] and Driven characters by 2 turns when they defeat an enemy, for 3 turns. If enemies have Percent Damage Reduction when the special is activated, boosts Base ATK of [QCK] and Driven characters by 2,250, preventing buff clears, for 1 turn; boosts Base ATK of [QCK] and Driven characters by 1,750 for 1 turn otherwise. If your crew has Saintess Gunko, Imu and Broggy who have all used specials this turn, reduces damage received by 100% for 1 attack.",
+        specialNotes: "Saintess Gunko (Imu Possessed) using a special fulfills both the Saintess Gunko and Imu part of the condition",
         specialName: "The Blue with Powers Bestowed by God",
         sailor: {
-            base: "Reduces [Domi Reversi] characters' Bind duration by 6 turns",
-            level1: "Character cannot be blown away by attack"
+            base: "Reduces Bind duration by 6 turns on [Domi Reversi] characters.",
+            level1: "This character cannot be Blown Away."
         },
-        superSpecialCriteria: "When crew has ability to nullify damage until a certain number of attacks (can be launched when character is a crewmate)",
-        superSpecial: "Reduces all enemies' damage reduction from certain slots effect duration by 6 turns, extends the duration of crew's base ATK boost by 2 turns, further increases the boost by +500, and changes [QCK] characters to Super [QCK]",
+        superSpecialCriteria: "Can be launched as crewmate. When your crew has Damage Nullification until a certain number of attacks",
+        superSpecial: "Reduces enemies' Orb-Based Damage Reduction duration by 6 turns, increases duration of any Base ATK Boost buffs by 2 turns, increases boost effects of Base ATK Boost buffs by +500, and transforms [QCK] characters into Super [QCK] characters.",
         support: [
             {
                 Characters: "Broggy, Imu, Saintess Gunko",
                 description: [
-                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if inflicted with Despair status from the enemy, reduces crew's Despair duration by 3 turns at start of crew's next turn"
+                    "Once per adventure, when an enemy inflicts you with Despair, reduces Despair duration by 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Despair, reduces Despair duration by 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with Despair, reduces Despair duration by 2 turns.",
+                    "Once per adventure, when an enemy inflicts you with Despair, reduces Despair duration by 2 turns.",
+                    "Once per adventure, when an enemy inflicts you with Despair, reduces Despair duration by 3 turns."
                 ]
             }
         ],
@@ -193595,18 +193597,18 @@ window.details = {
         ],
         superTandemBoost: {
             characterCondition: [
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem"
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem",
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem",
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem",
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem",
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem"
             ],
             description: [
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 1 for 1 turn",
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 2 for 1 turn",
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 3 for 1 turn",
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 4 for 1 turn",
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 5 for 1 turn"
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 1 for 1 turn.",
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 2 for 1 turn.",
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 3 for 1 turn.",
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 4 for 1 turn.",
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 5 for 1 turn."
             ]
         },
         festStats: {
@@ -193683,24 +193685,25 @@ window.details = {
         }
     },
     4665: {//Broggy
-        captain: "Reduces crew's Special charge time by 2 turns at start of quest, boosts [QCK] and Driven characters' ATK by approximately 6x when slots match (5.5x otherwise), HP by 1.65x, and makes their [QCK] slots have matching slot effects [If 4 or more [Giant Pirate Crew] [Giant] [Domi Reversi] characters are on the crew] Boosts [QCK] and Driven characters' ATK by a further 1.1x, and crew cannot be blown away by attack",
-        special: "Cuts crew's HP by 20%, but reduces crew's ATK Down duration by 10 turns, boosts the ATK of the next final tap performed by a [QCK] character by 60%, and reduces Captain's Special charge time by 3 turns [If enemy has Percent Damage Reduction status when Special is launched] Boosts the type effects of normal attacks for [QCK] and Driven characters by 4x for 1 turn (cannot be removed by crew or enemies) [Otherwise] Boosts the type effects of normal attacks for [QCK] and Driven characters by 3.5x for 1 turn [If \"Saintess Gunko\", \"Imu\", and \"Dorry\" launch Specials in the same turn] Nullifies damage taken until hit 1 time (+1 hit if Captain Ability is doubled)",
+        captain: "Reduces Special Cooldown of all characters by 2 turns at the start of the fight, boosts ATK of [QCK] and Driven characters by 5.5x, by 6x instead if they have a beneficial orb, boosts HP of [QCK] and Driven characters by 1.65x, and makes [QCK] orbs beneficial for [QCK] and Driven characters. If your crew has 4+ [Giant Pirate Crew], [Giant] or [Domi Reversi] characters, further boosts ATK of [QCK] and Driven characters by 1.1x, and makes crew immune to Blow Away.",
+        special: "Reduces crew's current HP by 20%, reduces ATK Down duration by 10 turns, reduces Special Cooldown of Captain character by 3 turns, and boosts Final Tap ATK of [QCK] characters by 60%. If enemies have Percent Damage Reduction when the special is activated, boosts Color Affinity of [QCK] and Driven characters by 4x, preventing buff clears, for 1 turn; boosts Color Affinity of [QCK] and Driven characters by 3.5x for 1 turn otherwise. If your crew has Saintess Gunko, Imu and Dorry who have all used specials this turn, reduces damage received by 100% for 1 attack.",
+        specialNotes: "Saintess Gunko (Imu Possessed) using a special fulfills both the Saintess Gunko and Imu part of the condition",
         specialName: "The Red with Powers Bestowed by God",
         sailor: {
-            base: "Reduces [Domi Reversi] characters' Bind duration by 6 turns",
-            level1: "Character cannot be blown away by attack"
+            base: "Reduces Bind duration by 6 turns on [Domi Reversi] characters.",
+            level1: "This character cannot be Blown Away."
         },
-        superSpecialCriteria: "When crew has ability to nullify damage until a certain number of attacks (can be launched when character is a crewmate)",
-        superSpecial: "Reduces crew's tap limit duration by 3 turns, extends the duration of crew's type effect boost by 2 turns, further increases the boost by +0.5, and changes Striker characters to Super Striker",
+        superSpecialCriteria: "Can be launched as crewmate. When your crew has Damage Nullification until a certain number of attacks",
+        superSpecial: "Reduces Tap Limit duration by 3 turns, increases duration of any Color Affinity buffs by 2 turns, increases boost effects of Color Affinity buffs by +0.5x, and transforms Striker characters into Super Striker characters.",
         support: [
             {
                 Characters: "Dorry, Imu, Saintess Gunko",
                 description: [
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 1 turn at start of crew's next turn",
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 2 turns at start of crew's next turn",
-                    "Once per quest, if inflicted with ATK Down status from the enemy, reduces crew's ATK Down duration by 3 turns at start of crew's next turn"
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 1 turn.",
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 2 turns.",
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 2 turns.",
+                    "Once per adventure, when an enemy inflicts you with ATK Down, reduces ATK Down duration by 3 turns."
                 ]
             }
         ],
@@ -193789,18 +193792,18 @@ window.details = {
         ],
         superTandemBoost: {
             characterCondition: [
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem",
-                "When a [Giant] [Elbaph Arc] [Domi Reversi]character performs Super Tandem"
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem",
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem",
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem",
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem",
+                "When a [Giant], [Elbaph Arc] or [Domi Reversi] character performs Super Tandem"
             ],
             description: [
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 1 for 1 turn",
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 2 for 1 turn",
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 3 for 1 turn",
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 4 for 1 turn",
-                "Raises Boost Level of [Giant] [Elbaph Arc] [Domi Reversi] [Holy Knights] characters by 5 for 1 turn"
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 1 for 1 turn.",
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 2 for 1 turn.",
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 3 for 1 turn.",
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 4 for 1 turn.",
+                "Raises Boost Level of [Giant], [Elbaph Arc], [Domi Reversi] and [Holy Knights] characters by 5 for 1 turn."
             ]
         },
         festStats: {
@@ -194119,24 +194122,24 @@ window.details = {
         ]
     },
     4668: {//6+ HW Mihawk
-        captain: "Reduces crew's Special charge time by 1 turn at start of quest, boosts [INT] characters' ATK by 5.25x, HP by 1.3x, boosts their ATK by approximately 5.5x until a character lands a non-PERFECT strike, and reduces crew's Paralysis duration by 10 turns",
-        special: "Reduces one enemy's HP by 20%, and reduces all enemies' Percent Damage Reduction duration by 10 turns. If 3 or more [Seven Warlords of the Sea] characters are on the crew, deals 200x character's ATK in [INT] damage to all enemies at end of turn for 3 turns, adds +0.25 to the effect of ATK boosts that are launched after this Special by [INT] characters for 3 turns, then after that, boosts [INT] characters' ATK by 3x for 1 turn, increases all enemies' damage taken by 1.75x for 1 turn ignoring immunity to status effects, and if crew lands 3 PERFECT strikes in this turn, boosts [INT] characters' ATK by 3.25x and increases all enemies' damage taken by 2x for 1 turn ignoring immunity to status effects the next turn",
+        captain: "Reduces Special Cooldown of all characters by 1 turn at the start of the fight, boosts ATK of [INT] characters by 5.25x, by 5.5x instead until a character lands a non-PERFECT hit, boosts HP of [INT] characters by 1.3x, and reduces Paralysis duration by 10 turns.",
+        special: "Deals 20% of enemies' current HP in damage to one enemy, and reduces enemies' Percent Damage Reduction duration by 10 turns. If your crew has 3+ [Seven Warlords of the Sea] characters, deals 200x character's ATK in [INT] damage to all enemies at the end of each turn for 3 turns, and increases boost effects of ATK Up buffs applied by [INT] characters by +0.25x for 3 turns. Boosts ATK of [INT] characters by 3x for 1 turn, ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 1.75x for 1 turn, and if during this turn you score 3 PERFECT hits, launches the following effects in the following turn: boosts ATK of [INT] characters by 3.25x for 1 turn, and ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 2x for 1 turn.",
         specialName: "Fine Wine Savored at Midnight",
         sailor: {
-            level1: "Boosts [INT] characters' base stats by 75",
-            level2: "Adds 5x character's ATK on top of tap-timing bonuses"
+            level1: "Boosts base ATK, HP and RCV of [INT] characters by 75.",
+            level2: "Adds 5x character's ATK as Additional Damage."
         },
-        superSpecialCriteria: "When any of the following characters are on the crew (can be launched when character is a crewmate): Roronoa Zoro, Sir Crocodile (Mr. 0), Donquixote Doflamingo, Bartholomew Kuma, Gecko Moria, Boa Hancock, Jinbe, Marshall D. Teach (Blackbeard), Trafalgar Law, Buggy, Edward Weevil",
-        superSpecial: "Changes all slots (including [BLOCK] slots) to character's own type, allows crew's slot effect boost to be further increased up to 2 times, and further increases boost by 1.3x (maximum value is 8x), adds 1,000x character's ATK in non-type damage on top of tap-timing bonuses for character for 1 turn, and changes [INT] characters to Super [INT]",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 1 of the following, excluding Supports and counting only 1 per unit: Roronoa Zoro, Sir Crocodile (Mr. 0), Donquixote Doflamingo, Bartholomew Kuma, Gecko Moria, Boa Hancock, Jinbe, Marshall D. Teach (Blackbeard), Trafalgar Law, Buggy, Edward Weevil",
+        superSpecial: "Changes all orbs, including [BLOCK] orbs, into matching orbs, enables Orb Boost buffs to be enhanced up to 2 times, increases boost effects of Orb Boost buffs by 1.3x (up to 8x), adds 1000x character's ATK as Additional Typeless Damage for 1 turn, and transforms [INT] characters into Super [INT] characters.",
         support: [
             {
                 Characters: "Roronoa Zoro",
                 description: [
-                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 1 turn",
-                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 1 turn",
-                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 2 turns",
-                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 2 turns",
-                    "Once per quest, if supported character uses a damage dealing or percentage damage dealing Special, reduces all enemies' damage reduction (except Threshold Damage Reduction) duration by 3 turns"
+                    "Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Percent Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Percent Damage Reduction duration by 1 turn.",
+                    "Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Percent Damage Reduction duration by 2 turns.",
+                    "Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Percent Damage Reduction duration by 2 turns.",
+                    "Once per adventure, when the supported character uses a Damage Dealing or Health Cutting special, reduces enemies' Percent Damage Reduction duration by 3 turns."
                 ]
             }
         ],
@@ -194189,7 +194192,7 @@ window.details = {
             },
             {
                 captain: {
-                    base: "Reduces crew's Special charge time by 1 turn at start of quest, boosts [INT] characters' ATK by 5.5x, HP by 1.3x, boosts their ATK by approximately 5.75x until a character lands a non-PERFECT strike, and reduces crew's Paralysis duration by 10 turns [Applies following effect based on number of applicable Character Tags on crew] Reduces [Seven Warlords of the Sea] characters' Special charge time by 5 turns at start of quest, and if 3 or more [Seven Warlords of the Sea] characters are on the crew, boosts [INT] characters' ATK by a further 1.1x"
+                    base: "Launches the following effects at start of fight: reduces Special Cooldown of [Seven Warlords of the Sea] characters by 6 turns, and reduces Special Cooldown of all other characters by 1 turn. Boosts ATK of [INT] characters by 5.5x, by 5.75x instead until a character lands a non-PERFECT hit, boosts HP of [INT] characters by 1.3x, and reduces Paralysis duration by 10 turns. If your crew has 3+ [Seven Warlords of the Sea] characters, further boosts ATK of [INT] characters by 1.1x."
                 }
             },
             {
@@ -194197,7 +194200,7 @@ window.details = {
             },
             {
                 special: {
-                    base: "Reduces one enemy's HP by 20%, and reduces all enemies' Percent Damage Reduction duration by 12 turns. If 3 or more [Seven Warlords of the Sea] characters are on the crew, deals 200x character's ATK in [INT] damage to all enemies at end of turn for 3 turns, adds +0.5 to the effect of ATK boosts that are launched after this Special by [INT] characters for 3 turns, then after that, boosts [INT] characters' ATK by 3.25x for 1 turn, increases all enemies' damage taken by 2x for 1 turn ignoring immunity to status effects, and if crew lands 3 PERFECT strikes in this turn, boosts [INT] characters' ATK by 3.5x and increases all enemies' damage taken by 2.25x for 1 turn ignoring immunity to status effects the next turn"
+                    base: "Deals 20% of enemies' current HP in damage to one enemy, and reduces enemies' Percent Damage Reduction duration by 12 turns. If your crew has 3+ [Seven Warlords of the Sea] characters, deals 200x character's ATK in [INT] damage to all enemies at the end of each turn for 3 turns, and increases boost effects of ATK Up buffs applied by [INT] characters by +0.5x for 3 turns. Boosts ATK of [INT] characters by 3.25x for 1 turn, ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 2x for 1 turn, and if during this turn you score 3 PERFECT hits, launches the following effects in the following turn: boosts ATK of [INT] characters by 3.5x for 1 turn, and ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 2.25x for 1 turn."
                 },
                 rResilience: true,
                 rSuperSpecial: true
