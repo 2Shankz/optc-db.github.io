@@ -5,6 +5,23 @@
 
   var app = angular.module("optc");
 
+  // Reset the sidebar after Clear All, including the panels and cost sliders.
+  function resetFilterUI() {
+    var $container = $("#leftContainer");
+    if (!$container.length) return;
+
+    // Type and Class stay open by default; close every other panel.
+    $container.find(".collapse")
+      .not("#type-filter > .collapse, #class-filter > .collapse")
+      .collapse("hide");
+    $container.find("#type-filter > .collapse, #class-filter > .collapse").collapse("show");
+
+    ["cost-slider", "rumble-cost-slider"].forEach(function (id) {
+      var slider = document.getElementById(id);
+      if (slider && slider.noUiSlider) slider.noUiSlider.set([1, 99]);
+    });
+  }
+
   app.controller(
     "MainCtrl",
     function (
@@ -17,36 +34,50 @@
       $controller
     ) {
 
-      $scope.query = $state.params.query;
+      $scope.query = $state.params.query || '';
+
+      var updateUrlTimeout = null;
+
+      function updateUrl(query) {
+        if (updateUrlTimeout) $timeout.cancel(updateUrlTimeout);
+        updateUrlTimeout = $timeout(function() {
+          $state.go('.', { query: query || '' }, { notify: false, reload: false });
+        }, 300);
+      }
 
       $scope.$watch("query", function (query) {
-        if (
-          query === null ||
-          query === undefined ||
-          $scope.query == $stateParams.query
-        )
-          return;
-        $state.go(".", { query: $scope.query });
-        $scope.table.parameters = CharUtils.generateSearchParameters(
-          $scope.query,
+        if (query === null || query === undefined) return;
+        updateUrl(query);
+        var params = CharUtils.generateSearchParameters(
+          query,
           jQuery.extend({}, $rootScope.filters)
         );
-      });
-
-      $scope.$on("$stateChangeSuccess", function (e) {
-        if ($state.current.name == "main.search") {
-          $scope.query = $state.params.query;
+        if ($rootScope.table) {
+          $rootScope.table.parameters = params;
         }
       });
 
-      $scope.theme = $storage.get('optc-theme', 'dark');
-      document.body.classList.toggle('light-mode', $scope.theme === 'light');
+      $scope.$on("$locationChangeSuccess", function() {
+        $scope.$evalAsync(function() {
+          $scope.query = $state.params.query || '';
+        });
+      });
 
-      $scope.toggleTheme = function() {
-        $scope.theme = $scope.theme === 'dark' ? 'light' : 'dark';
-        $storage.set('optc-theme', $scope.theme);
-        document.body.classList.toggle('light-mode', $scope.theme === 'light');
-      };
+      document.addEventListener('keydown', function(e) {
+        var tag = e.target.tagName.toLowerCase();
+        if (tag === 'input' || tag === 'textarea') return;
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
+        if (e.key === 'Backspace' && e.target.id !== 'picker') {
+          $scope.$apply(function() {
+            $scope.query = '';
+          });
+        } else if (e.key.length === 1) {
+          $scope.$apply(function() {
+            if (!$scope.query) $scope.query = '';
+            $scope.query += e.key;
+          });
+        }
+      });
 
       $scope.getRandChar = function () {
         var range = parseInt($rootScope.table.data.length) + 1;
@@ -56,12 +87,198 @@
       $scope.clearQuery = function () {
         $scope.query = "";
       };
+
+      $scope.saveFuzzy = function () {
+        $storage.set("fuzzy", $rootScope.table.fuzzy);
+        $rootScope.table.refresh();
+      };
+
+      $scope.theme = $storage.get('optc-theme', 'dark');
+      $scope.modalTheme = $storage.get('optc-modal-theme', 'light');
+
+      $rootScope.modalTheme = $scope.modalTheme;
+      $rootScope.toggleModalTheme = $scope.toggleModalTheme;
+      $rootScope.getModalThemeIcon = $scope.getModalThemeIcon;
+
+      var applyTheme = function(theme, target) {
+        target.classList.remove('light-mode', 'dark-mode', 'frappe', 'macchiato');
+        if (theme === 'frappe') {
+          target.classList.add('light-mode', 'frappe');
+        } else if (theme === 'macchiato') {
+          target.classList.add('dark-mode', 'macchiato');
+        } else if (theme === 'light') {
+          target.classList.add('light-mode');
+        } else {
+          target.classList.add('dark-mode');
+        }
+      };
+
+      applyTheme($scope.theme, document.documentElement);
+
+      document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
+      document.documentElement.classList.add('modal-' + $scope.modalTheme);
+
+      var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
+      var themeIcons = {
+        'dark': 'dark_mode',
+        'light': 'light_mode',
+        'frappe': 'brightness_medium',
+        'macchiato': 'nightlight_round'
+      };
+
+      $scope.toggleTheme = function() {
+        var currentIndex = themeCycle.indexOf($scope.theme);
+        var nextIndex = (currentIndex + 1) % themeCycle.length;
+        $scope.theme = themeCycle[nextIndex];
+        $storage.set('optc-theme', $scope.theme);
+        applyTheme($scope.theme, document.documentElement);
+      };
+
+      $scope.toggleModalTheme = function() {
+        var modalCycle = ['light', 'frappe', 'macchiato', 'dark'];
+        var currentIndex = modalCycle.indexOf($scope.modalTheme);
+        var nextIndex = (currentIndex + 1) % modalCycle.length;
+        $scope.modalTheme = modalCycle[nextIndex];
+        $rootScope.modalTheme = $scope.modalTheme;
+        $storage.set('optc-modal-theme', $scope.modalTheme);
+        document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
+        document.documentElement.classList.add('modal-' + $scope.modalTheme);
+      };
+
+      $scope.getThemeIcon = function() {
+        return themeIcons[$scope.theme] || 'dark_mode';
+      };
+
+      $scope.getModalThemeIcon = function() {
+        return themeIcons[$scope.modalTheme] || 'light_mode';
+      };
+
+      function computeActiveFilters(filters) {
+        var active = [];
+        filters.types.forEach(function (t) {
+          active.push({ id: 'type-' + t, category: 'types', value: t, label: 'Type: ' + t });
+        });
+        filters.classes.forEach(function (c) {
+          active.push({ id: 'class-' + c, category: 'classes', value: c, label: 'Class: ' + c });
+        });
+        filters.tags.forEach(function (t) {
+          active.push({ id: 'tag-' + t.name, category: 'tags', value: t, label: 'Tag: ' + t.name });
+        });
+        filters.stars.forEach(function (s) {
+          active.push({ id: 'star-' + s, category: 'stars', value: s, label: s + '\u2605' });
+        });
+        if (filters.cost[0] !== 1 || filters.cost[1] !== 99) {
+          active.push({ id: 'cost', category: 'cost', value: filters.cost, label: 'Cost: ' + filters.cost[0] + '-' + filters.cost[1] });
+        }
+        if (filters.rumbleCost[0] !== 1 || filters.rumbleCost[1] !== 99) {
+          active.push({ id: 'rumbleCost', category: 'rumbleCost', value: filters.rumbleCost, label: 'Rumble Cost: ' + filters.rumbleCost[0] + '-' + filters.rumbleCost[1] });
+        }
+        Object.keys(window.exclusiveFilterLabels).forEach(function (key) {
+          if (filters[key]) {
+            var label = window.exclusiveFilterLabels[key];
+            if (label.indexOf(': ') > 0) {
+              if (key === 'shop') {
+                var shopName = Object.keys(window.shops || {}).find(function (k) { return window.shops[k] === filters[key]; });
+                label += (shopName || 'Unknown');
+              } else {
+                label += filters[key];
+              }
+            }
+            active.push({ id: 'excl-' + key, category: key, value: filters[key], label: label });
+          }
+        });
+        Object.keys(filters.farmable || {}).forEach(function (key) {
+          var val = filters.farmable[key];
+          if (val !== null && val !== undefined) {
+            var opt = (window.farmableOptions || []).find(function (o) { return o.key === key; });
+            if (opt) {
+              active.push({ id: 'farmable-' + key, category: 'farmable', value: key, label: val ? opt.label : opt.hideLabel });
+            }
+          }
+        });
+        Object.keys(filters.nonFarmable || {}).forEach(function (key) {
+          var val = filters.nonFarmable[key];
+          if (val !== null && val !== undefined) {
+            var opt = (window.nonFarmableOptions || []).find(function (o) { return o.key === key; });
+            if (opt) {
+              active.push({ id: 'nonfarmable-' + key, category: 'nonFarmable', value: key, label: val ? opt.label : opt.hideLabel });
+            }
+          }
+        });
+        Object.keys(filters.custom || {}).forEach(function (target) {
+          Object.keys(filters.custom[target] || {}).forEach(function (group) {
+            Object.keys(filters.custom[target][group].matchers || {}).forEach(function (name) {
+              var matcher = filters.custom[target][group].matchers[name];
+              if (matcher.enabled) {
+                var displayName = name;
+                if (window.matchers && window.matchers[target] && window.matchers[target][group] && window.matchers[target][group][name]) {
+                  displayName = window.matchers[target][group][name].name || name;
+                }
+                active.push({ id: 'custom-' + target + '-' + name, category: 'custom', target: target, group: group, name: name, label: target + ': ' + displayName });
+              }
+            });
+          });
+        });
+        return active;
+      }
+
+      $scope.$watch(
+        function () { return $rootScope.filters; },
+        function (filters) {
+          if (!filters || Object.keys(filters).length === 0) {
+            $scope.activeFilters = [];
+            return;
+          }
+          $scope.activeFilters = computeActiveFilters(filters);
+        },
+        true
+      );
+
+      $scope.removeFilter = function (filter) {
+        switch (filter.category) {
+          case 'types':
+          case 'classes':
+          case 'tags':
+          case 'stars':
+            var arr = $rootScope.filters[filter.category];
+            var idx = arr.indexOf(filter.value);
+            if (idx > -1) arr.splice(idx, 1);
+            break;
+          case 'cost':
+            $rootScope.filters.cost = [1, 99];
+            break;
+          case 'rumbleCost':
+            $rootScope.filters.rumbleCost = [1, 99];
+            break;
+          case 'farmable':
+            delete $rootScope.filters.farmable[filter.value];
+            break;
+          case 'nonFarmable':
+            delete $rootScope.filters.nonFarmable[filter.value];
+            break;
+          case 'custom':
+            $rootScope.filters.custom[filter.target][filter.group].matchers[filter.name].enabled = false;
+            break;
+          default:
+            if (filter.category === 'shop' || (typeof filter.value === 'string' && window.exclusiveFilterLabels[filter.category] && window.exclusiveFilterLabels[filter.category].indexOf(': ') > 0)) {
+              $rootScope.filters[filter.category] = null;
+            } else {
+              $rootScope.filters[filter.category] = false;
+            }
+        }
+      };
+
+      $scope.clearAllFilters = function () {
+        if (!$rootScope.filters) return;
+        CharUtils.resetFilters($rootScope.filters);
+        resetFilterUI();
+      };
     }
   );
 
   app.controller(
     "SidebarCtrl",
-    function ($scope, $rootScope, $stateParams, $timeout) {
+    function ($scope, $rootScope, $state, $stateParams, $timeout) {
       $scope.availableClasses = window.availableClasses;
       $scope.availableTags = window.availableTags;
       $scope.farmableOptions = window.farmableOptions;
@@ -79,99 +296,52 @@
             )
               return;
             var data = jQuery.extend({}, $rootScope.filters);
-            $scope.table.parameters = CharUtils.generateSearchParameters(
-              $stateParams.query,
+            var params = CharUtils.generateSearchParameters(
+              $state.params.query || '',
               data
             );
+            if ($rootScope.table) {
+              $rootScope.table.parameters = params;
+            }
             if (!$scope.$$phase) $scope.$apply();
           },
           true
         );
       });
 
-      $scope.clearFilters = function () {
-        $rootScope.filters = {
-          custom: {},
-          classes: [],
-          tags: [],
-          types: [],
-          stars: [],
-          cost: [1, 99],
-          rumbleCost: [1, 99],
-          toggle: true,
-          typeEnabled: false,
-          characterEnabled: false,
-          classEnabled: false,
-          tagEnabled: false,
-          rumbleStyleEnabled: false,
-          dropEnabled: false,
-          temporaryEnabled: false,
-          specCaptEnabled: false,
-          tmkcEnabled: false,
-          exclusionEnabled: false,
-          costEnabled: false,
-          rarityEnabled: false,
-          farmEnabled: false,
-          nonfarmEnabled: false,
-          farmable: {},
-          nonFarmable: {},
-        };
-
-        // no idea why both local `filters` and `$rootScope.filters` exist
-        for (const target in window.matchers) {
-          $rootScope.filters.custom[target] = {};
-          for (const group in window.matchers[target]) {
-            // `expanded` - when a filter group is "opened"
-            $rootScope.filters.custom[target][group] = {
-              expanded: false,
-              matchers: {},
-            };
-
-            for (const name in window.matchers[target][group]) {
-              $rootScope.filters.custom[target][group].matchers[name] = {
-                enabled: false,
-              };
-
-              if (window.matchers[target][group][name].submatchers) {
-                $rootScope.filters.custom[target][group].matchers[
-                  name
-                ].submatchers = [];
-
-                for (const j in window.matchers[target][group][name]
-                  .submatchers) {
-                  $rootScope.filters.custom[target][group].matchers[
-                    name
-                  ].submatchers[j] = {};
+      $scope.clearFilters = function (resetUI) {
+        if (!$rootScope.filters || Object.keys($rootScope.filters).length === 0) {
+          $rootScope.filters = { custom: {} };
+          for (const target in window.matchers) {
+            $rootScope.filters.custom[target] = {};
+            for (const group in window.matchers[target]) {
+              $rootScope.filters.custom[target][group] = { expanded: false, matchers: {} };
+              for (const name in window.matchers[target][group]) {
+                $rootScope.filters.custom[target][group].matchers[name] = { enabled: false };
+                if (window.matchers[target][group][name].submatchers) {
+                  $rootScope.filters.custom[target][group].matchers[name].submatchers = [];
+                  for (const j in window.matchers[target][group][name].submatchers) {
+                    $rootScope.filters.custom[target][group].matchers[name].submatchers[j] = {};
+                  }
                 }
               }
             }
           }
         }
-        $("#leftContainer .collapse").collapse("hide");
+
+        CharUtils.resetFilters($rootScope.filters);
+        if (resetUI !== false) resetFilterUI();
       };
 
-      $scope.clearFilters();
+      // Build the filter tree before the sidebar exists, so skip its DOM reset.
+      $scope.clearFilters(false);
 
       $scope.toggleFilters = function () {
-        for (x in $rootScope.filters) {
-          if (x.includes("Enabled")) {
-            // type, character, class, and tag filters are expanded by default
-            if (
-              x == "typeEnabled" ||
-              x == "characterEnabled" ||
-              x == "classEnabled" || 
-              x == "tagEnabled"
-            ) {
-              $rootScope.filters[x] = !$rootScope.filters["toggle"];
-            } else {
-              $rootScope.filters[x] = $rootScope.filters["toggle"];
-            }
-          }
-        }
+        var expand = !$rootScope.filters.toggle;
         $("#leftContainer animate-collapse + div.collapse").collapse(
-          $rootScope.filters["toggle"] ? "show" : "hide"
+          expand ? "show" : "hide"
         );
-        $rootScope.filters["toggle"] = !$rootScope.filters["toggle"];
+        $rootScope.filters.toggle = expand;
       };
 
       $scope.onFilterClick = function (e, value) {
@@ -259,6 +429,40 @@
       $storage,
       $http
     ) {
+      // Fallback: If modal theme functions don't exist on rootScope (MainCtrl wasn't run), initialize them
+      if (!$rootScope.toggleModalTheme) {
+var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
+        var themeIcons = {
+          'dark': 'dark_mode',
+          'light': 'light_mode',
+          'frappe': 'brightness_medium',
+          'macchiato': 'nightlight_round'
+        };
+        $rootScope.modalTheme = $storage.get('optc-modal-theme', 'light');
+        document.documentElement.classList.add('modal-' + $rootScope.modalTheme);
+
+        $rootScope.toggleModalTheme = function() {
+          var modalCycle = ['light', 'frappe', 'macchiato', 'dark'];
+          var currentIndex = modalCycle.indexOf($rootScope.modalTheme);
+          var nextIndex = (currentIndex + 1) % modalCycle.length;
+          $rootScope.modalTheme = modalCycle[nextIndex];
+          $storage.set('optc-modal-theme', $rootScope.modalTheme);
+          document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
+          document.documentElement.classList.add('modal-' + $rootScope.modalTheme);
+        };
+
+        $rootScope.getModalThemeIcon = function() {
+          return themeIcons[$rootScope.modalTheme] || 'light_mode';
+        };
+      }
+
+      // Expose to scope for template
+      $scope.modalTheme = $rootScope.modalTheme;
+      $scope.toggleModalTheme = $rootScope.toggleModalTheme;
+      $scope.getModalThemeIcon = $rootScope.getModalThemeIcon;
+      $scope.characterLog = $rootScope.characterLog;
+      $scope.checkLog = $rootScope.checkLog;
+
       var rumbleRequest = {
         method: "get",
         url: "../common/data/rumble.json",
@@ -373,6 +577,7 @@
         $state.go("main.search.view", {
           id: previous,
           previous: $stateParams.previous,
+          query: $stateParams.query || ''
         });
       };
       $scope.openBigThumbTab = function (id) {

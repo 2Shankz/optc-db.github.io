@@ -16,53 +16,69 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: rgba(230, 230, 230, 1);
+    background: var(--bg-secondary);
     opacity: 0;
     z-index: -10;
     cursor: pointer;
     transition: opacity 1s, z-index 0.3s, transform 1s;
     transform: translateX(0);
     border: none !important;
+    color: var(--text-primary);
 }
 
-#links-button .btn .fa {
+#links-button .btn .material-icons,
+#links-button .btn .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     font-size: 1.1em;
+    color: white;
+    font-variation-settings: 'wght' 700;
     transition: color 0.3s;
 }
 
-#links-button .btn.trigger .fa {
-    top: -2px;
-    left: -6px;
+#links-button .btn.trigger .material-icons {
+    /* centered */
 }
 
-#links-button .btn:not(.trigger) .fa {
-    top: -7px;
-    left: -11px;
-    width: 26px;
-    height: 26px;
-    padding-top: 7px;
+#links-button .btn:not(.trigger) .material-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 @media (hover) {
-    #links-button .btn:hover .fa, .rotater i {
-        color: rgba(0, 0, 0, 0.7);
-    }
-
-    .rotater:hover i {
-        color: white !important;
-    }
+    /* no hover color change on links */
 }
 
 #links-button .btn.trigger {
     opacity: 1;
     z-index: 100;
     cursor: pointer;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    animation: spin 6s linear infinite;
+}
+
+#links-button .btn.trigger .material-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 6s linear infinite;
+    color: #ffc107;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @media (hover) {
     #links-button .btn.trigger:hover {
-        transform: scale(1.2);
+        /* no hover animation */
     }
 }
 
@@ -81,76 +97,37 @@
 }
 
 #links-button.active .trigger {
-    background: rgba(230, 230, 230, 1);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
 }
 
-#links-button.active .rotater:nth-child(1) > a {
-    transform: translateX(-3em);
+/* Consolidated transform rules - first 11 are horizontal, 12-17 are vertical */
+#links-button.active .rotater:nth-child(-n+11) > a {
+    transform: translateX(calc(-3em * var(--i)));
 }
 
-#links-button.active .rotater:nth-child(2) > a {
-    transform: translateX(-6em);
+#links-button.active .rotater:nth-child(n+12) > a {
+    transform: translateY(calc(-3em * (var(--i) - 11)));
 }
 
-#links-button.active .rotater:nth-child(3) > a {
-    transform: translateX(-9em);
-}
-
-#links-button.active .rotater:nth-child(4) > a {
-    transform: translateX(-12em);
-}
-
-#links-button.active .rotater:nth-child(5) > a {
-    transform: translateX(-15em);
-}
-
-#links-button.active .rotater:nth-child(6) > a {
-    transform: translateX(-18em);
-}
-
-#links-button.active .rotater:nth-child(7) > a {
-    transform: translateX(-21em);
-}
-
-#links-button.active .rotater:nth-child(8) > a {
-    transform: translateX(-24em);
-}
-
-#links-button.active .rotater:nth-child(9) > a {
-    transform: translateX(-27em);
-}
-
-#links-button.active .rotater:nth-child(10) > a {
-    transform: translateX(-30em);
-}
-
-#links-button.active .rotater:nth-child(11) > a {
-    transform: translateX(-33em);
-}
-
-#links-button.active .rotater:nth-child(12) > a {
-    transform: translateY(-3em);
-}
-
-#links-button.active .rotater:nth-child(13) > a {
-    transform: translateY(-6em);
-}
-
-#links-button.active .rotater:nth-child(14) > a {
-    transform: translateY(-9em);
-}
-
-#links-button.active .rotater:nth-child(15) > a {
-    transform: translateY(-12em);
-}
-
-#links-button.active .rotater:nth-child(16) > a {
-    transform: translateY(-15em);
-}
-
-#links-button.active .rotater:nth-child(17) > a {
-    transform: translateY(-18em);
-}
+/* Set index variable for each rotater */
+#links-button.active .rotater:nth-child(1) > a { --i: 1; }
+#links-button.active .rotater:nth-child(2) > a { --i: 2; }
+#links-button.active .rotater:nth-child(3) > a { --i: 3; }
+#links-button.active .rotater:nth-child(4) > a { --i: 4; }
+#links-button.active .rotater:nth-child(5) > a { --i: 5; }
+#links-button.active .rotater:nth-child(6) > a { --i: 6; }
+#links-button.active .rotater:nth-child(7) > a { --i: 7; }
+#links-button.active .rotater:nth-child(8) > a { --i: 8; }
+#links-button.active .rotater:nth-child(9) > a { --i: 9; }
+#links-button.active .rotater:nth-child(10) > a { --i: 10; }
+#links-button.active .rotater:nth-child(11) > a { --i: 11; }
+#links-button.active .rotater:nth-child(12) > a { --i: 12; }
+#links-button.active .rotater:nth-child(13) > a { --i: 13; }
+#links-button.active .rotater:nth-child(14) > a { --i: 14; }
+#links-button.active .rotater:nth-child(15) > a { --i: 15; }
+#links-button.active .rotater:nth-child(16) > a { --i: 16; }
+#links-button.active .rotater:nth-child(17) > a { --i: 17; }
 
 #link-damage > .btn { background: #85C1F5; }
 #link-characters > .btn { background: #7FCA9F; }
@@ -184,13 +161,14 @@
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
-    color: #333;
-    background: #fff;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 11px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     z-index: 1000;
+    border: 1px solid var(--border-color);
 }
 
 #links-button .btn-icon .tip::after {
@@ -200,5 +178,7 @@
     left: 50%;
     transform: translateX(-50%);
     border: 5px solid transparent;
-    border-top-color: #fff;
+    border-top-color: var(--bg-secondary);
 }
+
+

@@ -89,6 +89,18 @@
 .G          { background: orange; }
 .EMPTY      { background: #777; }
 
+.badge .material-symbols-outlined {
+    font-size: 1em;
+    line-height: 1;
+    vertical-align: middle;
+    position: relative;
+    top: -0.01em;
+}
+
+.badge .material-symbols-outlined.empty {
+    font-variation-settings: 'FILL' 0;
+}
+
 .cell-STR { font-weight: bold; color: red; }
 .cell-QCK { font-weight: bold; color: blue; }
 .cell-DEX { font-weight: bold; color: green; }
