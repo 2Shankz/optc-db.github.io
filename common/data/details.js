@@ -193880,21 +193880,21 @@ window.details = {
         }
     },
     4666: {//Jarul
-        special: "Reduces all enemies' DEF Up duration by 6 turns, reduces crew's Paralysis duration by 6 turns, and sets the chain multiplier's minimum value at 2.5 and maximum value at 20.0 for 1 turn [If 4 or more [Giant] characters are on the crew] Further increases crew's lock chain multiplier effect by +0.5 (this effect also applies to lock chain multiplier effect from this Special), and reduces right column characters' Special charge time by 3 turns",
+        special: "Reduces enemies' Increased Defense duration by 6 turns, reduces Paralysis duration by 6 turns, and sets Chain Boundaries to 2.5x and 20.0x for 1 turn. If your crew has 4+ [Giant] characters, reduces Special Cooldown of right column characters by 3 turns, and increases boost effects of Chain Lock buffs by +0.5x, including effects activated in the same ability.",
         specialName: "Unflinching Dignity of a Warrior",
         sailor: {
-            base: "Character cannot be blown away by attack",
-            level1: "Reduces character's Special Reverse by 4 turns"
+            base: "This character cannot be Blown Away.",
+            level1: "Restores Special Cooldown of this character by 4 turns when it is rewinded."
         },
         support: [
             {
-                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "[Elbaph Arc] characters",
                 description: [
-                    "Adds 4% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 5% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 6% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 7% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 9% of character's base HP to supported character's base HP [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                    "Adds 4% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 5% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 6% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 7% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 9% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -194001,21 +194001,21 @@ window.details = {
         ]
     },
     4667: {//Kashii
-        special: "Deals 80x character's ATK in [QCK] damage to all enemies, reduces crew's Bind/Burn duration by 6 turns, and boosts [QCK] characters' ATK by 2.25x for 1 turn [If 4 or more [Giant] characters are on the crew] Further increases crew's ATK boost by +0.5 (this effect also applies to ATK boost from this Special), and reduces left column characters' Special charge time by 3 turns",
+        special: "Deals 80x character's ATK in [QCK] damage to all enemies, reduces Bind and Burn duration by 6 turns, and boosts ATK of [QCK] characters by 2.25x for 1 turn. If your crew has 4+ [Giant] characters, reduces Special Cooldown of left column characters by 3 turns, and increases boost effects of ATK Up buffs by +0.5x, including effects activated in the same ability.",
         specialName: "Giant Talking About Elbaph's King's Son",
         sailor: {
-            base: "Character cannot be blown away by attack",
-            level1: "Reduces character's Special Reverse by 4 turns"
+            base: "This character cannot be Blown Away.",
+            level1: "Restores Special Cooldown of this character by 4 turns when it is rewinded."
         },
         support: [
             {
-                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "[Elbaph Arc] characters",
                 description: [
-                    "Adds 4% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 5% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 6% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 7% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special",
-                    "Adds 9% of character's base ATK to supported character's base ATK [AUTO+] If any character has a [BLOCK] slot, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                    "Adds 4% of this character's base ATK to the supported character's base ATK. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 5% of this character's base ATK to the supported character's base ATK. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 6% of this character's base ATK to the supported character's base ATK. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 7% of this character's base ATK to the supported character's base ATK. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special.",
+                    "Adds 9% of this character's base ATK to the supported character's base ATK. <b>[AUTO+]</b> If any character has a [BLOCK] orb, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -194396,21 +194396,21 @@ window.details = {
         festAbilityGPCondition: "When 2 teammates are defeated"
     },
     4669: {//5* PKA Mr. Ya
-        special: "Changes crew's slots (including [BLOCK] slots) to character's own type, reduces crew's Paralysis/Despair duration by 5 turns, reduces all enemies' damage nullification duration by 1 turn, and applies Weakened status (increase damage taken by 1.3x for all enemies, damage further increased by 1.25x if enemy has Increase Damage Taken) to all enemies for 1 turn [If 4 or more [Roger Pirates] [Elbaph Arc] characters are on the crew] Applies -20% [QCK] Resistance to all enemies for 2 turns",
+        special: "Changes all orbs, including [BLOCK] orbs, into matching orbs, reduces Paralysis and Despair duration by 5 turns, reduces enemies' Damage Nullification duration by 1 turn, and inflicts all enemies with Weaken by 1.3x, by 1.625x instead if enemies are inflicted with Increase Damage Taken, for 1 turn. If your crew has 4+ [Roger Pirates] or [Elbaph Arc] characters, reduces enemies' [QCK] Resistance by -20% for 2 turns.",
         specialName: "Impeding Legendary Figure",
         sailor: {
-            base: "Boosts Slasher characters' base ATK by 150",
-            level1: "Makes crew's [QCK] slots have matching slot effects"
+            base: "Boosts base ATK of Slasher characters by 150.",
+            level1: "Makes [QCK] orbs beneficial for all characters."
         },
         support: [
             {
-                Characters: "[QCK] characters with the following Character Tag: [Former / Roger Pirates], [Elbaph Arc]",
+                Characters: "[QCK] [Roger Pirates], [Elbaph Arc] characters",
                 description: [
-                    "Adds 3% of character's base stats to supported character's base stats",
-                    "Adds 4% of character's base stats to supported character's base stats",
-                    "Adds 5% of character's base stats to supported character's base stats",
-                    "Adds 6% of character's base stats to supported character's base stats",
-                    "Adds 7% of character's base stats to supported character's base stats [AUTO+] At battle 5, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                    "Adds 3% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 4% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 6% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 7% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. <b>[AUTO+]</b> When you reach the 5th stage, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -194537,21 +194537,21 @@ window.details = {
         ]
     },
     4671: {//5* Co-Op Brook
-        special: "Reduces [DEX] and Slasher characters' Special charge time by 1 turn, reduces the duration of all enemy barriers by 2 turns, sets all enemies' DEF to 0 for 1 turn, boosts the chain multiplier by 1.5x for 1 turn, and if crew lands 3 PERFECT strikes in this turn, applies increase damage taken status to all enemies by 1.5x the next turn [If 4 or more [Straw Hat Pirates] [Paramythia-type] characters are on the crew] Boosts damage dealt to enemies affected by DEF Down and increase damage taken status by 2.5x for 3 turns",
+        special: "Reduces Special Cooldown of [DEX] and Slasher characters by 1 turn, reduces enemies' Barrier duration by 2 turns, reduces the defense of all enemies by 100% for 1 turn, adds 1.5x to Chain Multiplier for 1 turn, and if during this turn you score 3 PERFECT hits, inflicts all enemies with Increase Damage Taken by 1.5x for 1 turn in the following turn. If your crew has 4+ [Straw Hat Pirates] or [Paramythia-type] characters, boosts ATK against enemies with reduced defense and enemies inflicted with Increase Damage Taken by 2.5x for 3 turns.",
         specialName: "God-Slashing Gavotte",
         sailor: {
-            base: "Reduces character's Special Reverse by 3 turns",
-            level1: "Boosts [DEX] and Slasher characters' base stats by 70"
+            base: "Restores Special Cooldown of this character by 3 turns when it is rewinded.",
+            level1: "Boosts base ATK, HP and RCV of [DEX] and Slasher characters by 70."
         },
         support: [
             {
-                Characters: "[DEX] characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "[DEX] [Elbaph Arc] characters",
                 description: [
-                    "Adds 2% of character's base HP to supported character's base HP",
-                    "Adds 3% of character's base HP to supported character's base HP",
-                    "Adds 4% of character's base HP to supported character's base HP",
-                    "Adds 5% of character's base HP to supported character's base HP",
-                    "Adds 6% of character's base HP to supported character's base HP [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special"
+                    "Adds 2% of this character's base HP to the supported character's base HP.",
+                    "Adds 3% of this character's base HP to the supported character's base HP.",
+                    "Adds 4% of this character's base HP to the supported character's base HP.",
+                    "Adds 5% of this character's base HP to the supported character's base HP.",
+                    "Adds 6% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> If enemies have Increased Damage Taken or when you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -194678,21 +194678,21 @@ window.details = {
         ]
     },
     4672: {//5+ Co-Op Brook
-        special: "Reduces [DEX] and Slasher characters' Special charge time by 2 turns, reduces the duration of all enemy barriers by 3 turns, sets all enemies' DEF to 0 for 1 turn (ignoring immunity to DEF Down, immunity to all status effects, or immunity excluding certain status effect), boosts the chain multiplier by 1.6x for 1 turn, and if crew lands 3 PERFECT strikes in this turn, applies increase damage taken status to all enemies by 1.75x ignoring immunity to status effects for 1 turn the next turn [If 4 or more [Straw Hat Pirates] [Paramythia-type] characters are on the crew] Boosts damage dealt to enemies affected by DEF Down and increase damage taken status by 2.75x for 3 turns",
+        special: "Reduces Special Cooldown of [DEX] and Slasher characters by 2 turns, reduces enemies' Barrier duration by 3 turns, ignores Debuff Protection and reduces the defense of all enemies by 100% for 1 turn, adds 1.6x to Chain Multiplier for 1 turn, and if during this turn you score 3 PERFECT hits, ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 1.75x for 1 turn in the following turn. If your crew has 4+ [Straw Hat Pirates] or [Paramythia-type] characters, boosts ATK against enemies with reduced defense and enemies inflicted with Increase Damage Taken by 2.75x for 3 turns.",
         specialName: "God-Slashing Gavotte",
         sailor: {
-            base: "Reduces character's Special Reverse by 3 turns",
-            level1: "Boosts [DEX] and Slasher characters' base stats by 70"
+            base: "Restores Special Cooldown of this character by 3 turns when it is rewinded.",
+            level1: "Boosts base ATK, HP and RCV of [DEX] and Slasher characters by 70."
         },
         support: [
             {
-                Characters: "[DEX] characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "[DEX] [Elbaph Arc] characters",
                 description: [
-                    "Adds 2% of character's base HP to supported character's base HP",
-                    "Adds 3% of character's base HP to supported character's base HP",
-                    "Adds 4% of character's base HP to supported character's base HP",
-                    "Adds 5% of character's base HP to supported character's base HP",
-                    "Adds 6% of character's base HP to supported character's base HP [AUTO+] If enemy has Increase Damage Taken status and at final battle, activates supported character's Special"
+                    "Adds 2% of this character's base HP to the supported character's base HP.",
+                    "Adds 3% of this character's base HP to the supported character's base HP.",
+                    "Adds 4% of this character's base HP to the supported character's base HP.",
+                    "Adds 5% of this character's base HP to the supported character's base HP.",
+                    "Adds 6% of this character's base HP to the supported character's base HP. <b>[AUTO+]</b> If enemies have Increased Damage Taken or when you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
