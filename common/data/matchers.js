@@ -14255,7 +14255,7 @@
 				name: "Action Bind",
 				targets: ["rumbleResistance"],
 				regex:
-					/([\d]+)% chance to resist Action Bind./i,
+					/([\d]+)% chance to resist Action Bind/i,
 				submatchers: [
 					{
 						type: "number",
@@ -14269,7 +14269,7 @@
 				name: "Confusion",
 				targets: ["rumbleResistance"],
 				regex:
-					/([\d]+)% chance to resist Confusion./i,
+					/([\d]+)% chance to resist Confusion/i,
 				submatchers: [
 					{
 						type: "number",
@@ -14283,7 +14283,7 @@
 				name: "Damage Over Time",
 				targets: ["rumbleResistance"],
 				regex:
-					/([\d]+)% chance to resist Damage Over Time./i,
+					/([\d]+)% chance to resist Damage Over Time/i,
 				submatchers: [
 					{
 						type: "number",
@@ -14297,7 +14297,7 @@
 				name: "Forced Out",
 				targets: ["rumbleResistance"],
 				regex:
-					/([\d]+)% chance to resist Forced Out./i,
+					/([\d]+)% chance to resist Forced Out/i,
 				submatchers: [
 					{
 						type: "number",
@@ -14311,7 +14311,7 @@
 				name: "Half Stats",
 				targets: ["rumbleResistance"],
 				regex:
-					/([\d]+)% chance to resist Half Stats./i,
+					/([\d]+)% chance to resist Half Stats/i,
 				submatchers: [
 					{
 						type: "number",
@@ -14325,7 +14325,7 @@
 				name: "Paralysis",
 				targets: ["rumbleResistance"],
 				regex:
-					/([\d]+)% chance to resist Paralysis./i,
+					/([\d]+)% chance to resist Paralysis/i,
 				submatchers: [
 					{
 						type: "number",
@@ -14339,7 +14339,7 @@
 				name: "RCV Bind",
 				targets: ["rumbleResistance"],
 				regex:
-					/([\d]+)% chance to resist RCV Bind./i,
+					/([\d]+)% chance to resist RCV Bind/i,
 				submatchers: [
 					{
 						type: "number",
@@ -14353,7 +14353,21 @@
 				name: "Special Bind",
 				targets: ["rumbleResistance"],
 				regex:
-					/([\d]+)% chance to resist Special Bind./i,
+					/([\d]+)% chance to resist Special Bind/i,
+				submatchers: [
+					{
+						type: "number",
+						description: "Chance:",
+						groups: [1],
+					},
+				],
+			},
+
+			{
+				name: "Special CT Delay",
+				targets: ["rumbleResistance"],
+				regex:
+					/([\d]+)% chance to resist Special CT Delay/i,
 				submatchers: [
 					{
 						type: "number",
