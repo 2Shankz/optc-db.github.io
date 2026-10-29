@@ -193702,68 +193702,6 @@ window.details = {
                     "Reduces Sailor Despair duration by 5 turns on this character"
                 ]
             }
-        ],
-        festStats: {
-            def: 158,
-            spd: 168,
-            style: "SPT"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Power Attack",
-            "Heal Lv.1 (Small Range)",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Heal 200 HP at an interval, reduce damage taken from [STR] by 20%",
-        festAbility: [
-            "[QCK] and [Giant] teammates HP Up Lv.2, ATK Up Lv.2; after receiving healing, up to 20 times [Giant] teammates Special CT 1% reduction; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.2",
-            "[QCK] and [Giant] teammates HP Up Lv.3, ATK Up Lv.3; after receiving healing, up to 20 times [Giant] teammates Special CT 2% reduction; during Assault Rumble, self HP Up Lv.7, Special CT Speed Up Lv.3",
-            "[QCK] and [Giant] teammates HP Up Lv.4, ATK Up Lv.4; after receiving healing, up to 20 times [Giant] teammates Special CT 3% reduction; during Assault Rumble, self HP Up Lv.8, Special CT Speed Up Lv.4",
-            "[QCK] and [Giant] teammates HP Up Lv.5, ATK Up Lv.5; after receiving healing, up to 20 times [Giant] teammates Special CT 4% reduction; during Assault Rumble, self HP Up Lv.9, Special CT Speed Up Lv.5",
-            "[QCK] and [Giant] teammates HP Up Lv.6, ATK Up Lv.6; after receiving healing, up to 20 times [Giant] teammates Special CT 5% reduction; during Assault Rumble, self HP Up Lv.10, Special CT Speed Up Lv.6"
-        ],
-        festSpecial: [
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.2 (11 s); targets [STR] enemies for 73% chance of Special Bind (6 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.2 (11 s), 50 HP per interval healing (11 s); during Assault Rumble, targets [STR] enemies for ATK x 2.2 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.2 (12 s); targets [STR] enemies for 76% chance of Special Bind (7 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.2 (12 s), 100 HP per interval healing (12 s); during Assault Rumble, targets [STR] enemies for ATK x 2.4 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.2 (13 s); targets [STR] enemies for 79% chance of Special Bind (8 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.2 (13 s), 150 HP per interval healing (13 s); during Assault Rumble, targets [STR] enemies for ATK x 2.6 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.3 (14 s); targets [STR] enemies for 82% chance of Special Bind (9 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.3 (14 s), 200 HP per interval healing (14 s); during Assault Rumble, targets [STR] enemies for ATK x 2.8 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.3 (15 s); targets [STR] enemies for 85% chance of Special Bind (10 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.3 (15 s), 250 HP per interval healing (15 s); during Assault Rumble, targets [STR] enemies for ATK x 3 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.4 (16 s); targets [STR] enemies for 88% chance of Special Bind (11 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.4 (16 s), 300 HP per interval healing (16 s); during Assault Rumble, targets [STR] enemies for ATK x 3.2 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.4 (17 s); targets [STR] enemies for 91% chance of Special Bind (12 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.4 (17 s), 350 HP per interval healing (17 s); during Assault Rumble, targets [STR] enemies for ATK x 3.4 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.4 (18 s); targets [STR] enemies for 94% chance of Special Bind (13 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.4 (18 s), 400 HP per interval healing (18 s); during Assault Rumble, targets [STR] enemies for ATK x 3.6 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.5 (19 s); targets [STR] enemies for 97% chance of Special Bind (14 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.5 (19 s), 450 HP per interval healing (19 s); during Assault Rumble, targets [STR] enemies for ATK x 3.8 damage"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [QCK] and [Giant] teammates for ATK Up Lv.6 (20 s); targets [STR] enemies for 100% chance of Special Bind (15 s); if 4 or more [Giant] characters are on the team, targets [QCK] teammates for DEF Up Lv.6 (20 s), 500 HP per interval healing (20 s); during Assault Rumble, targets [STR] enemies for ATK x 4 damage"
-            }
         ]
     },
     4667: {//Kashii
@@ -193822,68 +193760,6 @@ window.details = {
                     "Reduces Sailor Despair duration by 4 turns on this character",
                     "Reduces Sailor Despair duration by 5 turns on this character"
                 ]
-            }
-        ],
-        festStats: {
-            def: 151,
-            spd: 157,
-            style: "DBF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Heal 200 HP at an interval, reduce damage taken from [STR] by 20%",
-        festAbility: [
-            "[QCK] and [Giant] teammates HP Up Lv.2, SPD Up Lv.2; after receiving healing, up to 20 times [STR] enemies Special CT 1% delay; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.2",
-            "[QCK] and [Giant] teammates HP Up Lv.3, SPD Up Lv.3; after receiving healing, up to 20 times [STR] enemies Special CT 2% delay; during Assault Rumble, self HP Up Lv.7, Special CT Speed Up Lv.3",
-            "[QCK] and [Giant] teammates HP Up Lv.4, SPD Up Lv.4; after receiving healing, up to 20 times [STR] enemies Special CT 3% delay; during Assault Rumble, self HP Up Lv.8, Special CT Speed Up Lv.4",
-            "[QCK] and [Giant] teammates HP Up Lv.5, SPD Up Lv.5; after receiving healing, up to 20 times [STR] enemies Special CT 4% delay; during Assault Rumble, self HP Up Lv.9, Special CT Speed Up Lv.5",
-            "[QCK] and [Giant] teammates HP Up Lv.6, SPD Up Lv.6; after receiving healing, up to 20 times [STR] enemies Special CT 5% delay; during Assault Rumble, self HP Up Lv.10, Special CT Speed Up Lv.6"
-        ],
-        festSpecial: [
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.2 (11 s); targets 1 low DEF [STR] enemy for 73% chance of Halve DEF (11 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.2 (11 s), Special CT Speed Down Lv.2 (11 s); during Assault Rumble, targets [STR] enemies for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.2 (12 s); targets 1 low DEF [STR] enemy for 76% chance of Halve DEF (12 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.2 (12 s), Special CT Speed Down Lv.2 (12 s); during Assault Rumble, targets [STR] enemies for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.2 (13 s); targets 1 low DEF [STR] enemy for 79% chance of Halve DEF (13 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.2 (13 s), Special CT Speed Down Lv.2 (13 s); during Assault Rumble, targets [STR] enemies for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.3 (14 s); targets 1 low DEF [STR] enemy for 82% chance of Halve DEF (14 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.3 (14 s), Special CT Speed Down Lv.2 (14 s); during Assault Rumble, targets [STR] enemies for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.3 (15 s); targets 1 low DEF [STR] enemy for 85% chance of Halve DEF (15 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.3 (15 s), Special CT Speed Down Lv.2 (15 s); during Assault Rumble, targets [STR] enemies for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.4 (16 s); targets 1 low DEF [STR] enemy for 88% chance of Halve DEF (16 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.4 (16 s), Special CT Speed Down Lv.3 (16 s); during Assault Rumble, targets [STR] enemies for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.4 (17 s); targets 1 low DEF [STR] enemy for 91% chance of Halve DEF (17 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.4 (17 s), Special CT Speed Down Lv.3 (17 s); during Assault Rumble, targets [STR] enemies for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.4 (18 s); targets 1 low DEF [STR] enemy for 94% chance of Halve DEF (18 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.4 (18 s), Special CT Speed Down Lv.3 (18 s); during Assault Rumble, targets [STR] enemies for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.5 (19 s); targets 1 low DEF [STR] enemy for 97% chance of Halve DEF (19 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.5 (19 s), Special CT Speed Down Lv.3 (19 s); during Assault Rumble, targets [STR] enemies for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 25,
-                description: "Targets [STR] enemies for ATK Down Lv.6 (20 s); targets 1 low DEF [STR] enemy for 100% chance of Halve DEF (20 s); if 4 or more [Giant] characters are on the team, targets [STR] enemies for SPD Down Lv.6 (20 s), Special CT Speed Down Lv.4 (20 s); during Assault Rumble, targets [STR] enemies for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies)"
             }
         ]
     },
@@ -194082,68 +193958,6 @@ window.details = {
                     "Boosts base ATK by 200 the turn after taking damage and reduces Increase Damage Taken duration by 3 turns"
                 ]
             }
-        ],
-        festStats: {
-            def: 214,
-            spd: 117,
-            style: "DEF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "60% chance to evade Action Bind",
-        festAbility: [
-            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.1, DEF Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.1",
-            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.2, DEF Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.1",
-            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.3, DEF Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.2",
-            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.4, DEF Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.2",
-            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.5, DEF Up Lv.2; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.3"
-        ],
-        festSpecial: [
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 3.2 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1 Counter stance (11 s), Shield Lv.2 (11 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 3.4 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.1 Counter stance (12 s), Shield Lv.2 (12 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 3.6 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.2 Counter stance (13 s), Shield Lv.2 (13 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 3.8 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.3 Counter stance (14 s), Shield Lv.2 (14 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 4 damage; targets all enemies for Miss % Up Lv.1 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.4 Counter stance (15 s), Shield Lv.2 (15 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 4.2 damage; targets all enemies for Miss % Up Lv.2 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.5 Counter stance (16 s), Shield Lv.2 (16 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 4.4 damage; targets all enemies for Miss % Up Lv.2 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.6 Counter stance (17 s), Shield Lv.2 (17 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 4.6 damage; targets all enemies for Miss % Up Lv.2 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.7 Counter stance (18 s), Shield Lv.2 (18 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 4.8 damage; targets all enemies for Miss % Up Lv.2 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 1.8 Counter stance (19 s), Shield Lv.2 (19 s)"
-            },
-            {
-                cooldown: 36,
-                description: "Targets 1 enemy for ATK x 5 damage; targets all enemies for Miss % Up Lv.3 (20 s); targets [Giant] [Roger Pirates] teammates for ATK x 2 Counter stance (20 s), Shield Lv.3 (20 s)"
-            }
         ]
     },
     4671: {//5* Co-Op Brook
@@ -194223,68 +194037,6 @@ window.details = {
                     "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.2 for 1, +0.3 for 2, +0.4 for 3, +0.5 for 4, +0.6 for 5, +0.75 for 6 "
                 ]
             }
-        ],
-        festStats: {
-            def: 197,
-            spd: 137,
-            style: "DBF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "60% chance to evade Special Bind",
-        festAbility: [
-            "[DEX]/Slasher class teammates HP Up Lv.1; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.1; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.1",
-            "[DEX]/Slasher class teammates HP Up Lv.1; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.1; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.1",
-            "[DEX]/Slasher class teammates HP Up Lv.1; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.1; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.1",
-            "[DEX]/Slasher class teammates HP Up Lv.2; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.2; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.2",
-            "[DEX]/Slasher class teammates HP Up Lv.3; after dealing damage, up to 5 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] enemies DEF Down Lv.3"
-        ],
-        festSpecial: [
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.1 (6 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (6 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 1% delay; targets \"Saintess Gunko\" enemy for Special CT 5% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 1.5 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.1 (7 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (7 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 1% delay; targets \"Saintess Gunko\" enemy for Special CT 5% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 1.7 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.1 (8 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (8 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 1% delay; targets \"Saintess Gunko\" enemy for Special CT 5% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 1.9 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.1 (9 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (9 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 2% delay; targets \"Saintess Gunko\" enemy for Special CT 6% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.1 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.2 (10 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.1 (10 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 2% delay; targets \"Saintess Gunko\" enemy for Special CT 6% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.3 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.2 (11 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.2 (11 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 3% delay; targets \"Saintess Gunko\" enemy for Special CT 7% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.5 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.2 (12 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.2 (12 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 3% delay; targets \"Saintess Gunko\" enemy for Special CT 7% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.7 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.3 (13 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.2 (13 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 3% delay; targets \"Saintess Gunko\" enemy for Special CT 7% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 2.9 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.3 (14 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.2 (14 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 4% delay; targets \"Saintess Gunko\" enemy for Special CT 8% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.1 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.4 (15 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (15 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 5% delay; targets \"Saintess Gunko\" enemy for Special CT 10% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.5 damage"
-            }
         ]
     },
     4672: {//5+ Co-Op Brook
@@ -194363,68 +194115,6 @@ window.details = {
                     "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.1 for 1, +0.1 for 2, +0.2 for 3, +0.4 for 4, +0.5 for 5, +0.6 for 6 ",
                     "Boosts Damage Limit Break effect based on number of [DEX] characters on the crew (except as Support Characters): +0.2 for 1, +0.3 for 2, +0.4 for 3, +0.5 for 4, +0.6 for 5, +0.75 for 6 "
                 ]
-            }
-        ],
-        festStats: {
-            def: 222,
-            spd: 142,
-            style: "DBF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "80% chance to evade Special Bind, reduce damage taken from [QCK] by 20％",
-        festAbility: [
-            "[DEX]/Slasher class teammates HP Up Lv.3; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.3; during Assault Rumble, self HP Up Lv.4, Special CT Speed Up Lv.1",
-            "[DEX]/Slasher class teammates HP Up Lv.3; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.3; during Assault Rumble, self HP Up Lv.5, Special CT Speed Up Lv.1",
-            "[DEX]/Slasher class teammates HP Up Lv.3; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.3; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.2",
-            "[DEX]/Slasher class teammates HP Up Lv.4; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.4; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.4; during Assault Rumble, self HP Up Lv.7, Special CT Speed Up Lv.3",
-            "[DEX]/Slasher class teammates HP Up Lv.5; after dealing damage, up to 7 times [QCK] and [World Government] enemies ATK Down Lv.1; if 4 or more [Elbaph Arc] characters are on the team, [QCK] and [World Government] enemies SPD Down Lv.5; if 4 or more [Straw Hat Pirates] characters are on the team, [QCK] and [World Government] enemies DEF Down Lv.5; during Assault Rumble, self HP Up Lv.8, Special CT Speed Up Lv.4"
-        ],
-        festSpecial: [
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.2 (11 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (11 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 5% delay; targets \"Saintess Gunko\" enemy for Special CT 11% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.2 (12 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (12 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 5% delay; targets \"Saintess Gunko\" enemy for Special CT 12% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.2 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.2 (13 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (13 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 5% delay; targets \"Saintess Gunko\" enemy for Special CT 13% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.4 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.2 (14 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (14 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 6% delay; targets \"Saintess Gunko\" enemy for Special CT 14% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.6 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.3 (15 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.3 (15 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 6% delay; targets \"Saintess Gunko\" enemy for Special CT 15% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 3.8 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.3 (16 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.4 (16 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 7% delay; targets \"Saintess Gunko\" enemy for Special CT 16% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 4 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.3 (17 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.4 (17 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 7% delay; targets \"Saintess Gunko\" enemy for Special CT 17% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 4.2 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.4 (18 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.4 (18 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 7% delay; targets \"Saintess Gunko\" enemy for Special CT 18% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 4.4 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.4 (19 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.4 (19 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 8% delay; targets \"Saintess Gunko\" enemy for Special CT 19% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 4.6 damage"
-            },
-            {
-                cooldown: 26,
-                description: "Targets enemies within large range for ATK Down Lv.5 (20 s); if 4 or more [Elbaph Arc] characters are on the team, targets [QCK] and [World Government] enemies for DEF Down Lv.5 (20 s); if 4 or more [Straw Hat Pirates] characters are on the team, targets 2 [QCK] and [World Government] enemies for Special CT 10% delay; targets \"Saintess Gunko\" enemy for Special CT 20% delay; during Assault Rumble, targets 3 [QCK] enemies for ATK x 5 damage"
             }
         ]
     },

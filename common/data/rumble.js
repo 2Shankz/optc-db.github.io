@@ -120296,6 +120296,84 @@ window.rumble = {
             }
         }
     },
+    4666: {
+        festCost: 20,
+        festStats: {
+            def: 158,
+            spd: 168,
+            style: "SPT"
+        },
+        festAttackPattern: ['Normal Attack', '<b><i>Power Attack</b></i>', '<i>Level 1 Small Range Heal</i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['Heals 200 HP every 5 seconds.', '20% damage reduction from [STR] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 2 HP and ATK up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, reduces 1% of Special CT to [Giant] crew members.', 'During Assault Rumble, applies Lv. 6 HP up buff to self.', 'During Assault Rumble, applies Lv. 2 Special CT up buff to self.'],
+                ['Applies Lv. 3 HP and ATK up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, reduces 2% of Special CT to [Giant] crew members.', 'During Assault Rumble, applies Lv. 7 HP up buff to self.', 'During Assault Rumble, applies Lv. 3 Special CT up buff to self.'],
+                ['Applies Lv. 4 HP and ATK up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, reduces 3% of Special CT to [Giant] crew members.', 'During Assault Rumble, applies Lv. 8 HP up buff to self.', 'During Assault Rumble, applies Lv. 4 Special CT up buff to self.'],
+                ['Applies Lv. 5 HP and ATK up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, reduces 4% of Special CT to [Giant] crew members.', 'During Assault Rumble, applies Lv. 9 HP up buff to self.', 'During Assault Rumble, applies Lv. 5 Special CT up buff to self.'],
+                ['Applies Lv. 6 HP and ATK up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, reduces 5% of Special CT to [Giant] crew members.', 'During Assault Rumble, applies Lv. 10 HP up buff to self.', 'During Assault Rumble, applies Lv. 6 Special CT up buff to self.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 25,
+                descriptions: [
+                    ['Applies Lv. 2 ATK up buff to [QCK] and [Giant] crew members for 11 seconds.', '73% chance to inflict Special Bind to [STR] enemies for 6 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 2 DEF up buff to [QCK] crew members for 11 seconds.', 'When there is 4 or more [Giant] crew members, heals 50 fixed HP every 3 seconds to [QCK] crew members for 11 seconds.', 'During Assault Rumble, deals 2.2x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 2 ATK up buff to [QCK] and [Giant] crew members for 12 seconds.', '76% chance to inflict Special Bind to [STR] enemies for 7 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 2 DEF up buff to [QCK] crew members for 12 seconds.', 'When there is 4 or more [Giant] crew members, heals 100 fixed HP every 3 seconds to [QCK] crew members for 12 seconds.', 'During Assault Rumble, deals 2.4x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 2 ATK up buff to [QCK] and [Giant] crew members for 13 seconds.', '79% chance to inflict Special Bind to [STR] enemies for 8 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 2 DEF up buff to [QCK] crew members for 13 seconds.', 'When there is 4 or more [Giant] crew members, heals 150 fixed HP every 3 seconds to [QCK] crew members for 13 seconds.', 'During Assault Rumble, deals 2.6x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 3 ATK up buff to [QCK] and [Giant] crew members for 14 seconds.', '82% chance to inflict Special Bind to [STR] enemies for 9 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 3 DEF up buff to [QCK] crew members for 14 seconds.', 'When there is 4 or more [Giant] crew members, heals 200 fixed HP every 3 seconds to [QCK] crew members for 14 seconds.', 'During Assault Rumble, deals 2.8x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 3 ATK up buff to [QCK] and [Giant] crew members for 15 seconds.', '85% chance to inflict Special Bind to [STR] enemies for 10 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 3 DEF up buff to [QCK] crew members for 15 seconds.', 'When there is 4 or more [Giant] crew members, heals 250 fixed HP every 3 seconds to [QCK] crew members for 15 seconds.', 'During Assault Rumble, deals 3x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 4 ATK up buff to [QCK] and [Giant] crew members for 16 seconds.', '88% chance to inflict Special Bind to [STR] enemies for 11 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 4 DEF up buff to [QCK] crew members for 16 seconds.', 'When there is 4 or more [Giant] crew members, heals 300 fixed HP every 3 seconds to [QCK] crew members for 16 seconds.', 'During Assault Rumble, deals 3.2x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 4 ATK up buff to [QCK] and [Giant] crew members for 17 seconds.', '91% chance to inflict Special Bind to [STR] enemies for 12 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 4 DEF up buff to [QCK] crew members for 17 seconds.', 'When there is 4 or more [Giant] crew members, heals 350 fixed HP every 3 seconds to [QCK] crew members for 17 seconds.', 'During Assault Rumble, deals 3.4x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 4 ATK up buff to [QCK] and [Giant] crew members for 18 seconds.', '94% chance to inflict Special Bind to [STR] enemies for 13 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 4 DEF up buff to [QCK] crew members for 18 seconds.', 'When there is 4 or more [Giant] crew members, heals 400 fixed HP every 3 seconds to [QCK] crew members for 18 seconds.', 'During Assault Rumble, deals 3.6x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 5 ATK up buff to [QCK] and [Giant] crew members for 19 seconds.', '97% chance to inflict Special Bind to [STR] enemies for 14 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 5 DEF up buff to [QCK] crew members for 19 seconds.', 'When there is 4 or more [Giant] crew members, heals 450 fixed HP every 3 seconds to [QCK] crew members for 19 seconds.', 'During Assault Rumble, deals 3.8x ATK in damage to [STR] enemies.'],
+                    ['Applies Lv. 6 ATK up buff to [QCK] and [Giant] crew members for 20 seconds.', '100% chance to inflict Special Bind to [STR] enemies for 15 seconds.', 'When there is 4 or more [Giant] crew members, applies Lv. 6 DEF up buff to [QCK] crew members for 20 seconds.', 'When there is 4 or more [Giant] crew members, heals 500 fixed HP every 3 seconds to [QCK] crew members for 20 seconds.', 'During Assault Rumble, deals 4x ATK in damage to [STR] enemies.']
+                ]
+            }
+        }
+    },
+    4667: {
+        festCost: 20,
+        festStats: {
+            def: 151,
+            spd: 157,
+            style: "DBF"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['Heals 200 HP every 5 seconds.', '20% damage reduction from [STR] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 2 HP and SPD up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, 1% Special CT Delay to [STR] enemies.', 'During Assault Rumble, applies Lv. 6 HP up buff to self.', 'During Assault Rumble, applies Lv. 2 Special CT up buff to self.'],
+                ['Applies Lv. 3 HP and SPD up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, 2% Special CT Delay to [STR] enemies.', 'During Assault Rumble, applies Lv. 7 HP up buff to self.', 'During Assault Rumble, applies Lv. 3 Special CT up buff to self.'],
+                ['Applies Lv. 4 HP and SPD up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, 3% Special CT Delay to [STR] enemies.', 'During Assault Rumble, applies Lv. 8 HP up buff to self.', 'During Assault Rumble, applies Lv. 4 Special CT up buff to self.'],
+                ['Applies Lv. 5 HP and SPD up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, 4% Special CT Delay to [STR] enemies.', 'During Assault Rumble, applies Lv. 9 HP up buff to self.', 'During Assault Rumble, applies Lv. 5 Special CT up buff to self.'],
+                ['Applies Lv. 6 HP and SPD up buff to [QCK] and [Giant] crew members.', 'The first 20 times this character receives healing, 5% Special CT Delay to [STR] enemies.', 'During Assault Rumble, applies Lv. 10 HP up buff to self.', 'During Assault Rumble, applies Lv. 6 Special CT up buff to self.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 25,
+                descriptions: [
+                    ['Inflicts Lv. 2 ATK down debuff to [STR] enemies for 11 seconds.', '73% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 11 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 2 SPD down debuff to [STR] enemies for 11 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 2 Special CT down debuff to [STR] enemies for 11 seconds.', 'During Assault Rumble, deals 6x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 2 ATK down debuff to [STR] enemies for 12 seconds.', '76% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 12 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 2 SPD down debuff to [STR] enemies for 12 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 2 Special CT down debuff to [STR] enemies for 12 seconds.', 'During Assault Rumble, deals 7x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 2 ATK down debuff to [STR] enemies for 13 seconds.', '79% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 13 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 2 SPD down debuff to [STR] enemies for 13 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 2 Special CT down debuff to [STR] enemies for 13 seconds.', 'During Assault Rumble, deals 8x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 3 ATK down debuff to [STR] enemies for 14 seconds.', '82% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 14 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 3 SPD down debuff to [STR] enemies for 14 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 2 Special CT down debuff to [STR] enemies for 14 seconds.', 'During Assault Rumble, deals 9x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 3 ATK down debuff to [STR] enemies for 15 seconds.', '85% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 15 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 3 SPD down debuff to [STR] enemies for 15 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 2 Special CT down debuff to [STR] enemies for 15 seconds.', 'During Assault Rumble, deals 10x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 4 ATK down debuff to [STR] enemies for 16 seconds.', '88% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 16 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 4 SPD down debuff to [STR] enemies for 16 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 3 Special CT down debuff to [STR] enemies for 16 seconds.', 'During Assault Rumble, deals 11x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 4 ATK down debuff to [STR] enemies for 17 seconds.', '91% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 17 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 4 SPD down debuff to [STR] enemies for 17 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 3 Special CT down debuff to [STR] enemies for 17 seconds.', 'During Assault Rumble, deals 12x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 4 ATK down debuff to [STR] enemies for 18 seconds.', '94% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 18 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 4 SPD down debuff to [STR] enemies for 18 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 3 Special CT down debuff to [STR] enemies for 18 seconds.', 'During Assault Rumble, deals 13x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 5 ATK down debuff to [STR] enemies for 19 seconds.', '97% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 19 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 5 SPD down debuff to [STR] enemies for 19 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 3 Special CT down debuff to [STR] enemies for 19 seconds.', 'During Assault Rumble, deals 14x ATK in spread damage to [STR] enemies.'],
+                    ['Inflicts Lv. 6 ATK down debuff to [STR] enemies for 20 seconds.', '100% chance to inflict Half DEF to 1 [STR] enemy with the lowest DEF for 20 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 6 SPD down debuff to [STR] enemies for 20 seconds.', 'When there is 4 or more [Giant] crew members, inflicts Lv. 4 Special CT down debuff to [STR] enemies for 20 seconds.', 'During Assault Rumble, deals 15x ATK in spread damage to [STR] enemies.']
+                ]
+            }
+        }
+    },
     4668: {
         festCost: 55,
         festStats: {
@@ -120386,6 +120464,123 @@ window.rumble = {
                     ['Deals 750 fixed damage to all enemies.'],
                     ['Deals 875 fixed damage to all enemies.'],
                     ['Deals 1,000 fixed damage to all enemies.']
+                ]
+            }
+        }
+    },
+    4669: {
+        festCost: 20,
+        festStats: {
+            def: 214,
+            spd: 117,
+            style: "DEF"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['60% chance to resist Action Bind.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 1 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 1 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 1 Accuracy down debuff to all enemies.'],
+                ['Applies Lv. 2 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 1 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 1 Accuracy down debuff to all enemies.'],
+                ['Applies Lv. 3 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 1 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 2 Accuracy down debuff to all enemies.'],
+                ['Applies Lv. 4 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 1 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 2 Accuracy down debuff to all enemies.'],
+                ['Applies Lv. 5 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 2 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 3 Accuracy down debuff to all enemies.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 36,
+                descriptions: [
+                    ['Deals 3.2x ATK in damage to 1 enemy.', 'Inflicts Lv. 1 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1x Counter to [Giant] and [Roger Pirates] crew members for 11 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 11 seconds.'],
+                    ['Deals 3.4x ATK in damage to 1 enemy.', 'Inflicts Lv. 1 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1.1x Counter to [Giant] and [Roger Pirates] crew members for 12 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 12 seconds.'],
+                    ['Deals 3.6x ATK in damage to 1 enemy.', 'Inflicts Lv. 1 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1.2x Counter to [Giant] and [Roger Pirates] crew members for 13 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 13 seconds.'],
+                    ['Deals 3.8x ATK in damage to 1 enemy.', 'Inflicts Lv. 1 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1.3x Counter to [Giant] and [Roger Pirates] crew members for 14 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 14 seconds.'],
+                    ['Deals 4x ATK in damage to 1 enemy.', 'Inflicts Lv. 1 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1.4x Counter to [Giant] and [Roger Pirates] crew members for 15 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 15 seconds.'],
+                    ['Deals 4.2x ATK in damage to 1 enemy.', 'Inflicts Lv. 2 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1.5x Counter to [Giant] and [Roger Pirates] crew members for 16 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 16 seconds.'],
+                    ['Deals 4.4x ATK in damage to 1 enemy.', 'Inflicts Lv. 2 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1.6x Counter to [Giant] and [Roger Pirates] crew members for 17 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 17 seconds.'],
+                    ['Deals 4.6x ATK in damage to 1 enemy.', 'Inflicts Lv. 2 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1.7x Counter to [Giant] and [Roger Pirates] crew members for 18 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 18 seconds.'],
+                    ['Deals 4.8x ATK in damage to 1 enemy.', 'Inflicts Lv. 2 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 1.8x Counter to [Giant] and [Roger Pirates] crew members for 19 seconds.', 'Applies Lv. 2 Shield up buff to [Giant] and [Roger Pirates] crew members for 19 seconds.'],
+                    ['Deals 5x ATK in damage to 1 enemy.', 'Inflicts Lv. 3 Accuracy down debuff to all enemies for 20 seconds.', 'Grant 2x Counter to [Giant] and [Roger Pirates] crew members for 20 seconds.', 'Applies Lv. 3 Shield up buff to [Giant] and [Roger Pirates] crew members for 20 seconds.']
+                ]
+            }
+        }
+    },
+    4671: {
+        festCost: 20,
+        festStats: {
+            def: 197,
+            spd: 137,
+            style: "DBF"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['60% chance to resist Special Bind.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 1 HP up buff to [DEX] and Slasher crew members.', 'The first 5 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 1 SPD down debuff to [QCK] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 1 DEF down debuff to [QCK] enemies.'],
+                ['Applies Lv. 1 HP up buff to [DEX] and Slasher crew members.', 'The first 5 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 1 SPD down debuff to [QCK] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 1 DEF down debuff to [QCK] enemies.'],
+                ['Applies Lv. 1 HP up buff to [DEX] and Slasher crew members.', 'The first 5 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 1 SPD down debuff to [QCK] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 1 DEF down debuff to [QCK] enemies.'],
+                ['Applies Lv. 2 HP up buff to [DEX] and Slasher crew members.', 'The first 5 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 2 SPD down debuff to [QCK] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 2 DEF down debuff to [QCK] enemies.'],
+                ['Applies Lv. 3 HP up buff to [DEX] and Slasher crew members.', 'The first 5 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 SPD down debuff to [QCK] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 3 DEF down debuff to [QCK] enemies.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 26,
+                descriptions: [
+                    ['Inflicts Lv. 1 ATK down debuff to all enemies in a large, radial range for 6 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 1 DEF down debuff to [QCK] and [World Government] enemies for 6 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 1% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 5% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 1.5x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 1 ATK down debuff to all enemies in a large, radial range for 7 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 1 DEF down debuff to [QCK] and [World Government] enemies for 7 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 1% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 5% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 1.7x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 1 ATK down debuff to all enemies in a large, radial range for 8 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 1 DEF down debuff to [QCK] and [World Government] enemies for 8 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 1% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 5% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 1.9x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 1 ATK down debuff to all enemies in a large, radial range for 9 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 1 DEF down debuff to [QCK] and [World Government] enemies for 9 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 2% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 6% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 2.1x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 2 ATK down debuff to all enemies in a large, radial range for 10 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 1 DEF down debuff to [QCK] and [World Government] enemies for 10 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 2% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 6% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 2.3x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 2 ATK down debuff to all enemies in a large, radial range for 11 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 2 DEF down debuff to [QCK] and [World Government] enemies for 11 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 3% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 7% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 2.5x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 2 ATK down debuff to all enemies in a large, radial range for 12 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 2 DEF down debuff to [QCK] and [World Government] enemies for 12 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 3% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 7% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 2.7x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 3 ATK down debuff to all enemies in a large, radial range for 13 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 2 DEF down debuff to [QCK] and [World Government] enemies for 13 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 3% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 7% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 2.9x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 3 ATK down debuff to all enemies in a large, radial range for 14 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 2 DEF down debuff to [QCK] and [World Government] enemies for 14 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 4% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 8% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 3.1x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 4 ATK down debuff to all enemies in a large, radial range for 15 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies for 15 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 5% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 10% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 3.5x ATK in damage to 3 [QCK] enemies.']
+                ]
+            }
+        }
+    },
+    4672: {
+        festCost: 20,
+        festStats: {
+            def: 222,
+            spd: 142,
+            style: "DBF"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['80% chance to resist Special Bind.', '20% damage reduction from [QCK] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 3 HP up buff to [DEX] and Slasher crew members.', 'The first 7 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 SPD down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies.', 'During Assault Rumble, applies Lv. 4 HP up buff to self.', 'During Assault Rumble, applies Lv. 1 Special CT up buff to self.'],
+                ['Applies Lv. 3 HP up buff to [DEX] and Slasher crew members.', 'The first 7 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 SPD down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies.', 'During Assault Rumble, applies Lv. 5 HP up buff to self.', 'During Assault Rumble, applies Lv. 1 Special CT up buff to self.'],
+                ['Applies Lv. 3 HP up buff to [DEX] and Slasher crew members.', 'The first 7 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 SPD down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies.', 'During Assault Rumble, applies Lv. 6 HP up buff to self.', 'During Assault Rumble, applies Lv. 2 Special CT up buff to self.'],
+                ['Applies Lv. 4 HP up buff to [DEX] and Slasher crew members.', 'The first 7 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 4 SPD down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 4 DEF down debuff to [QCK] and [World Government] enemies.', 'During Assault Rumble, applies Lv. 7 HP up buff to self.', 'During Assault Rumble, applies Lv. 3 Special CT up buff to self.'],
+                ['Applies Lv. 5 HP up buff to [DEX] and Slasher crew members.', 'The first 7 times this character lands a hit, inflicts Lv. 1 ATK down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 5 SPD down debuff to [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, inflicts Lv. 5 DEF down debuff to [QCK] and [World Government] enemies.', 'During Assault Rumble, applies Lv. 8 HP up buff to self.', 'During Assault Rumble, applies Lv. 4 Special CT up buff to self.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 26,
+                descriptions: [
+                    ['Inflicts Lv. 2 ATK down debuff to all enemies in a large, radial range for 11 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies for 11 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 5% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 11% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 3x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 2 ATK down debuff to all enemies in a large, radial range for 12 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies for 12 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 5% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 12% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 3.2x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 2 ATK down debuff to all enemies in a large, radial range for 13 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies for 13 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 5% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 13% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 3.4x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 2 ATK down debuff to all enemies in a large, radial range for 14 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies for 14 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 6% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 14% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 3.6x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 3 ATK down debuff to all enemies in a large, radial range for 15 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 3 DEF down debuff to [QCK] and [World Government] enemies for 15 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 6% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 15% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 3.8x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 3 ATK down debuff to all enemies in a large, radial range for 16 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 4 DEF down debuff to [QCK] and [World Government] enemies for 16 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 7% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 16% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 4x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 3 ATK down debuff to all enemies in a large, radial range for 17 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 4 DEF down debuff to [QCK] and [World Government] enemies for 17 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 7% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 17% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 4.2x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 4 ATK down debuff to all enemies in a large, radial range for 18 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 4 DEF down debuff to [QCK] and [World Government] enemies for 18 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 7% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 18% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 4.4x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 4 ATK down debuff to all enemies in a large, radial range for 19 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 4 DEF down debuff to [QCK] and [World Government] enemies for 19 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 8% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 19% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 4.6x ATK in damage to 3 [QCK] enemies.'],
+                    ['Inflicts Lv. 5 ATK down debuff to all enemies in a large, radial range for 20 seconds.', 'When there is 4 or more [Elbaph Arc] crew members, inflicts Lv. 5 DEF down debuff to [QCK] and [World Government] enemies for 20 seconds.', 'When there is 4 or more [Straw Hat Pirates] crew members, 10% Special CT Delay to 2 [QCK] and [World Government] enemies.', 'When there is 4 or more [Straw Hat Pirates] crew members, 20% Special CT Delay to Saintess Gunko enemy.', 'During Assault Rumble, deals 5x ATK in damage to 3 [QCK] enemies.']
                 ]
             }
         }
