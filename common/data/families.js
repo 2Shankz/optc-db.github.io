@@ -5318,6 +5318,7 @@ window.families = {
     //4670: [ ...Gaban ],
     4671: [ ...Brook ],
     4672: [ ...Brook ],
+    4673: [ ...Collun ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],

@@ -194118,6 +194118,163 @@ window.details = {
             }
         ]
     },
+    4673: {//Collun
+        captain: "Boosts Powerhouse and Driven characters' ATK by 5.5x when slots match (5x otherwise), HP by 1.5x, makes their [QCK] slots have matching slot effects, and reduces damage taken by 30% [If \"Scopper Gaban\" or \"Ripley\" is a crewmate and uses a Special] Allows crew's lock chain multiplier effect to be further increased up to 2 times, and further increases the boost by +0.25 (effect can be activated up to 2 times) [If 3 or more [Elbaph Arc] [Giant] [Child] characters are on the crew] Boosts Powerhouse and Driven characters' ATK by a further 1.1x",
+        special: "Reduces crew's lock chain multiplier duration by 6 turns, reduces all enemies' Resilience duration by 6 turns, and sets the chain multiplier's minimum value at 3.0 and maximum value at 30.0 for 3 turns [If \"Scopper Gaban\" is in the crew or is set as Support for character] Reduces damage taken by 70% for 3 turns [If 3 or more [Elbaph Arc] [Giant] [Child] characters are on the crew] Boosts crew's ATK based on the Percent Damage Reduction effect applied on the crew (e.g. if crew has 70% damage reduction, boosts ATK by 1.7x) for 3 turns",
+        specialName: "Marching Toward the Unwanted Goal",
+        sailor: {
+            base: "Boosts Powerhouse and Driven characters' base ATK and HP by 150",
+            level1: "Character cannot be blown away by attack"
+        },
+        support: [
+            {
+                Characters: "Powerhouse characters",
+                description: [
+                    "Adds 6% of character's base HP to supported character's base HP",
+                    "Adds 8% of character's base HP to supported character's base HP",
+                    "Adds 10% of character's base HP to supported character's base HP",
+                    "Adds 12% of character's base HP to supported character's base HP",
+                    "Adds 15% of character's base HP to supported character's base HP"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Acquire Potential 1: [STR] Damage Reduction",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 40",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 50",
+            "Acquire Potential 2: Enrage/Increase Damage Taken",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 60",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 70",
+            "Boosts base ATK by 30",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 80",
+            "Acquire Sailor Ability 2: Character cannot be blown away by attack",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 100",
+            "Boosts base ATK by 30",
+            "Boosts base RCV by 30",
+            "Acquire Potential 3: Special Use Limit",
+            "LOCKED WITH KEY",
+            "Boosts base HP by 100",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 100",
+            "Boosts base HP by 200",
+            "Boosts base RCV by 30",
+            "Boosts base ATK by 100",
+            "Boosts base HP by 200",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base RCV by 50"
+        ],
+        potential: [
+            {
+                Name: "[STR] Damage Reduction",
+                description: [
+                    "Reduces damage taken from [STR] characters by 2%",
+                    "Reduces damage taken from [STR] characters by 3%",
+                    "Reduces damage taken from [STR] characters by 4%",
+                    "Reduces damage taken from [STR] characters by 5%",
+                    "Reduces damage taken from [STR] characters by 7%"
+                ]
+            },
+            {
+                Name: "Enrage/Increase Damage Taken",
+                description: [
+                    "Boosts base ATK by 75 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 100 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 150 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 225 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 300 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns"
+                ]
+            },
+            {
+                Name: "Special Use Limit",
+                description: [
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 3 turns"
+                ]
+            }
+        ],
+        festStats: {
+            def: 158,
+            spd: 169,
+            style: "SPT"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Power Attack",
+            "Heal Lv.1 (Small Range)",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Action Bind/Confusion, reduce damage taken from [STR] by 30%",
+        festAbility: [
+            "\"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates SPD Up Lv.2, DEF Up Lv.2, Special CT Speed Up Lv.1; [STR]/Cerebral class enemies SPD Down Lv.2, Special CT Speed Down Lv.1; after dealing damage, up to 1 time \"Scopper Gaban\" and [Giant] teammates Special CT 12% reduction, [STR]/Cerebral class enemies Special CT 12% delay",
+            "\"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates SPD Up Lv.3, DEF Up Lv.3, Special CT Speed Up Lv.1; [STR]/Cerebral class enemies SPD Down Lv.3, Special CT Speed Down Lv.1; after dealing damage, up to 1 time \"Scopper Gaban\" and [Giant] teammates Special CT 14% reduction, [STR]/Cerebral class enemies Special CT 14% delay",
+            "\"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates SPD Up Lv.4, DEF Up Lv.4, Special CT Speed Up Lv.2; [STR]/Cerebral class enemies SPD Down Lv.4, Special CT Speed Down Lv.2; after dealing damage, up to 1 time \"Scopper Gaban\" and [Giant] teammates Special CT 16% reduction, [STR]/Cerebral class enemies Special CT 16% delay",
+            "\"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates SPD Up Lv.5, DEF Up Lv.5, Special CT Speed Up Lv.2; [STR]/Cerebral class enemies SPD Down Lv.5, Special CT Speed Down Lv.2; after dealing damage, up to 1 time \"Scopper Gaban\" and [Giant] teammates Special CT 18% reduction, [STR]/Cerebral class enemies Special CT 18% delay",
+            "\"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates SPD Up Lv.6, DEF Up Lv.6, Special CT Speed Up Lv.3; [STR]/Cerebral class enemies SPD Down Lv.6, Special CT Speed Down Lv.3; after dealing damage, up to 1 time \"Scopper Gaban\" and [Giant] teammates Special CT 20% reduction, [STR]/Cerebral class enemies Special CT 20% delay"
+        ],
+        festSpecial: [
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.3 (11 s), Special CT Speed Up Lv.1 (11 s), 73% chance to evade Forced Out (11 s); targets 1 teammate with high current Special CT for 73% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 11% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.3 (12 s), Special CT Speed Up Lv.1 (12 s), 76% chance to evade Forced Out (12 s); targets 1 teammate with high current Special CT for 76% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 12% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.4 (13 s), Special CT Speed Up Lv.1 (13 s), 79% chance to evade Forced Out (13 s); targets 1 teammate with high current Special CT for 79% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 13% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.4 (14 s), Special CT Speed Up Lv.2 (14 s), 82% chance to evade Forced Out (14 s); targets 1 teammate with high current Special CT for 82% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 14% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.5 (15 s), Special CT Speed Up Lv.2 (15 s), 85% chance to evade Forced Out (15 s); targets 1 teammate with high current Special CT for 85% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 15% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.5 (16 s), Special CT Speed Up Lv.3 (16 s), 88% chance to evade Forced Out (16 s); targets 1 teammate with high current Special CT for 88% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 16% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.6 (17 s), Special CT Speed Up Lv.3 (17 s), 91% chance to evade Forced Out (17 s); targets 1 teammate with high current Special CT for 91% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 17% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.6 (18 s), Special CT Speed Up Lv.3 (18 s), 94% chance to evade Forced Out (18 s); targets 1 teammate with high current Special CT for 94% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 18% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.7 (19 s), Special CT Speed Up Lv.4 (19 s), 97% chance to evade Forced Out (19 s); targets 1 teammate with high current Special CT for 97% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 19% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            },
+            {
+                cooldown: 25,
+                description: "Targets \"Scopper Gaban\" and [QCK]/Powerhouse class and [Giant] teammates for SPD Up Lv.8 (20 s), Special CT Speed Up Lv.5 (20 s), 100% chance to evade Forced Out (20 s); targets 1 teammate with high current Special CT for 100% chance of Haste; targets [STR]/Cerebral class enemies for Special CT 20% delay; if 4 or more [Giant] characters are on the team, targets team for 100% chance to remove SPD Down"
+            }
+        ]
+    },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
         special: "Deals 120x character's ATK in Typeless damage to all enemies, changes orbs of adjacent characters into Matching Orbs, boosts ATK of all characters by 1.75x for 2 turns, reduces any damage received above 5,656 HP by 97% for 2 turns and makes PERFECTs easier to hit for 2 turns",

@@ -4634,6 +4634,7 @@ window.tags = {
 	"4669": ["Former / Roger Pirates","Elbaph Arc"],
 	"4671": ["Straw Hat Pirates","Paramythia-type / Devil Fruit User","Elbaph Arc"],
 	"4672": ["Straw Hat Pirates","Paramythia-type / Devil Fruit User","Elbaph Arc"],
+	"4673": ["Giant","Child","Elbaph Arc"],
 	"5013": [],
 	"5014": [],
 	"5029": [],
