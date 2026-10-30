@@ -194119,22 +194119,22 @@ window.details = {
         ]
     },
     4673: {//Collun
-        captain: "Boosts Powerhouse and Driven characters' ATK by 5.5x when slots match (5x otherwise), HP by 1.5x, makes their [QCK] slots have matching slot effects, and reduces damage taken by 30% [If \"Scopper Gaban\" or \"Ripley\" is a crewmate and uses a Special] Allows crew's lock chain multiplier effect to be further increased up to 2 times, and further increases the boost by +0.25 (effect can be activated up to 2 times) [If 3 or more [Elbaph Arc] [Giant] [Child] characters are on the crew] Boosts Powerhouse and Driven characters' ATK by a further 1.1x",
-        special: "Reduces crew's lock chain multiplier duration by 6 turns, reduces all enemies' Resilience duration by 6 turns, and sets the chain multiplier's minimum value at 3.0 and maximum value at 30.0 for 3 turns [If \"Scopper Gaban\" is in the crew or is set as Support for character] Reduces damage taken by 70% for 3 turns [If 3 or more [Elbaph Arc] [Giant] [Child] characters are on the crew] Boosts crew's ATK based on the Percent Damage Reduction effect applied on the crew (e.g. if crew has 70% damage reduction, boosts ATK by 1.7x) for 3 turns",
+        captain: "Boosts ATK of Powerhouse and Driven characters by 5x, by 5.5x instead if they have a beneficial orb, boosts HP of Powerhouse and Driven characters by 1.5x, makes [QCK] orbs beneficial for Powerhouse and Driven characters, and reduces damage received by 30%. If Scopper Gaban or Ripley uses a special as crewmate, enables Chain Lock buffs to be enhanced up to 2 times, and increases boost effects of Chain Lock buffs by +0.25x. If your crew has 3+ [Elbaph Arc], [Giant] or [Child] characters, further boosts ATK of Powerhouse and Driven characters by 1.1x.",
+        special: "Reduces Chain Lock duration by 6 turns, reduces enemies' Resilience duration by 6 turns, and sets Chain Boundaries to 3.0x and 30.0x for 3 turns. If your crew has Scopper Gaban as a member or supporting this character, reduces damage received by 70% for 3 turns. If your crew has 3+ [Elbaph Arc], [Giant] or [Child] characters, boosts Crew Damage Reduction to ATK of all characters by 1x-2x, proportional to the strength of crew's Percent Damage Reduction buff, for 3 turns.",
         specialName: "Marching Toward the Unwanted Goal",
         sailor: {
-            base: "Boosts Powerhouse and Driven characters' base ATK and HP by 150",
-            level1: "Character cannot be blown away by attack"
+            base: "Boosts base ATK and HP of Powerhouse and Driven characters by 150.",
+            level1: "This character cannot be Blown Away."
         },
         support: [
             {
                 Characters: "Powerhouse characters",
                 description: [
-                    "Adds 6% of character's base HP to supported character's base HP",
-                    "Adds 8% of character's base HP to supported character's base HP",
-                    "Adds 10% of character's base HP to supported character's base HP",
-                    "Adds 12% of character's base HP to supported character's base HP",
-                    "Adds 15% of character's base HP to supported character's base HP"
+                    "Adds 6% of this character's base HP to the supported character's base HP.",
+                    "Adds 8% of this character's base HP to the supported character's base HP.",
+                    "Adds 10% of this character's base HP to the supported character's base HP.",
+                    "Adds 12% of this character's base HP to the supported character's base HP.",
+                    "Adds 15% of this character's base HP to the supported character's base HP."
                 ]
             }
         ],
