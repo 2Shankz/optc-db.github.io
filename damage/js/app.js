@@ -6,7 +6,47 @@ var app = angular.module('optc', [ 'ui.router', 'ui.bootstrap', 'ngSanitize' ]);
  * SharedRootCtrl *
  ******************/
 
-var SharedRootCtrl = function($scope, $rootScope, $timeout) {
+var SharedRootCtrl = function($scope, $rootScope, $timeout, $storage) {
+
+    // Theme toggle - 4 theme cycle (brightest to darkest)
+    var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
+    $scope.theme = $storage.get('optc-theme', 'dark');
+    $scope.applyTheme = function(theme) {
+        document.documentElement.classList.remove('light-mode', 'dark-mode', 'frappe', 'macchiato');
+        switch(theme) {
+            case 'light':
+                document.documentElement.classList.add('light-mode');
+                break;
+            case 'frappe':
+                document.documentElement.classList.add('light-mode', 'frappe');
+                break;
+            case 'macchiato':
+                document.documentElement.classList.add('dark-mode', 'macchiato');
+                break;
+            case 'dark':
+                document.documentElement.classList.add('dark-mode');
+                break;
+        }
+    };
+    $scope.applyTheme($scope.theme);
+
+    $scope.getThemeIcon = function() {
+        switch($scope.theme) {
+            case 'light': return 'light_mode';
+            case 'frappe': return 'brightness_medium';
+            case 'macchiato': return 'nightlight_round';
+            case 'dark': return 'dark_mode';
+            default: return 'dark_mode';
+        }
+    };
+
+    $scope.toggleTheme = function() {
+        var currentIndex = themeCycle.indexOf($scope.theme);
+        var nextIndex = (currentIndex + 1) % themeCycle.length;
+        $scope.theme = themeCycle[nextIndex];
+        $storage.set('optc-theme', $scope.theme);
+        $scope.applyTheme($scope.theme);
+    };
 
     $rootScope.data = {
         //setting default values

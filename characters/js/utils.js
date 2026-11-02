@@ -485,11 +485,48 @@ CharUtils.hasFarmableSocket = function(id) {
 }
 
 CharUtils.getFilteredUnitIds = function () {
-    // don't rely on internal row index, as some units are not in the table,
-    // messing up the id numbers of later units
-    var result = window.charTable.DataTable().rows({"filter":"applied"}).data().map(x => Number(x[0]));
-    return result;
+    // Tabulator - get all visible/filtered row data
+    if (window.charTable) {
+        var data = window.charTable.getData();
+        return data.map(function(row) { return Number(row.col0); });
+    }
+    return [];
 }
+
+// Mutates the filters object in place so all scopes keep their reference.
+CharUtils.resetFilters = function (filters) {
+    if (!filters) return;
+
+    filters.types = [];
+    filters.classes = [];
+    filters.tags = [];
+    filters.stars = [];
+    filters.cost = [1, 99];
+    filters.rumbleCost = [1, 99];
+    filters.farmable = {};
+    filters.nonFarmable = {};
+    filters.toggle = false;
+
+    var labels = window.exclusiveFilterLabels || {};
+    Object.keys(labels).forEach(function (key) {
+        filters[key] = labels[key] && labels[key].indexOf(': ') > 0 ? null : false;
+    });
+
+    Object.keys(filters.custom || {}).forEach(function (target) {
+        Object.keys(filters.custom[target] || {}).forEach(function (group) {
+            var filterGroup = filters.custom[target][group];
+            filterGroup.expanded = false;
+            Object.keys(filterGroup.matchers || {}).forEach(function (name) {
+                var matcher = filterGroup.matchers[name];
+                matcher.enabled = false;
+                matcher.submatchersOpen = false;
+                (matcher.submatchers || []).forEach(function (submatcher) {
+                    delete submatcher.param;
+                });
+            });
+        });
+    });
+};
 
 /******************
  * Initialization *
