@@ -2375,6 +2375,37 @@ a { color: var(--link-color); }
 }
 
 /* Modal Theme Override Styles - Apply when modal theme classes are active */
+/*
+ * Details cards live inside the character detail modal, so their colors must come
+ * from the modal theme (--modal-*), not from the page theme toggled by #theme-toggle.
+ * Re-map the shared theme variables locally so every rule inside the card resolves
+ * against the modal palette even when both themes differ.
+ */
+:root.modal-light .modal-content .details-card,
+:root.modal-frappe .modal-content .details-card,
+:root.modal-dark .modal-content .details-card,
+:root.modal-macchiato .modal-content .details-card {
+    --bg-primary: var(--modal-bg-primary);
+    --bg-secondary: var(--modal-bg-secondary);
+    --bg-tertiary: var(--modal-bg-tertiary);
+    --bg-input: var(--modal-bg-secondary);
+    --bg-hover: var(--modal-bg-tertiary);
+    --text-primary: var(--modal-text-primary);
+    --text-secondary: var(--modal-text-secondary);
+    --text-tertiary: var(--modal-text-secondary);
+    --border-color: var(--modal-border);
+    --border-strong: var(--modal-border);
+    --border-tertiary: var(--modal-border);
+    --table-border: var(--modal-border);
+    --table-stripe-odd: var(--modal-bg-secondary);
+    --table-stripe-even: var(--modal-bg-primary);
+    --panel-bg: var(--modal-bg-secondary);
+    --accent: var(--modal-accent);
+    --accent-hover: var(--modal-accent-hover);
+    --link-color: var(--modal-accent);
+    --link-hover: var(--modal-accent-hover);
+}
+
 :root.modal-light .modal-content,
 :root.modal-frappe .modal-content,
 :root.modal-dark .modal-content,
