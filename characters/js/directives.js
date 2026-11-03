@@ -429,6 +429,14 @@ directives.animateCollapse = function ($timeout, $document) {
 					matcherObj.enabled = !matcherObj.enabled;
 					matcherObj.submatchersOpen = !matcherObj.submatchersOpen;
 				};
+				// Enabled matchers in one group, for that group's header badge.
+				scope.groupFilterCount = function (group) {
+					var filterGroup = scope.filters.custom[scope.target][group];
+					if (!filterGroup || !filterGroup.matchers) return 0;
+					return Object.keys(filterGroup.matchers).filter(function (name) {
+						return filterGroup.matchers[name].enabled;
+					}).length;
+				};
 				scope.getCssClasses = function (submatcher) {
 					var classes = ["min-width-12"]; //default, may be overridden
 					if (submatcher.cssClasses) classes = submatcher.cssClasses;

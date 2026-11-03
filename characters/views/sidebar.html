@@ -5,7 +5,7 @@
 
 <!-- Event Boosters -->
 <div class="filter-container" id="tmkc-filter">
-    <animate-collapse class="filter-header">Event Boosters</animate-collapse>
+    <animate-collapse class="filter-header">Event Boosters <span class="filter-section-badge" ng-if="sectionFilterCount('tmkc-filter')">{{sectionFilterCount('tmkc-filter')}}</span></animate-collapse>
     <div class="collapse">
         <span class="filter width-12 exc" ng-model="filters.globalTM" ng-class="{ active: filters.globalTM }"
             ng-click="filters.globalTM = !filters.globalTM">Treasure Map Boosters [Pudding]</span>
@@ -20,7 +20,7 @@
 
 <!-- Types -->
 <div class="filter-container" id="type-filter">
-    <animate-collapse class="filter-header">Type</animate-collapse>
+    <animate-collapse class="filter-header">Type <span class="filter-section-badge" ng-if="sectionFilterCount('type-filter')">{{sectionFilterCount('type-filter')}}</span></animate-collapse>
     <div class="collapse in">
         <span class="type-buttons">
             <span ng-model="filters.type" ng-repeat="(n,type) in [ 'STR', 'DEX', 'QCK', 'PSY', 'INT' ]"
@@ -55,7 +55,7 @@
 
 <!-- Class -->
 <div class="filter-container" id="class-filter">
-    <animate-collapse class="filter-header">Class</animate-collapse>
+    <animate-collapse class="filter-header">Class <span class="filter-section-badge" ng-if="sectionFilterCount('class-filter')">{{sectionFilterCount('class-filter')}}</span></animate-collapse>
     <div class="collapse in">
         <span ng-repeat="class in availableClasses" class="filter width-6 class" ng-click="onClassClick($event,class)"
             ng-class="{ active: filters.classes.indexOf(class) > -1 }">{{::class}}</span>
@@ -85,7 +85,7 @@
 
 <!-- Rarity -->
 <div class="filter-container" id="rarity-filter">
-    <animate-collapse class="filter-header">Rarity</animate-collapse>
+    <animate-collapse class="filter-header">Rarity <span class="filter-section-badge" ng-if="sectionFilterCount('rarity-filter')">{{sectionFilterCount('rarity-filter')}}</span></animate-collapse>
     <div class="collapse">
         <span style="display: flex; width: 100%;">
             <span ng-repeat="star in [ '1', '2', '3', '4', '4+', '5', '5+', '6', '6+' ]" style="flex: 1; text-align: center; display: block;" class="filter"
@@ -97,7 +97,7 @@
 
 <!-- Tags -->
 <div class="filter-container" id="tag-filter">
-    <animate-collapse class="filter-header">Tags</animate-collapse>
+    <animate-collapse class="filter-header">Tags <span class="filter-section-badge" ng-if="sectionFilterCount('tag-filter')">{{sectionFilterCount('tag-filter')}}</span></animate-collapse>
     <div class="collapse">
         <label class="filter width-12 tags">
             <input type="checkbox" style="margin-right: 5px;" ng-model="filters.tagsStrict">
@@ -113,7 +113,7 @@
 
 <!-- Drop -->
 <div class="filter-container" id="drop-filter">
-    <animate-collapse class="filter-header">Drop</animate-collapse>
+    <animate-collapse class="filter-header">Drop <span class="filter-section-badge" ng-if="sectionFilterCount('drop-filter')">{{sectionFilterCount('drop-filter')}}</span></animate-collapse>
     <div class="collapse">
         <span ng-repeat="type in [ 'Farmable', 'Non-farmable' ]" class="filter width-6 drop" ng-model="filters.drop"
             ng-class="{ active: filters.drop == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
@@ -130,7 +130,7 @@
 
         <!-- Current Shops nested inside Drop -->
         <div id="shops-filter">
-            <animate-collapse class="filter-header">Current Shops</animate-collapse>
+            <animate-collapse class="filter-header">Current Shops <span class="filter-section-badge" ng-if="dropPanelFilterCount('shops-filter')">{{dropPanelFilterCount('shops-filter')}}</span></animate-collapse>
             <div class="collapse">
                 <span ng-repeat="(key, value) in shops" class="filter width-6 drop" ng-model="filters.shop"
                     ng-class="{ active: filters.shop == value }" ng-click="onFilterClick($event, value)">{{::key}}</span>
@@ -139,7 +139,7 @@
 
         <!-- Farmable nested inside Drop -->
         <div id="farmable-filter">
-            <animate-collapse class="filter-header">Farmable</animate-collapse>
+            <animate-collapse class="filter-header">Farmable <span class="filter-section-badge" ng-if="dropPanelFilterCount('farmable-filter')">{{dropPanelFilterCount('farmable-filter')}}</span></animate-collapse>
             <div class="collapse">
                 <span class="filter width-12 drop" ng-model="filters.banner" ng-class="{ active: filters.banner == banners['FP'] }"
                     ng-click="onFilterClick($event, banners['FP'])">Friend Point Banner</span>
@@ -158,7 +158,7 @@
 
         <!-- Non-farmable nested inside Drop -->
         <div id="non-farmable-filter">
-            <animate-collapse class="filter-header">Non-farmable</animate-collapse>
+            <animate-collapse class="filter-header">Non-farmable <span class="filter-section-badge" ng-if="dropPanelFilterCount('non-farmable-filter')">{{dropPanelFilterCount('non-farmable-filter')}}</span></animate-collapse>
             <div class="collapse">
                 <div ng-repeat="opt in nonFarmableOptions">
                     <span class="filter width-6 drop"
@@ -177,7 +177,7 @@
 
 <!-- Exclusion Filters -->
 <div class="filter-container" id="exclusion-filter">
-    <animate-collapse class="filter-header">Exclusion Filters</animate-collapse>
+    <animate-collapse class="filter-header">Exclusion Filters <span class="filter-section-badge" ng-if="sectionFilterCount('exclusion-filter')">{{sectionFilterCount('exclusion-filter')}}</span></animate-collapse>
     <div class="collapse">
         <span class="filter width-6 exc" ng-model="filters.noBase" ng-class="{ active: filters.noBase }"
             ng-click="filters.noBase = !filters.noBase">Hide base forms</span>
@@ -190,7 +190,7 @@
 
 <!-- Limit Break -->
 <div class="filter-container" id="limit-container">
-    <animate-collapse class="filter-header">Limit Break</animate-collapse>
+    <animate-collapse class="filter-header">Limit Break <span class="filter-section-badge" ng-if="sectionFilterCount('limit-container')">{{sectionFilterCount('limit-container')}}</span></animate-collapse>
     <add-custom-filters target="limit" filter-data="filterData" filters="filters" class="collapse"></add-custom-filters>
 </div>
 
@@ -207,7 +207,7 @@
 
 <!-- Specific Captain -->
 <div class="filter-container" id="specCapt-filter">
-    <animate-collapse class="filter-header filter-header-pve">Specific Captain</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Specific Captain <span class="filter-section-badge" ng-if="sectionFilterCount('specCapt-filter')">{{sectionFilterCount('specCapt-filter')}}</span></animate-collapse>
     <div class="collapse">
         <span class="filter width-6 exc" ng-model="filters.katakuri" ng-class="{ active: filters.katakuri }"
             ng-click="filters.katakuri = !filters.katakuri">Double Boosted Katakuri Units</span><!--
@@ -259,55 +259,55 @@
 </div>
 
 <div class="filter-container" id="captain-container">
-    <animate-collapse class="filter-header filter-header-pve">Captain Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Captain Ability <span class="filter-section-badge" ng-if="sectionFilterCount('captain-container')">{{sectionFilterCount('captain-container')}}</span></animate-collapse>
     <add-custom-filters id="captainFilters" target="captain" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="special-container">
-    <animate-collapse class="filter-header filter-header-pve">Special Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Special Ability <span class="filter-section-badge" ng-if="sectionFilterCount('special-container')">{{sectionFilterCount('special-container')}}</span></animate-collapse>
     <add-custom-filters target="special" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="super-criteria-container">
-    <animate-collapse class="filter-header filter-header-pve">VS/Super Special Criteria</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">VS/Super Special Criteria <span class="filter-section-badge" ng-if="sectionFilterCount('super-criteria-container')">{{sectionFilterCount('super-criteria-container')}}</span></animate-collapse>
     <add-custom-filters target="superSpecialCriteria" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="super-container">
-    <animate-collapse class="filter-header filter-header-pve">VS/Super Special Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">VS/Super Special Ability <span class="filter-section-badge" ng-if="sectionFilterCount('super-container')">{{sectionFilterCount('super-container')}}</span></animate-collapse>
     <add-custom-filters target="superSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="swap-container">
-    <animate-collapse class="filter-header filter-header-pve">Swap Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Swap Ability <span class="filter-section-badge" ng-if="sectionFilterCount('swap-container')">{{sectionFilterCount('swap-container')}}</span></animate-collapse>
     <add-custom-filters target="swap" filter-data="filterData" filters="filters" class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="sailor-container">
-    <animate-collapse class="filter-header filter-header-pve">Sailor Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Sailor Ability <span class="filter-section-badge" ng-if="sectionFilterCount('sailor-container')">{{sectionFilterCount('sailor-container')}}</span></animate-collapse>
     <add-custom-filters target="sailor" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="potential-container">
-    <animate-collapse class="filter-header filter-header-pve">Potential Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Potential Ability <span class="filter-section-badge" ng-if="sectionFilterCount('potential-container')">{{sectionFilterCount('potential-container')}}</span></animate-collapse>
     <add-custom-filters target="potential" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="support-container">
-    <animate-collapse class="filter-header filter-header-pve">Support Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pve">Support Ability <span class="filter-section-badge" ng-if="sectionFilterCount('support-container')">{{sectionFilterCount('support-container')}}</span></animate-collapse>
     <add-custom-filters target="support" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <!-- Rumble Style -->
 <div class="filter-container" id="rumble-style-filter">
-    <animate-collapse class="filter-header filter-header-pvp">Rumble Style</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Style <span class="filter-section-badge" ng-if="sectionFilterCount('rumble-style-filter')">{{sectionFilterCount('rumble-style-filter')}}</span></animate-collapse>
     <div class="collapse">
         <div style="display: flex;">
             <span class="filter exc" style="flex: 1;" ng-model="filters.styleATK" ng-class="{ active: filters.styleATK }"
@@ -338,37 +338,37 @@
 </div>
 
 <div class="filter-container" id="rumble-ability-container">
-    <animate-collapse class="filter-header filter-header-pvp">Rumble Ability</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Ability <span class="filter-section-badge" ng-if="sectionFilterCount('rumble-ability-container')">{{sectionFilterCount('rumble-ability-container')}}</span></animate-collapse>
     <add-custom-filters target="rumbleAbility" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="rumble-special-container">
-    <animate-collapse class="filter-header filter-header-pvp">Rumble Special</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Special <span class="filter-section-badge" ng-if="sectionFilterCount('rumble-special-container')">{{sectionFilterCount('rumble-special-container')}}</span></animate-collapse>
     <add-custom-filters target="rumbleSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="rumble-resistance-container">
-    <animate-collapse class="filter-header filter-header-pvp">Rumble Resistance</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Rumble Resistance <span class="filter-section-badge" ng-if="sectionFilterCount('rumble-resistance-container')">{{sectionFilterCount('rumble-resistance-container')}}</span></animate-collapse>
     <add-custom-filters target="rumbleResistance" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="gp-ability-container">
-    <animate-collapse class="filter-header filter-header-pvp">Grand Party Leader</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Grand Party Leader <span class="filter-section-badge" ng-if="sectionFilterCount('gp-ability-container')">{{sectionFilterCount('gp-ability-container')}}</span></animate-collapse>
     <add-custom-filters target="gpAbility" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="gp-special-container">
-    <animate-collapse class="filter-header filter-header-pvp">Grand Party Burst</animate-collapse>
+    <animate-collapse class="filter-header filter-header-pvp">Grand Party Burst <span class="filter-section-badge" ng-if="sectionFilterCount('gp-special-container')">{{sectionFilterCount('gp-special-container')}}</span></animate-collapse>
     <add-custom-filters target="gpSpecial" filter-data="filterData" filters="filters"
         class="collapse"></add-custom-filters>
 </div>
 
 <div class="filter-container" id="charLog-container" ng-if="showLogFilters">
-    <animate-collapse class="filter-header filter-header-log">Character Log filters</animate-collapse>
+    <animate-collapse class="filter-header filter-header-log">Character Log filters <span class="filter-section-badge" ng-if="sectionFilterCount('charLog-container')">{{sectionFilterCount('charLog-container')}}</span></animate-collapse>
     <div class="collapse">
         <span class="filter width-12" ng-model="filters.noLog" ng-class="{ active: filters.noLog }"
             ng-click="filters.noLog = !filters.noLog">Hide units in Character Log</span>

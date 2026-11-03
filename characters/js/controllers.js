@@ -222,6 +222,49 @@
         return active;
       }
 
+      // Which sidebar section owns each filter. Used twice: header badges show
+      // how many active filters sit under a section, and active-filter chips
+      // jump to the section that owns them.
+      var filterSections = [
+        { id: 'tmkc-filter', categories: ['globalTM', 'globalKC', 'globalPKA', 'comodorevsempress'] },
+        { id: 'type-filter', categories: ['types'] },
+        { id: 'class-filter', categories: ['classes', 'dualUnits', 'vsUnits', 'superTypeUnits', 'classInclusive', 'noSingleClass', 'nodualUnits'] },
+        { id: 'rarity-filter', categories: ['stars'] },
+        { id: 'tag-filter', categories: ['tags', 'tagsStrict'] },
+        // `banner` never reaches activeFilters: it is not an exclusiveFilterLabels key.
+        { id: 'drop-filter', categories: ['drop', 'server', 'rr', 'socket', 'inkable', 'shop', 'farmable', 'nonFarmable'], extras: ['banner'] },
+        { id: 'exclusion-filter', categories: ['noBase', 'noFodder', 'noEvos'] },
+        { id: 'limit-container', custom: 'limit' },
+        { id: 'cost-container', categories: ['cost'] },
+        { id: 'specCapt-filter', categories: ['katakuri', 'katakuriplus', 'katakuriv2', 'TMlaw', 'carrotwanda'] },
+        { id: 'captain-container', custom: 'captain' },
+        { id: 'special-container', custom: 'special' },
+        { id: 'super-criteria-container', custom: 'superSpecialCriteria' },
+        { id: 'super-container', custom: 'superSpecial' },
+        { id: 'swap-container', custom: 'swap' },
+        { id: 'sailor-container', custom: 'sailor' },
+        { id: 'potential-container', custom: 'potential' },
+        { id: 'support-container', custom: 'support' },
+        { id: 'rumble-style-filter', categories: ['styleATK', 'styleDEF', 'styleRCV', 'styleSPT', 'styleDBF', 'styleBAL'] },
+        { id: 'rumble-cost-container', categories: ['rumbleCost'] },
+        { id: 'rumble-ability-container', custom: 'rumbleAbility' },
+        { id: 'rumble-special-container', custom: 'rumbleSpecial' },
+        { id: 'rumble-resistance-container', custom: 'rumbleResistance' },
+        { id: 'gp-ability-container', custom: 'gpAbility' },
+        { id: 'gp-special-container', custom: 'gpSpecial' },
+        { id: 'charLog-container', categories: ['noLog', 'noMissing'] }
+      ];
+
+      var sectionById = {};
+      var sectionByCategory = {};
+      filterSections.forEach(function (section) {
+        sectionById[section.id] = section;
+        (section.categories || []).forEach(function (category) {
+          sectionByCategory[category] = section;
+        });
+      });
+
+
       $scope.$watch(
         function () { return $rootScope.filters; },
         function (filters) {

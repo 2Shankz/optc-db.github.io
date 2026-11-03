@@ -784,6 +784,20 @@ input#burgerMenuState {
     background: var(--filter-header-pvp) !important;
 }
 
+/* Count of active filters under a sidebar section. */
+.filter-section-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 5px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 15px;
+    vertical-align: 1px;
+}
+
 .filter-header > i {
     position: relative;
     top: 2px;
