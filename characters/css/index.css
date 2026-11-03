@@ -1779,6 +1779,30 @@ tr.preview td:nth-child(2) > a:after {
 .tag.potential { background: rgba(189, 109, 10, 0.5); }
 .tag.support { background: rgba(133,193,245,0.5); }
 
+.tag.filterable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.tag.filterable:hover {
+    filter: brightness(1.15);
+}
+
+/* Enabled filters get an outer stroke so "on" is obvious at a glance.
+   outline is layout-neutral: the pill keeps its width, so neighbouring tags
+   never shift when a filter is toggled. */
+.tag.filterable.active {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 1px;
+    filter: brightness(1.15);
+}
+
+/* Keyboard focus ring. Drawn with box-shadow so it can coexist with the
+   active outline when a enabled tag is also focused. */
+.tag.filterable:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
 .link-container {
     text-align: left;
 }

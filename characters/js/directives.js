@@ -613,61 +613,161 @@ directives.goBack = function ($state, $rootScope) {
 				// flags
 				var flags = window.flags[id] || {};
 				var htmlToAppend = "";
-				htmlToAppend +=
-					'<span class="tag flag">' +
-					(flags.global ? "Global unit" : "Japan unit") +
-					"</span>";
-				htmlToAppend +=
-					'<span class="tag flag">' +
-					(CharUtils.isFarmable(id) ? "Farmable" : "Non-farmable") +
-					"</span>";
-				if (flags.rr)
-					htmlToAppend += '<span class="tag flag">Rare Recruit only</span>';
+
+				// Tags with a matching sidebar filter are rendered as toggles.
+				// Matchers are keyed the same way in `filters.custom`, so the
+				// target/group/name from this loop is the whole link.				// `attrs` doubles as the "is this tag wired to a filter" flag: tags
+				// without attributes (combined farmable tags) stay inert.
+				var tag = function (cls, label, attrs, active) {
+					var interactive = !!attrs;
+					return (
+						'<span class="tag ' + cls +
+						(interactive ? " filterable" : "") +
+						(active ? " active" : "") +
+						'"' + (attrs || "") +
+						(interactive
+							? ' role="button" tabindex="0" aria-pressed="' +
+								(active ? "true" : "false") + '"' +
+								' title="Toggle this filter in the table"'
+							: "") +
+						">" + label + "</span>"
+					);
+				};
+
+				var matcherTag = function (cls, label, target, group, key) {
+					var attrs =
+						' data-matcher-target="' + target +
+						'" data-matcher-group="' + group +
+						'" data-matcher-key="' + key + '"';
+					var custom = $rootScope.filters && $rootScope.filters.custom;
+					var enabled = !!(custom && custom[target] && custom[target][group] &&
+						custom[target][group].matchers[key] &&
+						custom[target][group].matchers[key].enabled);
+					return tag(cls, label, attrs, enabled);
+				};
+
+				var filterTag = function (cls, label, field, value, key) {
+					var attrs = ' data-filter-field="' + field + '"';
+					if (key === undefined) attrs += ' data-filter-value="' + value + '"';
+					else attrs += ' data-filter-key="' + key + '"';
+					var current = $rootScope.filters && $rootScope.filters[field];
+					var active = key === undefined
+						? current == value
+						: current == window[field + "s"][key];
+					return tag(cls, label, attrs, active);
+				};
+
+				var flagFilters = {
+					"Global unit": { field: "server", value: "Global units" },
+					"Japan unit": { field: "server", value: "Japan exclusives" },
+					"Farmable": { field: "drop", value: "Farmable" },
+					"Non-farmable": { field: "drop", value: "Non-farmable" },
+					"Inkable": { field: "inkable", value: "Inkable" },
+					"Rare Recruit only": { field: "rr", value: "In RR pool" },
+				};
+
+				var flagTag = function (label) {
+					var filter = flagFilters[label];
+					return filter
+						? filterTag("flag", label, filter.field, filter.value)
+						: tag("flag", label);
+				};
+
+				// These correspond to the toggles in the sidebar's Non-farmable panel
+				// (`filters.nonFarmable[key]`), which test the same flags.
+				var nonFarmableTags = {
+					"Limited Rare Recruit only": "lrr",
+					"Treasure Map Sugo-fest Limited Rare Recruit only": "tmlrr",
+					"Kizuna Clash Sugo-fest Limited Rare Recruit only": "kclrr",
+					"Pirate Rumble Sugo-fest Limited Rare Recruit only": "pflrr",
+					"Super Sugo-fest Limited Rare Recruit only": "superlrr",
+					"Support Sugo-fest Limited Rare Recruit only": "slrr",
+					"Anniversary Sugo-fest Limited Rare Recruit only": "annilrr",
+					"Promo-code only": "promo",
+					"One time only characters": "special",
+					"Rayleigh Shop Unit": "shop",
+					"Trade Port Unit": "tmshop",
+				};
+
+				var nonFarmableTag = function (label) {
+					var key = nonFarmableTags[label];
+					if (key === undefined) return tag("flag", label);
+					var nonFarmable = $rootScope.filters && $rootScope.filters.nonFarmable;
+					return tag("flag", label,
+						' data-non-farmable-key="' + key + '"',
+						!!(nonFarmable && nonFarmable[key]));
+				};
+
+				// Keys of the sidebar's Farmable panel (`filters.farmable`).
+				var farmableTags = {
+					"Story mode only": "Story",
+					"Fortnight only": "Fortnight",
+					"Raid only": "Raid",
+					"Arena only": "Arena",
+					"Treasure Map only": "Treasuremap",
+				};
+
+				var farmableTag = function (label) {
+					var key = farmableTags[label];
+					if (key === undefined) return tag("flag", label);
+					var farmable = $rootScope.filters && $rootScope.filters.farmable;
+					return tag("flag", label,
+						' data-farmable-key="' + key + '"',
+						!!(farmable && farmable[key]));
+				};
+
+				htmlToAppend += flagTag(flags.global ? "Global unit" : "Japan unit");
+				htmlToAppend += flagTag(
+					CharUtils.isFarmable(id) ? "Farmable" : "Non-farmable"
+				);
+				if (flags.rr) htmlToAppend += flagTag("Rare Recruit only");
 				if (flags.lrr)
-					htmlToAppend +=
-						'<span class="tag flag">Limited Rare Recruit only</span>';
+					htmlToAppend += nonFarmableTag("Limited Rare Recruit only");
 				if (flags.tmlrr)
-					htmlToAppend +=
-						'<span class="tag flag">Treasure Map Sugo-fest Limited Rare Recruit only</span>';
+					htmlToAppend += nonFarmableTag(
+						"Treasure Map Sugo-fest Limited Rare Recruit only"
+					);
 				if (flags.kclrr)
-					htmlToAppend +=
-						'<span class="tag flag">Kizuna Clash Sugo-fest Limited Rare Recruit only</span>';
+					htmlToAppend += nonFarmableTag(
+						"Kizuna Clash Sugo-fest Limited Rare Recruit only"
+					);
 				if (flags.pflrr)
-					htmlToAppend +=
-						'<span class="tag flag">Pirate Rumble Sugo-fest Limited Rare Recruit only</span>';
+					htmlToAppend += nonFarmableTag(
+						"Pirate Rumble Sugo-fest Limited Rare Recruit only"
+					);
 				if (flags.superlrr)
-					htmlToAppend +=
-						'<span class="tag flag">Super Sugo-fest Limited Rare Recruit only</span>';
+					htmlToAppend += nonFarmableTag(
+						"Super Sugo-fest Limited Rare Recruit only"
+					);
 				if (flags.slrr)
-					htmlToAppend +=
-						'<span class="tag flag">Support Sugo-fest Limited Rare Recruit only</span>';
-				if (flags.superlrr)
-					htmlToAppend +=
-						'<span class="tag flag">Super Sugo-fest Limited Rare Recruit only</span>';
+					htmlToAppend += nonFarmableTag(
+						"Support Sugo-fest Limited Rare Recruit only"
+					);
 				if (flags.annilrr)
-					htmlToAppend +=
-						'<span class="tag flag">Anniversary Sugo-fest Limited Rare Recruit only</span>';
+					htmlToAppend += nonFarmableTag(
+						"Anniversary Sugo-fest Limited Rare Recruit only"
+					);
 				if (flags.promo)
-					htmlToAppend += '<span class="tag flag">Promo-code only</span>';
+					htmlToAppend += nonFarmableTag("Promo-code only");
 				if (flags.shop)
-					htmlToAppend += '<span class="tag flag">Rayleigh Shop Unit</span>';
+					htmlToAppend += nonFarmableTag("Rayleigh Shop Unit");
 				if (flags.tmshop)
-					htmlToAppend += '<span class="tag flag">Trade Port Unit</span>';
+					htmlToAppend += nonFarmableTag("Trade Port Unit");
 				if (flags.special)
-					htmlToAppend +=
-						'<span class="tag flag">One time only characters</span>';
-				if (flags.inkable)
-					htmlToAppend += '<span class="tag flag">Inkable</span>';
+					htmlToAppend += nonFarmableTag(
+						"One time only characters"
+					);
+				if (flags.inkable) htmlToAppend += flagTag("Inkable");
 				if (CharUtils.checkFarmable(id, { "Story Island": true }))
-					htmlToAppend += '<span class="tag flag">Story mode only</span>';
+					htmlToAppend += farmableTag("Story mode only");
 				if (CharUtils.checkFarmable(id, { Fortnight: true }))
-					htmlToAppend += '<span class="tag flag">Fortnight only</span>';
+					htmlToAppend += farmableTag("Fortnight only");
 				if (CharUtils.checkFarmable(id, { Raid: true }))
-					htmlToAppend += '<span class="tag flag">Raid only</span>';
+					htmlToAppend += farmableTag("Raid only");
 				if (CharUtils.checkFarmable(id, { Arena: true }))
-					htmlToAppend += '<span class="tag flag">Arena only</span>';
+					htmlToAppend += farmableTag("Arena only");
 				if (CharUtils.checkFarmable(id, { Treasure: true }))
-					htmlToAppend += '<span class="tag flag">Treasure Map only</span>';
+					htmlToAppend += farmableTag("Treasure Map only");
 				if (
 					CharUtils.checkFarmable(id, { "Story Island": true, Fortnight: true })
 				)
@@ -682,13 +782,13 @@ directives.goBack = function ($state, $rootScope) {
 				// Shops
 				Object.entries(window.shops).forEach(([key, value]) => {
 					if (Object.values(value).includes(Number(id)))
-						htmlToAppend += '<span class="tag flag">' + key + ' Shop</span>';
+						htmlToAppend += filterTag("flag", key + " Shop", "shop", null, key);
 				});
 
 				// Banners
 				Object.entries(window.banners).forEach(([key, value]) => {
 					if (Object.values(value).includes(Number(id)))
-						htmlToAppend += '<span class="tag flag">' + key + ' Banner</span>';
+						htmlToAppend += filterTag("flag", key + " Banner", "banner", null, key);
 				});
 				
 				// matchers
@@ -697,6 +797,7 @@ directives.goBack = function ($state, $rootScope) {
 						for (const group in window.matchers[target]) {
 							for (var name in window.matchers[target][group]) {
 								var matcher = window.matchers[target][group][name];
+								var matcherKey = name;
 								if (!data[matcher.target]) break;
 								let targetString =
 									data[matcher.target].constructor == String
@@ -712,7 +813,7 @@ directives.goBack = function ($state, $rootScope) {
 										name = "Captain: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend += '<span class="tag captain">' + name + "</span>";
+									htmlToAppend += matcherTag("captain", name, target, group, matcherKey);
 								}
 
 								// special
@@ -722,7 +823,7 @@ directives.goBack = function ($state, $rootScope) {
 										name = "Special: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend += '<span class="tag special">' + name + "</span>";
+									htmlToAppend += matcherTag("special", name, target, group, matcherKey);
 								}
 
 								// super special
@@ -732,7 +833,7 @@ directives.goBack = function ($state, $rootScope) {
 										name = "Super Special: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "").replace(/special/i, "Super Special");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend += '<span class="tag superSpecial">' + name + "</span>";
+									htmlToAppend += matcherTag("superSpecial", name, target, group, matcherKey);
 								}
 
 								// swap
@@ -742,7 +843,7 @@ directives.goBack = function ($state, $rootScope) {
 										name = "Swap: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend += '<span class="tag swap">' + name + "</span>";
+									htmlToAppend += matcherTag("swap", name, target, group, matcherKey);
 								}
 
 								// sailor
@@ -754,7 +855,7 @@ directives.goBack = function ($state, $rootScope) {
 										else name = name.replace(/s$/, "");
 										name = name.replace(/iing/, "ying");
 										if (name != "Has Sailor Ability sailor")
-											htmlToAppend += '<span class="tag sailor">' + name + "</span>";
+											htmlToAppend += matcherTag("sailor", name, target, group, matcherKey);
 									}
 								}
 
@@ -766,7 +867,7 @@ directives.goBack = function ($state, $rootScope) {
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
 									if (name != "Has Limit Break limit")
-										htmlToAppend += '<span class="tag limit">' + name + "</span>";
+										htmlToAppend += matcherTag("limit", name, target, group, matcherKey);
 								}
 
 								// potential
@@ -776,7 +877,7 @@ directives.goBack = function ($state, $rootScope) {
 										name = "Potential Ability: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend += '<span class="tag potential">' + name + "</span>";
+									htmlToAppend += matcherTag("potential", name, target, group, matcherKey);
 								}
 
 								// support
@@ -786,13 +887,68 @@ directives.goBack = function ($state, $rootScope) {
 										name = "Support: " + name.replace(/ers$/, "ing");
 									else name = name.replace(/s$/, "");
 									name = name.replace(/iing/, "ying");
-									htmlToAppend += '<span class="tag support">' + name + "</span>";
+									htmlToAppend += matcherTag("support", name, target, group, matcherKey);
 								}
 							}
 						}
 					}
 				}
 				element.append(htmlToAppend);
+
+				element.on("click", ".tag.filterable", function () {
+					if (!$rootScope.filters) return;
+					var tagElement = angular.element(this);
+					var target = tagElement.attr("data-matcher-target");
+					var group = tagElement.attr("data-matcher-group");
+					var matcherKey = tagElement.attr("data-matcher-key");
+					var field = tagElement.attr("data-filter-field");
+					var active;
+
+					scope.$apply(function () {
+						if (target !== undefined) {
+							var custom = $rootScope.filters.custom && $rootScope.filters.custom[target];
+							var groupFilters = custom && custom[group];
+							if (!groupFilters || !groupFilters.matchers[matcherKey]) return;
+							var matcherObj = groupFilters.matchers[matcherKey];
+							matcherObj.enabled = !matcherObj.enabled;
+							active = matcherObj.enabled;
+						} else if (tagElement.attr("data-non-farmable-key") !== undefined) {
+							// These keys hold three states: true = "only", false = "hide",
+							// null = off. The tag only expresses "only", so turning it on
+							// writes true (superseding an active "hide") and turning it off
+							// writes null.
+							var nonFarmableKey = tagElement.attr("data-non-farmable-key");
+							if (!$rootScope.filters.nonFarmable)
+								$rootScope.filters.nonFarmable = {};
+							active = $rootScope.filters.nonFarmable[nonFarmableKey] !== true;
+							$rootScope.filters.nonFarmable[nonFarmableKey] = active ? true : null;
+						} else if (tagElement.attr("data-farmable-key") !== undefined) {
+							// Same three states as the Non-farmable panel above.
+							var farmableKey = tagElement.attr("data-farmable-key");
+							if (!$rootScope.filters.farmable)
+								$rootScope.filters.farmable = {};
+							active = $rootScope.filters.farmable[farmableKey] !== true;
+							$rootScope.filters.farmable[farmableKey] = active ? true : null;
+						} else {
+							var key = tagElement.attr("data-filter-key");
+							var value = key === undefined
+								? tagElement.attr("data-filter-value")
+								: window[field + "s"][key];
+							active = $rootScope.filters[field] != value;
+							$rootScope.filters[field] = active ? value : null;
+						}
+						tagElement.toggleClass("active", active);
+						tagElement.attr("aria-pressed", active ? "true" : "false");
+					});
+				});
+
+				// The pills are spans acting as buttons, so keyboard activation has to
+				// be wired by hand. `this.click()` reuses the delegated handler above.
+				element.on("keydown", ".tag.filterable", function (e) {
+					if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+					e.preventDefault();
+					this.click();
+				});
 			},
 		};
 	};
