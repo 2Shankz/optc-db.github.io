@@ -76,12 +76,6 @@
     100% { transform: rotate(360deg); }
 }
 
-@media (hover) {
-    #links-button .btn.trigger:hover {
-        /* no hover animation */
-    }
-}
-
 #links-button .rotater {
     position: absolute;
     top: 0;
