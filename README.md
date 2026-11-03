@@ -1,6 +1,6 @@
 # OPTC Database
 
-[![Discord](https://img.shields.io/badge/Discord-2Shankz-5865F2?logo=discord&logoColor=white)](https://discord.gg/MRhRrbF)
+[![Discord](https://img.shields.io/badge/Discord-2Shankz-5865F2?logo=discord&logoColor=white)](https://discord.gg/xhKT87vKX7)
 [![GitHub Pages](https://img.shields.io/github/deployments/2Shankz/optc-db.github.io/github-pages?label=GitHub%20Pages&logo=github)](https://2shankz.github.io/optc-db.github.io/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE.md)
 
@@ -35,11 +35,11 @@ These community tools are linked from the site but maintained separately:
 
 ## Contact / Contributing
 
-Report bugs, data errors, suggestions or feedback via [GitHub Issues](https://github.com/2Shankz/optc-db.github.io/issues) or [Discord](https://discord.gg/MRhRrbF)
+Report bugs, data errors, suggestions or feedback via [GitHub Issues](https://github.com/2Shankz/optc-db.github.io/issues) or [Discord](https://discord.gg/xhKT87vKX7)
 
 - Discord: @2Shankz
 - [GitHub Issues](https://github.com/2Shankz/optc-db.github.io/issues)
-- [Bug Report Discord](https://discord.gg/MRhRrbF)
+- [Bug Report Discord](https://discord.gg/xhKT87vKX7)
 
 ## License
 
