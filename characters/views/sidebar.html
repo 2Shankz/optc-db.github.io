@@ -23,7 +23,7 @@
     <animate-collapse class="filter-header">Type <span class="filter-section-badge" ng-if="sectionFilterCount('type-filter')">{{sectionFilterCount('type-filter')}}</span></animate-collapse>
     <div class="collapse in">
         <span class="type-buttons">
-            <span ng-model="filters.type" ng-repeat="(n,type) in [ 'STR', 'DEX', 'QCK', 'PSY', 'INT' ]"
+            <span ng-model="filters.type" ng-repeat="(n,type) in [ 'STR', 'DEX', 'QCK', 'PSY', 'INT' ]" data-filter-id="{{'type-' + type}}"
                 class="filter type {{::type}}"
                 ng-class="{ active: filters.types.indexOf(type) > -1 }" ng-click="onTypeClick($event,type)">{{::type}}</span>
         </span>
@@ -57,7 +57,7 @@
 <div class="filter-container" id="class-filter">
     <animate-collapse class="filter-header">Class <span class="filter-section-badge" ng-if="sectionFilterCount('class-filter')">{{sectionFilterCount('class-filter')}}</span></animate-collapse>
     <div class="collapse in">
-        <span ng-repeat="class in availableClasses" class="filter width-6 class" ng-click="onClassClick($event,class)"
+        <span ng-repeat="class in availableClasses" class="filter width-6 class" data-filter-id="{{'class-' + class}}" ng-click="onClassClick($event,class)"
             ng-class="{ active: filters.classes.indexOf(class) > -1 }">{{::class}}</span>
             <div style="display: flex; width: 100%;">
                 <span class="filter exc" style="flex: 1; text-align: center;" 
@@ -88,7 +88,7 @@
     <animate-collapse class="filter-header">Rarity <span class="filter-section-badge" ng-if="sectionFilterCount('rarity-filter')">{{sectionFilterCount('rarity-filter')}}</span></animate-collapse>
     <div class="collapse">
         <span style="display: flex; width: 100%;">
-            <span ng-repeat="star in [ '1', '2', '3', '4', '4+', '5', '5+', '6', '6+' ]" style="flex: 1; text-align: center; display: block;" class="filter"
+            <span ng-repeat="star in [ '1', '2', '3', '4', '4+', '5', '5+', '6', '6+' ]" data-filter-id="{{'star-' + star}}" style="flex: 1; text-align: center; display: block;" class="filter"
                 ng-click="onStarsClick($event,star)"
                 ng-class="{ active: filters.stars.indexOf(star) > -1 }">{{::star}}</span>
         </span>
@@ -105,7 +105,7 @@
         </label>
 
         <div style="max-height: 350px; overflow-y: auto; padding-right: 5px;">
-            <span ng-repeat="tags in availableTags" class="filter width-12 tags exc" ng-click="onTagsClick($event,tags)"
+            <span ng-repeat="tags in availableTags" class="filter width-12 tags exc" data-filter-id="{{'tag-' + tags.name}}" ng-click="onTagsClick($event,tags)"
                 ng-class="{ active: filters.tags.indexOf(tags) > -1 }">{{::tags.name}}</span>
         </div>
     </div>
@@ -115,17 +115,17 @@
 <div class="filter-container" id="drop-filter">
     <animate-collapse class="filter-header">Drop <span class="filter-section-badge" ng-if="sectionFilterCount('drop-filter')">{{sectionFilterCount('drop-filter')}}</span></animate-collapse>
     <div class="collapse">
-        <span ng-repeat="type in [ 'Farmable', 'Non-farmable' ]" class="filter width-6 drop" ng-model="filters.drop"
+        <span ng-repeat="type in [ 'Farmable', 'Non-farmable' ]" data-filter-id="excl-drop" class="filter width-6 drop" ng-model="filters.drop"
             ng-class="{ active: filters.drop == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
-        <span ng-repeat="type in [ 'Global units', 'Japan exclusives' ]" class="filter width-6 drop"
+        <span ng-repeat="type in [ 'Global units', 'Japan exclusives' ]" data-filter-id="excl-server" class="filter width-6 drop"
             ng-model="filters.server" ng-class="{ active: filters.server == type }"
             ng-click="onFilterClick($event,type)">{{::type}}</span>
-        <span ng-repeat="type in [ 'In RR pool', 'Not in RR pool' ]" class="filter width-6 drop" ng-model="filters.rr"
+        <span ng-repeat="type in [ 'In RR pool', 'Not in RR pool' ]" data-filter-id="excl-rr" class="filter width-6 drop" ng-model="filters.rr"
             ng-class="{ active: filters.rr == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
-        <span ng-repeat="type in [ 'Farmable Sockets', 'No Farmable Sockets' ]" class="filter width-6 drop"
+        <span ng-repeat="type in [ 'Farmable Sockets', 'No Farmable Sockets' ]" data-filter-id="excl-socket" class="filter width-6 drop"
             ng-model="filters.socket" ng-class="{ active: filters.socket == type }"
             ng-click="onFilterClick($event,type)">{{::type}}</span>
-        <span ng-repeat="type in [ 'Inkable', 'Not Inkable' ]" class="filter width-6 drop" ng-model="filters.inkable"
+        <span ng-repeat="type in [ 'Inkable', 'Not Inkable' ]" data-filter-id="excl-inkable" class="filter width-6 drop" ng-model="filters.inkable"
             ng-class="{ active: filters.inkable == type }" ng-click="onFilterClick($event,type)">{{::type}}</span>
 
         <!-- Current Shops nested inside Drop -->

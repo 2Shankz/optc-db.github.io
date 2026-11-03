@@ -214,7 +214,7 @@
                 if (window.matchers && window.matchers[target] && window.matchers[target][group] && window.matchers[target][group][name]) {
                   displayName = window.matchers[target][group][name].name || name;
                 }
-                active.push({ id: 'custom-' + target + '-' + name, category: 'custom', target: target, group: group, name: name, label: target + ': ' + displayName });
+                active.push({ id: 'custom-' + target + '-' + group + '-' + name, category: 'custom', target: target, group: group, name: name, label: target + ': ' + displayName });
               }
             });
           });
@@ -264,6 +264,144 @@
         });
       });
 
+      // These sections are nested inside Drop, so their inner panel has to be
+      // opened as well before scrolling to them.
+      var nestedSections = {
+        shop: 'shops-filter',
+        farmable: 'farmable-filter',
+        nonFarmable: 'non-farmable-filter'
+      };
+
+      // Nested Drop panels carry their own count, so the badge hierarchy keeps
+      // going from the section down to the panel a filter actually lives in.
+      var dropPanels = [
+        { id: 'shops-filter', categories: ['shop'] },
+        { id: 'farmable-filter', categories: ['farmable'], extras: ['banner'] },
+        { id: 'non-farmable-filter', categories: ['nonFarmable'] }
+      ];
+      var panelById = {};
+      dropPanels.forEach(function (panel) { panelById[panel.id] = panel; });
+
+      var countFilters = function (section) {
+        var count = 0;
+        ($scope.activeFilters || []).forEach(function (filter) {
+          if (section.custom) {
+            if (filter.category === 'custom' && filter.target === section.custom) count++;
+          } else if (section.categories.indexOf(filter.category) !== -1) {
+            count++;
+          }
+        });
+        (section.extras || []).forEach(function (key) {
+          if ($rootScope.filters && $rootScope.filters[key]) count++;
+        });
+        return count;
+      };
+
+      $scope.sectionFilterCount = function (sectionId) {
+        var section = sectionById[sectionId];
+        return section ? countFilters(section) : 0;
+      };
+
+      $scope.dropPanelFilterCount = function (panelId) {
+        var panel = panelById[panelId];
+        return panel ? countFilters(panel) : 0;
+      };
+
+      // The row/pill that renders a given active filter, so a chip can land on the
+      // filter itself instead of the section that contains it.
+      var findFilterElement = function (filter) {
+        var nodes, i, fallback = null;
+        if (filter.category === 'farmable' || filter.category === 'nonFarmable') {
+          var panel = document.getElementById(
+            filter.category === 'farmable' ? 'farmable-filter' : 'non-farmable-filter'
+          );
+          if (!panel) return null;
+          nodes = panel.querySelectorAll('[data-key]');
+          for (i = 0; i < nodes.length; i++) {
+            if (nodes[i].getAttribute('data-key') !== filter.value) continue;
+            if (nodes[i].classList.contains('active')) return nodes[i];
+            if (!fallback) fallback = nodes[i];
+          }
+          return fallback;
+        }
+        if (filter.category === 'shop') {
+          // Only one shop can be active at a time.
+          nodes = document.querySelectorAll('#shops-filter .filter');
+          for (i = 0; i < nodes.length; i++)
+            if (nodes[i].classList.contains('active')) return nodes[i];
+          return null;
+        }
+        var selector = '[data-filter-id="' + filter.id + '"]';
+        return document.querySelector(selector + '.active') || document.querySelector(selector);
+      };
+
+      var flashElement = function (element, className) {
+        element.classList.add(className);
+        $timeout(function () {
+          element.classList.remove(className);
+        }, 1000);
+      };
+
+      // Opens one collapsed panel, reporting whether it was actually closed.
+      var showCollapse = function (element) {
+        if (!element) return false;
+        var wasClosed = !element.classList.contains('in');
+        $(element).collapse('show');
+        return wasClosed;
+      };
+
+      $scope.revealFilter = function (filter) {
+        var section = filter.category === 'custom'
+          ? filterSections.filter(function (s) { return s.custom === filter.target; })[0]
+          : sectionByCategory[filter.category];
+        if (!section) return;
+
+        var sectionElement = document.getElementById(section.id);
+        if (!sectionElement) return;
+
+        var opened = false;
+        var children = sectionElement.children || [];
+        for (var c = 0; c < children.length; c++) {
+          if (children[c].classList.contains('collapse'))
+            opened = showCollapse(children[c]) || opened;
+        }
+
+        var nestedId = nestedSections[filter.category];
+        if (nestedId) {
+          var nested = document.getElementById(nestedId);
+          if (nested) {
+            var nestedChildren = nested.children || [];
+            for (var n = 0; n < nestedChildren.length; n++) {
+              if (nestedChildren[n].classList.contains('collapse'))
+                opened = showCollapse(nestedChildren[n]) || opened;
+            }
+          }
+        }
+
+        var item = findFilterElement(filter);
+        if (item) {
+          // Open collapsed ancestors (nested panels, custom filter groups).
+          for (var node = item.parentElement; node && node !== document.body; node = node.parentElement) {
+            if (node.classList.contains('collapse') && !node.classList.contains('in')) {
+              $(node).collapse('show');
+              opened = true;
+            }
+          }
+          // An enabled matcher keeps its submatcher panel open, so reveal that too.
+          var panels = item.querySelectorAll('.collapse');
+          for (var i = 0; i < panels.length; i++) opened = showCollapse(panels[i]) || opened;
+        }
+
+        var focus = item || (nestedId && document.getElementById(nestedId)) || sectionElement;
+        var applyReveal = function () {
+          focus.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          flashElement(focus, item ? 'filter-item-flash' : 'filter-section-flash');
+        };
+        // Bootstrap animates collapse over ~350ms, so scrolling in the same tick
+        // would measure the pre-animation layout and land at a stale offset.
+        if (opened) $timeout(applyReveal, 360);
+        else applyReveal();
+      };
 
       $scope.$watch(
         function () { return $rootScope.filters; },

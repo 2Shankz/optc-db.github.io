@@ -1,6 +1,6 @@
 <div>
     <!-- Uncategorized -->
-    <div class="filter width-12 custom" ng-repeat="(name, filter) in ::filterData[target]['Uncategorized'] track by $index" ng-if="::filter.target == target" ng-class="{ active: filters.custom[target]['Uncategorized'].matchers[name].enabled }">
+    <div class="filter width-12 custom" ng-repeat="(name, filter) in ::filterData[target]['Uncategorized'] track by $index" data-filter-id="{{'custom-' + target + '-Uncategorized-' + name}}" ng-if="::filter.target == target" ng-class="{ active: filters.custom[target]['Uncategorized'].matchers[name].enabled }">
         <div ng-click="toggleMatcher($event, filter)" class="filter-name">
             {{::filter.name}}
         </div>
@@ -38,7 +38,7 @@
     <div class="filter-group width-12" ng-repeat="(group, matchers) in ::filterData[target]" ng-if="::group != 'Uncategorized'">
         <animate-collapse class="filter-group-header filter-header">{{::group}} <span class="filter-section-badge" ng-if="groupFilterCount(group)">{{groupFilterCount(group)}}</span></animate-collapse>
         <div class="collapse">
-            <div class="filter width-12 custom" ng-repeat="(name, filter) in ::matchers track by $index" ng-if="::filter.target == target" ng-class="{ active: filters.custom[target][group].matchers[name].enabled }">
+            <div class="filter width-12 custom" ng-repeat="(name, filter) in ::matchers track by $index" data-filter-id="{{'custom-' + target + '-' + group + '-' + name}}" ng-if="::filter.target == target" ng-class="{ active: filters.custom[target][group].matchers[name].enabled }">
                 <div ng-click="toggleMatcher($event, filter)" class="filter-name">
                     {{::filter.name}}
                 </div>

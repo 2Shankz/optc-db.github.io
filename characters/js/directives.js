@@ -411,23 +411,20 @@ directives.animateCollapse = function ($timeout, $document) {
 					submatchers[submatcherIndex].param =
 						!submatchers[submatcherIndex].param;
 				};
-				// called when a matcher is toggled, should debounce during the collapse animation
-				// of submatchers div
+				// Called when a matcher row is clicked. The submatcher panel follows
+				// `enabled` instead of toggling on its own: an enabled matcher shows its
+				// parameters, so opening the panel can never silently disable a filter.
 				scope.toggleMatcher = function ($event, matcher) {
-					var targetElement = $event.target.nextElementSibling;
-					if (targetElement) {
-						if (targetElement.classList.contains("collapsing")) {
-							return;
-						}
-						$(targetElement).collapse("toggle");
-					}
-
 					var matcherObj =
 						scope.filters.custom[matcher.target][matcher.group].matchers[
 							matcher.name
 						];
 					matcherObj.enabled = !matcherObj.enabled;
-					matcherObj.submatchersOpen = !matcherObj.submatchersOpen;
+					matcherObj.submatchersOpen = matcherObj.enabled;
+
+					var panel = $event.target.nextElementSibling;
+					if (panel && panel.classList.contains("collapse"))
+						$(panel).collapse(matcherObj.enabled ? "show" : "hide");
 				};
 				// Enabled matchers in one group, for that group's header badge.
 				scope.groupFilterCount = function (group) {
@@ -903,6 +900,21 @@ directives.goBack = function ($state, $rootScope) {
 				}
 				element.append(htmlToAppend);
 
+				// Matchers with submatchers render a collapsible panel in the sidebar.
+				// Enabling one from here has to open that panel too, otherwise its
+				// parameters stay hidden behind a click that would turn the filter off.
+				var syncMatcherPanel = function (target, group, name, expand) {
+					var row = document.querySelector(
+						'[data-filter-id="custom-' + target + '-' + group + '-' + name + '"]'
+					);
+					if (!row) return;
+					var panels = row.querySelectorAll(".collapse");
+					for (var i = 0; i < panels.length; i++) {
+						if (expand) $(panels[i]).collapse("show");
+						else if (i === 0) $(panels[i]).collapse("hide");
+					}
+				};
+
 				element.on("click", ".tag.filterable", function () {
 					if (!$rootScope.filters) return;
 					var tagElement = angular.element(this);
@@ -920,6 +932,7 @@ directives.goBack = function ($state, $rootScope) {
 							var matcherObj = groupFilters.matchers[matcherKey];
 							matcherObj.enabled = !matcherObj.enabled;
 							active = matcherObj.enabled;
+							syncMatcherPanel(target, group, matcherKey, active);
 						} else if (tagElement.attr("data-non-farmable-key") !== undefined) {
 							// These keys hold three states: true = "only", false = "hide",
 							// null = off. The tag only expresses "only", so turning it on
