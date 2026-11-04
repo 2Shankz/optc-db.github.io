@@ -96,62 +96,35 @@
       $scope.theme = $storage.get('optc-theme', 'dark');
       $scope.modalTheme = $storage.get('optc-modal-theme', 'light');
 
-      $rootScope.modalTheme = $scope.modalTheme;
-      $rootScope.toggleModalTheme = $scope.toggleModalTheme;
-      $rootScope.getModalThemeIcon = $scope.getModalThemeIcon;
-
-      var applyTheme = function(theme, target) {
-        target.classList.remove('light-mode', 'dark-mode', 'frappe', 'macchiato');
-        if (theme === 'frappe') {
-          target.classList.add('light-mode', 'frappe');
-        } else if (theme === 'macchiato') {
-          target.classList.add('dark-mode', 'macchiato');
-        } else if (theme === 'light') {
-          target.classList.add('light-mode');
-        } else {
-          target.classList.add('dark-mode');
-        }
-      };
-
-      applyTheme($scope.theme, document.documentElement);
-
-      document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
-      document.documentElement.classList.add('modal-' + $scope.modalTheme);
-
-      var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
-      var themeIcons = {
-        'dark': 'dark_mode',
-        'light': 'light_mode',
-        'frappe': 'brightness_medium',
-        'macchiato': 'nightlight_round'
-      };
+      Theme.apply($scope.theme);
+      Theme.applyModal($scope.modalTheme);
 
       $scope.toggleTheme = function() {
-        var currentIndex = themeCycle.indexOf($scope.theme);
-        var nextIndex = (currentIndex + 1) % themeCycle.length;
-        $scope.theme = themeCycle[nextIndex];
+        $scope.theme = Theme.next($scope.theme);
         $storage.set('optc-theme', $scope.theme);
-        applyTheme($scope.theme, document.documentElement);
+        Theme.apply($scope.theme);
       };
 
       $scope.toggleModalTheme = function() {
-        var modalCycle = ['light', 'frappe', 'macchiato', 'dark'];
-        var currentIndex = modalCycle.indexOf($scope.modalTheme);
-        var nextIndex = (currentIndex + 1) % modalCycle.length;
-        $scope.modalTheme = modalCycle[nextIndex];
+        $scope.modalTheme = Theme.next($scope.modalTheme);
         $rootScope.modalTheme = $scope.modalTheme;
         $storage.set('optc-modal-theme', $scope.modalTheme);
-        document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
-        document.documentElement.classList.add('modal-' + $scope.modalTheme);
+        Theme.applyModal($scope.modalTheme);
       };
 
       $scope.getThemeIcon = function() {
-        return themeIcons[$scope.theme] || 'dark_mode';
+        return Theme.icon($scope.theme, 'dark_mode');
       };
 
       $scope.getModalThemeIcon = function() {
-        return themeIcons[$scope.modalTheme] || 'light_mode';
+        return Theme.icon($scope.modalTheme, 'light_mode');
       };
+
+      // DetailsCtrl reads these from the root scope; assign them after the
+      // functions exist so the modal never gets an undefined handler.
+      $rootScope.modalTheme = $scope.modalTheme;
+      $rootScope.toggleModalTheme = $scope.toggleModalTheme;
+      $rootScope.getModalThemeIcon = $scope.getModalThemeIcon;
 
       function computeActiveFilters(filters) {
         var active = [];
@@ -610,33 +583,7 @@
       $storage,
       $http
     ) {
-      // Fallback: If modal theme functions don't exist on rootScope (MainCtrl wasn't run), initialize them
-      if (!$rootScope.toggleModalTheme) {
-var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
-        var themeIcons = {
-          'dark': 'dark_mode',
-          'light': 'light_mode',
-          'frappe': 'brightness_medium',
-          'macchiato': 'nightlight_round'
-        };
-        $rootScope.modalTheme = $storage.get('optc-modal-theme', 'light');
-        document.documentElement.classList.add('modal-' + $rootScope.modalTheme);
-
-        $rootScope.toggleModalTheme = function() {
-          var modalCycle = ['light', 'frappe', 'macchiato', 'dark'];
-          var currentIndex = modalCycle.indexOf($rootScope.modalTheme);
-          var nextIndex = (currentIndex + 1) % modalCycle.length;
-          $rootScope.modalTheme = modalCycle[nextIndex];
-          $storage.set('optc-modal-theme', $rootScope.modalTheme);
-          document.documentElement.classList.remove('modal-dark', 'modal-light', 'modal-frappe', 'modal-macchiato');
-          document.documentElement.classList.add('modal-' + $rootScope.modalTheme);
-        };
-
-        $rootScope.getModalThemeIcon = function() {
-          return themeIcons[$rootScope.modalTheme] || 'light_mode';
-        };
-      }
-
+      // MainCtrl owns the theme state and always runs before this child state.
       // Expose to scope for template
       $scope.modalTheme = $rootScope.modalTheme;
       $scope.toggleModalTheme = $rootScope.toggleModalTheme;
@@ -762,7 +709,6 @@ var themeCycle = ['light', 'frappe', 'macchiato', 'dark'];
         });
       };
       $scope.openBigThumbTab = function (id) {
-        console.log(Utils.getBigThumbnailUrl(id, ".."));
         window.open(Utils.getBigThumbnailUrl(id, ".."), "_blank");
       };
       $scope.getPrevious = function () {
