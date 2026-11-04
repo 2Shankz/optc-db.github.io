@@ -25,19 +25,6 @@ These community tools are linked from the site but maintained separately:
 - [Supports Database](https://thepiebandit.github.io/optc-supports/)
 - [Pirate Rumble Database](https://thepiebandit.github.io/optc-pirate-rumble-db/)
 
-## Development
-
-The site has no build step: it is plain HTML/CSS/JS served from the repository root.
-
-```bash
-npm ci --prefix common/tests   # install test dependencies (first run)
-npm run serve                  # http://localhost:8080
-npm test                       # unit tests (common/tests)
-npm run check                  # syntax-check the site's scripts
-```
-
-Pages live in `characters/`, `damage/` and `drops/`. Shared scripts are in `common/js`, shared styles in `common/css`, data in `common/data`, and unit artwork in `api/images`. Data files are loaded as globals (`window.units`, `window.details`, …) by script tags, so `common/data` should only contain data.
-
 ## Legacy Team Members
 
 * Solaris 🐐
