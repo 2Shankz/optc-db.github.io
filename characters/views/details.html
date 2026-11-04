@@ -1692,7 +1692,7 @@
             <tr ng-if="!collapsed.drops || drops.length < 4" ng-repeat="drop in drops">
                 <td>
                     <div class="slot small" decorate-slot uid="drop.thumb"></div>
-                    <a href="{{::'../drops/?'+drop.name}}" target="_blank">{{::drop.name}}</a>
+                    <a href="{{::'../drops/?'+drop.query}}" target="_blank">{{::drop.name}}</a>
                     <span ng-repeat="bonus in drop.bonuses"
                         class="bonus {{::bonus.slice(0,2)}} {{::bonus.slice(3)}}"></span>
                 </td>
@@ -1728,7 +1728,7 @@
             <tr ng-if="!collapsed.manuals || manuals.length < 4" ng-repeat="drop in manuals">
                 <td>
                     <div class="slot small" decorate-slot uid="drop.thumb"></div>
-                    <a href="{{::'../drops/?'+drop.name}}" target="_blank">{{::drop.name}}</a>
+                    <a href="{{::'../drops/?'+drop.query}}" target="_blank">{{::drop.name}}</a>
                 </td>
                 <td>{{::drop.data.join(', ')}}</td>
             </tr>
@@ -1764,7 +1764,7 @@
                     <div class="slot small" decorate-slot uid="data.uid"></div>
                     <a ui-sref="main.search.view({ id: data.uid, previous: getPrevious() })">{{::data.name}}</a>
                 </td>
-                <td><a href="{{::'../drops/?'+data.location.name}}" target="_blank">{{::data.location.name}}</a></td>
+                <td><a href="{{::'../drops/?'+data.location.query}}" target="_blank">{{::data.location.name}}</a></td>
                 <td>{{::data.location.data.join(', ')}}</td>
             </tr>
         </tbody>

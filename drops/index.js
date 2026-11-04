@@ -31,8 +31,85 @@ app.controller('MainCtrl',function($scope, $rootScope, $timeout, $controller, $s
     $rootScope.query = '';
     $scope.data = drops;
     $scope.hiddenUnits = [ ];
-    var searchQuery = location.search.replace('?','');
 
+    // One-time search / deep link from the character details page.
+    var escapeRegex = function(text) {
+        return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    };
+
+    var readInitialLocation = function() {
+        var raw = location.search.replace(/^\?/, '');
+        if (!raw) return null;
+
+        // New format: ?island=<name>&type=<category>
+        var params = { }, hasParams = false;
+        raw.split('&').forEach(function(pair) {
+            var parts = pair.split('=');
+            if (parts.length !== 2) return;
+            hasParams = true;
+            try {
+                params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1].replace(/\+/g, ' '));
+            } catch (e) { }
+        });
+        if (hasParams && params.island)
+            return { island: params.island, type: params.type || null };
+
+        var decoded;
+        try { decoded = decodeURIComponent(raw.replace(/\+/g, ' ')); }
+        catch (e) { decoded = raw; }
+
+        // Legacy format used by old links: "<island> | <category>"
+        var legacy = decoded.split(' | ');
+        if (legacy.length === 2 && window.drops.hasOwnProperty(legacy[1]))
+            return { island: legacy[0], type: legacy[1] };
+
+        return { query: decoded };
+    };
+
+    var initialLocation = readInitialLocation();
+    if (initialLocation) {
+        if (initialLocation.island) {
+            $scope.queryFilter = initialLocation.island;
+            $scope.query = Utils.getRegex(escapeRegex(initialLocation.island));
+        } else {
+            $scope.queryFilter = initialLocation.query;
+            $scope.query = Utils.getRegex(initialLocation.query);
+        }
+    }
+
+    // Expand the exact island a link points at, once its category has rendered.
+    var expandInitialLocation = function() {
+        if (!initialLocation || !initialLocation.island) return;
+        var attempts = 0;
+        var findIsland = function() {
+            var wantedType = initialLocation.type ? initialLocation.type + 's' : null;
+            var sections = [].slice.call(document.querySelectorAll('.type'));
+            for (var i = 0; i < sections.length; ++i) {
+                var label = sections[i].querySelector('h2 > span');
+                if (wantedType && (!label || label.textContent.trim() !== wantedType)) continue;
+                var islands = [].slice.call(sections[i].querySelectorAll('.island'));
+                for (var j = 0; j < islands.length; ++j) {
+                    var name = islands[j].querySelector('h3 > span');
+                    if (!name || name.textContent.trim() !== initialLocation.island) continue;
+                    var islandElement = islands[j];
+                    if (islandElement.classList.contains('collapsed')) {
+                        var header = islandElement.querySelector('h3');
+                        if (header) $(header).trigger($.Event('click', { which: 1 }));
+                    }
+                    $timeout(function() { islandElement.scrollIntoView({ block: 'center' }); }, 100);
+                    return true;
+                }
+            }
+            return false;
+        };
+        var poll = function() {
+            if (findIsland() || ++attempts > 15) return;
+            $timeout(poll, 200);
+        };
+        $timeout(poll, 200);
+    };
+
+    expandInitialLocation();
 
     // units
     $scope.reverse = function(x) { return -x; };
@@ -49,10 +126,6 @@ app.controller('MainCtrl',function($scope, $rootScope, $timeout, $controller, $s
         if (!$scope.$$phase) $scope.$apply();
     };
 
-    //Use URI for one time search
-    if(searchQuery!=""){
-        $scope.query = Utils.getRegex(decodeURI(searchQuery.replace(/%20Fortnight|%20Raid/g,"").replace(/\?/,"\\?")));
-    }
 });
 
 app.directive('decorateSlot',function() {
@@ -274,8 +347,4 @@ function updateTimes(){
          document.getElementById("timesNote").innerHTML = "The Bonuses in the Japanese Version only last from 12:00 till 23:00<br><b>Japan Bonuses are currently not active<b>";
     }
     tt=refreshTimer();
-}
-window.onload = function() {
-    //Also add the URI Search into the Search Bar
-    document.getElementById("search").value = decodeURI(location.search.replace('?','').replace(/%20Fortnight|%20Raid/g,"").replace(/\?/,"\\?"));
 }
