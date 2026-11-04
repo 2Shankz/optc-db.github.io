@@ -1,0 +1,12 @@
+{
+  "name": "optc-db",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Community fan database for One Piece Treasure Cruise",
+  "scripts": {
+    "serve": "python3 -m http.server 8080",
+    "test": "npm --prefix common/tests test",
+    "check": "node scripts/check-syntax.mjs"
+  },
+  "license": "GPL-3.0"
+}
