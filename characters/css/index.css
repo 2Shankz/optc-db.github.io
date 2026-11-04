@@ -784,6 +784,52 @@ input#burgerMenuState {
     background: var(--filter-header-pvp) !important;
 }
 
+/* Count of active filters under a sidebar section. */
+.filter-section-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 5px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 15px;
+    vertical-align: 1px;
+}
+
+/* Flash when an active-filter chip jumps to its section. */
+.filter-section-flash > .filter-header {
+    animation: filter-section-flash 1s ease-out;
+}
+
+@keyframes filter-section-flash {
+    0% {
+        box-shadow: inset 0 0 0 2px var(--accent);
+    }
+    100% {
+        box-shadow: inset 0 0 0 2px transparent;
+    }
+}
+
+/* Same idea, for the individual filter a chip resolves to. */
+.filter-item-flash {
+    animation: filter-item-flash 1s ease-out;
+}
+
+@keyframes filter-item-flash {
+    0% {
+        box-shadow: 0 0 0 2px var(--accent);
+    }
+    100% {
+        box-shadow: 0 0 0 2px transparent;
+    }
+}
+
+.active-filters .active-filter-tag {
+    cursor: pointer;
+}
+
 .filter-header > i {
     position: relative;
     top: 2px;
@@ -1779,6 +1825,30 @@ tr.preview td:nth-child(2) > a:after {
 .tag.potential { background: rgba(189, 109, 10, 0.5); }
 .tag.support { background: rgba(133,193,245,0.5); }
 
+.tag.filterable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.tag.filterable:hover {
+    filter: brightness(1.15);
+}
+
+/* Enabled filters get an outer stroke so "on" is obvious at a glance.
+   outline is layout-neutral: the pill keeps its width, so neighbouring tags
+   never shift when a filter is toggled. */
+.tag.filterable.active {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 1px;
+    filter: brightness(1.15);
+}
+
+/* Keyboard focus ring. Drawn with box-shadow so it can coexist with the
+   active outline when a enabled tag is also focused. */
+.tag.filterable:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
 .link-container {
     text-align: left;
 }
@@ -2351,6 +2421,37 @@ a { color: var(--link-color); }
 }
 
 /* Modal Theme Override Styles - Apply when modal theme classes are active */
+/*
+ * Details cards live inside the character detail modal, so their colors must come
+ * from the modal theme (--modal-*), not from the page theme toggled by #theme-toggle.
+ * Re-map the shared theme variables locally so every rule inside the card resolves
+ * against the modal palette even when both themes differ.
+ */
+:root.modal-light .modal-content .details-card,
+:root.modal-frappe .modal-content .details-card,
+:root.modal-dark .modal-content .details-card,
+:root.modal-macchiato .modal-content .details-card {
+    --bg-primary: var(--modal-bg-primary);
+    --bg-secondary: var(--modal-bg-secondary);
+    --bg-tertiary: var(--modal-bg-tertiary);
+    --bg-input: var(--modal-bg-secondary);
+    --bg-hover: var(--modal-bg-tertiary);
+    --text-primary: var(--modal-text-primary);
+    --text-secondary: var(--modal-text-secondary);
+    --text-tertiary: var(--modal-text-secondary);
+    --border-color: var(--modal-border);
+    --border-strong: var(--modal-border);
+    --border-tertiary: var(--modal-border);
+    --table-border: var(--modal-border);
+    --table-stripe-odd: var(--modal-bg-secondary);
+    --table-stripe-even: var(--modal-bg-primary);
+    --panel-bg: var(--modal-bg-secondary);
+    --accent: var(--modal-accent);
+    --accent-hover: var(--modal-accent-hover);
+    --link-color: var(--modal-accent);
+    --link-hover: var(--modal-accent-hover);
+}
+
 :root.modal-light .modal-content,
 :root.modal-frappe .modal-content,
 :root.modal-dark .modal-content,
