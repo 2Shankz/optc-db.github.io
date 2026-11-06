@@ -21,45 +21,20 @@
         <title>One Piece Treasure Cruise Character Table</title>
 
         <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-        <link rel="search" href="//optc.github.io/characters/opensearch.xml"
+        <link rel="search" href="opensearch.xml"
             type="application/opensearchdescription+xml" title="OPTC Character Table">
 
         <link rel="stylesheet" type="text/css" href="../common/libs/css/animate.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
         <link href="https://unpkg.com/tabulator-tables@6.4.0/dist/css/tabulator.min.css" rel="stylesheet">
-<style>
-            .material-icons {
-                font-family: 'Material Icons' !important;
-                font-feature-settings: 'liga';
-                -webkit-font-feature-settings: 'liga';
-                font-style: normal;
-                font-weight: normal;
-                font-variant: normal;
-                text-transform: none;
-                line-height: 1;
-                -webkit-font-smoothing: antialiased;
-            }
-            .material-symbols-outlined {
-                font-family: 'Material Symbols Outlined' !important;
-                font-feature-settings: 'liga';
-                -webkit-font-feature-settings: 'liga';
-                font-variation-settings:
-                'FILL' 1,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24;
-                font-style: normal;
-                font-weight: normal;
-                text-transform: none;
-                line-height: 1;
-                -webkit-font-smoothing: antialiased;
-            }
+        <link rel="stylesheet" type="text/css" href="../common/css/icons.css" />
+        <style>
             .tabulator .material-icons {
                 font-size: 1em;
             }
         </style>
-        <link rel="stylesheet" type="text/css" href="../common/libs/css/datatables.min.css" />
+        <link rel="stylesheet" type="text/css" href="../common/libs/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="../common/css/links.css" />
         <link rel="stylesheet" type="text/css" href="../common/css/themes.css" />
         <link rel="stylesheet" type="text/css" href="../common/css/orb-colors.css" />
@@ -67,13 +42,13 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <script src="../common/libs/js/jquery.min.js"></script>
+        <script src="../common/libs/js/bootstrap.min.js"></script>
         <script src="../common/libs/js/angular.min.js"></script>
         <script src="../common/libs/js/angular-ui-router.min.js"></script>
         <script src="../common/libs/js/jquery.noty.packaged.min.js"></script>
         <script src="../common/libs/js/ui-bootstrap-tpls.min.js"></script>
 
         <script src="../common/libs/js/angular-sanitize.min.js"></script>
-        <script src="../common/libs/js/datatables.min.js"></script>
         <script src="https://unpkg.com/tabulator-tables@6.4.0/dist/js/tabulator.min.js"></script>
         <script src="../common/libs/js/fuse.min.js"></script>
         <script src="../common/libs/js/nouislider.min.js"></script>
@@ -97,6 +72,7 @@
         <script src="../common/data/banners.js"></script>
 
         <script src="../common/js/utils.js"></script>
+        <script src="../common/js/theme.js"></script>
         <script src="../common/js/unitVariants.js"></script>
         <script>UnitVariants.augment(); Utils.parseUnits();</script>
 
@@ -118,11 +94,6 @@
 
         <div id="mainContainer" ui-view></div>
         
-
-        <script>
-        gtag('event', 'UA-73715806-1', 'auto');
-        gtag('event', 'pageview', '/characters');
-        </script>
 
         <link-button exclude="characters"></link-button>
 

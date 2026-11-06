@@ -1,35 +1,44 @@
-name: OPTC-DB dependency checker
+name: CI
 
-on:  
-  pull_request:
-    branches:
-    - master
+on:
   push:
     branches:
     - master
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
-  run-test:
+  test:
+    name: Unit tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true
+      - uses: actions/checkout@v4
 
-      - uses: actions/cache@v2
+      - uses: actions/setup-node@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: 20
+          cache: npm
+          cache-dependency-path: common/tests/package-lock.json
 
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+      - name: Install dependencies
+        working-directory: common/tests
+        run: npm ci
+
+      - name: Run tests
+        working-directory: common/tests
+        run: npm test
+
+  syntax:
+    name: JS syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
+          node-version: 20
 
-      - name: Restore package & run test
-        run: |
-          cd common/tests
-          npm ci
-          npm test
+      - name: Check site scripts
+        run: node scripts/check-syntax.mjs

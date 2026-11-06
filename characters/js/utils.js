@@ -138,7 +138,13 @@ CharUtils.searchDropLocations = function(id) {
                 else if (type == 'Arena') name += ' Arena';
                 else if (type == 'Treasure Map') name += ' Treasure Map';
                 else if (type == 'Kizuna Clash') name += ' Kizuna';*/
-                var data = { name: name + " | " + type, thumb: window.drops[type][island].thumb, data: temp };
+                var data = {
+                    name: name + " | " + type,
+                    query: 'island=' + encodeURIComponent(name) + '&type=' + encodeURIComponent(type),
+                    type: type,
+                    thumb: window.drops[type][island].thumb,
+                    data: temp
+                };
                 if (type == 'Story Island' || window.drops[type][island].hasOwnProperty('day'))
                     data.bonuses = CharUtils.getIslandBonuses(island, window.drops[type][island].day);
                 result.push(data);
