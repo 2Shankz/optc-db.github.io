@@ -193881,7 +193881,7 @@ window.details = {
             }
         ]
     },
-    4669: {//5* PKA Mr. Ya
+    4669: {//5* PKA Gaban
         special: "Changes all orbs, including [BLOCK] orbs, into matching orbs, reduces Paralysis and Despair duration by 5 turns, reduces enemies' Damage Nullification duration by 1 turn, and inflicts all enemies with Weaken by 1.3x, by 1.625x instead if enemies are inflicted with Increase Damage Taken, for 1 turn. If your crew has 4+ [Roger Pirates] or [Elbaph Arc] characters, reduces enemies' [QCK] Resistance by -20% for 2 turns.",
         specialName: "Impeding Legendary Figure",
         sailor: {
@@ -193957,6 +193957,147 @@ window.details = {
                     "Boosts base ATK by 150 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
                     "Boosts base ATK by 200 the turn after taking damage and reduces Increase Damage Taken duration by 3 turns"
                 ]
+            }
+        ]
+    },
+    4670: {//5+ PKA Gaban
+        special: "Changes crew's slots (including [BLOCK] slots) to character's own type, reduces crew's Paralysis/Despair duration by 6 turns, reduces all enemies' damage nullification duration by 2 turns, and applies Weakened status (increase damage taken by 1.5x for all enemies, damage further increased by 1.25x if enemy has Increase Damage Taken) to all enemies for 1 turn [If 4 or more [Roger Pirates] [Elbaph Arc] characters are on the crew] Applies -30% [QCK] Resistance to all enemies for 2 turns",
+        specialName: "Impeding Legendary Figure",
+        sailor: {
+            base: "Boosts Slasher characters' base ATK by 150",
+            level1: "Makes crew's [QCK] slots have matching slot effects"
+        },
+        support: [
+            {
+                Characters: "[QCK] characters with the following Character Tag: [Former / Roger Pirates], [Elbaph Arc]",
+                description: [
+                    "Adds 3% of character's base stats to supported character's base stats",
+                    "Adds 4% of character's base stats to supported character's base stats",
+                    "Adds 5% of character's base stats to supported character's base stats",
+                    "Adds 6% of character's base stats to supported character's base stats",
+                    "Adds 7% of character's base stats to supported character's base stats [AUTO+] At battle 5, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 40",
+            "Boosts base ATK by 30",
+            "Acquire Potential 2: Critical Hit",
+            "Acquire 1 additional Socket slot",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 40",
+            "Reduce base Special Cooldown by 1 turn",
+            "LOCKED WITH KEY",
+            "Boosts base RCV by 10",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 100",
+            "Boosts base HP by 200",
+            "Boosts base RCV by 20",
+            "Acquire Potential 3: Enrage/Increase Damage Taken",
+            "Boosts base HP by 300",
+            "Boosts base ATK by 100",
+            "Acquire Sailor Ability 2: Makes crew's [QCK] slots have matching slot effects"
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 2 turns on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 4 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character"
+                ]
+            },
+            {
+                Name: "Critical Hit",
+                description: [
+                    "If you hit a PERFECT with this character, there is a 40% chance to deal 3% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 50% chance to deal 4% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 60% chance to deal 5% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 70% chance to deal 6% of this character's attack in extra damage",
+                    "If you hit a PERFECT with this character, there is a 80% chance to deal 7% of this character's attack in extra damage"
+                ]
+            },
+            {
+                Name: "Enrage/Increase Damage Taken",
+                description: [
+                    "Boosts base ATK by 50 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 75 the turn after taking damage and reduces Increase Damage Taken duration by 1 turn",
+                    "Boosts base ATK by 100 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 150 the turn after taking damage and reduces Increase Damage Taken duration by 2 turns",
+                    "Boosts base ATK by 200 the turn after taking damage and reduces Increase Damage Taken duration by 3 turns"
+                ]
+            }
+        ],
+        festStats: {
+            def: 239,
+            spd: 122,
+            style: "DEF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "80% chance to evade Action Bind, reduce damage taken from [STR] by 20%",
+        festAbility: [
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.1, DEF Up Lv.1, Guard % Up Lv.1; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.2; during Assault Rumble, self HP Up Lv.2, Special CT Speed Up Lv.1",
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.2, DEF Up Lv.1, Guard % Up Lv.2; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.2; during Assault Rumble, self HP Up Lv.3, Special CT Speed Up Lv.1",
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.3, DEF Up Lv.2, Guard % Up Lv.3; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.3; during Assault Rumble, self HP Up Lv.4, Special CT Speed Up Lv.2",
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.4, DEF Up Lv.2, Guard % Up Lv.4; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.4; during Assault Rumble, self HP Up Lv.5, Special CT Speed Up Lv.2",
+            "[QCK]/Powerhouse class and [Giant] teammates HP Up Lv.5, DEF Up Lv.3, Guard % Up Lv.5; if 4 or more [Giant] [Roger Pirates] [Elbaph Arc] characters are on the team, all enemies Miss % Up Lv.5; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.3"
+        ],
+        festSpecial: [
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 4.4 damage; targets all enemies for Miss % Up Lv.2 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.1 Counter stance (21 s), Shield Lv.3 (21 s); during Assault Rumble, targets [STR] enemies for ATK x 1 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 4.8 damage; targets all enemies for Miss % Up Lv.2 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.2 Counter stance (22 s), Shield Lv.3 (22 s); during Assault Rumble, targets [STR] enemies for ATK x 1.4 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 5.2 damage; targets all enemies for Miss % Up Lv.2 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.3 Counter stance (23 s), Shield Lv.3 (23 s); during Assault Rumble, targets [STR] enemies for ATK x 1.8 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 5.6 damage; targets all enemies for Miss % Up Lv.3 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.4 Counter stance (24 s), Shield Lv.3 (24 s); during Assault Rumble, targets [STR] enemies for ATK x 2.2 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 6 damage; targets all enemies for Miss % Up Lv.3 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.5 Counter stance (25 s), Shield Lv.3 (25 s); during Assault Rumble, targets [STR] enemies for ATK x 2.6 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 6.4 damage; targets all enemies for Miss % Up Lv.3 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.6 Counter stance (26 s), Shield Lv.4 (26 s); during Assault Rumble, targets [STR] enemies for ATK x 3 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 6.8 damage; targets all enemies for Miss % Up Lv.4 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.7 Counter stance (27 s), Shield Lv.4 (27 s); during Assault Rumble, targets [STR] enemies for ATK x 3.4 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 7.2 damage; targets all enemies for Miss % Up Lv.4 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.8 Counter stance (28 s), Shield Lv.4 (28 s); during Assault Rumble, targets [STR] enemies for ATK x 3.8 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 7.6 damage; targets all enemies for Miss % Up Lv.4 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 2.9 Counter stance (29 s), Shield Lv.4 (29 s); during Assault Rumble, targets [STR] enemies for ATK x 4.2 damage"
+            },
+            {
+                cooldown: 36,
+                description: "Targets 1 enemy for ATK x 8 damage; targets all enemies for Miss % Up Lv.5 (30 s); targets [Giant] [Roger Pirates] teammates for ATK x 3 Counter stance (30 s), Shield Lv.5 (30 s); during Assault Rumble, targets [STR] enemies for ATK x 5 damage"
             }
         ]
     },
@@ -194212,6 +194353,388 @@ window.details = {
                 ]
             }
         ]
+    },
+    4674: {//St. Killingham
+        captain: "Reduces [QCK] and Driven characters' Special charge time by 2 turns and VS Effect gauge and Switch Effect by 2 at start of quest, boosts their ATK by 5.5x, boosts their ATK by approximately 6x when they have [QCK][TND][RCV] slots, boosts their HP by 1.3x, makes crew's [QCK][TND][RCV] slots have matching slot effects, and tapping on this character with a [TND] slot will reduce all enemies' damage nullification duration by 2 turns [If 4 or more [World Government] [Holy Knights] [Mythical Zoan-type] [Domi Reversi] characters are on the crew] Boosts [World Government] [Holy Knights] [Mythical Zoan-type] [Domi Reversi] characters' ATK by 1.2x",
+        special: "Deals 1,000,000 damage to all enemies (ignoring all defensive effects, DEF, and Non-Normal Attacks Deal 1 Damage effect), and reduces all enemies' DEF Up duration by 10 turns [If crew's HP is 50% or below when Special is launched] Boosts [QCK] and Driven characters' ATK when landing a successful strike by 2.5x for 1 turn after landing 3 PERFECT strikes in a row in this turn [Otherwise] Boosts [QCK] and Driven characters' ATK when landing a successful strike by 2.25x for 1 turn after landing 3 PERFECT strikes in a row in this turn [If 4 or more [Holy Knights] [World Government] [Mythical Zoan-type] characters are on the crew or if \"Saintess Gunko\" and \"Imu\" launch Specials in the same turn] Allows crew to stack up to 2 different damage boosting effects for 3 turns, and applies -25% Driven, Striker, and Shooter Resistance to all enemies for 1 turn",
+        specialName: "Dream-Manifesting-Man Arriving at Elbaph",
+        sailor: {
+            base: "Lets character completely evade Bind/Paralysis",
+            level1: "Boosts Driven characters' base stats by 200, and makes their [TND] slots have matching slot effects"
+        },
+        superSpecialCriteria: "When any 3 [Holy Knights] [World Government] [Mythical Zoan-type] [Domi Reversi] characters are on the crew not including self (except as Support Characters or Double Characters in inactive state; Double Characters counts as 1; can be launched when character is a crewmate)",
+        superSpecial: "Changes crew's slots (including [BLOCK] slots) to [TND] unless slots are [QCK], boosts the chain multiplier by +2.2 for 1 turn, delays all enemies for 1 turn ignoring immunity to status effects, and changes Driven characters to Super Driven",
+        support: [
+            {
+                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                description: [
+                    "Adds 10% of character's base stats to supported character's base stats",
+                    "Adds 12% of character's base stats to supported character's base stats",
+                    "Adds 13% of character's base stats to supported character's base stats",
+                    "Adds 14% of character's base stats to supported character's base stats",
+                    "Adds 15% of character's base stats to supported character's base stats"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 30",
+            "Boosts base HP by 30",
+            "Boosts base HP by 40",
+            "Boosts base ATK by 10",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 40",
+            "Boosts base HP by 40",
+            "Acquire Potential 2: Special Use Limit",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 20",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 50",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 50",
+            "Boosts base HP by 60",
+            "Boosts base HP by 60",
+            "Acquire Sailor Ability 2: Boosts Driven characters' base stats by 200, and makes their [TND] slots have matching slot effects",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 40",
+            "Boosts base ATK by 40",
+            "Acquire Potential 3: Last Tap",
+            "LOCKED WITH KEY",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base RCV by 50",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 200",
+            "Reduce base Special Cooldown by 1 turn"
+        ],
+        lLimit: [
+            null,
+            null,
+            null,
+            null,
+            {
+                rSuperSpecial: true
+            }
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character",
+                    "Reduces Slot Bind duration by 7 turns on this character",
+                    "Reduces Slot Bind duration by 10 turns on this character"
+                ]
+            },
+            {
+                Name: "Special Use Limit",
+                description: [
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 3 turns"
+                ]
+            },
+            {
+                Name: "Last Tap",
+                description: [
+                    "Obtain Last Tap Lv.1",
+                    "Obtain Last Tap Lv.2",
+                    "Obtain Last Tap Lv.3",
+                    "Obtain Last Tap Lv.4",
+                    "Obtain Last Tap Lv.5"
+                ]
+            }
+        ],
+        lastTap: {
+            condition: "On the turn Special is launched during final Battle",
+            description: [
+                "Further boosts the chain multiplier of the final tap by 1.1x, and boosts crew's damage dealt to delayed enemies by 1.25x for 1 turn",
+                "Further boosts the chain multiplier of the final tap by 1.15x, and boosts crew's damage dealt to delayed enemies by 1.5x for 1 turn",
+                "Further boosts the chain multiplier of the final tap by 1.2x, and boosts crew's damage dealt to delayed enemies by 1.75x for 1 turn",
+                "Further boosts the chain multiplier of the final tap by 1.25x, and boosts crew's damage dealt to delayed enemies by 2x for 1 turn",
+                "Further boosts the chain multiplier of the final tap by 1.3x, and boosts crew's damage dealt to delayed enemies by 2.25x for 1 turn"
+            ]
+        },
+        festStats: {
+            def: 152,
+            spd: 176,
+            style: "SPT"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Power Attack",
+            "Heal Lv.1 (Small Range)",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Special Bind, reduce damage taken from [STR] by 30％",
+        festAbility: [
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.3, SPD Up Lv.3; when remaining HP is less than 60%, [Holy Knights] teammates ATK Up Lv.4, SPD Up Lv.4; when HP becomes less than 60%, after appearing on the field up to 1 time self Special CT 22% reduction; if 4 or more [World Government] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.4, SPD Up Lv.4; when remaining HP is less than 60%, [Holy Knights] teammates ATK Up Lv.5, SPD Up Lv.5; when HP becomes less than 60%, after appearing on the field up to 1 time self Special CT 24% reduction; if 4 or more [World Government] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.5, SPD Up Lv.5; when remaining HP is less than 60%, [Holy Knights] teammates ATK Up Lv.6, SPD Up Lv.6; when HP becomes less than 60%, after appearing on the field up to 1 time self Special CT 26% reduction; if 4 or more [World Government] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.6, SPD Up Lv.6; when remaining HP is less than 60%, [Holy Knights] teammates ATK Up Lv.7, SPD Up Lv.7; when HP becomes less than 60%, after appearing on the field up to 1 time self Special CT 28% reduction; if 4 or more [World Government] characters are on the team, when self is KO'd, launches Rumble Special 1 time",
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.7, SPD Up Lv.7; when remaining HP is less than 60%, [Holy Knights] teammates ATK Up Lv.8, SPD Up Lv.8; when HP becomes less than 60%, after appearing on the field up to 1 time self Special CT 30% reduction; if 4 or more [World Government] characters are on the team, when self is KO'd, launches Rumble Special 1 time"
+        ],
+        festSpecial: [
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.2 (11 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 73% chance to evade Action Bind/RCV Bind (6 s); targets [World Government] teammates for ATK Up Lv.2 (11 s); targets (not including self) [Holy Knights] teammates for Special CT 11% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.2 (5 s), ATK x 1.2 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.2 (12 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 76% chance to evade Action Bind/RCV Bind (7 s); targets [World Government] teammates for ATK Up Lv.2 (12 s); targets (not including self) [Holy Knights] teammates for Special CT 12% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.2 (6 s), ATK x 1.4 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.2 (13 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 79% chance to evade Action Bind/RCV Bind (8 s); targets [World Government] teammates for ATK Up Lv.2 (13 s); targets (not including self) [Holy Knights] teammates for Special CT 13% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.2 (6 s), ATK x 1.6 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.3 (14 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 82% chance to evade Action Bind/RCV Bind (9 s); targets [World Government] teammates for ATK Up Lv.3 (14 s); targets (not including self) [Holy Knights] teammates for Special CT 14% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.3 (7 s), ATK x 1.8 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.3 (15 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 85% chance to evade Action Bind/RCV Bind (10 s); targets [World Government] teammates for ATK Up Lv.3 (15 s); targets (not including self) [Holy Knights] teammates for Special CT 15% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.3 (7 s), ATK x 2 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.4 (16 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 88% chance to evade Action Bind/RCV Bind (11 s); targets [World Government] teammates for ATK Up Lv.4 (16 s); targets (not including self) [Holy Knights] teammates for Special CT 16% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.4 (8 s), ATK x 2.2 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.4 (17 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 91% chance to evade Action Bind/RCV Bind (12 s); targets [World Government] teammates for ATK Up Lv.4 (17 s); targets (not including self) [Holy Knights] teammates for Special CT 17% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.4 (8 s), ATK x 2.4 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.4 (18 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 94% chance to evade Action Bind/RCV Bind (13 s); targets [World Government] teammates for ATK Up Lv.4 (18 s); targets (not including self) [Holy Knights] teammates for Special CT 18% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.4 (9 s), ATK x 2.6 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.5 (19 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 97% chance to evade Action Bind/RCV Bind (14 s); targets [World Government] teammates for ATK Up Lv.5 (19 s); targets (not including self) [Holy Knights] teammates for Special CT 19% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.5 (9 s), ATK x 2.8 damage 3 times"
+            },
+            {
+                cooldown: 23,
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.6 (20 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 100% chance to evade Action Bind/RCV Bind (15 s); targets [World Government] teammates for ATK Up Lv.6 (20 s); targets (not including self) [Holy Knights] teammates for Special CT 20% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.6 (10 s), ATK x 3 damage 3 times"
+            }
+        ],
+        festSuperSpecial: {
+            base: {
+                condition: "After character receives 12,000 damage",
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.7 (25 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 100% chance to evade Action Bind/RCV Bind (20 s); targets [World Government] teammates for ATK Up Lv.7 (25 s); targets (not including self) [Holy Knights] teammates for Special CT 30% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 3 times Lv.7 (10 s), ATK x 3.5 damage 3 times; targets 1 enemy with high current Special CT for Special CT 20% delay 3 times"
+            },
+            llbbase: {
+                condition: "After character receives 10,000 damage",
+                description: "Targets [QCK]/Driven class and [World Government] teammates for SPD Up Lv.8 (30 s); when remaining HP is 60% or more, targets [QCK]/Driven class and [World Government] teammates for 100% chance to evade Action Bind/RCV Bind (25 s); targets [World Government] teammates for ATK Up Lv.8 (30 s); targets (not including self) [Holy Knights] teammates for Special CT 40% reduction; when remaining HP is less than 60%, targets 1 enemy with low current HP for DEF Down 4 times Lv.7 (10 s), ATK x 3.5 damage 4 times; targets 1 enemy with high current Special CT for Special CT 20% delay 4 times"
+            }
+        }
+    },
+    4675: {//St. Sommers
+        captain: "Reduces [QCK] and Driven characters' Special charge time by 2 turns and VS Effect gauge and Switch Effect by 2 at start of quest, boosts their ATK by 5.5x, boosts their ATK by approximately 6x when they have [QCK][TND][RCV] slots, boosts their HP by 1.3x, makes crew's [QCK][TND][RCV] slots have matching slot effects, and tapping on this character with a [RCV] slot will reduce all enemies' damage nullification duration by 2 turns [If 4 or more [World Government] [Holy Knights] [Paramythia-type] [Domi Reversi] characters are on the crew] Boosts [World Government] [Holy Knights] [Paramythia-type] [Domi Reversi] characters' ATK by 1.2x",
+        special: "Reduces all enemies' HP by 15% (ignoring all defensive effects), and reduces all enemies' Intimidation duration by 2 turns [If crew's HP is 51% or above when Special is launched] Cuts 50% of crew's maximum HP and sets character's Special charge to MAX (Special charge time reduction effect of \"Thorn-Man Arriving at Elbaph\" can be activated up to 1 time including any Specials with similar effect) [If crew has damage dealt to enemies with a specific status effect boost when Special is launched] Further increases crew's damage dealt to enemies with a specific status effect boost by +0.25 [Otherwise] Boosts damage dealt to enemies with increase damage taken status by 2.5x for 3 turns [If 4 or more [Holy Knights] [World Government] [Paramythia-type] characters are on the crew or if \"Saintess Gunko\" and \"Imu\" launch Specials in the same turn] Activates HP Guard of 100% effect for 1 turn, and applies -25% [QCK] and [STR] Resistance to all enemies for 1 turn",
+        specialName: "Thorn-Man Arriving at Elbaph",
+        sailor: {
+            base: "Makes crew immune to Remove SFX, and allows character to obtain [RCV] slots with PERFECT taps",
+            level1: "Boosts [QCK] characters' base stats by 200, and makes their [RCV] slots have matching slot effects"
+        },
+        superSpecialCriteria: "When any 3 [Holy Knights] [World Government] [Paramythia-type] [Domi Reversi] characters are on the crew not including self (except as Support Characters or Double Characters in inactive state; Double Characters counts as 1; can be launched when character is a crewmate)",
+        superSpecial: "Changes crew's slots (including [BLOCK] slots) to [RCV] unless slots are [QCK], increases all enemies' damage taken by 2.5x for 1 turn ignoring immunity to status effects, and changes [QCK] characters to Super [QCK]",
+        support: [
+            {
+                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                description: [
+                    "Adds 10% of character's base stats to supported character's base stats",
+                    "Adds 12% of character's base stats to supported character's base stats",
+                    "Adds 13% of character's base stats to supported character's base stats",
+                    "Adds 14% of character's base stats to supported character's base stats",
+                    "Adds 15% of character's base stats to supported character's base stats"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Acquire Potential 1: Slot Bind",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 40",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 40",
+            "Boosts base HP by 40",
+            "Acquire Potential 2: Special Use Limit",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 50",
+            "Boosts base HP by 50",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base RCV by 30",
+            "Acquire Sailor Ability 2: Boosts [QCK] characters' base stats by 200, and makes their [RCV] slots have matching slot effects",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 80",
+            "Boosts base ATK by 40",
+            "Boosts base ATK by 40",
+            "Acquire Potential 3: Super Tandem Boost",
+            "LOCKED WITH KEY",
+            "Boosts base RCV by 20",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 150",
+            "Boosts base ATK by 50",
+            "Boosts base HP by 200",
+            "Boosts base RCV by 30",
+            "Boosts base ATK by 100",
+            "Reduce base Special Cooldown by 1 turn"
+        ],
+        lLimit: [
+            null,
+            null,
+            null,
+            null,
+            {
+                rSuperSpecial: true
+            }
+        ],
+        potential: [
+            {
+                Name: "Slot Bind",
+                description: [
+                    "Reduces Slot Bind duration by 1 turn on this character",
+                    "Reduces Slot Bind duration by 3 turns on this character",
+                    "Reduces Slot Bind duration by 5 turns on this character",
+                    "Reduces Slot Bind duration by 7 turns on this character",
+                    "Reduces Slot Bind duration by 10 turns on this character"
+                ]
+            },
+            {
+                Name: "Special Use Limit",
+                description: [
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 1 turn",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 2 turns",
+                    "Reduces Special Use Limit duration by 3 turns"
+                ]
+            },
+            {
+                Name: "Super Tandem Boost",
+                description: [
+                    "Obtain Super Tandem Boost Lv.1",
+                    "Obtain Super Tandem Boost Lv.2",
+                    "Obtain Super Tandem Boost Lv.3",
+                    "Obtain Super Tandem Boost Lv.4",
+                    "Obtain Super Tandem Boost Lv.5"
+                ]
+            }
+        ],
+        superTandemBoost: {
+            characterCondition: [
+                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem",
+                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem",
+                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem",
+                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem",
+                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem"
+            ],
+            description: [
+                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] [Celestial Dragon] [Holy Knights] characters by 1 for 1 turn",
+                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] characters by 1 and raises Boost Level of [Celestial Dragon] [Holy Knights] characters by 3 for 1 turn",
+                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] characters by 2 and raises Boost Level of [Celestial Dragon] [Holy Knights] characters by 4 for 1 turn",
+                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] characters by 3 and raises Boost Level of [Celestial Dragon] [Holy Knights] characters by 5 for 1 turn",
+                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] characters by 4 and raises Boost Level of [Celestial Dragon] [Holy Knights] characters by 6 for 1 turn"
+            ]
+        },
+        festStats: {
+            def: 183,
+            spd: 154,
+            style: "DBF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Special Bind, reduce damage taken from [STR] by 30％",
+        festAbility: [
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.3, DEF Up Lv.2; if 4 or more [World Government] characters are on the team, when appearing on the field, self Special CT 60% reduction; after receiving damage, up to 10 times targets [Holy Knights] teammates for HP 6% healing; targets all enemies for DEF Down Lv.1",
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.4, DEF Up Lv.3; if 4 or more [World Government] characters are on the team, when appearing on the field, self Special CT 70% reduction; after receiving damage, up to 10 times targets [Holy Knights] teammates for HP 7% healing; targets all enemies for DEF Down Lv.1",
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.5, DEF Up Lv.4; if 4 or more [World Government] characters are on the team, when appearing on the field, self Special CT 80% reduction; after receiving damage, up to 10 times targets [Holy Knights] teammates for HP 8% healing; targets all enemies for DEF Down Lv.1",
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.6, DEF Up Lv.5; if 4 or more [World Government] characters are on the team, when appearing on the field, self Special CT 90% reduction; after receiving damage, up to 10 times targets [Holy Knights] teammates for HP 9% healing; targets all enemies for DEF Down Lv.1",
+            "[QCK]/Driven class and [World Government] teammates HP Up Lv.7, DEF Up Lv.6; if 4 or more [World Government] characters are on the team, when appearing on the field, self Special CT 100% reduction; after receiving damage, up to 10 times targets [Holy Knights] teammates for HP 10% healing; targets all enemies for DEF Down Lv.1"
+        ],
+        festSpecial: [
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 21% reduction, 73% chance of Paralysis (11 s); targets enemies with Paralysis for Damage Over Time Lv.1 (31 s), 73% chance of RCV Bind (11 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.2 (11 s); targets all enemies for Special CT 6% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 22% reduction, 76% chance of Paralysis (12 s); targets enemies with Paralysis for Damage Over Time Lv.1 (32 s), 76% chance of RCV Bind (12 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.2 (12 s); targets all enemies for Special CT 7% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 23% reduction, 79% chance of Paralysis (13 s); targets enemies with Paralysis for Damage Over Time Lv.1 (33 s), 79% chance of RCV Bind (13 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.2 (13 s); targets all enemies for Special CT 8% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 24% reduction, 82% chance of Paralysis (14 s); targets enemies with Paralysis for Damage Over Time Lv.1 (34 s), 82% chance of RCV Bind (14 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.3 (14 s); targets all enemies for Special CT 9% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 25% reduction, 85% chance of Paralysis (15 s); targets enemies with Paralysis for Damage Over Time Lv.1 (35 s), 85% chance of RCV Bind (15 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.3 (15 s); targets all enemies for Special CT 10% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 26% reduction, 88% chance of Paralysis (16 s); targets enemies with Paralysis for Damage Over Time Lv.2 (36 s), 88% chance of RCV Bind (16 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.4 (16 s); targets all enemies for Special CT 11% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 27% reduction, 91% chance of Paralysis (17 s); targets enemies with Paralysis for Damage Over Time Lv.2 (37 s), 91% chance of RCV Bind (17 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.4 (17 s); targets all enemies for Special CT 12% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 28% reduction, 94% chance of Paralysis (18 s); targets enemies with Paralysis for Damage Over Time Lv.2 (38 s), 94% chance of RCV Bind (18 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.4 (18 s); targets all enemies for Special CT 13% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 29% reduction, 97% chance of Paralysis (19 s); targets enemies with Paralysis for Damage Over Time Lv.2 (39 s), 97% chance of RCV Bind (19 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.5 (19 s); targets all enemies for Special CT 14% delay"
+            },
+            {
+                cooldown: 33,
+                description: "Targets all enemies for HP 30% reduction, 100% chance of Paralysis (20 s); targets enemies with Paralysis for Damage Over Time Lv.3 (40 s), 100% chance of RCV Bind (20 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.6 (20 s); targets all enemies for Special CT 15% delay"
+            }
+        ],
+        festSuperSpecial: {
+            base: {
+                condition: "After character receives damage 8 times",
+                description: "Targets all enemies for HP 40% reduction, 100% chance of Paralysis (25 s); targets enemies with Paralysis for Damage Over Time Lv.4 (45 s), 100% chance of RCV Bind (25 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.8 (25 s); targets all enemies for Special CT 20% delay, ATK Down Lv.6 (25 s)"
+            },
+            llbbase: {
+                condition: "After character receives damage 6 times",
+                description: "Targets all enemies for HP 50% reduction, 100% chance of Paralysis (30 s); targets enemies with Paralysis for Damage Over Time Lv.5 (50 s), 100% chance of RCV Bind (30 s), 100% chance of Special Bind (15 s); if 4 or more [World Government] characters are on the team, targets [Holy Knights] teammates for DEF Up Lv.9 (30 s); targets all enemies for Special CT 25% delay, ATK Down Lv.8 (30 s)"
+            }
+        }
     },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",

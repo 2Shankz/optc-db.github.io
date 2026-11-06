@@ -762,6 +762,8 @@ const Jiron = [ "Jiron" ];
 const Gambo = [ "Gambo" ];
 const Ahiru = [ "Ahiru" ];
 const Ushiano = [ "Ushiano" ];
+const Killingham = [ "Saint Killingham", "St. Killingham", "Saint Rimoshifu Killingham", "St. Rimoshifu Killingham" ];
+const Sommers = [ "Saint Sommers", "St. Sommers", "Saint Shepherd Sommers", "St. Shepherd Sommers" ];
 
 window.families = {
     1: [ ...MonkeyDLuffy ],
@@ -5315,10 +5317,12 @@ window.families = {
     4667: [ ...Kashii ],
     4668: [ ...DraculeMihawk ],
     4669: [ ...Gaban ],
-    //4670: [ ...Gaban ],
+    4670: [ ...Gaban ],
     4671: [ ...Brook ],
     4672: [ ...Brook ],
     4673: [ ...Collun ],
+    4674: [ ...Killingham ],
+    4675: [ ...Sommers ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
