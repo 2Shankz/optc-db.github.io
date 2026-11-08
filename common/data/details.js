@@ -193961,21 +193961,21 @@ window.details = {
         ]
     },
     4670: {//5+ PKA Gaban
-        special: "Changes crew's slots (including [BLOCK] slots) to character's own type, reduces crew's Paralysis/Despair duration by 6 turns, reduces all enemies' damage nullification duration by 2 turns, and applies Weakened status (increase damage taken by 1.5x for all enemies, damage further increased by 1.25x if enemy has Increase Damage Taken) to all enemies for 1 turn [If 4 or more [Roger Pirates] [Elbaph Arc] characters are on the crew] Applies -30% [QCK] Resistance to all enemies for 2 turns",
+        special: "Changes all orbs, including [BLOCK] orbs, into matching orbs, reduces Paralysis and Despair duration by 6 turns, reduces enemies' Damage Nullification duration by 2 turns, and inflicts all enemies with Weaken by 1.5x, by 1.875x instead if enemies are inflicted with Increase Damage Taken, for 1 turn. If your crew has 4+ [Roger Pirates] or [Elbaph Arc] characters, reduces enemies' QCK Resistance by -30% for 2 turns.",
         specialName: "Impeding Legendary Figure",
         sailor: {
-            base: "Boosts Slasher characters' base ATK by 150",
-            level1: "Makes crew's [QCK] slots have matching slot effects"
+            base: "Boosts base ATK of Slasher characters by 150.",
+            level1: "Makes [QCK] orbs beneficial for all characters."
         },
         support: [
             {
-                Characters: "[QCK] characters with the following Character Tag: [Former / Roger Pirates], [Elbaph Arc]",
+                Characters: "[QCK] [Roger Pirates], [Elbaph Arc] characters",
                 description: [
-                    "Adds 3% of character's base stats to supported character's base stats",
-                    "Adds 4% of character's base stats to supported character's base stats",
-                    "Adds 5% of character's base stats to supported character's base stats",
-                    "Adds 6% of character's base stats to supported character's base stats",
-                    "Adds 7% of character's base stats to supported character's base stats [AUTO+] At battle 5, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                    "Adds 3% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 4% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 6% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 7% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. <b>[AUTO+]</b> When you reach the 5th stage, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -194355,24 +194355,25 @@ window.details = {
         ]
     },
     4674: {//St. Killingham
-        captain: "Reduces [QCK] and Driven characters' Special charge time by 2 turns and VS Effect gauge and Switch Effect by 2 at start of quest, boosts their ATK by 5.5x, boosts their ATK by approximately 6x when they have [QCK][TND][RCV] slots, boosts their HP by 1.3x, makes crew's [QCK][TND][RCV] slots have matching slot effects, and tapping on this character with a [TND] slot will reduce all enemies' damage nullification duration by 2 turns. [If 4 or more [World Government] [Holy Knights] [Mythical Zoan-type] [Domi Reversi] characters are on the crew] Boosts [World Government] [Holy Knights] [Mythical Zoan-type] [Domi Reversi] characters' ATK by 1.2x",
-        special: "Deals 1,000,000 damage to all enemies (ignoring all defensive effects, DEF, and Non-Normal Attacks Deal 1 Damage effect), and reduces all enemies' DEF Up duration by 10 turns [If crew's HP is 50% or below when Special is launched] Boosts [QCK] and Driven characters' ATK when landing a successful strike by 2.5x for 1 turn after landing 3 PERFECT strikes in a row in this turn [Otherwise] Boosts [QCK] and Driven characters' ATK when landing a successful strike by 2.25x for 1 turn after landing 3 PERFECT strikes in a row in this turn [If 4 or more [Holy Knights] [World Government] [Mythical Zoan-type] characters are on the crew or if \"Saintess Gunko\" and \"Imu\" launch Specials in the same turn] Allows crew to stack up to 2 different damage boosting effects for 3 turns, and applies -25% Driven, Striker, and Shooter Resistance to all enemies for 1 turn",
+        captain: "Launches the following effects at start of fight: reduces Special Cooldown of [QCK] and Driven characters by 2 turns, and reduces VS Gauge and Switch Effect of [QCK] and Driven characters by 2. Boosts ATK of [QCK] and Driven characters by 5.5x, by 6x instead if they have a [QCK], [TND] or [RCV] orb, boosts HP of [QCK] and Driven characters by 1.3x, and makes [QCK], [TND] and [RCV] orbs beneficial for all characters. When tapping on this character with a [TND] orb, reduces enemies' Damage Nullification duration by 2 turns. If your crew has 4+ [World Government], [Holy Knights], [Mythical Zoan-type] or [Domi Reversi] characters, boosts ATK of [World Government], [Holy Knights], [Mythical Zoan-type] and [Domi Reversi] characters by 1.2x.",
+        special: "Deals 1,000,000 Fixed True damage, ignoring Normal Attack Only, to all enemies, and reduces enemies' Increased Defense duration by 10 turns. If HP is below 50% when the special is activated, boosts Tap Timing ATK of [QCK] and Driven characters by 2.5x, following a chain of 3 PERFECTs attacks, for 1 turn; otherwise, boosts Tap Timing ATK of [QCK] and Driven characters by 2.25x, following a chain of 3 PERFECTs attacks, for 1 turn. If your crew has 4+ [Holy Knights], [World Government] or [Mythical Zoan-type] characters or your crew has Saintess Gunko and Imu who have both used specials this turn, allows crew to stack 2 different Status ATK Boost buffs for 3 turns, and reduces enemies' Driven, Striker and Shooter Resistance by -25% for 1 turn.",
+        specialNotes: "Saintess Gunko (Imu Possessed) using a special fulfills both the Saintess Gunko and Imu part of the condition",
         specialName: "Dream-Manifesting-Man Arriving at Elbaph",
         sailor: {
-            base: "Lets character completely evade Bind/Paralysis",
-            level1: "Boosts Driven characters' base stats by 200, and makes their [TND] slots have matching slot effects"
+            base: "Reduces Bind and Paralysis duration completely on this character.",
+            level1: "Boosts base ATK, HP and RCV of Driven characters by 200, and makes [TND] orbs beneficial for Driven characters."
         },
-        superSpecialCriteria: "When any 3 [Holy Knights] [World Government] [Mythical Zoan-type] [Domi Reversi] characters are on the crew not including self (except as Support Characters or Double Characters in inactive state; Double Characters counts as 1; can be launched when character is a crewmate)",
-        superSpecial: "Changes crew's slots (including [BLOCK] slots) to [TND] unless slots are [QCK], boosts the chain multiplier by +2.2 for 1 turn, delays all enemies for 1 turn ignoring immunity to status effects, and changes Driven characters to Super Driven",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 4 of the following, excluding supports and counting only 1 per unit: [Holy Knights], [World Government], [Mythical Zoan-type], [Domi Reversi] characters",
+        superSpecial: "Changes all orbs, including [BLOCK] orbs, into [TND] orbs unless orbs are [QCK], adds 2.2x to chain multiplier for 1 turn, ignores Debuff Protection and delays all enemies by 1 turn, and transforms Driven characters into Super Driven characters.",
         support: [
             {
-                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "[Elbaph Arc] characters",
                 description: [
-                    "Adds 10% of character's base stats to supported character's base stats",
-                    "Adds 12% of character's base stats to supported character's base stats",
-                    "Adds 13% of character's base stats to supported character's base stats",
-                    "Adds 14% of character's base stats to supported character's base stats",
-                    "Adds 15% of character's base stats to supported character's base stats"
+                    "Adds 10% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 12% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 13% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 14% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 15% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV."
                 ]
             }
         ],
@@ -194460,13 +194461,13 @@ window.details = {
             }
         ],
         lastTap: {
-            condition: "On the turn Special is launched during final Battle",
+            condition: "On the last stage, on the turn this character's special is used",
             description: [
-                "Further boosts the chain multiplier of the final tap by 1.1x, and boosts crew's damage dealt to delayed enemies by 1.25x for 1 turn",
-                "Further boosts the chain multiplier of the final tap by 1.15x, and boosts crew's damage dealt to delayed enemies by 1.5x for 1 turn",
-                "Further boosts the chain multiplier of the final tap by 1.2x, and boosts crew's damage dealt to delayed enemies by 1.75x for 1 turn",
-                "Further boosts the chain multiplier of the final tap by 1.25x, and boosts crew's damage dealt to delayed enemies by 2x for 1 turn",
-                "Further boosts the chain multiplier of the final tap by 1.3x, and boosts crew's damage dealt to delayed enemies by 2.25x for 1 turn"
+                "Further boosts Chain Multiplier Growth Rate by 1.1x, and boosts ATK against delayed enemies by 1.25x for 1 turn.",
+                "Further boosts Chain Multiplier Growth Rate by 1.15x, and boosts ATK against delayed enemies by 1.5x for 1 turn.",
+                "Further boosts Chain Multiplier Growth Rate by 1.2x, and boosts ATK against delayed enemies by 1.75x for 1 turn.",
+                "Further boosts Chain Multiplier Growth Rate by 1.25x, and boosts ATK against delayed enemies by 2x for 1 turn.",
+                "Further boosts Chain Multiplier Growth Rate by 1.3x, and boosts ATK against delayed enemies by 2.25x for 1 turn."
             ]
         },
         festStats: {
@@ -194543,24 +194544,25 @@ window.details = {
         }
     },
     4675: {//St. Sommers
-        captain: "Reduces [QCK] and Driven characters' Special charge time by 2 turns and VS Effect gauge and Switch Effect by 2 at start of quest, boosts their ATK by 5.5x, boosts their ATK by approximately 6x when they have [QCK][TND][RCV] slots, boosts their HP by 1.3x, makes crew's [QCK][TND][RCV] slots have matching slot effects, and tapping on this character with a [RCV] slot will reduce all enemies' damage nullification duration by 2 turns [If 4 or more [World Government] [Holy Knights] [Paramythia-type] [Domi Reversi] characters are on the crew] Boosts [World Government] [Holy Knights] [Paramythia-type] [Domi Reversi] characters' ATK by 1.2x",
-        special: "Reduces all enemies' HP by 15% (ignoring all defensive effects), and reduces all enemies' Intimidation duration by 2 turns [If crew's HP is 51% or above when Special is launched] Cuts 50% of crew's maximum HP and sets character's Special charge to MAX (Special charge time reduction effect of \"Thorn-Man Arriving at Elbaph\" can be activated up to 1 time including any Specials with similar effect) [If crew has damage dealt to enemies with a specific status effect boost when Special is launched] Further increases crew's damage dealt to enemies with a specific status effect boost by +0.25 [Otherwise] Boosts damage dealt to enemies with increase damage taken status by 2.5x for 3 turns [If 4 or more [Holy Knights] [World Government] [Paramythia-type] characters are on the crew or if \"Saintess Gunko\" and \"Imu\" launch Specials in the same turn] Activates HP Guard of 100% effect for 1 turn, and applies -25% [QCK] and [STR] Resistance to all enemies for 1 turn",
+        captain: "Launches the following effects at start of fight: reduces Special Cooldown of [QCK] and Driven characters by 2 turns, and reduces VS Gauge and Switch Effect of [QCK] and Driven characters by 2. Boosts ATK of [QCK] and Driven characters by 5.5x, by 6x instead if they have a [QCK], [TND] or [RCV] orb, boosts HP of [QCK] and Driven characters by 1.3x, and makes [QCK], [TND] and [RCV] orbs beneficial for all characters. When tapping on this character with a [RCV] orb, reduces enemies' Damage Nullification duration by 2 turns. If your crew has 4+ [World Government], [Holy Knights], [Paramythia-type] or [Domi Reversi] characters, boosts ATK of [World Government], [Holy Knights], [Paramythia-type] and [Domi Reversi] characters by 1.2x.",
+        special: "Deals 15% of enemies' current HP in True damage to all enemies, and reduces enemies' Intimidation duration by 2 turns. If HP is above 51% when the special is activated, reduces crew's current HP by 50% crew's MAX HP, and up to 1 time per adventure, advances Special Cooldown of this character to MAX. If your crew has Status ATK Boost when the special is activated, increases boost effects of Status ATK Boost buffs by +0.25x; otherwise, boosts ATK against enemies inflicted with Increase Damage Taken by 2.5x for 3 turns. If your crew has 4+ [Holy Knights], [World Government] or [Paramythia-type] characters or your crew has Saintess Gunko and Imu who have both used specials this turn, activates HP Guard of 100% effect for 1 turn, and reduces enemies' [QCK] and [STR] Resistance by -25% for 1 turn.",
+        specialNotes: "Saintess Gunko (Imu Possessed) using a special fulfills both the Saintess Gunko and Imu part of the condition",
         specialName: "Thorn-Man Arriving at Elbaph",
         sailor: {
-            base: "Makes crew immune to Remove SFX, and allows character to obtain [RCV] slots with PERFECT taps",
-            level1: "Boosts [QCK] characters' base stats by 200, and makes their [RCV] slots have matching slot effects"
+            base: "Removes Blindness duration completely, and makes PERFECTs consume [RCV] orbs on this character.",
+            level1: "Boosts base ATK, HP and RCV of [QCK] characters by 200, and makes [RCV] orbs beneficial for [QCK] characters."
         },
-        superSpecialCriteria: "When any 3 [Holy Knights] [World Government] [Paramythia-type] [Domi Reversi] characters are on the crew not including self (except as Support Characters or Double Characters in inactive state; Double Characters counts as 1; can be launched when character is a crewmate)",
-        superSpecial: "Changes crew's slots (including [BLOCK] slots) to [RCV] unless slots are [QCK], increases all enemies' damage taken by 2.5x for 1 turn ignoring immunity to status effects, and changes [QCK] characters to Super [QCK]",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 4 of the following, excluding supports and counting only 1 per unit: [Holy Knights], [World Government], [Paramythia-type], [Domi Reversi] characters",
+        superSpecial: "Changes all orbs, including [BLOCK] orbs, into [RCV] orbs unless orbs are [QCK], ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 2.5x for 1 turn, and transforms [QCK] characters into Super [QCK] characters.",
         support: [
             {
-                Characters: "Characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "[Elbaph Arc] characters",
                 description: [
-                    "Adds 10% of character's base stats to supported character's base stats",
-                    "Adds 12% of character's base stats to supported character's base stats",
-                    "Adds 13% of character's base stats to supported character's base stats",
-                    "Adds 14% of character's base stats to supported character's base stats",
-                    "Adds 15% of character's base stats to supported character's base stats"
+                    "Adds 10% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 12% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 13% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 14% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV.",
+                    "Adds 15% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV."
                 ]
             }
         ],
@@ -194649,18 +194651,18 @@ window.details = {
         ],
         superTandemBoost: {
             characterCondition: [
-                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem",
-                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem",
-                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem",
-                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem",
-                "When a [World Government] [Elbaph Arc] [Celestial Dragon] [Holy Knights] character performs Super Tandem"
+                "When a [World Government], [Elbaph Arc], [Celestial Dragon] or [Holy Knights] character performs Super Tandem",
+                "When a [World Government], [Elbaph Arc], [Celestial Dragon] or [Holy Knights] character performs Super Tandem",
+                "When a [World Government], [Elbaph Arc], [Celestial Dragon] or [Holy Knights] character performs Super Tandem",
+                "When a [World Government], [Elbaph Arc], [Celestial Dragon] or [Holy Knights] character performs Super Tandem",
+                "When a [World Government], [Elbaph Arc], [Celestial Dragon] or [Holy Knights] character performs Super Tandem"
             ],
             description: [
-                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] [Celestial Dragon] [Holy Knights] characters by 1 for 1 turn",
-                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] characters by 1 and raises Boost Level of [Celestial Dragon] [Holy Knights] characters by 3 for 1 turn",
-                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] characters by 2 and raises Boost Level of [Celestial Dragon] [Holy Knights] characters by 4 for 1 turn",
-                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] characters by 3 and raises Boost Level of [Celestial Dragon] [Holy Knights] characters by 5 for 1 turn",
-                "Raises Boost Level of [World Government] [Elbaph Arc] [Domi Reversi] characters by 4 and raises Boost Level of [Celestial Dragon] [Holy Knights] characters by 6 for 1 turn"
+                "Raises Boost Level of [World Government], [Elbaph Arc], [Domi Reversi], [Celestial Dragon] and [Holy Knights] characters by 1 for 1 turn.",
+                "Raises Boost Level of [World Government], [Elbaph Arc] and [Domi Reversi] characters by 1 for 1 turn, and raises Boost Level of [Celestial Dragon] and [Holy Knights] characters by 3 for 1 turn.",
+                "Raises Boost Level of [World Government], [Elbaph Arc] and [Domi Reversi] characters by 2 for 1 turn, and raises Boost Level of [Celestial Dragon] and [Holy Knights] characters by 4 for 1 turn.",
+                "Raises Boost Level of [World Government], [Elbaph Arc] and [Domi Reversi] characters by 3 for 1 turn, and raises Boost Level of [Celestial Dragon] and [Holy Knights] characters by 5 for 1 turn.",
+                "Raises Boost Level of [World Government], [Elbaph Arc] and [Domi Reversi] characters by 4 for 1 turn, and raises Boost Level of [Celestial Dragon] and [Holy Knights] characters by 6 for 1 turn."
             ]
         },
         festStats: {
