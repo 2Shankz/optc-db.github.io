@@ -64,7 +64,7 @@
         { title: "Cost" },
         { title: "Sockets" },
         { title: "Stars" },
-        { title: "CL", orderable: false },
+        { title: "CL" },
       ];
       additionalColumns.forEach(function (x) {
         var title = x
@@ -75,7 +75,6 @@
           .replace(/MAX EXP/, "MAX EXP");
         result.splice(result.length - 1, 0, {
           title: title,
-          type: "num-string",
         });
       });
       return result;
@@ -1343,18 +1342,6 @@
      * Table sorting *
      *****************/
 
-    jQuery.fn.dataTable.ext.type.order["num-string-asc"] = function (x, y) {
-      if (x && x.constructor == String) x = x == "Unknown" ? 100 : 101;
-      if (y && y.constructor == String) y = y == "Unknown" ? 100 : 101;
-      return x - y;
-    };
-
-    jQuery.fn.dataTable.ext.type.order["num-string-desc"] = function (x, y) {
-      if (x && x.constructor == String) x = x == "Unknown" ? -100 : -101;
-      if (y && y.constructor == String) y = y == "Unknown" ? -100 : -101;
-      return y - x;
-    };
-
     /***********************
      * Table configuration *
      ***********************/
@@ -1489,7 +1476,6 @@
     $rootScope.showLogFilters = log.length > 0;
 
     $timeout(function () {
-      jQuery.fn.dataTable.ext.search.push(tableFilter);
       var types = {
         Story: "Story Island",
         Fortnight: "Fortnight",

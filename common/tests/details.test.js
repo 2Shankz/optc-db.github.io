@@ -1,12 +1,12 @@
-import { DBdetail, DButils, DBunit } from "./DBLoader"
+import { DBdetail, DButils } from "./DBLoader"
 
 // Split generated family query
-function splitCriteria(criteria){
+function splitCriteria(criteria) {
     if (!criteria)
         return null;
     let params = criteria.split(' ');
     let families = [];
-    for (let param of params){
+    for (let param of params) {
         if (!param.startsWith('family:^('))
             continue;
         families = param
@@ -18,102 +18,113 @@ function splitCriteria(criteria){
 }
 
 /**
- * This throws errors instead of using jest's expect matchers, because the
- * matchers would show the whole allFamilies array for every failed family name.
- * Throwing an error would let us use a custom fail message.
+ * Failures are collected before failing, instead of creating one describe/it
+ * per unit and property. That tree had hundreds of thousands of nodes and
+ * overflowed the stack inside jest's result builder.
  */
+function expectNoViolations(violations) {
+    if (!violations.length)
+        return;
+
+    const preview = violations.slice(0, 10).join('\n  ');
+    const rest = violations.length > 10 ? `\n  ...and ${violations.length - 10} more` : '';
+    throw new Error(`${violations.length} violation(s):\n  ${preview}${rest}`);
+}
+
+// Every unit property as text, so structured values are checked too.
+function collectUnitTexts() {
+    const texts = [];
+    for (const id in DBdetail) {
+        if (Number(id) >= 5000) // ignore ghost units because they use same descriptions, so no need to check them
+            break;
+        for (const property in DBdetail[id]) {
+            const value = DBdetail[id][property];
+            texts.push({
+                id,
+                property,
+                text: typeof value === 'string' ? value : JSON.stringify(value)
+            });
+        }
+    }
+    return texts;
+}
+
+function violatingUnits(texts, predicate) {
+    return texts
+        .filter(({ text }) => predicate(text))
+        .map(({ id, property }) => `${id}: ${property}`);
+}
+
 describe('Used family names should be valid', () => {
-    let allFamilies = Object.keys(DButils.getReverseFamilyMap());
+    const allFamilies = Object.keys(DButils.getReverseFamilyMap());
     allFamilies.push("Toy Bears"); // No such family name yet, but it is valid (Sugar)
 
-    describe("Supported characters' families", () => {
-        for (let id in DBdetail) {
-            const data = DBdetail[id];
-            if (!data.support)
+    it("checks supported characters' families", () => {
+        const violations = [];
+        for (const id in DBdetail) {
+            const supports = DBdetail[id].support;
+            if (!supports)
                 continue;
 
             // stored in an array, though there doesn't seem to be any unit that has multiple supports
-            for (const supportData of data.support){
-                expect(supportData.Characters).toBeDefined();
+            for (const supportData of supports) {
+                if (supportData.Characters === undefined) {
+                    violations.push(`${id} support: missing Characters`);
+                    continue;
+                }
 
-                let criteria = DButils.generateSupportedCharactersQuery(supportData.Characters);
+                const criteria = DButils.generateSupportedCharactersQuery(supportData.Characters);
                 if (!criteria)
                     continue;
 
-                let familyNames = splitCriteria(criteria);
-                for (const familyName of familyNames) {
-                    it(`checks if ${familyName} is in window.families`, () => {
-                        if (!allFamilies.includes(familyName)){
-                            throw new Error(`${id} support: "${familyName}" should be in window.families (families.js)`);
-                        }
-                    });
+                for (const familyName of splitCriteria(criteria)) {
+                    if (!allFamilies.includes(familyName))
+                        violations.push(`${id} support: "${familyName}" should be in window.families (families.js)`);
                 }
             }
         }
-    })
+        expectNoViolations(violations);
+    });
 
-    describe('Super special criteria families', () => {
-        for (let id in DBdetail) {
-            let data = DBdetail[id];
-
-            if (!data.superSpecialCriteria)
-                continue;
-
-            let criteria = DButils.generateSuperSpecialQuery(data.superSpecialCriteria);
+    it('checks super special criteria families', () => {
+        const violations = [];
+        for (const id in DBdetail) {
+            const criteria = DBdetail[id].superSpecialCriteria;
             if (!criteria)
                 continue;
 
-            let familyNames = splitCriteria(criteria);
-            for (const familyName of familyNames) {
-                it(`checks if ${familyName} is in window.families`, () => {
-                    if (!allFamilies.includes(familyName)){
-                        throw new Error(`${id} superSpecial: "${familyName}" should be in window.families (families.js)`);
-                    }
-                });
+            for (const familyName of splitCriteria(DButils.generateSuperSpecialQuery(criteria))) {
+                if (!allFamilies.includes(familyName))
+                    violations.push(`${id} superSpecial: "${familyName}" should be in window.families (families.js)`);
             }
         }
+        expectNoViolations(violations);
     });
 });
 
 describe('Typos', () => {
-    for (let id in DBdetail) {
-        let data = DBdetail[id];
-        if (Number(id) >= 5000) // ignore ghost units because they use same descriptions, so no need to check them
-            break;
-        for (let property in data){
-            // some typos are important, as they could cause regexes to not match properly
-            describe(`${id}: ${property}`, () => { // not only does this show the unit ID, but this also allows tests to continue even when it fails on one unit
-                let target = data[property];
-                if (typeof target !== 'string')
-                    target = JSON.stringify(target);
-                it('checks for consecutive spaces', () => { // important
-                    let corrected = target.replace(/ {2,}/g, ' ');
-                    expect(target).toBe(corrected);
-                });
-                it('checks for invalid variable multipliers', () => { // important
-                    let corrected = target.replace(/([?.\d]+)(?:-([?.\d]+)(%|x))/g, '$1$3-$2$3');
-                    expect(target).toBe(corrected);
-                    // expect(target).toEqual(expect.not.stringMatching(/([?.\d]+)(?:-([?.\d]+)(%|x))/));
-                });
-                it('checks for "1 turns"', () => {
-                    let corrected = target.replace(/\b1 turns/g, '1 turn');
-                    expect(target).toBe(corrected);
-                });
-                it('checks for "n turn"', () => {
-                    let corrected = target.replace(/\b(\d{2,}|[02-9]) turn(?!s)/g, '$1 turns');
-                    expect(target).toBe(corrected);
-                });
-                it('checks for "ie" typos', () => { // important
-                    // let corrected = target.replace(/thier/g, 'their').replace(/recieve/g, 'receive');
-                    // expect(target).toBe(corrected);
-                    expect(target).toEqual(expect.not.stringMatching(/thier|recieve/));
-                });
-                it('checks for "a" that should be "an"', () => {
-                    // "an 8%" or "an 80%"
-                    // "an [INT] orb" or "an [INT] character"
-                    expect(target).toEqual(expect.not.stringMatching(/\ba (8|\[INT\])/)); 
-                });
-            });
-        }
+    const texts = collectUnitTexts();
+
+    // Rules that rewrite the text to its corrected form.
+    const corrections = {
+        'consecutive spaces': (text) => text.replace(/ {2,}/g, ' '),
+        'invalid variable multipliers': (text) => text.replace(/([?.\d]+)(?:-([?.\d]+)(%|x))/g, '$1$3-$2$3'),
+        '"1 turns"': (text) => text.replace(/\b1 turns/g, '1 turn'),
+        '"n turn"': (text) => text.replace(/\b(\d{2,}|[02-9]) turn(?!s)/g, '$1 turns'),
+    };
+
+    for (const [name, correct] of Object.entries(corrections)) {
+        it(`checks for ${name}`, () => {
+            expectNoViolations(violatingUnits(texts, (text) => correct(text) !== text));
+        });
     }
+
+    it('checks for "ie" typos', () => {
+        expectNoViolations(violatingUnits(texts, (text) => /thier|recieve/.test(text)));
+    });
+
+    it('checks for "a" that should be "an"', () => {
+        // "an 8%" or "an 80%", "an [INT] orb" or "an [INT] character"
+        expectNoViolations(violatingUnits(texts, (text) => /\ba (8|\[INT\])/.test(text)));
+    });
 });
