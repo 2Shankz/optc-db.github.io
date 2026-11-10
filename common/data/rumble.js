@@ -120238,11 +120238,11 @@ window.rumble = {
         },
         festSuperSpecial: {
             base: {
-                condition: "After this character receives 8000 damage",
+                condition: "After this character receives 8,000 damage",
                 description: ['When there is 4 or more [Giant] and [Domi Reversi] crew members, 100% chance to cleanse ATK stats down debuffs to all crew members.', 'Deals 12x ATK in spread damage to all enemies with below 600 DEF.', 'Deals 1.7x ATK in damage ignoring DEF to all enemies with above 600 DEF.', '100% chance to grant Haste to 1 [Domi Reversi] crew member with the highest Special CT.', 'Inflicts Lv. 8 DEF down debuff to 1 enemy with the lowest DEF for 100 seconds.', 'Deals 12x ATK in spread damage to [STR] and Powerhouse enemies.', 'Inflicts Lv. 1 Damage Over Time to self for 100 seconds.', 'Applies Lv. 4 Special CT up buff to [Domi Reversi] crew members for 100 seconds.', 'Applies Lv. 6 SPD up buff to [Domi Reversi] crew members for 100 seconds.', 'During Assault Rumble, applies Lv. 8 ATK up buff to [Domi Reversi] crew members for 100 seconds.', 'During Assault Rumble, reduces 15% of Special CT to [Domi Reversi] crew members.']
             },
             llbbase: {
-                condition: "After this character receives 5000 damage",
+                condition: "After this character receives 5,000 damage",
                 description: ['When there is 4 or more [Giant] and [Domi Reversi] crew members, 100% chance to cleanse ATK stats down debuffs to all crew members.', 'Deals 15x ATK in spread damage to all enemies with below 600 DEF.', 'Deals 2x ATK in damage ignoring DEF to all enemies with above 600 DEF.', '100% chance to grant Haste to 1 [Domi Reversi] crew member with the highest Special CT.', 'Inflicts Lv. 10 DEF down debuff to 1 enemy with the lowest DEF for 100 seconds.', 'Deals 15x ATK in spread damage to [STR] and Powerhouse enemies.', 'Inflicts Lv. 1 Damage Over Time to self for 100 seconds.', 'Applies Lv. 5 Special CT up buff to [Domi Reversi] crew members for 100 seconds.', 'Applies Lv. 8 SPD up buff to [Domi Reversi] crew members for 100 seconds.', 'During Assault Rumble, applies Lv. 10 ATK up buff to [Domi Reversi] crew members for 100 seconds.', 'During Assault Rumble, reduces 20% of Special CT to [Domi Reversi] crew members.']
             }
         }
@@ -120507,6 +120507,45 @@ window.rumble = {
             }
         }
     },
+    4670: {
+        festCost: 20,
+        festStats: {
+            def: 239,
+            spd: 122,
+            style: "DEF"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['80% chance to resist Action Bind.', '20% damage reduction from [STR] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 1 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 1 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 1 Guard up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 2 Accuracy down debuff to all enemies.', 'During Assault Rumble, applies Lv. 2 HP up buff to self.', 'During Assault Rumble, applies Lv. 1 Special CT up buff to self.'],
+                ['Applies Lv. 2 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 1 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 2 Guard up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 2 Accuracy down debuff to all enemies.', 'During Assault Rumble, applies Lv. 3 HP up buff to self.', 'During Assault Rumble, applies Lv. 1 Special CT up buff to self.'],
+                ['Applies Lv. 3 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 2 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 3 Guard up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 3 Accuracy down debuff to all enemies.', 'During Assault Rumble, applies Lv. 4 HP up buff to self.', 'During Assault Rumble, applies Lv. 2 Special CT up buff to self.'],
+                ['Applies Lv. 4 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 2 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 4 Guard up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 4 Accuracy down debuff to all enemies.', 'During Assault Rumble, applies Lv. 5 HP up buff to self.', 'During Assault Rumble, applies Lv. 2 Special CT up buff to self.'],
+                ['Applies Lv. 5 HP up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 3 DEF up buff to [QCK], Powerhouse and [Giant] crew members.', 'Applies Lv. 5 Guard up buff to [QCK], Powerhouse and [Giant] crew members.', 'When there is 4 or more [Giant], [Roger Pirates] and [Elbaph Arc] crew members, inflicts Lv. 5 Accuracy down debuff to all enemies.', 'During Assault Rumble, applies Lv. 6 HP up buff to self.', 'During Assault Rumble, applies Lv. 3 Special CT up buff to self.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 36,
+                descriptions: [
+                    ['Deals 4.4x ATK in damage to 1 enemy.', 'Inflicts Lv. 2 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.1x Counter to [Giant] and [Roger Pirates] crew members for 21 seconds.', 'Applies Lv. 3 Shield up buff to [Giant] and [Roger Pirates] crew members for 21 seconds.', 'During Assault Rumble, deals 1x ATK in damage to [STR] enemies.'],
+                    ['Deals 4.8x ATK in damage to 1 enemy.', 'Inflicts Lv. 2 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.2x Counter to [Giant] and [Roger Pirates] crew members for 22 seconds.', 'Applies Lv. 3 Shield up buff to [Giant] and [Roger Pirates] crew members for 22 seconds.', 'During Assault Rumble, deals 1.4x ATK in damage to [STR] enemies.'],
+                    ['Deals 5.2x ATK in damage to 1 enemy.', 'Inflicts Lv. 2 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.3x Counter to [Giant] and [Roger Pirates] crew members for 23 seconds.', 'Applies Lv. 3 Shield up buff to [Giant] and [Roger Pirates] crew members for 23 seconds.', 'During Assault Rumble, deals 1.8x ATK in damage to [STR] enemies.'],
+                    ['Deals 5.6x ATK in damage to 1 enemy.', 'Inflicts Lv. 3 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.4x Counter to [Giant] and [Roger Pirates] crew members for 24 seconds.', 'Applies Lv. 3 Shield up buff to [Giant] and [Roger Pirates] crew members for 24 seconds.', 'During Assault Rumble, deals 2.2x ATK in damage to [STR] enemies.'],
+                    ['Deals 6x ATK in damage to 1 enemy.', 'Inflicts Lv. 3 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.5x Counter to [Giant] and [Roger Pirates] crew members for 25 seconds.', 'Applies Lv. 3 Shield up buff to [Giant] and [Roger Pirates] crew members for 25 seconds.', 'During Assault Rumble, deals 2.6x ATK in damage to [STR] enemies.'],
+                    ['Deals 6.4x ATK in damage to 1 enemy.', 'Inflicts Lv. 3 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.6x Counter to [Giant] and [Roger Pirates] crew members for 26 seconds.', 'Applies Lv. 4 Shield up buff to [Giant] and [Roger Pirates] crew members for 26 seconds.', 'During Assault Rumble, deals 3x ATK in damage to [STR] enemies.'],
+                    ['Deals 6.8x ATK in damage to 1 enemy.', 'Inflicts Lv. 4 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.7x Counter to [Giant] and [Roger Pirates] crew members for 27 seconds.', 'Applies Lv. 4 Shield up buff to [Giant] and [Roger Pirates] crew members for 27 seconds.', 'During Assault Rumble, deals 3.4x ATK in damage to [STR] enemies.'],
+                    ['Deals 7.2x ATK in damage to 1 enemy.', 'Inflicts Lv. 4 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.8x Counter to [Giant] and [Roger Pirates] crew members for 28 seconds.', 'Applies Lv. 4 Shield up buff to [Giant] and [Roger Pirates] crew members for 28 seconds.', 'During Assault Rumble, deals 3.8x ATK in damage to [STR] enemies.'],
+                    ['Deals 7.6x ATK in damage to 1 enemy.', 'Inflicts Lv. 4 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 2.9x Counter to [Giant] and [Roger Pirates] crew members for 29 seconds.', 'Applies Lv. 4 Shield up buff to [Giant] and [Roger Pirates] crew members for 29 seconds.', 'During Assault Rumble, deals 4.2x ATK in damage to [STR] enemies.'],
+                    ['Deals 8x ATK in damage to 1 enemy.', 'Inflicts Lv. 5 Accuracy down debuff to all enemies for 30 seconds.', 'Grant 3x Counter to [Giant] and [Roger Pirates] crew members for 30 seconds.', 'Applies Lv. 5 Shield up buff to [Giant] and [Roger Pirates] crew members for 30 seconds.', 'During Assault Rumble, deals 5x ATK in damage to [STR] enemies.']
+                ]
+            }
+        }
+    },
     4671: {
         festCost: 20,
         festStats: {
@@ -120621,6 +120660,104 @@ window.rumble = {
                     ['Applies Lv. 7 SPD up buff to [QCK], Powerhouse, [Giant] and Scopper Gaban crew members for 19 seconds.', 'Applies Lv. 4 Special CT up buff to [QCK], Powerhouse, [Giant] and Scopper Gaban crew members for 19 seconds.', '97% chance to evade Forced Out to [QCK], Powerhouse, [Giant] and Scopper Gaban crew members for 19 seconds.', '97% chance to grant Haste to 1 crew member with the highest Special CT.', '19% Special CT Delay to [STR] and Cerebral enemies.', 'When there is 4 or more [Giant] crew members, 100% chance to cleanse SPD stats down debuffs to all crew members.'],
                     ['Applies Lv. 8 SPD up buff to [QCK], Powerhouse, [Giant] and Scopper Gaban crew members for 20 seconds.', 'Applies Lv. 5 Special CT up buff to [QCK], Powerhouse, [Giant] and Scopper Gaban crew members for 20 seconds.', '100% chance to evade Forced Out to [QCK], Powerhouse, [Giant] and Scopper Gaban crew members for 20 seconds.', '100% chance to grant Haste to 1 crew member with the highest Special CT.', '20% Special CT Delay to [STR] and Cerebral enemies.', 'When there is 4 or more [Giant] crew members, 100% chance to cleanse SPD stats down debuffs to all crew members.']
                 ]
+            }
+        }
+    },
+    4674: {
+        festCost: 55,
+        festStats: {
+            def: 152,
+            spd: 176,
+            style: "SPT"
+        },
+        festAttackPattern: ['Normal Attack', '<b><i>Power Attack</b></i>', '<i>Level 1 Small Range Heal</i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['100% chance to resist Special Bind.', '30% damage reduction from [STR] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 3 HP and SPD up buff to [QCK], Driven and [World Government] crew members.', 'When HP is below 60%, applies Lv. 4 ATK and SPD up buff to [Holy Knights] crew members.', 'When HP is below 60%, reduces 22% of Special CT to self upon appearance.', 'When there is 4 or more [World Government] crew members, on death launches rumble special 1 time.'],
+                ['Applies Lv. 4 HP and SPD up buff to [QCK], Driven and [World Government] crew members.', 'When HP is below 60%, applies Lv. 5 ATK and SPD up buff to [Holy Knights] crew members.', 'When HP is below 60%, reduces 24% of Special CT to self upon appearance.', 'When there is 4 or more [World Government] crew members, on death launches rumble special 1 time.'],
+                ['Applies Lv. 5 HP and SPD up buff to [QCK], Driven and [World Government] crew members.', 'When HP is below 60%, applies Lv. 6 ATK and SPD up buff to [Holy Knights] crew members.', 'When HP is below 60%, reduces 26% of Special CT to self upon appearance.', 'When there is 4 or more [World Government] crew members, on death launches rumble special 1 time.'],
+                ['Applies Lv. 6 HP and SPD up buff to [QCK], Driven and [World Government] crew members.', 'When HP is below 60%, applies Lv. 7 ATK and SPD up buff to [Holy Knights] crew members.', 'When HP is below 60%, reduces 28% of Special CT to self upon appearance.', 'When there is 4 or more [World Government] crew members, on death launches rumble special 1 time.'],
+                ['Applies Lv. 7 HP and SPD up buff to [QCK], Driven and [World Government] crew members.', 'When HP is below 60%, applies Lv. 8 ATK and SPD up buff to [Holy Knights] crew members.', 'When HP is below 60%, reduces 30% of Special CT to self upon appearance.', 'When there is 4 or more [World Government] crew members, on death launches rumble special 1 time.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 23,
+                descriptions: [
+                    ['Applies Lv. 2 SPD up buff to [QCK], Driven and [World Government] crew members for 11 seconds.', 'When HP is above 60%, 73% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 6 seconds.', 'When HP is above 60%, applies Lv. 2 ATK up buff to [World Government] crew members for 11 seconds.', 'When HP is above 60%, reduces 11% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 2 DEF down debuff to 1 enemy with the lowest HP for 5 seconds 3 times.', 'When HP is below 60%, deals 1.2x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 2 SPD up buff to [QCK], Driven and [World Government] crew members for 12 seconds.', 'When HP is above 60%, 76% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 7 seconds.', 'When HP is above 60%, applies Lv. 2 ATK up buff to [World Government] crew members for 12 seconds.', 'When HP is above 60%, reduces 12% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 2 DEF down debuff to 1 enemy with the lowest HP for 6 seconds 3 times.', 'When HP is below 60%, deals 1.4x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 2 SPD up buff to [QCK], Driven and [World Government] crew members for 13 seconds.', 'When HP is above 60%, 79% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 8 seconds.', 'When HP is above 60%, applies Lv. 2 ATK up buff to [World Government] crew members for 13 seconds.', 'When HP is above 60%, reduces 13% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 2 DEF down debuff to 1 enemy with the lowest HP for 6 seconds 3 times.', 'When HP is below 60%, deals 1.6x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 3 SPD up buff to [QCK], Driven and [World Government] crew members for 14 seconds.', 'When HP is above 60%, 82% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 9 seconds.', 'When HP is above 60%, applies Lv. 3 ATK up buff to [World Government] crew members for 14 seconds.', 'When HP is above 60%, reduces 14% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 3 DEF down debuff to 1 enemy with the lowest HP for 7 seconds 3 times.', 'When HP is below 60%, deals 1.8x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 3 SPD up buff to [QCK], Driven and [World Government] crew members for 15 seconds.', 'When HP is above 60%, 85% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 10 seconds.', 'When HP is above 60%, applies Lv. 3 ATK up buff to [World Government] crew members for 15 seconds.', 'When HP is above 60%, reduces 15% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 3 DEF down debuff to 1 enemy with the lowest HP for 7 seconds 3 times.', 'When HP is below 60%, deals 2x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 4 SPD up buff to [QCK], Driven and [World Government] crew members for 16 seconds.', 'When HP is above 60%, 88% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 11 seconds.', 'When HP is above 60%, applies Lv. 4 ATK up buff to [World Government] crew members for 16 seconds.', 'When HP is above 60%, reduces 16% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 4 DEF down debuff to 1 enemy with the lowest HP for 8 seconds 3 times.', 'When HP is below 60%, deals 2.2x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 4 SPD up buff to [QCK], Driven and [World Government] crew members for 17 seconds.', 'When HP is above 60%, 91% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 12 seconds.', 'When HP is above 60%, applies Lv. 4 ATK up buff to [World Government] crew members for 17 seconds.', 'When HP is above 60%, reduces 17% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 4 DEF down debuff to 1 enemy with the lowest HP for 8 seconds 3 times.', 'When HP is below 60%, deals 2.4x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 4 SPD up buff to [QCK], Driven and [World Government] crew members for 18 seconds.', 'When HP is above 60%, 94% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 13 seconds.', 'When HP is above 60%, applies Lv. 4 ATK up buff to [World Government] crew members for 18 seconds.', 'When HP is above 60%, reduces 18% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 4 DEF down debuff to 1 enemy with the lowest HP for 9 seconds 3 times.', 'When HP is below 60%, deals 2.6x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 5 SPD up buff to [QCK], Driven and [World Government] crew members for 19 seconds.', 'When HP is above 60%, 97% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 14 seconds.', 'When HP is above 60%, applies Lv. 5 ATK up buff to [World Government] crew members for 19 seconds.', 'When HP is above 60%, reduces 19% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 5 DEF down debuff to 1 enemy with the lowest HP for 9 seconds 3 times.', 'When HP is below 60%, deals 2.8x ATK in damage to 1 enemy with the lowest HP 3 times.'],
+                    ['Applies Lv. 6 SPD up buff to [QCK], Driven and [World Government] crew members for 20 seconds.', 'When HP is above 60%, 100% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 15 seconds.', 'When HP is above 60%, applies Lv. 6 ATK up buff to [World Government] crew members for 20 seconds.', 'When HP is above 60%, reduces 20% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 6 DEF down debuff to 1 enemy with the lowest HP for 10 seconds 3 times.', 'When HP is below 60%, deals 3x ATK in damage to 1 enemy with the lowest HP 3 times.']
+                ]
+            }
+        },
+        festSuperSpecial: {
+            base: {
+                condition: "After this character receives 12,000 damage",
+                description: ['Applies Lv. 7 SPD up buff to [QCK], Driven and [World Government] crew members for 25 seconds.', 'When HP is above 60%, 100% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 20 seconds.', 'When HP is above 60%, applies Lv. 7 ATK up buff to [World Government] crew members for 25 seconds.', 'When HP is above 60%, reduces 30% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 7 DEF down debuff to 1 enemy with the lowest HP for 10 seconds 3 times.', 'When HP is below 60%, deals 3.5x ATK in damage to 1 enemy with the lowest HP 3 times.', 'When HP is below 60%, 20% Special CT Delay to 1 enemy with the highest Special CT 3 times.']
+            },
+            llbbase: {
+                condition: "After this character receives 10,000 damage",
+                description: ['Applies Lv. 8 SPD up buff to [QCK], Driven and [World Government] crew members for 30 seconds.', 'When HP is above 60%, 100% chance to evade Action Bind and RCV Bind to [QCK], Driven and [World Government] crew members for 25 seconds.', 'When HP is above 60%, applies Lv. 8 ATK up buff to [World Government] crew members for 30 seconds.', 'When HP is above 60%, reduces 40% of Special CT to [Holy Knights] crew members, excluding self.', 'When HP is below 60%, inflicts Lv. 7 DEF down debuff to 1 enemy with the lowest HP for 10 seconds 4 times.', 'When HP is below 60%, deals 3.5x ATK in damage to 1 enemy with the lowest HP 4 times.', 'When HP is below 60%, 20% Special CT Delay to 1 enemy with the highest Special CT 4 times.']
+            }
+        }
+    },
+    4675: {
+        festCost: 55,
+        festStats: {
+            def: 183,
+            spd: 154,
+            style: "DBF"
+        },
+        festAttackPattern: ['Normal Attack', '<i>Level 2 Self Heal</i>', '<b><i>Power Attack</b></i>', '<b><i>Power Attack</b></i>'],
+        festAttackTarget: "Nearby Enemies.",
+        festResistance: {
+            base: ['100% chance to resist Special Bind.', '30% damage reduction from [STR] enemies.']
+        },
+        festAbility: {
+            base: [
+                ['Applies Lv. 3 HP up buff to [QCK], Driven and [World Government] crew members.', 'Applies Lv. 2 DEF up buff to [QCK], Driven and [World Government] crew members.', 'When there is 4 or more [World Government] crew members, reduces 60% of Special CT to self upon appearance.', 'The first 10 times this character takes damage, heals 6% of HP to [Holy Knights] crew members.', 'The first 10 times this character takes damage, inflicts Lv. 1 DEF down debuff to all enemies.'],
+                ['Applies Lv. 4 HP up buff to [QCK], Driven and [World Government] crew members.', 'Applies Lv. 3 DEF up buff to [QCK], Driven and [World Government] crew members.', 'When there is 4 or more [World Government] crew members, reduces 70% of Special CT to self upon appearance.', 'The first 10 times this character takes damage, heals 7% of HP to [Holy Knights] crew members.', 'The first 10 times this character takes damage, inflicts Lv. 1 DEF down debuff to all enemies.'],
+                ['Applies Lv. 5 HP up buff to [QCK], Driven and [World Government] crew members.', 'Applies Lv. 4 DEF up buff to [QCK], Driven and [World Government] crew members.', 'When there is 4 or more [World Government] crew members, reduces 80% of Special CT to self upon appearance.', 'The first 10 times this character takes damage, heals 8% of HP to [Holy Knights] crew members.', 'The first 10 times this character takes damage, inflicts Lv. 1 DEF down debuff to all enemies.'],
+                ['Applies Lv. 6 HP up buff to [QCK], Driven and [World Government] crew members.', 'Applies Lv. 5 DEF up buff to [QCK], Driven and [World Government] crew members.', 'When there is 4 or more [World Government] crew members, reduces 90% of Special CT to self upon appearance.', 'The first 10 times this character takes damage, heals 9% of HP to [Holy Knights] crew members.', 'The first 10 times this character takes damage, inflicts Lv. 1 DEF down debuff to all enemies.'],
+                ['Applies Lv. 7 HP up buff to [QCK], Driven and [World Government] crew members.', 'Applies Lv. 6 DEF up buff to [QCK], Driven and [World Government] crew members.', 'When there is 4 or more [World Government] crew members, reduces 100% of Special CT to self upon appearance.', 'The first 10 times this character takes damage, heals 10% of HP to [Holy Knights] crew members.', 'The first 10 times this character takes damage, inflicts Lv. 1 DEF down debuff to all enemies.']
+            ]
+        },
+        festSpecial: {
+            base: {
+                cooldown: 33,
+                descriptions: [
+                    ['21% HP cut to all enemies.', '73% chance to inflict Paralysis to all enemies for 11 seconds.', 'Inflicts Lv. 1 Damage Over Time to all enemies with Paralysis for 31 seconds.', '73% chance to inflict RCV Bind to all enemies with Paralysis for 11 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 2 DEF up buff to [Holy Knights] crew members for 11 seconds.', 'When there is 4 or more [World Government] crew members, 6% Special CT Delay to all enemies.'],
+                    ['22% HP cut to all enemies.', '76% chance to inflict Paralysis to all enemies for 12 seconds.', 'Inflicts Lv. 1 Damage Over Time to all enemies with Paralysis for 32 seconds.', '76% chance to inflict RCV Bind to all enemies with Paralysis for 12 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 2 DEF up buff to [Holy Knights] crew members for 12 seconds.', 'When there is 4 or more [World Government] crew members, 7% Special CT Delay to all enemies.'],
+                    ['23% HP cut to all enemies.', '79% chance to inflict Paralysis to all enemies for 13 seconds.', 'Inflicts Lv. 1 Damage Over Time to all enemies with Paralysis for 33 seconds.', '79% chance to inflict RCV Bind to all enemies with Paralysis for 13 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 2 DEF up buff to [Holy Knights] crew members for 13 seconds.', 'When there is 4 or more [World Government] crew members, 8% Special CT Delay to all enemies.'],
+                    ['24% HP cut to all enemies.', '82% chance to inflict Paralysis to all enemies for 14 seconds.', 'Inflicts Lv. 1 Damage Over Time to all enemies with Paralysis for 34 seconds.', '82% chance to inflict RCV Bind to all enemies with Paralysis for 14 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 3 DEF up buff to [Holy Knights] crew members for 14 seconds.', 'When there is 4 or more [World Government] crew members, 9% Special CT Delay to all enemies.'],
+                    ['25% HP cut to all enemies.', '85% chance to inflict Paralysis to all enemies for 15 seconds.', 'Inflicts Lv. 1 Damage Over Time to all enemies with Paralysis for 35 seconds.', '85% chance to inflict RCV Bind to all enemies with Paralysis for 15 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 3 DEF up buff to [Holy Knights] crew members for 15 seconds.', 'When there is 4 or more [World Government] crew members, 10% Special CT Delay to all enemies.'],
+                    ['26% HP cut to all enemies.', '88% chance to inflict Paralysis to all enemies for 16 seconds.', 'Inflicts Lv. 2 Damage Over Time to all enemies with Paralysis for 36 seconds.', '88% chance to inflict RCV Bind to all enemies with Paralysis for 16 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 4 DEF up buff to [Holy Knights] crew members for 16 seconds.', 'When there is 4 or more [World Government] crew members, 11% Special CT Delay to all enemies.'],
+                    ['27% HP cut to all enemies.', '91% chance to inflict Paralysis to all enemies for 17 seconds.', 'Inflicts Lv. 2 Damage Over Time to all enemies with Paralysis for 37 seconds.', '91% chance to inflict RCV Bind to all enemies with Paralysis for 17 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 4 DEF up buff to [Holy Knights] crew members for 17 seconds.', 'When there is 4 or more [World Government] crew members, 12% Special CT Delay to all enemies.'],
+                    ['28% HP cut to all enemies.', '94% chance to inflict Paralysis to all enemies for 18 seconds.', 'Inflicts Lv. 2 Damage Over Time to all enemies with Paralysis for 38 seconds.', '94% chance to inflict RCV Bind to all enemies with Paralysis for 18 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 4 DEF up buff to [Holy Knights] crew members for 18 seconds.', 'When there is 4 or more [World Government] crew members, 13% Special CT Delay to all enemies.'],
+                    ['29% HP cut to all enemies.', '97% chance to inflict Paralysis to all enemies for 19 seconds.', 'Inflicts Lv. 2 Damage Over Time to all enemies with Paralysis for 39 seconds.', '97% chance to inflict RCV Bind to all enemies with Paralysis for 19 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 5 DEF up buff to [Holy Knights] crew members for 19 seconds.', 'When there is 4 or more [World Government] crew members, 14% Special CT Delay to all enemies.'],
+                    ['30% HP cut to all enemies.', '100% chance to inflict Paralysis to all enemies for 20 seconds.', 'Inflicts Lv. 3 Damage Over Time to all enemies with Paralysis for 40 seconds.', '100% chance to inflict RCV Bind to all enemies with Paralysis for 20 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 6 DEF up buff to [Holy Knights] crew members for 20 seconds.', 'When there is 4 or more [World Government] crew members, 15% Special CT Delay to all enemies.']
+                ]
+            }
+        },
+        festSuperSpecial: {
+            base: {
+                condition: "After this character receives damage 8 times",
+                description: ['40% HP cut to all enemies.', '100% chance to inflict Paralysis to all enemies for 25 seconds.', 'Inflicts Lv. 4 Damage Over Time to all enemies with Paralysis for 45 seconds.', '100% chance to inflict RCV Bind to all enemies with Paralysis for 25 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 8 DEF up buff to [Holy Knights] crew members for 25 seconds.', 'When there is 4 or more [World Government] crew members, 20% Special CT Delay to all enemies.', 'When there is 4 or more [World Government] crew members, inflicts Lv. 6 ATK down debuff to all enemies for 25 seconds.']
+            },
+            llbbase: {
+                condition: "After this character receives damage 6 times",
+                description: ['50% HP cut to all enemies.', '100% chance to inflict Paralysis to all enemies for 30 seconds.', 'Inflicts Lv. 5 Damage Over Time to all enemies with Paralysis for 50 seconds.', '100% chance to inflict RCV Bind to all enemies with Paralysis for 30 seconds.', '100% chance to inflict Special Bind to all enemies with Paralysis for 15 seconds.', 'When there is 4 or more [World Government] crew members, applies Lv. 9 DEF up buff to [Holy Knights] crew members for 30 seconds.', 'When there is 4 or more [World Government] crew members, 25% Special CT Delay to all enemies.', 'When there is 4 or more [World Government] crew members, inflicts Lv. 8 ATK down debuff to all enemies for 30 seconds.']
             }
         }
     },
