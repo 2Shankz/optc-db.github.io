@@ -5323,6 +5323,10 @@ window.families = {
     4673: [ ...Collun ],
     4674: [ ...Killingham ],
     4675: [ ...Sommers ],
+    4676: [ ...Yamato ],
+    4677: [ ...KozukiMomonosuke ],
+    4678: [ ...Fuga ],
+    4679: [ ...PortgasDAce, ...Sabo ],
     //break
     5013: [ ...MonkeyDLuffy ],
     5014: [ ...MonkeyDLuffy ],
