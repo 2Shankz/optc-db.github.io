@@ -12,7 +12,6 @@ app
     .run(function($rootScope, $location, $window, $state, $stateParams) {
         $rootScope.$on('$stateChangeSuccess',function(e) {
             $rootScope.currentState = $state.current.name;
-            if (typeof ga === 'function') ga('send', 'pageview', '/characters');
             var title = 'One Piece Treasure Cruise Character Table';
             if ($state.current.name == 'main.search.view') {
                 var unit = window.units[String($stateParams.id)];

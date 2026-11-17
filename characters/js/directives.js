@@ -249,7 +249,7 @@
 
 				// Watch characterLog changes and update checkboxes
 				scope.$watch(function() { return $rootScope.characterLog; }, function(newLog) {
-					if (newLog && window.charTable) {
+					if (newLog && window.charTable && window.charTable.initialized) {
 						scope.characterLog = newLog;
 						window.charTable.redraw();
 					}
@@ -283,15 +283,6 @@
 						lastQuery = '';
 					}
 				}, true);
-
-				scope.$on('$stateChangeSuccess', function() {
-					$timeout(function() {
-						// Temporarily disabled for testing - re-enable if issues arise
-						// if (window.charTable) {
-						// 	window.charTable.redraw(true);
-						// }
-					}, 300);
-				});
 			},
 		};
 	};

@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	background-color: var(--bg-primary, #2b303b);
 	width: 100%;
