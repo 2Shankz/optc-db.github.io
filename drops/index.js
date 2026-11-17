@@ -88,13 +88,13 @@ app.directive('decorateSlot',function() {
             var paths = scope.big ? { glo: Utils.getBigThumbnailUrl(scope.uid), jap: Utils.getBigThumbnailUrl(scope.uid) } : Utils.getThumbnailUrl(scope.uid, '..');
             var noimagePath = '../api/images/common/noimage.png';
             if (scope.delay) {
-                var url = paths.jap;
+                var url = paths.glo;
                 if (url) element[0].setAttribute('data', url);
             } else {
-                element[0].style.backgroundImage = 'url(' + paths.jap + ')';
+                element[0].style.backgroundImage = 'url(' + paths.glo + ')';
                 element[0].onerror = function() {
-                    if (paths.glo && paths.glo !== paths.jap) {
-                        element[0].style.backgroundImage = 'url(' + paths.glo + ')';
+                    if (paths.jap && paths.jap !== paths.glo) {
+                        element[0].style.backgroundImage = 'url(' + paths.jap + ')';
                         element[0].onerror = function() {
                             element[0].style.backgroundImage = 'url(' + noimagePath + ')';
                         };
