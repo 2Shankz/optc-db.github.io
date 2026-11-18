@@ -194643,69 +194643,7 @@ window.details = {
                 "Raises Boost Level of [Land of Wano Arc] and [Straw Hat Pirates] characters by 4 for 1 turn, and raises Boost Level of [Mythical Zoan-type] and [Kozuki Clan] characters by 5 for 1 turn.",
                 "Raises Boost Level of [Land of Wano Arc] and [Straw Hat Pirates] characters by 5 for 1 turn, and raises Boost Level of [Mythical Zoan-type] and [Kozuki Clan] characters by 6 for 1 turn."
             ]
-        },
-        festStats: {
-            def: 133,
-            spd: 191,
-            style: "SPT"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Action Bind, reduce damage taken from [PSY] by 30％",
-        festAbility: [
-            "[INT]/Free Spirit class and [Land of Wano Arc] teammates ATK Up Lv.2, SPD Up Lv.2, Special CT Speed Up Lv.1; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, when appearing on the field, self Special CT 30% reduction; after receiving healing, up to 5 times \"Monkey D. Luffy\", \"Portgas D. Ace\", and \"Yamato\" teammates Special CT 6% reduction",
-            "[INT]/Free Spirit class and [Land of Wano Arc] teammates ATK Up Lv.3, SPD Up Lv.3, Special CT Speed Up Lv.1; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, when appearing on the field, self Special CT 35% reduction; after receiving healing, up to 5 times \"Monkey D. Luffy\", \"Portgas D. Ace\", and \"Yamato\" teammates Special CT 7% reduction",
-            "[INT]/Free Spirit class and [Land of Wano Arc] teammates ATK Up Lv.4, SPD Up Lv.4, Special CT Speed Up Lv.1; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, when appearing on the field, self Special CT 40% reduction; after receiving healing, up to 5 times \"Monkey D. Luffy\", \"Portgas D. Ace\", and \"Yamato\" teammates Special CT 8% reduction",
-            "[INT]/Free Spirit class and [Land of Wano Arc] teammates ATK Up Lv.5, SPD Up Lv.5, Special CT Speed Up Lv.1; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, when appearing on the field, self Special CT 45% reduction; after receiving healing, up to 5 times \"Monkey D. Luffy\", \"Portgas D. Ace\", and \"Yamato\" teammates Special CT 9% reduction",
-            "[INT]/Free Spirit class and [Land of Wano Arc] teammates ATK Up Lv.6, SPD Up Lv.6, Special CT Speed Up Lv.2; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, when appearing on the field, self Special CT 50% reduction; after receiving healing, up to 5 times \"Monkey D. Luffy\", \"Portgas D. Ace\", and \"Yamato\" teammates Special CT 10% reduction"
-        ],
-        festSpecial: [
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.1 (11 s), SPD Up Lv.2 (11 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 55% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 55% chance to evade RCV Bind/Damage Over Time/fixed damage (11 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.1 (12 s), SPD Up Lv.2 (12 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 60% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 60% chance to evade RCV Bind/Damage Over Time/fixed damage (12 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.1 (13 s), SPD Up Lv.2 (13 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 65% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 65% chance to evade RCV Bind/Damage Over Time/fixed damage (13 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.1 (14 s), SPD Up Lv.3 (14 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 70% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 70% chance to evade RCV Bind/Damage Over Time/fixed damage (14 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.2 (15 s), SPD Up Lv.3 (15 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 75% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 75% chance to evade RCV Bind/Damage Over Time/fixed damage (15 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.2 (16 s), SPD Up Lv.4 (16 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 80% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 80% chance to evade RCV Bind/Damage Over Time/fixed damage (16 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.2 (17 s), SPD Up Lv.4 (17 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 85% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 85% chance to evade RCV Bind/Damage Over Time/fixed damage (17 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.3 (18 s), SPD Up Lv.4 (18 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 90% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 90% chance to evade RCV Bind/Damage Over Time/fixed damage (18 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.3 (19 s), SPD Up Lv.5 (19 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 95% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 95% chance to evade RCV Bind/Damage Over Time/fixed damage (19 s)"
-            },
-            {
-                cooldown: 20,
-                description: "Targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for DEF Up Lv.4 (20 s), SPD Up Lv.6 (20 s); targets 1 [INT]/Free Spirit class or [Land of Wano Arc] teammate with high current Special CT for 100% chance of Haste; if \"Monkey D. Luffy\" or \"Portgas D. Ace\" is on the team, targets [INT]/Free Spirit class and [Land of Wano Arc] teammates for 100% chance to evade RCV Bind/Damage Over Time/fixed damage (20 s)"
-            }
-        ]
+        }
     },
     4677: {//Momo
         special: "Reduces Special Cooldown of all characters by 2 turns, reduces Bind duration by 6 turns, and boosts Base ATK of [INT], Striker and Free Spirit characters by 1,250 for 3 turns. If your crew has 3+ [Land of Wano Arc] or [Kozuki Clan] characters, reduces enemies' Barrier duration by 2 turns. During Kizuna on the 2nd stage, when facing a [Land of Wano Arc] enemy, 3+ [Land of Wano Arc] characters are on the crew, and enemies Barrier and Percent Damage Reduction status has been completely removed since last enemy action, launches the following effect: deals 10,000,000 Fixed True damage, ignoring Normal Attack Only, to all enemies; if at least 1 enemy is defeated, this effect will not trigger enemies' defeat or interrupt actions.",
@@ -194781,16 +194719,7 @@ window.details = {
                 "Boosts Tandem ATK of [INT] characters by 1.5x for 1 turn.",
                 "Boosts Tandem ATK of [INT] characters by 1.75x for 1 turn."
             ]
-        },
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "ATK"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        }
     },
     4678: {//Fuga
         support: [
@@ -194821,16 +194750,7 @@ window.details = {
             "Boosts base RCV by 40",
             "Boosts base HP by 100",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4679: {//6+ Ace & Sabo
         captain: {
@@ -194945,150 +194865,7 @@ window.details = {
                     "This character's normal attack will ignore barriers"
                 ]
             }
-        ],
-        festStats: {
-            def: 161,
-            spd: 213,
-            style: "ATK"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Power Attack",
-            "Power Attack",
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Special Bind and Action Bind",
-        festAbility: {
-            base: [
-                "Team SPD Up Lv.2, DEF Up Lv.1; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.2, HP Up Lv.2, DEF Up Lv.1",
-                "Team SPD Up Lv.3, DEF Up Lv.1; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.3, HP Up Lv.3, DEF Up Lv.1",
-                "Team SPD Up Lv.4, DEF Up Lv.2; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.4, HP Up Lv.4, DEF Up Lv.2",
-                "Team SPD Up Lv.5, DEF Up Lv.2; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.5, HP Up Lv.5, DEF Up Lv.2",
-                "Team SPD Up Lv.6, DEF Up Lv.3; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.6, HP Up Lv.6, DEF Up Lv.3"
-            ],
-            llbbase: [
-                "Team SPD Up Lv.3, DEF Up Lv.1; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.3, HP Up Lv.3, DEF Up Lv.2; when appearing on the field, [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates Special CT 7% reduction",
-                "Team SPD Up Lv.4, DEF Up Lv.1; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.4, HP Up Lv.4, DEF Up Lv.2; when appearing on the field, [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates Special CT 9% reduction",
-                "Team SPD Up Lv.5, DEF Up Lv.2; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.5, HP Up Lv.5, DEF Up Lv.3; when appearing on the field, [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates Special CT 11% reduction",
-                "Team SPD Up Lv.6, DEF Up Lv.2; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.6, HP Up Lv.6, DEF Up Lv.3; when appearing on the field, [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates Special CT 13% reduction",
-                "Team SPD Up Lv.7, DEF Up Lv.3; [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates ATK Up Lv.7, HP Up Lv.7, DEF Up Lv.4; when appearing on the field, [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates Special CT 15% reduction"
-            ]
-        },
-        festSpecial: {
-            base: [
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.2 (11 s), DEF Up Lv.2 (11 s); targets enemies within large range for ATK x 2.2 damage; targets 3 enemies for 62% chance of Paralysis (5 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.1 (11 s); targets enemies with Paralysis for Special CT 11% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.2 (12 s), DEF Up Lv.2 (12 s); targets enemies within large range for ATK x 2.4 damage; targets 3 enemies for 64% chance of Paralysis (6 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.1 (12 s); targets enemies with Paralysis for Special CT 12% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.2 (13 s), DEF Up Lv.2 (13 s); targets enemies within large range for ATK x 2.6 damage; targets 3 enemies for 66% chance of Paralysis (6 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.1 (13 s); targets enemies with Paralysis for Special CT 13% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.3 (14 s), DEF Up Lv.2 (14 s); targets enemies within large range for ATK x 2.8 damage; targets 3 enemies for 68% chance of Paralysis (7 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.1 (14 s); targets enemies with Paralysis for Special CT 14% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.3 (15 s), DEF Up Lv.2 (15 s); targets enemies within large range for ATK x 3 damage; targets 3 enemies for 70% chance of Paralysis (7 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.1 (15 s); targets enemies with Paralysis for Special CT 15% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.4 (16 s), DEF Up Lv.3 (16 s); targets enemies within large range for ATK x 3.2 damage; targets 3 enemies for 72% chance of Paralysis (8 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.2 (16 s); targets enemies with Paralysis for Special CT 16% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.4 (17 s), DEF Up Lv.3 (17 s); targets enemies within large range for ATK x 3.4 damage; targets 3 enemies for 74% chance of Paralysis (8 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.2 (17 s); targets enemies with Paralysis for Special CT 17% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.4 (18 s), DEF Up Lv.3 (18 s); targets enemies within large range for ATK x 3.6 damage; targets 3 enemies for 76% chance of Paralysis (9 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.2 (18 s); targets enemies with Paralysis for Special CT 18% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.5 (19 s), DEF Up Lv.3 (19 s); targets enemies within large range for ATK x 3.8 damage; targets 3 enemies for 78% chance of Paralysis (9 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.2 (19 s); targets enemies with Paralysis for Special CT 19% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.6 (20 s), DEF Up Lv.4 (20 s); targets enemies within large range for ATK x 4 damage; targets 3 enemies for 80% chance of Paralysis (10 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.3 (20 s); targets enemies with Paralysis for Special CT 20% delay; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                }
-            ],
-            llbbase: [
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.2 (11 s), DEF Up Lv.3 (11 s); targets enemies within large range for ATK x 3.2 damage; targets 3 enemies for 82% chance of Paralysis (5 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.3 (11 s); targets enemies with Paralysis for Special CT 21% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 11% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.2 (12 s), DEF Up Lv.3 (12 s); targets enemies within large range for ATK x 3.4 damage; targets 3 enemies for 84% chance of Paralysis (6 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.3 (12 s); targets enemies with Paralysis for Special CT 22% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 12% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.3 (13 s), DEF Up Lv.3 (13 s); targets enemies within large range for ATK x 3.6 damage; targets 3 enemies for 86% chance of Paralysis (6 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.3 (13 s); targets enemies with Paralysis for Special CT 23% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 13% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.3 (14 s), DEF Up Lv.3 (14 s); targets enemies within large range for ATK x 3.8 damage; targets 3 enemies for 88% chance of Paralysis (7 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.3 (14 s); targets enemies with Paralysis for Special CT 24% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 14% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.4 (15 s), DEF Up Lv.3 (15 s); targets enemies within large range for ATK x 4 damage; targets 3 enemies for 90% chance of Paralysis (7 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.4 (15 s); targets enemies with Paralysis for Special CT 25% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 15% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.4 (16 s), DEF Up Lv.4 (16 s); targets enemies within large range for ATK x 4.2 damage; targets 3 enemies for 92% chance of Paralysis (8 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.4 (16 s); targets enemies with Paralysis for Special CT 26% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 16% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.5 (17 s), DEF Up Lv.4 (17 s); targets enemies within large range for ATK x 4.4 damage; targets 3 enemies for 94% chance of Paralysis (8 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.4 (17 s); targets enemies with Paralysis for Special CT 27% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 17% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.5 (18 s), DEF Up Lv.4 (18 s); targets enemies within large range for ATK x 4.6 damage; targets 3 enemies for 96% chance of Paralysis (9 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.4 (18 s); targets enemies with Paralysis for Special CT 28% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 18% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.6 (19 s), DEF Up Lv.4 (19 s); targets enemies within large range for ATK x 4.8 damage; targets 3 enemies for 98% chance of Paralysis (9 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.4 (19 s); targets enemies with Paralysis for Special CT 29% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 19% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                },
-                {
-                    cooldown: 28,
-                    description: "Targets team for ATK Up Lv.7 (20 s), DEF Up Lv.5 (20 s); targets enemies within large range for ATK x 5 damage; targets 3 enemies for 100% chance of Paralysis (10 s); if 4 or more [Whitebeard Pirates] [Revolutionary Army] [Logia-type] characters are on the team, targets enemies with Paralysis for Damage Over Time Lv.5 (20 s); targets enemies with Paralysis for Special CT 30% delay; targets (not including self) [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammates for Special CT 20% reduction; targets 1 [Whitebeard Pirates] [Revolutionary Army] [Logia-type] teammate with high current Special CT for 100% chance of Haste"
-                }
-            ]
-        },
-        festAbilityGP: [
-            {
-                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.1",
-                festGPSpecial: "Targets all enemies for 500 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.1, HP, SPD Up Lv.2",
-                festGPSpecial: "Targets all enemies for 625 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.2",
-                festGPSpecial: "Targets all enemies for 750 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.2, HP, SPD Up Lv.3",
-                festGPSpecial: "Targets all enemies for 875 damage",
-                uses: 2
-            },
-            {
-                festGPAbility: "Team ATK Up Lv.3, HP, SPD Up Lv.3",
-                festGPSpecial: "Targets all enemies for 1000 damage",
-                uses: 2
-            }
-        ],
-        festAbilityGPCondition: "When 2 teammates are defeated"
+        ]
     },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
