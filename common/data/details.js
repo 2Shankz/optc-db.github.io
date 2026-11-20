@@ -194646,7 +194646,7 @@ window.details = {
         }
     },
     4677: {//Momo
-        special: "Reduces Special Cooldown of all characters by 2 turns, reduces Bind duration by 6 turns, and boosts Base ATK of [INT], Striker and Free Spirit characters by 1,250 for 3 turns. If your crew has 3+ [Land of Wano Arc] or [Kozuki Clan] characters, reduces enemies' Barrier duration by 2 turns. During Kizuna on the 2nd stage, when facing a [Land of Wano Arc] enemy, 3+ [Land of Wano Arc] characters are on the crew, and enemies Barrier and Percent Damage Reduction status has been completely removed since last enemy action, launches the following effect: deals 10,000,000 Fixed True damage, ignoring Normal Attack Only, to all enemies; if at least 1 enemy is defeated, this effect will not trigger enemies' defeat or interrupt actions.",
+        special: "Reduces Special Cooldown of all characters by 2 turns, reduces Bind duration by 6 turns, and boosts Base ATK of [INT], Striker and Free Spirit characters by 1,250 for 3 turns. If your crew has 3+ [Land of Wano Arc] or [Kozuki Clan] characters, reduces enemies' Barrier duration by 2 turns. During Kizuna, when facing a [Land of Wano Arc] Mid Boss enemy, 3+ [Land of Wano Arc] characters are on the crew, and enemies Barrier and Percent Damage Reduction status has been completely removed since last enemy action, launches the following effect: deals 10,000,000 Fixed True damage, ignoring Normal Attack Only, to all enemies; if at least 1 enemy is defeated, this effect will not trigger enemies' defeat or interrupt actions.",
         specialNotes: "The enemy must start with both Barrier and Percent Damage reduction for the damage effect to be activated.",
         specialName: "Pink Dragon's Struggle",
         sailor: {
