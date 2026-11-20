@@ -3720,6 +3720,16 @@ window.drops = {
             'Defeat Level Rewards': [ 4669 ],
         },
 
+        {
+            name: 'Saintess Gunko',
+            dropID: 'pka41',
+            thumb: 4685,
+            global: true,
+            nakama: null,
+            gamewith: null,
+            'Defeat Level Rewards': [ 4685 ],
+        },
+
     ],
 
 
