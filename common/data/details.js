@@ -194868,24 +194868,24 @@ window.details = {
         ]
     },
     4680: {//Robin
-        captain: "Reduces [PSY], Free Spirit, and Striker characters' Special charge time by 2 turns at start of quest, boosts their HP by 1.2x, boosts their ATK by approximately 5.5x when slots match (5.25x otherwise), makes their [PSY] slots have matching slot effects, reduces damage taken by 20%, and boosts [Straw Hat Pirates] [Elbaph Arc] [Paramythia-type] characters' ATK by 1.1x [If [STR] and [DEX] characters are on the crew] Boosts Free Spirit characters' ATK by a further 1.1x [If 4 or more [Straw Hat Pirates] [Elbaph Arc] characters are on the crew] Reduces crew's Despair duration by 10 turns",
-        special: "Reduces crew's Bind duration by 7 turns [If character is a Captain/Friend Captain/Helper Captain or if Captain is a [STR] or [DEX] character] Sets the chain multiplier's minimum value at 3.5 and maximum value at 35.0 for 3 turns, and reduces crew's Pain duration by 5 turns [Otherwise] Sets the chain multiplier's minimum value at 3.25 and maximum value at 35.0 for 1 turn [If 4 or more [Straw Hat Pirates] [Elbaph Arc] characters are on the crew] Boosts crew's ATK based on the Percent Damage Reduction effect applied on the crew (e.g. if crew has 90% damage reduction, boosts ATK by 1.9x) for 1 turn, and further increases crew's base ATK boost by +500",
+        captain: "Reduces Special Cooldown of [PSY], Free Spirit and Striker characters by 2 turns at the start of the fight, boosts ATK of [Straw Hat Pirates], [Elbaph Arc] and [Paramythia-type] characters by 1.1x, boosts ATK of [PSY], Free Spirit and Striker characters by 5.25x, by 5.5x instead if they have a beneficial orb, boosts HP of [PSY], Free Spirit and Striker characters by 1.2x, makes [PSY] orbs beneficial for [PSY], Free Spirit and Striker characters, and reduces damage received by 20%. If there is a [STR] and [DEX] character in your crew, further boosts ATK of Free Spirit characters by 1.1x. If your crew has 4+ [Straw Hat Pirates] or [Elbaph Arc] characters, reduces Despair duration by 10 turns.",
+        special: "Reduces Bind duration by 7 turns. If this character is Captain or Friend Captain or your Captain is a [STR] or [DEX] character, sets Chain Boundaries to 3.5x and 35.0x for 3 turns, and reduces Pain duration by 5 turns; sets Chain Boundaries to 3.25x and 35.0x for 1 turn otherwise. If your crew has 4+ [Straw Hat Pirates] or [Elbaph Arc] characters, boosts Crew Damage Reduction to ATK of all characters by 1x-2x, proportional to the strength of crew's Percent Damage Reduction buff, for 1 turn, and increases boost effects of Base ATK Boost buffs by +500.",
         specialName: "Cien Fleurs Craspedia",
         sailor: {
-            base: "Makes Free Spirit characters' [DEX] slots have matching slot effects, and boosts their base stats by 70",
-            level1: "Boosts character's base ATK by 300 when attacking last out of all available characters"
+            base: "Boosts base ATK, HP and RCV of Free Spirit characters by 70, and makes [DEX] orbs beneficial for Free Spirit characters.",
+            level1: "Boosts base ATK of this character by 300 if this character is the last in the chain to attack."
         },
-        superSpecialCriteria: "When any 3 [Straw Hat Pirates] [Elbaph Arc] [Paramythia-type] characters are on the crew not including self (except as Support Characters or Double Characters in inactive state; Double Characters counts as 1; can be launched when character is a crewmate)",
-        superSpecial: "Reduces damage taken by 90% for 1 turn, boosts the chain multiplier by +1.6 for 1 turn, and changes [PSY] characters to Super [PSY]",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 4 of the following, excluding supports and counting only 1 per unit: [Straw Hat Pirates], [Elbaph Arc], [Paramythia-type] characters",
+        superSpecial: "Reduces damage received by 90% for 1 turn, adds 1.6x to chain multiplier for 1 turn, and transforms [PSY] characters into Super [PSY] characters.",
         support: [
             {
-                Characters: "[PSY] Free Spirit characters with the following Character Tag: [Straw Hat Pirates]",
+                Characters: "[PSY] Free Spirit [Straw Hat Pirates] characters",
                 description: [
-                    "Once per quest, if supported character uses a Special, reduces crew's Bind duration by 1 turn, and boosts the chain multiplier by +0.3 for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Bind duration by 1 turn, and boosts the chain multiplier by +0.4 for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Bind duration by 1 turn, and boosts the chain multiplier by +0.5 for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Bind duration by 1 turn, and boosts the chain multiplier by +0.6 for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Bind duration by 2 turns, and boosts the chain multiplier by +0.8 for 1 turn"
+                    "Once per adventure, when the supported character uses their special, reduces Bind duration by 1 turn, and adds 0.3x to chain multiplier for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Bind duration by 1 turn, and adds 0.4x to chain multiplier for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Bind duration by 1 turn, and adds 0.5x to chain multiplier for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Bind duration by 1 turn, and adds 0.6x to chain multiplier for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Bind duration by 2 turns, and adds 0.8x to chain multiplier for 1 turn."
                 ]
             }
         ],
@@ -194973,13 +194973,13 @@ window.details = {
             }
         ],
         lastTap: {
-            condition: "On the turn Special is launched during final Battle",
+            condition: "On the last stage, on the turn this character's special is used",
             description: [
-                "Adds 0.2x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage",
-                "Adds 0.4x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage",
-                "Adds 0.6x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage",
-                "Adds 0.8x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage",
-                "Adds 1x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage"
+                "Adds 0.2x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage.",
+                "Adds 0.4x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage.",
+                "Adds 0.6x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage.",
+                "Adds 0.8x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage.",
+                "Adds 1.0x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage."
             ]
         },
         festStats: {
@@ -195056,24 +195056,24 @@ window.details = {
         }
     },
     4681: {//Nami
-        captain: "Reduces [DEX], Free Spirit, and Striker characters' Special charge time by 2 turns at start of quest, boosts their HP by 1.2x, boosts their ATK by approximately 5.5x when slots match (5.25x otherwise), makes their [DEX] slots have matching slot effects, heals crew by number of enemies defeated by normal attacks multiplied by 50% of crew's total RCV at end of enemy's turn, and boosts [Straw Hat Pirates] [Elbaph Arc] [Homies] characters' ATK by 1.1x [If [STR] and [PSY] characters are on the crew] Boosts Free Spirit characters' ATK by a further 1.1x [If 4 or more [Straw Hat Pirates] [Elbaph Arc] characters are on the crew] Allows healing up to 2x crew's max HP ignoring max HP limit (effect cannot stack)",
-        special: "Reduces crew's Burn duration by 7 turns [If character is a Captain/Friend Captain/Helper Captain or if Captain is a [STR] or [PSY] character] Boosts [DEX], Free Spirit, and Striker characters' base ATK by +1750 for 3 turns, and reduces crew's Special charge time by 2 turns [Otherwise] Boosts [DEX], Free Spirit, and Striker characters' base ATK by +1500 for 1 turn [If 4 or more [Straw Hat Pirates] [Elbaph Arc] characters are on the crew] Boosts Free Spirit and Striker characters' advantageous class effect by 1.75x for 1 turn, and further increases crew's slot effect boost by +0.5",
+        captain: "Reduces Special Cooldown of [DEX], Free Spirit and Striker characters by 2 turns at the start of the fight, boosts ATK of [Straw Hat Pirates], [Elbaph Arc] and [Homies] characters by 1.1x, boosts ATK of [DEX], Free Spirit and Striker characters by 5.25x, by 5.5x instead if they have a beneficial orb, boosts HP of [DEX], Free Spirit and Striker characters by 1.2x, makes [DEX] orbs beneficial for [DEX], Free Spirit and Striker characters, and recovers HP proportional to the number of enemies you defeated in this turn ✕ 50% crew's RCV at the end of the enemy turn. If there is a [STR] and [PSY] character in your crew, further boosts ATK of Free Spirit characters by 1.1x. If your crew has 4+ [Straw Hat Pirates] or [Elbaph Arc] characters, allows HP Overfill up to 2x Max.",
+        special: "Reduces Burn duration by 7 turns. If this character is Captain or Friend Captain or your Captain is a [STR] or [PSY] character, boosts Base ATK of [DEX], Free Spirit and Striker characters by 1,750 for 3 turns, and reduces Special Cooldown of all characters by 2 turns; boosts Base ATK of [DEX], Free Spirit and Striker characters by 1,500 for 1 turn otherwise. If your crew has 4+ [Straw Hat Pirates] or [Elbaph Arc] characters, boosts Advantageous Class Effect of Free Spirit and Striker characters by 1.75x for 1 turn, and increases boost effects of Orb Boost buffs by +0.5x.",
         specialName: "Thunder Shark Tempo",
         sailor: {
-            base: "Reduces character's Special Reverse by 3 turns",
-            level1: "Makes Free Spirit characters' [STR] slots have matching slot effects, and boosts their base stats by 70"
+            base: "Restores Special Cooldown of this character by 3 turns when it is rewinded.",
+            level1: "Boosts base ATK, HP and RCV of Free Spirit characters by 70, and makes [STR] orbs beneficial for Free Spirit characters."
         },
-        superSpecialCriteria: "When any 3 [Straw Hat Pirates] [Elbaph Arc] [Homies] characters are on the crew not including self (except as Support Characters or Double Characters in inactive state; Double Characters counts as 1; can be launched when character is a crewmate)",
-        superSpecial: "Heals 40% of crew's maximum HP, applies Weakened status (increase damage taken by 1.5x for all enemies, damage further increased by 1.25x if enemy has Increase Damage Taken) to all enemies for 1 turn (ignoring immunity to status effects), and changes [DEX] characters to Super [DEX]",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 4 of the following, excluding supports and counting only 1 per unit: [Straw Hat Pirates], [Elbaph Arc], [Homies] characters",
+        superSpecial: "Recovers 40% of crew's Max HP, ignores Debuff Protection and inflicts all enemies with Weaken by 1.5x, by 1.875x instead if enemies are inflicted with Increase Damage Taken, for 1 turn, and transforms [DEX] characters into Super [DEX] characters.",
         support: [
             {
-                Characters: "[DEX] Free Spirit characters with the following Character Tag: [Straw Hat Pirates]",
+                Characters: "[DEX] Free Spirit [Straw Hat Pirates] characters",
                 description: [
-                    "Once per quest, if supported character uses a Special, reduces crew's Burn duration by 1 turn, and boosts [DEX] and Free Spirit characters' base ATK by +500 for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Burn duration by 1 turn, and boosts [DEX] and Free Spirit characters' base ATK by +650 for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Burn duration by 1 turn, and boosts [DEX] and Free Spirit characters' base ATK by +750 for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Burn duration by 1 turn, and boosts [DEX] and Free Spirit characters' base ATK by +850 for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Burn duration by 2 turns, and boosts [DEX] and Free Spirit characters' base ATK by +950 for 1 turn"
+                    "Once per adventure, when the supported character uses their special, reduces Burn duration by 1 turn, and boosts Base ATK of [DEX] and Free Spirit characters by 500 for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Burn duration by 1 turn, and boosts Base ATK of [DEX] and Free Spirit characters by 650 for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Burn duration by 1 turn, and boosts Base ATK of [DEX] and Free Spirit characters by 750 for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Burn duration by 1 turn, and boosts Base ATK of [DEX] and Free Spirit characters by 850 for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Burn duration by 2 turns, and boosts Base ATK of [DEX] and Free Spirit characters by 950 for 1 turn."
                 ]
             }
         ],
@@ -195162,18 +195162,18 @@ window.details = {
         ],
         superTandemBoost: {
             characterCondition: [
-                "When a [Straw Hat Pirates] [Elbaph Arc] [Homies] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Elbaph Arc] [Homies] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Elbaph Arc] [Homies] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Elbaph Arc] [Homies] character performs Super Tandem",
-                "When a [Straw Hat Pirates] [Elbaph Arc] [Homies] character performs Super Tandem"
+                "When a [Straw Hat Pirates], [Elbaph Arc] or [Homies] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Elbaph Arc] or [Homies] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Elbaph Arc] or [Homies] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Elbaph Arc] or [Homies] character performs Super Tandem",
+                "When a [Straw Hat Pirates], [Elbaph Arc] or [Homies] character performs Super Tandem"
             ],
             description: [
-                "Raises Boost Level of [Straw Hat Pirates] [Elbaph Arc] [Homies] characters by 1 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Elbaph Arc] [Homies] characters by 2 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Elbaph Arc] [Homies] characters by 3 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Elbaph Arc] characters by 4 and raises Boost Level of [Homies] characters by 5 for 1 turn",
-                "Raises Boost Level of [Straw Hat Pirates] [Elbaph Arc] characters by 5 and raises Boost Level of [Homies] characters by 6 for 1 turn"
+                "Raises Boost Level of [Straw Hat Pirates], [Elbaph Arc] and [Homies] characters by 1 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Elbaph Arc] and [Homies] characters by 2 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates], [Elbaph Arc] and [Homies] characters by 3 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates] and [Elbaph Arc] characters by 4 for 1 turn, and raises Boost Level of [Homies] characters by 5 for 1 turn.",
+                "Raises Boost Level of [Straw Hat Pirates] and [Elbaph Arc] characters by 5 for 1 turn, and raises Boost Level of [Homies] characters by 6 for 1 turn."
             ]
         },
         festStats: {
@@ -195250,24 +195250,25 @@ window.details = {
         }
     },
     4682: {//Usopp
-        captain: "Reduces [STR], Free Spirit, and Shooter characters' Special charge time by 2 turns at start of quest, boosts their HP by 1.2x, boosts their ATK by approximately 5.5x when slots match (5.25x otherwise), makes their [STR] slots have matching slot effects, completely removes crew's Remove SFX applied by the enemy, and boosts [Straw Hat Pirates] [Elbaph Arc] characters' ATK by 1.1x [If [DEX] and [PSY] characters are on the crew] Boosts Free Spirit characters' ATK by a further 1.1x [If 4 or more [Straw Hat Pirates] [Elbaph Arc] characters are on the crew] Deals non-type damage to one enemy at end of turn based on number of PERFECTs landed during a turn (up to 500x character's ATK)",
-        special: "Changes crew's slots (including [BLOCK] slots) to character's own type, and reduces crew's Despair duration by 7 turns [If character is a Captain/Friend Captain/Helper Captain or if Captain is a [DEX] or [PSY] character] Boosts [STR], Free Spirit, and Shooter characters' slot effects by 3.5x for 3 turns, and reduces the duration of all enemy barriers by 3 turns [Otherwise] Boosts [STR], Free Spirit, and Shooter characters' slot effects by 3.25x for 1 turn [If 4 or more [Straw Hat Pirates] [Elbaph Arc] characters are on the crew] Boosts [STR], Free Spirit, and Shooter characters' chain multiplier growth rate of normal attacks up to +0.7 (GOOD +0.2; GREAT +0.4; PERFECT +0.7) for 1 turn, and further increases crew's lock chain multiplier effect by +0.5",
+        captain: "Reduces Special Cooldown of [STR], Free Spirit and Shooter characters by 2 turns at the start of the fight, boosts ATK of [Straw Hat Pirates] and [Elbaph Arc] characters by 1.1x, boosts ATK of [STR], Free Spirit and Shooter characters by 5.25x, by 5.5x instead if they have a beneficial orb, boosts HP of [STR], Free Spirit and Shooter characters by 1.2x, makes [STR] orbs beneficial for [STR], Free Spirit and Shooter characters, and removes Blindness duration completely. If there is a [DEX] and [PSY] character in your crew, further boosts ATK of Free Spirit characters by 1.1x. If your crew has 4+ [Straw Hat Pirates] or [Elbaph Arc] characters, deals 0x-500x character's ATK in typeless damage to one enemy at the end of each turn depending on how many PERFECTs scored that turn.",
+        special: "Changes all orbs, including [BLOCK] orbs, into matching orbs, and reduces Despair duration by 7 turns. If this character is Captain or Friend Captain or your Captain is a [DEX] or [PSY] character, boosts Orb Effects of [STR], Free Spirit and Shooter characters by 3.5x for 3 turns, and reduces enemies' Barrier duration by 3 turns; boosts Orb Effects of [STR], Free Spirit and Shooter characters by 3.25x for 1 turn otherwise. If your crew has 4+ [Straw Hat Pirates] or [Elbaph Arc] characters, increases Chain Tap Timing Bonus of [STR], Free Spirit and Shooter characters to +0.2x-0.7x for 1 turn depending on Tap Timing, and increases boost effects of Chain Lock buffs by +0.5x.",
+        specialNotes: "<b>GOOD:</b> +0.2, <b>GREAT:</b> +0.4, <b>PERFECT:</b> +0.7",
         specialName: "Intruder-Sniping Skull Blast-Grass",
         sailor: {
-            base: "Makes crew immune to Remove SFX",
-            level1: "Makes Free Spirit characters' [PSY] slots have matching slot effects, and boosts their base stats by 70"
+            base: "Removes Blindness duration completely.",
+            level1: "Boosts base ATK, HP and RCV of Free Spirit characters by 70, and makes [PSY] orbs beneficial for Free Spirit characters."
         },
-        superSpecialCriteria: "When any 3 [Straw Hat Pirates] [Elbaph Arc] characters are on the crew not including self (except as Support Characters or Double Characters in inactive state; Double Characters counts as 1; can be launched when character is a crewmate)",
-        superSpecial: "Allows crew to perform Super Tandem with [STR] slots for 2 turns, applies -50% [STR], [DEX], and [PSY] Resistance to all enemies for 1 turn, and changes [STR] characters to Super [STR]",
+        superSpecialCriteria: "Can be launched as crewmate. Your crew must consist of any 4 of the following, excluding supports and counting only 1 per unit: [Straw Hat Pirates], [Elbaph Arc] characters",
+        superSpecial: "Allows all characters to perform Super Tandem with [STR] orbs for 2 turns, reduces enemies' [STR], [DEX] and [PSY] Resistance by -50% for 1 turn, and transforms [STR] characters into Super [STR] characters.",
         support: [
             {
-                Characters: "[STR] Free Spirit characters with the following Character Tag: [Straw Hat Pirates]",
+                Characters: "[STR] Free Spirit [Straw Hat Pirates] characters",
                 description: [
-                    "Once per quest, if supported character uses a Special, reduces crew's Despair duration by 1 turn, and boosts [STR] and Free Spirit characters' slot effects by 1.3x for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Despair duration by 1 turn, and boosts [STR] and Free Spirit characters' slot effects by 1.4x for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Despair duration by 1 turn, and boosts [STR] and Free Spirit characters' slot effects by 1.5x for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Despair duration by 1 turn, and boosts [STR] and Free Spirit characters' slot effects by 1.6x for 1 turn",
-                    "Once per quest, if supported character uses a Special, reduces crew's Despair duration by 2 turns, and boosts [STR] and Free Spirit characters' slot effects by 1.75x for 1 turn"
+                    "Once per adventure, when the supported character uses their special, reduces Despair duration by 1 turn, and boosts Orb Effects of [STR] and Free Spirit characters by 1.3x for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Despair duration by 1 turn, and boosts Orb Effects of [STR] and Free Spirit characters by 1.4x for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Despair duration by 1 turn, and boosts Orb Effects of [STR] and Free Spirit characters by 1.5x for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Despair duration by 1 turn, and boosts Orb Effects of [STR] and Free Spirit characters by 1.6x for 1 turn.",
+                    "Once per adventure, when the supported character uses their special, reduces Despair duration by 2 turns, and boosts Orb Effects of [STR] and Free Spirit characters by 1.75x for 1 turn."
                 ]
             }
         ],
@@ -195356,18 +195357,18 @@ window.details = {
         ],
         superTandem: {
             characterCondition: [
-                "When any 3 of the following characters are on the crew: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
-                "When any 3 of the following characters are on the crew: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
-                "When any 3 of the following characters are on the crew: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
-                "When any 3 of the following characters are on the crew: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
-                "When any 3 of the following characters are on the crew: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe"
+                "Your crew must consist of any 3 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
+                "Your crew must consist of any 3 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
+                "Your crew must consist of any 3 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
+                "Your crew must consist of any 3 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
+                "Your crew must consist of any 3 of the following, excluding supports and counting only 1 per unit: Monkey D. Luffy, Roronoa Zoro, Nami, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe"
             ],
             description: [
-                "Applies ATK Boost (Tandem) of 1.25x to [STR], [DEX], and [PSY] characters for 1 turn",
-                "Applies ATK Boost (Tandem) of 1.5x to [STR], [DEX], and [PSY] characters for 1 turn",
-                "Applies ATK Boost (Tandem) of 1.75x to [STR], [DEX], and [PSY] characters for 1 turn",
-                "Applies ATK Boost (Tandem) of 2x to [STR], [DEX], and [PSY] characters for 1 turn, and changes the ATK multiplier of [STR][DEX][PSY] slots to 2.25x when slots match (normally 2.0x when matching), 0.5x when unfavorable, 1.0x otherwise for 1 turn",
-                "Applies ATK Boost (Tandem) of 2.25x to [STR], [DEX], and [PSY] characters for 1 turn, and changes the ATK multiplier of [STR][DEX][PSY] slots to 2.5x when slots match (normally 2.0x when matching), 0.5x when unfavorable, 1.0x otherwise for 1 turn"
+                "Boosts Tandem ATK of [STR], [DEX] and [PSY] characters by 1.25x for 1 turn.",
+                "Boosts Tandem ATK of [STR], [DEX] and [PSY] characters by 1.5x for 1 turn.",
+                "Boosts Tandem ATK of [STR], [DEX] and [PSY] characters by 1.75x for 1 turn.",
+                "Boosts Tandem ATK of [STR], [DEX] and [PSY] characters by 2.0x for 1 turn, and increases Orb Effects of beneficial [STR], [DEX] and [PSY] orbs to 2.25x for 1 turn.",
+                "Boosts Tandem ATK of [STR], [DEX] and [PSY] characters by 2.25x for 1 turn, and increases Orb Effects of beneficial [STR], [DEX] and [PSY] orbs to 2.5x for 1 turn."
             ]
         },
         festStats: {
@@ -195446,13 +195447,13 @@ window.details = {
     4683: {//Ronja
         support: [
             {
-                Characters: "[PSY] Free Spirit characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "[PSY] Free Spirit [Elbaph Arc] characters",
                 description: [
-                    "Adds 1% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Threshold Damage Reduction status and at final battle, activates supported character's Special",
-                    "Adds 3% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 1 turn at start of crew's next turn [AUTO+] If enemy has Threshold Damage Reduction status and at final battle, activates supported character's Special",
-                    "Adds 5% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 2 turns at start of crew's next turn [AUTO+] If enemy has Threshold Damage Reduction status and at final battle, activates supported character's Special",
-                    "Adds 7% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 2 turns at start of crew's next turn [AUTO+] If enemy has Threshold Damage Reduction status and at final battle, activates supported character's Special",
-                    "Adds 10% of character's base stats to supported character's base stats, and once per quest, if enemy activates DEF Up, reduces all enemies' DEF Up duration by 3 turns at start of crew's next turn [AUTO+] If enemy has Threshold Damage Reduction status and at final battle, activates supported character's Special"
+                    "Adds 1% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the enemy gains an Increased Defense buff, reduces enemies' Increased Defense duration by 1 turn. <b>[AUTO+]</b> When an enemy has a Threshold Damage Reduction buff or when you reach the final stage, activates supported character's Special.",
+                    "Adds 3% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the enemy gains an Increased Defense buff, reduces enemies' Increased Defense duration by 1 turn. <b>[AUTO+]</b> When an enemy has a Threshold Damage Reduction buff or when you reach the final stage, activates supported character's Special.",
+                    "Adds 5% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the enemy gains an Increased Defense buff, reduces enemies' Increased Defense duration by 2 turns. <b>[AUTO+]</b> When an enemy has a Threshold Damage Reduction buff or when you reach the final stage, activates supported character's Special.",
+                    "Adds 7% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the enemy gains an Increased Defense buff, reduces enemies' Increased Defense duration by 2 turns. <b>[AUTO+]</b> When an enemy has a Threshold Damage Reduction buff or when you reach the final stage, activates supported character's Special.",
+                    "Adds 10% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. Once per adventure, when the enemy gains an Increased Defense buff, reduces enemies' Increased Defense duration by 3 turns. <b>[AUTO+]</b> When an enemy has a Threshold Damage Reduction buff or when you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -195484,21 +195485,22 @@ window.details = {
         festAttackTarget: "Targets closest enemies"
     },
     4684: {//Saul
-        special: "Reduces all enemies' Threshold Damage Reduction duration by 5 turns, and reduces crew's Special Bind duration by 5 turns [If 4 or more [Navy] [Elbaph Arc] [Giant] characters are on the crew] Boosts [PSY] and Free Spirit characters' ATK by 2.25x for 3 turns [If \"Nico Robin\" is in the crew or is set as Support for character] After 1 turn, increases all enemies' damage taken by 1.75x for 1 turn ignoring immunity to status effects [During \"Pirate King Adventures\" when facing [Holy Knights] [Celestial Dragon] enemies in the Mid-Boss encounter, if 4 or more [Elbaph Arc] characters are on the crew and enemy's Threshold Damage Reduction and DEF Up status are completely removed after last enemy action when Special is launched (also applies to Threshold Damage Reduction reduction from this Special)] Deals 15,000,000 damage to all enemies (ignoring all defensive effects, DEF, and Non-Normal Attacks Deal 1 Damage effect; if at least 1 enemy is defeated, effect will not trigger enemies' defeated or interrupting actions)",
+        special: "Reduces enemies' Threshold Damage Reduction duration by 5 turns, and reduces Special Bind duration by 5 turns. If your crew has 4+ [Navy], [Elbaph Arc] or [Giant] characters, boosts ATK of [PSY] and Free Spirit characters by 2.25x for 3 turns. If your crew has Nico Robin as a member or supporting this character, after 1 turn, ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 1.75x for 1 turn. During Pirate King Adventures, when facing a [Holy Knights] or [Celestial Dragon] Mid Boss enemy, 4+ [Elbaph Arc] characters are on the crew, and enemies Threshold Damage Reduction and Increased Defense status has been completely removed since last enemy action, launches the following effect: deals 15,000,000 Fixed True damage, ignoring Normal Attack Only, to all enemies; if at least 1 enemy is defeated, this effect will not trigger enemies' defeat or interrupt actions.",
+        specialNotes: "The enemy must start with both Threshold Damage Reduction and Increased Defense for the damage effect to be activated.",
         specialName: "Shield to Stop the Students",
         sailor: {
-            base: "Character cannot be blown away by attack, and reduces character's Special Bind duration by 5 turns",
-            level1: "Boosts [PSY] and Free Spirit characters' base RCV by 100"
+            base: "This character cannot be Blown Away, and reduces Special Bind duration by 5 turns on this character.",
+            level1: "Boosts base RCV of [PSY] and Free Spirit characters by 100."
         },
         support: [
             {
-                Characters: "Free Spirit characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "Free Spirit [Elbaph Arc] characters",
                 description: [
-                    "Adds 1% of character's base stats to supported character's base stats [AUTO+] If inflicted with Bind status from the enemy and at final battle, activates supported character's Special",
-                    "Adds 2% of character's base stats to supported character's base stats [AUTO+] If inflicted with Bind status from the enemy and at final battle, activates supported character's Special",
-                    "Adds 3% of character's base stats to supported character's base stats [AUTO+] If inflicted with Bind status from the enemy and at final battle, activates supported character's Special",
-                    "Adds 4% of character's base stats to supported character's base stats [AUTO+] If inflicted with Bind status from the enemy and at final battle, activates supported character's Special",
-                    "Adds 6% of character's base stats to supported character's base stats [AUTO+] If inflicted with Bind status from the enemy and at final battle, activates supported character's Special"
+                    "Adds 1% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. <b>[AUTO+]</b> When an enemy inflicts you with Bind or when you reach the final stage, activates supported character's Special.",
+                    "Adds 2% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. <b>[AUTO+]</b> When an enemy inflicts you with Bind or when you reach the final stage, activates supported character's Special.",
+                    "Adds 3% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. <b>[AUTO+]</b> When an enemy inflicts you with Bind or when you reach the final stage, activates supported character's Special.",
+                    "Adds 4% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. <b>[AUTO+]</b> When an enemy inflicts you with Bind or when you reach the final stage, activates supported character's Special.",
+                    "Adds 6% of this character's base ATK, HP and RCV to the supported character's base ATK, HP and RCV. <b>[AUTO+]</b> When an enemy inflicts you with Bind or when you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
@@ -195605,21 +195607,21 @@ window.details = {
         ]
     },
     4685: {//5* PKA Gunko
-        special: "Reduces crew's Paralysis duration by 2 turns, and reduces all enemies' Resilience duration by 2 turns [If crew has damage dealt to enemies with a specific status effect boost when Special is launched] Further increases crew's damage dealt to enemies with a specific status effect boost by +0.25, and delays all enemies by 1 turn [Otherwise] Boosts damage dealt to delayed enemies by 2.5x for 1 turn [If 5 or more [World Government] [Holy Knights] [Elbaph Arc] [Celestial Dragon] [Paramythia-type] characters are on the crew] Applies -5% Free Spirit and Striker Resistance to all enemies for 1 turn",
+        special: "Reduces Paralysis duration by 2 turns, and reduces enemies' Resilience duration by 2 turns. If your crew has Status ATK Boost when the special is activated, increases boost effects of Status ATK Boost buffs by +0.25x, and delays all enemies by 1 turn; boosts ATK against delayed enemies by 2.5x for 1 turn otherwise. If your crew has 5+ [World Government], [Holy Knights], [Elbaph Arc], [Celestial Dragon] or [Paramythia-type] characters, reduces enemies' Free Spirit and Striker Resistance by -5% for 1 turn.",
         specialName: "Aloe Aimed at the Children",
         sailor: {
-            base: "Boosts Striker characters' base stats by 100",
-            level1: "Makes crew's [DEX] slots have matching slot effects"
+            base: "Boosts base ATK, HP and RCV of Striker characters by 100.",
+            level1: "Makes [DEX] orbs beneficial for all characters."
         },
         support: [
             {
-                Characters: "Striker characters with the following Character Tag: [Elbaph Arc]",
+                Characters: "Striker [Elbaph Arc] characters",
                 description: [
-                    "Adds 3% of character's base ATK to supported character's base ATK",
-                    "Adds 4% of character's base ATK to supported character's base ATK",
-                    "Adds 5% of character's base ATK to supported character's base ATK",
-                    "Adds 6% of character's base ATK to supported character's base ATK",
-                    "Adds 8% of character's base ATK to supported character's base ATK [AUTO+] At battle 5, activates supported character's Super Effect. At final battle, activates supported character's Special"
+                    "Adds 3% of this character's base ATK to the supported character's base ATK.",
+                    "Adds 4% of this character's base ATK to the supported character's base ATK.",
+                    "Adds 5% of this character's base ATK to the supported character's base ATK.",
+                    "Adds 6% of this character's base ATK to the supported character's base ATK.",
+                    "Adds 8% of this character's base ATK to the supported character's base ATK. <b>[AUTO+]</b> When you reach the 5th stage, activates supported character's Super Effect. When you reach the final stage, activates supported character's Special."
                 ]
             }
         ],
