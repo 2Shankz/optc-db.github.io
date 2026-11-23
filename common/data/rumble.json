@@ -501274,10 +501274,10 @@
               "condition": {"type": "debuff", "stat": "Damage Over Time"}
             },
             {
+              "attributes": ["Damage Over Time"],
+              "effect": "penalty",
               "level": 1,
               "duration": 100,
-              "effect": "damage",
-              "type": "time",
               "targeting": {"targets": ["self"]}
             },
             {
@@ -501651,10 +501651,10 @@
               "targeting": {"targets": ["[STR]", "Powerhouse"]}
             },
             {
+              "attributes": ["Damage Over Time"],
+              "effect": "penalty",
               "level": 1,
               "duration": 100,
-              "effect": "damage",
-              "type": "time",
               "targeting": {"targets": ["self"]}
             },
             {
@@ -501738,10 +501738,10 @@
               "targeting": {"targets": ["[STR]", "Powerhouse"]}
             },
             {
+              "attributes": ["Damage Over Time"],
+              "effect": "penalty",
               "level": 1,
               "duration": 100,
-              "effect": "damage",
-              "type": "time",
               "targeting": {"targets": ["self"]}
             },
             {
@@ -501953,10 +501953,10 @@
               "condition": {"type": "debuff", "stat": "Damage Over Time"}
             },
             {
+              "attributes": ["Damage Over Time"],
+              "effect": "penalty",
               "level": 1,
               "duration": 100,
-              "effect": "damage",
-              "type": "time",
               "targeting": {"targets": ["self"]}
             },
             {
@@ -502329,10 +502329,10 @@
               "targeting": {"targets": ["[STR]", "Powerhouse"]}
             },
             {
+              "attributes": ["Damage Over Time"],
+              "effect": "penalty",
               "level": 1,
               "duration": 100,
-              "effect": "damage",
-              "type": "time",
               "targeting": {"targets": ["self"]}
             },
             {
@@ -502408,10 +502408,10 @@
               "targeting": {"targets": ["[STR]", "Powerhouse"]}
             },
             {
+              "attributes": ["Damage Over Time"],
+              "effect": "penalty",
               "level": 1,
               "duration": 100,
-              "effect": "damage",
-              "type": "time",
               "targeting": {"targets": ["self"]}
             },
             {
