@@ -194981,78 +194981,6 @@ window.details = {
                 "Adds 0.8x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage.",
                 "Adds 1.0x of damage dealt by normal attacks of other Free Spirit characters this turn on top of the final damage."
             ]
-        },
-        festStats: {
-            def: 126,
-            spd: 185,
-            style: "ATK"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Normal Attack",
-            "Power Attack",
-            "Full Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Action Bind, reduce damage taken from [INT] by 30％",
-        festAbility: [
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.2, RCV Up Lv.2; \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates Special CT Speed Up Lv.1; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates for 60% chance of Haste",
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.3, RCV Up Lv.3; \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates Special CT Speed Up Lv.1; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates for 70% chance of Haste",
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.4, RCV Up Lv.4; \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates Special CT Speed Up Lv.2; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates for 80% chance of Haste",
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.5, RCV Up Lv.5; \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates Special CT Speed Up Lv.3; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates for 90% chance of Haste",
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.6, RCV Up Lv.6; \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates Special CT Speed Up Lv.4; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets \"Jaguar D. Saul\" and [Straw Hat Pirates] teammates for 100% chance of Haste"
-        ],
-        festSpecial: [
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (55 s); targets 3 enemies for Damage Over Time Lv.1 (55 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.2 (11 s), SPD Up Lv.2 (11 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.1 (11 s); targets enemies with Damage Over Time/Special Bind for 73% chance of Halve DEF (6 s), ATK x 3.2 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (60 s); targets 3 enemies for Damage Over Time Lv.1 (60 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.2 (12 s), SPD Up Lv.2 (12 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.1 (12 s); targets enemies with Damage Over Time/Special Bind for 76% chance of Halve DEF (7 s), ATK x 3.4 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (65 s); targets 3 enemies for Damage Over Time Lv.1 (65 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.2 (13 s), SPD Up Lv.2 (13 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.1 (13 s); targets enemies with Damage Over Time/Special Bind for 79% chance of Halve DEF (8 s), ATK x 3.6 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (70 s); targets 3 enemies for Damage Over Time Lv.1 (70 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.3 (14 s), SPD Up Lv.3 (14 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.2 (14 s); targets enemies with Damage Over Time/Special Bind for 82% chance of Halve DEF (9 s), ATK x 3.8 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (75 s); targets 3 enemies for Damage Over Time Lv.1 (75 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.3 (15 s), SPD Up Lv.3 (15 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.2 (15 s); targets enemies with Damage Over Time/Special Bind for 85% chance of Halve DEF (10 s), ATK x 4 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (80 s); targets 3 enemies for Damage Over Time Lv.1 (80 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.4 (16 s), SPD Up Lv.4 (16 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.3 (16 s); targets enemies with Damage Over Time/Special Bind for 88% chance of Halve DEF (11 s), ATK x 4.2 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (85 s); targets 3 enemies for Damage Over Time Lv.1 (85 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.4 (17 s), SPD Up Lv.4 (17 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.3 (17 s); targets enemies with Damage Over Time/Special Bind for 91% chance of Halve DEF (12 s), ATK x 4.4 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (90 s); targets 3 enemies for Damage Over Time Lv.1 (90 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.4 (18 s), SPD Up Lv.4 (18 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.3 (18 s); targets enemies with Damage Over Time/Special Bind for 94% chance of Halve DEF (13 s), ATK x 4.6 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (95 s); targets 3 enemies for Damage Over Time Lv.1 (95 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.5 (19 s), SPD Up Lv.5 (19 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.4 (19 s); targets enemies with Damage Over Time/Special Bind for 97% chance of Halve DEF (14 s), ATK x 4.8 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [PSY] [Straw Hat Pirates] teammates for Damage Over Time Lv.1 (100 s); targets 3 enemies for Damage Over Time Lv.1 (100 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.6 (20 s), SPD Up Lv.6 (20 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.5 (20 s); targets enemies with Damage Over Time/Special Bind for 100% chance of Halve DEF (15 s), ATK x 5 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies)"
-            }
-        ],
-        festSuperSpecial: {
-            base: {
-                condition: "When remaining time is 40s or less",
-                description: "Targets 4 enemies for Damage Over Time Lv.1 (100 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.8 (30 s), SPD Up Lv.8 (30 s), RCV Up Lv.8 (30 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.6 (25 s); targets enemies with Damage Over Time/Special Bind for 100% chance of Halve Stats (20 s), ATK x 5.5 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 18 spread damage (damage on each enemy reduced based on number of total enemies)"
-            },
-            llbbase: {
-                condition: "When remaining time is 50s or less",
-                description: "Targets all enemies for Damage Over Time Lv.1 (100 s); targets [PSY]/Free Spirit class teammates for ATK Up Lv.10 (40 s), SPD Up Lv.10 (40 s), RCV Up Lv.10 (40 s); targets enemies with Paralysis/RCV Bind for DEF Down Lv.8 (30 s); targets enemies with Damage Over Time/Special Bind for 100% chance of Halve Stats (30 s), ATK x 6 damage; during Assault Rumble, targets enemies with Damage Over Time/RCV Bind for ATK x 20 spread damage (damage on each enemy reduced based on number of total enemies)"
-            }
         }
     },
     4681: {//Nami
@@ -195175,78 +195103,6 @@ window.details = {
                 "Raises Boost Level of [Straw Hat Pirates] and [Elbaph Arc] characters by 4 for 1 turn, and raises Boost Level of [Homies] characters by 5 for 1 turn.",
                 "Raises Boost Level of [Straw Hat Pirates] and [Elbaph Arc] characters by 5 for 1 turn, and raises Boost Level of [Homies] characters by 6 for 1 turn."
             ]
-        },
-        festStats: {
-            def: 197,
-            spd: 143,
-            style: "DBF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Self Lv.2",
-            "Power Attack",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Action Bind, reduce damage taken from [QCK] by 30％",
-        festAbility: [
-            "[DEX]/Free Spirit class and [Straw Hat Pirates] teammates HP Up Lv.2; if 4 or more [Straw Hat Pirates] characters are on the team, all enemies ATK Down Lv.3, DEF Down Lv.1; when remaining time is 50 s or less, all enemies DEF Down Lv.2",
-            "[DEX]/Free Spirit class and [Straw Hat Pirates] teammates HP Up Lv.3; if 4 or more [Straw Hat Pirates] characters are on the team, all enemies ATK Down Lv.4, DEF Down Lv.1; when remaining time is 50 s or less, all enemies DEF Down Lv.3",
-            "[DEX]/Free Spirit class and [Straw Hat Pirates] teammates HP Up Lv.4; if 4 or more [Straw Hat Pirates] characters are on the team, all enemies ATK Down Lv.5, DEF Down Lv.2; when remaining time is 50 s or less, all enemies DEF Down Lv.4",
-            "[DEX]/Free Spirit class and [Straw Hat Pirates] teammates HP Up Lv.5; if 4 or more [Straw Hat Pirates] characters are on the team, all enemies ATK Down Lv.6, DEF Down Lv.3; when remaining time is 50 s or less, all enemies DEF Down Lv.5",
-            "[DEX]/Free Spirit class and [Straw Hat Pirates] teammates HP Up Lv.6; if 4 or more [Straw Hat Pirates] characters are on the team, all enemies ATK Down Lv.7, DEF Down Lv.4; when remaining time is 50 s or less, all enemies DEF Down Lv.6"
-        ],
-        festSpecial: [
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (55 s); targets enemies with Damage Over Time/Paralysis for ATK x 5.5 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.2 (11 s), SPD Down Lv.2 (11 s), Special CT 6% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (55 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 2.2 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (60 s); targets enemies with Damage Over Time/Paralysis for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.2 (12 s), SPD Down Lv.2 (12 s), Special CT 7% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (60 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 2.4 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (65 s); targets enemies with Damage Over Time/Paralysis for ATK x 6.5 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.2 (13 s), SPD Down Lv.2 (13 s), Special CT 8% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (65 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 2.6 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (70 s); targets enemies with Damage Over Time/Paralysis for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.3 (14 s), SPD Down Lv.3 (14 s), Special CT 9% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (70 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 2.8 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (75 s); targets enemies with Damage Over Time/Paralysis for ATK x 7.5 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.3 (15 s), SPD Down Lv.3 (15 s), Special CT 10% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (75 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 3 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (80 s); targets enemies with Damage Over Time/Paralysis for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.4 (16 s), SPD Down Lv.4 (16 s), Special CT 11% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (80 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 3.2 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (85 s); targets enemies with Damage Over Time/Paralysis for ATK x 8.5 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.4 (17 s), SPD Down Lv.4 (17 s), Special CT 12% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (85 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 3.4 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (90 s); targets enemies with Damage Over Time/Paralysis for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.4 (18 s), SPD Down Lv.4 (18 s), Special CT 13% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (90 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 3.6 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (95 s); targets enemies with Damage Over Time/Paralysis for ATK x 9.5 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.5 (19 s), SPD Down Lv.5 (19 s), Special CT 14% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.1 (95 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 3.8 damage"
-            },
-            {
-                cooldown: 20,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (100 s); targets enemies with Damage Over Time/Paralysis for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.6 (20 s), SPD Down Lv.6 (20 s), Special CT 15% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.2 (100 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 4 damage"
-            }
-        ],
-        festSuperSpecial: {
-            base: {
-                condition: "When remaining time is 40s or less",
-                description: "Targets 4 enemies for Damage Over Time Lv.1 (100 s); targets enemies with Damage Over Time/Paralysis for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.8 (30 s), SPD Down Lv.8 (30 s), DEF Down Lv.5 (30 s), Special CT 20% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.3 (100 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 4.5 damage"
-            },
-            llbbase: {
-                condition: "When remaining time is 50s or less",
-                description: "Targets all enemies for Damage Over Time Lv.1 (100 s); targets enemies with Damage Over Time/Paralysis for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies), ATK Down Lv.10 (40 s), SPD Down Lv.10 (40 s), DEF Down Lv.7 (40 s), Special CT 30% delay; targets enemies with Paralysis/Action Bind for Damage Over Time Lv.4 (100 s); during Assault Rumble, targets enemies with Damage Over Time/Action Bind for ATK x 5 damage"
-            }
         }
     },
     4682: {//Usopp
@@ -195370,78 +195226,6 @@ window.details = {
                 "Boosts Tandem ATK of [STR], [DEX] and [PSY] characters by 2.0x for 1 turn, and increases Orb Effects of beneficial [STR], [DEX] and [PSY] orbs to 2.25x for 1 turn.",
                 "Boosts Tandem ATK of [STR], [DEX] and [PSY] characters by 2.25x for 1 turn, and increases Orb Effects of beneficial [STR], [DEX] and [PSY] orbs to 2.5x for 1 turn."
             ]
-        },
-        festStats: {
-            def: 156,
-            spd: 172,
-            style: "SPT"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Power Attack",
-            "Heal Lv.1 (Small Range)",
-            "Power Attack"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Action Bind, reduce damage taken from [DEX] by 30％",
-        festAbility: [
-            "[STR]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.2, SPD Up Lv.2; \"Yasopp\" and [Straw Hat Pirates] teammates DEF Up Lv.2; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, \"Yasopp\" and [Straw Hat Pirates] teammates Special CT 22% reduction",
-            "[STR]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.3, SPD Up Lv.3; \"Yasopp\" and [Straw Hat Pirates] teammates DEF Up Lv.3; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, \"Yasopp\" and [Straw Hat Pirates] teammates Special CT 24% reduction",
-            "[STR]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.4, SPD Up Lv.4; \"Yasopp\" and [Straw Hat Pirates] teammates DEF Up Lv.4; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, \"Yasopp\" and [Straw Hat Pirates] teammates Special CT 26% reduction",
-            "[STR]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.5, SPD Up Lv.5; \"Yasopp\" and [Straw Hat Pirates] teammates DEF Up Lv.5; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, \"Yasopp\" and [Straw Hat Pirates] teammates Special CT 28% reduction",
-            "[STR]/Free Spirit class and [Straw Hat Pirates] teammates ATK Up Lv.6, SPD Up Lv.6; \"Yasopp\" and [Straw Hat Pirates] teammates DEF Up Lv.6; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, \"Yasopp\" and [Straw Hat Pirates] teammates Special CT 30% reduction"
-        ],
-        festSpecial: [
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (55 s); targets enemies with Damage Over Time for 73% chance of Paralysis (6 s); targets enemies with Paralysis for DEF Down Lv.2 (11 s), ATK x 1 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 11% reduction; targets 1 teammate with high current Special CT for 73% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 6 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (60 s); targets enemies with Damage Over Time for 76% chance of Paralysis (7 s); targets enemies with Paralysis for DEF Down Lv.2 (12 s), ATK x 1.2 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 12% reduction; targets 1 teammate with high current Special CT for 76% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 7 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (65 s); targets enemies with Damage Over Time for 79% chance of Paralysis (8 s); targets enemies with Paralysis for DEF Down Lv.2 (13 s), ATK x 1.4 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 13% reduction; targets 1 teammate with high current Special CT for 79% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 8 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (70 s); targets enemies with Damage Over Time for 82% chance of Paralysis (9 s); targets enemies with Paralysis for DEF Down Lv.3 (14 s), ATK x 1.6 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 14% reduction; targets 1 teammate with high current Special CT for 82% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 9 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (75 s); targets enemies with Damage Over Time for 85% chance of Paralysis (10 s); targets enemies with Paralysis for DEF Down Lv.3 (15 s), ATK x 1.8 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 15% reduction; targets 1 teammate with high current Special CT for 85% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 10 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (80 s); targets enemies with Damage Over Time for 88% chance of Paralysis (11 s); targets enemies with Paralysis for DEF Down Lv.4 (16 s), ATK x 2 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 16% reduction; targets 1 teammate with high current Special CT for 88% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 11 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (85 s); targets enemies with Damage Over Time for 91% chance of Paralysis (12 s); targets enemies with Paralysis for DEF Down Lv.4 (17 s), ATK x 2.2 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 17% reduction; targets 1 teammate with high current Special CT for 91% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 12 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (90 s); targets enemies with Damage Over Time for 94% chance of Paralysis (13 s); targets enemies with Paralysis for DEF Down Lv.4 (18 s), ATK x 2.4 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 18% reduction; targets 1 teammate with high current Special CT for 94% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 13 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (95 s); targets enemies with Damage Over Time for 97% chance of Paralysis (14 s); targets enemies with Paralysis for DEF Down Lv.5 (19 s), ATK x 2.6 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 19% reduction; targets 1 teammate with high current Special CT for 97% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 14 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            {
-                cooldown: 25,
-                description: "Targets 3 enemies for Damage Over Time Lv.1 (100 s); targets enemies with Damage Over Time for 100% chance of Paralysis (15 s); targets enemies with Paralysis for DEF Down Lv.6 (20 s), ATK x 3 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets (not including self) [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 20% reduction; targets 1 teammate with high current Special CT for 100% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 15 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            }
-        ],
-        festSuperSpecial: {
-            base: {
-                condition: "When remaining time is 40s or less",
-                description: "Targets 4 enemies for Damage Over Time Lv.1 (100 s); targets enemies with Damage Over Time for 100% chance of Paralysis (20 s); targets enemies with Paralysis for DEF Down Lv.7 (25 s), ATK x 3.5 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 25% reduction; targets 2 teammates with high current Special CT for 100% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 17 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            },
-            llbbase: {
-                condition: "When remaining time is 50s or less",
-                description: "Targets all enemies for Damage Over Time Lv.1 (100 s); targets enemies with Damage Over Time for 100% chance of Paralysis (30 s); targets enemies with Paralysis for DEF Down Lv.8 (30 s), ATK x 4 damage; if 4 or more [Straw Hat Pirates] characters or \"Yasopp\" is on the team, targets [Straw Hat Pirates] and \"Yasopp\" teammates for Special CT 30% reduction; targets 2 teammates with high current Special CT for 100% chance of Haste; during Assault Rumble, targets enemies with Damage Over Time/Paralysis for ATK x 20 spread damage (damage on each enemy reduced based on number of total enemies); if \"Yasopp\" is on the team, switches character with 1st sub character"
-            }
         }
     },
     4683: {//Ronja
@@ -195473,16 +195257,7 @@ window.details = {
             "Boosts base RCV by 40",
             "Boosts base HP by 100",
             "Boosts base ATK by 50"
-        ],
-        festStats: {
-            def: 50,
-            spd: 100,
-            style: "BAL"
-        },
-        festAttackPattern: [
-            "Normal Attack"
-        ],
-        festAttackTarget: "Targets closest enemies"
+        ]
     },
     4684: {//Saul
         special: "Reduces enemies' Threshold Damage Reduction duration by 5 turns, and reduces Special Bind duration by 5 turns. If your crew has 4+ [Navy], [Elbaph Arc] or [Giant] characters, boosts ATK of [PSY] and Free Spirit characters by 2.25x for 3 turns. If your crew has Nico Robin as a member or supporting this character, after 1 turn, ignores Debuff Protection and inflicts all enemies with Increase Damage Taken by 1.75x for 1 turn. During Pirate King Adventures, when facing a [Holy Knights] or [Celestial Dragon] Mid Boss enemy, 4+ [Elbaph Arc] characters are on the crew, and enemies Threshold Damage Reduction and Increased Defense status has been completely removed since last enemy action, launches the following effect: deals 15,000,000 Fixed True damage, ignoring Normal Attack Only, to all enemies; if at least 1 enemy is defeated, this effect will not trigger enemies' defeat or interrupt actions.",
@@ -195541,68 +195316,6 @@ window.details = {
                     "If HP is below 40% at the start of the turn, recovers 0.5x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
                     "If HP is below 50% at the start of the turn, recovers 1x this character's RCV at the end of the turn for each time you hit a PERFECT with this character"
                 ]
-            }
-        ],
-        festStats: {
-            def: 305,
-            spd: 121,
-            style: "DEF"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Normal Attack",
-            "Power Attack",
-            "Heal Self Lv.2"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "Completely evades Action Bind, reduce damage taken from [INT] by 20%",
-        festAbility: [
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] [Giant] teammates RCV Up Lv.2, DEF Up Lv.1; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for RCV x 1 healing; during Assault Rumble, self HP Up Lv.4, Special CT Speed Up Lv.1; during Assault Rumble, if 5 or more [Straw Hat Pirates] characters are on the team, self DEF Up Lv.2, Special CT Speed Up Lv.2",
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] [Giant] teammates RCV Up Lv.3, DEF Up Lv.1; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for RCV x 2 healing; during Assault Rumble, self HP Up Lv.5, Special CT Speed Up Lv.1; during Assault Rumble, if 5 or more [Straw Hat Pirates] characters are on the team, self DEF Up Lv.3, Special CT Speed Up Lv.3",
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] [Giant] teammates RCV Up Lv.4, DEF Up Lv.2; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for RCV x 3 healing; during Assault Rumble, self HP Up Lv.6, Special CT Speed Up Lv.2; during Assault Rumble, if 5 or more [Straw Hat Pirates] characters are on the team, self DEF Up Lv.4, Special CT Speed Up Lv.4",
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] [Giant] teammates RCV Up Lv.5, DEF Up Lv.2; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for RCV x 4 healing; during Assault Rumble, self HP Up Lv.7, Special CT Speed Up Lv.3; during Assault Rumble, if 5 or more [Straw Hat Pirates] characters are on the team, self DEF Up Lv.5, Special CT Speed Up Lv.5",
-            "[PSY]/Free Spirit class and [Straw Hat Pirates] [Giant] teammates RCV Up Lv.6, DEF Up Lv.3; when remaining time becomes 50 s or less, or when appearing on the field when remaining time is 50 s or less, targets [Straw Hat Pirates] [Giant] teammates for RCV x 5 healing; during Assault Rumble, self HP Up Lv.8, Special CT Speed Up Lv.4; during Assault Rumble, if 5 or more [Straw Hat Pirates] characters are on the team, self DEF Up Lv.6, Special CT Speed Up Lv.6"
-        ],
-        festSpecial: [
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 2.3 damage; targets [PSY]/Free Spirit class teammates for RCV x 1.2 healing, DEF Up Lv.2 (11 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.1 (11 s); during Assault Rumble, targets teammates with Damage Over Time for 60% chance to evade Damage Over Time (12 s), 200 HP per interval healing (11 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 2.6 damage; targets [PSY]/Free Spirit class teammates for RCV x 1.4 healing, DEF Up Lv.2 (12 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.1 (12 s); during Assault Rumble, targets teammates with Damage Over Time for 64% chance to evade Damage Over Time (14 s), 230 HP per interval healing (12 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 2.9 damage; targets [PSY]/Free Spirit class teammates for RCV x 1.6 healing, DEF Up Lv.2 (13 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.1 (13 s); during Assault Rumble, targets teammates with Damage Over Time for 68% chance to evade Damage Over Time (16 s), 260 HP per interval healing (13 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 3.2 damage; targets [PSY]/Free Spirit class teammates for RCV x 1.8 healing, DEF Up Lv.3 (14 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.1 (14 s); during Assault Rumble, targets teammates with Damage Over Time for 72% chance to evade Damage Over Time (18 s), 290 HP per interval healing (14 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 3.5 damage; targets [PSY]/Free Spirit class teammates for RCV x 2 healing, DEF Up Lv.3 (15 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.2 (15 s); during Assault Rumble, targets teammates with Damage Over Time for 76% chance to evade Damage Over Time (20 s), 320 HP per interval healing (15 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 3.8 damage; targets [PSY]/Free Spirit class teammates for RCV x 2.2 healing, DEF Up Lv.4 (16 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.2 (16 s); during Assault Rumble, targets teammates with Damage Over Time for 80% chance to evade Damage Over Time (22 s), 350 HP per interval healing (16 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 4.1 damage; targets [PSY]/Free Spirit class teammates for RCV x 2.4 healing, DEF Up Lv.4 (17 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.2 (17 s); during Assault Rumble, targets teammates with Damage Over Time for 84% chance to evade Damage Over Time (24 s), 380 HP per interval healing (17 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 4.4 damage; targets [PSY]/Free Spirit class teammates for RCV x 2.6 healing, DEF Up Lv.4 (18 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.3 (18 s); during Assault Rumble, targets teammates with Damage Over Time for 88% chance to evade Damage Over Time (26 s), 410 HP per interval healing (18 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 4.7 damage; targets [PSY]/Free Spirit class teammates for RCV x 2.8 healing, DEF Up Lv.5 (19 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.3 (19 s); during Assault Rumble, targets teammates with Damage Over Time for 92% chance to evade Damage Over Time (28 s), 440 HP per interval healing (19 s)"
-            },
-            {
-                cooldown: 30,
-                description: "When remaining HP is 80% or above, targets 3 enemies for ATK x 5 damage; targets [PSY]/Free Spirit class teammates for RCV x 3 healing, DEF Up Lv.6 (20 s); targets [Straw Hat Pirates] [Giant] teammates for Shield Lv.4 (20 s); during Assault Rumble, targets teammates with Damage Over Time for 100% chance to evade Damage Over Time (30 s), 500 HP per interval healing (20 s)"
             }
         ]
     },
@@ -195682,68 +195395,6 @@ window.details = {
                     "Once per adventure, reduces Special Cooldown of this character by 5 turns after the first time this special is used",
                     "Once per adventure, reduces Special Cooldown of this character completely after the first time this special is used"
                 ]
-            }
-        ],
-        festStats: {
-            def: 131,
-            spd: 157,
-            style: "RCV"
-        },
-        festAttackPattern: [
-            "Normal Attack",
-            "Heal Lv.2 (Medium Range)",
-            "Normal Attack",
-            "Heal Lv.2 (Small Range)"
-        ],
-        festAttackTarget: "Targets closest enemies",
-        festResistance: "60% chance to evade Special Bind",
-        festAbility: [
-            "[DEX] and [Holy Knights] teammates HP Up Lv.1, SPD Up Lv.1; after receiving healing, up to 10 times [Holy Knights] teammates Special CT 1% reduction; [QCK] enemies Special CT 1% delay",
-            "[DEX] and [Holy Knights] teammates HP Up Lv.2, SPD Up Lv.2; after receiving healing, up to 10 times [Holy Knights] teammates Special CT 1.5% reduction; [QCK] enemies Special CT 1.5% delay",
-            "[DEX] and [Holy Knights] teammates HP Up Lv.3, SPD Up Lv.3; after receiving healing, up to 10 times [Holy Knights] teammates Special CT 2% reduction; [QCK] enemies Special CT 2% delay",
-            "[DEX] and [Holy Knights] teammates HP Up Lv.4, SPD Up Lv.4; after receiving healing, up to 10 times [Holy Knights] teammates Special CT 2.5% reduction; [QCK] enemies Special CT 2.5% delay",
-            "[DEX] and [Holy Knights] teammates HP Up Lv.5, SPD Up Lv.5; after receiving healing, up to 10 times [Holy Knights] teammates Special CT 3% reduction; [QCK] enemies Special CT 3% delay"
-        ],
-        festSpecial: [
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 0.6 healing, 120 HP per interval healing (5 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 3% and reflect x 0.5 the damage reduced (5 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.11 the damage reduced (5 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 0.7 healing, 140 HP per interval healing (6 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 6% and reflect x 0.5 the damage reduced (6 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.12 the damage reduced (6 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 0.8 healing, 160 HP per interval healing (6 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 9% and reflect x 0.5 the damage reduced (6 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.13 the damage reduced (6 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 0.9 healing, 180 HP per interval healing (7 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 12% and reflect x 0.5 the damage reduced (7 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.14 the damage reduced (7 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 1 healing, 200 HP per interval healing (7 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 15% and reflect x 0.5 the damage reduced (7 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.15 the damage reduced (7 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 1.1 healing, 220 HP per interval healing (8 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 18% and reflect x 0.5 the damage reduced (8 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.16 the damage reduced (8 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 1.2 healing, 240 HP per interval healing (8 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 21% and reflect x 0.5 the damage reduced (8 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.17 the damage reduced (8 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 1.3 healing, 260 HP per interval healing (9 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 24% and reflect x 0.5 the damage reduced (9 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.18 the damage reduced (9 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 1.4 healing, 280 HP per interval healing (9 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 27% and reflect x 0.5 the damage reduced (9 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.19 the damage reduced (9 s)"
-            },
-            {
-                cooldown: 28,
-                description: "Targets [DEX] and [Holy Knights] teammates for RCV x 1.5 healing, 300 HP per interval healing (10 s); if there are 5 or more [QCK] enemies, targets (not including self) [DEX] and [Holy Knights] teammates for Damage Reflect status to reduce damage by 30% and reflect x 0.5 the damage reduced (10 s); targets self for Damage Reflect status to reduce damage by 50% and reflect x 0.2 the damage reduced (10 s)"
             }
         ]
     },
