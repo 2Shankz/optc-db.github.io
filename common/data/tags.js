@@ -4648,6 +4648,7 @@ window.tags = {
 	"4683": ["Giant","Child","Elbaph Arc"],
 	"4684": ["Former / Navy","Giant","Elbaph Arc"],
 	"4685": ["Holy Knights","World Government","Celestial Dragon","Paramythia-type / Devil Fruit User","Elbaph Arc"],
+	"4687": ["New Giant Pirate Crew","Giant","Elbaph Arc"],
 	"5013": [],
 	"5014": [],
 	"5029": [],

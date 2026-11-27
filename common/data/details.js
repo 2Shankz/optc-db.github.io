@@ -195398,6 +195398,163 @@ window.details = {
             }
         ]
     },
+    4687: {//Rodo
+        captain: "Reduces [DEX], Slasher, and Powerhouse characters' Special charge time by 2 turns at start of quest, boosts their ATK by approximately 5.5x when slots match (5.25x otherwise), HP by 1.35x, makes crew's [DEX] slots have matching slot effects, and boosts [New Giant Pirate Crew] [Elbaph Arc] [Giant] characters' ATK by 1.15x [If 5 or more [New Giant Pirate Crew] [Elbaph Arc] [Giant] characters are on the crew] Reduces crew's Special Bind duration by 10 turns",
+        special: "Reduces all enemies' DEF Up duration by 8 turns, and removes all Poison effects on the crew [If crew has type effect boost when Special is launched] Further increases crew's type effect boost by +0.5 [Otherwise] Boosts the type effects of normal attacks for [DEX], Slasher, and Powerhouse characters by 3.5x for 1 turn [If 5 or more [New Giant Pirate Crew] [Elbaph Arc] [Giant] characters are on the crew] Boosts the chain multiplier by 1.75x for 1 turn",
+        specialName: "Humans in His Hands",
+        sailor: {
+            base: "Boosts Slasher and Powerhouse characters' base HP and RCV by 150",
+            level1: "Character cannot be blown away by attack"
+        },
+        support: [
+            {
+                Characters: "Striker characters",
+                description: [
+                    "Adds 6% of character's base HP to supported character's base HP",
+                    "Adds 8% of character's base HP to supported character's base HP",
+                    "Adds 10% of character's base HP to supported character's base HP",
+                    "Adds 12% of character's base HP to supported character's base HP",
+                    "Adds 15% of character's base HP to supported character's base HP"
+                ]
+            }
+        ],
+        limit: [
+            "Boosts base HP by 20",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 20",
+            "Acquire Potential 1: Pinch Healing",
+            "Boosts base ATK by 10",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 10",
+            "Boosts base HP by 30",
+            "Boosts base ATK by 20",
+            "Boosts base RCV by 10",
+            "Boosts base HP by 40",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 50",
+            "Acquire Potential 2: Ship Bind",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 60",
+            "Boosts base RCV by 20",
+            "Boosts base ATK by 20",
+            "Boosts base HP by 70",
+            "Boosts base ATK by 30",
+            "Boosts base RCV by 30",
+            "Boosts base HP by 80",
+            "Acquire Sailor Ability 2: Character cannot be blown away by attack",
+            "Boosts base ATK by 30",
+            "Boosts base RCV by 30",
+            "Boosts base ATK by 30",
+            "Boosts base HP by 100",
+            "Acquire Potential 3: No Healing",
+            "LOCKED WITH KEY",
+            "Boosts base HP by 100",
+            "Boosts base RCV by 50",
+            "Boosts base ATK by 100",
+            "Boosts base HP by 100",
+            "Boosts base RCV by 50",
+            "Boosts base ATK by 100",
+            "Boosts base HP by 100",
+            "Reduce base Special Cooldown by 1 turn",
+            "Boosts base HP by 200"
+        ],
+        potential: [
+            {
+                Name: "Pinch Healing",
+                description: [
+                    "If HP is below 10% at the start of the turn, recovers 1x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
+                    "If HP is below 20% at the start of the turn, recovers 1x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
+                    "If HP is below 30% at the start of the turn, recovers 1x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
+                    "If HP is below 40% at the start of the turn, recovers 1.5x this character's RCV at the end of the turn for each time you hit a PERFECT with this character",
+                    "If HP is below 50% at the start of the turn, recovers 1.5x this character's RCV at the end of the turn for each time you hit a PERFECT with this character"
+                ]
+            },
+            {
+                Name: "Ship Bind",
+                description: [
+                    "Reduces Ship Bind duration by 1 turn",
+                    "Reduces Ship Bind duration by 2 turns",
+                    "Reduces Ship Bind duration by 3 turns",
+                    "Reduces Ship Bind duration by 4 turns",
+                    "Reduces Ship Bind duration by 5 turns"
+                ]
+            },
+            {
+                Name: "No Healing",
+                description: [
+                    "Reduces No Healing duration by 3 turns",
+                    "Reduces No Healing duration by 4 turns",
+                    "Reduces No Healing duration by 5 turns",
+                    "Reduces No Healing duration by 7 turns",
+                    "Reduces No Healing duration by 10 turns"
+                ]
+            }
+        ],
+        festStats: {
+            def: 160,
+            spd: 149,
+            style: "DBF"
+        },
+        festAttackPattern: [
+            "Normal Attack",
+            "Heal Self Lv.2",
+            "Power Attack",
+            "Power Attack"
+        ],
+        festAttackTarget: "Targets closest enemies",
+        festResistance: "Completely evades Special Bind/Confusion, reduce damage taken from [QCK] by 30%",
+        festAbility: [
+            "[DEX]/Slasher class and [Giant] teammates HP Up Lv.2, SPD Up Lv.2; all enemies SPD Down Lv.3; if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 30% reduction; all enemies Special CT Speed Down Lv.1",
+            "[DEX]/Slasher class and [Giant] teammates HP Up Lv.3, SPD Up Lv.3; all enemies SPD Down Lv.4; if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 40% reduction; all enemies Special CT Speed Down Lv.2",
+            "[DEX]/Slasher class and [Giant] teammates HP Up Lv.4, SPD Up Lv.4; all enemies SPD Down Lv.5; if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 50% reduction; all enemies Special CT Speed Down Lv.3",
+            "[DEX]/Slasher class and [Giant] teammates HP Up Lv.5, SPD Up Lv.5; all enemies SPD Down Lv.6; if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 60% reduction; all enemies Special CT Speed Down Lv.4",
+            "[DEX]/Slasher class and [Giant] teammates HP Up Lv.6, SPD Up Lv.6; all enemies SPD Down Lv.7; if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, when appearing on the field, self Special CT 70% reduction; all enemies Special CT Speed Down Lv.5"
+        ],
+        festSpecial: [
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 23% delay; targets all enemies for Special CT 5% delay; targets enemies within large range for ATK Down Lv.2 (6 s), DEF Down Lv.1 (6 s), Special CT Speed Down Lv.1 (6 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 55% chance of Confusion (6 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (6 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 26% delay; targets all enemies for Special CT 5% delay; targets enemies within large range for ATK Down Lv.2 (7 s), DEF Down Lv.1 (7 s), Special CT Speed Down Lv.1 (7 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 60% chance of Confusion (7 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (7 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 29% delay; targets all enemies for Special CT 6% delay; targets enemies within large range for ATK Down Lv.3 (8 s), DEF Down Lv.1 (8 s), Special CT Speed Down Lv.1 (8 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 65% chance of Confusion (8 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (8 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 32% delay; targets all enemies for Special CT 6% delay; targets enemies within large range for ATK Down Lv.3 (9 s), DEF Down Lv.1 (9 s), Special CT Speed Down Lv.2 (9 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 70% chance of Confusion (9 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (9 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 35% delay; targets all enemies for Special CT 7% delay; targets enemies within large range for ATK Down Lv.4 (10 s), DEF Down Lv.2 (10 s), Special CT Speed Down Lv.2 (10 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 75% chance of Confusion (10 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (10 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 38% delay; targets all enemies for Special CT 7% delay; targets enemies within large range for ATK Down Lv.4 (11 s), DEF Down Lv.2 (11 s), Special CT Speed Down Lv.3 (11 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 80% chance of Confusion (11 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (11 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 41% delay; targets all enemies for Special CT 8% delay; targets enemies within large range for ATK Down Lv.5 (12 s), DEF Down Lv.2 (12 s), Special CT Speed Down Lv.3 (12 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 85% chance of Confusion (12 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (12 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 44% delay; targets all enemies for Special CT 8% delay; targets enemies within large range for ATK Down Lv.5 (13 s), DEF Down Lv.3 (13 s), Special CT Speed Down Lv.3 (13 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 90% chance of Confusion (13 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (13 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 47% delay; targets all enemies for Special CT 9% delay; targets enemies within large range for ATK Down Lv.6 (14 s), DEF Down Lv.3 (14 s), Special CT Speed Down Lv.4 (14 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 95% chance of Confusion (14 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (14 s)"
+            },
+            {
+                cooldown: 25,
+                description: "Targets 1 enemy with high current Special CT for Special CT 50% delay; targets all enemies for Special CT 10% delay; targets enemies within large range for ATK Down Lv.7 (15 s), DEF Down Lv.4 (15 s), Special CT Speed Down Lv.5 (15 s); if 4 or more [Straw Hat Pirates] [New Giant Pirate Crew] characters are on the team, targets 2 enemies with high current Special CT for 100% chance of Confusion (15 s); targets [DEX]/Slasher class and [Giant] teammates for Confusion reduction (15 s)"
+            }
+        ]
+    },
     5013: {//Kung Fu Luffy
         captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
         special: "Deals 120x character's ATK in Typeless damage to all enemies, changes orbs of adjacent characters into Matching Orbs, boosts ATK of all characters by 1.75x for 2 turns, reduces any damage received above 5,656 HP by 97% for 2 turns and makes PERFECTs easier to hit for 2 turns",
